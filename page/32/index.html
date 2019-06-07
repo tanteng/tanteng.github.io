@@ -230,14 +230,11 @@
         </span>
         <span >
         
-        Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库，带用户名和密码：
-from pymongo import MongoClient import datetime
-client = MongoClient(&lsquo;mongodb://tanteng:123456@localhost:27017/&lsquo;) db = client.js_send_excel
-post = {&ldquo;author&rdquo;: &ldquo;Xiaofeng&rdquo;, &ldquo;text&rdquo;: &ldquo;My first blog post!&rdquo;, &ldquo;tags&rdquo;: [&ldquo;mongodb&rdquo;, &ldquo;python&rdquo;, &ldquo;pymongo&rdquo;],}
-posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
-请参加pymongo官方文档获取更多Python操作MongoDB的方法。
+        Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/pymongo-cllient/">➦</a>
         
         </div>
         
@@ -254,11 +251,11 @@ posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
         </span>
         <span >
         
-        判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1.
-//显示上传的文件名 $(&lsquo;#batch_file&rsquo;).live(&lsquo;change&rsquo;, function() { file_name = $(this).val(); $(&ldquo;#file_name&rdquo;).html(file_name); fileExt = file_name.substr(file_name.lastIndexOf(&ldquo;.&rdquo;)).toLowerCase();//获得文件后缀名 if(-1 == $.inArray( fileExt, [&lsquo;.xls&rsquo;,&lsquo;.xlsx&rsquo;] )){ $(&ldquo;#fileExtErr&rdquo;).show(); $(&ldquo;#send_check&rdquo;).prop(&lsquo;disabled&rsquo;,true); }else{ $(&ldquo;#fileExtErr&rdquo;).hide(); $(&ldquo;#send_check&rdquo;).prop(&lsquo;disabled&rsquo;,false); } });
-当然这是在js的层面进行判断，提交后程序也要判断一次，以保证安全。
+        判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1. //
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/jquery-inarray/">➦</a>
         
         </div>
         

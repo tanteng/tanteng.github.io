@@ -366,10 +366,11 @@ return
         </span>
         <span >
         
-        Golang 遍历一个月每天写法：
-// CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &lt;= t.Day(); day++ { date := time.Now().Format(&ldquo;200601&rdquo;) + fmt.Sprintf(&ldquo;%02d&rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online&rdquo;, &ldquo;db&rdquo;), date) template := utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online_template&rdquo;, &ldquo;db&rdquo;) sql := fmt.Sprintf(&ldquo;CREATE TABLE IF NOT EXISTS %s LIKE %s&rdquo;, tableName, template) fmt.Println(sql) utils.Query(sql, &ldquo;sns_online_fish&rdquo;) } }
+        Golang 遍历一个月每天写法： // CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &lt;= t.Day(); day++ { date := time.Now().Format(&ldquo;200601&rdquo;) + fmt.Sprintf(&ldquo;%02d&rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online&rdquo;, &ldquo;db&rdquo;), date) template := utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online_template&rdquo;, &ldquo;db&rdquo;) sql :=
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2017/06/golang-month-iteration/">➦</a>
         
         </div>
         

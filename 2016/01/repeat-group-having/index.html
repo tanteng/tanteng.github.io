@@ -22,14 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="查询数据库重复记录sql"/>
-<meta name="twitter:description" content="每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
-SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &gt; 1;
-对hash进行group并筛选count个数大于1的。"/>
+<meta name="twitter:description" content="每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复"/>
 
 <meta property="og:title" content="查询数据库重复记录sql" />
-<meta property="og:description" content="每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
-SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &gt; 1;
-对hash进行group并筛选count个数大于1的。" />
+<meta property="og:description" content="每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2016/01/repeat-group-having/" />
 <meta property="article:published_time" content="2016-01-25T09:59:07&#43;00:00"/>

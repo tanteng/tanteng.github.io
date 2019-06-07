@@ -150,13 +150,11 @@
         </span>
         <span >
         
-        记一次 git 重置操作的过程：
- 把本地master代码回撤到有问题的提交点之前，git reset -q &#8211;hard commid-id
- 将本地master强行推送到远端，需先在gitlab上设置解除master的强行推送的限制，之后再改回来，git push -f origin master
- 将有问题的分支重新合并到master，在此之前跟master分支进行变基操作，衍合最新代码并解除冲突，再次合并就没有问题了，之后再把其他从master上撤回的提交重新提交合并到master
-  
+        记一次 git 重置操作的过程： 把本地master代码回撤到有问题的提交点之前，git reset -q &#8211;hard commid-id 将本地master强行推送到远端，需先在gitlab上
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/git-reset-commit-id/">➦</a>
         
         </div>
         

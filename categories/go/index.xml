@@ -230,8 +230,7 @@ return
       <pubDate>Tue, 20 Jun 2017 06:41:58 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/06/golang-month-iteration/</guid>
-      <description>Golang 遍历一个月每天写法：
-// CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &amp;lt;= t.Day(); day++ { date := time.Now().Format(&amp;ldquo;200601&amp;rdquo;) + fmt.Sprintf(&amp;ldquo;%02d&amp;rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online&amp;rdquo;, &amp;ldquo;db&amp;rdquo;), date) template := utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online_template&amp;rdquo;, &amp;ldquo;db&amp;rdquo;) sql := fmt.Sprintf(&amp;ldquo;CREATE TABLE IF NOT EXISTS %s LIKE %s&amp;rdquo;, tableName, template) fmt.Println(sql) utils.Query(sql, &amp;ldquo;sns_online_fish&amp;rdquo;) } }</description>
+      <description>Golang 遍历一个月每天写法： // CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &amp;lt;= t.Day(); day++ { date := time.Now().Format(&amp;ldquo;200601&amp;rdquo;) + fmt.Sprintf(&amp;ldquo;%02d&amp;rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online&amp;rdquo;, &amp;ldquo;db&amp;rdquo;), date) template := utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online_template&amp;rdquo;, &amp;ldquo;db&amp;rdquo;) sql :=</description>
     </item>
     
     <item>
@@ -284,9 +283,7 @@ return
       <pubDate>Fri, 26 May 2017 03:17:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/trie-intro/</guid>
-      <description>使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。
-这篇文章介绍了 Trie 树结构：
-http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html</description>
+      <description>使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。 这篇</description>
     </item>
     
     <item>
@@ -316,13 +313,7 @@ http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html</descriptio
       <pubDate>Sat, 20 May 2017 05:42:54 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/golang-byte-slice/</guid>
-      <description>golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。
-func main() { test := []byte(&amp;ldquo;abcd中文&amp;rdquo;) fmt.Println(test)
-test2 := []byte{1, 3, 4, 56} fmt.Println(test2)  }
-输出结果：
-$ go run test.go
-[97 98 99 100 228 184 173 230 150 135]
-[1 3 4 56]</description>
+      <description>golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。 func main() { test := []byte(&amp;ldquo;a</description>
     </item>
     
     <item>

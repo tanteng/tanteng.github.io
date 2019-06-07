@@ -39,8 +39,7 @@
       <pubDate>Sat, 12 Dec 2015 04:08:44 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/12/python-best-practice/</guid>
-      <description>Python最佳实践的一些小技巧
-链接：http://python.jobbole.com/83552/</description>
+      <description>Python最佳实践的一些小技巧 链接：http://python.jobbole.com/83552/</description>
     </item>
     
     <item>
@@ -254,8 +253,7 @@ def hello_world():
       <pubDate>Tue, 17 Nov 2015 02:05:28 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/11/python-ebook/</guid>
-      <description>看云上几本学python的免费电子书：
-链接：http://www.kancloud.cn/tag/Python</description>
+      <description>看云上几本学python的免费电子书： 链接：http://www.kancloud.cn/tag/Python</description>
     </item>
     
     <item>
@@ -473,12 +471,7 @@ print(q(100))&lt;/code&gt;&lt;/p&gt;
       <pubDate>Fri, 10 Jul 2015 09:47:34 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/07/python-mongodb-save-file/</guid>
-      <description>MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的gridfs方法操作文档。以下示例是把MongoDB上GridFS存的excel文档保存到本地。
-from pymongo import MongoClient import gridfs
-client = MongoClient(&amp;lsquo;mongodb://username:pwd@192.168.1.22:27017/send_excel&amp;rsquo;) db = client.js_send_excel fs = gridfs.GridFS(db) files = fs.find()
-print(&amp;lsquo;总数：&amp;rsquo;, files.count())
-for ffle in files: if ffle.filename.find(&amp;lsquo;.xls&amp;rsquo;) &amp;gt; 0: with open(ffle.filename, &amp;lsquo;wb&amp;rsquo;) as f1: f1.write(ffle.read())
-&amp;nbsp;</description>
+      <description>MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的grid</description>
     </item>
     
     <item>
@@ -498,12 +491,7 @@ for ffle in files: if ffle.filename.find(&amp;lsquo;.xls&amp;rsquo;) &amp;gt; 0:
       <pubDate>Tue, 07 Jul 2015 10:39:45 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/07/pymongo-cllient/</guid>
-      <description>Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库，带用户名和密码：
-from pymongo import MongoClient import datetime
-client = MongoClient(&amp;lsquo;mongodb://tanteng:123456@localhost:27017/&amp;lsquo;) db = client.js_send_excel
-post = {&amp;ldquo;author&amp;rdquo;: &amp;ldquo;Xiaofeng&amp;rdquo;, &amp;ldquo;text&amp;rdquo;: &amp;ldquo;My first blog post!&amp;rdquo;, &amp;ldquo;tags&amp;rdquo;: [&amp;ldquo;mongodb&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;pymongo&amp;rdquo;],}
-posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
-请参加pymongo官方文档获取更多Python操作MongoDB的方法。</description>
+      <description>Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库</description>
     </item>
     
     <item>
@@ -532,8 +520,7 @@ posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
       <pubDate>Fri, 15 May 2015 16:07:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/django-querysets/</guid>
-      <description>这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子：
-http://www.oschina.net/translate/django-querysets</description>
+      <description>这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子： http://www.oschina.net/translate/django-querysets</description>
     </item>
     
     <item>
@@ -597,8 +584,7 @@ with open(&amp;lsquo;excel.xlsx&amp;rsquo;, &amp;lsquo;wb&amp;rsquo;) as f:
       <pubDate>Mon, 11 May 2015 13:29:48 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/beautiful-soul-4-for-python3/</guid>
-      <description>beautiful soul 4 for Python3中文文档：
-http://beautifulsoup.readthedocs.org/en/latest/#</description>
+      <description>beautiful soul 4 for Python3中文文档： http://beautifulsoup.readthedocs.org/en/latest/#</description>
     </item>
     
     <item>
@@ -607,7 +593,7 @@ http://beautifulsoup.readthedocs.org/en/latest/#</description>
       <pubDate>Mon, 11 May 2015 09:14:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/python-filename/</guid>
-      <description>今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&amp;#8217;module&amp;#8217; object has no attribute &amp;#8216;compile&amp;#8217;。但是在命令行测试是可以的，问题在于我的文件名re.py命名不规范，和Python自带的re模块重名了，这是不允许的。</description>
+      <description>今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&amp;#8217;modul</description>
     </item>
     
     <item>
@@ -728,8 +714,7 @@ print(&amp;ldquo;In global scope:&amp;ldquo;, spam)&lt;/code&gt;&lt;/p&gt;</desc
       <pubDate>Tue, 05 May 2015 06:13:07 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/python-guide-chinese/</guid>
-      <description>python中文基础教程：
-http://www.pythondoc.com/pythontutorial3/index.html</description>
+      <description>python中文基础教程： http://www.pythondoc.com/pythontutorial3/index.html</description>
     </item>
     
     <item>

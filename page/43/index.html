@@ -150,13 +150,11 @@
         </span>
         <span >
         
-        PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（_）都可以用作目录分隔符，在linux上路径的分隔符是&#8221;/&#8221;。
-那么在PHP代码中什么时候要用DIRECTORY_SEPARATOR代表反斜杠呢？
-比如这句话：
-require_once dirname(FILE).DIRECTORY_SEPARATOR . &lsquo;./../../../wp-config.php&rsquo;; require_once dirname(FILE).DIRECTORY_SEPARATOR.&lsquo;inc/options.php&rsquo;; 
-这两句PHP代码，为什么前面部分用DIRECTORY_SEPARATOR，而后面部分却用“/”呢？
+        PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2014/11/directory_separator/">➦</a>
         
         </div>
         
@@ -347,11 +345,11 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
         </span>
         <span >
         
-        PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。
-$file = fopen(FILE,&lsquo;r&rsquo;); $file_data = fread( $file, filesize(FILE) ); fclose($file); var_dump($file_data);
-程序示例是读取自身，并输出全部。
+        PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。 $file = fopen(FILE,&lsquo;r&rsquo;); $file_data
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2014/03/php-fopen-filesize-fread-fclose/">➦</a>
         
         </div>
         

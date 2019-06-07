@@ -22,20 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python保存MongoDB上的文件到本地"/>
-<meta name="twitter:description" content="MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的gridfs方法操作文档。以下示例是把MongoDB上GridFS存的excel文档保存到本地。
-from pymongo import MongoClient import gridfs
-client = MongoClient(&lsquo;mongodb://username:pwd@192.168.1.22:27017/send_excel&rsquo;) db = client.js_send_excel fs = gridfs.GridFS(db) files = fs.find()
-print(&lsquo;总数：&rsquo;, files.count())
-for ffle in files: if ffle.filename.find(&lsquo;.xls&rsquo;) &gt; 0: with open(ffle.filename, &lsquo;wb&rsquo;) as f1: f1.write(ffle.read())
-&nbsp;"/>
+<meta name="twitter:description" content="MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的grid"/>
 
 <meta property="og:title" content="Python保存MongoDB上的文件到本地" />
-<meta property="og:description" content="MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的gridfs方法操作文档。以下示例是把MongoDB上GridFS存的excel文档保存到本地。
-from pymongo import MongoClient import gridfs
-client = MongoClient(&lsquo;mongodb://username:pwd@192.168.1.22:27017/send_excel&rsquo;) db = client.js_send_excel fs = gridfs.GridFS(db) files = fs.find()
-print(&lsquo;总数：&rsquo;, files.count())
-for ffle in files: if ffle.filename.find(&lsquo;.xls&rsquo;) &gt; 0: with open(ffle.filename, &lsquo;wb&rsquo;) as f1: f1.write(ffle.read())
-&nbsp;" />
+<meta property="og:description" content="MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的grid" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2015/07/python-mongodb-save-file/" />
 <meta property="article:published_time" content="2015-07-10T09:47:34&#43;00:00"/>

@@ -41,8 +41,7 @@
       <pubDate>Wed, 25 Oct 2017 14:28:25 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/10/redis-ip-limit/</guid>
-      <description>链接：
-https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
+      <description>链接： https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
     </item>
     
     <item>
@@ -68,13 +67,7 @@ https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
       <pubDate>Fri, 09 Jun 2017 09:52:37 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/06/alter-table-utf8mb4/</guid>
-      <description>创建 utf8mb4 数据库：
-create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-修改数据库、表、字段为 utf8mb4 编码：
-# For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-(Don’t blindly copy-paste this! The exact statement depends on the column type, maximum length, and other properties.</description>
+      <description>创建 utf8mb4 数据库： create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 修改数据库、表、字段为 utf8mb4 编码： # For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4</description>
     </item>
     
     <item>
@@ -311,8 +304,7 @@ For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(1
       <pubDate>Mon, 28 Mar 2016 04:06:03 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/centos7-mariadb-break/</guid>
-      <description>CentOS 7.0 x64下MariaDB异常结束的解决方法
-http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
+      <description>CentOS 7.0 x64下MariaDB异常结束的解决方法 http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
     </item>
     
     <item>
@@ -395,10 +387,7 @@ http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
       <pubDate>Mon, 08 Feb 2016 05:30:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/02/centos-7-yum-install-mysql/</guid>
-      <description>在CentOS 7中使用yum list mysql*，没有可以安装的MySQL版本，CentOS 7中默认使用的数据库是MariaDB，关于MariaDB，它是MySQL的一个分支，MySQL被Oracle收购有闭源的风险，因此有了一个MariaDB分支，兼容MySQL，下面是CentOS 7下通过yum安装MySQL的方式。
-链接地址：
-http://sharadchhetri.com/2014/07/31/how-to-install-mysql-server-5-6-on-centos-7-rhel-7/
-也可以使用MariaDB替代MySQL，请参阅：在CentOS 7中安装MariaDB数据库替代MySQL</description>
+      <description>在CentOS 7中使用yum list mysql*，没有可以安装的MySQL版本，CentOS 7中默认使用的数据库是MariaDB，关于MariaD</description>
     </item>
     
     <item>
@@ -418,9 +407,7 @@ http://sharadchhetri.com/2014/07/31/how-to-install-mysql-server-5-6-on-centos-7-
       <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/repeat-group-having/</guid>
-      <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
-SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &amp;gt; 1;
-对hash进行group并筛选count个数大于1的。</description>
+      <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
     </item>
     
     <item>
@@ -429,15 +416,7 @@ SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total
       <pubDate>Tue, 19 Jan 2016 15:50:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/mysql-mysqldump-usage/</guid>
-      <description>命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名;
-1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpasswd,生成的脚本名為db.sql）
-mysqldump -uroot -pdbpasswd -d dbname &amp;gt;db.sql;
-2、导出數據库為dbname某张表(test)结构
-mysqldump -uroot -pdbpasswd -d dbname test&amp;gt;db.sql;
-3、导出數據库為dbname所有表结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname &amp;gt;db.sql;
-4、导出數據库為dbname某张表(test)结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname test&amp;gt;db.sql;</description>
+      <description>命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名; 1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpas</description>
     </item>
     
     <item>
@@ -490,7 +469,7 @@ mysqldump -uroot -pdbpasswd dbname test&amp;gt;db.sql;</description>
       <pubDate>Thu, 11 Jun 2015 08:39:41 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/mysql-zerofill/</guid>
-      <description>zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，显示也是55555，插入负数显示为0000，因为mysql自动增加UNSIGNED属性 UNSIGNED不能为负数,当你插入负数时就显示0。 pay_type tinyint(4) unsigned zerofill NOT NULL DEFAULT &amp;lsquo;0000&amp;rsquo; COMMENT &amp;lsquo;支付方式:1卷皮系统 2支付宝 3银联 4财付通 ……&amp;rsquo;,</description>
+      <description>zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，</description>
     </item>
     
     <item>

@@ -17,16 +17,7 @@
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/02/reding-list-28/</guid>
-      <description>1.golang select-case 实现机制
-2.如何优雅的控制 goroutine 的数量
-3.LIMIT THE NUMBER OF GOROUTINES RUNNING AT THE SAME TIME
-https://blog.antoine-augusti.fr/2015/12/limit-the-number-of-goroutines-running-at-the-same-time/
-4.Hive 之 COUNT DISTINCT 优化
-http://datavalley.github.io/2016/02/15/Hive%E4%B9%8BCOUNT-DISTINCT%E4%BC%98%E5%8C%96
-5.理解 LINUX 的 MEMORY OVERCOMMIT
-http://linuxperf.com/?p=102
-6.mysql: show processlist 详解
-https://zhuanlan.zhihu.com/p/30743094﻿</description>
+      <description>1.golang select-case 实现机制 https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-se</description>
     </item>
     
     <item>
@@ -35,16 +26,7 @@ https://zhuanlan.zhihu.com/p/30743094﻿</description>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/01/reding-list-27/</guid>
-      <description>1.TDSQL 特有的 MySQL 内核功能介绍
-https://zhuanlan.zhihu.com/p/50774800
-2.MySQL 主键设计
-http://seanlook.com/2016/05/13/mysql-innodb-primary_key/
-3.Logstash 最佳实践
-https://doc.yonyoucloud.com/doc/logstash-best-practice-cn
-4.消息队列技术很好的总结
-https://www.jianshu.com/p/689ce4205021
-5.剖析Laravel队列系统&amp;#8211;Worker
-https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
+      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统&amp;#8211;Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
@@ -53,11 +35,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/01/reding-list-26/</guid>
-      <description>go 指针和内存分配详解   https://segmentfault.com/a/1190000017473672
- 初探 Go 的编译命令执行过程   https://halfrost.com/go_command/
- [译]代码审查之最佳实践   https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ
- WEB内容安全政策（CSP）   https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn
- 如何学习分布式系统   https://www.cnblogs.com/xybaby/p/7787034.html</description>
+      <description>go 指针和内存分配详解 https://segmentfault.com/a/1190000017473672 初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ [译]代码审查之最佳实践 https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ WEB内容安全政策（CSP） https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn 如何学习分布式系统 https://www.cnblogs.com/xybaby/p/7787034.html</description>
     </item>
     
     <item>
@@ -66,11 +44,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/12/reding-list-25/</guid>
-      <description>MySQL的异步复制和半同步复制   https://www.jianshu.com/p/d877cbe9f0f0
- Go调度器原理浅析   https://www.cnblogs.com/ralap7/p/9190416.html
- golang后台服务设计精要   http://litang.me/post/golang-server-design/
- Go’s http package by example（总结很好）   https://cryptic.io/go-http/
- 函数式编程初探   http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</description>
+      <description>MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html golang后台服务设计精要 http://litang.me/post/golang-server-design/ Go’s http package by example（总结很好） https://cryptic.io/go-http/ 函数式编程初探</description>
     </item>
     
     <item>
@@ -79,11 +53,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/11/reding-list-24/</guid>
-      <description>腾讯云点播视频加密方案   https://cloud.tencent.com/document/product/266/9638
- HTTP Live Streaming (HLS) &amp;#8211; 概念   https://www.jianshu.com/p/2ce402a485ca
- RTMP HLS HTTP 直播协议一次看个够   https://www.jianshu.com/p/4c89b2c83e59
- Golang并发原理及GPM调度策略（一）   http://www.cnblogs.com/mokafamily/p/9975980.html
- Go基础系列：互斥锁Mutex和读写锁RWMutex用法详述   http://www.cnblogs.com/f-ck-need-u/p/9998729.html</description>
+      <description>腾讯云点播视频加密方案 https://cloud.tencent.com/document/product/266/9638 HTTP Live Streaming (HLS) &amp;#8211; 概念 https://www.jianshu.com/p/2ce402a485ca RTMP HLS HTTP 直播协议一次看个够 https://www.jianshu.com/p/4c89b2c83e59 Golang并发原理及GPM调度策略（一） http://www.cnblogs.com/mokafamily/p/9975980.html Go基础系列：互斥锁Mutex</description>
     </item>
     
     <item>
@@ -92,11 +62,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/11/reding-list-23/</guid>
-      <description>Writing Protobuf Services in PHP   https://mattallan.org/posts/protobuf-php-services/
- Practical Persistence in Go: Organising Database Access   https://www.alexedwards.net/blog/organising-database-access
- CORS 跨域 Cookie 的设置与获取   https://www.jianshu.com/p/13d53acc124f
- Go语言字符串高效拼接(一)   https://juejin.im/post/5be23a01518825697344f05e
- govendor 使用   https://www.orztu.com/post/using-govendor/</description>
+      <description>Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e govendor 使用 https://www.orztu.com/post/using-govendor/</description>
     </item>
     
     <item>
@@ -105,15 +71,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/mysql-select-null/</guid>
-      <description>假设 code 字段是可为 NULL
- &amp;hellip; AND code NOT IN () &amp;hellip; &amp;hellip; AND (code IS NULL or code NOT IN()) &amp;hellip; 
-是不一样的，第一个查不出 code IS NULL 的数据。
- https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null
-SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything,
-including itself (ie: NULL = NULL is always false).
-See Rule 3 https://en.wikipedia.org/wiki/Codd%27s_12_rules
- 几个不用 NULL 的理由：
-1.NULL 和 “” 不相同，比如查询 code !</description>
+      <description>假设 code 字段是可为 NULL &amp;hellip; AND code NOT IN () &amp;hellip; &amp;hellip; AND (code IS NULL or code NOT IN()) &amp;hellip; 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL =</description>
     </item>
     
     <item>
@@ -122,11 +80,7 @@ See Rule 3 https://en.wikipedia.org/wiki/Codd%27s_12_rules
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/reding-list-22/</guid>
-      <description>Practical Go: Real world advice for writing maintainable Go programs   https://dave.cheney.net/practical-go/presentations/qcon-china.html
- What happened to MySQL 6 &amp;amp; 7?   https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7
- 工厂模式——看这一篇就够了   https://juejin.im/entry/58f5e080b123db2fa2b3c4c6
- What is a Laravel Interface?   https://vegibit.com/what-is-a-laravel-interface/
- 理解 UUID   http://wsfdl.com/algorithm/2013/09/05/理解UUID.html</description>
+      <description>Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 理解 UUID http://wsfdl.com/algorithm/2</description>
     </item>
     
     <item>
@@ -135,12 +89,7 @@ See Rule 3 https://en.wikipedia.org/wiki/Codd%27s_12_rules
       <pubDate>Tue, 23 Oct 2018 09:28:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/reding-list-21/</guid>
-      <description>Laravel 中的 Pivot 表与多对多关系   https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html
- Laravel 的 tap 函数用法   https://laravel-china.org/articles/3893/laravel-tap-usage
- Laravel 5.5 模型关联   https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333
- Laravel Collection “tap” Method   https://laravel-news.com/collection-tap
- goroutine同步方法总结   https://yq.aliyun.com/articles/649314
- 面向对象设计之里氏替换原则(LSP)   https://juejin.im/post/5a31ecedf265da43346fed08</description>
+      <description>Laravel 中的 Pivot 表与多对多关系 https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html Laravel 的 tap 函数用法 https://laravel-china.org/articles/3893/laravel-tap-usage Laravel 5.5 模型关联 https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333 Laravel Collection “tap” Method https://laravel-news.com/collection-tap goroutine同步方法总结 https://yq.aliyun.com/articles/649314 面向对象设计之里氏替换原则(LSP)</description>
     </item>
     
     <item>
@@ -149,8 +98,7 @@ See Rule 3 https://en.wikipedia.org/wiki/Codd%27s_12_rules
       <pubDate>Fri, 19 Oct 2018 06:15:51 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/http-204/</guid>
-      <description>HTTP协议中 204 No Content 成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETag。
-使用惯例是，在 PUT 请求中进行资源更新，但是不需要改变当前展示给用户的页面，那么返回 204 No Content。如果新创建了资源，那么返回 201 Created 。如果页面需要更新以反映更新后的资源，那么需要返回 200 。</description>
+      <description>HTTP协议中 204 No Content 成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETa</description>
     </item>
     
     <item>
@@ -1029,10 +977,7 @@ stdout_logfile=/var/www/xxx.cn/worker.log
       <pubDate>Sun, 17 Dec 2017 12:20:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/12/bash-sh/</guid>
-      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？
-sh 和 bash 都是 Linux Shell 命令行语言，其中 sh 遵循 POSIX 标准。什么是 POSIX 标准？
-Stack Overflow 上一篇答案讲的很详细，英文的慢慢看：
-https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash</description>
+      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？ sh 和 bash 都是 Linux Shell 命令行语言，</description>
     </item>
     
     <item>
@@ -1252,8 +1197,7 @@ return err
       <pubDate>Wed, 25 Oct 2017 14:28:25 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/10/redis-ip-limit/</guid>
-      <description>链接：
-https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
+      <description>链接： https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
     </item>
     
     <item>
@@ -1554,8 +1498,7 @@ return
       <pubDate>Tue, 20 Jun 2017 06:41:58 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/06/golang-month-iteration/</guid>
-      <description>Golang 遍历一个月每天写法：
-// CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &amp;lt;= t.Day(); day++ { date := time.Now().Format(&amp;ldquo;200601&amp;rdquo;) + fmt.Sprintf(&amp;ldquo;%02d&amp;rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online&amp;rdquo;, &amp;ldquo;db&amp;rdquo;), date) template := utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online_template&amp;rdquo;, &amp;ldquo;db&amp;rdquo;) sql := fmt.Sprintf(&amp;ldquo;CREATE TABLE IF NOT EXISTS %s LIKE %s&amp;rdquo;, tableName, template) fmt.Println(sql) utils.Query(sql, &amp;ldquo;sns_online_fish&amp;rdquo;) } }</description>
+      <description>Golang 遍历一个月每天写法： // CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &amp;lt;= t.Day(); day++ { date := time.Now().Format(&amp;ldquo;200601&amp;rdquo;) + fmt.Sprintf(&amp;ldquo;%02d&amp;rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online&amp;rdquo;, &amp;ldquo;db&amp;rdquo;), date) template := utils.LoadIniConfig(&amp;ldquo;online&amp;rdquo;, &amp;ldquo;online_template&amp;rdquo;, &amp;ldquo;db&amp;rdquo;) sql :=</description>
     </item>
     
     <item>
@@ -1608,13 +1551,7 @@ return
       <pubDate>Fri, 09 Jun 2017 09:52:37 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/06/alter-table-utf8mb4/</guid>
-      <description>创建 utf8mb4 数据库：
-create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-修改数据库、表、字段为 utf8mb4 编码：
-# For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-(Don’t blindly copy-paste this! The exact statement depends on the column type, maximum length, and other properties.</description>
+      <description>创建 utf8mb4 数据库： create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 修改数据库、表、字段为 utf8mb4 编码： # For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4</description>
     </item>
     
     <item>
@@ -1632,9 +1569,7 @@ For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(1
       <pubDate>Fri, 26 May 2017 03:17:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/trie-intro/</guid>
-      <description>使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。
-这篇文章介绍了 Trie 树结构：
-http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html</description>
+      <description>使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。 这篇</description>
     </item>
     
     <item>
@@ -1643,10 +1578,7 @@ http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html</descriptio
       <pubDate>Thu, 25 May 2017 15:30:33 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/cgi-fastcgi-php-fpm/</guid>
-      <description>几个链接：
-https://www.zhihu.com/question/30672017
-http://www.lxlxw.me/?p=216
-http://www.tuicool.com/articles/Ir2AreE</description>
+      <description>几个链接： https://www.zhihu.com/question/30672017 http://www.lxlxw.me/?p=216 http://www.tuicool.com/articles/Ir2AreE</description>
     </item>
     
     <item>
@@ -1742,13 +1674,7 @@ http://www.tuicool.com/articles/Ir2AreE</description>
       <pubDate>Sat, 20 May 2017 05:42:54 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/golang-byte-slice/</guid>
-      <description>golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。
-func main() { test := []byte(&amp;ldquo;abcd中文&amp;rdquo;) fmt.Println(test)
-test2 := []byte{1, 3, 4, 56} fmt.Println(test2)  }
-输出结果：
-$ go run test.go
-[97 98 99 100 228 184 173 230 150 135]
-[1 3 4 56]</description>
+      <description>golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。 func main() { test := []byte(&amp;ldquo;a</description>
     </item>
     
     <item>
@@ -1772,8 +1698,7 @@ $ go run test.go
       <pubDate>Thu, 18 May 2017 08:23:10 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/linux-clear-cache-buffer/</guid>
-      <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间
-链接：https://linux.cn/article-5627-1.html</description>
+      <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html</description>
     </item>
     
     <item>
@@ -1800,10 +1725,7 @@ fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
       <pubDate>Tue, 02 May 2017 03:05:16 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/shell-check-url/</guid>
-      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。
-示例如下：
-#!/bin/bash
-fileurl=&amp;lsquo;./check_url.txt&amp;rsquo; DATE_N=date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方式 ；-w 定义显示输出格式；&amp;rdquo;%{http_code}&amp;rdquo; 在最后被检索的 HTTP(S) 页中被找到的数字的代码 HTTP_CODE=curl -o /dev/null -s --head -w &amp;quot;%{http_code}&amp;quot; &amp;quot;${chkurl}&amp;quot; if [ ${HTTP_CODE} -ne 200 ] then if [ ${HTTP_CODE} == 404 ] then echo -e &amp;ldquo;[${DATE_N}]error-${HTTP_CODE}:&amp;rdquo; $chkurl &amp;gt;&amp;gt; check-result.txt sh /usr/local/bin/restart_php_mysql.sh &amp;gt;&amp;gt; check-result.txt fi echo -e &amp;ldquo;[${DATE_N}]error-${HTTP_CODE}:&amp;rdquo; $chkurl &amp;gt;&amp;gt; check-result.txt else echo -e [${DATE_N}]${HTTP_CODE}: $chkurl &amp;gt;&amp;gt; check-result.</description>
+      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl=&amp;lsquo;./check_url.txt&amp;rsquo; DATE_N=date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方</description>
     </item>
     
     <item>
@@ -1964,10 +1886,7 @@ func (m *Comments) TableName() string {
       <pubDate>Thu, 16 Mar 2017 14:03:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/03/linux-nginx-ip/</guid>
-      <description>统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。
-Linux 命令如下：
-cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k1nr | head -10
-效果如图所示：</description>
+      <description>统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。 Linux 命令如下： cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k1nr | head -10 效果如图所示：</description>
     </item>
     
     <item>
@@ -1976,9 +1895,7 @@ cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k
       <pubDate>Wed, 01 Mar 2017 08:59:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/03/php-float-rand/</guid>
-      <description>PHP 浮点数范围随机代码：
-private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals); return mt_rand($min * $scale, $max * $scale) / $scale; }
-&amp;nbsp;</description>
+      <description>PHP 浮点数范围随机代码： private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals); return mt_rand($min * $scale, $max * $scale) / $scale; } &amp;nbsp;</description>
     </item>
     
     <item>
@@ -2095,9 +2012,7 @@ Connection: Upgrade&lt;/code&gt;&lt;/p&gt;
       <pubDate>Mon, 20 Feb 2017 08:39:36 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/02/create-laravel-5-pakage/</guid>
-      <description>本文介绍了创建 Laravel 5 扩展包的步骤。
-链接：
-http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
+      <description>本文介绍了创建 Laravel 5 扩展包的步骤。 链接： http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
     </item>
     
     <item>
@@ -2115,11 +2030,7 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
       <pubDate>Mon, 13 Feb 2017 11:11:15 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/02/git-reset-commit-id/</guid>
-      <description>记一次 git 重置操作的过程：
- 把本地master代码回撤到有问题的提交点之前，git reset -q &amp;#8211;hard commid-id
- 将本地master强行推送到远端，需先在gitlab上设置解除master的强行推送的限制，之后再改回来，git push -f origin master
- 将有问题的分支重新合并到master，在此之前跟master分支进行变基操作，衍合最新代码并解除冲突，再次合并就没有问题了，之后再把其他从master上撤回的提交重新提交合并到master
-  </description>
+      <description>记一次 git 重置操作的过程： 把本地master代码回撤到有问题的提交点之前，git reset -q &amp;#8211;hard commid-id 将本地master强行推送到远端，需先在gitlab上</description>
     </item>
     
     <item>
@@ -2324,8 +2235,7 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
       <pubDate>Fri, 02 Dec 2016 06:57:53 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/12/road-to-myself/</guid>
-      <description>看到一句话，很有道理：&amp;#8221;每个人的生活都是一条通向自身的道路。每个人的真正职责只有一个：找到自我。” ​​​​
-出处：每个人的生命都是通向自我的征途，是对一条道路的尝试，是一条小径的悄然召唤。觉醒的人只有一项义务：找到自我，固守自我，沿着自己的路向前走，不管它通向哪里。——黑塞</description>
+      <description>看到一句话，很有道理：&amp;#8221;每个人的生活都是一条通向自身的道路。每个人的真正职责只有一个：找到自我。” ​​​​ 出处：每个人的生命都是</description>
     </item>
     
     <item>
@@ -2334,10 +2244,7 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
       <pubDate>Wed, 30 Nov 2016 17:16:59 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/12/linux-cmd/</guid>
-      <description>在 Linux 中经常使用到一个命令，如 make &amp;amp;&amp;amp; make install，这里也可以使用 make ; make install，那么在 Linux 中执行命令 ; 和 &amp;amp;&amp;amp; 有何区别？
-&amp;amp;&amp;amp; 表示第一个命令执行成功才能执行后面的命令；
-; 表示无论第一个命令执行是否成功都执行后面的命令；
-还有 ||，cmd a || cmd b，表示前者执行失败了，再执行后者；</description>
+      <description>在 Linux 中经常使用到一个命令，如 make &amp;amp;&amp;amp; make install，这里也可以使用 make ; make install，那么在 Linux 中执行命令 ; 和 &amp;amp;&amp;amp; 有何区别？ &amp;amp;&amp;amp; 表示第一个命令执行</description>
     </item>
     
     <item>
@@ -2346,8 +2253,7 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
       <pubDate>Sun, 20 Nov 2016 06:58:23 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/11/grep-tail-last-line/</guid>
-      <description>grep 查找匹配的最后一行，如：
-grep &amp;ldquo;哈哈&amp;rdquo; aa.log | tail -1</description>
+      <description>grep 查找匹配的最后一行，如： grep &amp;ldquo;哈哈&amp;rdquo; aa.log | tail -1</description>
     </item>
     
     <item>
@@ -2786,7 +2692,7 @@ $.each(result, function() {
       <pubDate>Tue, 05 Jul 2016 06:14:18 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/07/gulp-watch/</guid>
-      <description>在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，如图所示。</description>
+      <description>在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，</description>
     </item>
     
     <item>
@@ -2795,9 +2701,7 @@ $.each(result, function() {
       <pubDate>Thu, 30 Jun 2016 03:29:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/06/php-curl-post-send-file/</guid>
-      <description>记录一个 curl 示例，代码如下：
-function curl($file, $targetUrl) { if (function_exists(&amp;lsquo;curl_file_create&amp;rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &amp;lsquo;@&amp;rsquo; . realpath($file); } $post = array(&amp;lsquo;filename&amp;rsquo; =&amp;gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; }
-检测 curl_file_create 函数是为了兼容 PHP 以前版本。CURLOPT_RETURNTRANSFER 参数表示 curl_exec 返回接口原始内容。CURLOPT_POSTFIELDS 是 post 的内容。</description>
+      <description>记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&amp;lsquo;curl_file_create&amp;rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &amp;lsquo;@&amp;rsquo; . realpath($file); } $post = array(&amp;lsquo;filename&amp;rsquo; =&amp;gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为</description>
     </item>
     
     <item>
@@ -3227,8 +3131,7 @@ default:
       <pubDate>Thu, 31 Mar 2016 02:50:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/laravel-redirect/</guid>
-      <description>这是一个链接，关于Laravel跳转方法redirect()的使用。
-http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
+      <description>这是一个链接，关于Laravel跳转方法redirect()的使用。 http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
     </item>
     
     <item>
@@ -3261,8 +3164,7 @@ http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
       <pubDate>Mon, 28 Mar 2016 04:06:03 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/centos7-mariadb-break/</guid>
-      <description>CentOS 7.0 x64下MariaDB异常结束的解决方法
-http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
+      <description>CentOS 7.0 x64下MariaDB异常结束的解决方法 http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
     </item>
     
     <item>
@@ -3425,8 +3327,7 @@ http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
       <pubDate>Wed, 09 Mar 2016 02:17:10 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/restful/</guid>
-      <description>什么是RESTful架构？如何理解RESTFul？了解RESTFul的URL表现形式。
-链接：http://www.ruanyifeng.com/blog/2011/09/restful</description>
+      <description>什么是RESTful架构？如何理解RESTFul？了解RESTFul的URL表现形式。 链接：http://www.ruanyifeng.co</description>
     </item>
     
     <item>
@@ -3518,12 +3419,7 @@ protected function execClosure($name, Closure $closure)
       <pubDate>Thu, 18 Feb 2016 09:03:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/02/git-rm-cached-diff/</guid>
-      <description>1.rm
-删除文件，和git没有任何关系
-2.git rm –cached
-删除git追踪文件，但是不删除文件
-3.git rm
-删除git追踪文件，同时删除文件</description>
+      <description>1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件</description>
     </item>
     
     <item>
@@ -3543,10 +3439,7 @@ protected function execClosure($name, Closure $closure)
       <pubDate>Mon, 08 Feb 2016 05:30:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/02/centos-7-yum-install-mysql/</guid>
-      <description>在CentOS 7中使用yum list mysql*，没有可以安装的MySQL版本，CentOS 7中默认使用的数据库是MariaDB，关于MariaDB，它是MySQL的一个分支，MySQL被Oracle收购有闭源的风险，因此有了一个MariaDB分支，兼容MySQL，下面是CentOS 7下通过yum安装MySQL的方式。
-链接地址：
-http://sharadchhetri.com/2014/07/31/how-to-install-mysql-server-5-6-on-centos-7-rhel-7/
-也可以使用MariaDB替代MySQL，请参阅：在CentOS 7中安装MariaDB数据库替代MySQL</description>
+      <description>在CentOS 7中使用yum list mysql*，没有可以安装的MySQL版本，CentOS 7中默认使用的数据库是MariaDB，关于MariaD</description>
     </item>
     
     <item>
@@ -3594,10 +3487,7 @@ http://sharadchhetri.com/2014/07/31/how-to-install-mysql-server-5-6-on-centos-7-
       <pubDate>Thu, 28 Jan 2016 10:47:43 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/php-goto/</guid>
-      <description>PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto display语句时，会跳到定义display的地方开始执行，这是PHP5.3增加的语法，支持PHP7.
-public function index() { if (!I(&amp;lsquo;get.search&amp;rsquo;)) { goto display; }
-//此处省略800字 $this-&amp;amp;gt;assign(&#39;account&#39;, self::$account); $this-&amp;amp;gt;assign(&#39;pay_type&#39;, I(&#39;get.pay_type&#39;)); $this-&amp;amp;gt;assign(&#39;list&#39;, $list); display: $this-&amp;amp;gt;display();  }
-&amp;nbsp;</description>
+      <description>PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto disp</description>
     </item>
     
     <item>
@@ -3661,9 +3551,7 @@ use Lio\Tags\TagRepository;&lt;/p&gt;
       <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/repeat-group-having/</guid>
-      <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
-SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &amp;gt; 1;
-对hash进行group并筛选count个数大于1的。</description>
+      <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
     </item>
     
     <item>
@@ -3672,15 +3560,7 @@ SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total
       <pubDate>Tue, 19 Jan 2016 15:50:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/mysql-mysqldump-usage/</guid>
-      <description>命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名;
-1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpasswd,生成的脚本名為db.sql）
-mysqldump -uroot -pdbpasswd -d dbname &amp;gt;db.sql;
-2、导出數據库為dbname某张表(test)结构
-mysqldump -uroot -pdbpasswd -d dbname test&amp;gt;db.sql;
-3、导出數據库為dbname所有表结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname &amp;gt;db.sql;
-4、导出數據库為dbname某张表(test)结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname test&amp;gt;db.sql;</description>
+      <description>命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名; 1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpas</description>
     </item>
     
     <item>
@@ -3785,8 +3665,7 @@ mysqldump -uroot -pdbpasswd dbname test&amp;gt;db.sql;</description>
       <pubDate>Sat, 12 Dec 2015 04:08:44 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/12/python-best-practice/</guid>
-      <description>Python最佳实践的一些小技巧
-链接：http://python.jobbole.com/83552/</description>
+      <description>Python最佳实践的一些小技巧 链接：http://python.jobbole.com/83552/</description>
     </item>
     
     <item>
@@ -4009,8 +3888,7 @@ def hello_world():
       <pubDate>Tue, 17 Nov 2015 02:05:28 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/11/python-ebook/</guid>
-      <description>看云上几本学python的免费电子书：
-链接：http://www.kancloud.cn/tag/Python</description>
+      <description>看云上几本学python的免费电子书： 链接：http://www.kancloud.cn/tag/Python</description>
     </item>
     
     <item>
@@ -4294,8 +4172,7 @@ public function aa()
       <pubDate>Fri, 16 Oct 2015 15:09:28 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/10/website-client/</guid>
-      <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”成了大型网站必备的标配。
-PC、手机站是独立的两套模板，核心的业务逻辑是一样的，Android和ios手机客户端都是通过api接口调用，其中pad端网站可以是客户端中嵌入一个H5页面。</description>
+      <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”</description>
     </item>
     
     <item>
@@ -4349,8 +4226,7 @@ exit;&lt;/code&gt;&lt;/p&gt;</description>
       <pubDate>Sun, 27 Sep 2015 02:43:46 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/09/program-language-performance/</guid>
-      <description>关于“性能”，Charles 在算法导论课上的观点很好：
-在编程上，性能的重要性是排在用户体验、安全性、可扩展性、稳定性等方面之后，是最不重要的东西，是最底层的东西。但它起的作用和在经济领域中的货币一样，是用来交换这些更重要的东西用的。你可以牺牲三倍的性能，用 Java 代替 C，获取面向对象等特性。或者牺牲五倍的性能上一个 web 框架，换取对需求变化的快速反应能力。或者你可以消耗七倍的性能，换取更好的用户体验。总而言之，它是一种编程领域的货币。</description>
+      <description>关于“性能”，Charles 在算法导论课上的观点很好： 在编程上，性能的重要性是排在用户体验、安全性、可扩展性、稳定性等方面之后，是最不重要的</description>
     </item>
     
     <item>
@@ -4359,9 +4235,7 @@ exit;&lt;/code&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 04 Sep 2015 16:58:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/09/mac-firefox-hostadmin/</guid>
-      <description>在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可：
-sudo chmod og+w /etc/hosts
-chmod修改权限，og+w表示增加写权限。</description>
+      <description>在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可： sudo chmod og+w /etc/hosts chmod修改权限，og</description>
     </item>
     
     <item>
@@ -4491,10 +4365,7 @@ for i in range(10):
       <pubDate>Tue, 11 Aug 2015 08:35:47 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/08/php-closure-demo/</guid>
-      <description>PHP5.3起就支持匿名函数，可以放心在生产环境中使用，对于PHP的很多新特性该用的地方要大胆使用，可以使代码更简洁，功能实现也更加方便。
-以下是PHP匿名函数的一个小的简单实例：
-function func($list,$u_wangwang) { //匿名函数，获取其他行联号 $other_num = function($num){ $num = explode(&amp;lsquo;.&amp;rsquo;, $num); return $num[0]; }; $res = $other_num($v[&amp;lsquo;sb_other_num&amp;rsquo;]); return $res; }
-首先在方法里定义了一个匿名函数，有一个参数，然后调用的时候进行传参。</description>
+      <description>PHP5.3起就支持匿名函数，可以放心在生产环境中使用，对于PHP的很多新特性该用的地方要大胆使用，可以使代码更简洁，功能实现也更加方便。 以</description>
     </item>
     
     <item>
@@ -4930,12 +4801,7 @@ print(q(100))&lt;/code&gt;&lt;/p&gt;
       <pubDate>Fri, 10 Jul 2015 09:47:34 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/07/python-mongodb-save-file/</guid>
-      <description>MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的gridfs方法操作文档。以下示例是把MongoDB上GridFS存的excel文档保存到本地。
-from pymongo import MongoClient import gridfs
-client = MongoClient(&amp;lsquo;mongodb://username:pwd@192.168.1.22:27017/send_excel&amp;rsquo;) db = client.js_send_excel fs = gridfs.GridFS(db) files = fs.find()
-print(&amp;lsquo;总数：&amp;rsquo;, files.count())
-for ffle in files: if ffle.filename.find(&amp;lsquo;.xls&amp;rsquo;) &amp;gt; 0: with open(ffle.filename, &amp;lsquo;wb&amp;rsquo;) as f1: f1.write(ffle.read())
-&amp;nbsp;</description>
+      <description>MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的grid</description>
     </item>
     
     <item>
@@ -4999,12 +4865,7 @@ for ffle in files: if ffle.filename.find(&amp;lsquo;.xls&amp;rsquo;) &amp;gt; 0:
       <pubDate>Tue, 07 Jul 2015 10:39:45 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/07/pymongo-cllient/</guid>
-      <description>Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库，带用户名和密码：
-from pymongo import MongoClient import datetime
-client = MongoClient(&amp;lsquo;mongodb://tanteng:123456@localhost:27017/&amp;lsquo;) db = client.js_send_excel
-post = {&amp;ldquo;author&amp;rdquo;: &amp;ldquo;Xiaofeng&amp;rdquo;, &amp;ldquo;text&amp;rdquo;: &amp;ldquo;My first blog post!&amp;rdquo;, &amp;ldquo;tags&amp;rdquo;: [&amp;ldquo;mongodb&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;pymongo&amp;rdquo;],}
-posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
-请参加pymongo官方文档获取更多Python操作MongoDB的方法。</description>
+      <description>Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库</description>
     </item>
     
     <item>
@@ -5013,9 +4874,7 @@ posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
       <pubDate>Mon, 06 Jul 2015 02:33:36 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/07/jquery-inarray/</guid>
-      <description>判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1.
-//显示上传的文件名 $(&amp;lsquo;#batch_file&amp;rsquo;).live(&amp;lsquo;change&amp;rsquo;, function() { file_name = $(this).val(); $(&amp;ldquo;#file_name&amp;rdquo;).html(file_name); fileExt = file_name.substr(file_name.lastIndexOf(&amp;ldquo;.&amp;rdquo;)).toLowerCase();//获得文件后缀名 if(-1 == $.inArray( fileExt, [&amp;lsquo;.xls&amp;rsquo;,&amp;lsquo;.xlsx&amp;rsquo;] )){ $(&amp;ldquo;#fileExtErr&amp;rdquo;).show(); $(&amp;ldquo;#send_check&amp;rdquo;).prop(&amp;lsquo;disabled&amp;rsquo;,true); }else{ $(&amp;ldquo;#fileExtErr&amp;rdquo;).hide(); $(&amp;ldquo;#send_check&amp;rdquo;).prop(&amp;lsquo;disabled&amp;rsquo;,false); } });
-当然这是在js的层面进行判断，提交后程序也要判断一次，以保证安全。</description>
+      <description>判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1. //</description>
     </item>
     
     <item>
@@ -5080,14 +4939,7 @@ posts = db.posts post_id = posts.insert_one(post).inserted_id print(post_id)
       <pubDate>Thu, 18 Jun 2015 08:47:59 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/php-mongodb-gridfs/</guid>
-      <description>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.
-//初始化gridfs $conn = new Mongo(); //连接MongoDB $db = $conn-&amp;gt;photos; //选择数据库 $grid = $db-&amp;gt;getGridFS(); //取得gridfs对象
-//gridfs有三种方式存储文件 //第一种直接存储文件 $id = $grid-&amp;gt;storeFile(&amp;ldquo;./logo.png&amp;rdquo;);
-//第二种存储文件二进制流 $data = get_file_contents(&amp;ldquo;./logo.png&amp;rdquo;); $id = $grid-&amp;gt;storeBytes($data,array(&amp;ldquo;parame&amp;rdquo;=&amp;gt;’附加参数将随图片一起存入’));
-//第三种保存直接表单提交的文件$_FILES $id = $grid-&amp;gt;storeUpload(&amp;lsquo;upfile&amp;rsquo;); //相当于 $id = $grid-&amp;gt;storeFile($_FILES[‘upfile’][‘tmp_name’]);
-//&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;以上是保存图片&amp;ndash;下面开始读取图片&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
-//保存成功后返回$id = md5字符串 $logo = $grid-&amp;gt;findOne(array(&amp;rsquo;_id&amp;rsquo;=&amp;gt;new MongoId($id))); //以_id为索引取得文件 header(&amp;lsquo;Content-type: image/png&amp;rsquo;); //输出图片头 echo $logo -&amp;gt;getBytes(); //输出数据流
-注意：在使用$grid-&amp;gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。</description>
+      <description>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上</description>
     </item>
     
     <item>
@@ -5154,8 +5006,7 @@ window.location.href = url;&lt;/code&gt;&lt;/p&gt;
       <pubDate>Fri, 12 Jun 2015 03:47:31 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/sublime-php-html-js/</guid>
-      <description>这是几款针对PHP,html,js的sublime插件，推荐使用。
- DocBlockr 代码注释自动生成 Go To Definition 代码引用位置 PHPcs 语法检查 jQuery jQuery自动提示 PHPdoc 也是代码注释 Emmet html/css自动补全支持简写  </description>
+      <description>这是几款针对PHP,html,js的sublime插件，推荐使用。 DocBlockr 代码注释自动生成 Go To Definition 代码引用位置 PHPcs 语法检查 jQuery jQuery自动提示 PHPdoc 也是</description>
     </item>
     
     <item>
@@ -5173,7 +5024,7 @@ window.location.href = url;&lt;/code&gt;&lt;/p&gt;
       <pubDate>Thu, 11 Jun 2015 08:39:41 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/mysql-zerofill/</guid>
-      <description>zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，显示也是55555，插入负数显示为0000，因为mysql自动增加UNSIGNED属性 UNSIGNED不能为负数,当你插入负数时就显示0。 pay_type tinyint(4) unsigned zerofill NOT NULL DEFAULT &amp;lsquo;0000&amp;rsquo; COMMENT &amp;lsquo;支付方式:1卷皮系统 2支付宝 3银联 4财付通 ……&amp;rsquo;,</description>
+      <description>zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，</description>
     </item>
     
     <item>
@@ -5200,8 +5051,7 @@ window.location.href = url;&lt;/code&gt;&lt;/p&gt;
       <pubDate>Fri, 05 Jun 2015 15:54:34 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/yii2-digpage/</guid>
-      <description>推荐一个网站：
-http://www.digpage.com/index.html</description>
+      <description>推荐一个网站： http://www.digpage.com/index.html</description>
     </item>
     
     <item>
@@ -5210,31 +5060,7 @@ http://www.digpage.com/index.html</description>
       <pubDate>Thu, 04 Jun 2015 15:48:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/array-unshift-shift-pop-push/</guid>
-      <description>array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下：
-array_unshift:在数组开头插入元素
-array_shift:在数组开头移除元素
-array_pop:出栈，也就是在数组末尾移除元素
-array_push:入栈，把元素加到数组末尾
-使用这几个函数可以实现PHP双向队列，如：
-class DoubleEndedQueue{
-protected $elements;
-public function __construct(){
-$this-&amp;gt;elements = array();
-}
-public function push($element){
-array_unshift($this-&amp;gt;elements , $element);
-}
-public function pop(){
-return array_shift($this-&amp;gt;element);
-}
-public function inject($element){
-$this-&amp;gt;elements[] = $element;
-}
-public function eject(){
-array_pop($this-&amp;gt;elements);
-}
-}
-?&amp;gt;</description>
+      <description>array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下： a</description>
     </item>
     
     <item>
@@ -5375,8 +5201,7 @@ foo.get_secret (); // 得到 &amp;lsquo;a new secret&amp;rsquo;&lt;/code&gt;&lt;
       <pubDate>Tue, 26 May 2015 10:23:23 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/js-closure/</guid>
-      <description>详解js闭包：
-http://segmentfault.com/a/1190000000652891</description>
+      <description>详解js闭包： http://segmentfault.com/a/1190000000652891</description>
     </item>
     
     <item>
@@ -5394,9 +5219,7 @@ http://segmentfault.com/a/1190000000652891</description>
       <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/php-composer/</guid>
-      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Composer的五个小技巧，希望能给你的PHP开发带来方便。
-PHP 开发者该知道的 5 个 Composer 小技巧：
-http://segmentfault.com/a/1190000000355928</description>
+      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
     </item>
     
     <item>
@@ -5460,8 +5283,7 @@ http://segmentfault.com/a/1190000000355928</description>
       <pubDate>Fri, 15 May 2015 16:07:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/django-querysets/</guid>
-      <description>这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子：
-http://www.oschina.net/translate/django-querysets</description>
+      <description>这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子： http://www.oschina.net/translate/django-querysets</description>
     </item>
     
     <item>
@@ -5569,8 +5391,7 @@ for h1 in h1s:
       <pubDate>Mon, 11 May 2015 13:29:48 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/beautiful-soul-4-for-python3/</guid>
-      <description>beautiful soul 4 for Python3中文文档：
-http://beautifulsoup.readthedocs.org/en/latest/#</description>
+      <description>beautiful soul 4 for Python3中文文档： http://beautifulsoup.readthedocs.org/en/latest/#</description>
     </item>
     
     <item>
@@ -5579,7 +5400,7 @@ http://beautifulsoup.readthedocs.org/en/latest/#</description>
       <pubDate>Mon, 11 May 2015 09:14:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/python-filename/</guid>
-      <description>今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&amp;#8217;module&amp;#8217; object has no attribute &amp;#8216;compile&amp;#8217;。但是在命令行测试是可以的，问题在于我的文件名re.py命名不规范，和Python自带的re模块重名了，这是不允许的。</description>
+      <description>今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&amp;#8217;modul</description>
     </item>
     
     <item>
@@ -5709,8 +5530,7 @@ print(&amp;ldquo;In global scope:&amp;ldquo;, spam)&lt;/code&gt;&lt;/p&gt;</desc
       <pubDate>Tue, 05 May 2015 06:13:07 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/python-guide-chinese/</guid>
-      <description>python中文基础教程：
-http://www.pythondoc.com/pythontutorial3/index.html</description>
+      <description>python中文基础教程： http://www.pythondoc.com/pythontutorial3/index.html</description>
     </item>
     
     <item>
@@ -5736,9 +5556,7 @@ http://www.pythondoc.com/pythontutorial3/index.html</description>
       <pubDate>Thu, 16 Apr 2015 15:41:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/04/jquery-best-practice/</guid>
-      <description>jQuery最佳实践
-本文介绍了jQuery的不同写法的效率，开发中可以借鉴这些经验，提高前端运行性能。
-阮一峰博客：http://www.ruanyifeng.com/blog/2011/08/jquery_best_practices.html</description>
+      <description>jQuery最佳实践 本文介绍了jQuery的不同写法的效率，开发中可以借鉴这些经验，提高前端运行性能。 阮一峰博客：http://www.ru</description>
     </item>
     
     <item>
@@ -5843,7 +5661,7 @@ $( &amp;ldquo;p&amp;rdquo; ).text( arr.join( &amp;ldquo;, &amp;rdquo; ) );&lt;/p
       <pubDate>Mon, 30 Mar 2015 16:00:03 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/03/js-bibao/</guid>
-      <description>在理解闭包以前.最好能先理解一下作用域链的含义,简单来说,作用域链就是函数在定义的时候创建的,用于寻找使用到的变量的值的一个索引,而他内部的规则是,把函数自身的本地变量放在最前面,把自身的父级函数中的变量放在其次,把再高一级函数中的变量放在更后面,以此类推直至全局对象为止.当函数中需要查询一个变量的值的时候,js解释器会去作用域链去查找,从最前面的本地变量中先找,如果没有找到对应的变量,则到下一级的链上找,一旦找到了变量,则不再继续.如果找到最后也没找到需要的变量,则解释器返回undefined.</description>
+      <description>在理解闭包以前.最好能先理解一下作用域链的含义,简单来说,作用域链就是函数在定义的时候创建的,用于寻找使用到的变量的值的一个索引,而他内部的</description>
     </item>
     
     <item>
@@ -5881,7 +5699,7 @@ $( &amp;ldquo;p&amp;rdquo; ).text( arr.join( &amp;ldquo;, &amp;rdquo; ) );&lt;/p
       <pubDate>Sat, 14 Mar 2015 04:10:26 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/03/change-things/</guid>
-      <description>有一次做梦，我现在已经记不清楚做了什么梦，但是这个梦结尾是一个结论：你不知道事情是在变化的吗？我觉得这句话反应了现实，告诉我要以变化的眼光看问题看事物。</description>
+      <description>有一次做梦，我现在已经记不清楚做了什么梦，但是这个梦结尾是一个结论：你不知道事情是在变化的吗？我觉得这句话反应了现实，告诉我要以变化的眼光看</description>
     </item>
     
     <item>
@@ -5890,9 +5708,7 @@ $( &amp;ldquo;p&amp;rdquo; ).text( arr.join( &amp;ldquo;, &amp;rdquo; ) );&lt;/p
       <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/03/beautiful-scenery-in-dream/</guid>
-      <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有晚霞，这景色非常壮观，我还赶紧拿出手机用微信拍小视频。还梦见几只孔雀开屏。
-巧合的是，第二天路过汉口一个餐厅，餐厅前面有一个院子，养了很多动物，我惊奇地发现几只孔雀，感觉梦境就这样神奇般地成了现实。
-https://blog.tanteng.me/wp-content/uploads/2015/03/WeChatSight209.mp4  这就是那天用微信朋友圈拍摄的。</description>
+      <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有</description>
     </item>
     
     <item>
@@ -5990,7 +5806,7 @@ https://blog.tanteng.me/wp-content/uploads/2015/03/WeChatSight209.mp4  这就是
       <pubDate>Thu, 29 Jan 2015 05:48:19 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/01/qin-hu-wust/</guid>
-      <description>武科大沁湖概况  观赏武科大沁湖岛  许家印捐建的武科大沁湖亭  武科大沁湖  武汉科技大学沁湖景观  沁湖园林古建   这是武科大新建沁湖岛的景观，据说园林古建亭子是知名校友许家印捐建的。点击图片可以进入相册看大图。</description>
+      <description>武科大沁湖概况 观赏武科大沁湖岛 许家印捐建的武科大沁湖亭 武科大沁湖 武汉科技大学沁湖景观 沁湖园林古建 这是武科大新建沁湖岛的景观，据说园林古建亭子</description>
     </item>
     
     <item>
@@ -6008,8 +5824,7 @@ https://blog.tanteng.me/wp-content/uploads/2015/03/WeChatSight209.mp4  这就是
       <pubDate>Tue, 20 Jan 2015 06:08:30 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/01/f100-font-awesome/</guid>
-      <description>css可以定义矢量图标，而不是传统的引用一张图片作为背景，或者用position定位的方式，这种图标叫做Font Awesome。常见的代码有f101，f102，f103，f104等等。
-具体介绍和用法：http://www.iteblog.com/archives/1099</description>
+      <description>css可以定义矢量图标，而不是传统的引用一张图片作为背景，或者用position定位的方式，这种图标叫做Font Awesome。常见的代码有</description>
     </item>
     
     <item>
@@ -6228,9 +6043,7 @@ add_filter(&amp;lsquo;query_vars&amp;rsquo;, &amp;lsquo;products_plugin_query_va
       <pubDate>Mon, 01 Dec 2014 02:21:53 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/12/php-xss/</guid>
-      <description>PHP xss安全过滤函数
-/** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&amp;lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S&amp;rsquo;, &amp;ldquo;, $string);
-$parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;, &#39;onbeforeupdate&#39;, &#39;onblur&#39;, &#39;onbounce&#39;, &#39;oncellchange&#39;, &#39;onchange&#39;, &#39;onclick&#39;, &#39;oncontextmenu&#39;, &#39;oncontrolselect&#39;, &#39;oncopy&#39;, &#39;oncut&#39;, &#39;ondataavailable&#39;, &#39;ondatasetchanged&#39;, &#39;ondatasetcomplete&#39;, &#39;ondblclick&#39;, &#39;ondeactivate&#39;, &#39;ondrag&#39;, &#39;ondragend&#39;, &#39;ondragenter&#39;, &#39;ondragleave&#39;, &#39;ondragover&#39;, &#39;ondragstart&#39;, &#39;ondrop&#39;, &#39;onerror&#39;, &#39;onerrorupdate&#39;, &#39;onfilterchange&#39;, &#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;onfocusout&#39;, &#39;onhelp&#39;, &#39;onkeydown&#39;, &#39;onkeypress&#39;, &#39;onkeyup&#39;, &#39;onlayoutcomplete&#39;, &#39;onload&#39;, &#39;onlosecapture&#39;, &#39;onmousedown&#39;, &#39;onmouseenter&#39;, &#39;onmouseleave&#39;, &#39;onmousemove&#39;, &#39;onmouseout&#39;, &#39;onmouseover&#39;, &#39;onmouseup&#39;, &#39;onmousewheel&#39;, &#39;onmove&#39;, &#39;onmoveend&#39;, &#39;onmovestart&#39;, &#39;onpaste&#39;, &#39;onpropertychange&#39;, &#39;onreadystatechange&#39;, &#39;onreset&#39;, &#39;onresize&#39;, &#39;onresizeend&#39;, &#39;onresizestart&#39;, &#39;onrowenter&#39;, &#39;onrowexit&#39;, &#39;onrowsdelete&#39;, &#39;onrowsinserted&#39;, &#39;onscroll&#39;, &#39;onselect&#39;, &#39;onselectionchange&#39;, &#39;onselectstart&#39;, &#39;onstart&#39;, &#39;onstop&#39;, &#39;onsubmit&#39;, &#39;onunload&#39;); $parm = array_merge($parm1, $parm2); for ($i = 0; $i &amp;amp;lt; sizeof($parm); $i++) { $pattern = &#39;/&#39;; for ($j = 0; $j &amp;amp;lt; strlen($parm[$i]); $j++) { if ($j &amp;gt; 0) { $pattern .</description>
+      <description>PHP xss安全过滤函数 /** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&amp;lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S&amp;rsquo;, &amp;ldquo;, $string); $parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;,</description>
     </item>
     
     <item>
@@ -6376,11 +6189,7 @@ $parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &
       <pubDate>Wed, 12 Nov 2014 07:11:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/11/directory_separator/</guid>
-      <description>PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（_）都可以用作目录分隔符，在linux上路径的分隔符是&amp;#8221;/&amp;#8221;。
-那么在PHP代码中什么时候要用DIRECTORY_SEPARATOR代表反斜杠呢？
-比如这句话：
-require_once dirname(FILE).DIRECTORY_SEPARATOR . &amp;lsquo;./../../../wp-config.php&amp;rsquo;; require_once dirname(FILE).DIRECTORY_SEPARATOR.&amp;lsquo;inc/options.php&amp;rsquo;; 
-这两句PHP代码，为什么前面部分用DIRECTORY_SEPARATOR，而后面部分却用“/”呢？</description>
+      <description>PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（</description>
     </item>
     
     <item>
@@ -6491,9 +6300,7 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
       <pubDate>Sun, 09 Mar 2014 06:07:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/03/php-fopen-filesize-fread-fclose/</guid>
-      <description>PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。
-$file = fopen(FILE,&amp;lsquo;r&amp;rsquo;); $file_data = fread( $file, filesize(FILE) ); fclose($file); var_dump($file_data);
-程序示例是读取自身，并输出全部。</description>
+      <description>PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。 $file = fopen(FILE,&amp;lsquo;r&amp;rsquo;); $file_data</description>
     </item>
     
     <item>
@@ -6535,13 +6342,7 @@ wp_plugin_directory_constants();
       <pubDate>Sat, 11 Jan 2014 16:25:35 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/01/virtue-programer/</guid>
-      <description>&lt;p&gt;Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;懒惰&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;是这样一种品质，它使得你花大力气去避免消耗过多的精力。它敦促你写出节省体力的程序，同时别人也能利用它们。为此你会写出完善的文档，以免别人问你太多问题。&lt;/p&gt;
-
-&lt;p&gt;**&lt;/p&gt;</description>
+      <description>Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。 懒惰： 是这样一种品质，它使得你花大力气去避</description>
     </item>
     
     <item>
@@ -6745,7 +6546,7 @@ print_r($pro);//打印结果：Array ( [name] =&amp;gt; [sex] =&amp;gt; )&lt;/p&
       <pubDate>Thu, 19 Sep 2013 05:55:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2013/09/used-to-change/</guid>
-      <description>害怕改变，是因为熟悉了旧的环境，我们对未知事物总是充满疑惑，然而改变不一定是不好的，改变也许会带来更多意想不到的收获，一切都在改变，习惯变化才不会被动！</description>
+      <description>害怕改变，是因为熟悉了旧的环境，我们对未知事物总是充满疑惑，然而改变不一定是不好的，改变也许会带来更多意想不到的收获，一切都在改变，习惯变化</description>
     </item>
     
     <item>
@@ -6911,8 +6712,7 @@ $statement-&amp;gt;execute();
       <pubDate>Fri, 01 Mar 2013 13:42:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2013/03/unsigned/</guid>
-      <description>unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小，而无符号数的最高位是表示数据的大小，这样无符号数表示的数据范围要比有符号数大一倍
-这里的id一般表示序号，所以设置为unsigned属性，这样的设计更科学合理。</description>
+      <description>unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小</description>
     </item>
     
     <item>
@@ -7059,11 +6859,7 @@ return $subject;
       <pubDate>Sat, 03 Nov 2012 08:30:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/11/php-scandir/</guid>
-      <description>使用php scandir函数遍历文件夹目录和所有文件
-&amp;lt;?php $dir = &amp;ldquo;.&amp;rdquo;; //当前目录 list_file($dir);
-function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍历 $file_location=$dir.&amp;ldquo;/&amp;rdquo;.$file;//生成路径 if(is_dir($file_location) &amp;#038;&amp;#038; $file!=&amp;ldquo;.&amp;rdquo; &amp;#038;&amp;#038;$file!=&amp;ldquo;..&amp;rdquo;){ //判断是不是文件夹 echo &amp;ldquo;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;sign in $file_location&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ldquo;; list_file($file_location); //继续遍历 } echo &amp;ldquo;&amp;rdquo;; } } ?&amp;gt; 
-以前的写法：
-&amp;lt;?php /** * Get an array that represents directory tree * @param string $directory Directory path * @param bool $recursive Include sub directories * @param bool $listDirs Include directories on listing * @param bool $listFiles Include files on listing * @param regex $exclude Exclude paths that matches this regex */ function directoryToArray($directory, $recursive = true, $listDirs = false, $listFiles = true, $exclude = &amp;ldquo;) { $arrayItems = array(); $skipByExclude = false; $handle = opendir($directory); if ($handle) { while (false !</description>
+      <description>使用php scandir函数遍历文件夹目录和所有文件 &amp;lt;?php $dir = &amp;ldquo;.&amp;rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍</description>
     </item>
     
     <item>
@@ -7145,9 +6941,7 @@ function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有�
       <pubDate>Sat, 06 Oct 2012 04:33:24 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/10/embrace-change/</guid>
-      <description> 他不明白，为什么自己过去总是觉得变化会使事情变得更糟。而现在他认识到，变化将会使事情变得更好。
-    越早放弃旧的奶酪，你就越早发现新的奶酪。
- ——《谁动了我的奶酪》 </description>
+      <description>他不明白，为什么自己过去总是觉得变化会使事情变得更糟。而现在他认识到，变化将会使事情变得更好。 越早放弃旧的奶酪，你就越早发现新的奶酪。 ——《</description>
     </item>
     
     <item>
@@ -7215,7 +7009,7 @@ function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有�
       <pubDate>Sat, 06 Oct 2012 04:09:43 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/10/apple-marketing-philosophy/</guid>
-      <description>Markkula wrote his principles in a one-page paper titled “The Apple Marketing Philosophy” that stressed three points. The first was empathy, an intimate connection with the feelings of the customer: “We will truly understand their needs better than any other company.” The second was focus: “In order to do a good job of those things that we decide to do, we must eliminate all of the unimportant opportunities.” The third and equally important principle, awkwardly named, was impute.</description>
+      <description>Markkula wrote his principles in a one-page paper titled “The Apple Marketing Philosophy” that stressed three points. The first was empathy, an intimate connection with the feelings of the customer: “We will truly understand their needs better than any other company.” The second was focus: “I</description>
     </item>
     
     <item>
@@ -7508,7 +7302,7 @@ echo count($numb,1);
       <pubDate>Tue, 14 Aug 2012 05:10:00 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/08/follow-your-heart/</guid>
-      <description>Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life. Because almost everything—all external expectations, all pride, all fear of embarrassment or failure—these things just fall away in the face of death, leaving only what is truly important. Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose.</description>
+      <description>Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life. Because almost everything—all external expectations, all pride, all fear of embarrassment or failure—these things just fall</description>
     </item>
     
     <item>
@@ -7577,8 +7371,7 @@ echo count($numb,1);
       <pubDate>Sat, 17 Mar 2012 02:28:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/03/spring-outing/</guid>
-      <description>今天一大早起来，大家集合准备前往九峰山森林公园春游，老天没下雨，吾等便浩浩荡荡乘车而去，行至途中，忽然电闪雷鸣，雨开始下个不停。在武昌火车站停留 片刻，决定毅然前往，然倾盆大雨倾盆而下，只好打道回府。坐上回去的车，雨，停了，回到学校，太阳，出来了。
-本次春游总共花了2个小时。不过今天还是有收获的，早起了，吃了早餐。留下一张不完整的合照，以此纪念。</description>
+      <description>今天一大早起来，大家集合准备前往九峰山森林公园春游，老天没下雨，吾等便浩浩荡荡乘车而去，行至途中，忽然电闪雷鸣，雨开始下个不停。在武昌火车站</description>
     </item>
     
     <item>

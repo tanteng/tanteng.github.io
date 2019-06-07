@@ -150,9 +150,11 @@
         </span>
         <span >
         
-        在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，如图所示。
+        在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2016/07/gulp-watch/">➦</a>
         
         </div>
         
@@ -169,11 +171,11 @@
         </span>
         <span >
         
-        记录一个 curl 示例，代码如下：
-function curl($file, $targetUrl) { if (function_exists(&lsquo;curl_file_create&rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &lsquo;@&rsquo; . realpath($file); } $post = array(&lsquo;filename&rsquo; =&gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; }
-检测 curl_file_create 函数是为了兼容 PHP 以前版本。CURLOPT_RETURNTRANSFER 参数表示 curl_exec 返回接口原始内容。CURLOPT_POSTFIELDS 是 post 的内容。
+        记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&lsquo;curl_file_create&rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &lsquo;@&rsquo; . realpath($file); } $post = array(&lsquo;filename&rsquo; =&gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/php-curl-post-send-file/">➦</a>
         
         </div>
         

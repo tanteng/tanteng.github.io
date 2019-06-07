@@ -502,10 +502,7 @@ return redirect()-&amp;amp;gt;route(&#39;egretgame.index&#39;)-&amp;amp;gt;with(
       <pubDate>Thu, 25 May 2017 15:30:33 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/cgi-fastcgi-php-fpm/</guid>
-      <description>几个链接：
-https://www.zhihu.com/question/30672017
-http://www.lxlxw.me/?p=216
-http://www.tuicool.com/articles/Ir2AreE</description>
+      <description>几个链接： https://www.zhihu.com/question/30672017 http://www.lxlxw.me/?p=216 http://www.tuicool.com/articles/Ir2AreE</description>
     </item>
     
     <item>
@@ -579,9 +576,7 @@ http://www.tuicool.com/articles/Ir2AreE</description>
       <pubDate>Wed, 01 Mar 2017 08:59:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/03/php-float-rand/</guid>
-      <description>PHP 浮点数范围随机代码：
-private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals); return mt_rand($min * $scale, $max * $scale) / $scale; }
-&amp;nbsp;</description>
+      <description>PHP 浮点数范围随机代码： private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals); return mt_rand($min * $scale, $max * $scale) / $scale; } &amp;nbsp;</description>
     </item>
     
     <item>
@@ -590,9 +585,7 @@ private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals);
       <pubDate>Mon, 20 Feb 2017 08:39:36 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/02/create-laravel-5-pakage/</guid>
-      <description>本文介绍了创建 Laravel 5 扩展包的步骤。
-链接：
-http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
+      <description>本文介绍了创建 Laravel 5 扩展包的步骤。 链接： http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
     </item>
     
     <item>
@@ -901,9 +894,7 @@ public function put($key, $value = null)
       <pubDate>Thu, 30 Jun 2016 03:29:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/06/php-curl-post-send-file/</guid>
-      <description>记录一个 curl 示例，代码如下：
-function curl($file, $targetUrl) { if (function_exists(&amp;lsquo;curl_file_create&amp;rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &amp;lsquo;@&amp;rsquo; . realpath($file); } $post = array(&amp;lsquo;filename&amp;rsquo; =&amp;gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; }
-检测 curl_file_create 函数是为了兼容 PHP 以前版本。CURLOPT_RETURNTRANSFER 参数表示 curl_exec 返回接口原始内容。CURLOPT_POSTFIELDS 是 post 的内容。</description>
+      <description>记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&amp;lsquo;curl_file_create&amp;rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &amp;lsquo;@&amp;rsquo; . realpath($file); } $post = array(&amp;lsquo;filename&amp;rsquo; =&amp;gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为</description>
     </item>
     
     <item>
@@ -1144,8 +1135,7 @@ default:
       <pubDate>Wed, 09 Mar 2016 02:17:10 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/restful/</guid>
-      <description>什么是RESTful架构？如何理解RESTFul？了解RESTFul的URL表现形式。
-链接：http://www.ruanyifeng.com/blog/2011/09/restful</description>
+      <description>什么是RESTful架构？如何理解RESTFul？了解RESTFul的URL表现形式。 链接：http://www.ruanyifeng.co</description>
     </item>
     
     <item>
@@ -1248,10 +1238,7 @@ protected function execClosure($name, Closure $closure)
       <pubDate>Thu, 28 Jan 2016 10:47:43 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/01/php-goto/</guid>
-      <description>PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto display语句时，会跳到定义display的地方开始执行，这是PHP5.3增加的语法，支持PHP7.
-public function index() { if (!I(&amp;lsquo;get.search&amp;rsquo;)) { goto display; }
-//此处省略800字 $this-&amp;amp;gt;assign(&#39;account&#39;, self::$account); $this-&amp;amp;gt;assign(&#39;pay_type&#39;, I(&#39;get.pay_type&#39;)); $this-&amp;amp;gt;assign(&#39;list&#39;, $list); display: $this-&amp;amp;gt;display();  }
-&amp;nbsp;</description>
+      <description>PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto disp</description>
     </item>
     
     <item>
@@ -1574,9 +1561,7 @@ exit;&lt;/code&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 04 Sep 2015 16:58:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/09/mac-firefox-hostadmin/</guid>
-      <description>在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可：
-sudo chmod og+w /etc/hosts
-chmod修改权限，og+w表示增加写权限。</description>
+      <description>在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可： sudo chmod og+w /etc/hosts chmod修改权限，og</description>
     </item>
     
     <item>
@@ -1626,10 +1611,7 @@ chmod修改权限，og+w表示增加写权限。</description>
       <pubDate>Tue, 11 Aug 2015 08:35:47 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/08/php-closure-demo/</guid>
-      <description>PHP5.3起就支持匿名函数，可以放心在生产环境中使用，对于PHP的很多新特性该用的地方要大胆使用，可以使代码更简洁，功能实现也更加方便。
-以下是PHP匿名函数的一个小的简单实例：
-function func($list,$u_wangwang) { //匿名函数，获取其他行联号 $other_num = function($num){ $num = explode(&amp;lsquo;.&amp;rsquo;, $num); return $num[0]; }; $res = $other_num($v[&amp;lsquo;sb_other_num&amp;rsquo;]); return $res; }
-首先在方法里定义了一个匿名函数，有一个参数，然后调用的时候进行传参。</description>
+      <description>PHP5.3起就支持匿名函数，可以放心在生产环境中使用，对于PHP的很多新特性该用的地方要大胆使用，可以使代码更简洁，功能实现也更加方便。 以</description>
     </item>
     
     <item>
@@ -1843,14 +1825,7 @@ if(empty($urlinfo[&amp;lsquo;host&amp;rsquo;])){
       <pubDate>Thu, 18 Jun 2015 08:47:59 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/php-mongodb-gridfs/</guid>
-      <description>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.
-//初始化gridfs $conn = new Mongo(); //连接MongoDB $db = $conn-&amp;gt;photos; //选择数据库 $grid = $db-&amp;gt;getGridFS(); //取得gridfs对象
-//gridfs有三种方式存储文件 //第一种直接存储文件 $id = $grid-&amp;gt;storeFile(&amp;ldquo;./logo.png&amp;rdquo;);
-//第二种存储文件二进制流 $data = get_file_contents(&amp;ldquo;./logo.png&amp;rdquo;); $id = $grid-&amp;gt;storeBytes($data,array(&amp;ldquo;parame&amp;rdquo;=&amp;gt;’附加参数将随图片一起存入’));
-//第三种保存直接表单提交的文件$_FILES $id = $grid-&amp;gt;storeUpload(&amp;lsquo;upfile&amp;rsquo;); //相当于 $id = $grid-&amp;gt;storeFile($_FILES[‘upfile’][‘tmp_name’]);
-//&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;以上是保存图片&amp;ndash;下面开始读取图片&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
-//保存成功后返回$id = md5字符串 $logo = $grid-&amp;gt;findOne(array(&amp;rsquo;_id&amp;rsquo;=&amp;gt;new MongoId($id))); //以_id为索引取得文件 header(&amp;lsquo;Content-type: image/png&amp;rsquo;); //输出图片头 echo $logo -&amp;gt;getBytes(); //输出数据流
-注意：在使用$grid-&amp;gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。</description>
+      <description>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上</description>
     </item>
     
     <item>
@@ -1889,8 +1864,7 @@ dump($file);
       <pubDate>Fri, 05 Jun 2015 15:54:34 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/yii2-digpage/</guid>
-      <description>推荐一个网站：
-http://www.digpage.com/index.html</description>
+      <description>推荐一个网站： http://www.digpage.com/index.html</description>
     </item>
     
     <item>
@@ -1899,31 +1873,7 @@ http://www.digpage.com/index.html</description>
       <pubDate>Thu, 04 Jun 2015 15:48:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/06/array-unshift-shift-pop-push/</guid>
-      <description>array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下：
-array_unshift:在数组开头插入元素
-array_shift:在数组开头移除元素
-array_pop:出栈，也就是在数组末尾移除元素
-array_push:入栈，把元素加到数组末尾
-使用这几个函数可以实现PHP双向队列，如：
-class DoubleEndedQueue{
-protected $elements;
-public function __construct(){
-$this-&amp;gt;elements = array();
-}
-public function push($element){
-array_unshift($this-&amp;gt;elements , $element);
-}
-public function pop(){
-return array_shift($this-&amp;gt;element);
-}
-public function inject($element){
-$this-&amp;gt;elements[] = $element;
-}
-public function eject(){
-array_pop($this-&amp;gt;elements);
-}
-}
-?&amp;gt;</description>
+      <description>array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下： a</description>
     </item>
     
     <item>
@@ -2020,9 +1970,7 @@ add_filter(&amp;ldquo;widget_categories_args&amp;rdquo;,&amp;ldquo;exclude_widge
       <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/05/php-composer/</guid>
-      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Composer的五个小技巧，希望能给你的PHP开发带来方便。
-PHP 开发者该知道的 5 个 Composer 小技巧：
-http://segmentfault.com/a/1190000000355928</description>
+      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
     </item>
     
     <item>
@@ -2158,9 +2106,7 @@ exit;&lt;/code&gt;&lt;/p&gt;
       <pubDate>Mon, 01 Dec 2014 02:21:53 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/12/php-xss/</guid>
-      <description>PHP xss安全过滤函数
-/** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&amp;lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S&amp;rsquo;, &amp;ldquo;, $string);
-$parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;, &#39;onbeforeupdate&#39;, &#39;onblur&#39;, &#39;onbounce&#39;, &#39;oncellchange&#39;, &#39;onchange&#39;, &#39;onclick&#39;, &#39;oncontextmenu&#39;, &#39;oncontrolselect&#39;, &#39;oncopy&#39;, &#39;oncut&#39;, &#39;ondataavailable&#39;, &#39;ondatasetchanged&#39;, &#39;ondatasetcomplete&#39;, &#39;ondblclick&#39;, &#39;ondeactivate&#39;, &#39;ondrag&#39;, &#39;ondragend&#39;, &#39;ondragenter&#39;, &#39;ondragleave&#39;, &#39;ondragover&#39;, &#39;ondragstart&#39;, &#39;ondrop&#39;, &#39;onerror&#39;, &#39;onerrorupdate&#39;, &#39;onfilterchange&#39;, &#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;onfocusout&#39;, &#39;onhelp&#39;, &#39;onkeydown&#39;, &#39;onkeypress&#39;, &#39;onkeyup&#39;, &#39;onlayoutcomplete&#39;, &#39;onload&#39;, &#39;onlosecapture&#39;, &#39;onmousedown&#39;, &#39;onmouseenter&#39;, &#39;onmouseleave&#39;, &#39;onmousemove&#39;, &#39;onmouseout&#39;, &#39;onmouseover&#39;, &#39;onmouseup&#39;, &#39;onmousewheel&#39;, &#39;onmove&#39;, &#39;onmoveend&#39;, &#39;onmovestart&#39;, &#39;onpaste&#39;, &#39;onpropertychange&#39;, &#39;onreadystatechange&#39;, &#39;onreset&#39;, &#39;onresize&#39;, &#39;onresizeend&#39;, &#39;onresizestart&#39;, &#39;onrowenter&#39;, &#39;onrowexit&#39;, &#39;onrowsdelete&#39;, &#39;onrowsinserted&#39;, &#39;onscroll&#39;, &#39;onselect&#39;, &#39;onselectionchange&#39;, &#39;onselectstart&#39;, &#39;onstart&#39;, &#39;onstop&#39;, &#39;onsubmit&#39;, &#39;onunload&#39;); $parm = array_merge($parm1, $parm2); for ($i = 0; $i &amp;amp;lt; sizeof($parm); $i++) { $pattern = &#39;/&#39;; for ($j = 0; $j &amp;amp;lt; strlen($parm[$i]); $j++) { if ($j &amp;gt; 0) { $pattern .</description>
+      <description>PHP xss安全过滤函数 /** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&amp;lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S&amp;rsquo;, &amp;ldquo;, $string); $parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;,</description>
     </item>
     
     <item>
@@ -2209,11 +2155,7 @@ $parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &
       <pubDate>Wed, 12 Nov 2014 07:11:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/11/directory_separator/</guid>
-      <description>PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（_）都可以用作目录分隔符，在linux上路径的分隔符是&amp;#8221;/&amp;#8221;。
-那么在PHP代码中什么时候要用DIRECTORY_SEPARATOR代表反斜杠呢？
-比如这句话：
-require_once dirname(FILE).DIRECTORY_SEPARATOR . &amp;lsquo;./../../../wp-config.php&amp;rsquo;; require_once dirname(FILE).DIRECTORY_SEPARATOR.&amp;lsquo;inc/options.php&amp;rsquo;; 
-这两句PHP代码，为什么前面部分用DIRECTORY_SEPARATOR，而后面部分却用“/”呢？</description>
+      <description>PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（</description>
     </item>
     
     <item>
@@ -2275,9 +2217,7 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
       <pubDate>Sun, 09 Mar 2014 06:07:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/03/php-fopen-filesize-fread-fclose/</guid>
-      <description>PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。
-$file = fopen(FILE,&amp;lsquo;r&amp;rsquo;); $file_data = fread( $file, filesize(FILE) ); fclose($file); var_dump($file_data);
-程序示例是读取自身，并输出全部。</description>
+      <description>PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。 $file = fopen(FILE,&amp;lsquo;r&amp;rsquo;); $file_data</description>
     </item>
     
     <item>
@@ -2443,8 +2383,7 @@ $statement-&amp;gt;execute();
       <pubDate>Fri, 01 Mar 2013 13:42:40 +0000</pubDate>
       
       <guid>http://tanteng.me/2013/03/unsigned/</guid>
-      <description>unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小，而无符号数的最高位是表示数据的大小，这样无符号数表示的数据范围要比有符号数大一倍
-这里的id一般表示序号，所以设置为unsigned属性，这样的设计更科学合理。</description>
+      <description>unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小</description>
     </item>
     
     <item>
@@ -2578,11 +2517,7 @@ return $subject;
       <pubDate>Sat, 03 Nov 2012 08:30:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2012/11/php-scandir/</guid>
-      <description>使用php scandir函数遍历文件夹目录和所有文件
-&amp;lt;?php $dir = &amp;ldquo;.&amp;rdquo;; //当前目录 list_file($dir);
-function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍历 $file_location=$dir.&amp;ldquo;/&amp;rdquo;.$file;//生成路径 if(is_dir($file_location) &amp;#038;&amp;#038; $file!=&amp;ldquo;.&amp;rdquo; &amp;#038;&amp;#038;$file!=&amp;ldquo;..&amp;rdquo;){ //判断是不是文件夹 echo &amp;ldquo;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;sign in $file_location&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ldquo;; list_file($file_location); //继续遍历 } echo &amp;ldquo;&amp;rdquo;; } } ?&amp;gt; 
-以前的写法：
-&amp;lt;?php /** * Get an array that represents directory tree * @param string $directory Directory path * @param bool $recursive Include sub directories * @param bool $listDirs Include directories on listing * @param bool $listFiles Include files on listing * @param regex $exclude Exclude paths that matches this regex */ function directoryToArray($directory, $recursive = true, $listDirs = false, $listFiles = true, $exclude = &amp;ldquo;) { $arrayItems = array(); $skipByExclude = false; $handle = opendir($directory); if ($handle) { while (false !</description>
+      <description>使用php scandir函数遍历文件夹目录和所有文件 &amp;lt;?php $dir = &amp;ldquo;.&amp;rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍</description>
     </item>
     
     <item>

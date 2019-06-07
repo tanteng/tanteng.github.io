@@ -28,10 +28,7 @@
       <pubDate>Sun, 17 Dec 2017 12:20:32 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/12/bash-sh/</guid>
-      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？
-sh 和 bash 都是 Linux Shell 命令行语言，其中 sh 遵循 POSIX 标准。什么是 POSIX 标准？
-Stack Overflow 上一篇答案讲的很详细，英文的慢慢看：
-https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash</description>
+      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？ sh 和 bash 都是 Linux Shell 命令行语言，</description>
     </item>
     
     <item>
@@ -63,8 +60,7 @@ https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash</desc
       <pubDate>Thu, 18 May 2017 08:23:10 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/linux-clear-cache-buffer/</guid>
-      <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间
-链接：https://linux.cn/article-5627-1.html</description>
+      <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html</description>
     </item>
     
     <item>
@@ -73,10 +69,7 @@ https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash</desc
       <pubDate>Tue, 02 May 2017 03:05:16 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/05/shell-check-url/</guid>
-      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。
-示例如下：
-#!/bin/bash
-fileurl=&amp;lsquo;./check_url.txt&amp;rsquo; DATE_N=date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方式 ；-w 定义显示输出格式；&amp;rdquo;%{http_code}&amp;rdquo; 在最后被检索的 HTTP(S) 页中被找到的数字的代码 HTTP_CODE=curl -o /dev/null -s --head -w &amp;quot;%{http_code}&amp;quot; &amp;quot;${chkurl}&amp;quot; if [ ${HTTP_CODE} -ne 200 ] then if [ ${HTTP_CODE} == 404 ] then echo -e &amp;ldquo;[${DATE_N}]error-${HTTP_CODE}:&amp;rdquo; $chkurl &amp;gt;&amp;gt; check-result.txt sh /usr/local/bin/restart_php_mysql.sh &amp;gt;&amp;gt; check-result.txt fi echo -e &amp;ldquo;[${DATE_N}]error-${HTTP_CODE}:&amp;rdquo; $chkurl &amp;gt;&amp;gt; check-result.txt else echo -e [${DATE_N}]${HTTP_CODE}: $chkurl &amp;gt;&amp;gt; check-result.</description>
+      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl=&amp;lsquo;./check_url.txt&amp;rsquo; DATE_N=date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方</description>
     </item>
     
     <item>
@@ -115,10 +108,7 @@ SYN_RECV 1&lt;/code&gt;&lt;/p&gt;</description>
       <pubDate>Thu, 16 Mar 2017 14:03:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/03/linux-nginx-ip/</guid>
-      <description>统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。
-Linux 命令如下：
-cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k1nr | head -10
-效果如图所示：</description>
+      <description>统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。 Linux 命令如下： cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k1nr | head -10 效果如图所示：</description>
     </item>
     
     <item>
@@ -176,10 +166,7 @@ cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k
       <pubDate>Wed, 30 Nov 2016 17:16:59 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/12/linux-cmd/</guid>
-      <description>在 Linux 中经常使用到一个命令，如 make &amp;amp;&amp;amp; make install，这里也可以使用 make ; make install，那么在 Linux 中执行命令 ; 和 &amp;amp;&amp;amp; 有何区别？
-&amp;amp;&amp;amp; 表示第一个命令执行成功才能执行后面的命令；
-; 表示无论第一个命令执行是否成功都执行后面的命令；
-还有 ||，cmd a || cmd b，表示前者执行失败了，再执行后者；</description>
+      <description>在 Linux 中经常使用到一个命令，如 make &amp;amp;&amp;amp; make install，这里也可以使用 make ; make install，那么在 Linux 中执行命令 ; 和 &amp;amp;&amp;amp; 有何区别？ &amp;amp;&amp;amp; 表示第一个命令执行</description>
     </item>
     
     <item>
@@ -188,8 +175,7 @@ cat access.log | awk &amp;#8216;{print $1}&amp;#8217; | sort | uniq -c | sort -k
       <pubDate>Sun, 20 Nov 2016 06:58:23 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/11/grep-tail-last-line/</guid>
-      <description>grep 查找匹配的最后一行，如：
-grep &amp;ldquo;哈哈&amp;rdquo; aa.log | tail -1</description>
+      <description>grep 查找匹配的最后一行，如： grep &amp;ldquo;哈哈&amp;rdquo; aa.log | tail -1</description>
     </item>
     
     <item>

@@ -17,16 +17,7 @@
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/02/reding-list-28/</guid>
-      <description>1.golang select-case 实现机制
-2.如何优雅的控制 goroutine 的数量
-3.LIMIT THE NUMBER OF GOROUTINES RUNNING AT THE SAME TIME
-https://blog.antoine-augusti.fr/2015/12/limit-the-number-of-goroutines-running-at-the-same-time/
-4.Hive 之 COUNT DISTINCT 优化
-http://datavalley.github.io/2016/02/15/Hive%E4%B9%8BCOUNT-DISTINCT%E4%BC%98%E5%8C%96
-5.理解 LINUX 的 MEMORY OVERCOMMIT
-http://linuxperf.com/?p=102
-6.mysql: show processlist 详解
-https://zhuanlan.zhihu.com/p/30743094﻿</description>
+      <description>1.golang select-case 实现机制 https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-se</description>
     </item>
     
     <item>
@@ -35,16 +26,7 @@ https://zhuanlan.zhihu.com/p/30743094﻿</description>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/01/reding-list-27/</guid>
-      <description>1.TDSQL 特有的 MySQL 内核功能介绍
-https://zhuanlan.zhihu.com/p/50774800
-2.MySQL 主键设计
-http://seanlook.com/2016/05/13/mysql-innodb-primary_key/
-3.Logstash 最佳实践
-https://doc.yonyoucloud.com/doc/logstash-best-practice-cn
-4.消息队列技术很好的总结
-https://www.jianshu.com/p/689ce4205021
-5.剖析Laravel队列系统&amp;#8211;Worker
-https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
+      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统&amp;#8211;Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
@@ -53,11 +35,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
       <guid>http://tanteng.me/2019/01/reding-list-26/</guid>
-      <description>go 指针和内存分配详解   https://segmentfault.com/a/1190000017473672
- 初探 Go 的编译命令执行过程   https://halfrost.com/go_command/
- [译]代码审查之最佳实践   https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ
- WEB内容安全政策（CSP）   https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn
- 如何学习分布式系统   https://www.cnblogs.com/xybaby/p/7787034.html</description>
+      <description>go 指针和内存分配详解 https://segmentfault.com/a/1190000017473672 初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ [译]代码审查之最佳实践 https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ WEB内容安全政策（CSP） https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn 如何学习分布式系统 https://www.cnblogs.com/xybaby/p/7787034.html</description>
     </item>
     
     <item>
@@ -66,11 +44,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/12/reding-list-25/</guid>
-      <description>MySQL的异步复制和半同步复制   https://www.jianshu.com/p/d877cbe9f0f0
- Go调度器原理浅析   https://www.cnblogs.com/ralap7/p/9190416.html
- golang后台服务设计精要   http://litang.me/post/golang-server-design/
- Go’s http package by example（总结很好）   https://cryptic.io/go-http/
- 函数式编程初探   http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</description>
+      <description>MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html golang后台服务设计精要 http://litang.me/post/golang-server-design/ Go’s http package by example（总结很好） https://cryptic.io/go-http/ 函数式编程初探</description>
     </item>
     
     <item>
@@ -79,11 +53,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/11/reding-list-24/</guid>
-      <description>腾讯云点播视频加密方案   https://cloud.tencent.com/document/product/266/9638
- HTTP Live Streaming (HLS) &amp;#8211; 概念   https://www.jianshu.com/p/2ce402a485ca
- RTMP HLS HTTP 直播协议一次看个够   https://www.jianshu.com/p/4c89b2c83e59
- Golang并发原理及GPM调度策略（一）   http://www.cnblogs.com/mokafamily/p/9975980.html
- Go基础系列：互斥锁Mutex和读写锁RWMutex用法详述   http://www.cnblogs.com/f-ck-need-u/p/9998729.html</description>
+      <description>腾讯云点播视频加密方案 https://cloud.tencent.com/document/product/266/9638 HTTP Live Streaming (HLS) &amp;#8211; 概念 https://www.jianshu.com/p/2ce402a485ca RTMP HLS HTTP 直播协议一次看个够 https://www.jianshu.com/p/4c89b2c83e59 Golang并发原理及GPM调度策略（一） http://www.cnblogs.com/mokafamily/p/9975980.html Go基础系列：互斥锁Mutex</description>
     </item>
     
     <item>
@@ -92,11 +62,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/11/reding-list-23/</guid>
-      <description>Writing Protobuf Services in PHP   https://mattallan.org/posts/protobuf-php-services/
- Practical Persistence in Go: Organising Database Access   https://www.alexedwards.net/blog/organising-database-access
- CORS 跨域 Cookie 的设置与获取   https://www.jianshu.com/p/13d53acc124f
- Go语言字符串高效拼接(一)   https://juejin.im/post/5be23a01518825697344f05e
- govendor 使用   https://www.orztu.com/post/using-govendor/</description>
+      <description>Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e govendor 使用 https://www.orztu.com/post/using-govendor/</description>
     </item>
     
     <item>
@@ -105,11 +71,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/reding-list-22/</guid>
-      <description>Practical Go: Real world advice for writing maintainable Go programs   https://dave.cheney.net/practical-go/presentations/qcon-china.html
- What happened to MySQL 6 &amp;amp; 7?   https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7
- 工厂模式——看这一篇就够了   https://juejin.im/entry/58f5e080b123db2fa2b3c4c6
- What is a Laravel Interface?   https://vegibit.com/what-is-a-laravel-interface/
- 理解 UUID   http://wsfdl.com/algorithm/2013/09/05/理解UUID.html</description>
+      <description>Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 理解 UUID http://wsfdl.com/algorithm/2</description>
     </item>
     
     <item>
@@ -118,12 +80,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Tue, 23 Oct 2018 09:28:52 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/reding-list-21/</guid>
-      <description>Laravel 中的 Pivot 表与多对多关系   https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html
- Laravel 的 tap 函数用法   https://laravel-china.org/articles/3893/laravel-tap-usage
- Laravel 5.5 模型关联   https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333
- Laravel Collection “tap” Method   https://laravel-news.com/collection-tap
- goroutine同步方法总结   https://yq.aliyun.com/articles/649314
- 面向对象设计之里氏替换原则(LSP)   https://juejin.im/post/5a31ecedf265da43346fed08</description>
+      <description>Laravel 中的 Pivot 表与多对多关系 https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html Laravel 的 tap 函数用法 https://laravel-china.org/articles/3893/laravel-tap-usage Laravel 5.5 模型关联 https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333 Laravel Collection “tap” Method https://laravel-news.com/collection-tap goroutine同步方法总结 https://yq.aliyun.com/articles/649314 面向对象设计之里氏替换原则(LSP)</description>
     </item>
     
     <item>
@@ -662,8 +619,7 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
       <pubDate>Fri, 16 Oct 2015 15:09:28 +0000</pubDate>
       
       <guid>http://tanteng.me/2015/10/website-client/</guid>
-      <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”成了大型网站必备的标配。
-PC、手机站是独立的两套模板，核心的业务逻辑是一样的，Android和ios手机客户端都是通过api接口调用，其中pad端网站可以是客户端中嵌入一个H5页面。</description>
+      <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”</description>
     </item>
     
     <item>
@@ -747,13 +703,7 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
       <pubDate>Sat, 11 Jan 2014 16:25:35 +0000</pubDate>
       
       <guid>http://tanteng.me/2014/01/virtue-programer/</guid>
-      <description>&lt;p&gt;Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;懒惰&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;是这样一种品质，它使得你花大力气去避免消耗过多的精力。它敦促你写出节省体力的程序，同时别人也能利用它们。为此你会写出完善的文档，以免别人问你太多问题。&lt;/p&gt;
-
-&lt;p&gt;**&lt;/p&gt;</description>
+      <description>Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。 懒惰： 是这样一种品质，它使得你花大力气去避</description>
     </item>
     
     <item>

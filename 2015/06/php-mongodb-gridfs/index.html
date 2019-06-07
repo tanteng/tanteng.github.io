@@ -22,24 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PHP操作GridFS存储文件到MongoDB的三种方式"/>
-<meta name="twitter:description" content="一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.
-//初始化gridfs $conn = new Mongo(); //连接MongoDB $db = $conn-&gt;photos; //选择数据库 $grid = $db-&gt;getGridFS(); //取得gridfs对象
-//gridfs有三种方式存储文件 //第一种直接存储文件 $id = $grid-&gt;storeFile(&ldquo;./logo.png&rdquo;);
-//第二种存储文件二进制流 $data = get_file_contents(&ldquo;./logo.png&rdquo;); $id = $grid-&gt;storeBytes($data,array(&ldquo;parame&rdquo;=&gt;’附加参数将随图片一起存入’));
-//第三种保存直接表单提交的文件$_FILES $id = $grid-&gt;storeUpload(&lsquo;upfile&rsquo;); //相当于 $id = $grid-&gt;storeFile($_FILES[‘upfile’][‘tmp_name’]);
-//&mdash;&mdash;&mdash;&mdash;&ndash;以上是保存图片&ndash;下面开始读取图片&mdash;&mdash;&mdash;&mdash;&mdash;-
-//保存成功后返回$id = md5字符串 $logo = $grid-&gt;findOne(array(&rsquo;_id&rsquo;=&gt;new MongoId($id))); //以_id为索引取得文件 header(&lsquo;Content-type: image/png&rsquo;); //输出图片头 echo $logo -&gt;getBytes(); //输出数据流
-注意：在使用$grid-&gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。"/>
+<meta name="twitter:description" content="一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上"/>
 
 <meta property="og:title" content="PHP操作GridFS存储文件到MongoDB的三种方式" />
-<meta property="og:description" content="一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.
-//初始化gridfs $conn = new Mongo(); //连接MongoDB $db = $conn-&gt;photos; //选择数据库 $grid = $db-&gt;getGridFS(); //取得gridfs对象
-//gridfs有三种方式存储文件 //第一种直接存储文件 $id = $grid-&gt;storeFile(&ldquo;./logo.png&rdquo;);
-//第二种存储文件二进制流 $data = get_file_contents(&ldquo;./logo.png&rdquo;); $id = $grid-&gt;storeBytes($data,array(&ldquo;parame&rdquo;=&gt;’附加参数将随图片一起存入’));
-//第三种保存直接表单提交的文件$_FILES $id = $grid-&gt;storeUpload(&lsquo;upfile&rsquo;); //相当于 $id = $grid-&gt;storeFile($_FILES[‘upfile’][‘tmp_name’]);
-//&mdash;&mdash;&mdash;&mdash;&ndash;以上是保存图片&ndash;下面开始读取图片&mdash;&mdash;&mdash;&mdash;&mdash;-
-//保存成功后返回$id = md5字符串 $logo = $grid-&gt;findOne(array(&rsquo;_id&rsquo;=&gt;new MongoId($id))); //以_id为索引取得文件 header(&lsquo;Content-type: image/png&rsquo;); //输出图片头 echo $logo -&gt;getBytes(); //输出数据流
-注意：在使用$grid-&gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。" />
+<meta property="og:description" content="一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2015/06/php-mongodb-gridfs/" />
 <meta property="article:published_time" content="2015-06-18T08:47:59&#43;00:00"/>
@@ -182,7 +168,7 @@
     
     
     <br/>
-    <i class="fas fa-clock"></i> 1 min read
+    <i class="fas fa-clock"></i> 2 min read
 </div>
 
 

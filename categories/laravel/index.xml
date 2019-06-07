@@ -284,9 +284,7 @@ stdout_logfile=/var/www/xxx.cn/worker.log
       <pubDate>Mon, 20 Feb 2017 08:39:36 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/02/create-laravel-5-pakage/</guid>
-      <description>本文介绍了创建 Laravel 5 扩展包的步骤。
-链接：
-http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
+      <description>本文介绍了创建 Laravel 5 扩展包的步骤。 链接： http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
     </item>
     
     <item>
@@ -449,8 +447,7 @@ APP_KEY=base64:sT/aTFeaE13eyao1Raee6jC9Ff+Yle1SE+wtyk0H6B4=&lt;/code&gt;&lt;/p&g
       <pubDate>Thu, 31 Mar 2016 02:50:42 +0000</pubDate>
       
       <guid>http://tanteng.me/2016/03/laravel-redirect/</guid>
-      <description>这是一个链接，关于Laravel跳转方法redirect()的使用。
-http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
+      <description>这是一个链接，关于Laravel跳转方法redirect()的使用。 http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
     </item>
     
     <item>

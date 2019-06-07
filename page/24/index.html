@@ -171,12 +171,11 @@
         </span>
         <span >
         
-        PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto display语句时，会跳到定义display的地方开始执行，这是PHP5.3增加的语法，支持PHP7.
-public function index() { if (!I(&lsquo;get.search&rsquo;)) { goto display; }
-//此处省略800字 $this-&amp;gt;assign('account', self::$account); $this-&amp;gt;assign('pay_type', I('get.pay_type')); $this-&amp;gt;assign('list', $list); display: $this-&amp;gt;display();  }
-&nbsp;
+        PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto disp
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/php-goto/">➦</a>
         
         </div>
         
@@ -272,11 +271,11 @@ use Lio\Tags\TagRepository;</p>
         </span>
         <span >
         
-        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
-SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &gt; 1;
-对hash进行group并筛选count个数大于1的。
+        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/repeat-group-having/">➦</a>
         
         </div>
         
@@ -293,17 +292,11 @@ SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total
         </span>
         <span >
         
-        命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名;
-1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpasswd,生成的脚本名為db.sql）
-mysqldump -uroot -pdbpasswd -d dbname &gt;db.sql;
-2、导出數據库為dbname某张表(test)结构
-mysqldump -uroot -pdbpasswd -d dbname test&gt;db.sql;
-3、导出數據库為dbname所有表结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname &gt;db.sql;
-4、导出數據库為dbname某张表(test)结构及表數據（不加-d）
-mysqldump -uroot -pdbpasswd dbname test&gt;db.sql;
+        命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名; 1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpas
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/mysql-mysqldump-usage/">➦</a>
         
         </div>
         

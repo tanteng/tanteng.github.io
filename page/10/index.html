@@ -192,13 +192,7 @@
         </span>
         <span >
         
-        创建 utf8mb4 数据库：
-create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-修改数据库、表、字段为 utf8mb4 编码：
-# For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-(Don’t blindly copy-paste this! The exact statement depends on the column type, maximum length, and other properties.
+        创建 utf8mb4 数据库： create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 修改数据库、表、字段为 utf8mb4 编码： # For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4
         
         </span>
         
@@ -240,11 +234,11 @@ For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(1
         </span>
         <span >
         
-        使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。
-这篇文章介绍了 Trie 树结构：
-http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html
+        使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。 这篇
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/trie-intro/">➦</a>
         
         </div>
         
@@ -261,10 +255,7 @@ http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html
         </span>
         <span >
         
-        几个链接：
-https://www.zhihu.com/question/30672017
-http://www.lxlxw.me/?p=216
-http://www.tuicool.com/articles/Ir2AreE
+        几个链接： https://www.zhihu.com/question/30672017 http://www.lxlxw.me/?p=216 http://www.tuicool.com/articles/Ir2AreE
         
         </span>
         
@@ -406,15 +397,11 @@ http://www.tuicool.com/articles/Ir2AreE
         </span>
         <span >
         
-        golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。
-func main() { test := []byte(&ldquo;abcd中文&rdquo;) fmt.Println(test)
-test2 := []byte{1, 3, 4, 56} fmt.Println(test2)  }
-输出结果：
-$ go run test.go
-[97 98 99 100 228 184 173 230 150 135]
-[1 3 4 56]
+        golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。 func main() { test := []byte(&ldquo;a
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/golang-byte-slice/">➦</a>
         
         </div>
         

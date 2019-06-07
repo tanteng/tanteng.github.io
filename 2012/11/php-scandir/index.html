@@ -22,18 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用php scandir函数遍历文件夹目录和所有文件"/>
-<meta name="twitter:description" content="使用php scandir函数遍历文件夹目录和所有文件
-&lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir);
-function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍历 $file_location=$dir.&ldquo;/&rdquo;.$file;//生成路径 if(is_dir($file_location) &#038;&#038; $file!=&ldquo;.&rdquo; &#038;&#038;$file!=&ldquo;..&rdquo;){ //判断是不是文件夹 echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;sign in $file_location&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ldquo;; list_file($file_location); //继续遍历 } echo &ldquo;&rdquo;; } } ?&gt; 
-以前的写法：
-&lt;?php /** * Get an array that represents directory tree * @param string $directory Directory path * @param bool $recursive Include sub directories * @param bool $listDirs Include directories on listing * @param bool $listFiles Include files on listing * @param regex $exclude Exclude paths that matches this regex */ function directoryToArray($directory, $recursive = true, $listDirs = false, $listFiles = true, $exclude = &ldquo;) { $arrayItems = array(); $skipByExclude = false; $handle = opendir($directory); if ($handle) { while (false !"/>
+<meta name="twitter:description" content="使用php scandir函数遍历文件夹目录和所有文件 &lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍"/>
 
 <meta property="og:title" content="使用php scandir函数遍历文件夹目录和所有文件" />
-<meta property="og:description" content="使用php scandir函数遍历文件夹目录和所有文件
-&lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir);
-function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍历 $file_location=$dir.&ldquo;/&rdquo;.$file;//生成路径 if(is_dir($file_location) &#038;&#038; $file!=&ldquo;.&rdquo; &#038;&#038;$file!=&ldquo;..&rdquo;){ //判断是不是文件夹 echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;sign in $file_location&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ldquo;; list_file($file_location); //继续遍历 } echo &ldquo;&rdquo;; } } ?&gt; 
-以前的写法：
-&lt;?php /** * Get an array that represents directory tree * @param string $directory Directory path * @param bool $recursive Include sub directories * @param bool $listDirs Include directories on listing * @param bool $listFiles Include files on listing * @param regex $exclude Exclude paths that matches this regex */ function directoryToArray($directory, $recursive = true, $listDirs = false, $listFiles = true, $exclude = &ldquo;) { $arrayItems = array(); $skipByExclude = false; $handle = opendir($directory); if ($handle) { while (false !" />
+<meta property="og:description" content="使用php scandir函数遍历文件夹目录和所有文件 &lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2012/11/php-scandir/" />
 <meta property="article:published_time" content="2012-11-03T08:30:22&#43;00:00"/>
