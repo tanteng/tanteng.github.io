@@ -18,9 +18,7 @@
       
       <guid>http://tanteng.me/2019/02/reding-list-28/</guid>
       <description>1.golang select-case 实现机制
-https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-select-case实现机制.html
 2.如何优雅的控制 goroutine 的数量
-https://my.oschina.net/xlplbo/blog/682884
 3.LIMIT THE NUMBER OF GOROUTINES RUNNING AT THE SAME TIME
 https://blog.antoine-augusti.fr/2015/12/limit-the-number-of-goroutines-running-at-the-same-time/
 4.Hive 之 COUNT DISTINCT 优化
