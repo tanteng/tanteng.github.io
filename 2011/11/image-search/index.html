@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>搜索相似图片的原理 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="搜索相似图片的原理"/>
+<meta name="twitter:description" content="
+  
+    
+      上个月，Google把&#8221;相似图片搜索&#8221;功能正式放上了首页。用户可以上传一张图片进行搜索，找到相似的图片，这个新技术被称为“图片搜索”，谷歌的有一个创新应用技术上线了。
+    
+    
+    
+      
+    
+    
+    
+      
+        　　第一步，缩小尺寸。
+      
+      
+      
+        将图片缩小到8&#215;8的尺寸，总共64个像素。这一步的作用是去除图片的细节，只保留结构、明暗等基本信息，摒弃不同尺寸、比例带来的图片差异。
+      
+      
+      
+        你可以用一张图片，搜索互联网上所有与它相似的图片。点击搜索框中照相机的图标。
+      
+    "/>
+
+<meta property="og:title" content="搜索相似图片的原理" />
+<meta property="og:description" content="
+  
+    
+      上个月，Google把&#8221;相似图片搜索&#8221;功能正式放上了首页。用户可以上传一张图片进行搜索，找到相似的图片，这个新技术被称为“图片搜索”，谷歌的有一个创新应用技术上线了。
+    
+    
+    
+      
+    
+    
+    
+      
+        　　第一步，缩小尺寸。
+      
+      
+      
+        将图片缩小到8&#215;8的尺寸，总共64个像素。这一步的作用是去除图片的细节，只保留结构、明暗等基本信息，摒弃不同尺寸、比例带来的图片差异。
+      
+      
+      
+        你可以用一张图片，搜索互联网上所有与它相似的图片。点击搜索框中照相机的图标。
+      
+    " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2011/11/image-search/" />
+<meta property="article:published_time" content="2011-11-22T11:14:32&#43;00:00"/>
+<meta property="article:modified_time" content="2011-11-22T11:14:32&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>搜索相似图片的原理</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 22, 2011
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91">互联网</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <div>
+  <div id="ArticleCnt">
+    <p>
+      上个月，Google把&#8221;相似图片搜索&#8221;功能正式放上了首页。用户可以上传一张图片进行搜索，找到相似的图片，这个新技术被称为“图片搜索”，谷歌的有一个创新应用技术上线了。
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316444739.png" alt="" />
+    </p>
+    
+    <blockquote>
+      <p>
+        <strong>　　第一步，缩小尺寸。</strong>
+      </p>
+      
+      <p>
+        将图片缩小到8&#215;8的尺寸，总共64个像素。这一步的作用是去除图片的细节，只保留结构、明暗等基本信息，摒弃不同尺寸、比例带来的图片差异。
+      </p>
+      
+      <p>
+        你可以用一张图片，搜索互联网上所有与它相似的图片。点击搜索框中照相机的图标。
+      </p>
+    </blockquote>
+    
+        
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316450989.png" alt="" />你输入网片的网址，或者直接上传图片，Google就会找出与其相似的图片。下面这张图片是美国女演员Alyson Hannigan。
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316453669.jpg" alt="" />
+    </p>
+    
+    <p>
+      上传后，Google返回如下结果：
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316454785.jpg" alt="" />类似的&#8221;相似图片搜索引擎&#8221;还有不少，TinEye甚至可以找出照片的拍摄背景。
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316455835.jpg" alt="" />
+    </p>
+    
+    <p>
+      这种技术的原理是什么？计算机怎么知道两张图片相似呢？
+    </p>
+    
+    <p>
+      根据Neal Krawetz博士的解释，原理非常简单易懂。我们可以用一个快速算法，就达到基本的效果。
+    </p>
+    
+    <p>
+      这里的关键技术叫做&#8221;感知哈希算法&#8221;（Perceptual hash algorithm），它的作用是对每张图片生成一个&#8221;指纹&#8221;（fingerprint）字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似。
+    </p>
+    
+    <p>
+      下面是一个最简单的实现：
+    </p>
+    
+    <p>
+      <strong>　　第一步，缩小尺寸。</strong>
+    </p>
+    
+    <p>
+      将图片缩小到8&#215;8的尺寸，总共64个像素。这一步的作用是去除图片的细节，只保留结构、明暗等基本信息，摒弃不同尺寸、比例带来的图片差异。
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316461154.png" alt="" /> <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316462114.png" alt="" width="64" height="64" />
+    </p>
+    
+    <p>
+      <strong>　　第二步，简化色彩。</strong>
+    </p>
+    
+    <p>
+      将缩小后的图片，转为64级灰度。也就是说，所有像素点总共只有64种颜色。
+    </p>
+    
+    <p>
+      <strong>　　第三步，计算平均值。</strong>
+    </p>
+    
+    <p>
+      计算所有64个像素的灰度平均值。
+    </p>
+    
+    <p>
+      <strong>　　第四步，比较像素的灰度。</strong>
+    </p>
+    
+    <p>
+      将每个像素的灰度，与平均值进行比较。大于或等于平均值，记为1；小于平均值，记为0。
+    </p>
+    
+    <p>
+      <strong>　　第五步，计算哈希值。</strong>
+    </p>
+    
+    <p>
+      将上一步的比较结果，组合在一起，就构成了一个64位的整数，这就是这张图片的指纹。组合的次序并不重要，只要保证所有图片都采用同样次序就行了。
+    </p>
+    
+    <p>
+      <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316470336.png" alt="" />= <img src="http://pic001.cnblogs.com/images/2011/24634/2011072316471493.png" alt="" width="64" height="64" /> = 8f373714acfcf4d0
+    </p>
+    
+    <p>
+      得到指纹以后，就可以对比不同的图片，看看64位中有多少位是不一样的。在理论上，这等同于计算&#8221;汉明距离&#8221;（Hamming distance）。如果不相同的数据位不超过5，就说明两张图片很相似；如果大于10，就说明这是两张不同的图片。
+    </p>
+    
+    <p>
+      具体的代码实现，可以参见Wote用python语言写的imgHash.py。代码很短，只有53行。使用的时候，第一个参数是基准图片，第二个参数是用来比较的其他图片所在的目录，返回结果是两张图片之间不相同的数据位数量（汉明距离）。
+    </p>
+    
+    <p>
+      这种算法的优点是简单快速，不受图片大小缩放的影响，缺点是图片的内容不能变更。如果在图片上加几个文字，它就认不出来了。所以，它的最佳用途是根据缩略图，找出原图。
+    </p>
+    
+    <p>
+      实际应用中，往往采用更强大的pHash算法和SIFT算法，它们能够识别图片的变形。只要变形程度不超过25%，它们就能匹配原图。这些算法虽然更复杂，但是原理与上面的简便算法是一样的，就是先将图片转化成Hash字符串，然后再进行比较。
+    </p>
+    
+    <p>
+      (来自博客园，原文作者：<a href="http://www.ruanyifeng.com/" target="_blank" rel="nofollow">阮一峰</a> )
+    </p>
+  </div>
+</div>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2011/11/linuxc/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">在Linux中用gcc运行C语言程序</span>
+    </a>
+    
+    
+    <a href="/2012/01/mor/" class="navigation-next">
+      <span class="navigation-tittle">从技术角度分析铁道部的购票网站为什么这么慢</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

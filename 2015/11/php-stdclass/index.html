@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>PHP中stdClass的意义 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP中stdClass的意义"/>
+<meta name="twitter:description" content="在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。"/>
+
+<meta property="og:title" content="PHP中stdClass的意义" />
+<meta property="og:description" content="在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2015/11/php-stdclass/" />
+<meta property="article:published_time" content="2015-11-08T13:38:38&#43;00:00"/>
+<meta property="article:modified_time" content="2015-11-08T13:38:38&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>PHP中stdClass的意义</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 8, 2015
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。</p>
+
+<p>如下代码所示：</p>
+
+<p><code class="lang:php mark:1 decode:true">$tanteng = new stdClass();
+$tanteng-&gt;name = &lsquo;tanteng&rsquo;;
+$tanteng-&gt;email = &lsquo;xxx@qq.com&rsquo;;</p>
+
+<p>$info = get_object_vars($tanteng);
+print_r($info);exit;</code></p>
+
+<p>输出：</p>
+
+<p>Array ( [name] =&gt; tanteng [email] =&gt; xxx@qq.com )</p>
+
+<p>get_object_vars的作用是返回由对象属性组成的关联数组。它的效果跟这样定义数组其实是一样的：</p>
+
+<p><code>$tanteng = array();
+$tanteng[&lsquo;name&rsquo;] = &lsquo;tanteng&rsquo;;
+$tanteng[&lsquo;email&rsquo;] = &lsquo;xxx@qq.com&rsquo;;</code></p>
+
+<p>可以这样理解：stdClass是一个内置类，它没有成员变量，也没有成员方法的一个类。new一个stdClass就是实例化了一个『空』对象，它本身没什么意义，但是用stdClass定义有什么好处呢？</p>
+
+<p>如下代码：</p>
+
+<p><code>$user = new stdClass();
+$user-&gt;name = &lsquo;gouki&rsquo;;
+$user-&gt;hehe = &lsquo;hehe&rsquo;;
+$myUser = $user;
+$myUser-&gt;name = &lsquo;flypig&rsquo;;</p>
+
+<p>print_r($user);</p>
+
+<p>print_r($myUser);</p>
+
+<p>print_r($user);</code></p>
+
+<p>这里$myUser被赋值$user，但其实并没有新开辟一块内存存储变量，$myUser还是指的stdClass这个对象，通过$myUser改变属性页就改变了$user的属性，并不是新建一个副本，如果程序中有许多这样的操作，使用stdClass的方式可以节省内存开销。</p>
+
+<p>运行结果：</p>
+
+<p><code class="lang:php decode:true ">stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)
+stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)
+stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)</code></p>
+
+<p>从结果可以看出，改变$myUser的属性确实改变了$user声明的stdClass属性。而如果$user是一个数组，赋值给$myUser，那就拷贝了一个副本给$myUser，这样增大系统开销。</p>
+
+<p>当然，你也可以反过来，把一个数组转换为对象：</p>
+
+<p><code class="lang:php decode:true ">$hehe[&lsquo;he1&rsquo;] = &lsquo;he1&rsquo;;
+$hehe[&lsquo;he2&rsquo;] = &lsquo;he2&rsquo;;</p>
+
+<p>$hh = (object) $hehe;</p>
+
+<p>print_r($hh);</code></p>
+
+<p>打印结果：</p>
+
+<p>stdClass Object ( [he1] =&gt; he1 [he2] =&gt; he2 )</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2015/11/mac-git-missing-xcrun/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Mac终端git命令提示错误:missing xcrun</span>
+    </a>
+    
+    
+    <a href="/2015/11/chmod-number/" class="navigation-next">
+      <span class="navigation-tittle">Chmod命令修改目录权限数字含义</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

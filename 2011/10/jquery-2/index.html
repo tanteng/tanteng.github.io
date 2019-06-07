@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>jQuery常用技巧 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="jQuery常用技巧"/>
+<meta name="twitter:description" content="1、关于页面元素的引用 
+
+通过jquery的$()引用元素包括通过id、class、元素名以及元素的层级关系及dom或者xpath条件等方法，且返回的对象为jquery对象（集合对象），不能直接调用dom定义的方法。
+
+2、jQuery对象与dom对象的转换
+
+只有jquery对象才能使用jquery定义的方法。注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是 jquery对象。
+
+普通的dom对象一般可以通过$()转换成jquery对象。
+
+如：$(document.getElementById(&#8220;msg&#8221;))则为jquery对象，可以使用jquery的方法。
+
+由于jquery对象本身是一个集合。所以如果jquery对象要转换为dom对象则必须取出其中的某一项，一般可通过索引取出。"/>
+
+<meta property="og:title" content="jQuery常用技巧" />
+<meta property="og:description" content="1、关于页面元素的引用 
+
+通过jquery的$()引用元素包括通过id、class、元素名以及元素的层级关系及dom或者xpath条件等方法，且返回的对象为jquery对象（集合对象），不能直接调用dom定义的方法。
+
+2、jQuery对象与dom对象的转换
+
+只有jquery对象才能使用jquery定义的方法。注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是 jquery对象。
+
+普通的dom对象一般可以通过$()转换成jquery对象。
+
+如：$(document.getElementById(&#8220;msg&#8221;))则为jquery对象，可以使用jquery的方法。
+
+由于jquery对象本身是一个集合。所以如果jquery对象要转换为dom对象则必须取出其中的某一项，一般可通过索引取出。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2011/10/jquery-2/" />
+<meta property="article:published_time" content="2011-10-24T14:16:15&#43;00:00"/>
+<meta property="article:modified_time" content="2011-10-24T14:16:15&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>jQuery常用技巧</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 24, 2011
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E5%89%8D%E7%AB%AF">前端</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><strong>1、关于页面元素的引用 </strong></p>
+
+<p>通过jquery的$()引用元素包括通过id、class、元素名以及元素的层级关系及dom或者xpath条件等方法，且返回的对象为jquery对象（集合对象），不能直接调用dom定义的方法。</p>
+
+<p><strong>2、jQuery对象与dom对象的转换</strong></p>
+
+<p>只有jquery对象才能使用jquery定义的方法。注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是 jquery对象。</p>
+
+<p>普通的dom对象一般可以通过$()转换成jquery对象。</p>
+
+<p>如：$(document.getElementById(&#8220;msg&#8221;))则为jquery对象，可以使用jquery的方法。</p>
+
+<p>由于jquery对象本身是一个集合。所以如果jquery对象要转换为dom对象则必须取出其中的某一项，一般可通过索引取出。</p>
+
+<p>如：$(&#8220;#msg&#8221;)[0]，$(&#8220;div&#8221;).eq(1)[0]，$(&#8220;div&#8221;).get()[1]，$(&#8220;td&#8221;)[5]这些都是dom对象，可以使用dom中的方法，但不能再使用Jquery的方法。</p>
+
+<p><strong>3、如何获取jQuery集合的某一项 </strong></p>
+
+<p>对于获取的元素集合，获取其中的某一项（通过索引指定）可以使用eq或get(n)方法或者索引号获取，要注意，eq返回的是jquery对象，而 get(n)和索引返回的是dom元素对象。对于jquery对象只能使用jquery的方法，而dom对象只能使用dom的方法，如要获取第三个元素的内容。有如下两种方法：</p>
+
+<p>$(&#8220;div&#8221;).eq(2).html(); //调用jquery对象的方法</p>
+
+<p>$(&#8220;div&#8221;).get(2).innerHTML; //调用dom的方法属性</p>
+
+<p><strong>4、同一函数实现set和get </strong></p>
+
+<p>Jquery中的很多方法都是如此，主要包括如下几个：</p>
+
+<p><code lang="php">$(&ldquo;#msg&rdquo;).html(); //返回id为msg的元素节点的html内容。
+//将&rdquo;new content&rdquo; 作为html串写入id为msg的元素节点内容中,页面显示粗体的new content
+$(&ldquo;#msg&rdquo;).text(); //返回id为msg的元素节点的文本内容。
+//将&rdquo;new content&rdquo; 作为普通文本串写入id为msg的元素节点内容中,页面显示new content
+$(&ldquo;#msg&rdquo;).height(); //返回id为msg的元素的高度
+$(&ldquo;#msg&rdquo;).height(&ldquo;300″); //将id为msg的元素的高度设为300
+$(&ldquo;#msg&rdquo;).width(); //返回id为msg的元素的宽度
+$(&ldquo;#msg&rdquo;).width(&ldquo;300″); //将id为msg的元素的宽度设为300
+$(&ldquo;input&rdquo;).val(&ldquo;); //返回表单输入框的value值
+$(&ldquo;input&rdquo;).val(&ldquo;test&rdquo;); //将表单输入框的value值设为test
+$(&ldquo;#msg&rdquo;).click(); //触发id为msg的元素的单击事件
+$(&ldquo;#msg&rdquo;).click(fn); //为id为msg的元素单击事件添加函数</code></p>
+
+<p>同样blur,focus,select,submit事件都可以有着两种调用方法 ****</p>
+
+<p><strong>5、操作元素的样式 </strong></p>
+
+<p>主要包括以下几种方式：</p>
+
+<p><code lang="php">$(&ldquo;#msg&rdquo;).css(&ldquo;background&rdquo;); //返回元素的背景颜色
+$(&ldquo;#msg&rdquo;).css(&ldquo;background&rdquo;,&ldquo;#ccc&rdquo;) //设定元素背景为灰色
+$(&ldquo;#msg&rdquo;).height(300); $(&ldquo;#msg&rdquo;).width(&ldquo;200″); //设定宽高
+$(&ldquo;#msg&rdquo;).css({ color: &ldquo;red&rdquo;, background: &ldquo;blue&rdquo; });//以名值对的形式设定样式
+$(&ldquo;#msg&rdquo;).addClass(&ldquo;select&rdquo;); //为元素增加名称为select的class
+$(&ldquo;#msg&rdquo;).removeClass(&ldquo;select&rdquo;); //删除元素名称为select的class
+$(&ldquo;#msg&rdquo;).toggleClass(&ldquo;select&rdquo;); //如果存在（不存在）就删除（添加）名称为select的class</code></p>
+
+<p><strong>6、完善的事件处理功能 </strong></p>
+
+<p>Jquery已经为我们提供了各种事件处理方法，我们无需在html元素上直接写事件，而可以直接为通过jquery获取的对象添加事件。</p>
+
+<blockquote>
+<p>如：</p>
+
+<p>$(&#8220;#msg&#8221;).click(function(){}) //为元素添加了单击事件</p>
+</blockquote>
+
+<p><strong>jQuery中几个自定义的事件：</strong></p>
+
+<p>（1）hover(fn1,fn2)：一个模仿悬停事件（鼠标移动到一个对象上面及移出这个对象）的方法。当鼠标移动到一个匹配的元素上面时，会触发指定的第一个函数。当鼠标移出这个元素时，会触发指定的第二个函数。</p>
+
+<p>（2）ready(fn):当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。</p>
+
+<p>（3）toggle(evenFn,oddFn): 每次点击时切换要调用的函数。如果点击了一个匹配的元素，则触发指定的第一个函数，当再次点击同一元素时，则触发指定的第二个函数。随后的每次点击都重复对这两个函数的轮番调用。</p>
+
+<p>（4）trigger(eventtype): 在每一个匹配的元素上触发某类事件。</p>
+
+<blockquote>
+<p>例如：</p>
+
+<p>$(&#8220;p&#8221;).trigger(&#8220;click&#8221;); //触发所有p元素的click事件</p>
+</blockquote>
+
+<p>（5）bind(eventtype,fn)，unbind(eventtype): 事件的绑定与反绑定。从每一个匹配的元素中（添加）删除绑的事件。</p>
+
+<blockquote>
+<p>例如：</p>
+
+<p>$(&#8220;p&#8221;).bind(&#8220;click&#8221;, function(){.text());}); //为每个p元素添加单击事件</p>
+
+<p>$(&#8220;p&#8221;).unbind(); //删除所有p元素上的所有事件</p>
+
+<p>$(&#8220;p&#8221;).unbind(&#8220;click&#8221;) //删除所有p元素上的单击事件 ****</p>
+
+<hr />
+</blockquote>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2011/10/jquery-nth-child/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">jquery :nth-child()伪类选择器</span>
+    </a>
+    
+    
+    <a href="/2011/10/pv/" class="navigation-next">
+      <span class="navigation-tittle">PV原语实现进程同步和互斥的原理实例</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

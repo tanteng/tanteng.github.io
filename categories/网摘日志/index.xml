@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网摘日志 on 小谈博客</title>
+    <link>http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</link>
+    <description>Recent content in 网摘日志 on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jun 2018 16:19:50 +0000</lastBuildDate>
+    
+	<atom:link href="http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本周阅读清单20180528</title>
+      <link>http://tanteng.me/2018/06/reding-list-9/</link>
+      <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-9/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;在 Laravel 中使用 Vue 组件化开发
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pigjian.com/article/laravel-vue&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://pigjian.com/article/laravel-vue&#34;&gt;https://pigjian.com/article/laravel-vue&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;理解 PHP 内核中 SAPI 的作用
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://foio.github.io/php-sapi/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://foio.github.io/php-sapi/&#34;&gt;https://foio.github.io/php-sapi/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用 Redis 实现单机锁
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://huoding.com/2015/09/14/463&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://huoding.com/2015/09/14/463&#34;&gt;https://huoding.com/2015/09/14/463&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>软件设计思想：先整体轮廓，再完善细节部分</title>
+      <link>http://tanteng.me/2017/12/software-design/</link>
+      <pubDate>Sat, 23 Dec 2017 15:56:30 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/12/software-design/</guid>
+      <description>&lt;p&gt;《画家与黑客》一书作者在谈到软件设计思想的时候很有启发，尤其是做需求，如果你一开始就纠结细节而看不到整体，你可能花费很多时间还达不到预期的效果。要先有一个整体的轮廓，再完善各个部分和细节，或做出调整，这样你一开始就掌握全局，这应该是正确的方式。作者拿了印刷，雕刻，绘画，油画等艺术领域的例子来说明软件开发也应该如此。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决拖延症的好方法</title>
+      <link>http://tanteng.me/2017/04/deadline/</link>
+      <pubDate>Sun, 23 Apr 2017 05:31:34 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/04/deadline/</guid>
+      <description>解决拖延症的好方法就是给自己设定一个最后期限（Deadline） ​​​​</description>
+    </item>
+    
+    <item>
+      <title>丘吉尔名言</title>
+      <link>http://tanteng.me/2017/04/churchill-motto/</link>
+      <pubDate>Wed, 12 Apr 2017 13:54:48 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/04/churchill-motto/</guid>
+      <description>&lt;p&gt;我没有别的，只有热血、辛劳、眼泪和汗水献给大家……你们问：我们的目的是什么？我可以用一个词来答复：胜利，不惜一切代价去争取胜利，无论多么恐怖也要争取胜利，无论道路多么遥远艰难，也要争取胜利，因为没有胜利就无法生存。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>阅读与心智的成长</title>
+      <link>http://tanteng.me/2016/12/reading-and-maturing-personalities/</link>
+      <pubDate>Mon, 05 Dec 2016 13:31:46 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2016/12/reading-and-maturing-personalities/</guid>
+      <description>&lt;p&gt;以下摘自《如何阅读一本书》第二十一章。&lt;/p&gt;
+
+&lt;p&gt;我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;所谓主动的阅读，也就是能提出问题来。&lt;/strong&gt;我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>每个人的生活都是一条通向自身的道路</title>
+      <link>http://tanteng.me/2016/12/road-to-myself/</link>
+      <pubDate>Fri, 02 Dec 2016 06:57:53 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2016/12/road-to-myself/</guid>
+      <description>看到一句话，很有道理：&amp;#8221;每个人的生活都是一条通向自身的道路。每个人的真正职责只有一个：找到自我。” ​​​​
+出处：每个人的生命都是通向自我的征途，是对一条道路的尝试，是一条小径的悄然召唤。觉醒的人只有一项义务：找到自我，固守自我，沿着自己的路向前走，不管它通向哪里。——黑塞</description>
+    </item>
+    
+    <item>
+      <title>程序员作家王小波：从Internet说起</title>
+      <link>http://tanteng.me/2015/06/wang-xiao-bo-internet/</link>
+      <pubDate>Thu, 11 Jun 2015 15:32:29 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/06/wang-xiao-bo-internet/</guid>
+      <description>&lt;p&gt;作家王小波，同时也是一名程序员，自己会写软件，还写了五笔输入法，这是他的一篇文章，很Internet有关——《从Internet说起》。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Practice reduces the imperfection的意思</title>
+      <link>http://tanteng.me/2015/06/practice-and-perfect/</link>
+      <pubDate>Sun, 07 Jun 2015 15:50:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/06/practice-and-perfect/</guid>
+      <description>&lt;p&gt;英语有句名言叫Practice makes perfect,翻译成中文的意思是熟能生巧，练习实践可以不断做到完美，可是还有一句话后半句是Practice reduces the imperfection，前半句是Practice doesn&amp;#8217;t make perfect.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>满地樱花堆积</title>
+      <link>http://tanteng.me/2015/03/ying-hua/</link>
+      <pubDate>Sun, 29 Mar 2015 12:29:29 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/03/ying-hua/</guid>
+      <description>&lt;p&gt;今天武汉下雨，和亲朋好友一起去武大赏樱花，今天也是武大赏樱花的最佳时间的最后一天。我们是下午5点去的，没有收门票，坐校车来到樱花大道，但是很多樱花都谢了，满地樱花堆积。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.dayecn.com/upload/2015/03/20150329082206964.jpg&#34; alt=&#34;武大赏樱&#34; data-bd-imgshare-binded=&#34;1&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>你不知道事情是在变化的吗</title>
+      <link>http://tanteng.me/2015/03/change-things/</link>
+      <pubDate>Sat, 14 Mar 2015 04:10:26 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/03/change-things/</guid>
+      <description>有一次做梦，我现在已经记不清楚做了什么梦，但是这个梦结尾是一个结论：你不知道事情是在变化的吗？我觉得这句话反应了现实，告诉我要以变化的眼光看问题看事物。</description>
+    </item>
+    
+    <item>
+      <title>昨夜梦见的美景</title>
+      <link>http://tanteng.me/2015/03/beautiful-scenery-in-dream/</link>
+      <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/03/beautiful-scenery-in-dream/</guid>
+      <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有晚霞，这景色非常壮观，我还赶紧拿出手机用微信拍小视频。还梦见几只孔雀开屏。
+巧合的是，第二天路过汉口一个餐厅，餐厅前面有一个院子，养了很多动物，我惊奇地发现几只孔雀，感觉梦境就这样神奇般地成了现实。
+https://blog.tanteng.me/wp-content/uploads/2015/03/WeChatSight209.mp4  这就是那天用微信朋友圈拍摄的。</description>
+    </item>
+    
+    <item>
+      <title>你比你想象中的更强大</title>
+      <link>http://tanteng.me/2015/03/stronger/</link>
+      <pubDate>Fri, 06 Mar 2015 16:49:21 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/03/stronger/</guid>
+      <description>&lt;p&gt;生活不可能像你想象得那么好，但也不会像你想象得那么糟。我觉得人的脆弱和坚强都超乎自己的想象。有时，我可能脆弱得一句话就泪流满面，有时，也发现自己咬着牙走了很长的路。&lt;/p&gt;
+
+&lt;p&gt;——莫泊桑&lt;/p&gt;
+
+&lt;p&gt;在危机中产生了发明、发现和主要策略。战胜危机的人是那些超越自我，且没有被危机征服的人。&lt;/p&gt;
+
+&lt;p&gt;——阿尔伯特·爱因斯坦&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>武科大沁湖岛</title>
+      <link>http://tanteng.me/2015/01/qin-hu-wust/</link>
+      <pubDate>Thu, 29 Jan 2015 05:48:19 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/01/qin-hu-wust/</guid>
+      <description>武科大沁湖概况  观赏武科大沁湖岛  许家印捐建的武科大沁湖亭  武科大沁湖  武汉科技大学沁湖景观  沁湖园林古建   这是武科大新建沁湖岛的景观，据说园林古建亭子是知名校友许家印捐建的。点击图片可以进入相册看大图。</description>
+    </item>
+    
+    <item>
+      <title>明星给宝宝取的名字</title>
+      <link>http://tanteng.me/2014/12/baby-name-star/</link>
+      <pubDate>Mon, 08 Dec 2014 03:42:55 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/12/baby-name-star/</guid>
+      <description>&lt;p&gt;给宝宝取名向来是父母最伤脑筋的事，看看明星是如何给宝宝取名的，本文列举陈慧琳、白岩松、庾澄庆、伊能静、陈可辛、吴君如等明星给宝宝取的名字，提供给你参考。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>更换手机号码需要修改哪些绑定的帐号</title>
+      <link>http://tanteng.me/2014/12/telephone-bind/</link>
+      <pubDate>Sun, 07 Dec 2014 05:13:25 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/12/telephone-bind/</guid>
+      <description>&lt;p&gt;更换了手机号码，很多和手机号绑定的银行卡支付宝等帐号都要修改绑定，还有哪些帐号需要修改绑定手机号呢？列举以下例子来对照一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>书上看到的香港七八十年代的照片</title>
+      <link>http://tanteng.me/2014/12/hk-50y/</link>
+      <pubDate>Fri, 05 Dec 2014 03:29:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/12/hk-50y/</guid>
+      <description>&lt;p&gt;书上看到的七八十年代的香港，特别是维多利亚港，真的是今非昔比，如今是无与伦比！那时的香港感觉百废待兴，没有高楼大厦，甚至还有些乡气，人们的衣着和造型很复古，有点老上海滩的感觉，没有国际大都市的感觉。&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone&#34; src=&#34;http://ww4.sinaimg.cn/bmiddle/62669ad9jw1emy2dqv33vj21hc1407wh.jpg&#34; alt=&#34;香港七八十年代的照片&#34; width=&#34;440&#34; height=&#34;330&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>馬雲：11種人不能幫，10類人可合作，5類人不合夥！</title>
+      <link>http://tanteng.me/2014/12/ma-yun-yu-lu/</link>
+      <pubDate>Mon, 01 Dec 2014 05:29:23 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/12/ma-yun-yu-lu/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;這11種人幫一個就會有11個這種人出現，然後你就直接害了最少100個人。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1、忘恩的人；&lt;/p&gt;
+
+&lt;p&gt;2、掙錢違背道義的人；&lt;/p&gt;
+
+&lt;p&gt;3、損人而利己之人；&lt;/p&gt;
+
+&lt;p&gt;4、表面一套背後玩陰之人；&lt;/p&gt;
+
+&lt;p&gt;5、見利忘義，沒原則之人；&lt;/p&gt;
+
+&lt;p&gt;6、不守信用，求救時可憐，得勢時可惡之人；&lt;/p&gt;
+
+&lt;p&gt;7、做不了小事，卻想干大事的人；&lt;/p&gt;
+
+&lt;p&gt;8、把希望寄託在別人身上的人；&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>《不可承受的生命之轻》经典语录</title>
+      <link>http://tanteng.me/2014/11/quote-life-light/</link>
+      <pubDate>Fri, 28 Nov 2014 05:12:54 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/11/quote-life-light/</guid>
+      <description>&lt;p&gt;《不可承受的生命之轻》是捷克裔法国作家米兰·昆德拉于1984年所写的小说，这本小说中有很多经典的语录。以下语录摘自本书。&lt;/p&gt;
+
+&lt;p&gt;人永远都无法知道自己该要什么，因为人只能活一次，既不能拿它跟前世相比，也不能在来生加以修正。没有任何方法可以检验哪种抉择是好的，因为不存在任何比较。一切都是马上经历，仅此一次，不能准备。&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone aligncenter&#34; src=&#34;http://www.dayecn.com/upload/2014/10/20141012103616547.jpg&#34; alt=&#34;不能承受的生命之轻&#34; width=&#34;500&#34; height=&#34;571&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>密码保护：2013年终总结</title>
+      <link>http://tanteng.me/2014/01/2013-summary/</link>
+      <pubDate>Wed, 22 Jan 2014 16:45:19 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/01/2013-summary/</guid>
+      <description>&lt;p&gt;2013年是我的本命年，这一年也是很不平凡的一年，发生了很多事情，它是转折的一年，也是很有意义的一年。&lt;/p&gt;
+
+&lt;p&gt;这一年，我毕业了。&lt;/p&gt;
+
+&lt;p&gt;刚刚过去的大学生活，也许将永不复返了，回想起曾经的大学，最大的收获就是认识了很多新的同学，学到了很多自己感兴趣的知识。这么多年，发生了很多事情，很多事情也发生了变化，我也和从前不一样了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>武科大TOM猫</title>
+      <link>http://tanteng.me/2013/09/wust-cat/</link>
+      <pubDate>Sat, 21 Sep 2013 08:38:51 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2013/09/wust-cat/</guid>
+      <description>武科大黄家湖校区南园某垃圾桶旁长期蹲守一只猫，很可爱，不管怎么弄它，它都很淡定，不怕人，经常有路过的人跟它玩耍，给它吃的。</description>
+    </item>
+    
+    <item>
+      <title>习惯改变</title>
+      <link>http://tanteng.me/2013/09/used-to-change/</link>
+      <pubDate>Thu, 19 Sep 2013 05:55:52 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2013/09/used-to-change/</guid>
+      <description>害怕改变，是因为熟悉了旧的环境，我们对未知事物总是充满疑惑，然而改变不一定是不好的，改变也许会带来更多意想不到的收获，一切都在改变，习惯变化才不会被动！</description>
+    </item>
+    
+    <item>
+      <title>五年后的同学聚会,你该参加吗?</title>
+      <link>http://tanteng.me/2013/01/juhui/</link>
+      <pubDate>Fri, 25 Jan 2013 12:38:09 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2013/01/juhui/</guid>
+      <description>&lt;p&gt;这两天又被人问到为什么留在BeBeyond。看来“梦想”这个事情，还是挺奢侈的。呵呵……所以很想和大家分享两个让我感触很深的故事。&lt;/p&gt;
+
+&lt;p&gt;第一个故事来自于一本书，书名好像是《记住你是谁：15位哈佛教授震撼心灵的人生故事》（可能不是这个，我记不清了），是商务出版社出的《哈佛经典系列》，《蓝海战略》是这套丛书其中的一本。&lt;/p&gt;
+
+&lt;p&gt;这个故事是这样的。哈佛商学院的毕业生每5年就会有一次同学聚会，所以一个哈佛教授问即将毕业的学生说：“5年后，你会得到一张请柬，邀请你参加同学聚会，你该去吗？”（请大家停顿一下想想，你会去吗？）似乎答案应该是“去”，对吧？有什么理由不去呢？能够叙叙旧，维护下个人人际网，说不定还能碰上些新的商业机会，多好！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>“春游”</title>
+      <link>http://tanteng.me/2012/03/spring-outing/</link>
+      <pubDate>Sat, 17 Mar 2012 02:28:22 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2012/03/spring-outing/</guid>
+      <description>今天一大早起来，大家集合准备前往九峰山森林公园春游，老天没下雨，吾等便浩浩荡荡乘车而去，行至途中，忽然电闪雷鸣，雨开始下个不停。在武昌火车站停留 片刻，决定毅然前往，然倾盆大雨倾盆而下，只好打道回府。坐上回去的车，雨，停了，回到学校，太阳，出来了。
+本次春游总共花了2个小时。不过今天还是有收获的，早起了，吃了早餐。留下一张不完整的合照，以此纪念。</description>
+    </item>
+    
+    <item>
+      <title>世界能在一天之内改变</title>
+      <link>http://tanteng.me/2011/10/treasure/</link>
+      <pubDate>Mon, 31 Oct 2011 13:40:17 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/10/treasure/</guid>
+      <description>&lt;p&gt;世界能在一天之内改变，谁也不知道下一分钟即将发生什么，我们唯一能做的就是珍惜现在。四张在四件重要事件发生前一天的生活照片（现在看来都无比的珍贵和震撼）：&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Cape-Times-01&#34; src=&#34;https://byfiles.storage.live.com/y1pGXQ4juH9-Jh_4CXICQlve4iM4YeTpU-KKnKUOSzLgPV6hiE0sbviI6etDtEdCSiEbGiHQJ5JGd-agP_c1lIeiA/p127838120-2.jpg?psid=1&#34; alt=&#34;&#34; width=&#34;500&#34; height=&#34;370&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>肖申克的救赎语录(中英对照)</title>
+      <link>http://tanteng.me/2011/10/the-shawshank-redemption-quote/</link>
+      <pubDate>Fri, 21 Oct 2011 03:01:09 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/10/the-shawshank-redemption-quote/</guid>
+      <description>&lt;p&gt;1、Hope is a good thing, maybe the best of things, and no good thing ever dies.&lt;/p&gt;
+
+&lt;p&gt;译文：希望是美好的，也许是人间至善，而美好的事物永不消逝.&lt;/p&gt;
+
+&lt;p&gt;2、I find I’m so excited. I can barely sit still or hold a thought in my head. I think it the excitement only a free man can feel, a free man at the start of a long journey whose conclusion is uncertain. I hope I can make it across the border. I hope to see my friend, and shake his hand. I hope the Pacific is as blue as it has been in my dreams. I hope.&lt;/p&gt;
+
+&lt;p&gt;译文：我发现自己是如此的激动，以至于不能静静地坐下来思考。我想只有那些重获自由即将踏上新征程的人们才能感受到这种即将揭开未来神秘面纱的激动心情。我希望跨越千山万水握住朋友的手，我希望太平洋的海水如同梦中的一样蓝：我希望……&lt;/p&gt;
+
+&lt;p&gt;3、I guess it comes down to a simple choice:get busy living or get busy dying.&lt;/p&gt;
+
+&lt;p&gt;译文：生命可以归结为一种简单的选择：要么忙于生存，要么赶着去死。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

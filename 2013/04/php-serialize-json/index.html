@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>PHP的序列化和json以及区别 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP的序列化和json以及区别"/>
+<meta name="twitter:description" content="序列化和反序列化
+
+序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。
+
+&lt;?php
+$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);
+//序列化数组
+$s = serialize($a);
+echo $s;
+//输出结果：a:3:{s:1:&ldquo;a&rdquo;;s:5:&ldquo;Apple&rdquo;;s:1:&ldquo;b&rdquo;;s:6:&ldquo;banana&rdquo;;s:1:&ldquo;c&rdquo;;s:7:&ldquo;Coconut&rdquo;;}
+echo &lsquo;
+
+&rsquo;;
+//反序列化
+$o = unserialize($s);
+print_r($o);
+//输出结果 Array ( [a] =&gt; Apple [b] =&gt; banana [c] =&gt; Coconut )
+?&gt;
+"/>
+
+<meta property="og:title" content="PHP的序列化和json以及区别" />
+<meta property="og:description" content="序列化和反序列化
+
+序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。
+
+&lt;?php
+$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);
+//序列化数组
+$s = serialize($a);
+echo $s;
+//输出结果：a:3:{s:1:&ldquo;a&rdquo;;s:5:&ldquo;Apple&rdquo;;s:1:&ldquo;b&rdquo;;s:6:&ldquo;banana&rdquo;;s:1:&ldquo;c&rdquo;;s:7:&ldquo;Coconut&rdquo;;}
+echo &lsquo;
+
+&rsquo;;
+//反序列化
+$o = unserialize($s);
+print_r($o);
+//输出结果 Array ( [a] =&gt; Apple [b] =&gt; banana [c] =&gt; Coconut )
+?&gt;
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2013/04/php-serialize-json/" />
+<meta property="article:published_time" content="2013-04-16T06:12:56&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-16T06:12:56&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>PHP的序列化和json以及区别</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 16, 2013
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h3 id="序列化和反序列化">序列化和反序列化</h3>
+
+<p>序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。</p>
+
+<p><code lang="php">&lt;?php
+$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);
+//序列化数组
+$s = serialize($a);
+echo $s;
+//输出结果：a:3:{s:1:&ldquo;a&rdquo;;s:5:&ldquo;Apple&rdquo;;s:1:&ldquo;b&rdquo;;s:6:&ldquo;banana&rdquo;;s:1:&ldquo;c&rdquo;;s:7:&ldquo;Coconut&rdquo;;}
+echo &lsquo;</p>
+
+<p><br /><br />&rsquo;;
+//反序列化
+$o = unserialize($s);
+print_r($o);
+//输出结果 Array ( [a] =&gt; Apple [b] =&gt; banana [c] =&gt; Coconut )
+?&gt;
+</code></p>
+
+<p>当数组值包含如双引号、单引号或冒号等字符时，它们被反序列化后，可能会出现问题。为了克服这个问题，一个巧妙的技巧是使用base64_encode和base64_decode。</p>
+
+<p><code lang="php">$obj = array();
+//序列化
+$s = base64_encode(serialize($obj));
+//反序列化
+$original = unserialize(base64_decode($s));</p>
+
+<p></code></p>
+
+<p>但是base64编码将增加字符串的长度。为了克服这个问题，可以和gzcompress一起使用。</p>
+
+<p><code lang="php">//定义一个用来序列化对象的函数</p>
+
+<p>function my_serialize( $obj )
+{
+   return base64_encode(gzcompress(serialize($obj)));
+}</p>
+
+<p>//反序列化
+function my_unserialize($txt)
+{
+   return unserialize(gzuncompress(base64_decode($txt)));
+}</p>
+
+<p></code></p>
+
+<h3 id="json-encode-和-json-decode">json_encode 和 json_decode</h3>
+
+<p>使用JSON格式序列化和反序列化是一个不错的选择：</p>
+
+<p>使用json_encode和json_decode格式输出要serialize和unserialize格式快得多。</p>
+
+<p>JSON格式是可读的。</p>
+
+<p>JSON格式比serialize返回数据结果小。</p>
+
+<p>JSON格式是开放的、可移植的。其他语言也可以使用它。</p>
+
+<p><code lang="php">$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);</p>
+
+<p>//序列化数组
+$s = json_encode($a);
+echo $s;
+//输出结果：{&ldquo;a&rdquo;:&ldquo;Apple&rdquo;,&ldquo;b&rdquo;:&ldquo;banana&rdquo;,&ldquo;c&rdquo;:&ldquo;Coconut&rdquo;}</p>
+
+<p>echo &lsquo;<br /><br />&rsquo;;</p>
+
+<p>//反序列化
+$o = json_decode($s);</p>
+
+<p></code></p>
+
+<p>在上面的例子中，json_encode输出长度比上个例子中serialize输出长度显然要短。</p>
+
+<h3 id="序列化和json的区别">序列化和json的区别</h3>
+
+<p><strong>序列化除了resource类型之外的所有类型都可以进行序列化。而json只能序列化四种，而且节省空间。</strong></p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2013/03/di-gui/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">已知f(1)=2;f(2)=3;f(n)=f(n-1)&#43;f(n-2);用递归和非递归方法计算F($n)的值</span>
+    </a>
+    
+    
+    <a href="/2013/06/jquery-enter/" class="navigation-next">
+      <span class="navigation-tittle">jQuery回车键绑定点击事件</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

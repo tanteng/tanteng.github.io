@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Redis有序集合常用命令 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis有序集合常用命令"/>
+<meta name="twitter:description" content="小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。"/>
+
+<meta property="og:title" content="Redis有序集合常用命令" />
+<meta property="og:description" content="小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2016/07/redis-sorted-set/" />
+<meta property="article:published_time" content="2016-07-19T10:55:25&#43;00:00"/>
+<meta property="article:modified_time" content="2016-07-19T10:55:25&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Redis有序集合常用命令</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 19, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/redis">REDIS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。</p>
+
+<h3 id="zadd命令">ZADD命令</h3>
+
+<blockquote>
+<p>将一个或多个 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;member&lt;/span&gt;</code> 元素及其 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;score&lt;/span&gt;</code> 值加入到有序集 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;key&lt;/span&gt;</code> 当中。</p>
+
+<p>如果某个 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;member&lt;/span&gt;</code> 已经是有序集的成员，那么更新这个 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;member&lt;/span&gt;</code> 的 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;score&lt;/span&gt;</code> 值，并通过重新插入这个 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;member&lt;/span&gt;</code> 元素，来保证该 <code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;member&lt;/span&gt;</code> 在正确的位置上。</p>
+
+<p><code class="docutils literal">&lt;span class=&ldquo;pre&rdquo;&gt;score&lt;/span&gt;</code> 值可以是整数值或双精度浮点数。</p>
+</blockquote>
+
+<p>先用zadd命令批量添加一些元素到有序集合中，后面的操作都是基于这个集合进行。</p>
+
+<p><code class="lang:vim decode:true">127.0.0.1:6379&gt; zadd myzadd 1 a 2 b 3 c 4 d 5 e 6 f 7 d 8 e 9 f 10 tanteng.me
+(integer) 7</code></p>
+
+<p>如图所示：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/07/myzadd.png" target="_blank"><img class="alignnone size-full wp-image-10293" src="https://blog.tanteng.me/wp-content/uploads/2016/07/myzadd.png" alt="myzadd" width="375" height="172" /></a></p>
+
+<p>有序集合最特别的地方在于score，有了分值可以做很多事情，这个score不仅可以理解为分值，有时也会存时间戳，或者ip的整形形式，可以灵活运用。</p>
+
+<h3 id="zrange命令">ZRANGE命令</h3>
+
+<p>语法：ZRANGE key start stop [WITHSCORES]</p>
+
+<p>zrange命令用于返回有序集合中给定区间的元素。start从0开始，stop是结束下标，如果是负数表示从倒数开始，-1倒数第一个，-2倒数第二个……</p>
+
+<p>看下面的操作一目了然。</p>
+
+<p><code class="lang:vim decode:true">127.0.0.1:6379&gt; zrange myzadd 0 1
+1) &ldquo;a&rdquo;
+2) &ldquo;b&rdquo;
+127.0.0.1:6379&gt; zrange myzadd 0 5
+1) &ldquo;a&rdquo;
+2) &ldquo;b&rdquo;
+3) &ldquo;c&rdquo;
+4) &ldquo;d&rdquo;
+5) &ldquo;e&rdquo;
+6) &ldquo;f&rdquo;
+127.0.0.1:6379&gt; zrange myzadd 1 5
+1) &ldquo;b&rdquo;
+2) &ldquo;c&rdquo;
+3) &ldquo;d&rdquo;
+4) &ldquo;e&rdquo;
+5) &ldquo;f&rdquo;
+127.0.0.1:6379&gt; zrange myzadd 0 -1
+1) &ldquo;a&rdquo;
+2) &ldquo;b&rdquo;
+3) &ldquo;c&rdquo;
+4) &ldquo;d&rdquo;
+5) &ldquo;e&rdquo;
+6) &ldquo;f&rdquo;
+7) &ldquo;tanteng.me&rdquo;</code></p>
+
+<p>加上WITHSCORES参数显示分值：</p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zrange myzadd 0 -1 WITHSCORES
+ 1) &ldquo;a&rdquo;
+ 2) &ldquo;1&rdquo;
+ 3) &ldquo;b&rdquo;
+ 4) &ldquo;2&rdquo;
+ 5) &ldquo;c&rdquo;
+ 6) &ldquo;3&rdquo;
+ 7) &ldquo;d&rdquo;
+ 8) &ldquo;7&rdquo;
+ 9) &ldquo;e&rdquo;
+10) &ldquo;8&rdquo;
+11) &ldquo;f&rdquo;
+12) &ldquo;9&rdquo;
+13) &ldquo;tanteng.me&rdquo;
+14) &ldquo;10&rdquo;</code></p>
+
+<h3 id="zremrangebyrank命令">ZREMRANGEBYRANK命令</h3>
+
+<p>语法：ZREMRANGEBYRANK key start stop</p>
+
+<p>移除有序集中指定排名(rank)区间内的所有成员。start从0开始，stop可以为负数，表示倒过来第几位。</p>
+
+<p><code class="lang:vim decode:true">127.0.0.1:6379&gt; zremrangebyrank myzadd 0 2
+(integer) 3</code></p>
+
+<p>执行这个命令就删除了前三个元素a,b,c.</p>
+
+<h3 id="zremrangebyscore命令">ZREMRANGEBYSCORE命令</h3>
+
+<p>语法：ZREMRANGEBYSCORE key min max</p>
+
+<p>移除有序集 key 中，所有 score 值介于 min 和 max 之间(包括等于 min 或 max )的成员。</p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zremrangebyscore myzadd 7 8
+(integer) 2</code></p>
+
+<p>这样一来就把分值是7和8的元素d,e移除了.</p>
+
+<p>ZREMRANGEBYRANK和ZREMRANGEBYSCORE从字面上很好理解，都是移除元素，一个根据下标，一个根据分值。</p>
+
+<h3 id="zcard命令">ZCARD命令</h3>
+
+<p>语法：ZCARD key</p>
+
+<p>返回有序集合的基数。</p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zcard myzadd
+(integer) 2</code></p>
+
+<p>经过前面的删除元素操作，现在只剩2个元素了。</p>
+
+<h3 id="zcount命令">ZCOUNT命令</h3>
+
+<p>语法：ZCOUNT key min max</p>
+
+<p>ZCOUNT命令和ZCARD命令的不同是，ZCOUNT支持根据范围返回元素个数。</p>
+
+<p>由于集合元素都差不多删没了，重新添加一组元素：</p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zadd new 100 www.baidu.com 900 www.tanteng.me 12 www.yahoo.com 90 www.xunlei.com 88 www.juanpi.com
+(integer) 5</code></p>
+
+<p>如图所示：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/07/newzadd.png" target="_blank"><img class="alignnone size-full wp-image-10297" src="https://blog.tanteng.me/wp-content/uploads/2016/07/newzadd.png" alt="newzadd" width="369" height="143" /></a></p>
+
+<p>现在返回分值在80和100之间的成员数量。</p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zcount new 80 100
+(integer) 3</code></p>
+
+<p>返回3个。</p>
+
+<p><strong>在Redis里面，还有个参数inf，-inf表示第一个成员，+inf表示最后一个。</strong></p>
+
+<p><code class="lang:vim decode:true ">127.0.0.1:6379&gt; zcount new 80 +inf
+(integer) 4</code></p>
+
+<p>这里就返回4个数量，+inf这里表示没有限制最高分值的意思。</p>
+
+<p><strong>（小谈博客原创，转载请注明出处和链接：<a href="https://blog.tanteng.me/2016/07/redis-sorted-set/" target="_blank"><a href="https://blog.tanteng.me/2016/07/redis-sorted-set/">https://blog.tanteng.me/2016/07/redis-sorted-set/</a></a>）</strong></p>
+
+<p>更多其他命令和详细的用法请参考Redis手册：</p>
+
+<p><a href="http://redisdoc.com/sorted_set/index.html" target="_blank" rel="nofollow"><a href="http://redisdoc.com/sorted_set/index.html">http://redisdoc.com/sorted_set/index.html</a></a></p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2016/07/misconf-redis-configured-save-rdb-snapshots/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">解决 Redis 只读不可写的问题</span>
+    </a>
+    
+    
+    <a href="/2016/07/php-exec-status/" class="navigation-next">
+      <span class="navigation-tittle">判断PHP的exec函数是否执行成功</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

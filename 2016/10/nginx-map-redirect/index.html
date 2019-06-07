@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>使用 Nginx map 指令实现页面重定向 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Nginx map 指令实现页面重定向"/>
+<meta name="twitter:description" content="有时候网站 URL 规则会进行调整，需求的不断变化也会导致一些旧的 URL 无法访问，这个时候可以使用 Nginx 的 map 指令匹配这些旧的 URL，并重定向到新的 URL 规则，而且这种方式是在 Nginx 层面进行，不会对网站性能产生影响。"/>
+
+<meta property="og:title" content="使用 Nginx map 指令实现页面重定向" />
+<meta property="og:description" content="有时候网站 URL 规则会进行调整，需求的不断变化也会导致一些旧的 URL 无法访问，这个时候可以使用 Nginx 的 map 指令匹配这些旧的 URL，并重定向到新的 URL 规则，而且这种方式是在 Nginx 层面进行，不会对网站性能产生影响。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2016/10/nginx-map-redirect/" />
+<meta property="article:published_time" content="2016-10-10T11:00:47&#43;00:00"/>
+<meta property="article:modified_time" content="2016-10-10T11:00:47&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>使用 Nginx map 指令实现页面重定向</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 10, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>有时候网站 URL 规则会进行调整，需求的不断变化也会导致一些旧的 URL 无法访问，这个时候可以使用 Nginx 的 map 指令匹配这些旧的 URL，并重定向到新的 URL 规则，而且这种方式是在 Nginx 层面进行，不会对网站性能产生影响。</p>
+
+<p>在 nginx.conf 的 http 域中添加 map 指令规则，这里包含一个 URL 规则映射文件：</p>
+
+<p><code class="lang:php decode:true "># 设置301跳转
+map $request_uri $new {
+    include /etc/nginx/redirect.map;
+}</code></p>
+
+<p>map 指令支持引入一个映射文件的方式，这里 redirect.map 文件内容格式如下：</p>
+
+<p><code class="lang:php decode:true ">~^/page/mordern-php$ /page/modern-php;</code></p>
+
+<p>目前只添加了一行作为测试，前面可以是正则表达式，后面是要跳转到的新的 URL ，每行以分号结束。</p>
+
+<p>由于网站开启了 HTTPS，在监听 443 端口的 server 块中，location 语句前添加规则如下：</p>
+
+<p><code class="lang:php decode:true ">if ($new) {
+    rewrite ^ <a href="https://www.tanteng.me$new">https://www.tanteng.me$new</a> redirect;
+}</code></p>
+
+<p>这个语句表示如果 URL 匹配到 redirect.map 里的规则，则跳转到新的 URL 规则。</p>
+
+<p>重启 nginx 服务，就可以看到效果了。</p>
+
+<p>（本文小谈博客原创，转载请注明出处：<a href="https://blog.tanteng.me/2016/10/nginx-map-redirect/" target="_blank"><a href="https://blog.tanteng.me/2016/10/nginx-map-redirect/">https://blog.tanteng.me/2016/10/nginx-map-redirect/</a></a>）</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2016/10/nginx-map-http-user-agent/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">使用 Nginx map 指令匹配 User Agent 自定义值</span>
+    </a>
+    
+    
+    <a href="/2016/10/php-json-encode-and-decode/" class="navigation-next">
+      <span class="navigation-tittle">PHP json_encode 数组键是否从0开始并且连续的区别</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

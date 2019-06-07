@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 错误和异常处理用法 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 错误和异常处理用法"/>
+<meta name="twitter:description" content="Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。"/>
+
+<meta property="og:title" content="Laravel 错误和异常处理用法" />
+<meta property="og:description" content="Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2018/09/laravel-error-handing/" />
+<meta property="article:published_time" content="2018-09-15T05:41:51&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-15T05:41:51&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 错误和异常处理用法</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 15, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。</p>
+
+<h3 id="忽略异常">忽略异常</h3>
+
+<p>在 $dontReport 中可以定义忽略的异常类名：</p>
+
+<p><code class="lang:php decode:true ">protected $dontReport = [
+    \Illuminate\Auth\AuthenticationException::class,
+    \Illuminate\Auth\Access\AuthorizationException::class,
+    \Symfony\Component\HttpKernel\Exception\HttpException::class,
+    \Illuminate\Database\Eloquent\ModelNotFoundException::class,
+    \Illuminate\Validation\ValidationException::class,
+];</code></p>
+
+<p data-source-line="16">
+  这些异常就不会经过 report 方法。
+</p>
+
+<h3 id="几个重要方法" data-source-line="18">
+  几个重要方法
+</h3>
+
+<p data-source-line="20">
+  主要介绍这三个方法，report，render 和 unauthenticated 的用法。
+</p>
+
+<h4 id="report方法" data-source-line="22">
+  report方法
+</h4>
+
+<p data-source-line="24">
+  report 方法可以用来记录日志，可以根据不同的异常类型（包括自定义异常类型），如 ClientException，ConnectException 定制不同的日志级别和日志内容。
+</p>
+
+<p><code class="lang:php decode:true ">if ($exception instanceof ABCException) {
+    Log::emergency(&lsquo;ABC异常&rsquo;, $context);
+} else if ($exception instanceof HeheException) {
+    Log::info(&lsquo;Hehe异常&rsquo;, $context);
+}</code></p>
+
+<p data-source-line="34">
+  report 方法没有返回值，也不应该在这里中断程序。
+</p>
+
+<h4 id="render方法" data-source-line="36">
+  render方法
+</h4>
+
+<p data-source-line="38">
+  render 方法可以根据不同的异常类型，返回不同的数据。如：
+</p>
+
+<p><code class="lang:php decode:true ">if (get_class($exception) == &lsquo;Exception&rsquo; || $exception instanceof NotAllowedException) {
+    return response()-&gt;json([&lsquo;message&rsquo; =&gt; $exception-&gt;getMessage()], 400);
+} elseif ( $exception instanceof ValidationException) {
+    return response()-&gt;json([&lsquo;message&rsquo; =&gt; &lsquo;校验失败&rsquo;, &lsquo;errors&rsquo;=&gt; $exception-&gt;validator-&gt;errors()], 400);
+}</code></p>
+
+<h4 id="unauthenticated" data-source-line="48">
+  unauthenticated
+</h4>
+
+<p data-source-line="50">
+  在访问需要登录态的页面时，用户未登录就会进入这个方法进行处理，举个例子说明：
+</p>
+
+<p><code class="lang:php decode:true ">protected function unauthenticated($request, AuthenticationException $exception)
+{
+    if ($request-&gt;expectsJson()) {
+        return response()-&gt;json([&lsquo;error&rsquo; =&gt; &lsquo;Unauthenticated.&rsquo;], 401);
+    }</p>
+
+<pre><code>//如果是后台页面未认证,跳转到后台登陆页面
+$guard = $exception-&amp;gt;guards();
+if (in_array('admin', $guard)) {
+    return redirect()-&amp;gt;guest('/admin/login');
+}
+
+return redirect()-&amp;gt;guest('login');
+</code></pre>
+
+<p>}</code></p>
+
+<p data-source-line="69">
+  如果是返回 json，则统一返回格式。
+</p>
+
+<p data-source-line="71">
+  默认情况下返回前台的登录页，如果是访问后台页面未登录，则跳转到后台登录页。
+</p>
+
+<h4 id="官方文档" data-source-line="48">
+  官方文档
+</h4>
+
+<p data-source-line="50">
+  Laravel 5.6
+</p>
+
+<p data-source-line="52">
+  <a href="https://laravel-china.org/docs/laravel/5.6/errors/1373" target="_blank" rel="noopener nofollow">https://laravel-china.org/docs/laravel/5.6/errors/1373</a>
+</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2018/09/laravel-authorize-gates/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Laravel 用户授权系统使用小结</span>
+    </a>
+    
+    
+    <a href="/2018/09/reding-list-19/" class="navigation-next">
+      <span class="navigation-tittle">本周阅读清单20180903</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

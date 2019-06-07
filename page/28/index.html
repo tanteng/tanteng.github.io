@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+
+<title>小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="小谈博客"/>
+<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+
+<meta property="og:title" content="小谈博客" />
+<meta property="og:description" content="一个专注 WEB 技术的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tanteng.me/" />
+
+<meta property="og:updated_time" content="2019-02-03T15:30:05&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="http://tanteng.me/index.xml" title="小谈博客" />
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/php-reflectionclass/" >PHP反射类ReflectionClass</a>
+        </span>
+        <span class="item__date">
+          Oct 30, 2015
+        </span>
+        <span >
+        
+        <p class="lang:php decode:true ">
+  首先定义一个类A，用ReflectionClass得到A的反射类对象，通过ReflectionClass对象可以得到类的各种属性，包括命名空间，父类，类名等，使用newInstanceArgs可以传入构造函数的参数创建一个新的类的实例。
+</p>
+
+<p><code>class A
+{
+    public $name;</p>
+
+<pre><code>public function __Construct($name,$des)
+{
+    $this-&amp;gt;name = $name.','.$des;
+}
+public function aa()
+{
+    echo $this-&amp;gt;name;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>$class = new ReflectionClass(&lsquo;A&rsquo;);</p>
+
+<p>$aaa = $class-&gt;newInstanceArgs([&lsquo;blog.tanteng.me&rsquo;,&lsquo;blog&rsquo;]);</p>
+
+<p>$aaa-&gt;aa();</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/php-reflectionclass/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/php-oop-typehinting/" >PHP约束参数类型</a>
+        </span>
+        <span class="item__date">
+          Oct 29, 2015
+        </span>
+        <span >
+        
+        <p>PHP5起可以约束参数类型，在Yii2框架中使用很多，可以指定一个类的方法或者函数参数必须是某个类型，类型可以是对象，数组，字符串，整形。如果指定了参数类型，那么传入的值必须是符合类型约束的，否则会报异常错误。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/php-oop-typehinting/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/php-simple-singleton-pattern-class/" >写一个PHP单例模式的类</a>
+        </span>
+        <span class="item__date">
+          Oct 25, 2015
+        </span>
+        <span >
+        
+        <p>最近为了解决一个问题，需要写一个PHP的单例模式的类，以前也小有研究，其实项目中包括框架自身许多地方也是使用的单例模式，但没自己写过，于是自己随手写了一个实现单机模式的简单类。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/php-simple-singleton-pattern-class/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/redis-jquery-ajax/" >如何防止ajax重复提交</a>
+        </span>
+        <span class="item__date">
+          Oct 25, 2015
+        </span>
+        <span >
+        
+        <p>关于防止重复提交，可以参考如下链接：</p>
+
+<ol>
+<li><a href="https://blog.tanteng.me/2015/08/redis-lock/" target="_blank">使用Redis加锁防止重复提交</a></li>
+<li><a href="https://blog.tanteng.me/2015/07/form-submit/" target="_blank">防止表单重复提交的几种方式</a></li>
+<li><a href="https://blog.tanteng.me/2015/05/js-lock/" target="_blank">jquery的data方法用法</a></li>
+</ol>
+
+<p>本文讲讲如何使用redis和jquery防止ajax重复提交，如果按钮是button，点击按钮之后，js使按钮禁用，程序那边同时也加锁即可。如果按钮是a标签，则需要使用jquery的data方法在页面上加锁，具体方法见上面第3个链接。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/redis-jquery-ajax/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/linux-tail-grep/" >Linux命令:tail,grep</a>
+        </span>
+        <span class="item__date">
+          Oct 21, 2015
+        </span>
+        <span >
+        
+        <p>今天来学习两个Linux命令：tail和grep.</p>
+
+<p>tail命令从指定点开始将文件写到标准输出.使用tail命令的-f选项可以方便的查阅正在改变的日志文件，常用来跟踪系统日志文件，tail -f filename会把filename里最尾部的内容显示在屏幕上，并且不断刷新，使你看到最新的文件内容。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/linux-tail-grep/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/website-client/" >网站的五个“端”</a>
+        </span>
+        <span class="item__date">
+          Oct 16, 2015
+        </span>
+        <span >
+        
+        网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”成了大型网站必备的标配。
+PC、手机站是独立的两套模板，核心的业务逻辑是一样的，Android和ios手机客户端都是通过api接口调用，其中pad端网站可以是客户端中嵌入一个H5页面。
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/php-array-merge/" >PHP数组array_merge和&#43;的区别</a>
+        </span>
+        <span class="item__date">
+          Oct 16, 2015
+        </span>
+        <span >
+        
+        <p>这个例子比较全面的比较了PHP合并两个数组常见的方法array_merge和+的区别：</p>
+
+<p><code>$array1 = array(
+    &lsquo;test1&rsquo; =&gt; &lsquo;test1&rsquo;,
+    &lsquo;test2&rsquo; =&gt; &lsquo;test2&rsquo;,
+    8       =&gt; &lsquo;9&rsquo;,
+    &lsquo;10&rsquo;    =&gt; &lsquo;1010&rsquo;,
+    &lsquo;s10&rsquo;   =&gt; &lsquo;s10&rsquo;,
+);</p>
+
+<p>$array2 = array(
+    &lsquo;test1&rsquo; =&gt; &lsquo;test1+&rsquo;,
+    &lsquo;test2&rsquo; =&gt; &lsquo;test2+&rsquo;,
+    &lsquo;++&rsquo;    =&gt; &lsquo;++&rsquo;,
+    8       =&gt; &lsquo;9999&rsquo;,
+    &lsquo;10&rsquo;    =&gt; &lsquo;10101010&rsquo;,
+    &lsquo;s10&rsquo;   =&gt; &lsquo;s10101010&rsquo;,
+);</p>
+
+<p>$result = array_merge($array1,$array2);
+$result2 = $array1+$array2;
+var_dump($result);
+var_dump($result2);
+exit;</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/php-array-merge/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/10/mac-ip-addr/" >Mac终端如何查看本机ip和mac地址</a>
+        </span>
+        <span class="item__date">
+          Oct 10, 2015
+        </span>
+        <span >
+        
+        <p>windows命令行输入ipconfig即可查看本机的ip地址和mac物理地址，macbook终端输入什么命令查看本机ip和mac地址呢？</p>
+
+<p>打开终端输入ifconfig命名，会显示一大堆关于网络、网卡的信息，如下：</p>
+
+<p>tantengdeMacBook-Pro:~ tanteng$ ifconfig</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/10/mac-ip-addr/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/09/program-language-performance/" >关于编程语言的性能</a>
+        </span>
+        <span class="item__date">
+          Sep 27, 2015
+        </span>
+        <span >
+        
+        关于“性能”，Charles 在算法导论课上的观点很好：
+在编程上，性能的重要性是排在用户体验、安全性、可扩展性、稳定性等方面之后，是最不重要的东西，是最底层的东西。但它起的作用和在经济领域中的货币一样，是用来交换这些更重要的东西用的。你可以牺牲三倍的性能，用 Java 代替 C，获取面向对象等特性。或者牺牲五倍的性能上一个 web 框架，换取对需求变化的快速反应能力。或者你可以消耗七倍的性能，换取更好的用户体验。总而言之，它是一种编程领域的货币。
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/09/mac-firefox-hostadmin/" >Mac下firefox插件hostadmin切换host权限不足</a>
+        </span>
+        <span class="item__date">
+          Sep 4, 2015
+        </span>
+        <span >
+        
+        在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可：
+sudo chmod og+w /etc/hosts
+chmod修改权限，og+w表示增加写权限。
+        
+        </span>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/27/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/27/">27</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/28/">28</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/29/">29</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/29/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    </body>
+</html>

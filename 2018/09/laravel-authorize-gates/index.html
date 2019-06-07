@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 用户授权系统使用小结 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 用户授权系统使用小结"/>
+<meta name="twitter:description" content="基本用法
+
+示例
+
+$this-&gt;authorize(&lsquo;update&rsquo;, $post);
+
+第一个参数 $ability,表示具备什么权限。第二个参数 $post，是一个模型实例。"/>
+
+<meta property="og:title" content="Laravel 用户授权系统使用小结" />
+<meta property="og:description" content="基本用法
+
+示例
+
+$this-&gt;authorize(&lsquo;update&rsquo;, $post);
+
+第一个参数 $ability,表示具备什么权限。第二个参数 $post，是一个模型实例。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2018/09/laravel-authorize-gates/" />
+<meta property="article:published_time" content="2018-09-14T11:04:59&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-14T11:04:59&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 用户授权系统使用小结</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 14, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h3 id="-1">基本用法</h3>
+
+<p>示例</p>
+
+<p><code>$this-&gt;authorize(&lsquo;update&rsquo;, $post);</code></p>
+
+<p>第一个参数 $ability,表示具备什么权限。第二个参数 $post，是一个模型实例。</p>
+
+<p>不需指定模型的动作，比如 create，不需要指定的模型。第二个参数传一个类名。如：</p>
+
+<p><code>$this-&gt;authorize(&lsquo;create&rsquo;, Post::class);</code></p>
+
+<p>使用的场景有：控制器辅助方法，中间件，Blade模板，User 模型的 can 和 can&#8217;t 方法。</p>
+
+<p>authorize方法：</p>
+
+<p><code>public function authorize($ability, $arguments = [])
+{
+    list($ability, $arguments) = $this-&gt;parseAbilityAndArguments($ability, $arguments);</p>
+
+<pre><code>return app(Gate::class)-&amp;gt;authorize($ability, $arguments);
+</code></pre>
+
+<p>}</code></p>
+
+<p>有两种方式实现用户授权</p>
+
+<h3 id="gates">Gates</h3>
+
+<h4 id="gates-1">编写 Gates</h4>
+
+<p>一般在 app\Providers\AuthServiceProvider 的 boot 方法中定义。</p>
+
+<p><code class="lang:php decode:true ">Gate::define(&lsquo;update-post&rsquo;, function ($user, $post) {
+    return $user-&gt;id == $post-&gt;user_id;
+});</code></p>
+
+<p>第一个参数是权限的名称，第二个参数是满足权限的条件，可以是闭包，控制器方法。</p>
+
+<h4 id="-2">授权动作</h4>
+
+<p>allows 和 denies 两种方法，表示允许和否定。</p>
+
+<p>第一个参数是权限的名称，第二个参数是模型，可以为空。这里不需要传入用户，框架会自动处理。</p>
+
+<p><code class="lang:php decode:true ">if (Gate::allows(&lsquo;update-post&rsquo;, $post)) {
+    // 指定用户可以更新博客&hellip;
+}</p>
+
+<p>if (Gate::denies(&lsquo;update-post&rsquo;, $post)) {
+    // 指定用户不能更新博客&hellip;
+}</code></p>
+
+<p>如果需要指定特定用户，可以使用 Gate Facade 中的 forUser 方法：</p>
+
+<p><code>if (Gate::forUser($user)-&gt;allows(&lsquo;update-post&rsquo;, $post)) {
+    // 指定用户可以更新博客&hellip;
+}</p>
+
+<p>if (Gate::forUser($user)-&gt;denies(&lsquo;update-post&rsquo;, $post)) {
+    // 指定用户不能更新博客&hellip;
+}</code></p>
+
+<h3 id="-3">策略</h3>
+
+<h4 id="-4">生成策略</h4>
+
+<p>artisan 命令：</p>
+
+<p><code>php artisan make:policy PostPolicy</code></p>
+
+<p>也可以指定 model，生成包含 CURD 的策略方法。</p>
+
+<h4 id="-5">注册策略</h4>
+
+<p>在 AuthServiceProvider 的 policies 属性，可以将模型和策略对应起来。如：</p>
+
+<p><code>protected $policies = [
+    Post::class =&gt; PostPolicy::class,
+];</code></p>
+
+<p>策略方法</p>
+
+<p><code>public function update(User $user, Post $post)
+{
+    return $user-&gt;id === $post-&gt;user_id;
+}</code></p>
+
+<p>策略方法，就是权限名称，$this-&gt;authorize(&#8216;update&#8217;, $post) 的第一个参数就对应同名的策略方法，第二个参数 $post 代表它是一个 Post 模型，框架会根据参数判断采用 Post::class =&gt; PostPolicy::class 这个策略。</p>
+
+<p>当 authorize 方法调用的时候，实际上会自动注入 User 和 Post 类型的两个参数，<strong>也因此使用授权系统必须是用户登录的情况下</strong>。</p>
+
+<p>使用策略也不一定要和模型绑定，比如这样也可以：</p>
+
+<p><code>protected $policies = [
+    Travel::class =&gt; TravelPolicy::class,
+    &lsquo;aaa&rsquo;=&gt;TravelPolicy::class,
+];</code></p>
+
+<p>这个 aaa 字符串对应策略类为 TravelPolicy::class，在控制器使用 authorize 判断授权：</p>
+
+<p><code>$this-&gt;authorize(&lsquo;update&rsquo;,&lsquo;aaa&rsquo;);</code></p>
+
+<p>此时也是可行的，第二个参数这个时候就必须是字符串 aaa 了，然后 authorize 方法只会自动注入 User 参数。</p>
+
+<h3 id="官方文档">官方文档</h3>
+
+<p>Laravel 5.5 文档</p>
+
+<p><a href="https://laravel-china.org/docs/laravel/5.5/authorization/1310" target="_blank" rel="noopener nofollow"><a href="https://laravel-china.org/docs/laravel/5.5/authorization/1310">https://laravel-china.org/docs/laravel/5.5/authorization/1310</a></a></p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2018/09/redis-scan/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Redis生产环境查看数据库键</span>
+    </a>
+    
+    
+    <a href="/2018/09/laravel-error-handing/" class="navigation-next">
+      <span class="navigation-tittle">Laravel 错误和异常处理用法</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

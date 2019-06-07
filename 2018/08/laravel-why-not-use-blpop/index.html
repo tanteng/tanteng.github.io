@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 中为何不使用 blpop 取队列？ • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 中为何不使用 blpop 取队列？"/>
+<meta name="twitter:description" content="Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。"/>
+
+<meta property="og:title" content="Laravel 中为何不使用 blpop 取队列？" />
+<meta property="og:description" content="Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2018/08/laravel-why-not-use-blpop/" />
+<meta property="article:published_time" content="2018-07-31T17:18:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-31T17:18:21&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 中为何不使用 blpop 取队列？</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 31, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。</p>
+
+<p>Laravel 5.3 消息队列是用的 lpop 取消息，为什么不用阻塞版的 blpop 呢？</p>
+
+<h3 id="安全队列和不安全队列">安全队列和不安全队列</h3>
+
+<p>首先要了解一下安全队列和不安全队列。</p>
+
+<p>什么是不安全的队列？比如客户端 lpop（统一以 lpop 为例） 从 list 中取出来的 job（任务）还没处理完进程挂掉了或者遇到了异常，由于此时服务器上已经没有副本了，这个 job 就丢失了。这种队列就是不安全的。</p>
+
+<p><span style="font-size: 1rem;">Laravel 正是为了保证消息队列的可靠，进程挂掉了或者处理失败还可以重试等，做了比较完善的机制，如取队列的同时把队列放入另一个集合中“暂存”起来。如代码所示，使用 lpop 取出队列，同时 zadd 到另一个集合，使用 redis lua 脚本来保证原子性。</span></p>
+
+<p><code>public static function pop()
+{
+    return &lt;&lt;&lt;&lsquo;LUA&rsquo;
+&ndash; Pop the first job off of the queue&hellip;
+local job = redis.call(&lsquo;lpop&rsquo;, KEYS[1])
+local reserved = false</p>
+
+<p>if(job ~= false) then
+&ndash; Increment the attempt count and place job on the reserved queue&hellip;
+reserved = cjson.decode(job)
+reserved[&lsquo;attempts&rsquo;] = reserved[&lsquo;attempts&rsquo;] + 1
+reserved = cjson.encode(reserved)
+redis.call(&lsquo;zadd&rsquo;, KEYS[2], ARGV[1], reserved)
+end</p>
+
+<p>return {job, reserved}
+LUA;
+}</code></p>
+
+<p>具体 Laravel 队列工作原理之前有一篇博文进行了整理，请参考：<a href="https://blog.tanteng.me/2017/12/laravel-queue-excute/" target="_blank" rel="noopener"><a href="https://blog.tanteng.me/2017/12/laravel-queue-excute/">https://blog.tanteng.me/2017/12/laravel-queue-excute/</a></a></p>
+
+<h3 id="为什么不用-blpop">为什么不用 blpop？</h3>
+
+<p>这里为什么不使用阻塞版本的 blpop 呢？</p>
+
+<p>blpop 是阻塞版的 lpop，如果队列没有数据过来，那么在超时时间内就会一直阻塞，直到 rpush 数据到队列，有点类似 http 的长轮询。</p>
+
+<p>你可能会问为何不跟 lpop 一样用 lua 脚本来处理呢？这个问题作者在 github 上有回答。（<a href="https://github.com/laravel/framework/issues/22939" target="_blank" rel="noopener nofollow"><a href="https://github.com/laravel/framework/issues/22939">https://github.com/laravel/framework/issues/22939</a></a>）</p>
+
+<p><img class="aligncenter wp-image-12512 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/08/larevel-redis-blpop.png" alt="taylor otwell 回答 laravel blpop 问题" width="1544" height="610" /></p>
+
+<p>我们知道 redis lua 脚本实际上就是事务，为了保证原子性不可能一直阻塞，它跟 MULTI/EXEC 包裹起来的 blpop 一样不进行任何阻塞操作，因此这里用 blpop 没有意义。</p>
+
+<p>Redis 官方文档也有说明：</p>
+
+<blockquote>
+<p><strong>在MULTI/EXEC事务中的BLPOP</strong></p>
+
+<p>BLPOP 可以用于流水线(pipline,批量地发送多个命令并读入多个回复)，但把它用在 MULTI / EXEC 块当中没有意义。因为这要求整个服务器被阻塞以保证块执行时的原子性，该行为阻止了其他客户端执行 LPUSH 或 RPUSH 命令。</p>
+
+<p>因此，一个被包裹在 MULTI / EXEC 块内的 BLPOP 命令，行为表现得就像 LPOP 一样，对空列表返回 nil ，对非空列表弹出列表元素，不进行任何阻塞操作。</p>
+</blockquote>
+
+<p>结论就是：通过 lua 脚本操作 blpop 和 zadd 没有意义，<strong>因为没用到阻塞的特性，或者无法保证原子性。</strong></p>
+
+<p>此外，Redis 操作 list 还有一个命令 RPOPLPUSH/BRPOPLPUSH 可以用来维护安全队列。</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2018/07/understand-laravel-middleware/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Laravel 中间件原理</span>
+    </a>
+    
+    
+    <a href="/2018/08/reding-list-17/" class="navigation-next">
+      <span class="navigation-tittle">本周阅读清单20180730</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

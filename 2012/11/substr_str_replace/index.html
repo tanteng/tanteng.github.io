@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>使用substr函数来实现str_replace的功能 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用substr函数来实现str_replace的功能"/>
+<meta name="twitter:description" content="要求不使用substr函数来实现str_replace的功能，如何来做呢？
+
+下面是一个使用substr的版本，思路供参考。
+
+function str_replace($search=&ldquo;, $replace=&rdquo;, $subject=&ldquo;){
+    $search_length = strlen($search);
+    $replace_length = strlen($replace);
+    $subject_length = strlen($subject);
+    if($search_length==0) return $subject;
+    if($subject_length==0) return &ldquo;;
+    if($search_length &gt; $subject_length) return $subject;
+
+for($i=0;$i&amp;lt;$subject_length; $i&#43;&#43;){
+    if(substr($subject, $i, $search_length)==$search){
+        $subject = substr($subject, 0, $i).$replace.substr($subject, $i&#43;$search_length);
+        $i &#43;= $replace_length;
+    }
+}
+return $subject;
+
+
+}
+"/>
+
+<meta property="og:title" content="使用substr函数来实现str_replace的功能" />
+<meta property="og:description" content="要求不使用substr函数来实现str_replace的功能，如何来做呢？
+
+下面是一个使用substr的版本，思路供参考。
+
+function str_replace($search=&ldquo;, $replace=&rdquo;, $subject=&ldquo;){
+    $search_length = strlen($search);
+    $replace_length = strlen($replace);
+    $subject_length = strlen($subject);
+    if($search_length==0) return $subject;
+    if($subject_length==0) return &ldquo;;
+    if($search_length &gt; $subject_length) return $subject;
+
+for($i=0;$i&amp;lt;$subject_length; $i&#43;&#43;){
+    if(substr($subject, $i, $search_length)==$search){
+        $subject = substr($subject, 0, $i).$replace.substr($subject, $i&#43;$search_length);
+        $i &#43;= $replace_length;
+    }
+}
+return $subject;
+
+
+}
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2012/11/substr_str_replace/" />
+<meta property="article:published_time" content="2012-11-03T13:40:01&#43;00:00"/>
+<meta property="article:modified_time" content="2012-11-03T13:40:01&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>使用substr函数来实现str_replace的功能</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Nov 3, 2012
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>要求不使用substr函数来实现str_replace的功能，如何来做呢？</p>
+
+<p>下面是一个使用substr的版本，思路供参考。</p>
+
+<p><code lang="php">function str_replace($search=&ldquo;, $replace=&rdquo;, $subject=&ldquo;){
+    $search_length = strlen($search);
+    $replace_length = strlen($replace);
+    $subject_length = strlen($subject);
+    if($search_length==0) return $subject;
+    if($subject_length==0) return &ldquo;;
+    if($search_length &gt; $subject_length) return $subject;</p>
+
+<pre><code>for($i=0;$i&amp;lt;$subject_length; $i++){
+    if(substr($subject, $i, $search_length)==$search){
+        $subject = substr($subject, 0, $i).$replace.substr($subject, $i+$search_length);
+        $i += $replace_length;
+    }
+}
+return $subject;
+</code></pre>
+
+<p>}
+</code></p>
+
+<p>正解：</p>
+
+<p><code lang="php">function str_replace_1($a,$b,$arr){
+ $subject = explode($a,$arr);
+ $subject = implode($b,$subject);
+ return $subject ;
+}
+$arr = &ldquo;我们都是111好111孩子&rdquo;;
+$res = str_replace_1(&lsquo;111&rsquo;,&lsquo;222&rsquo;,$arr);
+var_dump($res);
+</code></p>
+
+<p>参考网址：<a href="http://www.dewen.org/q/4892/面试题-不使用substr函数来实现str_replace的功能" target="_blank" rel="nofollow"><a href="http://www.dewen.org/q/4892/面试题-不使用substr函数来实现str_replace的功能">http://www.dewen.org/q/4892/面试题-不使用substr函数来实现str_replace的功能</a></a></p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2012/11/php-scandir/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">使用php scandir函数遍历文件夹目录和所有文件</span>
+    </a>
+    
+    
+    <a href="/2012/11/php-zuhe/" class="navigation-next">
+      <span class="navigation-tittle">php 对一组单词进行所有可能情况的排列组合</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

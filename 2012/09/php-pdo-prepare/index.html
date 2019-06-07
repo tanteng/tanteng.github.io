@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>PHP：PDO prepare预处理 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP：PDO prepare预处理"/>
+<meta name="twitter:description" content="许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：
+
+查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。"/>
+
+<meta property="og:title" content="PHP：PDO prepare预处理" />
+<meta property="og:description" content="许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：
+
+查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2012/09/php-pdo-prepare/" />
+<meta property="article:published_time" content="2012-09-30T04:03:39&#43;00:00"/>
+<meta property="article:modified_time" content="2012-09-30T04:03:39&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>PHP：PDO prepare预处理</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 30, 2012
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：</p>
+
+<p>查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。</p>
+
+<p>传给预处理语句的参数不需要使用引号，底层驱动会为你处理这个。如果你的应用独占地使用预处理语句，你就可以确信没有SQL注入会发生。（然而，如果你仍然在用基于不受信任的输入来构建查询的其他部分，这仍然是具有风险的）</p>
+
+<p>正因为预处理语句是如此有用，它成了PDO唯一为不支持此特性的数据库提供的模拟实现。这使你可以使用统一的数据访问规范而不必关心数据库本身是否具备此特性。</p>
+
+<p>示例1：Prepare an SQL statement with named parameters</p>
+
+<p><code lang="php"><!--?php 
+/* Execute a prepared statement by passing an array of values */
+$sql = 'SELECT name, colour, calories
+    FROM fruit
+    WHERE calories < :calories AND colour = :colour'; $sth = $dbh--->prepare($sql, array(PDO::ATTR_CURSOR =&gt; PDO::CURSOR_FWDONLY));
+$sth-&gt;execute(array(&rsquo;:calories&rsquo; =&gt; 150, &lsquo;:colour&rsquo; =&gt; &lsquo;red&rsquo;));
+$red = $sth-&gt;fetchAll();
+$sth-&gt;execute(array(&rsquo;:calories&rsquo; =&gt; 175, &lsquo;:colour&rsquo; =&gt; &lsquo;yellow&rsquo;));
+$yellow = $sth-&gt;fetchAll();
+?&gt;
+</code></p>
+
+<p>示例2：Prepare an SQL statement with question mark parameters</p>
+
+<p><code class="" lang="php"><!--?php  /* Execute a prepared statement by passing an array of values */ $sth = $dbh--->prepare(&lsquo;SELECT name, colour, calories
+    FROM fruit
+    WHERE calories &lt; ? AND colour = ?&lsquo;);
+$sth-&gt;execute(array(150, &lsquo;red&rsquo;));
+$red = $sth-&gt;fetchAll();
+$sth-&gt;execute(array(175, &lsquo;yellow&rsquo;));
+$yellow = $sth-&gt;fetchAll();
+?&gt;
+</code></p>
+
+<p>关于<strong>PDO</strong>的文章还有：</p>
+
+<ul>
+<li><a title="PHP PDOStatement:bindParam的一个陷阱" href="https://blog.tanteng.me/2013/03/pdo-statement-bindparam/" target="_blank">PHP PDOStatement:bindParam的一个陷阱</a></li>
+<li><a title="mysql,mysqli,PDO的各自不同" href="https://blog.tanteng.me/2012/09/mysqli-pdo/" target="_blank">mysql,mysqli,PDO的各自不同</a></li>
+<li><a title="提高php执行效率的10条编程习惯" href="https://blog.tanteng.me/2012/10/php-efficiency/" target="_blank">提高php执行效率的10条编程习惯</a></li>
+</ul>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2012/09/jquery-cookie-usage/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">jquery cookie的用法</span>
+    </a>
+    
+    
+    <a href="/2012/10/php-super-global/" class="navigation-next">
+      <span class="navigation-tittle">php超级全局变量总结</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

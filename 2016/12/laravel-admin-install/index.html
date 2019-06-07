@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 5.3 后台管理系统搭建 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 5.3 后台管理系统搭建"/>
+<meta name="twitter:description" content="网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。"/>
+
+<meta property="og:title" content="Laravel 5.3 后台管理系统搭建" />
+<meta property="og:description" content="网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2016/12/laravel-admin-install/" />
+<meta property="article:published_time" content="2016-12-24T07:13:14&#43;00:00"/>
+<meta property="article:modified_time" content="2016-12-24T07:13:14&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 5.3 后台管理系统搭建</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 24, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。</p>
+
+<p>下面讲一讲 Laravel-admin 的安装步骤，或者一些不要的说明，可以使用本系统，但是更建议参考本后台搭建的方法自行弄一套更符合自己的后台管理系统，这种后台管理系统是可以复用到不同的项目中的。</p>
+
+<h3 id="一-安装扩展包">一、安装扩展包</h3>
+
+<p>使用自带的用户认证，权限管理基于 Entrust 扩展包，实现基于角色的权限控制系统，用于开发调试的 laravel-debugbar 扩展包，还有必不可少的操作 Redis 的扩展包。</p>
+
+<p>本后台依赖的扩展包：</p>
+
+<p>Entrust</p>
+
+<p>Predis</p>
+
+<p>laravel-debugbar</p>
+
+<p>在 composer.json 中添加扩展包：</p>
+
+<p><code class="lang:default decode:true">&ldquo;predis/predis&rdquo;: &ldquo;^1.1&rdquo;,
+&ldquo;zizaco/entrust&rdquo;: &ldquo;5.2.x-dev&rdquo;,
+&ldquo;barryvdh/laravel-debugbar&rdquo;: &ldquo;^2.3&rdquo;</code></p>
+
+<p>推荐安装最新版本。执行 sudo composer install 即可。</p>
+
+<p><strong>重要：具体安装好扩展包之后，如果还需要进行的步骤，参考扩展包的官方 github 主页。</strong></p>
+
+<p>这里自行还要操作的步骤还很多，如 Entrust 需要执行数据库迁徙文件，建立 Role 和 Permission 的模型，并且使用 Traits 等，按照 Entrust 的安装说明进行。关于 Entrust ，注意修改 config/entrust.php 中的模型对应的实际的类，如：</p>
+
+<p><code>&lsquo;role&rsquo; =&gt; &lsquo;App\Models\Role&rsquo;,</code></p>
+
+<h4 id="扩展包-github-主页">扩展包 github 主页：</h4>
+
+<p>Entrust：<a href="https://github.com/Zizaco/entrust" target="_blank" rel="nofollow"><a href="https://github.com/Zizaco/entrust">https://github.com/Zizaco/entrust</a></a></p>
+
+<p>Laravel-debugbar：<a href="https://github.com/barryvdh/laravel-debugbar" target="_blank" rel="nofollow"><a href="https://github.com/barryvdh/laravel-debugbar">https://github.com/barryvdh/laravel-debugbar</a></a></p>
+
+<p>Predis: <a href="https://github.com/nrk/predis" target="_blank" rel="nofollow"><a href="https://github.com/nrk/predis">https://github.com/nrk/predis</a></a></p>
+
+<h3 id="二-安装-adminlte-后台模板">二、安装 AdminLte 后台模板</h3>
+
+<p>AdminLte 是一套完整的专业的后台模板，由静态页面和很多 js 组件构建，UI 简洁美观，github 上 Stars 数量很多，可以用来做通用的后台管理系统界面。</p>
+
+<p>github 地址：<a href="https://github.com/almasaeed2010/AdminLTE">https://github.com/almasaeed2010/AdminLTE</a></p>
+
+<p>这个就比较麻烦，把需要用到的 css，js，插件等文件夹复制到项目的 pubic 文件夹下，可以新建一个目录如 vendor，然后把登陆页面，后台主页面等 html 做成 blade 模板放到模板目录，如 resource/views/admin 目录下。</p>
+
+<h3 id="三-后台管理路由">三、后台管理路由</h3>
+
+<p>以 Laravel 5.3 为例，在 routes 目录下新增 admin.php 文件，在这个文件定义后台管理的路由，基本路由示例如下：</p>
+
+<p><code>&lt;?php
+Route::get(&lsquo;/&rsquo;, function () {
+    return view(&lsquo;admin.index&rsquo;);
+})-&gt;middleware(&lsquo;auth:admin&rsquo;);
+Route::get(&lsquo;/login&rsquo;, &lsquo;Admin\LoginController@showLoginForm&rsquo;);
+Route::post(&lsquo;/login&rsquo;, &lsquo;Admin\LoginController@login&rsquo;);
+Route::get(&lsquo;/logout&rsquo;, &lsquo;Admin\LoginController@logout&rsquo;);
+Route::resource(&lsquo;/user&rsquo;, &lsquo;Admin\UserController&rsquo;);
+Route::resource(&lsquo;/role&rsquo;, &lsquo;Admin\RoleController&rsquo;);
+Route::resource(&lsquo;/permission&rsquo;, &lsquo;Admin\PermissionController&rsquo;);
+Route::get(&lsquo;testEntrust&rsquo;, &lsquo;Admin\TestEntrustController@hello&rsquo;);
+</code></p>
+
+<p>在 app/Providers/RouteServiceProvider.php 中添加方法，使用 web 中间件，并设置路由前缀为 admin，具体如下：</p>
+
+<p><code>/**
+ * 后台管理路由
+ */
+protected function mapAdminRoutes()
+{
+    Route::group([
+        &lsquo;middleware&rsquo; =&gt; &lsquo;web&rsquo;,
+        &lsquo;namespace&rsquo; =&gt; $this-&gt;namespace,
+        &lsquo;prefix&rsquo; =&gt; &lsquo;admin&rsquo;,
+    ], function ($router) {
+        require base_path(&lsquo;routes/admin.php&rsquo;);
+    });
+}</code></p>
+
+<p>别忘了在 map 方法中调用新增的方法，这样一个后台管理基本界面就好了。</p>
+
+<h3 id="四-后台-auth-认证">四、后台 Auth 认证</h3>
+
+<h4 id="增加一个-guard">增加一个 guard {.}</h4>
+
+<p class="">
+  后台身份认证和前台可以实现分开，在 config/auth.php 的 guards 数组中添加后台的 guard 定义：
+</p>
+
+<p><code class="lang:php decode:true ">&lsquo;guards&rsquo; =&gt; [
+    &lsquo;web&rsquo; =&gt; [
+        &lsquo;driver&rsquo; =&gt; &lsquo;session&rsquo;,
+        &lsquo;provider&rsquo; =&gt; &lsquo;users&rsquo;,
+    ],</p>
+
+<pre><code>'admin' =&amp;gt; [
+    'driver' =&amp;gt; 'session',
+    'provider' =&amp;gt; 'users',
+],
+
+'api' =&amp;gt; [
+    'driver' =&amp;gt; 'token',
+    'provider' =&amp;gt; 'users',
+],
+</code></pre>
+
+<p>],</code></p>
+
+<p>这里新增的 admin 定义跟 web 一样，只是共用 users 表作为后台的用户表，这里严格说应该分开，甚至把后台的数据库也独立，本文作为一个示例就不做很完善，这样也会把过程弄得很复杂，大概的思路 OK 了，可以根据自己的情况去搭建后台。</p>
+
+<h4 id="判断后台未登陆跳转后台登陆页面">判断后台未登陆跳转后台登陆页面</h4>
+
+<p class="">
+  Laravel 5.3 将未登录作为一个异常进行处理，如果是后台未登录，则跳转到后台的登陆页面，需要在 app/Exceptions/Handler.php 文件修改 unauthenticated 方法如下：
+</p>
+
+<p><code>protected function unauthenticated($request, AuthenticationException $exception)
+{
+    if ($request-&gt;expectsJson()) {
+        return response()-&gt;json([&lsquo;error&rsquo; =&gt; &lsquo;Unauthenticated.&rsquo;], 401);
+    }</p>
+
+<pre><code>//如果是后台页面未认证,跳转到后台登陆页面
+$guard = $exception-&amp;gt;guards();
+if (in_array('admin', $guard)) {
+    return redirect()-&amp;gt;guest('/admin/login');
+}
+
+return redirect()-&amp;gt;guest('login');
+</code></pre>
+
+<p>}</code></p>
+
+<h4 id="修改中间件">修改中间件</h4>
+
+<p>如果已经登录后台，进入后台登录页面跳转到后台首页而无需再次登录，这个是由一个名为 guest 的中间件控制的。而默认会跳转到前台的页面，需要进行修改，文件位于 app/Http/Middleware/RedirectIfAuthenticated.php ，其中修改如下：</p>
+
+<p><code class="lang:php decode:true ">public function handle($request, Closure $next, $guard = null)
+{
+    if (Auth::guard($guard)-&gt;check()) {
+        $redirect = $guard == &lsquo;admin&rsquo; ? &lsquo;/admin&rsquo; : &lsquo;/home&rsquo;;
+        return redirect($redirect);
+    }</p>
+
+<pre><code>return $next($request);
+</code></pre>
+
+<p>}</code></p>
+
+<p>这样已经登录后台之后，再进入后台登录页面，会跳转到后台首页了，而不是前台页面。</p>
+
+<h3 id="五-后台管理控制器">五、后台管理控制器</h3>
+
+<p>后台管理控制器都在目录 app/Http/Controllers/Admin 下，定义好了需要用到的模型以及模型的关系后，那么主要的逻辑在这些控制器中，这是一些基本的后台功能。</p>
+
+<p>至此，一个全新的基于 Laravel 5.3 的后台管理系统就搭建好了，有了这个后台，可以开发强大的功能了。</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2016/12/nginx-test-environment/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">使用 Nginx 反向代理和负载均衡搭建多人测试环境</span>
+    </a>
+    
+    
+    <a href="/2016/12/window-location-reload-and-href/" class="navigation-next">
+      <span class="navigation-tittle">window.location.reload()和window.location.href=””的区别</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

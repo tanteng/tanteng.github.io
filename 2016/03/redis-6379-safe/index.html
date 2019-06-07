@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Redis未授权访问漏洞 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis未授权访问漏洞"/>
+<meta name="twitter:description" content="在阿里云上挂了一个网站，运行CentOS&#43;PHP&#43;Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。"/>
+
+<meta property="og:title" content="Redis未授权访问漏洞" />
+<meta property="og:description" content="在阿里云上挂了一个网站，运行CentOS&#43;PHP&#43;Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2016/03/redis-6379-safe/" />
+<meta property="article:published_time" content="2016-03-21T06:07:24&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-21T06:07:24&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Redis未授权访问漏洞</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 21, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/redis">REDIS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。</p>
+
+<p>记录如下：</p>
+
+<p>一、漏洞描述和危害</p>
+
+<p>Redis因配置不当可以未授权访问，被攻击者恶意利用。</p>
+
+<p>攻击者无需认证访问到内部数据，可能导致敏感信息泄露，黑客也可以恶意执行flushall来清空所有数据。</p>
+
+<p>攻击者可通过EVAL执行lua代码，或通过数据备份功能往磁盘写入后门文件，如果Redis以root身份运行，黑客可以给root账户写入SSH公钥文件，直接通过SSH登录受害服务器。</p>
+
+<p>二、已确认被成功利用的软件及系统</p>
+
+<p>对公网开放，且未启用认证的redis服务器。</p>
+
+<p>三、建议修复方案</p>
+
+<p>1、指定redis服务使用的网卡 （需要重启redis才能生效）</p>
+
+<p>在 redis.conf 文件中找到 “# bind 127.0.0.1” ，把前面的#号去掉，然后保存。注：修改后只有本机才能访问Redis。</p>
+
+<p><code class="lang:vim decode:true "># By default Redis listens for connections from all the network interfaces</p>
+
+<h1 id="available-on-the-server-it-is-possible-to-listen-to-just-one-or-multiple">available on the server. It is possible to listen to just one or multiple</h1>
+
+<h1 id="interfaces-using-the-bind-configuration-directive-followed-by-one-or">interfaces using the &ldquo;bind&rdquo; configuration directive, followed by one or</h1>
+
+<h1 id="more-ip-addresses">more IP addresses.</h1>
+
+<p>#</p>
+
+<h1 id="examples">Examples:</h1>
+
+<p>#</p>
+
+<h1 id="bind-192-168-1-100-10-0-0-1">bind 192.168.1.100 10.0.0.1</h1>
+
+<p>bind 127.0.0.1</code></p>
+
+<p>2、设置访问密码 （需要重启redis才能生效）</p>
+
+<p>在 redis.conf 中找到“requirepass”字段，在后面填上你需要的密码，Redis客户端也需要使用此密码来访问Redis服务。</p>
+
+<p>3、修改Redis服务运行账号</p>
+
+<p>请以较低权限账号运行Redis服务，且禁用该账号的登录权限。可以限制攻击者往磁盘写入文件，但是Redis数据还是能被黑客访问到，或者被黑客恶意删除。</p>
+
+<p>4、设置防火墙策略</p>
+
+<p>如果正常业务中Redis服务需要被其他服务器来访问，可以设置iptables策略仅允许指定的IP来访问Redis服务。</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2016/03/laravel-wordpress-corcel/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Laravel集成WordPress扩展包——Corcel</span>
+    </a>
+    
+    
+    <a href="/2016/03/redis-maxmemory/" class="navigation-next">
+      <span class="navigation-tittle">设置Redis最大占用内存</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

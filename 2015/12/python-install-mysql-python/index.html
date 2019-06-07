@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>安装MySQL-python包遇到的问题 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装MySQL-python包遇到的问题"/>
+<meta name="twitter:description" content="使用pip install MySQL-python的方式安装，遇到以下几个问题：
+
+1.提示错误EnvironmentError: mysql_config not found
+
+这是因为本机是Mac OSX系统，并且装的MySQL是MAMP集成环境中的，实际上mysql_config这个文件是存在的，但是默认包里面的路径有问题，可以重新装一个MySQL到系统默认位置，不过既然已经有了MySQL不想重复装。"/>
+
+<meta property="og:title" content="安装MySQL-python包遇到的问题" />
+<meta property="og:description" content="使用pip install MySQL-python的方式安装，遇到以下几个问题：
+
+1.提示错误EnvironmentError: mysql_config not found
+
+这是因为本机是Mac OSX系统，并且装的MySQL是MAMP集成环境中的，实际上mysql_config这个文件是存在的，但是默认包里面的路径有问题，可以重新装一个MySQL到系统默认位置，不过既然已经有了MySQL不想重复装。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2015/12/python-install-mysql-python/" />
+<meta property="article:published_time" content="2015-12-13T16:24:57&#43;00:00"/>
+<meta property="article:modified_time" content="2015-12-13T16:24:57&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>安装MySQL-python包遇到的问题</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 13, 2015
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/python3">PYTHON3</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>使用pip install MySQL-python的方式安装，遇到以下几个问题：</p>
+
+<p>1.提示错误EnvironmentError: mysql_config not found</p>
+
+<p>这是因为本机是Mac OSX系统，并且装的MySQL是MAMP集成环境中的，实际上mysql_config这个文件是存在的，但是默认包里面的路径有问题，可以重新装一个MySQL到系统默认位置，不过既然已经有了MySQL不想重复装。</p>
+
+<p>解决办法是从pypi官网下载一个MySQL-python包，然后修改其中的setup_posix.py文件，找到定义mysql_config路径的地方，如修改为：/Applications/MAMP/Library/bin/mysql_config，具体路径根据情况而定。可以搜索mysql_config，如果找到了就以那个路径为准，这是MAMP下Mysql_config文件的位置。</p>
+
+<p>然后进入到包目录，使用python setup.py install命令开始安装。</p>
+
+<p>2.上面的错误解决了，又提示错误fatal error: &#8216;my_config.h&#8217; file not found</p>
+
+<p>这是因为MAMP自带的MySQL不包含dev headers，使用brew install mysql-connector-c安装。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-install-mysql-connector-c.png" rel="attachment wp-att-9340" target="_blank"><img class="alignnone size-full wp-image-9340" src="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-install-mysql-connector-c.png" alt="brew install mysql-connector-c" width="585" height="361" /></a></p>
+
+<p>安装完成后，再回到Python重新安装MySQL-python包就可以了。</p>
+
+<p>如果使用brew install mysql-connector-c遇到问题可以参见链接：</p>
+
+<p><a href="https://blog.tanteng.me/2015/12/brew-folder-not-writable/" target="_blank"><a href="https://blog.tanteng.me/2015/12/brew-folder-not-writable/">https://blog.tanteng.me/2015/12/brew-folder-not-writable/</a></a></p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2015/12/brew-folder-not-writable/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">brew安装错误:/usr/local/include is not writable</span>
+    </a>
+    
+    
+    <a href="/2015/12/laravel-migrate-mysql-2000/" class="navigation-next">
+      <span class="navigation-tittle">Laravel 执行 migrate 命令:No such file or directory</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

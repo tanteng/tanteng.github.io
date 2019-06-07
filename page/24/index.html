@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+
+<title>小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="小谈博客"/>
+<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+
+<meta property="og:title" content="小谈博客" />
+<meta property="og:description" content="一个专注 WEB 技术的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tanteng.me/" />
+
+<meta property="og:updated_time" content="2019-02-03T15:30:05&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="http://tanteng.me/index.xml" title="小谈博客" />
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-singleton-bind/" >Laravel Ioc容器singleton和bind方法的区别</a>
+        </span>
+        <span class="item__date">
+          Jan 29, 2016
+        </span>
+        <span >
+        
+        <p>Laravel中使用Ioc容器的singleton方法和bind方法创建实例有什么区别呢？它们两个都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例，看下面的两个例子。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-singleton-bind/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/php-goto/" >PHP GOTO语法</a>
+        </span>
+        <span class="item__date">
+          Jan 28, 2016
+        </span>
+        <span >
+        
+        PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto display语句时，会跳到定义display的地方开始执行，这是PHP5.3增加的语法，支持PHP7.
+public function index() { if (!I(&lsquo;get.search&rsquo;)) { goto display; }
+//此处省略800字 $this-&amp;gt;assign('account', self::$account); $this-&amp;gt;assign('pay_type', I('get.pay_type')); $this-&amp;gt;assign('list', $list); display: $this-&amp;gt;display();  }
+&nbsp;
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-construct-ioc/" >Laravel构造函数自动依赖注入</a>
+        </span>
+        <span class="item__date">
+          Jan 28, 2016
+        </span>
+        <span >
+        
+        <p>在Laravel的构造函数中可以实现自动依赖注入，而不需要实例化之前先实例化需要的类，如代码所示：</p>
+
+<p><code class="lang:php decode:true ">&lt;?php
+namespace Lio\Http\Controllers\Forum;</p>
+
+<p>use Lio\Forum\Replies\ReplyRepository;
+use Lio\Forum\Threads\ThreadCreator;
+use Lio\Forum\Threads\ThreadCreatorListener;
+use Lio\Forum\Threads\ThreadDeleterListener;
+use Lio\Forum\Threads\ThreadForm;
+use Lio\Forum\Threads\ThreadRepository;
+use Lio\Forum\Threads\ThreadUpdaterListener;
+use Lio\Http\Controllers\Controller;
+use Lio\Tags\TagRepository;</p>
+
+<p>class ForumThreadsController extends Controller implements ThreadCreatorListener, ThreadUpdaterListener, ThreadDeleterListener
+{
+    protected $threads;
+    protected $tags;
+    protected $currentSection;
+    protected $threadCreator;</p>
+
+<pre><code>public function __construct(
+    ThreadRepository $threads,
+    ReplyRepository $replies,
+    TagRepository $tags,
+    ThreadCreator $threadCreator
+) {
+    $this-&amp;gt;threads = $threads;
+    $this-&amp;gt;tags = $tags;
+    $this-&amp;gt;threadCreator = $threadCreator;
+    $this-&amp;gt;replies = $replies;
+}
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-construct-ioc/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-facades-register/" >在Laravel中注册Facades的步骤</a>
+        </span>
+        <span class="item__date">
+          Jan 27, 2016
+        </span>
+        <span >
+        
+        <p>在Laravel中将类注册为Fcade可以使用Ioc容器，每次使用这个类的时候只会初始化一次类，类似单例模式，而且可以像使用静态方法调用类的方法，下面是在Laravel中注册Facades的步骤。</p>
+
+<p>1.在项目app目录的Providers/AppServiceProvider.php中的register方法新增方法，代码如下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-facades-register/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/repeat-group-having/" >查询数据库重复记录sql</a>
+        </span>
+        <span class="item__date">
+          Jan 25, 2016
+        </span>
+        <span >
+        
+        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复，sql语句如下：
+SELECT COUNT(*) as total ,hash FROM js_receipt_detail GROUP BY hash HAVING total &gt; 1;
+对hash进行group并筛选count个数大于1的。
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/mysql-mysqldump-usage/" >MySQL导出表结构表数据mysqldump命令用法</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2016
+        </span>
+        <span >
+        
+        命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名;
+1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpasswd,生成的脚本名為db.sql）
+mysqldump -uroot -pdbpasswd -d dbname &gt;db.sql;
+2、导出數據库為dbname某张表(test)结构
+mysqldump -uroot -pdbpasswd -d dbname test&gt;db.sql;
+3、导出數據库為dbname所有表结构及表數據（不加-d）
+mysqldump -uroot -pdbpasswd dbname &gt;db.sql;
+4、导出數據库為dbname某张表(test)结构及表數據（不加-d）
+mysqldump -uroot -pdbpasswd dbname test&gt;db.sql;
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/12/composer-autoload/" >Composer的自动加载机制</a>
+        </span>
+        <span class="item__date">
+          Dec 24, 2015
+        </span>
+        <span >
+        
+        <p>如项目下的composer.json文件中有autoload的定义：</p>
+
+<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
+        &ldquo;classmap&rdquo;: [
+            &ldquo;database&rdquo;
+        ],
+        &ldquo;psr-4&rdquo;: {
+            &ldquo;GrahamCampbell\BootstrapCMS\&ldquo;: &ldquo;app/&rdquo;
+        }
+    },</code></p>
+
+<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/12/composer-autoload/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/12/laravel-trait/" >Laravel中Trait的使用</a>
+        </span>
+        <span class="item__date">
+          Dec 21, 2015
+        </span>
+        <span >
+        
+        <p>看看PHP官方手册对Trait的定义：</p>
+
+<blockquote>
+<p class="para">
+  自 PHP 5.4.0 起，PHP 实现了代码复用的一个方法，称为 traits。
+</p>
+
+<p class="para">
+  Traits 是一种为类似 PHP 的单继承语言而准备的代码复用机制。Trait 为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用方法集。Traits 和类组合的语义是定义了一种方式来减少复杂性，避免传统多继承和混入类（Mixin）相关的典型问题。
+</p>
+
+<p class="para">
+  Trait 和一个类相似，但仅仅旨在用细粒度和一致的方式来组合功能。Trait 不能通过它自身来实例化。它为传统继承增加了水平特性的组合；也就是说，应用类的成员不需要继承。
+</p>
+</blockquote>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/12/laravel-trait/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/12/laravel-migrate-mysql-2000/" >Laravel 执行 migrate 命令:No such file or directory</a>
+        </span>
+        <span class="item__date">
+          Dec 20, 2015
+        </span>
+        <span >
+        
+        <p>今天使用Laravel命令行工具操作数据库迁移操作时报错，提示mysql 2002错误，如图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png" rel="attachment wp-att-9354" target="_blank"><img class="alignnone wp-image-9354" src="https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png" alt="artisan-migrate-PDOException" width="420" height="118" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/12/laravel-migrate-mysql-2000/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/12/python-install-mysql-python/" >安装MySQL-python包遇到的问题</a>
+        </span>
+        <span class="item__date">
+          Dec 13, 2015
+        </span>
+        <span >
+        
+        <p>使用pip install MySQL-python的方式安装，遇到以下几个问题：</p>
+
+<p>1.提示错误EnvironmentError: mysql_config not found</p>
+
+<p>这是因为本机是Mac OSX系统，并且装的MySQL是MAMP集成环境中的，实际上mysql_config这个文件是存在的，但是默认包里面的路径有问题，可以重新装一个MySQL到系统默认位置，不过既然已经有了MySQL不想重复装。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/12/python-install-mysql-python/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/23/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/23/">23</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/24/">24</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/25/">25</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/25/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    </body>
+</html>

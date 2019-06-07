@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>PHP • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP"/>
+<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+
+<meta property="og:title" content="PHP" />
+<meta property="og:description" content="一个专注 WEB 技术的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tanteng.me/categories/php/" />
+
+<meta property="og:updated_time" content="2018-09-15T05:41:51&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="http://tanteng.me/categories/php/index.xml" title="小谈博客" />
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <span class="section__title">PHP</span>
+<ul class="posts">
+    
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/09/laravel-error-handing/" >Laravel 错误和异常处理用法</a>
+      
+      <time class="pull-right hidden-tablet">Sep 15, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/09/laravel-authorize-gates/" >Laravel 用户授权系统使用小结</a>
+      
+      <time class="pull-right hidden-tablet">Sep 14, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/08/laravel-chunk-tip/" >Laravel chunk 使用注意的问题</a>
+      
+      <time class="pull-right hidden-tablet">Aug 14, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/08/laravel-why-not-use-blpop/" >Laravel 中为何不使用 blpop 取队列？</a>
+      
+      <time class="pull-right hidden-tablet">Jul 31, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/07/understand-laravel-middleware/" >Laravel 中间件原理</a>
+      
+      <time class="pull-right hidden-tablet">Jul 29, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/06/laravel-event/" >Laravel 事件系统用法总结</a>
+      
+      <time class="pull-right hidden-tablet">Jun 17, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/05/laravel-5-5-gulp/" >在 Laravel 中使用 gulp 构建前端资源</a>
+      
+      <time class="pull-right hidden-tablet">May 28, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/05/php-qiniu-sdk-not-support-composer/" >在旧有 PHP 系统上集成七牛云 PHP-SDK</a>
+      
+      <time class="pull-right hidden-tablet">May 28, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/05/php-find-the-k-largest/" >PHP 查找数组中第 K 大的元素</a>
+      
+      <time class="pull-right hidden-tablet">May 25, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/04/laravel-relationships-settable/" >Laravel 模型间关系设置分表方法</a>
+      
+      <time class="pull-right hidden-tablet">Apr 19, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/04/php-interview-2/" >PHP知识整理之——PHP基础、WEB安全、网络</a>
+      
+      <time class="pull-right hidden-tablet">Apr 10, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/03/docker-dev-environment/" >使用 Docker 搭建开发环境</a>
+      
+      <time class="pull-right hidden-tablet">Mar 29, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/03/php-cow/" >PHP写时复制（Copy On Write）</a>
+      
+      <time class="pull-right hidden-tablet">Mar 26, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/01/laravel-dependency/" >Laravel 依赖注入源码解析</a>
+      
+      <time class="pull-right hidden-tablet">Jan 18, 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/12/laravel-queue-excute/" >为什么 Laravel 会重复执行同一个队列任务？</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/12/laravel-supervisor-queue/" >Laravel Redis 多个进程同时取队列问题</a>
+      
+      <time class="pull-right hidden-tablet">Dec 23, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/12/laravel-queue-tips/" >使用 Laravel 消息队列要注意的问题</a>
+      
+      <time class="pull-right hidden-tablet">Dec 11, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/12/php-stream/" >PHP 中“流”的概念</a>
+      
+      <time class="pull-right hidden-tablet">Dec 7, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/12/php-ini-config/" >php.ini 几个配置项说明</a>
+      
+      <time class="pull-right hidden-tablet">Dec 4, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/11/laravel-factory-pattern/" >Laravel 中的简单工厂和抽象工厂</a>
+      
+      <time class="pull-right hidden-tablet">Nov 22, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/11/nginx-fastcgi-php-fpm/" >PHP-FPM,Nginx,FastCGI 之间的关系</a>
+      
+      <time class="pull-right hidden-tablet">Nov 9, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/11/laravel-facade-service-provider/" >Laravel 服务提供者和门面模式</a>
+      
+      <time class="pull-right hidden-tablet">Nov 5, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/10/php-intval-precision/" >PHP intval 转换浮点数精度丢失问题</a>
+      
+      <time class="pull-right hidden-tablet">Oct 15, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/10/docker-laravel-local-environment/" >使用 Docker 搭建 Laravel 本地环境</a>
+      
+      <time class="pull-right hidden-tablet">Oct 14, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/laradock-ssh-workspace/" >Laradock 使用 ssh 方式连接 workspace</a>
+      
+      <time class="pull-right hidden-tablet">Sep 21, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/wp-redis/" >WordPress 使用 Redis 缓存</a>
+      
+      <time class="pull-right hidden-tablet">Sep 13, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/debug-backtrace-php/" >PHP 调试函数 debug_backtrace</a>
+      
+      <time class="pull-right hidden-tablet">Sep 11, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/laravel-session-scheme/" >Laravel Sessionid 处理机制</a>
+      
+      <time class="pull-right hidden-tablet">Sep 11, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
+      
+      <time class="pull-right hidden-tablet">Sep 2, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
+      
+      <time class="pull-right hidden-tablet">Jul 22, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/07/php-examination-part-1/" >PHP笔试面试题精选（一）</a>
+      
+      <time class="pull-right hidden-tablet">Jul 11, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/06/web-api-security/" >WEB API接口安全和防刷</a>
+      
+      <time class="pull-right hidden-tablet">Jun 16, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/05/cgi-fastcgi-php-fpm/" >关于 cgi, fastcgi, php-fpm 的关系</a>
+      
+      <time class="pull-right hidden-tablet">May 25, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/05/laravel-cache-clear-warning/" >注意 Laravel 清除缓存 php artisan cache:clear 的使用</a>
+      
+      <time class="pull-right hidden-tablet">May 23, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/05/laravel-etag-middleware/" >在 Laravel 中设置 Etag 缓存</a>
+      
+      <time class="pull-right hidden-tablet">May 19, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/04/nginx-13-permission-denied-111-connection-refused/" >Nginx 报错和解决方法记录</a>
+      
+      <time class="pull-right hidden-tablet">Apr 19, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
+      
+      <time class="pull-right hidden-tablet">Mar 31, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/03/laravel-model-join-wrong-id/" >Laravel 关联查询返回错误的 id</a>
+      
+      <time class="pull-right hidden-tablet">Mar 31, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/03/php-float-rand/" >PHP 浮点数范围随机</a>
+      
+      <time class="pull-right hidden-tablet">Mar 1, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/02/create-laravel-5-pakage/" >如何创建 Laravel 5 扩展包</a>
+      
+      <time class="pull-right hidden-tablet">Feb 20, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/01/php-pack/" >PHP二进制封包</a>
+      
+      <time class="pull-right hidden-tablet">Jan 19, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/01/supervisor-laravel-queue/" >使用 Supervisor 管理 Laravel 队列进程</a>
+      
+      <time class="pull-right hidden-tablet">Jan 7, 2017</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/12/laravel-admin-install/" >Laravel 5.3 后台管理系统搭建</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/12/laravel-env-null/" >Laravel 使用 env 读取环境变量为 null 的问题</a>
+      
+      <time class="pull-right hidden-tablet">Dec 4, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/11/php-array-sort-order/" >PHP数组同值稳定排序</a>
+      
+      <time class="pull-right hidden-tablet">Nov 16, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/11/flock-write/" >PHP写文件加锁</a>
+      
+      <time class="pull-right hidden-tablet">Nov 13, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/10/php-json-encode-and-decode/" >PHP json_encode 数组键是否从0开始并且连续的区别</a>
+      
+      <time class="pull-right hidden-tablet">Oct 28, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/10/laravel-session-middleware/" >Laravel Session 保存机制和 terminate 中间件</a>
+      
+      <time class="pull-right hidden-tablet">Oct 7, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/10/php-foreach-batch/" >PHP 遍历元素并分批处理</a>
+      
+      <time class="pull-right hidden-tablet">Oct 6, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/09/sso-access/" >SSO单点登录系统接入</a>
+      
+      <time class="pull-right hidden-tablet">Sep 30, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/09/register-shutdown-function/" >PHP捕捉异常中断</a>
+      
+      <time class="pull-right hidden-tablet">Sep 28, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/09/modern-php/" >《性感的 PHP — 现代化 PHP 开发》PPT 分享</a>
+      
+      <time class="pull-right hidden-tablet">Sep 25, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/09/php-binary-safe/" >PHP二进制安全</a>
+      
+      <time class="pull-right hidden-tablet">Sep 25, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/09/umeng-ios-php-sdk-customized-wrong/" >友盟 IOS 推送官方 PHP SDK 自定义播示例有误</a>
+      
+      <time class="pull-right hidden-tablet">Sep 23, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/08/php-fatal-error-this-is-null/" >PHP Fatal error: $this is null</a>
+      
+      <time class="pull-right hidden-tablet">Aug 18, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/08/laravel-office-sync/" >让你的 Laravel 应用与官方保持同步</a>
+      
+      <time class="pull-right hidden-tablet">Aug 3, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/08/laravel-routes-map/" >Laravel 分割 routes.php 路由文件的最佳方式</a>
+      
+      <time class="pull-right hidden-tablet">Aug 2, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/08/laravel-debugbar-facade/" >Laravel 调试工具 laravel-debugbar 打印日志消息</a>
+      
+      <time class="pull-right hidden-tablet">Aug 1, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/08/laravel-debugbar-sql/" >Laravel 调试工具 laravel-debugbar</a>
+      
+      <time class="pull-right hidden-tablet">Aug 1, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/07/php7-performance-inisight-into/" >PHP 7 性能洞察，一张图告诉你</a>
+      
+      <time class="pull-right hidden-tablet">Jul 29, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/07/php-exec-status/" >判断PHP的exec函数是否执行成功</a>
+      
+      <time class="pull-right hidden-tablet">Jul 21, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/07/submit-composer-packagist/" >提交PHP组件到Packagist 发布自己的Composer包</a>
+      
+      <time class="pull-right hidden-tablet">Jul 13, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/07/laravel-5-queue/" >Laravel 5.2 队列的配置和使用</a>
+      
+      <time class="pull-right hidden-tablet">Jul 10, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/07/ssrf-shell/" >解决一个SSRF漏洞</a>
+      
+      <time class="pull-right hidden-tablet">Jul 7, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/06/php-curl-post-send-file/" >PHP Curl 上传文件</a>
+      
+      <time class="pull-right hidden-tablet">Jun 30, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/06/binshm-bad-interpreter-no-file-directory/" >执行sh脚本：/bin/sh^M: bad interpreter: No such file or directory</a>
+      
+      <time class="pull-right hidden-tablet">Jun 21, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/06/gulp-notify-notify-send-must-be-installed/" >Laravel Elixir运行gulp命令:Error in plugin ‘gulp-notify’</a>
+      
+      <time class="pull-right hidden-tablet">Jun 20, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/06/php7-opcache/" >PHP 7安装和开启opcache</a>
+      
+      <time class="pull-right hidden-tablet">Jun 2, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/06/laravel-optimize/" >优化 Laravel 网站打开速度</a>
+      
+      <time class="pull-right hidden-tablet">Jun 2, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/05/preg_replace_callback-usage/" >preg_replace_callback用法</a>
+      
+      <time class="pull-right hidden-tablet">May 28, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/05/crontab-task-note/" >Crontab部署计划任务注意事项</a>
+      
+      <time class="pull-right hidden-tablet">May 18, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/05/set_include_path-require/" >set_include_path和require,include</a>
+      
+      <time class="pull-right hidden-tablet">May 4, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/05/crontab-sample/" >Crontab定时任务实例</a>
+      
+      <time class="pull-right hidden-tablet">May 3, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/04/composer-ignore-reqs/" >Composer设置忽略版本匹配</a>
+      
+      <time class="pull-right hidden-tablet">Apr 26, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/04/nginx-set-fastcgi-param/" >Nginx 设置 $_SERVER 变量</a>
+      
+      <time class="pull-right hidden-tablet">Apr 13, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/04/vagrantfile-synced-folder/" >巧用vagrant建立映射目录解决环境兼容问题</a>
+      
+      <time class="pull-right hidden-tablet">Apr 8, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/04/homestead/" >Mac上安装Homestead</a>
+      
+      <time class="pull-right hidden-tablet">Apr 3, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/linux-alias-ln/" >Linux命令alias和ln（别名和链接命令）</a>
+      
+      <time class="pull-right hidden-tablet">Mar 27, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/windows-virtualbox-vagrant-centos7/" >使用VirtualBox&#43;Vagrant安装CentOS 7环境</a>
+      
+      <time class="pull-right hidden-tablet">Mar 24, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/laravel-wordpress-corcel/" >Laravel集成WordPress扩展包——Corcel</a>
+      
+      <time class="pull-right hidden-tablet">Mar 20, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/nginx-301/" >配置nginx 301跳转到www域</a>
+      
+      <time class="pull-right hidden-tablet">Mar 16, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/restful/" >理解RESTful架构</a>
+      
+      <time class="pull-right hidden-tablet">Mar 9, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/03/php-closure-use/" >PHP闭包函数传参及使用外部变量</a>
+      
+      <time class="pull-right hidden-tablet">Mar 8, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/02/laravel-nginx-server-conf/" >Laravel Nginx配置示例</a>
+      
+      <time class="pull-right hidden-tablet">Feb 20, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/02/laravel-5-2-auth/" >Laravel 5.2自带用户注册和登录认证</a>
+      
+      <time class="pull-right hidden-tablet">Feb 19, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/02/laravel-maintenance/" >Laravel维护模式的实现原理</a>
+      
+      <time class="pull-right hidden-tablet">Feb 18, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/02/centos-yum-install-php7/" >CentOS 7 安装 PHP 7</a>
+      
+      <time class="pull-right hidden-tablet">Feb 3, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/02/crc32-mysql-index/" >MySQL 字符串字段转换 crc32 建索引提高查询效率</a>
+      
+      <time class="pull-right hidden-tablet">Feb 1, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/01/laravel-singleton-bind/" >Laravel Ioc容器singleton和bind方法的区别</a>
+      
+      <time class="pull-right hidden-tablet">Jan 29, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/01/php-goto/" >PHP GOTO语法</a>
+      
+      <time class="pull-right hidden-tablet">Jan 28, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/01/laravel-construct-ioc/" >Laravel构造函数自动依赖注入</a>
+      
+      <time class="pull-right hidden-tablet">Jan 28, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2016/01/laravel-facades-register/" >在Laravel中注册Facades的步骤</a>
+      
+      <time class="pull-right hidden-tablet">Jan 27, 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/12/composer-autoload/" >Composer的自动加载机制</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/12/laravel-trait/" >Laravel中Trait的使用</a>
+      
+      <time class="pull-right hidden-tablet">Dec 21, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/12/laravel-migrate-mysql-2000/" >Laravel 执行 migrate 命令:No such file or directory</a>
+      
+      <time class="pull-right hidden-tablet">Dec 20, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/11/httpd-vhost-domain-alias/" >httpd-vhosts设置域名别名</a>
+      
+      <time class="pull-right hidden-tablet">Nov 19, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/11/serialize-json-diff/" >PHP中serialize和json序列化与反序列化的区别</a>
+      
+      <time class="pull-right hidden-tablet">Nov 12, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/11/php-stdclass/" >PHP中stdClass的意义</a>
+      
+      <time class="pull-right hidden-tablet">Nov 8, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/11/wechat-rewrd-wordpress-plugin/" >微信打赏WordPress插件</a>
+      
+      <time class="pull-right hidden-tablet">Nov 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/11/redis-lock-incr/" >Redis加锁防止重复操作的原理</a>
+      
+      <time class="pull-right hidden-tablet">Nov 2, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/call-user-func-vs-new-class/" >call_user_func与实例化的区别</a>
+      
+      <time class="pull-right hidden-tablet">Oct 30, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/php-reflectionclass/" >PHP反射类ReflectionClass</a>
+      
+      <time class="pull-right hidden-tablet">Oct 30, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/php-oop-typehinting/" >PHP约束参数类型</a>
+      
+      <time class="pull-right hidden-tablet">Oct 29, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/php-simple-singleton-pattern-class/" >写一个PHP单例模式的类</a>
+      
+      <time class="pull-right hidden-tablet">Oct 25, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/redis-jquery-ajax/" >如何防止ajax重复提交</a>
+      
+      <time class="pull-right hidden-tablet">Oct 25, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/10/php-array-merge/" >PHP数组array_merge和&#43;的区别</a>
+      
+      <time class="pull-right hidden-tablet">Oct 16, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/09/mac-firefox-hostadmin/" >Mac下firefox插件hostadmin切换host权限不足</a>
+      
+      <time class="pull-right hidden-tablet">Sep 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/09/php-lower-diff/" >PHP变量名区分大小写，函数和方法名不区分大小写</a>
+      
+      <time class="pull-right hidden-tablet">Sep 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php-float/" >PHP浮点数运算精度的问题</a>
+      
+      <time class="pull-right hidden-tablet">Aug 12, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/virtualbox-vagrant/" >使用vagrant安装VirtualBox虚拟机说明</a>
+      
+      <time class="pull-right hidden-tablet">Aug 11, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php-closure-demo/" >PHP匿名函数的实例</a>
+      
+      <time class="pull-right hidden-tablet">Aug 11, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/redis-lock/" >使用Redis防止重复提交</a>
+      
+      <time class="pull-right hidden-tablet">Aug 11, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php-httpsqs/" >PHP队列服务HTTPSQS的安装和使用</a>
+      
+      <time class="pull-right hidden-tablet">Aug 11, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/mod-concat-js-css/" >使用mod_concatx扩展合并js,css</a>
+      
+      <time class="pull-right hidden-tablet">Aug 11, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php-yield/" >PHP5.5的迭代生成器</a>
+      
+      <time class="pull-right hidden-tablet">Aug 8, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php5-6-curl/" >PHP5.6 curl去除@语法</a>
+      
+      <time class="pull-right hidden-tablet">Aug 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/08/php-shell-php_eol/" >PHP在shell里面换行使用PHP_EOL</a>
+      
+      <time class="pull-right hidden-tablet">Aug 1, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/sae-cron/" >在SAE执行PHP计划任务</a>
+      
+      <time class="pull-right hidden-tablet">Jul 23, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/phpstorm-9-0%E6%B3%A8%E5%86%8C%E7%A0%81license-key/" >PhpStorm 9.0注册码（License Key）</a>
+      
+      <time class="pull-right hidden-tablet">Jul 17, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/php-return/" >PHP return 的其他用法</a>
+      
+      <time class="pull-right hidden-tablet">Jul 8, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/form-submit/" >防止表单重复提交的方式</a>
+      
+      <time class="pull-right hidden-tablet">Jul 8, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/authentication-failed/" >PHP连接mongodb认证错误:Failed to connect,Authentication failed</a>
+      
+      <time class="pull-right hidden-tablet">Jul 8, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/array-map-reduce-foreach/" >用array_map()和array_reduce()替代foreach循环</a>
+      
+      <time class="pull-right hidden-tablet">Jul 3, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/07/php-array-reduce/" >理解PHP array_reduce函数</a>
+      
+      <time class="pull-right hidden-tablet">Jul 3, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/thinkphp-mongodb-getgridfs/" >ThinkPHP扩展MongoDB Model支持getGridFS存取文件</a>
+      
+      <time class="pull-right hidden-tablet">Jun 19, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/php-mongodb-gridfs/" >PHP操作GridFS存储文件到MongoDB的三种方式</a>
+      
+      <time class="pull-right hidden-tablet">Jun 18, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/mongodb-gridfs-php/" >MongoDB GridFS存取文件PHP示例</a>
+      
+      <time class="pull-right hidden-tablet">Jun 18, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/yii2-digpage/" >深入理解Yii2</a>
+      
+      <time class="pull-right hidden-tablet">Jun 5, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/array-unshift-shift-pop-push/" >array_unshift,array_shift及array_pop,array_push的定义</a>
+      
+      <time class="pull-right hidden-tablet">Jun 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/cat-tag-exclude/" >WordPress标签云和列表移除指定ID不显示</a>
+      
+      <time class="pull-right hidden-tablet">Jun 4, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/06/php-anonymous-function/" >PHP匿名函数</a>
+      
+      <time class="pull-right hidden-tablet">Jun 1, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/bash_profile-mac-php/" >修改bash_profile文件切换Mac默认PHP版本为MAMP</a>
+      
+      <time class="pull-right hidden-tablet">May 30, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/php-static-bind/" >初识PHP Static延迟静态绑定</a>
+      
+      <time class="pull-right hidden-tablet">May 27, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/php-composer/" >PHP 开发者该知道的 5 个 Composer 小技巧</a>
+      
+      <time class="pull-right hidden-tablet">May 26, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/rest-get-post-put-delete/" >REST模式GET，POST，PUT，DELETE</a>
+      
+      <time class="pull-right hidden-tablet">May 23, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/directory-path-separator/" >DIRECTORY_SEPARATOR 和 PATH_SEPARATOR的区别</a>
+      
+      <time class="pull-right hidden-tablet">May 21, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/05/left-join-duplication/" >left join多张表查出重复数据的解决办法</a>
+      
+      <time class="pull-right hidden-tablet">May 19, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/04/redis-php-array/" >Redis如何存取PHP多维数组</a>
+      
+      <time class="pull-right hidden-tablet">Apr 21, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/04/mysql-commit/" >什么时候使用mysql事务？</a>
+      
+      <time class="pull-right hidden-tablet">Apr 7, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/03/php-api-token/" >PHP接口开发加密技术</a>
+      
+      <time class="pull-right hidden-tablet">Mar 3, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/01/php-globals-global-difference/" >也谈PHP中$GLOBALS和global的区别</a>
+      
+      <time class="pull-right hidden-tablet">Jan 31, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2015/01/require-once-include/" >什么时候用require_once，什么时候用include</a>
+      
+      <time class="pull-right hidden-tablet">Jan 16, 2015</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/12/php-xml2json/" >PHP xml转换json</a>
+      
+      <time class="pull-right hidden-tablet">Dec 11, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/12/extension-loaded-json/" >extension_loaded检测扩展是否开启</a>
+      
+      <time class="pull-right hidden-tablet">Dec 9, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/12/euc-cn/" >EUC-CN是什么编码</a>
+      
+      <time class="pull-right hidden-tablet">Dec 1, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/12/php-array-static/" >PHP定义二维数组静态变量类型</a>
+      
+      <time class="pull-right hidden-tablet">Dec 1, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/12/php-xss/" >PHP xss安全过滤函数</a>
+      
+      <time class="pull-right hidden-tablet">Dec 1, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/preg_match_illegal_parameters/" >preg_match过滤URL非法参数</a>
+      
+      <time class="pull-right hidden-tablet">Nov 26, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/sublime-plugin-php/" >Sublime必备插件for PHP</a>
+      
+      <time class="pull-right hidden-tablet">Nov 22, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/str_preg_relace/" >str_replace和preg_relace的用法和区别</a>
+      
+      <time class="pull-right hidden-tablet">Nov 20, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/directory_separator/" >PHP常量DIRECTORY_SEPARATOR用法</a>
+      
+      <time class="pull-right hidden-tablet">Nov 12, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/php-line-class-dir/" >PHP 的“魔术常量”:__LINE__,__FILE__等</a>
+      
+      <time class="pull-right hidden-tablet">Nov 12, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/11/phpcms-re-develop/" >PHPCMS二次开发的正确方式</a>
+      
+      <time class="pull-right hidden-tablet">Nov 12, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/10/php-tostring/" >PHP魔术方法：toString</a>
+      
+      <time class="pull-right hidden-tablet">Oct 29, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2014/03/php-fopen-filesize-fread-fclose/" >PHP函数:fopen,filesize,fread,fclose</a>
+      
+      <time class="pull-right hidden-tablet">Mar 9, 2014</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/11/php-reflectionclass-object/" >PHP反射类ReflectionClass和ReflectionObject</a>
+      
+      <time class="pull-right hidden-tablet">Nov 12, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/09/navicat-sql/" >用navicat导入sql大文件</a>
+      
+      <time class="pull-right hidden-tablet">Sep 5, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/04/php-serialize-json/" >PHP的序列化和json以及区别</a>
+      
+      <time class="pull-right hidden-tablet">Apr 16, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/03/di-gui/" >已知f(1)=2;f(2)=3;f(n)=f(n-1)&#43;f(n-2);用递归和非递归方法计算F($n)的值</a>
+      
+      <time class="pull-right hidden-tablet">Mar 15, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/03/pdo-statement-bindparam/" >PHP PDOStatement:bindParam的一个陷阱</a>
+      
+      <time class="pull-right hidden-tablet">Mar 3, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/03/php-memcache/" >php当中的memcache应用</a>
+      
+      <time class="pull-right hidden-tablet">Mar 3, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/03/php-webservice/" >php的webservice示例</a>
+      
+      <time class="pull-right hidden-tablet">Mar 2, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2013/03/unsigned/" >数据库UNSIGNED属性</a>
+      
+      <time class="pull-right hidden-tablet">Mar 1, 2013</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/12/enum-set/" >数据库字段类型Enum（枚举）和Set（集合）的区别（转）</a>
+      
+      <time class="pull-right hidden-tablet">Dec 20, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/12/php-save-cookie/" >php中数组存入cookie的方法</a>
+      
+      <time class="pull-right hidden-tablet">Dec 19, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/12/navica-10/" >Navicat10.x注册码</a>
+      
+      <time class="pull-right hidden-tablet">Dec 19, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/11/thinkphp-rbac/" >ThinkPHP的RBAC（基于角色权限控制）详解</a>
+      
+      <time class="pull-right hidden-tablet">Nov 25, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/11/thinkphp-sql/" >thinkphp的sql优化原则</a>
+      
+      <time class="pull-right hidden-tablet">Nov 17, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/11/php-zuhe/" >php 对一组单词进行所有可能情况的排列组合</a>
+      
+      <time class="pull-right hidden-tablet">Nov 4, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/11/substr_str_replace/" >使用substr函数来实现str_replace的功能</a>
+      
+      <time class="pull-right hidden-tablet">Nov 3, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/11/php-scandir/" >使用php scandir函数遍历文件夹目录和所有文件</a>
+      
+      <time class="pull-right hidden-tablet">Nov 3, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/optimize-mysql/" >优化mysql数据库的方法</a>
+      
+      <time class="pull-right hidden-tablet">Oct 15, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/mysql-index/" >mysql数据库建立索引的好处和代价</a>
+      
+      <time class="pull-right hidden-tablet">Oct 13, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/array_merge/" >php合并数组的两种方法：&#43;和array_merge()的区别</a>
+      
+      <time class="pull-right hidden-tablet">Oct 11, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/mysql-myisam-innodb/" >MYSQL中myisam和innodb引擎的区别</a>
+      
+      <time class="pull-right hidden-tablet">Oct 11, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/php-efficiency/" >提高php执行效率的10条编程习惯</a>
+      
+      <time class="pull-right hidden-tablet">Oct 5, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/10/php-super-global/" >php超级全局变量总结</a>
+      
+      <time class="pull-right hidden-tablet">Oct 2, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/php-pdo-prepare/" >PHP：PDO prepare预处理</a>
+      
+      <time class="pull-right hidden-tablet">Sep 30, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/http-200-301-403-404-500/" >HTTP状态码200、301、403、404、500等</a>
+      
+      <time class="pull-right hidden-tablet">Sep 26, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/php-session-cookies/" >深入理解 PHP 中 session 和 cookies 的联系</a>
+      
+      <time class="pull-right hidden-tablet">Sep 26, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/php_set_get/" >详解php的魔术方法__get()和__set()</a>
+      
+      <time class="pull-right hidden-tablet">Sep 14, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/php-ref-counter/" >php引用计数器进行垃圾收集机制</a>
+      
+      <time class="pull-right hidden-tablet">Sep 13, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/array-adding/" >PHP 数组相加：array(“a”)&#43;array(“b”)结果还是array(“a”)</a>
+      
+      <time class="pull-right hidden-tablet">Sep 13, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/php-count-array/" >php递归统计多位数组个数count（$array，1）</a>
+      
+      <time class="pull-right hidden-tablet">Sep 10, 2012</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2012/09/stack-php/" >PHP对象在内存堆栈中的分配</a>
+      
+      <time class="pull-right hidden-tablet">Sep 9, 2012</time>
+      
+  </span>
+</li>
+
+
+    
+</ul>
+
+
+        </div>
+        
+    
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>在 Laravel 中设置 Etag 缓存 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在 Laravel 中设置 Etag 缓存"/>
+<meta name="twitter:description" content="本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。
+
+什么是“ETag”？
+
+Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。
+
+浏览器根据状态码判断是否缓存过期。"/>
+
+<meta property="og:title" content="在 Laravel 中设置 Etag 缓存" />
+<meta property="og:description" content="本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。
+
+什么是“ETag”？
+
+Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。
+
+浏览器根据状态码判断是否缓存过期。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2017/05/laravel-etag-middleware/" />
+<meta property="article:published_time" content="2017-05-19T04:51:35&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-19T04:51:35&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>在 Laravel 中设置 Etag 缓存</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 19, 2017
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
+
+<h3 id="什么是-etag">什么是“ETag”？</h3>
+
+<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
+
+<p>浏览器根据状态码判断是否缓存过期。</p>
+
+<p>服务器生成 Etag，和客户端保存 Etag ，并在请求中附带 Etag 的过程如下：</p>
+
+<ol>
+<li>客户端请求一个页面（A）。</li>
+<li>服务器返回页面A，并在给A加上一个ETag。</li>
+<li>客户端展现该页面，并将页面连同ETag一起缓存。</li>
+<li>客户再次请求页面A，并将上次请求时服务器返回的ETag一起传递给服务器。</li>
+<li>服务器检查该ETag，并判断出该页面自上次客户端请求之后还未被修改，直接返回响应304（未修改——Not Modified）和一个空的响应体。</li>
+</ol>
+
+<h3 id="用法示例">用法示例</h3>
+
+<p>在典型用法中，当一个URL被请求，Web服务器会返回资源和其相应的ETag值，它会被放置在HTTP的“ETag”字段中：</p>
+
+<p><code class="lang:default decode:true">ETag: &ldquo;686897696a7c876b7e&rdquo;</code></p>
+
+<p>然后，客户端可以决定是否缓存这个资源和它的ETag。以后，如果客户端想再次请求相同的URL，将会发送一个包含已保存的ETag和“If-None-Match”字段的请求。</p>
+
+<p><code class="lang:default decode:true">If-None-Match: &ldquo;686897696a7c876b7e&rdquo;</code></p>
+
+<p>客户端请求之后，服务器可能会比较客户端的ETag和当前版本资源的ETag。如果ETag值匹配，这就意味着资源没有改变，服务器便会发送回一个极短的响应，包含HTTP “304 未修改”的状态。304状态告诉客户端，它的缓存版本是最新的，并应该使用它。</p>
+
+<p>然而，如果ETag的值不匹配，这就意味着资源很可能发生了变化，那么，一个完整的响应就会被返回，包括资源的内容，就好像ETag没有被使用。这种情况下，客户端可以用新返回的资源和新的ETag替代先前的缓存版本。</p>
+
+<p>ETag值可用于<a class="new" title="变化监测和通知（页面不存在）" href="https://zh.wikipedia.org/w/index.php?title=%E5%8F%98%E5%8C%96%E7%9B%91%E6%B5%8B%E5%92%8C%E9%80%9A%E7%9F%A5&action=edit&redlink=1" target="_blank" rel="nofollow">网页监视</a>系统。大多数站点没有为网页设置ETag头信息，这一事实阻碍了高效的网页监测。当Web监视器不知道网站内容是否发生变化的时候，它不得不被检索和分析所有的内容，这不仅占用发布者的计算资源，还有订阅者的。</p>
+
+<h3 id="laravel-etag-中间件">Laravel Etag 中间件</h3>
+
+<p>这里有一个 Laravel 的中间件，可以给 Laravel 设置 Etag 缓存：</p>
+
+<p><code>&lt;?php namespace App\Http\Middleware;
+use Closure;
+class ETagMiddleware {
+    /**
+     * Implement Etag support
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        // Get response
+        $response = $next($request);
+        // If this was a GET request&hellip;
+        if ($request-&gt;isMethod(&lsquo;get&rsquo;)) {
+            // Generate Etag
+            $etag = md5($response-&gt;getContent());
+            $requestEtag = str_replace(&lsquo;&ldquo;&rsquo;, &ldquo;, $request-&gt;getETags());
+            // Check to see if Etag has changed
+            if($requestEtag &amp;&amp; $requestEtag[0] == $etag) {
+                $response-&gt;setNotModified();
+            }
+            // Set Etag
+            $response-&gt;setEtag($etag);
+        }
+        // Send response
+        return $response;
+    }
+}</code></p>
+
+<p>中间件将页面内容进行 md5 得到哈希值，然后跟客户端带过来的 Etag 进行对比。</p>
+
+<h3 id="etag-的弊端">Etag 的弊端</h3>
+
+<p>不过ETag/If-None-Match这点功能实在是个鸡肋，首先，Server端的资源不大可能Roll Back，更重要的是，有可能造成Client Performance下降。对于只有一个Server的网站，没什么问题，但是现在稍微上点规模的网站都需要Scale Out，也就是说需要前端一个Load Balancer，后面接多台Server来处理请求，俗称Cluster，既然是Cluster，<strong>那么每个请求到底返回什么结果应该和分配到哪个 Server无关</strong>，不过这个ETag可能就坏事了。假如用户的第一次请求分配给Server A，返回“ETag: &#8220;abcdefg1234:0001&#8243;”，但是第二次请求分配给了Server B，Server B上这个资源和Server A上的一模一样，但是计算出这个资源的ETag是&#8221;abcdefg1234:0002&#8243;，这下麻烦了，虽然内容一样，但是ETag不匹配，还是浪费了带宽把资源发送了一遍，冤枉啊！而事实上，不同Server上的ETag很有可能不同，对于Apache，ETag的计算考虑了inode，对于 IIS,ETag考虑了metabase的修改版本，要保证不同server上的这些信息一致，有点小难。不过不是有Last-Modified/If- Not-Modified吗？Server端看到If-Modified-Since，对照一下时间对得上，不管If-None-Match，可以直接发回304(Not Modified)呀，很不幸，<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.3.4" target="_blank" rel="nofollow">RFC2616对这种情况做了规定</a>，如果既有If-None-Match又有If-Modified-Since，除非两者不冲突，不然不会返回304。</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2017/05/linux-clear-cache-buffer/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</span>
+    </a>
+    
+    
+    <a href="/2017/05/golang-byte-slice/" class="navigation-next">
+      <span class="navigation-tittle">Golang 字节切片初始化</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>将left join拆分成多条sql语句 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="将left join拆分成多条sql语句"/>
+<meta name="twitter:description" content="本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。"/>
+
+<meta property="og:title" content="将left join拆分成多条sql语句" />
+<meta property="og:description" content="本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2015/06/left-join-split-sql/" />
+<meta property="article:published_time" content="2015-06-09T16:29:05&#43;00:00"/>
+<meta property="article:modified_time" content="2015-06-09T16:29:05&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>将left join拆分成多条sql语句</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 9, 2015
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/mysql">MYSQL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。</p>
+
+<p>我们公司电商网站现在要做网站服务化，用java做中间件，PHP调用java接口获取数据，数据表也进行了拆分，分库，要求不使用连表查询，有连表查询的sql语句想办法拆分多条sql语句，然后统一使用java接口。</p>
+
+<p>这样做的目的一是为了网站服务化做调整，数据的增删查改都封装到具体的业务里面，二是为了提高性能，减少数据库压力，说来说去还是为了提高效率。</p>
+
+<p>我们看看一个join多张表的sql如何拆分多条sql。</p>
+
+<p><code class="lang:mysql decode:true">select u1.uid,u1.uname,u2.add from user as u1 left join userinfo as u2 on u1.uid=u2.uid left join money as u3 on u1.uid=u3.uid where u1.country=&lsquo;c&rsquo;</code></p>
+
+<p>这条sql语句left join三张表，分别是user作为主表，连userinfo，money表。首先可以查出所有user的数据，有了第一条拆分的sql：</p>
+
+<p><code class="lang:mysql decode:true">select uid,uname from user where country=&lsquo;c&rsquo;</code></p>
+
+<p>由于条件是user.uid=userinfo.uid，所以可以把取得的uid用&#8221;,&#8221;连接，第二个拆分的sql如下：</p>
+
+<p><code class="lang:mysql decode:true">select uid,add from userinfo where uid in(32,34,23,23)</code></p>
+
+<p>这样得出了符合第一个left join条件下的uid，uname和add字段的结果，其实到这里就已经实现了以上left join语句的需求，如果还要查询money表的字段，以此类推，把uid作为in的条件查money表。</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2015/06/practice-and-perfect/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Practice reduces the imperfection的意思</span>
+    </a>
+    
+    
+    <a href="/2015/06/mysql-zerofill/" class="navigation-next">
+      <span class="navigation-tittle">MySQL zerofill是什么意思？</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+
+<title>小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="小谈博客"/>
+<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+
+<meta property="og:title" content="小谈博客" />
+<meta property="og:description" content="一个专注 WEB 技术的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tanteng.me/" />
+
+<meta property="og:updated_time" content="2019-02-03T15:30:05&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="http://tanteng.me/index.xml" title="小谈博客" />
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/05/golang-str-length/" >Golang 统计字符串字数</a>
+        </span>
+        <span class="item__date">
+          May 2, 2018
+        </span>
+        <span >
+        
+        <p>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。</p>
+
+<p><img class="aligncenter wp-image-12274 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180509104614-1.png" alt="" width="591" height="157" /></p>
+
+<p>golang 可以使用正则和 unicode 包的方法判断。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/05/golang-str-length/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list/" >本周阅读清单20180423</a>
+        </span>
+        <span class="item__date">
+          Apr 28, 2018
+        </span>
+        <span >
+        
+        <ol>
+<li>Redis 事务与关系型数据库事务比较
+<br /></li>
+</ol>
+
+<p><a href="https://www.jianshu.com/p/5f31d77d006b" target="_blank" rel="noopener nofollow"><a href="https://www.jianshu.com/p/5f31d77d006b">https://www.jianshu.com/p/5f31d77d006b</a></a></p>
+
+<ol>
+<li>深入理解 PHP 7 之 zval
+<br /></li>
+</ol>
+
+<p><a href="https://github.com/laruence/php7-internal/blob/master/zval.md" target="_blank" rel="noopener nofollow"><a href="https://github.com/laruence/php7-internal/blob/master/zval.md">https://github.com/laruence/php7-internal/blob/master/zval.md</a></a></p>
+
+<ol>
+<li>虚拟内存的那点事儿
+<br /></li>
+</ol>
+
+<p><a href="https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/" target="_blank" rel="noopener nofollow"><a href="https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/">https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/</a></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-4/" >本周阅读清单20180416</a>
+        </span>
+        <span class="item__date">
+          Apr 22, 2018
+        </span>
+        <span >
+        
+        <p>1.缓存击穿、失效以及热点key问题</p>
+
+<p><a href="https://www.jianshu.com/p/d5a3668d4dad" target="_blank" rel="noopener nofollow"><a href="https://www.jianshu.com/p/d5a3668d4dad">https://www.jianshu.com/p/d5a3668d4dad</a></a></p>
+
+<p>2.用 Redis 构建分布式锁</p>
+
+<p><a href="http://ifeve.com/redis-lock/" target="_blank" rel="noopener nofollow"><a href="http://ifeve.com/redis-lock/">http://ifeve.com/redis-lock/</a></a></p>
+
+<p>3.浅谈TCP/IP网络编程中socket的行为</p>
+
+<p><a href="https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html" target="_blank" rel="noopener nofollow"><a href="https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html">https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html</a></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-4/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/laravel-relationships-settable/" >Laravel 模型间关系设置分表方法</a>
+        </span>
+        <span class="item__date">
+          Apr 19, 2018
+        </span>
+        <span >
+        
+        <p>在实际开发中经常用到分库分表，比如用户表分成 100 张，那么这个时候查询数据需要设置分表，比如 Laravel 的 Model 类中提供了 setTable 方法：</p>
+
+<p><code>/**
+ * Set the table associated with the model.
+ *
+ * @param  string  $table
+ * @return $this
+ */
+public function setTable($table)
+{
+    $this-&gt;table = $table;</p>
+
+<pre><code>return $this;
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/laravel-relationships-settable/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-3/" >本周阅读清单20180410</a>
+        </span>
+        <span class="item__date">
+          Apr 10, 2018
+        </span>
+        <span >
+        
+        <p>1.聊聊 Linux 五种 I/O 进程模型</p>
+
+<p><a href="https://www.jianshu.com/p/486b0965c296" target="_blank" rel="noopener nofollow"><a href="https://www.jianshu.com/p/486b0965c296">https://www.jianshu.com/p/486b0965c296</a></a></p>
+
+<p>2.什么是 Event Loop？</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="noopener nofollow"><a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html">http://www.ruanyifeng.com/blog/2013/10/event_loop.html</a></a></p>
+
+<p>3.消息中间件NSQ深入与实践</p>
+
+<p><a href="https://juejin.im/entry/59ddae8151882578bb480d0e" target="_blank" rel="noopener nofollow"><a href="https://juejin.im/entry/59ddae8151882578bb480d0e">https://juejin.im/entry/59ddae8151882578bb480d0e</a></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-3/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/php-interview-2/" >PHP知识整理之——PHP基础、WEB安全、网络</a>
+        </span>
+        <span class="item__date">
+          Apr 10, 2018
+        </span>
+        <span >
+        
+        <p>本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/php-interview-2/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-2/" >本周阅读清单20180402</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2018
+        </span>
+        <span >
+        
+        <ol>
+<li>Redis集群技术及Codis实践
+<br /></li>
+</ol>
+
+<p><a href="http://www.infoq.com/cn/articles/effective-ops-part-03" target="_blank" rel="noopener nofollow"><a href="http://www.infoq.com/cn/articles/effective-ops-part-03">http://www.infoq.com/cn/articles/effective-ops-part-03</a></a></p>
+
+<ol>
+<li>58到家MySQL军规
+<br /></li>
+</ol>
+
+<p><a href="https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg" target="_blank" rel="noopener nofollow"><a href="https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg">https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg</a></a></p>
+
+<ol>
+<li>MySQL事务隔离级别
+<br /></li>
+</ol>
+
+<p><a href="https://www.jianshu.com/p/4e3edbedb9a8" target="_blank" rel="noopener nofollow"><a href="https://www.jianshu.com/p/4e3edbedb9a8">https://www.jianshu.com/p/4e3edbedb9a8</a></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-2/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/03/docker-dev-environment/" >使用 Docker 搭建开发环境</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2018
+        </span>
+        <span >
+        
+        <p>做了一次分享，主题《使用 Docker 搭建开发环境》，简单介绍了一下 Docker 的概念，演示了使用 Docker-compose 构建全套 PHP 环境。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg" target="_blank"><img class="alignnone size-full wp-image-11994" src="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg" alt="" width="1024" height="762" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/03/docker-dev-environment/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/03/php-cow/" >PHP写时复制（Copy On Write）</a>
+        </span>
+        <span class="item__date">
+          Mar 26, 2018
+        </span>
+        <span >
+        
+        <p>一个例子：</p>
+
+<p><code>&lt;?php
+$foo = 1;
+$bar = $foo;
+echo $foo + $bar;
+</code></p>
+
+<p>变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景下PHP 的 COW 对内存进行优化。比如：变量的多次赋值、函数参数传递，并在函数体内修改实参等。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/03/php-cow/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/03/reding-list-5/" >本周阅读清单20180326</a>
+        </span>
+        <span class="item__date">
+          Mar 26, 2018
+        </span>
+        <span >
+        
+        <ol>
+<li>Redis内存使用优化与存储
+<br /></li>
+</ol>
+
+<p><a href="http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage" target="_blank" rel="noopener nofollow"><a href="http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage">http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage</a></a></p>
+
+<ol>
+<li>一致性哈希算法及其在分布式系统中的应用
+<br /></li>
+</ol>
+
+<p><a href="http://blog.codinglabs.org/articles/consistent-hashing.html" target="_blank" rel="noopener nofollow"><a href="http://blog.codinglabs.org/articles/consistent-hashing.html">http://blog.codinglabs.org/articles/consistent-hashing.html</a></a></p>
+
+<ol>
+<li>PHP写时复制（Copy On Write）
+<br /></li>
+</ol>
+
+<p><a href="http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write" target="_blank" rel="noopener nofollow"><a href="http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write">http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write</a></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/03/reding-list-5/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/4/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/6/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    </body>
+</html>

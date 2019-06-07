@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>PHP xss安全过滤函数 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP xss安全过滤函数"/>
+<meta name="twitter:description" content="PHP xss安全过滤函数
+/** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]&#43;/S&rsquo;, &ldquo;, $string);
+$parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;, &#39;onbeforeupdate&#39;, &#39;onblur&#39;, &#39;onbounce&#39;, &#39;oncellchange&#39;, &#39;onchange&#39;, &#39;onclick&#39;, &#39;oncontextmenu&#39;, &#39;oncontrolselect&#39;, &#39;oncopy&#39;, &#39;oncut&#39;, &#39;ondataavailable&#39;, &#39;ondatasetchanged&#39;, &#39;ondatasetcomplete&#39;, &#39;ondblclick&#39;, &#39;ondeactivate&#39;, &#39;ondrag&#39;, &#39;ondragend&#39;, &#39;ondragenter&#39;, &#39;ondragleave&#39;, &#39;ondragover&#39;, &#39;ondragstart&#39;, &#39;ondrop&#39;, &#39;onerror&#39;, &#39;onerrorupdate&#39;, &#39;onfilterchange&#39;, &#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;onfocusout&#39;, &#39;onhelp&#39;, &#39;onkeydown&#39;, &#39;onkeypress&#39;, &#39;onkeyup&#39;, &#39;onlayoutcomplete&#39;, &#39;onload&#39;, &#39;onlosecapture&#39;, &#39;onmousedown&#39;, &#39;onmouseenter&#39;, &#39;onmouseleave&#39;, &#39;onmousemove&#39;, &#39;onmouseout&#39;, &#39;onmouseover&#39;, &#39;onmouseup&#39;, &#39;onmousewheel&#39;, &#39;onmove&#39;, &#39;onmoveend&#39;, &#39;onmovestart&#39;, &#39;onpaste&#39;, &#39;onpropertychange&#39;, &#39;onreadystatechange&#39;, &#39;onreset&#39;, &#39;onresize&#39;, &#39;onresizeend&#39;, &#39;onresizestart&#39;, &#39;onrowenter&#39;, &#39;onrowexit&#39;, &#39;onrowsdelete&#39;, &#39;onrowsinserted&#39;, &#39;onscroll&#39;, &#39;onselect&#39;, &#39;onselectionchange&#39;, &#39;onselectstart&#39;, &#39;onstart&#39;, &#39;onstop&#39;, &#39;onsubmit&#39;, &#39;onunload&#39;); $parm = array_merge($parm1, $parm2); for ($i = 0; $i &amp;lt; sizeof($parm); $i&#43;&#43;) { $pattern = &#39;/&#39;; for ($j = 0; $j &amp;lt; strlen($parm[$i]); $j&#43;&#43;) { if ($j &gt; 0) { $pattern ."/>
+
+<meta property="og:title" content="PHP xss安全过滤函数" />
+<meta property="og:description" content="PHP xss安全过滤函数
+/** * xss过滤函数 * * @param $string * @return string */ function remove_xss($string) { $string = preg_replace(&lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]&#43;/S&rsquo;, &ldquo;, $string);
+$parm1 = Array(&#39;javascript&#39;, &#39;vbscript&#39;, &#39;expression&#39;, &#39;applet&#39;, &#39;meta&#39;, &#39;xml&#39;, &#39;blink&#39;, &#39;link&#39;, &#39;script&#39;, &#39;embed&#39;, &#39;object&#39;, &#39;iframe&#39;, &#39;frame&#39;, &#39;frameset&#39;, &#39;ilayer&#39;, &#39;layer&#39;, &#39;bgsound&#39;, &#39;title&#39;, &#39;base&#39;); $parm2 = Array(&#39;onabort&#39;, &#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;, &#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;, &#39;onbeforeprint&#39;, &#39;onbeforeunload&#39;, &#39;onbeforeupdate&#39;, &#39;onblur&#39;, &#39;onbounce&#39;, &#39;oncellchange&#39;, &#39;onchange&#39;, &#39;onclick&#39;, &#39;oncontextmenu&#39;, &#39;oncontrolselect&#39;, &#39;oncopy&#39;, &#39;oncut&#39;, &#39;ondataavailable&#39;, &#39;ondatasetchanged&#39;, &#39;ondatasetcomplete&#39;, &#39;ondblclick&#39;, &#39;ondeactivate&#39;, &#39;ondrag&#39;, &#39;ondragend&#39;, &#39;ondragenter&#39;, &#39;ondragleave&#39;, &#39;ondragover&#39;, &#39;ondragstart&#39;, &#39;ondrop&#39;, &#39;onerror&#39;, &#39;onerrorupdate&#39;, &#39;onfilterchange&#39;, &#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;onfocusout&#39;, &#39;onhelp&#39;, &#39;onkeydown&#39;, &#39;onkeypress&#39;, &#39;onkeyup&#39;, &#39;onlayoutcomplete&#39;, &#39;onload&#39;, &#39;onlosecapture&#39;, &#39;onmousedown&#39;, &#39;onmouseenter&#39;, &#39;onmouseleave&#39;, &#39;onmousemove&#39;, &#39;onmouseout&#39;, &#39;onmouseover&#39;, &#39;onmouseup&#39;, &#39;onmousewheel&#39;, &#39;onmove&#39;, &#39;onmoveend&#39;, &#39;onmovestart&#39;, &#39;onpaste&#39;, &#39;onpropertychange&#39;, &#39;onreadystatechange&#39;, &#39;onreset&#39;, &#39;onresize&#39;, &#39;onresizeend&#39;, &#39;onresizestart&#39;, &#39;onrowenter&#39;, &#39;onrowexit&#39;, &#39;onrowsdelete&#39;, &#39;onrowsinserted&#39;, &#39;onscroll&#39;, &#39;onselect&#39;, &#39;onselectionchange&#39;, &#39;onselectstart&#39;, &#39;onstart&#39;, &#39;onstop&#39;, &#39;onsubmit&#39;, &#39;onunload&#39;); $parm = array_merge($parm1, $parm2); for ($i = 0; $i &amp;lt; sizeof($parm); $i&#43;&#43;) { $pattern = &#39;/&#39;; for ($j = 0; $j &amp;lt; strlen($parm[$i]); $j&#43;&#43;) { if ($j &gt; 0) { $pattern ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2014/12/php-xss/" />
+<meta property="article:published_time" content="2014-12-01T02:21:53&#43;00:00"/>
+<meta property="article:modified_time" content="2014-12-01T02:21:53&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>PHP xss安全过滤函数</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 1, 2014
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>PHP xss安全过滤函数</p>
+
+<p><code lang="php">/**
+ * xss过滤函数
+ *
+ * @param $string
+ * @return string
+ */
+function remove_xss($string) {
+    $string = preg_replace(&lsquo;/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S&rsquo;, &ldquo;, $string);</p>
+
+<pre><code>$parm1 = Array('javascript', 'vbscript', 'expression', 'applet', 'meta', 'xml', 'blink', 'link', 'script', 'embed', 'object', 'iframe', 'frame', 'frameset', 'ilayer', 'layer', 'bgsound', 'title', 'base');
+
+$parm2 = Array('onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate', 'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus', 'onbeforepaste', 'onbeforeprint', 'onbeforeunload', 'onbeforeupdate', 'onblur', 'onbounce', 'oncellchange', 'onchange', 'onclick', 'oncontextmenu', 'oncontrolselect', 'oncopy', 'oncut', 'ondataavailable', 'ondatasetchanged', 'ondatasetcomplete', 'ondblclick', 'ondeactivate', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'onerror', 'onerrorupdate', 'onfilterchange', 'onfinish', 'onfocus', 'onfocusin', 'onfocusout', 'onhelp', 'onkeydown', 'onkeypress', 'onkeyup', 'onlayoutcomplete', 'onload', 'onlosecapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onmove', 'onmoveend', 'onmovestart', 'onpaste', 'onpropertychange', 'onreadystatechange', 'onreset', 'onresize', 'onresizeend', 'onresizestart', 'onrowenter', 'onrowexit', 'onrowsdelete', 'onrowsinserted', 'onscroll', 'onselect', 'onselectionchange', 'onselectstart', 'onstart', 'onstop', 'onsubmit', 'onunload');
+
+$parm = array_merge($parm1, $parm2); 
+
+for ($i = 0; $i &amp;lt; sizeof($parm); $i++) { 
+    $pattern = '/'; 
+    for ($j = 0; $j &amp;lt; strlen($parm[$i]); $j++) { 
+        if ($j &gt; 0) { 
+            $pattern .= '('; 
+            $pattern .= '(&amp;#[x|X]0([9][a][b]);?)?'; 
+            $pattern .= '|(&amp;#0([9][10][13]);?)?'; 
+            $pattern .= ')?'; 
+        }
+        $pattern .= $parm[$i][$j]; 
+    }
+    $pattern .= '/i';
+    $string = preg_replace($pattern, ' ', $string); 
+}
+return $string;
+</code></pre>
+
+<p>}
+</code></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2014/11/nginx-reverse-proxy/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">借助Nginx搭建反向代理服务器</span>
+    </a>
+    
+    
+    <a href="/2014/12/ma-yun-yu-lu/" class="navigation-next">
+      <span class="navigation-tittle">馬雲：11種人不能幫，10類人可合作，5類人不合夥！</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

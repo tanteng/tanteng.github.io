@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>php当中的memcache应用 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="php当中的memcache应用"/>
+<meta name="twitter:description" content="安装memcached扩展的方法：
+
+解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install
+
+将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。
+
+然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;
+
+在phpinfo（）下查看，是否引用了memcache扩展。"/>
+
+<meta property="og:title" content="php当中的memcache应用" />
+<meta property="og:description" content="安装memcached扩展的方法：
+
+解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install
+
+将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。
+
+然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;
+
+在phpinfo（）下查看，是否引用了memcache扩展。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2013/03/php-memcache/" />
+<meta property="article:published_time" content="2013-03-03T09:13:01&#43;00:00"/>
+<meta property="article:modified_time" content="2013-03-03T09:13:01&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>php当中的memcache应用</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 3, 2013
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><strong>安装memcached扩展的方法：</strong></p>
+
+<p>解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install</p>
+
+<p>将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。</p>
+
+<p>然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;</p>
+
+<p>在phpinfo（）下查看，是否引用了memcache扩展。</p>
+
+<p>memcached简单示例：</p>
+
+<p><code lang="php">&lt;?php
+//连接
+$mem = new Memcache;
+$mem-&gt;connect(&ldquo;127.0.0.1&rdquo;, 11211);</p>
+
+<p>//保存数据
+$mem-&gt;set(&lsquo;key1&rsquo;, &lsquo;This is first value&rsquo;, 0, 60);
+$val = $mem-&gt;get(&lsquo;key1&rsquo;);
+echo &ldquo;Get key1 value: &ldquo; . $val .&rdquo;</p>
+
+<p><br />&rdquo;;</p>
+
+<p>//替换数据
+$mem-&gt;replace(&lsquo;key1&rsquo;, &lsquo;This is replace value&rsquo;, 0, 60);
+$val = $mem-&gt;get(&lsquo;key1&rsquo;);
+echo &ldquo;Get key1 value: &ldquo; . $val . &ldquo;<br />&rdquo;;</p>
+
+<p>//保存数组
+$arr = array(&lsquo;aaa&rsquo;, &lsquo;bbb&rsquo;, &lsquo;ccc&rsquo;, &lsquo;ddd&rsquo;);
+$mem-&gt;set(&lsquo;key2&rsquo;, $arr, 0, 60);
+$val2 = $mem-&gt;get(&lsquo;key2&rsquo;);
+echo &ldquo;Get key2 value: &ldquo;;
+print_r($val2);
+echo &ldquo;<br />&rdquo;;</p>
+
+<p>//删除数据
+$mem-&gt;delete(&lsquo;key1&rsquo;);
+$val = $mem-&gt;get(&lsquo;key1&rsquo;);
+echo &ldquo;Get key1 value: &ldquo; . $val . &ldquo;<br />&rdquo;;</p>
+
+<p>//清除所有数据
+$mem-&gt;flush();
+$val2 = $mem-&gt;get(&lsquo;key2&rsquo;);
+echo &ldquo;Get key2 value: &ldquo;;
+print_r($val2);
+echo &ldquo;<br />&rdquo;;
+//关闭连接
+$mem-&gt;close();</p>
+
+<p>$memcachehost = &lsquo;192.168.10.1&rsquo;;
+$memcacheport = 11211;
+$memcachelife = 60;
+$memcache = new Memcache;
+$memcache-&gt;connect($memcachehost,$memcacheport) or die (&ldquo;Could not connect&rdquo;);
+$query=&ldquo;select * from user limit 10&rdquo;;
+$key=md5($query);
+if(!$memcache-&gt;get($key))
+{
+        $conn=mysql_connect(&ldquo;192.168.30.1&rdquo;,&ldquo;root&rdquo;,&ldquo;passwd&rdquo;);
+        mysql_select_db(users);
+        $result=mysql_query($query);
+        while ($row=mysql_fetch_assoc($result))
+        {
+            $arr[]=$row;
+        }
+        $f = &lsquo;db&rsquo;;
+        $memcache-&gt;add($key,serialize($arr),0,30);
+        $data = $arr ;
+}
+else{
+        $f = &lsquo;mem&rsquo;;
+    $data_mem=$memcache-&gt;get($key);
+    $data = unserialize($data_mem);
+}
+echo $f;
+echo &ldquo;&rdquo;;
+//print_r($data);
+foreach($data as $a)
+{
+        echo $a[user<em>id].</em>.$a[email];
+        echo &ldquo;&rdquo;;
+}
+?&gt;
+</code></p>
+
+<p>新闻系统的应用：</p>
+
+<p><code lang="php">//==============memcache
+$memcachehost = &lsquo;127.0.0.1&rsquo;;
+$memcacheport = 11211;
+$memcachelife = 60;
+$memcache = new Memcache;
+$memcache-&gt;connect($memcachehost,$memcacheport) or die (&ldquo;Could not connect&rdquo;);
+//==============新闻</p>
+
+<p>$sql=&ldquo;SELECT id,title,left(title,16) as biaoti,date_time FROM <code>p_newsbase</code> where shenhe=&lsquo;1&rsquo; order by id DESC limit 7 &ldquo;;
+ $query=$db-&gt;query($sql);
+ $key=md5($query);
+ while($row_news=$db-&gt;fetch_array($query)){
+    $str=$row_news[&lsquo;biaoti&rsquo;].$db-&gt;time_out($row_news[&lsquo;date_time&rsquo;]);
+    $sm_news[]=array(&ldquo;name&rdquo;=&gt;$str,&ldquo;title&rdquo;=&gt;$row_news[&lsquo;title&rsquo;],&ldquo;id&rdquo;=&gt;$row_news[&lsquo;id&rsquo;],&ldquo;date_time&rdquo;=&gt;$row_news[&lsquo;date_time&rsquo;]);</p>
+
+<p>}
+ if(!$memcache-&gt;get($key)){
+    $memcache-&gt;add($key,serialize($sm_news),0,$memcachelife);
+ }else{
+    $data_mem=$memcache-&gt;get($key);
+    $sm_news = unserialize($data_mem);
+ }
+ $smarty-&gt;assign(&ldquo;sm_news&rdquo;,$sm_news);
+</code></p>
+
+<p>(参考资料：<a href="http://blog.csdn.net/chanya/article/details/7742014" title="memcached示例" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/chanya/article/details/7742014">http://blog.csdn.net/chanya/article/details/7742014</a></a>)</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2013/03/php-webservice/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">php的webservice示例</span>
+    </a>
+    
+    
+    <a href="/2013/03/pdo-statement-bindparam/" class="navigation-next">
+      <span class="navigation-tittle">PHP PDOStatement:bindParam的一个陷阱</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

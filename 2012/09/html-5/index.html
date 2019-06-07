@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>全面介绍HTML5 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="全面介绍HTML5"/>
+<meta name="twitter:description" content="目录
+
+什么是HTML5
+
+HTML5新特性和效果
+
+HTML5目前存在的应用局限
+
+讨论：HTML5适合应用于我们哪些项目？"/>
+
+<meta property="og:title" content="全面介绍HTML5" />
+<meta property="og:description" content="目录
+
+什么是HTML5
+
+HTML5新特性和效果
+
+HTML5目前存在的应用局限
+
+讨论：HTML5适合应用于我们哪些项目？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://tanteng.me/2012/09/html-5/" />
+<meta property="article:published_time" content="2012-09-25T15:49:24&#43;00:00"/>
+<meta property="article:modified_time" content="2012-09-25T15:49:24&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="http://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>全面介绍HTML5</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 25, 2012
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/%E5%89%8D%E7%AB%AF">前端</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h1 id="目录">目录</h1>
+
+<h3 id="什么是html5">什么是HTML5</h3>
+
+<h3 id="html5新特性和效果">HTML5新特性和效果</h3>
+
+<h3 id="html5目前存在的应用局限">HTML5目前存在的应用局限</h3>
+
+<h3 id="讨论-html5适合应用于我们哪些项目">讨论：HTML5适合应用于我们哪些项目？</h3>
+
+<h2 id="什么是html5-1">什么是HTML5</h2>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139004053.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139041417.png" alt="image" width="644" height="398" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;">官方概念：HTML5草案的前身名为Web Applications 1.0，是HTML4的更新加强版本。它增加了新的标签和属性，强化了网页的标准、语义化、图像表达能力和交互效果。</span></p>
+
+<p><span style="font-family: 宋体;">广义概念：HTML5代表浏览器端技术的一个发展阶段。在这个阶段，浏览器呈现技术得到了一个飞跃发展和广泛支持，这些技术包括：HTML5，DOM3，CSS3，JS API，SVG，WebGL（3D）等。</span></p>
+
+<p><span style="font-family: 宋体;">浏览器支持</span></p>
+
+<p><span style="font-family: 宋体;">最新版本的 Safari、Chrome、Firefox 以及 Opera 支持某些 HTML5 特性。<br /> Internet Explorer 9 将支持某些 HTML5 特性。</span></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-html5新特性-span"><span style="font-family: 宋体; font-size: x-large;">HTML5新特性</span></h2>
+
+<p><span style="font-family: 宋体;">媒体支持：Video和Audio<br /> 画布元素-Canvas以及WebGL视频加速<br /> Web 储存<br /> 增强的表单Form<br /> 更炫的平面动画-CSS3页面渲染及 CSS3 3D<br /> 矢量支持-SVG<br /> 原生的拖拽</span></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-video便签-span"><span style="font-family: 宋体; font-size: x-large;">Video便签</span></h2>
+
+<p><span style="font-family: 宋体;">HTML5 规定了一种通过 video 元素来包含视频的标准方法。</span></p>
+
+<p><span style="font-family: 宋体;">当前，video 元素支持三种视频格式：</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139057895.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139066599.png" alt="image" width="644" height="122" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;"><video> 标签的属性：</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139081814.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139107552.png" alt="image" width="644" height="252" border="0" /></a></p>
+
+<div>
+  <code>   1:  &lt;!DOCTYPE HTML&gt;</code>
+  
+  <code>   2:  &lt;html&gt;</code>
+  
+  <code>   3:  &lt;body&gt;</code>
+  
+  <code>   4:  &lt;video width="320" height="240" controls="controls"&gt;</code>
+  
+  <code>   5:    &lt;source src="/res/7049.mp4" type="video/mp4"&gt;</code>
+  
+  <code>   6:  Your browser does not support the video tag.</code>
+  
+  <code>   7:  &lt;/video&gt;</code>
+  
+  <code>   8:  &lt;/body&gt;</code>
+  
+  <code>   9:  &lt;/html&gt;</code>
+</div>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139144393.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139271635.png" alt="image" width="540" height="484" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-audio-span"><span style="font-family: 宋体; font-size: x-large;">Audio</span></h2>
+
+<p><span style="font-family: 宋体;">HTML5 规定了一种通过 audio 元素来包含音频的标准方法。</span></p>
+
+<p><span style="font-family: 宋体;">当前，audio元素支持三种音频格式：</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139276685.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139297930.png" alt="image" width="644" height="118" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;"><audio> 标签的属性：</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139343541.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139369802.png" alt="image" width="644" height="198" border="0" /></a></p>
+
+<div>
+  <code>   1:  &lt;!DOCTYPE HTML&gt;</code>
+  
+  <code>   2:  &lt;html&gt;</code>
+  
+  <code>   3:  &lt;body&gt;</code>
+  
+  <code>   4:  &lt;audio controls="controls"&gt;</code>
+  
+  <code>   5:    &lt;source src="/res/song.mp3" type="audio/mpeg"&gt;</code>
+  
+  <code>   6:  Your browser does not support the audio element.</code>
+  
+  <code>   7:  &lt;/audio&gt;</code>
+  
+  <code>   8:  &lt;/body&gt;</code>
+  
+  <code>   9:  &lt;/html&gt;</code>
+</div>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139373805.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139386445.png" alt="image" width="644" height="252" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;">使用场景</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139415380.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139457761.png" alt="image" width="644" height="316" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-canvas-span"><span style="font-family: 宋体; font-size: x-large;">Canvas</span></h2>
+
+<p><span style="font-family: 宋体;">HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。</span></p>
+
+<p><span style="font-family: 宋体;">画布是一个矩形区域，您可以控制其每一像素。</span></p>
+
+<p><span style="font-family: 宋体;">canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139467271.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/20120919113947925.png" alt="image" width="222" height="118" border="0" /></a> <a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139489944.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139498963.png" alt="image" width="244" height="195" border="0" /></a>  <a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/20120919113949665.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139502716.png" alt="image" width="212" height="114" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;">使用场景</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139549209.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/20120919113957444.png" alt="image" width="644" height="229" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-web存储-span"><span style="font-family: 宋体; font-size: x-large;">Web存储</span></h2>
+
+<p><span style="font-family: 宋体;">在客户端存储数据<br /> HTML5 提供了两种在客户端存储数据的新方法：<br /> localStorage &#8211; 没有时间限制的数据存储<br /> sessionStorage &#8211; 针对一个 session 的数据存储<br /> 之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。<br /> 在 HTML5 中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不影响网站性能的情况下存储大量数据成为可能。<br /> 对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。<br /> HTML5 使用 JavaScript 来存储和访问数据。</span></p>
+
+<div>
+  <code>   1:  &lt;!DOCTYPE HTML&gt;</code>
+  
+  <code>   2:  &lt;html&gt;</code>
+  
+  <code>   3:  &lt;body&gt;</code>
+  
+  <code>   4:  &lt;script type="text/javascript"&gt;</code>
+  
+  <code>   5:  localStorage.lastname="Smith";</code>
+  
+  <code>   6:  document.write("Last name: " + localStorage.lastname);</code>
+  
+  <code>   7:  &lt;/script&gt;</code>
+  
+  <code>   8:  &lt;/body&gt;</code>
+  
+  <code>   9:  &lt;/html&gt;</code>
+</div>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191139599496.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140002170.png" alt="image" width="644" height="217" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-html5-表单-span"><span style="font-family: 宋体; font-size: x-large;">HTML5 表单</span></h2>
+
+<p><span style="font-family: 宋体;">Input类型<br /> HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。<br /> email<br /> url<br /> number<br /> range<br /> Date pickers (date, month, week, time, datetime, datetime-local)<br /> search<br /> color</span></p>
+
+<p><span style="font-family: 宋体;"><strong>Input类型</strong></span></p>
+
+<div>
+  <code>   1:  &lt;!DOCTYPE HTML&gt;</code>
+  
+  <code>   2:  &lt;html&gt;</code>
+  
+  <code>   3:  &lt;body&gt;</code>
+  
+  <code>   4:  &lt;form action="/example/html5/demo_form.asp" method="get"&gt;</code>
+  
+  <code>   5:  E-mail: &lt;input type="email" name="user_email" /&gt;&lt;br /&gt;</code>
+  
+  <code>   6:  &lt;input type="submit" /&gt;</code>
+  
+  <code>   7:  &lt;/form&gt;</code>
+  
+  <code>   8:  &lt;/body&gt;</code>
+  
+  <code>   9:  &lt;/html&gt;</code>
+</div>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140015301.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140029860.png" alt="image" width="644" height="159" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;"><strong>表单元素<br /> </strong>HTML5 拥有若干涉及表单的元素和属性。<br /> datalist<br /> keygen<br /> output</span></p>
+
+<div>
+  <code>   1:  &lt;!DOCTYPE HTML&gt;</code>
+  
+  <code>   2:  &lt;html&gt;</code>
+  
+  <code>   3:  &lt;body&gt;</code>
+  
+  <code>   4:  &lt;form action="/example/html5/demo_form.asp" method="get"&gt;</code>
+  
+  <code>   5:  Webpage: &lt;input type="url" list="url_list" name="link" /&gt;</code>
+  
+  <code>   6:  &lt;datalist id="url_list"&gt;</code>
+  
+  <code>   7:      &lt;option label="W3School" value="http://www.w3school.com.cn" /&gt;</code>
+  
+  <code>   8:      &lt;option label="Google" value="http://www.google.com" /&gt;</code>
+  
+  <code>   9:      &lt;option label="Microsoft" value="http://www.microsoft.com" /&gt;</code>
+  
+  <code>  10:  &lt;/datalist&gt;</code>
+  
+  <code>  11:  &lt;input type="submit" /&gt;</code>
+  
+  <code>  12:  &lt;/form&gt;</code>
+  
+  <code>  13:  &lt;/body&gt;</code>
+  
+  <code>  14:  &lt;/html&gt;</code>
+</div>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140033547.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140042599.png" alt="image" width="644" height="231" border="0" /></a></p>
+
+<p><span style="font-family: 宋体;">使用场景</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140064367.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140072581.png" alt="image" width="644" height="316" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-丰富的样式支持-css3-span"><span style="font-family: 宋体; font-size: x-large;">丰富的样式支持——CSS3</span></h2>
+
+<p><span style="font-family: 宋体;">选择器<br /> RGBA和透明度<br /> 多栏布局：弹性布局（水平布局、垂直布局）<br /> 多背景图<br /> Word Wrap<br /> 文字阴影<br /> @font-face属性<br /> 盒阴影：阴影，文本阴影<br /> 盒模型：，多背景，圆角(边框半径)，边框图片<br /> 2D：旋转，缩放，倾斜，请参考：CSS基础变换<br /> 3D：透视，transform 3D，等等<br /> 媒体查询<br /> 语音</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140103750.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140143274.png" alt="image" width="644" height="251" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-svg矢量图形-span"><span style="font-family: 宋体; font-size: x-large;">SVG矢量图形</span></h2>
+
+<p><span style="font-family: 宋体;">SVG（Scalable Vector Graphics）：可缩放矢量图形，使用 XML 来描述二维图形和绘图程序的语言。可以在浏览器中构造 矩形、圆形、椭圆、线条、多边形、折线、路径、滤镜效果、渐变效果，和动画等。</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140171412.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/20120919114020280.png" alt="image" width="644" height="275" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-拖拽-span"><span style="font-family: 宋体; font-size: x-large;">拖拽</span></h2>
+
+<p><span style="font-family: 宋体;">Drag&amp;Drop简介<br /> HTML5为元素新增了用于拖拽的属性draggable，这个属性决定了元素是否能被拖拽，或只能选择元素的文本。同时HTML5使用dataTransfer接口用来支持拖拽数据存储。三个重要特性：<br /> draggable 属性：就是标签元素要设置draggable=true，否则不会有效果，例如：<div title=&#8221;拖拽我&#8221; draggable=&#8221;true&#8221;>列表1</div><br /> DataTransfer 对象：退拽对象用来传递的媒介，使用一般为Event.dataTransfer。<br /> Drag事件：ondragstart 、ondragenter、ondragover、ondrop 、ondragend 。</span></p>
+
+<p><a href="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/201209191140222463.png" target="_blank" rel="nofollow"><img title="image" src="http://images.cnblogs.com/cnblogs_com/leefreeman/201209/20120919114024219.png" alt="image" width="644" height="228" border="0" /></a></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-html5目前存在的应用局限-span"><span style="font-family: 宋体; font-size: x-large;">HTML5目前存在的应用局限</span></h2>
+
+<p><span style="font-family: 宋体;">各浏览器支持程度不同。如目前支持较好的有 Opera，Chrome，Safari<br /> 国内存在高比例旧款浏览器<br /> 兼容性不同，如视频格式<br /> 规范未正式发布<br /> 浏览器效率未到达理想</span></p>
+
+<h2 id="span-style-font-family-宋体-font-size-x-large-html5适合开发的项目-span"><span style="font-family: 宋体; font-size: x-large;">HTML5适合开发的项目</span></h2>
+
+<p><span style="font-family: 宋体;">Web应用（网站，网页游戏、b/s系统）<br /> 手机应用（安卓、IOS均支持HTML5）</span></p>
+
+<p>（作者：<a href="http://www.cnblogs.com/leefreeman/" target="_blank" rel="nofollow">李平</a> 网址：<a href="http://www.cnblogs.com/leefreeman/archive/2012/09/19/2693438.html" target="_blank" rel="nofollow"><a href="http://www.cnblogs.com/leefreeman/archive/2012/09/19/2693438.html">http://www.cnblogs.com/leefreeman/archive/2012/09/19/2693438.html</a></a>）</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2012/09/steve-gates/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">2007年乔布斯和盖茨的对话（视频）</span>
+    </a>
+    
+    
+    <a href="/2012/09/php-session-cookies/" class="navigation-next">
+      <span class="navigation-tittle">深入理解 PHP 中 session 和 cookies 的联系</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
