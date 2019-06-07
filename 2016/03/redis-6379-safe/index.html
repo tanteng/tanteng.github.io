@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Redis未授权访问漏洞 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Redis未授权访问漏洞</h1>
+    <span class="post-date">Mar 21, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/redis">Redis</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a><a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。</p>
+
+<p>记录如下：</p>
+
+<p>一、漏洞描述和危害</p>
+
+<p>Redis因配置不当可以未授权访问，被攻击者恶意利用。</p>
+
+<p>攻击者无需认证访问到内部数据，可能导致敏感信息泄露，黑客也可以恶意执行flushall来清空所有数据。</p>
+
+<p>攻击者可通过EVAL执行lua代码，或通过数据备份功能往磁盘写入后门文件，如果Redis以root身份运行，黑客可以给root账户写入SSH公钥文件，直接通过SSH登录受害服务器。</p>
+
+<p>二、已确认被成功利用的软件及系统</p>
+
+<p>对公网开放，且未启用认证的redis服务器。</p>
+
+<p>三、建议修复方案</p>
+
+<p>1、指定redis服务使用的网卡 （需要重启redis才能生效）</p>
+
+<p>在 redis.conf 文件中找到 “# bind 127.0.0.1” ，把前面的#号去掉，然后保存。注：修改后只有本机才能访问Redis。</p>
+
+<pre class="lang:vim decode:true "># By default Redis listens for connections from all the network interfaces
+# available on the server. It is possible to listen to just one or multiple
+# interfaces using the "bind" configuration directive, followed by one or
+# more IP addresses.
+#
+# Examples:
+#
+# bind 192.168.1.100 10.0.0.1
+bind 127.0.0.1</pre>
+
+<p>2、设置访问密码 （需要重启redis才能生效）</p>
+
+<p>在 redis.conf 中找到“requirepass”字段，在后面填上你需要的密码，Redis客户端也需要使用此密码来访问Redis服务。</p>
+
+<p>3、修改Redis服务运行账号</p>
+
+<p>请以较低权限账号运行Redis服务，且禁用该账号的登录权限。可以限制攻击者往磁盘写入文件，但是Redis数据还是能被黑客访问到，或者被黑客恶意删除。</p>
+
+<p>4、设置防火墙策略</p>
+
+<p>如果正常业务中Redis服务需要被其他服务器来访问，可以设置iptables策略仅允许指定的IP来访问Redis服务。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

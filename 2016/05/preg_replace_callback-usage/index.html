@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>preg_replace_callback用法 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">preg_replace_callback用法</h1>
+    <span class="post-date">May 28, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>preg_replace_callback一般用于正则替换，三个参数，第一个参数正则表达式，第二个参数回调函数，第三个参数是要替换的内容。</p>
+
+<p>看一个例子，这两个方法是在一个类里面：</p>
+
+<pre class="lang:php decode:true ">//test preg_replace_callback
+public function preg()
+{
+    $content = 'I want {water} and {food}';
+    $new = preg_replace_callback('/\{(\w+)\}/', [$this, 'replace'], $content);
+    dump($new);
+}
+
+//正则替换callback
+public function replace($matches)
+{
+    $replace = [
+        'water' =&gt; 'travel',
+        'hehe' =&gt; 'coding',
+    ];
+    if (isset($replace[$matches[1]])) {
+        return $replace[$matches[1]];
+    }
+    return $matches[0];
+}</pre>
+
+<p>结果是：</p>
+
+<pre class="lang:php decode:true">I want travel and {food}</pre>
+
+<p>1.第二个参数是回调函数，有多种写法，可以写成闭包，也可以指定一个方法名，在类里面也可以如示例所示。</p>
+
+<p>2.回调函数接收一个参数，表示匹配的内容，如示例中的replace方法，打印这个$matches的内容：</p>
+
+<pre class="lang:php decode:true ">array:2 [
+  0 =&gt; "{water}"
+  1 =&gt; "water"
+]
+
+array:2 [
+  0 =&gt; "{food}"
+  1 =&gt; "food"
+]</pre>
+
+<p><strong>$matches[0]表示匹配到的完整内容，包含正则表达式的部分，$matches[1]匹配到具体的内容，注意这里的差别。</strong></p>
+
+<p>3.回调函数返回值就是表示把匹配到的内容替换成新的内容，示例中匹配到的内容给替换了，没匹配到的还是原样。</p>
+
+<p>本文由小谈博客原创，转载请注明出处：<a href="https://blog.tanteng.me/2016/05/preg_replace_callback-usage/" target="_blank"><a href="https://blog.tanteng.me/2016/05/preg_replace_callback-usage/">https://blog.tanteng.me/2016/05/preg_replace_callback-usage/</a></a></p>
+
+<h3 id="有用的链接">有用的链接：</h3>
+
+<ul>
+<li><a href="http://php.net/manual/en/function.preg-replace-callback.php" target="_blank" rel="nofollow">PHP官方手册：preg_replace_callback</a></li>
+</ul>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

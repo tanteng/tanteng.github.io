@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>互联网 on 小谈博客</title>
+    <link>http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91/</link>
+    <description>Recent content in 互联网 on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Feb 2019 15:30:05 +0000</lastBuildDate>
+    
+	<atom:link href="http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本周阅读清单20190128</title>
+      <link>http://tanteng.me/2019/02/reding-list-28/</link>
+      <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2019/02/reding-list-28/</guid>
+      <description>1.golang select-case 实现机制
+https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-select-case实现机制.html
+2.如何优雅的控制 goroutine 的数量
+https://my.oschina.net/xlplbo/blog/682884
+3.LIMIT THE NUMBER OF GOROUTINES RUNNING AT THE SAME TIME
+https://blog.antoine-augusti.fr/2015/12/limit-the-number-of-goroutines-running-at-the-same-time/
+4.Hive 之 COUNT DISTINCT 优化
+http://datavalley.github.io/2016/02/15/Hive%E4%B9%8BCOUNT-DISTINCT%E4%BC%98%E5%8C%96
+5.理解 LINUX 的 MEMORY OVERCOMMIT
+http://linuxperf.com/?p=102
+6.mysql: show processlist 详解
+https://zhuanlan.zhihu.com/p/30743094﻿</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190103</title>
+      <link>http://tanteng.me/2019/01/reding-list-27/</link>
+      <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2019/01/reding-list-27/</guid>
+      <description>1.TDSQL 特有的 MySQL 内核功能介绍
+https://zhuanlan.zhihu.com/p/50774800
+2.MySQL 主键设计
+http://seanlook.com/2016/05/13/mysql-innodb-primary_key/
+3.Logstash 最佳实践
+https://doc.yonyoucloud.com/doc/logstash-best-practice-cn
+4.消息队列技术很好的总结
+https://www.jianshu.com/p/689ce4205021
+5.剖析Laravel队列系统&amp;#8211;Worker
+https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181210</title>
+      <link>http://tanteng.me/2019/01/reding-list-26/</link>
+      <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2019/01/reding-list-26/</guid>
+      <description>go 指针和内存分配详解   https://segmentfault.com/a/1190000017473672
+ 初探 Go 的编译命令执行过程   https://halfrost.com/go_command/
+ [译]代码审查之最佳实践   https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ
+ WEB内容安全政策（CSP）   https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn
+ 如何学习分布式系统   https://www.cnblogs.com/xybaby/p/7787034.html</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181123</title>
+      <link>http://tanteng.me/2018/12/reding-list-25/</link>
+      <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/12/reding-list-25/</guid>
+      <description>MySQL的异步复制和半同步复制   https://www.jianshu.com/p/d877cbe9f0f0
+ Go调度器原理浅析   https://www.cnblogs.com/ralap7/p/9190416.html
+ golang后台服务设计精要   http://litang.me/post/golang-server-design/
+ Go’s http package by example（总结很好）   https://cryptic.io/go-http/
+ 函数式编程初探   http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181112</title>
+      <link>http://tanteng.me/2018/11/reding-list-24/</link>
+      <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/11/reding-list-24/</guid>
+      <description>腾讯云点播视频加密方案   https://cloud.tencent.com/document/product/266/9638
+ HTTP Live Streaming (HLS) &amp;#8211; 概念   https://www.jianshu.com/p/2ce402a485ca
+ RTMP HLS HTTP 直播协议一次看个够   https://www.jianshu.com/p/4c89b2c83e59
+ Golang并发原理及GPM调度策略（一）   http://www.cnblogs.com/mokafamily/p/9975980.html
+ Go基础系列：互斥锁Mutex和读写锁RWMutex用法详述   http://www.cnblogs.com/f-ck-need-u/p/9998729.html</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181105</title>
+      <link>http://tanteng.me/2018/11/reding-list-23/</link>
+      <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/11/reding-list-23/</guid>
+      <description>Writing Protobuf Services in PHP   https://mattallan.org/posts/protobuf-php-services/
+ Practical Persistence in Go: Organising Database Access   https://www.alexedwards.net/blog/organising-database-access
+ CORS 跨域 Cookie 的设置与获取   https://www.jianshu.com/p/13d53acc124f
+ Go语言字符串高效拼接(一)   https://juejin.im/post/5be23a01518825697344f05e
+ govendor 使用   https://www.orztu.com/post/using-govendor/</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181022</title>
+      <link>http://tanteng.me/2018/10/reding-list-22/</link>
+      <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/10/reding-list-22/</guid>
+      <description>Practical Go: Real world advice for writing maintainable Go programs   https://dave.cheney.net/practical-go/presentations/qcon-china.html
+ What happened to MySQL 6 &amp;amp; 7?   https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7
+ 工厂模式——看这一篇就够了   https://juejin.im/entry/58f5e080b123db2fa2b3c4c6
+ What is a Laravel Interface?   https://vegibit.com/what-is-a-laravel-interface/
+ 理解 UUID   http://wsfdl.com/algorithm/2013/09/05/理解UUID.html</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20181008</title>
+      <link>http://tanteng.me/2018/10/reding-list-21/</link>
+      <pubDate>Tue, 23 Oct 2018 09:28:52 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/10/reding-list-21/</guid>
+      <description>Laravel 中的 Pivot 表与多对多关系   https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html
+ Laravel 的 tap 函数用法   https://laravel-china.org/articles/3893/laravel-tap-usage
+ Laravel 5.5 模型关联   https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333
+ Laravel Collection “tap” Method   https://laravel-news.com/collection-tap
+ goroutine同步方法总结   https://yq.aliyun.com/articles/649314
+ 面向对象设计之里氏替换原则(LSP)   https://juejin.im/post/5a31ecedf265da43346fed08</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180924</title>
+      <link>http://tanteng.me/2018/10/reding-list-20/</link>
+      <pubDate>Sat, 06 Oct 2018 14:28:23 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/10/reding-list-20/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;iOS 中使用 Protocol Buffers
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.devzeng.com/blog/ios-protobuf.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://blog.devzeng.com/blog/ios-protobuf.html&#34;&gt;https://blog.devzeng.com/blog/ios-protobuf.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Laravel 模型事件实现原理
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://laravel-china.org/articles/5465/event-realization-principle-of-laravel-model&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/articles/5465/event-realization-principle-of-laravel-model&#34;&gt;https://laravel-china.org/articles/5465/event-realization-principle-of-laravel-model&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install PEAR and PECL on Mac OS X
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jason.pureconcepts.net/2012/10/install-pear-pecl-mac-os-x/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jason.pureconcepts.net/2012/10/install-pear-pecl-mac-os-x/&#34;&gt;https://jason.pureconcepts.net/2012/10/install-pear-pecl-mac-os-x/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180903</title>
+      <link>http://tanteng.me/2018/09/reding-list-19/</link>
+      <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/09/reding-list-19/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;聊聊加密那点事——PHP加密最佳实践
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice&#34;&gt;https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;etcd：从应用场景到实现原理的全方位解读
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle&#34;&gt;http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180827</title>
+      <link>http://tanteng.me/2018/09/reding-list-18/</link>
+      <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/09/reding-list-18/</guid>
+      <description>&lt;p&gt;1. Windows Subsystem for Linux 之体验&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2. 探索 Laravel 里的加解密实现&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34;&gt;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3. 用 JSON 构建 API 的标准指南&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180730</title>
+      <link>http://tanteng.me/2018/08/reding-list-17/</link>
+      <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/08/reding-list-17/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;PHP : 令人困惑的 strtotime
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34;&gt;http://www.laruence.com/2018/07/31/3188.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2. 彻底弄懂 Laravel 中间件原理&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34;&gt;https://blog.tanteng.me/2018/07/understand-laravel-middleware&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3. Redis 事务与 Redis Lua 脚本&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34;&gt;http://techlog.cn/article/list/10183180&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180723</title>
+      <link>http://tanteng.me/2018/07/reding-list-16/</link>
+      <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/07/reding-list-16/</guid>
+      <description>&lt;p&gt;1. GoLang: When to use string pointers&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&#34;&gt;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2. PHP 7.3 中的 JSON 错误处理&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://laravel-china.org/topics/14668/json-error-handling-in-php-73&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/topics/14668/json-error-handling-in-php-73&#34;&gt;https://laravel-china.org/topics/14668/json-error-handling-in-php-73&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如何设计、开发和部署微服务（Nginx 官方文章翻译）
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/ajianbeyourself/p/5976664.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/ajianbeyourself/p/5976664.html&#34;&gt;https://www.cnblogs.com/ajianbeyourself/p/5976664.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180716</title>
+      <link>http://tanteng.me/2018/07/reding-list-15/</link>
+      <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/07/reding-list-15/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;初探 Go 的编译命令执行过程
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://halfrost.com/go_command/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://halfrost.com/go_command/&#34;&gt;https://halfrost.com/go_command/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;高效的数据压缩编码方式——Protobuf
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://halfrost.com/protobuf_encode/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://halfrost.com/protobuf_encode/&#34;&gt;https://halfrost.com/protobuf_encode/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;浅谈消息队列及常见的消息中间件
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/5b41fe36e51d45191252e79e&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://juejin.im/post/5b41fe36e51d45191252e79e&#34;&gt;https://juejin.im/post/5b41fe36e51d45191252e79e&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;4. 深入理解 PHP 的输出缓冲区&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gywbd.github.io/posts/2015/1/php-output-buffer-in-deep.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://gywbd.github.io/posts/2015/1/php-output-buffer-in-deep.html&#34;&gt;https://gywbd.github.io/posts/2015/1/php-output-buffer-in-deep.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180709</title>
+      <link>http://tanteng.me/2018/07/reding-list-14/</link>
+      <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/07/reding-list-14/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;深入浅出 TCP/IP 协议栈
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/&#34;&gt;http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;中国工业 4.0 之路
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.mckinsey.com.cn/%E4%B8%AD%E5%9B%BD%E5%B7%A5%E4%B8%9A4-0%E4%B9%8B%E8%B7%AF/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.mckinsey.com.cn/中国工业4-0之路&#34;&gt;http://www.mckinsey.com.cn/中国工业4-0之路&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MySQL 查询缓存机制
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/eric_sunah/article/details/17510939&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/eric_sunah/article/details/17510939&#34;&gt;https://blog.csdn.net/eric_sunah/article/details/17510939&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MySQL 体系结构
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/chenmh/p/4914754.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.cnblogs.com/chenmh/p/4914754.html&#34;&gt;http://www.cnblogs.com/chenmh/p/4914754.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180702</title>
+      <link>http://tanteng.me/2018/07/reding-list-13/</link>
+      <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/07/reding-list-13/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;HTTP/2 服务器推送（server push）教程
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/entry/5a9e61cc518825556140c4f2&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://juejin.im/entry/5a9e61cc518825556140c4f2&#34;&gt;https://juejin.im/entry/5a9e61cc518825556140c4f2&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/52d86558ca57&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/52d86558ca57&#34;&gt;https://www.jianshu.com/p/52d86558ca57&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;深入理解 RESTful API 架构
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mengkang.net/620.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://mengkang.net/620.html&#34;&gt;https://mengkang.net/620.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180625</title>
+      <link>http://tanteng.me/2018/06/reding-list-12/</link>
+      <pubDate>Fri, 29 Jun 2018 13:29:54 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-12/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;了解 Nginx 基本概念
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://huang-jerryc.com/2016/10/14/%E4%BA%86%E8%A7%A3%20Nginx%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/&#34;&gt;http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Redis 和 I/O 多路复用
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://draveness.me/redis-io-multiplexing&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://draveness.me/redis-io-multiplexing&#34;&gt;https://draveness.me/redis-io-multiplexing&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Redis 为什么使用单进程单线程模型也这么快
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/syyong/p/6231326.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/syyong/p/6231326.html&#34;&gt;https://www.cnblogs.com/syyong/p/6231326.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180619</title>
+      <link>http://tanteng.me/2018/06/reding-list-11/</link>
+      <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-11/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;MySQL 索引背后的数据结构及算法原理
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/entry/591012d161ff4b006255b447&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://juejin.im/entry/591012d161ff4b006255b447&#34;&gt;https://juejin.im/entry/591012d161ff4b006255b447&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;微信扫码登录原理
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_25827845/article/details/78823861&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/qq_25827845/article/details/78823861&#34;&gt;https://blog.csdn.net/qq_25827845/article/details/78823861&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Redis 事务及 Watch 的实现原理
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://redisbook.readthedocs.io/en/latest/feature/transaction.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://redisbook.readthedocs.io/en/latest/feature/transaction.html&#34;&gt;http://redisbook.readthedocs.io/en/latest/feature/transaction.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180528</title>
+      <link>http://tanteng.me/2018/06/reding-list-9/</link>
+      <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-9/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;在 Laravel 中使用 Vue 组件化开发
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pigjian.com/article/laravel-vue&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://pigjian.com/article/laravel-vue&#34;&gt;https://pigjian.com/article/laravel-vue&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;理解 PHP 内核中 SAPI 的作用
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://foio.github.io/php-sapi/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://foio.github.io/php-sapi/&#34;&gt;https://foio.github.io/php-sapi/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用 Redis 实现单机锁
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://huoding.com/2015/09/14/463&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://huoding.com/2015/09/14/463&#34;&gt;https://huoding.com/2015/09/14/463&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180514</title>
+      <link>http://tanteng.me/2018/05/reding-list-8/</link>
+      <pubDate>Sat, 26 May 2018 15:08:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/05/reding-list-8/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Go语言中的错误处理
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/&#34;&gt;http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;深入理解 PHP opcode 优化
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://tech.youzan.com/understanding-opcode-optimization-in-php/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://tech.youzan.com/understanding-opcode-optimization-in-php/&#34;&gt;https://tech.youzan.com/understanding-opcode-optimization-in-php/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3. 基于timestamp和nonce的防止重放攻击方案&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/koastal/article/details/53456696&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/koastal/article/details/53456696&#34;&gt;https://blog.csdn.net/koastal/article/details/53456696&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180507</title>
+      <link>http://tanteng.me/2018/05/reding-list-7/</link>
+      <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/05/reding-list-7/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Golang CSP 并发模型
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/36e246c6153d&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/36e246c6153d&#34;&gt;https://www.jianshu.com/p/36e246c6153d&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;深入理解 Go Channel
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://legendtkl.com/2017/07/30/understanding-golang-channel/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://legendtkl.com/2017/07/30/understanding-golang-channel/&#34;&gt;http://legendtkl.com/2017/07/30/understanding-golang-channel/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;谈谈 HTTP/2 的协议协商机制
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://imququ.com/post/protocol-negotiation-in-http2.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://imququ.com/post/protocol-negotiation-in-http2.html&#34;&gt;https://imququ.com/post/protocol-negotiation-in-http2.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180430</title>
+      <link>http://tanteng.me/2018/05/reding-list-6/</link>
+      <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/05/reding-list-6/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Learning Elasticsearch with Laravel
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://michaelstivala.com/learning-elasticsearch-with-laravel/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://michaelstivala.com/learning-elasticsearch-with-laravel/&#34;&gt;https://michaelstivala.com/learning-elasticsearch-with-laravel/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MQ(消息队列)常见的应用场景解析
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/5add63c951882567183eb956&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://juejin.im/post/5add63c951882567183eb956&#34;&gt;https://juejin.im/post/5add63c951882567183eb956&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;WebSocket 通信过程与实现
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000014643900&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000014643900&#34;&gt;https://segmentfault.com/a/1190000014643900&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180423</title>
+      <link>http://tanteng.me/2018/04/reding-list/</link>
+      <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Redis 事务与关系型数据库事务比较
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/5f31d77d006b&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/5f31d77d006b&#34;&gt;https://www.jianshu.com/p/5f31d77d006b&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;深入理解 PHP 7 之 zval
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/laruence/php7-internal/blob/master/zval.md&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://github.com/laruence/php7-internal/blob/master/zval.md&#34;&gt;https://github.com/laruence/php7-internal/blob/master/zval.md&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;虚拟内存的那点事儿
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/&#34;&gt;https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180416</title>
+      <link>http://tanteng.me/2018/04/reding-list-4/</link>
+      <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-4/</guid>
+      <description>&lt;p&gt;1.缓存击穿、失效以及热点key问题&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/d5a3668d4dad&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/d5a3668d4dad&#34;&gt;https://www.jianshu.com/p/d5a3668d4dad&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.用 Redis 构建分布式锁&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ifeve.com/redis-lock/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ifeve.com/redis-lock/&#34;&gt;http://ifeve.com/redis-lock/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3.浅谈TCP/IP网络编程中socket的行为&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html&#34;&gt;https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180410</title>
+      <link>http://tanteng.me/2018/04/reding-list-3/</link>
+      <pubDate>Tue, 10 Apr 2018 12:10:34 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-3/</guid>
+      <description>&lt;p&gt;1.聊聊 Linux 五种 I/O 进程模型&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/486b0965c296&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/486b0965c296&#34;&gt;https://www.jianshu.com/p/486b0965c296&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.什么是 Event Loop？&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2013/10/event_loop.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2013/10/event_loop.html&#34;&gt;http://www.ruanyifeng.com/blog/2013/10/event_loop.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3.消息中间件NSQ深入与实践&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/entry/59ddae8151882578bb480d0e&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://juejin.im/entry/59ddae8151882578bb480d0e&#34;&gt;https://juejin.im/entry/59ddae8151882578bb480d0e&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180402</title>
+      <link>http://tanteng.me/2018/04/reding-list-2/</link>
+      <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Redis集群技术及Codis实践
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/effective-ops-part-03&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/effective-ops-part-03&#34;&gt;http://www.infoq.com/cn/articles/effective-ops-part-03&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;58到家MySQL军规
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg&#34;&gt;https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MySQL事务隔离级别
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/4e3edbedb9a8&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/4e3edbedb9a8&#34;&gt;https://www.jianshu.com/p/4e3edbedb9a8&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180326</title>
+      <link>http://tanteng.me/2018/03/reding-list-5/</link>
+      <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/03/reding-list-5/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Redis内存使用优化与存储
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage&#34;&gt;http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;一致性哈希算法及其在分布式系统中的应用
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.codinglabs.org/articles/consistent-hashing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://blog.codinglabs.org/articles/consistent-hashing.html&#34;&gt;http://blog.codinglabs.org/articles/consistent-hashing.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;PHP写时复制（Copy On Write）
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write&#34;&gt;http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机的一些概念在生活中的场景</title>
+      <link>http://tanteng.me/2017/10/computer-concepts-in-life/</link>
+      <pubDate>Sun, 08 Oct 2017 06:14:13 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/10/computer-concepts-in-life/</guid>
+      <description>&lt;p&gt;计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP / IP身世之谜</title>
+      <link>http://tanteng.me/2017/08/tcp-ip-life-ex/</link>
+      <pubDate>Wed, 02 Aug 2017 03:02:01 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/08/tcp-ip-life-ex/</guid>
+      <description>&lt;p&gt;1972年，全世界电脑业和通讯业的专家学者在美国华盛顿举行了第一届国际计算机通信会议，就在不同的计算机网络之间进行通信达成协议，会议决定成立Internet工作组，负责建立一种能保证计算机之间进行通信的标准规范（即“通信协议”），而这个组织第一位主席美国人文顿·瑟夫（Vinton G.Cerf）则被不少人称为“互联网之父”；1973年，美国国防部也开始研究如何实现各种不同网络之间的互联问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>百度联盟如何验证 HTTPS 站点</title>
+      <link>http://tanteng.me/2017/03/baidu-union-verify-https-website/</link>
+      <pubDate>Wed, 22 Mar 2017 15:44:05 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2017/03/baidu-union-verify-https-website/</guid>
+      <description>&lt;p&gt;本站是 HTTPS 站点，在百度联盟添加站点页面，输入 blog.tanteng.me 点击“验证”进入验证页面，提示两种方式，1. 把文件放根目录 2. 添加 meta 信息，都试了，无法验证。&lt;/p&gt;
+
+&lt;pre class=&#34;lang:default decode:true&#34;&gt;[root@iZ94r80gdghZ public]# curl blog.tanteng.me
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;301 Moved Permanently&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;
+&amp;lt;body bgcolor=&#34;white&#34;&amp;gt;
+&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;301 Moved Permanently&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;
+&amp;lt;hr&amp;gt;&amp;lt;center&amp;gt;nginx/1.10.1&amp;lt;/center&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>网站的五个“端”</title>
+      <link>http://tanteng.me/2015/10/website-client/</link>
+      <pubDate>Fri, 16 Oct 2015 15:09:28 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/10/website-client/</guid>
+      <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”成了大型网站必备的标配。
+PC、手机站是独立的两套模板，核心的业务逻辑是一样的，Android和ios手机客户端都是通过api接口调用，其中pad端网站可以是客户端中嵌入一个H5页面。</description>
+    </item>
+    
+    <item>
+      <title>mac下sublime安装package control组件命令</title>
+      <link>http://tanteng.me/2015/03/mac-sublime-package-control/</link>
+      <pubDate>Wed, 11 Mar 2015 14:36:36 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/03/mac-sublime-package-control/</guid>
+      <description>&lt;p&gt;在mac下安装sublime插件，首先要安装package control组件，需要按contro＋｀ 键调出控制台，然后输入以下针对OS X系统的命令即可。必须在联网模式下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在macbook上怎么移动文件</title>
+      <link>http://tanteng.me/2015/02/macbook-move/</link>
+      <pubDate>Thu, 12 Feb 2015 16:38:04 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/02/macbook-move/</guid>
+      <description>在macbook上怎么移动文件？ 先Command+C复制，再Option+Command+V就是移动。</description>
+    </item>
+    
+    <item>
+      <title>macbook常用快捷键大全</title>
+      <link>http://tanteng.me/2015/02/macbook-keyboard/</link>
+      <pubDate>Thu, 12 Feb 2015 05:31:37 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/02/macbook-keyboard/</guid>
+      <description>&lt;p&gt;macbook常用快捷键大全，什么都不说了，直接上图，点击查看大图。上面有完整的macbook常用快捷键大全。很直观。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-7775 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png&#34; alt=&#34;macbook_kuaijiejian&#34; width=&#34;1920&#34; height=&#34;1080&#34; srcset=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png 1920w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-300x169.png 300w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-1024x576.png 1024w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-900x506.png 900w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SEO优化技巧：从yoast的wordpress seo提示学到的</title>
+      <link>http://tanteng.me/2015/01/seo-yoast-tips/</link>
+      <pubDate>Sat, 31 Jan 2015 03:36:28 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2015/01/seo-yoast-tips/</guid>
+      <description>&lt;p&gt;以下是一款wordpress seo优化插件：wordpress seo by yoast给网页提供的SEO优化技巧提示，从中我们可以学习如何优化SEO，如何取标题，还有元描述，图像，出站链接对网站SEO优化的作用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>乔布斯给苹果公司命名</title>
+      <link>http://tanteng.me/2014/12/jobs-apple/</link>
+      <pubDate>Mon, 08 Dec 2014 02:12:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/12/jobs-apple/</guid>
+      <description>&lt;p&gt;乔布斯对公司苹果的命名：Apple，就是个创举，跟计算机毫无关系，但是苹果是每个人都吃的，叫这个名字很容易记住，让当时人们对计算机机器和锋利的外观有耳目一新的感觉，而且代表健康，他还想到一点Apple在电话簿中排第一。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SEO优化技巧</title>
+      <link>http://tanteng.me/2014/11/seo-optimize/</link>
+      <pubDate>Wed, 26 Nov 2014 12:48:42 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/11/seo-optimize/</guid>
+      <description>&lt;p&gt;wordpress SEO by yoast这款插件告诉了我们很多SEO优化的技巧，我们在编辑内容的时候，发布或者更新文章，都可以看到wordpress SEO插件提示的SEO优化tips，非常有道理而且非常有用，下面就是从wordpress SEO by yoast学到的SEO优化技巧。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>百度站长平台：如何写出搜索引擎喜欢的标题</title>
+      <link>http://tanteng.me/2014/11/baidu-zhanzhang-title/</link>
+      <pubDate>Wed, 12 Nov 2014 05:39:19 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/11/baidu-zhanzhang-title/</guid>
+      <description>&lt;p&gt;这篇文章摘自百度站长平台站长学院。看看官方告诉我们如何写出搜索引擎喜欢的标题。&lt;/p&gt;
+
+&lt;p&gt;在与大中型网站SEO人员沟通的过程中常听到这样的报怨：SEO地位低，净收拾产品技术编辑的烂摊子了。起初我们感觉非常不可思议，但后来发现这种情况还非常普遍。相应的，对于那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时，要设计出吸引用户和搜索引擎的标题；而不是单纯地把优化工作全部扔给SEO人员。所以，今天我们想跟产品人员和编辑说说网页标题该怎么写。&lt;/p&gt;
+
+&lt;p&gt;一，标题的结构&lt;/p&gt;
+
+&lt;p&gt;1，标题字数控制在60个字节内&lt;/p&gt;
+
+&lt;p&gt;从以往的经验看，检索用户比较喜欢50个字节左右的标题；对于产品人员和编辑来说，过短的标题有可能无法全面表达网页主题；对于搜索引擎来说，标题过长意味着“超标”，只会保留前60个字节的内容。&lt;/p&gt;
+
+&lt;p&gt;反面case:福州到北京旅游_北京旅游天气如何_北京旅游景点介绍_北京好玩吗_现在去北京旅游会热吗&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>程序员的三种美德</title>
+      <link>http://tanteng.me/2014/01/virtue-programer/</link>
+      <pubDate>Sat, 11 Jan 2014 16:25:35 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2014/01/virtue-programer/</guid>
+      <description>&lt;p&gt;Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;懒惰&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;是这样一种品质，它使得你花大力气去避免消耗过多的精力。它敦促你写出节省体力的程序，同时别人也能利用它们。为此你会写出完善的文档，以免别人问你太多问题。&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2007年乔布斯和盖茨的对话（视频）</title>
+      <link>http://tanteng.me/2012/09/steve-gates/</link>
+      <pubDate>Sat, 22 Sep 2012 06:48:38 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2012/09/steve-gates/</guid>
+      <description>&lt;p&gt;&lt;em&gt;You and I have memories longer than the road that stretches out ahead. “好了，史蒂夫，我觉得我们可以换一种方式来看待这个问题。我觉得现在的情况更接近于这样——我们都有个有钱的邻居，叫施乐，我闯进他们家准备偷电视机的时候，发现你已经把它盗走了。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;_&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux发明人《Linus Torvalds自传》摘录</title>
+      <link>http://tanteng.me/2012/09/linus-torvalds/</link>
+      <pubDate>Tue, 04 Sep 2012 16:07:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2012/09/linus-torvalds/</guid>
+      <description>&lt;div&gt;
+  &lt;p&gt;
+    除了程序员，大概很少人知道Linux操作系统。
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;more&#34;&gt;
+  &lt;p&gt;
+    它的发明者Linus Torvalds，知道的人就更少了。
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+    他本人也很低调，深居简出，很少出席公众场合或接受媒体采访，通常只在专业开发者的邮件列表中发言。提起他的名字，人们的第一反应往往是&amp;#8221;哦，传说中那个22岁就发明Linux的芬兰大学生&amp;#8230;&amp;#8230;&amp;#8221;，其他就一片空白了。
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+    &lt;img src=&#34;http://image.beekka.com/blog/201209/bg2012090301.jpg&#34; alt=&#34;&#34; width=&#34;403&#34; height=&#34;327&#34; /&gt;
+  &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>12306铁道部订票网站性能分析</title>
+      <link>http://tanteng.me/2012/01/12306/</link>
+      <pubDate>Thu, 19 Jan 2012 14:06:04 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2012/01/12306/</guid>
+      <description>&lt;p&gt;12306.cn网站挂了，被全国人民骂了。我这两天也在思考这个事，我想以这个事来粗略地和大家讨论一下网站性能的问题。因为仓促，而且完全基于 本人有限的经验和了解，所以，如果有什么问题还请大家一起讨论和指正。（这又是一篇长文，只讨论性能问题，不讨论那些UI，用户体验，或是是否把支付和购 票下单环节分开的功能性的东西）&lt;/p&gt;
+
+&lt;h4 id=&#34;业务&#34;&gt;业务&lt;/h4&gt;
+
+&lt;p&gt;任何技术都离不开业务需求，所以，要说明性能问题，首先还是想先说说业务问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;其一&lt;/strong&gt;，&lt;strong&gt;有人可能把这个东西和QQ或是网游相比&lt;/strong&gt;。但我觉得这两者是不一样的，网游和QQ在线或是登录时访问的更多的是用户自己的数据，而订票系统访问的是中心的票量数据，这是不一样的。不要觉得网游或是QQ能行你就以为这是一样的。网游和QQ 的后端负载相对于电子商务的系统还是简单。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>搜索相似图片的原理</title>
+      <link>http://tanteng.me/2011/11/image-search/</link>
+      <pubDate>Tue, 22 Nov 2011 11:14:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/11/image-search/</guid>
+      <description>&lt;div&gt;
+  &lt;div id=&#34;ArticleCnt&#34;&gt;
+    &lt;p&gt;
+      上个月，Google把&amp;#8221;相似图片搜索&amp;#8221;功能正式放上了首页。用户可以上传一张图片进行搜索，找到相似的图片，这个新技术被称为“图片搜索”，谷歌的有一个创新应用技术上线了。
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      &lt;img src=&#34;http://pic001.cnblogs.com/images/2011/24634/2011072316444739.png&#34; alt=&#34;&#34; /&gt;
+    &lt;/p&gt;
+    
+    &lt;blockquote&gt;
+      &lt;p&gt;
+        &lt;strong&gt;　　第一步，缩小尺寸。&lt;/strong&gt;
+      &lt;/p&gt;
+      
+      &lt;p&gt;
+        将图片缩小到8&amp;#215;8的尺寸，总共64个像素。这一步的作用是去除图片的细节，只保留结构、明暗等基本信息，摒弃不同尺寸、比例带来的图片差异。
+      &lt;/p&gt;
+      
+      &lt;p&gt;
+        你可以用一张图片，搜索互联网上所有与它相似的图片。点击搜索框中照相机的图标。
+      &lt;/p&gt;
+    &lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>在Linux中用gcc运行C语言程序</title>
+      <link>http://tanteng.me/2011/11/linuxc/</link>
+      <pubDate>Mon, 14 Nov 2011 04:10:26 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/11/linuxc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;编译简单的 C 程序&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;C 语言经典的入门例子是 &lt;strong&gt;Hello World&lt;/strong&gt;，下面是一示例代码：&lt;/p&gt;
+
+&lt;pre lang=&#34;c&#34;&gt;#include
+int main(void)
+{
+    printf(&#34;Hello, world!\n&#34;);
+    return 0;
+}&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>PV原语实现进程同步和互斥的原理实例</title>
+      <link>http://tanteng.me/2011/10/pv/</link>
+      <pubDate>Tue, 25 Oct 2011 06:52:26 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/10/pv/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;PV原语的含义&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;P操作和V操作是不可中断的程序段，称为原语。PV原语及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。信号量sem是一整数，sem大于等于零时代表可供并发进程使用的资源实体数，但sem小于零时则表示正在等待使用临界区的进程数。&lt;/p&gt;
+
+&lt;p&gt;P原语操作的动作是：&lt;/p&gt;
+
+&lt;p&gt;（1）sem减1；&lt;/p&gt;
+
+&lt;p&gt;（2）若sem减1后仍大于或等于零，则进程继续执行；&lt;/p&gt;
+
+&lt;p&gt;（3）若sem减1后小于零，则该进程被阻塞后进入与该信号相对应的队列中，然后转进程调度。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>乔布斯的Stay Hungry, Stay Foolish</title>
+      <link>http://tanteng.me/2011/09/stay-hungry-stay-foolish/</link>
+      <pubDate>Sun, 18 Sep 2011 07:06:36 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2011/09/stay-hungry-stay-foolish/</guid>
+      <description>&lt;p&gt;2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;什么叫 Hungry？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;美国人不会用&lt;/p&gt;
+
+&lt;p&gt;hungry来形容对于知识的追求。对知识，他们用的是「好奇」(curious)这个字。一个求知若渴的人，叫做「intellectuallycurious」或是「eager&lt;/p&gt;
+
+&lt;p&gt;to learn」，但绝对不会是「intellectually hungry」，也极少是「hungry to learn」。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>小谈博客</title>
+      <link>http://tanteng.me/2009/01/welcome/</link>
+      <pubDate>Thu, 01 Jan 2009 10:53:14 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2009/01/welcome/</guid>
+      <description>很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！</description>
+    </item>
+    
+  </channel>
+</rss>

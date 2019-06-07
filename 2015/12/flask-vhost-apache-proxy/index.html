@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Flask配置本地虚拟主机访问及Apache反向代理 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Flask配置本地虚拟主机访问及Apache反向代理</h1>
+    <span class="post-date">Dec 11, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/flask">Flask</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+    </span>
+    <p>本地访问Flask应用，首先要启动应用，如下：</p>
+
+<pre class="lang:python decode:true ">(venv)tantengdeMacBook-Pro:pythonflask tanteng$ python run.py
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 200-154-157</pre>
+
+<p>这样表示应用开始运行了，Flask自带Web Server服务，默认监听端口5000，只需要在浏览器访问127.0.0.1:5000就可以了。</p>
+
+<p>但是如何通过虚拟主机访问呢？比如本地hosts绑定一个虚拟域名www.learn-flask.com来访问本地应用。</p>
+
+<p>在PHP中，配置apache的vhost就可以实现，但是在Python中如何实现？</p>
+
+<p>它要通过一个叫做wsgi的东西来配置，由于本机是Mac OSX系统，安装了一个PHP的集成环境MAMP，自带的Apache也默认装了mod_wsgi模块，以及后面需要用到的反向代理的几个模块。但是Windows下的许多集成环境默认好像是不带的，需要自己去下载或编译。</p>
+
+<p>那就使用这个MAMP带的Apache服务器吧，httpd.conf文件不用修改（视自己环境而定，没装模块的需要先装mod_wsgi），在httpd-vhost.conf中添加如下配置：</p>
+
+<pre class="lang:sh decode:true">&lt;VirtualHost *:80&gt;
+    ServerName www.learn-flask.com
+
+    WSGIDaemonProcess learn-flask threads=5
+    WSGIScriptAlias / /Users/tanteng/pythonflask/index_loacl.wsgi
+    ProxyRequests Off
+
+    &lt;Directory /Users/tanteng/pythonflask&gt;
+        WSGIProcessGroup flask
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    &lt;/Directory&gt;
+    ProxyPass / http://127.0.0.1:8080/
+    ProxyPassReverse / http://127.0.0.1:8080/
+&lt;/VirtualHost&gt;</pre>
+
+<p>重启Apache，通过浏览器访问www.learn-flask.com:8080即可访问了，但是，这样还是不够好，我想去掉端口直接访问网址却不行了，那么就需要设置Apache反向代理。</p>
+
+<p class="lang:sh decode:true ">
+  Flask还需要一个wsgi服务实现Apache的请求，以上配置中的WSGIScriptAlias指定了一个index_local.wsgi文件，内容如下：
+</p>
+
+<pre class="lang:python decode:true ">import sys
+sys.path.insert(0, '/Users/tanteng/pythonflask/')
+
+from run import app as application</pre>
+
+<p>py的入口文件，比如run.py：</p>
+
+<pre class="lang:python decode:true ">from website import app
+
+if __name__ == '__main__':
+    app.run(debug=True,port=8080)
+</pre>
+
+<p>注意使用wsgi协议访问必须把app.run写在if __name__ == &#8216;__main__&#8217;里，避免每次请求都创建实例。</p>
+
+<h3 id="设置apache反向代理">设置Apache反向代理</h3>
+
+<p>简单说下什么是Apache反向代理，设置反向代理后当你访问www.learn-flask.com实际上访问的就是<a href="http://127.0.0.1:8080/，它会自动访问指定端口。至于原理我也不清楚，对Apache服务器感兴趣可以深入研究，这里讲讲设置的方法，实现想要的效果。">http://127.0.0.1:8080/，它会自动访问指定端口。至于原理我也不清楚，对Apache服务器感兴趣可以深入研究，这里讲讲设置的方法，实现想要的效果。</a></p>
+
+<p>这里注意几个地方，千万不能错：</p>
+
+<ul>
+<li><p class="lang:sh decode:true ">
+  <VirtualHost *:80>这里必须是80端口，无论你Python应用设置什么端口，因为这里Apache默认是监听的80端口
+</p></li>
+
+<li><p class="lang:sh decode:true ">
+  设置Apache反向代理增加的几个设置项为ProxyRequests,ProxyPass,ProxyPassReverse
+</p></li>
+
+<li><p>Proxy,ProxyPasReverse的网址必须以&#8217;/&#8217;结尾，否则无法正确转发请求</p></li>
+</ul>
+
+<p>以上配置根据自己的情况修改，把路径部分替换成自己的。</p>
+
+<p>这里只是介绍在Apache服务器中运行的方式，还可以用Nginx，独立wsgi容器等其他方式。</p>
+
+<p>有用的链接：</p>
+
+<ul>
+<li><a href="https://dormousehole.readthedocs.org/en/latest/deploying/mod_wsgi.html" target="_blank" rel="nofollow">Flask官方文档Apache配置说明</a></li>
+<li><a href="http://ju.outofmemory.cn/entry/125166" target="_blank" rel="nofollow">有关WSGIDaemonGroup以及WSGIDaemonProcess</a></li>
+</ul>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel中Trait的使用 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel中Trait的使用</h1>
+    <span class="post-date">Dec 21, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>看看PHP官方手册对Trait的定义：</p>
+
+<blockquote>
+<p class="para">
+  自 PHP 5.4.0 起，PHP 实现了代码复用的一个方法，称为 traits。
+</p>
+
+<p class="para">
+  Traits 是一种为类似 PHP 的单继承语言而准备的代码复用机制。Trait 为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用方法集。Traits 和类组合的语义是定义了一种方式来减少复杂性，避免传统多继承和混入类（Mixin）相关的典型问题。
+</p>
+
+<p class="para">
+  Trait 和一个类相似，但仅仅旨在用细粒度和一致的方式来组合功能。Trait 不能通过它自身来实例化。它为传统继承增加了水平特性的组合；也就是说，应用类的成员不需要继承。
+</p>
+</blockquote>
+
+<p>官方手册也举了两个例子：</p>
+
+<h3 id="trait用法示例">Trait用法示例</h3>
+
+<pre class="lang:php decode:true ">&lt;?php
+trait ezcReflectionReturnInfo {
+    function getReturnType() { /*1*/ }
+    function getReturnDescription() { /*2*/ }
+}
+
+class ezcReflectionMethod extends ReflectionMethod {
+    use ezcReflectionReturnInfo;
+    /* ... */
+}
+
+class ezcReflectionFunction extends ReflectionFunction {
+    use ezcReflectionReturnInfo;
+    /* ... */
+}
+?&gt;</pre>
+
+<h3 id="trait的优先级">Trait的优先级</h3>
+
+<p>从基类继承的成员被 trait 插入的成员所覆盖。优先顺序是来自当前类的成员覆盖了 trait 的方法，而 trait 则覆盖了被继承的方法。</p>
+
+<div class="example-contents">
+  <p>
+    从基类继承的成员被插入的 SayWorld Trait 中的 MyHelloWorld 方法所覆盖。其行为 MyHelloWorld 类中定义的方法一致。优先顺序是当前类中的方法会覆盖 trait 方法，而 trait 方法又覆盖了基类中的方法。
+  </p>
+  
+  <pre class="lang:php decode:true ">&lt;?php
+class Base {
+    public function sayHello() {
+        echo 'Hello ';
+    }
+}
+
+trait SayWorld {
+    public function sayHello() {
+        parent::sayHello();
+        echo 'World!';
+    }
+}
+
+class MyHelloWorld extends Base {
+    use SayWorld;
+}
+
+$o = new MyHelloWorld();
+$o-&gt;sayHello();
+?&gt;</pre>
+  
+  <p>
+    以上例程会输出：
+  </p>
+  
+  <pre class="lang:php decode:true ">Hello World!</pre>
+  
+  <p>
+    以上内容来自PHP官网手册。
+  </p>
+  
+  <h3>
+    Trait在Laravel中的使用
+  </h3>
+  
+  <p>
+    Laravel中大量使用Trait特性来提高代码的复用性，本文只是从某个Laravel项目中举个例子。
+  </p>
+  
+  <p>
+    比如在一个PageController.php控制器中有个show方法：
+  </p>
+  
+  <pre class="lang:php decode:true ">public function show($slug)
+{
+    $page = PageRepository::find($slug);
+    $this-&gt;checkPage($page, $slug);
+
+    return View::make('pages.show', ['page' =&gt; $page]);
+}</pre>
+  
+  <p>
+    这里PageRepository::find()方法就是使用的一个Trait的方法，在PageRepository.php中使用命名空间声明及引入：
+  </p>
+  
+  <pre class="lang:php mark:5 decode:true">namespace GrahamCampbell\BootstrapCMS\Repositories;
+
+use GrahamCampbell\Credentials\Repositories\AbstractRepository;
+use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
+use GrahamCampbell\Credentials\Repositories\SlugRepositoryTrait;
+
+class PageRepository extends AbstractRepository
+{
+    use PaginateRepositoryTrait, SlugRepositoryTrait;
+    // 此处省略800子
+}</pre>
+  
+  <p class="">
+    其中SlugRepositoryTrait这个Trait定义了find方法：
+  </p>
+  
+  <pre class="lang:php decode:true ">trait SlugRepositoryTrait
+{
+    /**
+     * Find an existing model by slug.
+     *
+     * @param string   $slug
+     * @param string[] $columns
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function find($slug, array $columns = ['*'])
+    {
+        $model = $this-&gt;model;
+
+        return $model::where('slug', '=', $slug)-&gt;first($columns);
+    }
+}</pre>
+  
+  <p>
+    这样就可以在控制中使用Trait了，很好的实现了代码的复用。
+  </p>
+  
+  <h4>
+    个人理解：
+  </h4>
+  
+  <p>
+    <strong>在一个类中使用Trait，就相当于这个类也有了Trait中定义的属性和方法。Traits的使用场景是如果多个类都要用到同样的属性或者方法，这个时候使用Traits可以方便的给类增加这些属性或方法，而不用每个类都去继承一个类，如果说继承类是竖向扩展一个类，那么Traits是横向扩展一个类，从而实现代码复用。</strong>
+  </p>
+  
+  <p>
+    有用的链接：
+  </p>
+  
+  <p>
+    <a href="http://www.pythontab.com/html/2014/php_1123/924.html" target="_blank" rel="nofollow">PHP traits的使用场景</a>
+  </p>
+</div>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

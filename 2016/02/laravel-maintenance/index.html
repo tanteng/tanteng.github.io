@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel维护模式的实现原理 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel维护模式的实现原理</h1>
+    <span class="post-date">Feb 18, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>Laravel开启维护模式的方法是：php artisan down,关闭维护模式的命令是：php artisan up，当开启维护模式后，打开网站任何链接都提示“维护中”，当然这是可自定义的，并且返回503的HTTP码，这其实就是通过中间件来实现的。</p>
+
+<p class="">
+  在app/Http/Kernel.php中的数组$middleware中可见定义如下：
+</p>
+
+<pre class="lang:php decode:true ">protected $middleware = [
+    \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+];</pre>
+
+<p>这是一个全局中间件，所有HTTP请求都会走这个中间件，我们再看这个CheckForMaintenanceMode中间件的handle方法：</p>
+
+<pre class="lang:php decode:true ">public function handle($request, Closure $next)
+{
+    if ($this-&gt;app-&gt;isDownForMaintenance()) {
+        throw new HttpException(503);
+    }
+
+    return $next($request);
+}</pre>
+
+<p>这里通过isDownForMaintenance方法判断，如果true，则返回503状态码，并显示503的页面。</p>
+
+<p>其中这个isDownForMaintenance方法代码是：</p>
+
+<pre class="lang:php decode:true ">public function isDownForMaintenance()
+{
+    return file_exists($this-&gt;storagePath().'/framework/down');
+}</pre>
+
+<p>可见，当我们执行命令php artisan down的时候，就是生成了一个down的文件，通过判断是否存在这个文件判断网站是否处于维护模式，原理就是如此，并且借助中间件技术。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

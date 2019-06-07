@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Mac终端如何查看本机ip和mac地址 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Mac终端如何查看本机ip和mac地址</h1>
+    <span class="post-date">Oct 10, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+    </span>
+    <p>windows命令行输入ipconfig即可查看本机的ip地址和mac物理地址，macbook终端输入什么命令查看本机ip和mac地址呢？</p>
+
+<p>打开终端输入ifconfig命名，会显示一大堆关于网络、网卡的信息，如下：</p>
+
+<p>tantengdeMacBook-Pro:~ tanteng$ ifconfig</p>
+
+<p>lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384</p>
+
+<p>options=3<RXCSUM,TXCSUM></p>
+
+<p>inet6 ::1 prefixlen 128</p>
+
+<p>inet 127.0.0.1 netmask 0xff000000</p>
+
+<p>inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1</p>
+
+<p>nd6 options=1<PERFORMNUD></p>
+
+<p>gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280</p>
+
+<p>stf0: flags=0&lt;&gt; mtu 1280</p>
+
+<p><strong>en0:</strong> <span style="color: #0000ff;">（本地以太网）</span>flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500</p>
+
+<p><strong>ether 34:36:3b:c6:87:20</strong> <span style="color: #0000ff;">（本机mac物理地址）</span></p>
+
+<p>inet6 fe80::3636:3bff:fec6:8720%en0 prefixlen 64 scopeid 0x4</p>
+
+<p><strong>net 192.168.0.103</strong><span style="color: #0000ff;">（本机当前ip地址）</span> netmask 0xffffff00 broadcast 192.168.0.255</p>
+
+<p>nd6 options=1<PERFORMNUD></p>
+
+<p>media: autoselect</p>
+
+<p>status: active</p>
+
+<p>en1: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500</p>
+
+<p>options=60<TSO4,TSO6></p>
+
+<p>ether 72:00:08:40:c5:40</p>
+
+<p>media: autoselect <full-duplex></p>
+
+<p>status: inactive</p>
+
+<p>en2: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500</p>
+
+<p>options=60<TSO4,TSO6></p>
+
+<p>ether 72:00:08:40:c5:41</p>
+
+<p>media: autoselect <full-duplex></p>
+
+<p>status: inactive</p>
+
+<p>p2p0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 2304</p>
+
+<p>ether 06:36:3b:c6:87:20</p>
+
+<p>media: autoselect</p>
+
+<p>status: inactive</p>
+
+<p>awdl0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1484</p>
+
+<p>ether de:0a:a7:73:58:90</p>
+
+<p>inet6 fe80::dc0a:a7ff:fe73:5890%awdl0 prefixlen 64 scopeid 0x8</p>
+
+<p>nd6 options=1<PERFORMNUD></p>
+
+<p>media: autoselect</p>
+
+<p>status: active</p>
+
+<p>bridge0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500</p>
+
+<p>options=63<RXCSUM,TXCSUM,TSO4,TSO6></p>
+
+<p>ether 36:36:3b:6c:58:00</p>
+
+<p>Configuration:</p>
+
+<p>id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0</p>
+
+<p>maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200</p>
+
+<p>root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0</p>
+
+<p>ipfilter disabled flags 0x2</p>
+
+<p>member: en1 flags=3<LEARNING,DISCOVER></p>
+
+<p>ifmaxaddr 0 port 5 priority 0 path cost 0</p>
+
+<p>member: en2 flags=3<LEARNING,DISCOVER></p>
+
+<p>ifmaxaddr 0 port 6 priority 0 path cost 0</p>
+
+<p>nd6 options=1<PERFORMNUD></p>
+
+<p>media: <unknown type></p>
+
+<p>status: inactive</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

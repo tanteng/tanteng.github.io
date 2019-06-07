@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/05/laravel-etag-middleware/">在 Laravel 中设置 Etag 缓存</a>
+      </h1>
+      <span class="post-date">May 19, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
+
+<h3 id="什么是-etag">什么是“ETag”？</h3>
+
+<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
+
+<p>浏览器根据状态码判断是否缓存过期。</p>
+      <a href="http://tanteng.me/2017/05/laravel-etag-middleware/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/05/linux-clear-cache-buffer/">在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a>
+      </h1>
+      <span class="post-date">May 18, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      在 Linux 上如何清除内存的 Cache、Buffer 和交换空间
+链接：https://linux.cn/article-5627-1.html
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/05/golang-append-slice-to-slice/">Golang append slice to slice</a>
+      </h1>
+      <span class="post-date">May 10, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+      </span>
+      
+      <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
+
+<p>片段1：</p>
+
+<pre class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println("result:", s0) //result: [1 100 122 [3 4 5 6]]</pre>
+
+<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+      <a href="http://tanteng.me/2017/05/golang-append-slice-to-slice/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/05/shell-check-url/">Shell 脚本请求 url 判断状态码</a>
+      </h1>
+      <span class="post-date">May 2, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      Shell 脚本请求 URL判断状态码是否异常并执行相关操作。
+示例如下：
+#!/bin/bash fileurl='./check_url.txt' DATE_N=`date "+%Y-%m-%d %H:%M:%S"` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方式 ；-w 定义显示输出格式；"%{http_code}" 在最后被检索的 HTTP(S) 页中被找到的数字的代码 HTTP_CODE=`curl -o /dev/null -s --head -w "%{http_code}" "${chkurl}"` if [ ${HTTP_CODE} -ne 200 ] then if [ ${HTTP_CODE} == 404 ] then echo -e "[${DATE_N}]error-${HTTP_CODE}:" $chkurl &gt;&gt; check-result.txt sh /usr/local/bin/restart_php_mysql.sh &gt;&gt; check-result.txt fi echo -e "[${DATE_N}]error-${HTTP_CODE}:" $chkurl &gt;&gt; check-result.txt else echo -e [${DATE_N}]${HTTP_CODE}: $chkurl &gt;&gt; check-result.
+      <a href="http://tanteng.me/2017/05/shell-check-url/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/netstat-tcp-state/">netstat 命令统计 tcp 各状态数量</a>
+      </h1>
+      <span class="post-date">Apr 28, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      <p>统计 tcp 各种状态的个数：</p>
+
+<pre class="lang:default decode:true">netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'</pre>
+
+<p>结果：</p>
+
+<pre class="lang:default decode:true ">[nobody@test14439 ~]$ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+TIME_WAIT 418
+CLOSE_WAIT 109
+ESTABLISHED 65
+SYN_RECV 1</pre>
+      <a href="http://tanteng.me/2017/04/netstat-tcp-state/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/deadline/">解决拖延症的好方法</a>
+      </h1>
+      <span class="post-date">Apr 23, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97">网摘日志</a>
+      </span>
+      
+      解决拖延症的好方法就是给自己设定一个最后期限（Deadline） ​​​​
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/golang-rand-int/">Golang 生成整数随机数</a>
+      </h1>
+      <span class="post-date">Apr 22, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+      </span>
+      
+      <p>生成一个给定范围的随机数，用 PHP 就太简单不过了，而且可以指定从负数到正整数的范围，如：</p>
+
+<pre class="lang:php decode:true">&lt;?php
+echo mt_rand(-988, 888);</pre>
+
+<p>这样就随机生成 -988 到 888 的随机数。</p>
+      <a href="http://tanteng.me/2017/04/golang-rand-int/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/nginx-13-permission-denied-111-connection-refused/">Nginx 报错和解决方法记录</a>
+      </h1>
+      <span class="post-date">Apr 19, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
+
+<h3 id="13-permission-denied">13: Permission denied</h3>
+
+<p>Nginx错误：</p>
+
+<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() &#8220;/data/vhosts/xunlei.com/test/&#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &#8220;GET / HTTP/1.1&#8221;, host: &#8220;www.test.com&#8221;</p>
+
+<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
+      <a href="http://tanteng.me/2017/04/nginx-13-permission-denied-111-connection-refused/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/churchill-motto/">丘吉尔名言</a>
+      </h1>
+      <span class="post-date">Apr 12, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E7%B2%BE%E5%BD%A9%E7%BD%91%E6%91%98">精彩网摘</a><a class="label" href="http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97">网摘日志</a>
+      </span>
+      
+      <p>我没有别的，只有热血、辛劳、眼泪和汗水献给大家……你们问：我们的目的是什么？我可以用一个词来答复：胜利，不惜一切代价去争取胜利，无论多么恐怖也要争取胜利，无论道路多么遥远艰难，也要争取胜利，因为没有胜利就无法生存。</p>
+      <a href="http://tanteng.me/2017/04/churchill-motto/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/04/beego-table-name/">Beego 设置表名方法</a>
+      </h1>
+      <span class="post-date">Apr 2, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/beego">beego</a><a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      <p>在 Beego 中如果要设置表名，可以使用如下方法，给这个 model 的 struct 增加一个 TableName 方法：</p>
+
+<pre class="lang:go decode:true ">type Comments struct {
+    Id          int64
+    ParentId    int64
+    DynamicId   string `orm:"size(128)"`
+    Content     string `orm:"type(longtext)"`
+    Userid      int64
+    ReplyUserid int64
+    Status      int64
+    IsDelete    int64
+    CreatedAt   string `orm:"size(128)"`
+    UpdatedAt   string `orm:"size(128)"`
+}
+
+func init() {
+    orm.RegisterModel(new(Comments))
+}
+
+// TableName 设置表名
+func (m *Comments) TableName() string {
+    return "comments_8"
+}</pre>
+      <a href="http://tanteng.me/2017/04/beego-table-name/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/10/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/10/">10</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/11/">11</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/12/">12</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/12/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Python3接收命令行参数sys.argv用法 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Python3接收命令行参数sys.argv用法</h1>
+    <span class="post-date">Jul 13, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+    </span>
+    <p>Python3中，使用sys.argv可以接收命令行传入的参数，需要import sys模块，sys.argv第一个参数是文件名，无需定义，第二参数开始是命令行输入的参数，以空格隔开。</p>
+
+<p>举例如下，运行sys_argv.py脚本附带两个参数分别是run1和run2，运行结果如下：</p>
+
+<pre class="lang:python decode:true">&gt;&gt;&gt;python3 sys_argv.py run1 run2
+I'm action1
+I'm action2</pre>
+
+<p>py示例代码：</p>
+
+<pre class="lang:python decode:true ">import sys
+
+# sys.argv接收参数，第一个参数是文件名，第二个参数开始是用户输入的参数，以空格隔开
+
+def run1():
+    print('I\'m action1')
+
+
+def run2():
+    print('I\'m action2')
+
+
+if 2 &gt; len(sys.argv):
+    print('none')
+else:
+    action1 = sys.argv[1]
+    action2 = sys.argv[2]
+
+    if 'run1' == action1:
+        run1()
+    if 'run2' == action2:
+        run2()</pre>
+
+<p>本代码已提交到Github上：<a href="https://github.com/tanteng/learn-python/blob/master/sys_argv.py" target="_blank" rel="nofollow"><a href="https://github.com/tanteng/learn-python/blob/master/sys_argv.py">https://github.com/tanteng/learn-python/blob/master/sys_argv.py</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

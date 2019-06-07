@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>友盟 IOS 推送官方 PHP SDK 自定义播示例有误 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">友盟 IOS 推送官方 PHP SDK 自定义播示例有误</h1>
+    <span class="post-date">Sep 23, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>最近用到友盟给 IOS 应用推送消息，友盟的推送分为单播，列播，广播，组播，文件播，和自定义播，在使用自定义播官方 PHP SDK 发现官方示例（<span class="version_sel">PHP SDK v1.4</span>）有误。</p>
+
+<p>主要问题，一个是请求 url 需要加 sign 签名，一个是解析数组 json_decode 函数使用问题，还有一个废弃的校验参数。</p>
+
+<p><span class="version_sel">官方 SDK 版本 ：PHP SDK v1.4</span></p>
+
+<p>文件名称：notification/ios/IOSCustomizedcast.php</p>
+
+<h3 id="1-请求-url-加签名">1.请求 url 加签名</h3>
+
+<p class="">
+  uploadContents 方法发送 curl 请求之前加上：
+</p>
+
+<pre class="lang:php decode:true ">$url = $this-&gt;host . $this-&gt;uploadPath;
+$postBody = json_encode($post);
+$sign = md5("POST" . $url . $postBody . $this-&gt;appMasterSecret);
+$url = $url . "?sign=" . $sign;</pre>
+
+<h3 id="2-解析返回结果-json-decode-使用错误">2.解析返回结果 json_decode 使用错误</h3>
+
+<p>同样是 uploadContents 方法，解析 curl 结果处修改为：</p>
+
+<pre class="lang:php decode:true ">$returnData = json_decode($result, true);</pre>
+
+<p>加 true 参数，后面用到的是数组的形式，而不是对象的形式。</p>
+
+<h3 id="3-去除多余参数">3.去除多余参数</h3>
+
+<p>同样是 uploadContents 方法开头处，去掉如下代码：</p>
+
+<pre class="lang:php decode:true ">if ($this-&gt;data["validation_token"] == NULL)
+    throw new Exception("validation_token should not be NULL!");</pre>
+
+<p>该文件经过以上修改之后，推送消息成功。</p>
+
+<p>同时这个问题已经在友盟官网论坛上发帖反馈。希望官方推出一个更完善的 PHP SDK，如针对不同的 PHP 框架，或出一个 composer 版本，建议官方人员对示例多加测试，以免误导开发者，有时间的话也可以自己封装一个。</p>
+
+<p>友盟推送官方 API 说明文档：<a href="http://dev.umeng.com/push/ios/api-doc" target="_blank" rel="nofollow"><a href="http://dev.umeng.com/push/ios/api-doc">http://dev.umeng.com/push/ios/api-doc</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

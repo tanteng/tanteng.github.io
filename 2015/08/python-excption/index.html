@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Python3异常处理和异常类型 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Python3异常处理和异常类型</h1>
+    <span class="post-date">Aug 19, 2015 &middot; 3 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+    </span>
+    <h3 id="python的异常处理">Python的异常处理</h3>
+
+<p>如下是使用Python的xlrd模块打款excel文件，这个操作可能会出现异常，使用try捕捉异常，进行处理，防止程序的中断运行，并且记录异常信息到日志。</p>
+
+<pre class="lang:python decode:true ">def save_file(file, filename):
+    """
+    打开excel文件
+    """
+    try:
+        book = xlrd.open_workbook(file)
+        sheet = book.sheet_by_index(0)
+    except Exception as e:
+        logging.info('错误：{0} 文件：{1}'.format(e, file))
+        shutil.copy2(file, './error' + filename)
+        return False
+    row_nums = sheet.nrows
+    col_nums = sheet.ncols</pre>
+
+<p>以上代码捕获异常并且使用logging模块记录日志到日志中，并且使用shutil模块把异常的文件复制到另一个文件夹中。</p>
+
+<h3 id="python的异常类型">Python的异常类型</h3>
+
+<p>如下：</p>
+
+<table class="table table-bordered">
+  <tr>
+    <th>
+      <b>EXCEPTION NAME</b>
+    </th>
+    
+    <th>
+      <b>DESCRIPTION</b>
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Exception
+    </td>
+    
+    <td>
+      Base class for all exceptions
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      StopIteration
+    </td>
+    
+    <td>
+      Raised when the next() method of an iterator does not point to any object.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemExit
+    </td>
+    
+    <td>
+      Raised by the sys.exit() function.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      StandardError
+    </td>
+    
+    <td>
+      Base class for all built-in exceptions except StopIteration and SystemExit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ArithmeticError
+    </td>
+    
+    <td>
+      Base class for all errors that occur for numeric calculation.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      OverflowError
+    </td>
+    
+    <td>
+      Raised when a calculation exceeds maximum limit for a numeric type.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      FloatingPointError
+    </td>
+    
+    <td>
+      Raised when a floating point calculation fails.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ZeroDivisonError
+    </td>
+    
+    <td>
+      Raised when division or modulo by zero takes place for all numeric types.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      AssertionError
+    </td>
+    
+    <td>
+      Raised in case of failure of the Assert statement.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      AttributeError
+    </td>
+    
+    <td>
+      Raised in case of failure of attribute reference or assignment.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      EOFError
+    </td>
+    
+    <td>
+      Raised when there is no input from either the raw_input() or input() function and the end of file is reached.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ImportError
+    </td>
+    
+    <td>
+      Raised when an import statement fails.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      KeyboardInterrupt
+    </td>
+    
+    <td>
+      Raised when the user interrupts program execution, usually by pressing Ctrl+c.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      LookupError
+    </td>
+    
+    <td>
+      Base class for all lookup errors.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      IndexError KeyError
+    </td>
+    
+    <td>
+      Raised when an index is not found in a sequence. Raised when the specified key is not found in the dictionary.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      NameError
+    </td>
+    
+    <td>
+      Raised when an identifier is not found in the local or global namespace.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      UnboundLocalError EnvironmentError
+    </td>
+    
+    <td>
+      Raised when trying to access a local variable in a function or method but no value has been assigned to it. Base class for all exceptions that occur outside the Python environment.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      IOError IOError
+    </td>
+    
+    <td>
+      Raised when an input/ output operation fails, such as the print statement or the open() function when trying to open a file that does not exist. Raised for operating system-related errors.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SyntaxError IndentationError
+    </td>
+    
+    <td>
+      Raised when there is an error in Python syntax. Raised when indentation is not specified properly.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemError
+    </td>
+    
+    <td>
+      Raised when the interpreter finds an internal problem, but when this error is encountered the Python interpreter does not exit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemExit
+    </td>
+    
+    <td>
+      Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.
+    </td>
+    
+    <td>
+      Raised when an operation or function is attempted that is invalid for the specified data type.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ValueError
+    </td>
+    
+    <td>
+      Raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      RuntimeError
+    </td>
+    
+    <td>
+      Raised when a generated error does not fall into any category.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      NotImplementedError
+    </td>
+    
+    <td>
+      Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented.
+    </td>
+  </tr>
+</table>
+
+<p>以上是具体的异常类型，可以捕捉指定的异常：</p>
+
+<pre class="lang:python decode:true ">import sys
+
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
+    raise</pre>
+
+<p>捕捉特定的异常类型并输出异常提示。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

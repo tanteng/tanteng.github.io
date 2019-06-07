@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>设置Redis最大占用内存 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">设置Redis最大占用内存</h1>
+    <span class="post-date">Mar 23, 2016 &middot; 2 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>Redis需要设置最大占用内存吗？如果Redis内存使用超出了设置的最大值会怎样？</p>
+
+<h3 id="设置redis最大占用内存">设置Redis最大占用内存</h3>
+
+<p>Redis设置最大占用内存，打开redis配置文件，找到如下段落，设置maxmemory参数，maxmemory是bytes字节类型，注意转换。修改如下所示：</p>
+
+<pre class="lang:vim decode:true"># In short... if you have slaves attached it is suggested that you set a lower
+# limit for maxmemory so that there is some free RAM on the system for slave
+# output buffers (but this is not needed if the policy is 'noeviction').
+#
+# maxmemory &lt;bytes&gt;
+maxmemory 268435456</pre>
+
+<p>本机服务器redis配置文件路径：/etc/redis/6379.conf，由于本机自带内存只有1G，一般推荐Redis设置内存为最大物理内存的四分之三，所以设置0.75G，换成byte是751619276.</p>
+
+<h3 id="redis使用超过设置的最大值">Redis使用超过设置的最大值</h3>
+
+<p>如果Redis的使用超过了设置的最大值会怎样？我们来改一改上面的配置，故意把最大值设为1个byte试试。</p>
+
+<pre class="lang:vim decode:true"># output buffers (but this is not needed if the policy is 'noeviction').
+#
+# maxmemory &lt;bytes&gt;
+maxmemory 1</pre>
+
+<p>打开debug模式下的页面，提示错误：OOM command not allowed when used memory &gt; &#8216;maxmemory&#8217;.</p>
+
+<p>设置了maxmemory的选项，redis内存使用达到上限。可以通过设置LRU算法来删除部分key，释放空间。默认是按照过期时间的,如果set时候没有加上过期时间就会导致数据写满maxmemory。</p>
+
+<p>如果不设置maxmemory或者设置为0，64位系统不限制内存，32位系统最多使用3GB内存。</p>
+
+<p>LRU是Least Recently Used 近期最少使用算法。</p>
+
+<ol>
+<li>volatile-lru -&gt; 根据LRU算法生成的过期时间来删除。</li>
+<li>allkeys-lru -&gt; 根据LRU算法删除任何key。</li>
+<li>volatile-random -&gt; 根据过期设置来随机删除key。</li>
+<li>allkeys-&gt;random -&gt; 无差别随机删。</li>
+<li>volatile-ttl -&gt; 根据最近过期时间来删除（辅以TTL）</li>
+<li>noeviction -&gt; 谁也不删，直接在写操作时返回错误。</li>
+</ol>
+
+<p>如果设置了maxmemory，一般都要设置过期策略。打开Redis的配置文件有如下描述，Redis有六种过期策略：</p>
+
+<pre class="lang:vim decode:true"># volatile-lru -&gt; remove the key with an expire set using an LRU algorithm
+# allkeys-lru -&gt; remove any key accordingly to the LRU algorithm
+# volatile-random -&gt; remove a random key with an expire set
+# allkeys-random -&gt; remove a random key, any key
+# volatile-ttl -&gt; remove the key with the nearest expire time (minor TTL)
+# noeviction -&gt; don't expire at all, just return an error on write operations</pre>
+
+<p>那么打开配置文件，添加如下一行，使用volatile-lru的过期策略：</p>
+
+<pre class="lang:vim decode:true">maxmemory-policy volatile-lru
+</pre>
+
+<p>保存文件退出，重启redis服务。</p>
+
+<h3 id="info命令查看redis内存使用情况">info命令查看Redis内存使用情况</h3>
+
+<p>如服务器Redis所在目录：/usr/local/redis-3.0.7/src</p>
+
+<p>在终端输入./redis-cli，打开Redis客户端，输入info命令。</p>
+
+<p>出来如下信息：</p>
+
+<p>[root@iZ94r80gdghZ src]# ./redis-cli</p>
+
+<p>127.0.0.1:6379&gt; info</p>
+
+<p># Server</p>
+
+<p>redis_version:3.0.7</p>
+
+<p>redis_git_sha1:00000000</p>
+
+<p>redis_git_dirty:0</p>
+
+<p>redis_build_id:f07a42660a61a05e</p>
+
+<p>redis_mode:standalone</p>
+
+<p>os:Linux 3.10.0-327.10.1.el7.x86_64 x86_64</p>
+
+<p>arch_bits:64</p>
+
+<p>multiplexing_api:epoll</p>
+
+<p>gcc_version:4.8.5</p>
+
+<p>process_id:2165</p>
+
+<p>run_id:8ec8a8dc969d6e2f2867d9188ccb90850bfc9acb</p>
+
+<p>tcp_port:6379</p>
+
+<p>uptime_in_seconds:668</p>
+
+<p>uptime_in_days:0</p>
+
+<p>hz:10</p>
+
+<p>lru_clock:15882419</p>
+
+<p>config_file:/etc/redis/6379.conf</p>
+
+<p># Clients</p>
+
+<p>connected_clients:1</p>
+
+<p>client_longest_output_list:0</p>
+
+<p>client_biggest_input_buf:0</p>
+
+<p>blocked_clients:0</p>
+
+<p># Memory</p>
+
+<p><span style="color: #ff0000;">used_memory:816232</span></p>
+
+<p>used_memory_human:797.10K</p>
+
+<p>used_memory_rss:7655424</p>
+
+<p>used_memory_peak:816232</p>
+
+<p>used_memory_peak_human:797.10K</p>
+
+<p>used_memory_lua:36864</p>
+
+<p>mem_fragmentation_ratio:9.38</p>
+
+<p>mem_allocator:jemalloc-3.6.0</p>
+
+<p># Persistence</p>
+
+<p>loading:0</p>
+
+<p>rdb_changes_since_last_save:0</p>
+
+<p>rdb_bgsave_in_progress:0</p>
+
+<p>rdb_last_save_time:1458722327</p>
+
+<p>rdb_last_bgsave_status:ok</p>
+
+<p>rdb_last_bgsave_time_sec:-1</p>
+
+<p>rdb_current_bgsave_time_sec:-1</p>
+
+<p>aof_enabled:0</p>
+
+<p>aof_rewrite_in_progress:0</p>
+
+<p>aof_rewrite_scheduled:0</p>
+
+<p>aof_last_rewrite_time_sec:-1</p>
+
+<p>aof_current_rewrite_time_sec:-1</p>
+
+<p>aof_last_bgrewrite_status:ok</p>
+
+<p>aof_last_write_status:ok</p>
+
+<p># Stats</p>
+
+<p>total_connections_received:1</p>
+
+<p>total_commands_processed:0</p>
+
+<p>instantaneous_ops_per_sec:0</p>
+
+<p>total_net_input_bytes:14</p>
+
+<p>total_net_output_bytes:0</p>
+
+<p>instantaneous_input_kbps:0.00</p>
+
+<p>instantaneous_output_kbps:0.00</p>
+
+<p>rejected_connections:0</p>
+
+<p>sync_full:0</p>
+
+<p>sync_partial_ok:0</p>
+
+<p>sync_partial_err:0</p>
+
+<p>expired_keys:0</p>
+
+<p>evicted_keys:0</p>
+
+<p>keyspace_hits:0</p>
+
+<p>keyspace_misses:0</p>
+
+<p>pubsub_channels:0</p>
+
+<p>pubsub_patterns:0</p>
+
+<p>latest_fork_usec:0</p>
+
+<p>migrate_cached_sockets:0</p>
+
+<p># Replication</p>
+
+<p>role:master</p>
+
+<p>connected_slaves:0</p>
+
+<p>master_repl_offset:0</p>
+
+<p>repl_backlog_active:0</p>
+
+<p>repl_backlog_size:1048576</p>
+
+<p>repl_backlog_first_byte_offset:0</p>
+
+<p>repl_backlog_histlen:0</p>
+
+<p># CPU</p>
+
+<p>used_cpu_sys:0.30</p>
+
+<p>used_cpu_user:0.29</p>
+
+<p>used_cpu_sys_children:0.00</p>
+
+<p>used_cpu_user_children:0.00</p>
+
+<p># Cluster</p>
+
+<p>cluster_enabled:0</p>
+
+<p># Keyspace</p>
+
+<p>db0:keys=1,expires=1,avg_ttl=425280</p>
+
+<p>其中used_memory:816232，仅用了0.7M左右。</p>
+
+<p>本文在网上查阅资料，在阿里云CentOS主机实践。</p>
+
+<h4 id="有用的链接">有用的链接：</h4>
+
+<ul>
+<li><a href="http://calc.itzmx.com/" target="_blank" rel="noopener nofollow">字节码转换器</a></li>
+<li><a href="http://www.zhihu.com/question/31102463" target="_blank" rel="noopener nofollow">知乎：Redis是否需要设置最大占用内存</a></li>
+<li><a href="http://blog.csdn.net/neubuffer/article/details/17003909" target="_blank" rel="noopener nofollow">Redis配置文件详解</a></li>
+</ul>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

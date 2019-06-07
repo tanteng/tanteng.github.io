@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP连接mongodb认证错误:Failed to connect,Authentication failed &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP连接mongodb认证错误:Failed to connect,Authentication failed</h1>
+    <span class="post-date">Jul 8, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>PHP扩展php_mongo.dll无法通过用户名密码认证的方式连接mongodb数据库，报错如下：<strong>Fatal error</strong>: Uncaught exception &#8216;MongoConnectionException&#8217; with message &#8216;Failed to connect to: 127.0.0.1:27017: Authentication failed on database &#8216;js_send_excel&#8217; with username &#8216;tanteng22&#8242;: auth failed&#8217; in D:\xampp\htdocs\v3\index.php:6 Stack trace: #0 D:\xampp\htdocs\v3\index.php(6): MongoClient-&gt;__construct(&#8216;mongodb://tante&#8230;&#8217;) #1 {main} thrown in <strong>D:\xampp\htdocs\v3\index.php</strong> on line <strong>6</strong></p>
+
+<p>经过排查错误，经过测试java和python都可以通过用户名密码方式连接mongodb数据库，发现是由于php的php_mongo扩展和mongodb数据库版本不兼容所致。</p>
+
+<p>两种解决方法：1.下载较新的php_mongo.dll扩展 2.降低使用的mongodb的版本。</p>
+
+<pre class="lang:php decode:true ">$con = new MongoClient("mongodb://tanteng22:123456@127.0.0.1/js_send_excel"); // Connect to Mongo Server
+print_r($con);exit;</pre>
+
+<p>以上代码可以测试PHP以认证方式连接mongodb数据库。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

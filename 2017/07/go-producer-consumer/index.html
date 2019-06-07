@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Go 模拟生产者消费者 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Go 模拟生产者消费者</h1>
+    <span class="post-date">Jul 8, 2017 &middot; 2 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+    </span>
+    <p>Go 的一个模拟生产者和消费者的例子，用 m 个 goroutine 生产产品，用 n 个 goroutine 消费产品，使用 2 个 channel，一个有缓冲的通道用于存放产品，一个无缓冲的通道用于标识生成或者消费过程完成。</p>
+
+<p>例子演示了 Go 中 goroutine 和 channel 的使用，理解 Go 中的并发概念。</p>
+
+<pre class="lang:go decode:true">package main
+
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+type producer struct {
+    id    int
+    level int
+}
+
+type consumer struct {
+    id int
+}
+
+func (p producer) produce(inputQ chan int, waitQ chan bool) {
+    x := rand.Intn(9) * p.level
+    for i := 0; i &lt; 30; i++ {
+        inputQ &lt;- x
+        fmt.Println("Producer: ", p.id, " produced: ", x)
+        sleepTime := rand.Intn(1000) + 1000
+        time.Sleep(time.Millisecond * time.Duration(sleepTime))
+    }
+    waitQ &lt;- true
+    fmt.Println("Producer id: ", p.id, " quit.")
+}
+
+func (c consumer) consume(inputQ chan int, waitQ chan bool) {
+    for {
+        select {
+        case x, ok := &lt;-inputQ:
+            if ok {
+                fmt.Println("Consumer: ", c.id, " consumed:", x)
+            }
+        default:
+            fmt.Println("Consumer ", c.id, " quit")
+            waitQ &lt;- true
+            return
+        }
+        sleepTime := rand.Intn(1000) + 2000
+        time.Sleep(time.Millisecond * time.Duration(sleepTime))
+    }
+}
+
+func main() {
+    var pLevels = [8]int{1, 10, 100, 100, 10000, 100000, 1000000, 10000000} // 定义不同的Level来区分生产者
+    const producerCount int = 5                                             // 生产者数量
+    const consumerCount int = 10                                            // 消费者数量
+    var inputQ = make(chan int, producerCount*4)                            // 生产队列，存放产品
+    var waitQ = make(chan bool)                                             // 等待队列，用于main方法等待所有消费者结束
+    var producers [producerCount]producer                                   // 生产者数组
+    var consumers [consumerCount]consumer                                   // 消费者数组
+    for i := 0; i &lt; producerCount; i++ {
+        producers[i] = producer{i, pLevels[i]} // 初始化生产者id和Level
+        go producers[i].produce(inputQ, waitQ) // 开始生产
+    }
+
+    time.Sleep(time.Second * 5) // 积累一定产品后再启动消费者
+
+    for i := 0; i &lt; consumerCount; i++ {
+        consumers[i] = consumer{i}             // 初始化消费者
+        go consumers[i].consume(inputQ, waitQ) // 开始消费
+    }
+
+    for i := 0; i &lt; (producerCount + consumerCount); i++ {
+        fmt.Println("waitQ")
+        &lt;-waitQ // 等待所有生产者和消费者结束退出
+    }
+
+    fmt.Println("closed")
+    close(inputQ)
+    close(waitQ)
+}
+</pre>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

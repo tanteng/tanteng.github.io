@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>MySQL唯一索引和插入重复自动更新 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">MySQL唯一索引和插入重复自动更新</h1>
+    <span class="post-date">Sep 23, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    </span>
+    <p>有时我们在往数据库插入数据的时候，需要判断某个字段是否存在，如果存在则执行更新操作，如果不存在则执行插入操作，如果每次首先查询一次判断是否存在，再执行插入或者更新操作，就十分不方便。</p>
+
+<h3 id="on-duplicate-key-update">ON DUPLICATE KEY UPDATE</h3>
+
+<p>这个时候可以给这个字段（或者几个字段）建立唯一索引，同时使用以下 sql 语句进行插入或更新操作：</p>
+
+<pre class="wrap:true lang:mysql decode:true">INSERT INTO table (id, user_id, token) VALUES (NULL, '2479031', '232') ON DUPLICATE KEY UPDATE user_id = VALUES(user_id), token = VALUES(token), online = VALUES(online)</pre>
+
+<h3 id="mysql-给字段添加唯一索引">MySQL 给字段添加唯一索引</h3>
+
+<p>添加唯一索引 sql：</p>
+
+<pre class="wrap:true lang:mysql decode:true">ALTER TABLE table_name ADD UNIQUE (column_list)</pre>
+
+<p>注意：如果没有唯一索引，则无法触发 ON DUPLICATE KEY 这样的事件，DUPLICATE 表示重复的意思，如某个字段没有添加唯一索引，则不认为插入同样的值是重复的，所以对不可重复的字段必须建立唯一索引。</p>
+
+<h3 id="实例说明">实例说明</h3>
+
+<p>如一个需求是提供一个接口给 IOS 端，用于上报用户 id，设备，在线状态等信息，接口以 GET 方式传参，用户每次打开或退出 APP 就请求接口。</p>
+
+<p>接口收到请求，将信息记录到数据库，根据用户 id 进行判断，如果存在则更新，不存在就新增。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/09/on-duplicate-key-update.png" target="_blank"><img class="alignnone wp-image-10906 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/09/on-duplicate-key-update.png" alt="on-duplicate-key-update" width="1192" height="214" /></a></p>
+
+<p>这个时候 sql 语句使用上面介绍的 on duplicate key update 语句。</p>
+
+<pre class="wrap:true lang:mysql decode:true">INSERT INTO table (id, user_id, token) VALUES (NULL, '2479031', '232') ON DUPLICATE KEY UPDATE user_id = VALUES(user_id), token = VALUES(token), online = VALUES(online)</pre>
+
+<p>以这个 sql 为例，其中 user_id 是唯一索引字段，如果 insert 的时候该 user_id 已经存在，那么就将触发更新而不是插入，此时相当于执行了：</p>
+
+<pre class="wrap:true lang:mysql decode:true ">update table set user_id = 2479031 token = 232 where user_id = 2479031</pre>
+
+<p>这就是唯一索引和 ON DUPLICATE KEY UPDATE 的用法。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

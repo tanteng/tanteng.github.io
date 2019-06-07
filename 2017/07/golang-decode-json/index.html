@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Golang 解析 json 数据 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Golang 解析 json 数据</h1>
+    <span class="post-date">Jul 23, 2017 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+    </span>
+    <p>使用 Golang 解析 json 数据，这种 json 格式是对象的数组，官方文档有一个示例：</p>
+
+<pre class="lang:go decode:true">var jsonBlob = []byte(`[  
+    {"Name": "Platypus", "Order": "Monotremata"},  
+    {"Name": "Quoll",    "Order": "Dasyuromorphia"}  
+]`)  
+type Animal struct {  
+    Name  string  
+    Order string  
+}  
+var animals []Animal  
+err := json.Unmarshal(jsonBlob, &animals)  
+if err != nil {  
+    fmt.Println("error:", err)  
+}  
+fmt.Printf("%+v", animals)</pre>
+
+<p>它可以把 json 数据的对象解析到对应的结构体中。</p>
+
+<p>如果是一维数组，带键值对的形式，如：<span style="font-size: 1rem;">{&#8220;A&#8221;:3,&#8221;B&#8221;:3,&#8221;C&#8221;:5,&#8221;D&#8221;:5}，代码如下：</span></p>
+
+<pre class="lang:go decode:true">func main() {
+    jsonData := []byte(`{"A":3,"B":3,"C":5,"D":5}`)
+    var a map[string]int
+    json.Unmarshal(jsonData, &a)
+    fmt.Printf("%+v\n", a)
+}</pre>
+
+<p>可见键值对形式的 json 可以映射到 map 中，或者 interface{}.</p>
+
+<p>如果是只有值的形式，如：[&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;,&#8221;d&#8221;,&#8221;e&#8221;]，代码如下：</p>
+
+<pre class="lang:go decode:true ">func main() {
+    jsonData := []byte(`["a","b","c","d","e"]`)
+    var a []string
+    json.Unmarshal(jsonData, &a)
+    fmt.Printf("%+v\n", a)
+}</pre>
+
+<p>可见只有值的形式可以映射到一个 slice 中。</p>
+
+<p>关于 json 数据解析对于类型，在函数注释中都已有说明：</p>
+
+<div>
+  <div>
+    To unmarshal JSON into an interface value,Unmarshal stores one of these in the interface value:
+  </div>
+  
+
+<p><div>
+    bool, for JSON booleans
+  </div></p>
+
+<p><div>
+    float64, for JSON numbers
+  </div></p>
+
+<p><div>
+    string, for JSON strings
+  </div></p>
+
+<p><div>
+    []interface{}, for JSON arrays
+  </div></p>
+
+<p><div>
+    map[string]interface{}, for JSON objects
+  </div></p>
+
+<p><div>
+    nil for JSON null
+  </div>
+</div></p>
+
+<h3 id="模拟-php-的-json-decode-jsonstring-true-函数">模拟 PHP 的 json_decode($jsonString, true) 函数</h3>
+
+<p>但是，看这种情况，在 PHP 中，如果用 json_decode(&#8216;[&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;,&#8221;d&#8221;,&#8221;e&#8221;]&#8217;, true) 这种第二个参数是 true 的解析 json，可以解析为带键值对的对象的形式：</p>
+
+<pre class="lang:go decode:true ">[
+    0=&gt;"a",
+    1=&gt;"b",
+    2=&gt;"c",
+    3=&gt;"d",
+    4=&gt;"e"
+]</pre>
+
+<p>这种 Golang 怎么做到呢？</p>
+
+<pre class="lang:go decode:true ">func main() {
+    jsonData := []byte(`["a","b","c","d","e"]`)
+    var a []string
+    json.Unmarshal(jsonData, &a)
+
+    newData := make(map[int]string)
+    for k, v := range a {
+        newData[k] = v
+    }
+
+    fmt.Printf("%+v\n", newData)
+}
+</pre>
+
+<p>应该没有内置函数，那就这样手动实现吧。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

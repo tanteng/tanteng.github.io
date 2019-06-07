@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>如何使用truncate table清空有外键约束的表 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">如何使用truncate table清空有外键约束的表</h1>
+    <span class="post-date">Feb 18, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    </span>
+    <p>在MySQL中使用&#8221;truncate table 表名&#8221;语句可以清空一张表，并且计数器会重置，但是在存在外键约束的表中无法使用truncate，那怎么办？</p>
+
+<p>方法是首先禁用外键，使用truncate之后再恢复！</p>
+
+<p>1.禁止外键约束</p>
+
+<pre class="lang:mysql decode:true ">alter table tbl_b disable constraint FK_TBL_B_A;</pre>
+
+<p>2.再使用truncate清空表</p>
+
+<pre class="lang:mysql decode:true ">truncate table tbl_a;</pre>
+
+<p>3.恢复外键约束</p>
+
+<pre class="lang:mysql decode:true ">alter table tbl_b enable constraint FK_TBL_B_A;</pre>
+
+<p>总结：</p>
+
+<ol>
+<li><p>主外键是数据库提供的强约束，可以帮助我们控制主子表之间的关系，但同时还是一把双刃剑，当然，我们认为既然定义了主外键，就是需要这种强制关系，但有时可能就会有一些变更，因此，如何取舍，需要根据实际情况来决策。</p></li>
+
+<li><p>主外键关联中的主表，如果有数据，则不能直接用truncate方式删除，因为会认为有外键和其关联，不能直接截断主表，若需要做，可以先禁止外键约束，主表变成一个独立的表，这样就可以执行truncate了。</p></li>
+</ol>
+
+<p>参考链接：<a href="http://blog.csdn.net/bisal/article/details/46421903" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/bisal/article/details/46421903">http://blog.csdn.net/bisal/article/details/46421903</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

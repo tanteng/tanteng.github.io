@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Chmod命令修改目录权限数字含义 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Chmod命令修改目录权限数字含义</h1>
+    <span class="post-date">Nov 10, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+    </span>
+    <p>常见的目录权限：</p>
+
+<p>-rw&#8212;&#8212;- (600) &#8212; 只有属主有读写权限。</p>
+
+<p>-rw-r&#8211;r&#8211; (644) &#8212; 只有属主有读写权限；而属组用户和其他用户只有读权限。</p>
+
+<p>-rwx&#8212;&#8212; (700) &#8212; 只有属主有读、写、执行权限。</p>
+
+<p>-rwxr-xr-x (755) &#8212; 属主有读、写、执行权限；而属组用户和其他用户只有读、执行权限。</p>
+
+<p>-rwx&#8211;x&#8211;x (711) &#8212; 属主有读、写、执行权限；而属组用户和其他用户只有执行权限。</p>
+
+<p>-rw-rw-rw- (666) &#8212; 所有用户都有文件读、写权限。这种做法不可取。</p>
+
+<p>-rwxrwxrwx (777) &#8212; 所有用户都有读、写、执行权限。更不可取的做法。</p>
+
+<p>以下是使用绝对模式修改目录权限常见数字代表的含义示例：</p>
+
+<table border="0" align="left">
+  <tr>
+    <td>
+      模式
+    </td>
+    
+    <td>
+      意义
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      777
+    </td>
+    
+    <td>
+      所有用户都对文件具有读、写和执行权限
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      755
+    </td>
+    
+    <td>
+      文件所有者对文件具有读、写和执行权限;组用户和其他用户对文件需有读和执行权限
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      711
+    </td>
+    
+    <td>
+      文件所有者对文件具有读、写和执行权限;组用户和其他用户对文件具有执行权限
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      644
+    </td>
+    
+    <td>
+      文件所有者可以读、写文件;组用户和其他用户可以读文件
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      640
+    </td>
+    
+    <td>
+      文件所有者可以读、写文件;组用户可以读文件;其他用户不能访问文件
+    </td>
+  </tr>
+</table>
+
+<p>chmod也可以用数字来表示权限如 chmod 777 file</p>
+
+<p>语法为：chmod abc file</p>
+
+<p>其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。</p>
+
+<p>r=4，w=2，x=1</p>
+
+<p>若要rwx属性则4+2+1=7；</p>
+
+<p>若要rw-属性则4+2=6；</p>
+
+<p>若要r-x属性则4+1=7。</p>
+
+<p>范例：</p>
+
+<p>chmod a=rwx file 和 chmod 777 file 效果相同</p>
+
+<p>chmod ug=rwx,o=x file 和 chmod 771 file 效果相同</p>
+
+<p>若用chmod 4755 filename可使此程式具有root的权限</p>
+
+<p>另一种常见的符号模式含义：</p>
+
+<table border="0" align="left">
+  <tr>
+    <td>
+      who
+    </td>
+    
+    <td>
+      用户类型
+    </td>
+    
+    <td>
+      意义
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      u
+    </td>
+    
+    <td>
+      User
+    </td>
+    
+    <td>
+      文件的所有者
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      g
+    </td>
+    
+    <td>
+      Other
+    </td>
+    
+    <td>
+      与文件相关联的组
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      o
+    </td>
+    
+    <td>
+      Other
+    </td>
+    
+    <td>
+      所有其他用户
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      a
+    </td>
+    
+    <td>
+      All
+    </td>
+    
+    <td>
+      相当与ugo，所有用户
+    </td>
+  </tr>
+</table>
+
+<p>如Mac终端（类Linux系统）修改文件目录命令：</p>
+
+<pre>chmod -R o+wx dirname/</pre>
+
+<p>表示递归修改dirname这个文件夹的权限为可写可执行，o表示给所有其他用户赋予这个权限。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/06/jquery-enter/">jQuery回车键绑定点击事件</a>
+      </h1>
+      <span class="post-date">Jun 27, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E5%89%8D%E7%AB%AF">前端</a>
+      </span>
+      
+      当按下回车键时，绑定按钮点击事件代码如下，通过检测按下的键值，回车键keycode为13，判断是否是回车键，然后完成相应的方法。
+ 
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/04/php-serialize-json/">PHP的序列化和json以及区别</a>
+      </h1>
+      <span class="post-date">Apr 16, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <h3 id="序列化和反序列化">序列化和反序列化</h3>
+
+<p>序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。</p>
+
+<pre lang="php"><?php
+$a = array('a' => 'Apple' ,'b' => 'banana' , 'c' => 'Coconut');
+//序列化数组
+$s = serialize($a);
+echo $s;
+//输出结果：a:3:{s:1:"a";s:5:"Apple";s:1:"b";s:6:"banana";s:1:"c";s:7:"Coconut";}
+echo '
+
+<br /><br />';
+//反序列化
+$o = unserialize($s);
+print_r($o);
+//输出结果 Array ( [a] => Apple [b] => banana [c] => Coconut )
+?>
+</pre>
+      <a href="http://tanteng.me/2013/04/php-serialize-json/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/03/di-gui/">已知f(1)=2;f(2)=3;f(n)=f(n-1)&#43;f(n-2);用递归和非递归方法计算F($n)的值</a>
+      </h1>
+      <span class="post-date">Mar 15, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>有一道题是这样的：f(1)=2;f(2)=3;f(n)=f(n-1)+f(n-2),写一个foo($num)方法。采用递归和非递归两种方式，计算出值。</br></p>
+
+<p><strong>1.递归方法</strong></p>
+
+<pre lang="php"><?php
+function foo($num){
+    if ($num>0){
+        if($num==1){
+            return 2;
+        }
+        elseif ($num==2){
+            return 3;
+        }
+        else{
+            return foo($num-1)+foo($num-2);
+        }
+    }
+}
+
+echo foo(5);
+</pre>
+      <a href="http://tanteng.me/2013/03/di-gui/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/03/pdo-statement-bindparam/">PHP PDOStatement:bindParam的一个陷阱</a>
+      </h1>
+      <span class="post-date">Mar 3, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>废话不多说, 直接看代码:</p>
+
+<pre lang="php"><?php
+$dbh = new PDO('mysql:host=localhost;dbname=test', "test");
+ 
+$query = <<<QUERY
+  INSERT INTO `user` (`username`, `password`) VALUES (:username, :password);
+QUERY;
+$statement = $dbh->prepare($query);
+ 
+$bind_params = array(':username' => "laruence", ':password' => "weibo");
+foreach( $bind_params as $key => $value ){
+    $statement->bindParam($key, $value);
+}
+$statement->execute();
+</pre>
+
+<p>请问, 最终执行的SQL语句是什么, 上面的代码是否有什么问题?</p>
+      <a href="http://tanteng.me/2013/03/pdo-statement-bindparam/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/03/php-memcache/">php当中的memcache应用</a>
+      </h1>
+      <span class="post-date">Mar 3, 2013 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p><strong>安装memcached扩展的方法：</strong></p>
+
+<p>解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install</p>
+
+<p>将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。</p>
+
+<p>然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;</p>
+
+<p>在phpinfo（）下查看，是否引用了memcache扩展。</p>
+      <a href="http://tanteng.me/2013/03/php-memcache/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/03/php-webservice/">php的webservice示例</a>
+      </h1>
+      <span class="post-date">Mar 2, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>首先大家要简单了解了何谓webservice，接下来就做两个非常简单的例子，webservice还是逃不开server端与client端。</p>
+
+<p>我测试的环境为：apache2.2.11 php5.2.10</p>
+
+<p>做这个测试之前，要确认你的php配置文件中已经将soap扩展打开，即extension=php_soap.dll;</p>
+
+<p>OK 现在我们来体验webservice</p>
+      <a href="http://tanteng.me/2013/03/php-webservice/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/03/unsigned/">数据库UNSIGNED属性</a>
+      </h1>
+      <span class="post-date">Mar 1, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小，而无符号数的最高位是表示数据的大小，这样无符号数表示的数据范围要比有符号数大一倍
+这里的id一般表示序号，所以设置为unsigned属性，这样的设计更科学合理。
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2013/01/juhui/">五年后的同学聚会,你该参加吗?</a>
+      </h1>
+      <span class="post-date">Jan 25, 2013 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97">网摘日志</a>
+      </span>
+      
+      <p>这两天又被人问到为什么留在BeBeyond。看来“梦想”这个事情，还是挺奢侈的。呵呵……所以很想和大家分享两个让我感触很深的故事。</p>
+
+<p>第一个故事来自于一本书，书名好像是《记住你是谁：15位哈佛教授震撼心灵的人生故事》（可能不是这个，我记不清了），是商务出版社出的《哈佛经典系列》，《蓝海战略》是这套丛书其中的一本。</p>
+
+<p>这个故事是这样的。哈佛商学院的毕业生每5年就会有一次同学聚会，所以一个哈佛教授问即将毕业的学生说：“5年后，你会得到一张请柬，邀请你参加同学聚会，你该去吗？”（请大家停顿一下想想，你会去吗？）似乎答案应该是“去”，对吧？有什么理由不去呢？能够叙叙旧，维护下个人人际网，说不定还能碰上些新的商业机会，多好！</p>
+      <a href="http://tanteng.me/2013/01/juhui/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2012/12/enum-set/">数据库字段类型Enum（枚举）和Set（集合）的区别（转）</a>
+      </h1>
+      <span class="post-date">Dec 20, 2012 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p><strong>Enum枚举，Set集合。</strong></p>
+
+<p>ENUM和SET都是比较特殊的字符串数据列类型，它们的取值范围是一个预先定义好的列表。ENUM或SET数据列的取值只能从这个列表中进行选择。ENUM和SET的主要区别是：</p>
+
+<p><strong><em>ENUM只能取单值</em></strong>，它的数据列表是一个枚举集合。它的合法取值列表最多允许有65535个成员。例如：ENUM(&#8220;N&#8221;,&#8221;Y&#8221;)表示，该数据列的取值要么是&#8221;Y&#8221;，要么就是&#8221;N&#8221;。</p>
+
+<p><strong><em>SET可取多值</em></strong>。它的合法取值列表最多允许有64个成员。空字符串也是一个合法的SET值。</p>
+      <a href="http://tanteng.me/2012/12/enum-set/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2012/12/php-save-cookie/">php中数组存入cookie的方法</a>
+      </h1>
+      <span class="post-date">Dec 19, 2012 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>cookie默认不能存数组，所以要采取另外的方法将数组存入cookie中。</p>
+
+<p><strong>方法一：先用serialize序列化数组，再存入COOKIE，读出来时用unserialize得到原来的数组</strong></p>
+
+<pre lang="php">//存入  
+$arr = array(1,2,3);  
+$arr_str = serialize($arr);    
+setcookie("a",$arr_str);  
+ 
+//取出  
+$arr_str = $_COOKIE['a'];  
+$arr = unserialize($arr_str); 
+</pre>
+      <a href="http://tanteng.me/2012/12/php-save-cookie/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/44/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/44/">44</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/45/">45</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/46/">46</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/46/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

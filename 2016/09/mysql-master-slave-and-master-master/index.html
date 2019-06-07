@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>MySQL主从和双主架构的适用场景 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">MySQL主从和双主架构的适用场景</h1>
+    <span class="post-date">Sep 28, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    </span>
+    <p>本文介绍 MySQL 主从和双主架构的适用场景。</p>
+
+<h3 id="mysql主从">MySQL主从</h3>
+
+<p>MySQL主从架构的适用场景是读写分离，通过主库写，从库读，大多数场景是读的情况比较多，单一 master 多 slave 的架构可以很好解决读压力大的问题。</p>
+
+<p><img class="alignnone wp-image-10946 size-full aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2016/09/master-slave.jpg" alt="master-slave" width="401" height="299" /></p>
+
+<h3 id="mysql双主">MySQL双主</h3>
+
+<p>MySQL双主架构的适用场景举个例子，比如一个应用前台和后台用的不同的服务器，数据库大多数是主从结构，但是日志数据库，需要共用一个，这个时候可以把两边的日志数据库设为双主。</p>
+
+<p><img class="alignnone size-full wp-image-10947 aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2016/09/master-master.jpg" alt="master-master" width="331" height="137" /></p>
+
+<p>双主数据库一个特点是，在 A 数据库上的任何操作，在 B 数据库也进行了同样的操作，反过来也是。还有一个现象可以发现，A，B 两个数据库插入数据的自增 ID 的递增值一般都是 2，这是避免主键冲突。</p>
+
+<p>有关主从和双主的 MySQL 原理和配置请参考：</p>
+
+<p><a href="http://blog.csdn.net/sz_bdqn/article/details/46277831" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/sz_bdqn/article/details/46277831">http://blog.csdn.net/sz_bdqn/article/details/46277831</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

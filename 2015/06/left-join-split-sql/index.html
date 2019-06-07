@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>将left join拆分成多条sql语句 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">将left join拆分成多条sql语句</h1>
+    <span class="post-date">Jun 9, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    </span>
+    <p>本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。</p>
+
+<p>我们公司电商网站现在要做网站服务化，用java做中间件，PHP调用java接口获取数据，数据表也进行了拆分，分库，要求不使用连表查询，有连表查询的sql语句想办法拆分多条sql语句，然后统一使用java接口。</p>
+
+<p>这样做的目的一是为了网站服务化做调整，数据的增删查改都封装到具体的业务里面，二是为了提高性能，减少数据库压力，说来说去还是为了提高效率。</p>
+
+<p>我们看看一个join多张表的sql如何拆分多条sql。</p>
+
+<pre class="lang:mysql decode:true">select u1.uid,u1.uname,u2.add from user as u1 left join userinfo as u2 on u1.uid=u2.uid left join money as u3 on u1.uid=u3.uid where u1.country='c'</pre>
+
+<p>这条sql语句left join三张表，分别是user作为主表，连userinfo，money表。首先可以查出所有user的数据，有了第一条拆分的sql：</p>
+
+<pre class="lang:mysql decode:true">select uid,uname from user where country='c'</pre>
+
+<p>由于条件是user.uid=userinfo.uid，所以可以把取得的uid用&#8221;,&#8221;连接，第二个拆分的sql如下：</p>
+
+<pre class="lang:mysql decode:true">select uid,add from userinfo where uid in(32,34,23,23)</pre>
+
+<p>这样得出了符合第一个left join条件下的uid，uname和add字段的结果，其实到这里就已经实现了以上left join语句的需求，如果还要查询money表的字段，以此类推，把uid作为in的条件查money表。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

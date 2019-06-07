@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>为什么Python类的方法需要加self作为第一个参数？ &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">为什么Python类的方法需要加self作为第一个参数？</h1>
+    <span class="post-date">Jul 12, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+    </span>
+    <p>为什么Python类的方法需要加self作为第一个参数？比如Python类的方法都是这样定义的：</p>
+
+<pre>class CharField(Field):
+    description = _("String (up to %(max_length)s)")
+
+    def __init__(self, *args, **kwargs):
+        super(CharField, self).__init__(*args, **kwargs)
+        self.validators.append(validators.MaxLengthValidator(self.max_length))
+
+    def check(self, **kwargs):
+        errors = super(CharField, self).check(**kwargs)
+        errors.extend(self._check_max_length_attribute(**kwargs))
+        return errors</pre>
+
+<p>看到一篇文章讲这个问题，转载过来了。</p>
+
+<p>《简明python教程》对self的用法介绍如下：</p>
+
+<p>类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称，但是在调用这个方法的时候你不为这个参数赋值，Python会提供这个值。这个特别的变量指对象本身，按照惯例它的名称是self。</p>
+
+<p>虽然你可以给这个参数任何名称，但是 强烈建议 你使用self这个名称——其他名称都是不赞成你使用的。使用一个标准的名称有很多优点——你的程序读者可以迅速识别它，如果使用self的话，还有些IDE（集成开发环境）也可以帮助你。</p>
+
+<p>Python中的self等价于C++中的self指针和Java、C#中的this参考。</p>
+
+<p>你一定很奇怪Python如何给self赋值以及为何你不需要给它赋值。举一个例子会使此变得清晰。假如你有一个类称为MyClass和这个类的一个实例MyObject。当你调用这个对象的方法MyObject.method(arg1, arg2)的时候，这会由Python自动转为MyClass.method(MyObject, arg1, arg2)——这就是self的原理了。</p>
+
+<p>这也意味着如果你有一个不需要参数的方法，你还是得给这个方法定义一个self参数。</p>
+
+<p>我这里补充一下几个实例程序以加深理解：</p>
+
+<pre>class Person:
+ def sayHi(self):
+  print 'Hello,how are you?'
+p=Person()
+p.sayHi()</pre>
+
+<p>结果显示为：</p>
+
+<p>Hello,how are you?</p>
+
+<p>改一下</p>
+
+<pre>class Person:
+ def sayHi(self):
+  print 'Hello,how are you?'
+p=Person()
+Person.sayHi(p)</pre>
+
+<p>结是同上！</p>
+
+<p>再改一下：（去掉self,会怎么样呢？）</p>
+
+<pre>class Person:
+ def sayHi():
+  print 'Hello,how are you?'
+p=Person()
+Person.sayHi(p)
+p.sayHi()</pre>
+
+<p>出现如下错误信息：</p>
+
+<p>Traceback (most recent call last):</p>
+
+<p>File &#8220;C:\pro\Person2.py&#8221;, line 5, in ?</p>
+
+<p>Person.sayHi(p)</p>
+
+<p>TypeError: sayHi() takes no arguments (1 given)</p>
+
+<div id="art">
+  <p>
+    __name__是用来识别一个模块是直接运行还是作为一般的模块被导入的状态。当一个模块是直接运行时，__name__就等于__main__，如果它是作为一般模块被导入时，__name__就是模块本身的名字。
+  </p>
+  
+  <p>
+    示例:
+  </p>
+  
+  <pre>if __name__ == "__main__":
+run()</pre>
+  
+  <p>
+    self是一种约定。在Python中，类方法的第一个参数表示对象本身，在Python中一般使用self。你也可以使用this.
+  </p>
+  
+  <p>
+    示例:
+  </p>
+  
+  <p>
+    a是你想用的方法。但self是一种约定。在调用一个对象的方法时，对象本身被作为self参数传入。如：
+  </p>
+  
+  <pre>class A:
+    def p(self, name):
+        print name
+a=A()
+a.p('aa')</pre>
+  
+  <p>
+    这时，相当于A.p(a, &#8216;aa&#8217;)
+  </p>
+</div>
+
+<div>
+  <p>
+    Python的对象不一定要有__init__方法，无论它是基类还是子类。因为__init__不是构造函数，Python对象在调用__init__的时候已被构造出来，称为“初始化”比较合适。
+  </p>
+  
+  <p>
+    如果一个对象是子类，且需要有__init__，那么在__init__的第一个语句就是父类的__init__（除非父类是像dict一样的内置数据类型则不需要__init__）。调用完后再进行子类的相关初始化，作为方法覆盖。
+  </p>
+  
+  <p>
+    一般在子类覆盖“专有类方法”，并触发相关动作，这样不必使用__init__也能进行更高级的初始化。
+  </p>
+  
+  <p>
+    如果子类的方法覆盖了父类，想调用父类的方法怎么吗？Python没有super啊。很简单，直接“父类名.方法”即可。
+  </p>
+  
+  <p>
+    一般在类定义中方法之外的属性叫“类属性”，它跟定义在方法内的属性有什么区别呢？“ 类属性”可以使得不必生成实例也可以调用，而嵌在方法内的（特别是由__init__初始化后产生的属性），一定得产生实例才可以调用之。
+  </p>
+  
+  <p>
+    所有的类的实例都享有统一的“类属性”，那这“类属性”是否就是类的常量？不是！通过在任意实例调用self.__class__.NAME就可以修改“类属性”，修改后所有的实例都将应用这一新的“类属性”。self.__class__即代表类的引用，不代表任何实例，实例就是self。
+  </p>
+</div>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

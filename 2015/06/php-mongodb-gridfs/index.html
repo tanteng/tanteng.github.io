@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP操作GridFS存储文件到MongoDB的三种方式 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP操作GridFS存储文件到MongoDB的三种方式</h1>
+    <span class="post-date">Jun 18, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.</p>
+
+<pre class="lang:php mark:22 decode:true">//初始化gridfs 
+$conn = new Mongo(); //连接MongoDB 
+$db = $conn-&gt;photos; //选择数据库 
+$grid = $db-&gt;getGridFS(); //取得gridfs对象 
+
+//gridfs有三种方式存储文件 
+//第一种直接存储文件 
+$id = $grid-&gt;storeFile("./logo.png"); 
+
+//第二种存储文件二进制流 
+$data = get_file_contents("./logo.png"); 
+$id = $grid-&gt;storeBytes($data,array("parame"=&gt;’附加参数将随图片一起存入’)); 
+
+//第三种保存直接表单提交的文件$_FILES 
+$id = $grid-&gt;storeUpload('upfile'); 
+//相当于 
+$id = $grid-&gt;storeFile($_FILES[‘upfile’][‘tmp_name’]); 
+
+//--------------以上是保存图片--下面开始读取图片---------------- 
+
+//保存成功后返回$id = md5字符串 
+$logo = $grid-&gt;findOne(array('_id'=&gt;new MongoId($id))); //以_id为索引取得文件 
+header('Content-type: image/png'); //输出图片头 
+echo $logo -&gt;getBytes(); //输出数据流</pre>
+
+<p>注意：在使用$grid-&gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。</p>
+
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

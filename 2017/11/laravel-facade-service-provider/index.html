@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel 服务提供者和门面模式 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel 服务提供者和门面模式</h1>
+    <span class="post-date">Nov 5, 2017 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>以 Laravel 自带的文件系统为例，在 config/app.php 的配置文件的 providers 数组中，注册了一个服务提供者：</p>
+
+<p class="lang:php decode:true  ">
+  Illuminate\Filesystem\FilesystemServiceProvider::class,
+</p>
+
+<p>在 alias 数组中定义了一个门面：</p>
+
+<p class="lang:php decode:true  ">
+  &#8216;File&#8217; => Illuminate\Support\Facades\File::class,
+</p>
+
+<p>通过这两个步骤，我们就可以非常方便的使用 Laravel 提供的文件系统相关的操作，而且调用形式很简洁，如：</p>
+
+<p>File::exist($path)，判断文件是否存在。</p>
+
+<p>File::get($path, $lock = false)，获取一个文件的内容。</p>
+
+<p>File::append($path, $data)，把内容追加到一个文件末尾。</p>
+
+<p>File::files($directory)，获取一个目录下所有文件。</p>
+
+<p>那么这是如何做到的呢？下面分别讲一讲 Laravel 的服务提供者和门面模式。</p>
+
+<h3 id="服务提供者">服务提供者</h3>
+
+<p>先看看定义：</p>
+
+<blockquote>
+<p>服务提供者是所有 Laravel 应用程序启动的中心所在。包括你自己的应用程序，以及所有的 Laravel 核心服务，都是通过服务提供者启动的。</p>
+</blockquote>
+
+<p>在文件系统这个服务提供者中，位置 /vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php，register 方法可以看到绑定了一个单例：</p>
+
+<pre class="lang:php decode:true ">protected function registerNativeFilesystem()
+{
+    $this-&gt;app-&gt;singleton('files', function () {
+        return new Filesystem;
+    });
+}</pre>
+
+<p>这个单例是 Filesystem 这个类的单例模式。当然，这个服务提供者中也可以绑定其他的单例，或做更多的事情。我们这里只研究 File::exist() 这种调用方式的原理。</p>
+
+<p>那么这样一来就有个 files 的单例，实际上是 Filesystem 这个类的实例。</p>
+
+<p>此时，如果没有 Facade，也是可以调用到 Filesystem 这个实例的方法的，那就是这样调用：</p>
+
+<p>app(&#8216;files&#8217;)-&gt;exist($path)</p>
+
+<p>好了，现在开始讲 Facade.</p>
+
+<h3 id="facade-门面模式">Facade 门面模式</h3>
+
+<p>先看下简介：</p>
+
+<blockquote>
+<p>Facades /fəˈsäd/ 为应用程序的服务容器中可用的类提供了一个「静态」接口。Laravel 自带了许多的 facades，可以用来访问其几乎所有的服务。Laravel facades 就是服务容器里那些基类的「静态代理」，相比于传统的静态方法调用，facades 在提供更简洁且丰富的语法的同时，还有更好的可测试性和扩展性。</p>
+</blockquote>
+
+<p>本文一开始讲到 alias 数组定义了一个 File，具体的类是</p>
+
+<p class="">
+  Illuminate\Support\Facades\File::class,
+</p>
+
+<p>它的内容是：</p>
+
+<pre class="lang:php decode:true ">class File extends Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return 'files';
+    }
+}</pre>
+
+<p>它实际上返回了一个名称，注意这个名称 files，不就是刚刚绑定的单例模式的名称吗？没错。</p>
+
+<p>这样一来，就可以使用 File 这个别名或者说门面，来调用这个 Filesystem 实例中的方法了。</p>
+
+<p>通过本文，希望大家能够了解服务提供者，Facade，和实际调用的类的实例之间的关系。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

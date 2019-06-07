@@ -1,0 +1,2704 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://tanteng.me/about/</loc>
+    <lastmod>2019-06-07T18:51:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/</loc>
+    <lastmod>2019-06-07T18:51:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/</loc>
+    <lastmod>2019-02-03T15:30:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/old_post/</loc>
+    <lastmod>2019-02-03T15:30:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91/</loc>
+    <lastmod>2019-02-03T15:30:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2019/02/reding-list-28/</loc>
+    <lastmod>2019-02-03T15:30:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2019/01/reding-list-27/</loc>
+    <lastmod>2019-01-23T04:14:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2019/01/reding-list-26/</loc>
+    <lastmod>2019-01-02T06:14:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/12/reding-list-25/</loc>
+    <lastmod>2018-12-09T05:05:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/11/reding-list-24/</loc>
+    <lastmod>2018-11-22T03:08:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/11/reding-list-23/</loc>
+    <lastmod>2018-11-12T07:52:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/develop/</loc>
+    <lastmod>2018-10-30T03:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/mysql/</loc>
+    <lastmod>2018-10-30T03:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/10/mysql-select-null/</loc>
+    <lastmod>2018-10-30T03:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/10/reding-list-22/</loc>
+    <lastmod>2018-10-28T14:40:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/10/reding-list-21/</loc>
+    <lastmod>2018-10-23T09:28:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/10/http-204/</loc>
+    <lastmod>2018-10-19T06:15:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/10/reding-list-20/</loc>
+    <lastmod>2018-10-06T14:28:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/reding-list-19/</loc>
+    <lastmod>2018-09-22T14:57:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/laravel/</loc>
+    <lastmod>2018-09-15T05:41:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/laravel-error-handing/</loc>
+    <lastmod>2018-09-15T05:41:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/php/</loc>
+    <lastmod>2018-09-15T05:41:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/laravel-authorize-gates/</loc>
+    <lastmod>2018-09-14T11:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/redis-scan/</loc>
+    <lastmod>2018-09-05T14:17:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/reding-list-18/</loc>
+    <lastmod>2018-09-04T16:37:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/09/redis-pipeline-transaction/</loc>
+    <lastmod>2018-09-04T16:25:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/08/laravel-chunk-tip/</loc>
+    <lastmod>2018-08-14T15:39:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/08/reding-list-17/</loc>
+    <lastmod>2018-08-06T11:04:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/08/laravel-why-not-use-blpop/</loc>
+    <lastmod>2018-07-31T17:18:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/07/understand-laravel-middleware/</loc>
+    <lastmod>2018-07-29T16:25:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/07/reding-list-16/</loc>
+    <lastmod>2018-07-26T05:04:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/07/reding-list-15/</loc>
+    <lastmod>2018-07-19T03:07:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/07/reding-list-14/</loc>
+    <lastmod>2018-07-13T06:15:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/07/reding-list-13/</loc>
+    <lastmod>2018-07-06T23:39:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/reding-list-12/</loc>
+    <lastmod>2018-06-29T13:29:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/reding-list-11/</loc>
+    <lastmod>2018-06-24T03:49:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/redis/</loc>
+    <lastmod>2018-06-24T02:43:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/redis-transaction-atomic/</loc>
+    <lastmod>2018-06-24T02:43:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2018-06-24T02:43:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/reding-list-10/</loc>
+    <lastmod>2018-06-18T14:36:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/laravel-event/</loc>
+    <lastmod>2018-06-17T02:10:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/06/reding-list-9/</loc>
+    <lastmod>2018-06-06T16:19:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2018-06-06T16:19:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/go/</loc>
+    <lastmod>2018-05-29T06:34:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/vscode-debug-golang/</loc>
+    <lastmod>2018-05-29T06:34:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/laravel-5-5-gulp/</loc>
+    <lastmod>2018-05-28T12:45:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</loc>
+    <lastmod>2018-05-28T11:32:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2018-05-28T11:02:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/laravel-datatables/</loc>
+    <lastmod>2018-05-28T11:02:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/reding-list-8/</loc>
+    <lastmod>2018-05-26T15:08:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/php-find-the-k-largest/</loc>
+    <lastmod>2018-05-25T08:36:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/web-auth/</loc>
+    <lastmod>2018-05-21T04:55:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/reding-list-7/</loc>
+    <lastmod>2018-05-13T10:43:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/reding-list-6/</loc>
+    <lastmod>2018-05-06T04:39:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/05/golang-str-length/</loc>
+    <lastmod>2018-05-02T02:52:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/reding-list/</loc>
+    <lastmod>2018-04-28T16:34:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/reding-list-4/</loc>
+    <lastmod>2018-04-22T06:33:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/laravel-relationships-settable/</loc>
+    <lastmod>2018-04-19T11:49:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/reding-list-3/</loc>
+    <lastmod>2018-04-10T12:10:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/php-interview-2/</loc>
+    <lastmod>2018-04-10T03:11:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/04/reding-list-2/</loc>
+    <lastmod>2018-04-02T02:26:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/03/docker-dev-environment/</loc>
+    <lastmod>2018-03-29T02:48:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/03/php-cow/</loc>
+    <lastmod>2018-03-26T14:04:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/03/reding-list-5/</loc>
+    <lastmod>2018-03-26T02:14:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/03/consistent-hashing/</loc>
+    <lastmod>2018-03-01T11:03:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2018-03-01T11:03:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2018/01/laravel-dependency/</loc>
+    <lastmod>2018-01-18T09:25:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/laravel-queue-excute/</loc>
+    <lastmod>2017-12-24T07:49:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-12-23T15:56:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/software-design/</loc>
+    <lastmod>2017-12-23T15:56:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/laravel-supervisor-queue/</loc>
+    <lastmod>2017-12-23T11:26:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/bash-sh/</loc>
+    <lastmod>2017-12-17T12:20:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/mysql-optimize-tips/</loc>
+    <lastmod>2017-12-17T06:48:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/laravel-queue-tips/</loc>
+    <lastmod>2017-12-11T10:08:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/php-stream/</loc>
+    <lastmod>2017-12-07T15:03:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/12/php-ini-config/</loc>
+    <lastmod>2017-12-04T03:56:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/mac-open-user-local/</loc>
+    <lastmod>2017-11-29T14:56:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/laravel-factory-pattern/</loc>
+    <lastmod>2017-11-22T03:35:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/golang-parameter-passing/</loc>
+    <lastmod>2017-11-19T12:22:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/golang-for-timeout/</loc>
+    <lastmod>2017-11-18T14:48:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/golang-close-channel/</loc>
+    <lastmod>2017-11-17T09:01:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/golang-smtp-send-mail/</loc>
+    <lastmod>2017-11-16T09:45:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</loc>
+    <lastmod>2017-11-09T08:44:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/11/laravel-facade-service-provider/</loc>
+    <lastmod>2017-11-05T16:30:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/redis-ip-limit/</loc>
+    <lastmod>2017-10-25T14:28:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/php-intval-precision/</loc>
+    <lastmod>2017-10-15T08:15:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/docker-laravel-local-environment/</loc>
+    <lastmod>2017-10-14T11:28:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/mysql-rand-range/</loc>
+    <lastmod>2017-10-09T10:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/503-service-unavailable/</loc>
+    <lastmod>2017-10-08T14:44:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2017-10-08T06:14:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/computer-concepts-in-life/</loc>
+    <lastmod>2017-10-08T06:14:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/10/checking-whether-the-c-compiler-works-no/</loc>
+    <lastmod>2017-10-06T12:11:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/laradock-ssh-workspace/</loc>
+    <lastmod>2017-09-21T06:39:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/wordpress/</loc>
+    <lastmod>2017-09-13T04:32:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/wp-redis/</loc>
+    <lastmod>2017-09-13T04:32:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/debug-backtrace-php/</loc>
+    <lastmod>2017-09-11T07:37:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/laravel-session-scheme/</loc>
+    <lastmod>2017-09-11T03:41:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/git-merge-rebase/</loc>
+    <lastmod>2017-09-05T10:42:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/09/php-error-handle/</loc>
+    <lastmod>2017-09-02T07:27:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/08/golang-generic/</loc>
+    <lastmod>2017-08-11T10:14:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/08/tcp-ip-life-ex/</loc>
+    <lastmod>2017-08-02T03:02:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/07/golang-decode-json/</loc>
+    <lastmod>2017-07-23T14:04:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/07/php-curl-guzzlehttp/</loc>
+    <lastmod>2017-07-22T06:02:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/07/php-examination-part-1/</loc>
+    <lastmod>2017-07-11T02:02:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/07/go-producer-consumer/</loc>
+    <lastmod>2017-07-08T10:44:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/07/defer-golang/</loc>
+    <lastmod>2017-07-06T08:17:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/golang-month-iteration/</loc>
+    <lastmod>2017-06-20T06:41:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/goroutine-concurrent-map-writes/</loc>
+    <lastmod>2017-06-19T10:41:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/golang-function-done/</loc>
+    <lastmod>2017-06-19T10:02:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/web-api-security/</loc>
+    <lastmod>2017-06-16T13:07:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/alter-table-utf8mb4/</loc>
+    <lastmod>2017-06-09T09:52:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/06/golang-oop-extends/</loc>
+    <lastmod>2017-06-03T08:19:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/trie-intro/</loc>
+    <lastmod>2017-05-26T03:17:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/cgi-fastcgi-php-fpm/</loc>
+    <lastmod>2017-05-25T15:30:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/laravel-cache-clear-warning/</loc>
+    <lastmod>2017-05-23T09:29:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/mysql-my-cnf/</loc>
+    <lastmod>2017-05-22T05:41:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/golang-php-array-slice-compare/</loc>
+    <lastmod>2017-05-20T06:48:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/golang-byte-slice/</loc>
+    <lastmod>2017-05-20T05:42:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/laravel-etag-middleware/</loc>
+    <lastmod>2017-05-19T04:51:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/linux-clear-cache-buffer/</loc>
+    <lastmod>2017-05-18T08:23:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/golang-append-slice-to-slice/</loc>
+    <lastmod>2017-05-10T07:11:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/05/shell-check-url/</loc>
+    <lastmod>2017-05-02T03:05:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/netstat-tcp-state/</loc>
+    <lastmod>2017-04-28T03:37:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/deadline/</loc>
+    <lastmod>2017-04-23T05:31:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/golang-rand-int/</loc>
+    <lastmod>2017-04-22T04:37:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/nginx-13-permission-denied-111-connection-refused/</loc>
+    <lastmod>2017-04-19T07:49:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/churchill-motto/</loc>
+    <lastmod>2017-04-12T13:54:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E7%B2%BE%E5%BD%A9%E7%BD%91%E6%91%98/</loc>
+    <lastmod>2017-04-12T13:54:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/04/beego-table-name/</loc>
+    <lastmod>2017-04-02T11:57:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/beego/</loc>
+    <lastmod>2017-04-02T11:57:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/2017-php-way/</loc>
+    <lastmod>2017-03-31T07:58:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/laravel-model-join-wrong-id/</loc>
+    <lastmod>2017-03-31T04:50:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/virtualbox-blue-screen/</loc>
+    <lastmod>2017-03-24T11:18:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/baidu-union-verify-https-website/</loc>
+    <lastmod>2017-03-22T15:44:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/linux-nginx-ip/</loc>
+    <lastmod>2017-03-16T14:03:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/03/php-float-rand/</loc>
+    <lastmod>2017-03-01T08:59:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/go-websocket-demo/</loc>
+    <lastmod>2017-02-27T03:13:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/free-up-ubuntu-disk/</loc>
+    <lastmod>2017-02-23T04:57:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/create-laravel-5-pakage/</loc>
+    <lastmod>2017-02-20T08:39:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/git-fetch-permission-denied/</loc>
+    <lastmod>2017-02-16T07:56:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/git-reset-commit-id/</loc>
+    <lastmod>2017-02-13T11:11:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/02/login-replay-attacks/</loc>
+    <lastmod>2017-02-01T04:59:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/01/mysql-alter-table-big-data/</loc>
+    <lastmod>2017-01-19T12:58:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/01/php-pack/</loc>
+    <lastmod>2017-01-19T12:41:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/01/mysql-explain/</loc>
+    <lastmod>2017-01-19T09:07:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/01/linux-postfix-maildrop/</loc>
+    <lastmod>2017-01-14T05:52:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2017/01/supervisor-laravel-queue/</loc>
+    <lastmod>2017-01-07T12:48:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/window-location-reload-and-href/</loc>
+    <lastmod>2016-12-31T02:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/laravel-admin-install/</loc>
+    <lastmod>2016-12-24T07:13:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/nginx-test-environment/</loc>
+    <lastmod>2016-12-17T06:19:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/reading-and-maturing-personalities/</loc>
+    <lastmod>2016-12-05T13:31:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/laravel-env-null/</loc>
+    <lastmod>2016-12-04T15:35:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/road-to-myself/</loc>
+    <lastmod>2016-12-02T06:57:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/12/linux-cmd/</loc>
+    <lastmod>2016-11-30T17:16:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/11/grep-tail-last-line/</loc>
+    <lastmod>2016-11-20T06:58:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/11/php-array-sort-order/</loc>
+    <lastmod>2016-11-16T15:54:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/11/flock-write/</loc>
+    <lastmod>2016-11-13T14:00:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/nginx-load-balance-conf/</loc>
+    <lastmod>2016-10-30T14:56:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/php-json-encode-and-decode/</loc>
+    <lastmod>2016-10-28T06:39:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/nginx-map-redirect/</loc>
+    <lastmod>2016-10-10T11:00:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/nginx-map-http-user-agent/</loc>
+    <lastmod>2016-10-10T07:02:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/laravel-session-middleware/</loc>
+    <lastmod>2016-10-07T16:47:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/10/php-foreach-batch/</loc>
+    <lastmod>2016-10-06T10:03:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/sso-access/</loc>
+    <lastmod>2016-09-30T11:55:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/mysql-master-slave-and-master-master/</loc>
+    <lastmod>2016-09-28T10:20:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/register-shutdown-function/</loc>
+    <lastmod>2016-09-28T09:31:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/git-work-stage/</loc>
+    <lastmod>2016-09-27T02:01:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/modern-php/</loc>
+    <lastmod>2016-09-25T14:58:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/php-binary-safe/</loc>
+    <lastmod>2016-09-25T14:33:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/mysql-unique-duplicate/</loc>
+    <lastmod>2016-09-23T08:28:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/umeng-ios-php-sdk-customized-wrong/</loc>
+    <lastmod>2016-09-23T07:05:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/vim-syntax/</loc>
+    <lastmod>2016-09-21T14:06:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/09/lets-encrypt-multi-domain-https/</loc>
+    <lastmod>2016-09-12T11:26:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/expcet-ssh-password/</loc>
+    <lastmod>2016-08-19T14:34:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/php-fatal-error-this-is-null/</loc>
+    <lastmod>2016-08-18T10:40:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/npm-err-error-eperm-operation-not-permitted-rename/</loc>
+    <lastmod>2016-08-12T12:30:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/nodejs-and-npm-install/</loc>
+    <lastmod>2016-08-12T06:26:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/laravel-office-sync/</loc>
+    <lastmod>2016-08-03T02:55:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/laravel-routes-map/</loc>
+    <lastmod>2016-08-02T09:20:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/laravel-debugbar-facade/</loc>
+    <lastmod>2016-08-01T15:57:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/08/laravel-debugbar-sql/</loc>
+    <lastmod>2016-08-01T13:10:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/php7-performance-inisight-into/</loc>
+    <lastmod>2016-07-29T03:23:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/jquery-intput-file-width-height/</loc>
+    <lastmod>2016-07-25T11:14:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/php-exec-status/</loc>
+    <lastmod>2016-07-21T13:14:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/redis-sorted-set/</loc>
+    <lastmod>2016-07-19T10:55:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/misconf-redis-configured-save-rdb-snapshots/</loc>
+    <lastmod>2016-07-15T02:15:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/submit-composer-packagist/</loc>
+    <lastmod>2016-07-13T04:04:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/jquery-append-options/</loc>
+    <lastmod>2016-07-11T08:52:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/laravel-5-queue/</loc>
+    <lastmod>2016-07-10T10:14:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/ssrf-shell/</loc>
+    <lastmod>2016-07-07T10:39:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/07/gulp-watch/</loc>
+    <lastmod>2016-07-05T06:14:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/php-curl-post-send-file/</loc>
+    <lastmod>2016-06-30T03:29:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/binshm-bad-interpreter-no-file-directory/</loc>
+    <lastmod>2016-06-21T07:59:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/gulp-notify-notify-send-must-be-installed/</loc>
+    <lastmod>2016-06-20T12:58:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/mysql-command/</loc>
+    <lastmod>2016-06-15T11:29:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/generating-a-new-ssh-key/</loc>
+    <lastmod>2016-06-08T12:25:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/nginx-gzip/</loc>
+    <lastmod>2016-06-05T06:10:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/jquery-iframe/</loc>
+    <lastmod>2016-06-03T11:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/mysql-data-length/</loc>
+    <lastmod>2016-06-03T11:24:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/php7-opcache/</loc>
+    <lastmod>2016-06-02T16:20:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/06/laravel-optimize/</loc>
+    <lastmod>2016-06-02T11:59:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/preg_replace_callback-usage/</loc>
+    <lastmod>2016-05-28T09:53:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/crontab-task-note/</loc>
+    <lastmod>2016-05-18T08:28:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/linux-rsync/</loc>
+    <lastmod>2016-05-11T09:54:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/tar-exclude/</loc>
+    <lastmod>2016-05-11T05:11:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/set_include_path-require/</loc>
+    <lastmod>2016-05-04T04:04:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/crontab-sample/</loc>
+    <lastmod>2016-05-03T12:46:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/05/markdown-bootstrap/</loc>
+    <lastmod>2016-05-03T12:36:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/bower-inpm-nstall/</loc>
+    <lastmod>2016-04-30T14:42:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/bower-js/</loc>
+    <lastmod>2016-04-30T03:18:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/composer-ignore-reqs/</loc>
+    <lastmod>2016-04-26T16:15:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/jquery-on-dom/</loc>
+    <lastmod>2016-04-25T12:00:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/git-init/</loc>
+    <lastmod>2016-04-18T02:26:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/crontab-demo/</loc>
+    <lastmod>2016-04-16T06:36:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/nginx-set-fastcgi-param/</loc>
+    <lastmod>2016-04-13T10:58:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/linux-grep/</loc>
+    <lastmod>2016-04-13T06:59:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/vagrantfile-synced-folder/</loc>
+    <lastmod>2016-04-08T14:12:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/nginx-ssi/</loc>
+    <lastmod>2016-04-08T12:47:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/php-fpm-start-servers/</loc>
+    <lastmod>2016-04-05T14:34:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/git-config-safe/</loc>
+    <lastmod>2016-04-04T15:31:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/04/homestead/</loc>
+    <lastmod>2016-04-03T10:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/centos-7-repo/</loc>
+    <lastmod>2016-03-31T09:40:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/laravel-redirect/</loc>
+    <lastmod>2016-03-31T02:50:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/php-fpm-conf/</loc>
+    <lastmod>2016-03-29T16:55:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/aliyun-centos-7-swap/</loc>
+    <lastmod>2016-03-29T01:52:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/centos7-mariadb-break/</loc>
+    <lastmod>2016-03-28T04:06:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/innodb_buffer_pool_size/</loc>
+    <lastmod>2016-03-28T04:02:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/linux-alias-ln/</loc>
+    <lastmod>2016-03-27T12:24:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/nginx-buffer-params/</loc>
+    <lastmod>2016-03-27T10:07:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/nginx-conf-demo/</loc>
+    <lastmod>2016-03-27T10:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/linux-install-folder/</loc>
+    <lastmod>2016-03-24T08:53:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/windows-virtualbox-vagrant-centos7/</loc>
+    <lastmod>2016-03-24T08:08:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/mysql-drop-tables-prefix/</loc>
+    <lastmod>2016-03-24T05:49:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/redis-maxmemory/</loc>
+    <lastmod>2016-03-23T08:48:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/redis-6379-safe/</loc>
+    <lastmod>2016-03-21T06:07:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/laravel-wordpress-corcel/</loc>
+    <lastmod>2016-03-20T04:29:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/mysql-backup/</loc>
+    <lastmod>2016-03-19T16:48:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/nginx-301/</loc>
+    <lastmod>2016-03-16T15:34:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/restful/</loc>
+    <lastmod>2016-03-09T02:17:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/php-closure-use/</loc>
+    <lastmod>2016-03-08T04:14:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/03/centos-redis-server/</loc>
+    <lastmod>2016-03-06T15:27:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/laravel-nginx-server-conf/</loc>
+    <lastmod>2016-02-20T16:43:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/aliyun-recommend-code/</loc>
+    <lastmod>2016-02-20T16:17:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/laravel-5-2-auth/</loc>
+    <lastmod>2016-02-19T07:14:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/laravel-maintenance/</loc>
+    <lastmod>2016-02-18T14:35:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/git-rm-cached-diff/</loc>
+    <lastmod>2016-02-18T09:03:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/truncate-table-foreign-keys/</loc>
+    <lastmod>2016-02-18T03:36:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/centos-7-yum-install-mysql/</loc>
+    <lastmod>2016-02-08T05:30:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/centos-yum-install-php7/</loc>
+    <lastmod>2016-02-03T09:53:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/02/crc32-mysql-index/</loc>
+    <lastmod>2016-02-01T01:29:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/laravel-singleton-bind/</loc>
+    <lastmod>2016-01-29T06:06:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/php-goto/</loc>
+    <lastmod>2016-01-28T10:47:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/laravel-construct-ioc/</loc>
+    <lastmod>2016-01-28T05:59:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/laravel-facades-register/</loc>
+    <lastmod>2016-01-27T06:42:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/repeat-group-having/</loc>
+    <lastmod>2016-01-25T09:59:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2016/01/mysql-mysqldump-usage/</loc>
+    <lastmod>2016-01-19T15:50:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/composer-autoload/</loc>
+    <lastmod>2015-12-24T15:41:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/laravel-trait/</loc>
+    <lastmod>2015-12-21T14:03:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/laravel-migrate-mysql-2000/</loc>
+    <lastmod>2015-12-20T09:50:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/python3/</loc>
+    <lastmod>2015-12-13T16:24:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/python-install-mysql-python/</loc>
+    <lastmod>2015-12-13T16:24:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/brew-folder-not-writable/</loc>
+    <lastmod>2015-12-13T16:11:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/flask/</loc>
+    <lastmod>2015-12-12T07:34:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/sae-python-vendor/</loc>
+    <lastmod>2015-12-12T07:34:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/python-best-practice/</loc>
+    <lastmod>2015-12-12T04:08:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/flask-vhost-apache-proxy/</loc>
+    <lastmod>2015-12-11T14:30:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/flask-config-extends-class/</loc>
+    <lastmod>2015-12-11T11:42:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/pycharm-virtualenv/</loc>
+    <lastmod>2015-12-10T01:49:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/no-module-named-flask-ext-openid/</loc>
+    <lastmod>2015-12-09T10:35:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/python-mydecorator/</loc>
+    <lastmod>2015-12-09T03:10:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/flask-hello-world/</loc>
+    <lastmod>2015-12-08T11:36:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/trusted-host-pip/</loc>
+    <lastmod>2015-12-08T11:31:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/windows-python-279/</loc>
+    <lastmod>2015-12-08T06:18:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/12/flask-sslcontext/</loc>
+    <lastmod>2015-12-08T05:35:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/scrapy/</loc>
+    <lastmod>2015-11-26T03:39:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/windows-python27-scrapy/</loc>
+    <lastmod>2015-11-26T03:39:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/python-singleton/</loc>
+    <lastmod>2015-11-24T06:44:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/pip-mirror/</loc>
+    <lastmod>2015-11-24T03:44:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/httpd-vhost-domain-alias/</loc>
+    <lastmod>2015-11-19T06:24:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/django/</loc>
+    <lastmod>2015-11-17T02:05:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/python-ebook/</loc>
+    <lastmod>2015-11-17T02:05:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/html5-localstorage/</loc>
+    <lastmod>2015-11-16T06:20:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/serialize-json-diff/</loc>
+    <lastmod>2015-11-12T06:53:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/sourcetree-commit-slowly/</loc>
+    <lastmod>2015-11-11T10:04:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/chmod-number/</loc>
+    <lastmod>2015-11-10T06:31:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/php-stdclass/</loc>
+    <lastmod>2015-11-08T13:38:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/mac-git-missing-xcrun/</loc>
+    <lastmod>2015-11-08T07:56:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/python3-requests-get-post/</loc>
+    <lastmod>2015-11-05T06:48:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/sourcetree-release/</loc>
+    <lastmod>2015-11-05T06:03:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/python3-wechat/</loc>
+    <lastmod>2015-11-04T14:05:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/wordpress-plugins/</loc>
+    <lastmod>2015-11-04T05:58:01+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/wechat-rewrd-wordpress-plugin/</loc>
+    <lastmod>2015-11-04T05:58:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/redis-incr/</loc>
+    <lastmod>2015-11-02T05:59:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/11/redis-lock-incr/</loc>
+    <lastmod>2015-11-02T03:23:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/call-user-func-vs-new-class/</loc>
+    <lastmod>2015-10-30T10:43:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/php-reflectionclass/</loc>
+    <lastmod>2015-10-30T02:46:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/php-oop-typehinting/</loc>
+    <lastmod>2015-10-29T03:10:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/yii-2.0/</loc>
+    <lastmod>2015-10-29T03:10:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/php-simple-singleton-pattern-class/</loc>
+    <lastmod>2015-10-25T10:24:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/redis-jquery-ajax/</loc>
+    <lastmod>2015-10-25T07:00:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/linux-tail-grep/</loc>
+    <lastmod>2015-10-21T15:51:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/website-client/</loc>
+    <lastmod>2015-10-16T15:09:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/php-array-merge/</loc>
+    <lastmod>2015-10-16T15:04:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/10/mac-ip-addr/</loc>
+    <lastmod>2015-10-10T14:46:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/09/program-language-performance/</loc>
+    <lastmod>2015-09-27T02:43:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/09/mac-firefox-hostadmin/</loc>
+    <lastmod>2015-09-04T16:58:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/09/php-lower-diff/</loc>
+    <lastmod>2015-09-04T01:35:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/python-excption/</loc>
+    <lastmod>2015-08-19T02:34:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/python-for-else/</loc>
+    <lastmod>2015-08-17T07:51:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/jquery-cookie-base/</loc>
+    <lastmod>2015-08-14T01:35:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/jquery-cookie/</loc>
+    <lastmod>2015-08-13T13:03:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php-float/</loc>
+    <lastmod>2015-08-12T06:24:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/virtualbox-vagrant/</loc>
+    <lastmod>2015-08-11T08:53:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php-closure-demo/</loc>
+    <lastmod>2015-08-11T08:35:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/redis-lock/</loc>
+    <lastmod>2015-08-11T08:21:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php-httpsqs/</loc>
+    <lastmod>2015-08-11T05:38:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/mod-concat-js-css/</loc>
+    <lastmod>2015-08-11T01:39:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php-yield/</loc>
+    <lastmod>2015-08-08T16:12:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php5-6-curl/</loc>
+    <lastmod>2015-08-04T10:24:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/js-optimization/</loc>
+    <lastmod>2015-08-04T01:35:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/08/php-shell-php_eol/</loc>
+    <lastmod>2015-08-01T06:34:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-gridfs-objectid/</loc>
+    <lastmod>2015-07-30T03:56:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/sae-cron/</loc>
+    <lastmod>2015-07-23T01:30:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/unix-timestamp/</loc>
+    <lastmod>2015-07-21T06:09:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/phpstorm-9-0%E6%B3%A8%E5%86%8C%E7%A0%81license-key/</loc>
+    <lastmod>2015-07-17T15:38:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-mysql/</loc>
+    <lastmod>2015-07-15T02:18:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-encoding-style/</loc>
+    <lastmod>2015-07-14T08:45:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python3-sys-argv/</loc>
+    <lastmod>2015-07-13T15:59:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-self/</loc>
+    <lastmod>2015-07-12T10:15:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/local-variable-referenced-before-assignment/</loc>
+    <lastmod>2015-07-11T14:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-closure/</loc>
+    <lastmod>2015-07-11T14:21:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-args-kwargs/</loc>
+    <lastmod>2015-07-11T13:37:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python3-ascii-letters/</loc>
+    <lastmod>2015-07-11T05:10:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python3-floor-division/</loc>
+    <lastmod>2015-07-10T13:43:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-mongodb-save-file/</loc>
+    <lastmod>2015-07-10T09:47:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python%E4%B8%AD%E7%9A%84switch-case/</loc>
+    <lastmod>2015-07-09T12:51:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/php-return/</loc>
+    <lastmod>2015-07-08T15:22:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/form-submit/</loc>
+    <lastmod>2015-07-08T15:12:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/authentication-failed/</loc>
+    <lastmod>2015-07-08T06:40:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/pymongo-cllient/</loc>
+    <lastmod>2015-07-07T10:39:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/jquery-inarray/</loc>
+    <lastmod>2015-07-06T02:33:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/python-import-this/</loc>
+    <lastmod>2015-07-05T11:57:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/array-map-reduce-foreach/</loc>
+    <lastmod>2015-07-03T08:26:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/07/php-array-reduce/</loc>
+    <lastmod>2015-07-03T03:28:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/mongodb/</loc>
+    <lastmod>2015-06-22T03:06:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/mongodb-mysql/</loc>
+    <lastmod>2015-06-22T03:06:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/mongodb-xshell/</loc>
+    <lastmod>2015-06-21T14:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/thinkphp/</loc>
+    <lastmod>2015-06-19T09:44:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/thinkphp-mongodb-getgridfs/</loc>
+    <lastmod>2015-06-19T09:44:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/php-mongodb-gridfs/</loc>
+    <lastmod>2015-06-18T08:47:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/mongodb-gridfs-php/</loc>
+    <lastmod>2015-06-18T03:20:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/mongodb-excel/</loc>
+    <lastmod>2015-06-17T07:44:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/window-location-assign-href/</loc>
+    <lastmod>2015-06-12T06:14:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/sublime-php-html-js/</loc>
+    <lastmod>2015-06-12T03:47:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/wang-xiao-bo-internet/</loc>
+    <lastmod>2015-06-11T15:32:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/mysql-zerofill/</loc>
+    <lastmod>2015-06-11T08:39:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/left-join-split-sql/</loc>
+    <lastmod>2015-06-09T16:29:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/practice-and-perfect/</loc>
+    <lastmod>2015-06-07T15:50:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/yii2-digpage/</loc>
+    <lastmod>2015-06-05T15:54:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/array-unshift-shift-pop-push/</loc>
+    <lastmod>2015-06-04T15:48:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/cat-tag-exclude/</loc>
+    <lastmod>2015-06-04T05:04:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/pc-mobile-adapter/</loc>
+    <lastmod>2015-06-04T04:00:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/06/php-anonymous-function/</loc>
+    <lastmod>2015-06-01T09:00:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/bash_profile-mac-php/</loc>
+    <lastmod>2015-05-30T15:42:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/js-closure-example/</loc>
+    <lastmod>2015-05-27T13:48:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/php-static-bind/</loc>
+    <lastmod>2015-05-27T03:38:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/js-closure/</loc>
+    <lastmod>2015-05-26T10:23:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/niuniu/</loc>
+    <lastmod>2015-05-26T08:25:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/php-composer/</loc>
+    <lastmod>2015-05-26T03:49:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/rest-get-post-put-delete/</loc>
+    <lastmod>2015-05-23T15:35:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/directory-path-separator/</loc>
+    <lastmod>2015-05-21T10:25:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/utf8mb4/</loc>
+    <lastmod>2015-05-20T15:16:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/left-join-duplication/</loc>
+    <lastmod>2015-05-19T08:53:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/js-lock/</loc>
+    <lastmod>2015-05-19T03:29:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/django-querysets/</loc>
+    <lastmod>2015-05-15T16:07:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-fib-generator/</loc>
+    <lastmod>2015-05-13T08:08:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python3-mysql/</loc>
+    <lastmod>2015-05-12T13:46:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-tablib-excel/</loc>
+    <lastmod>2015-05-12T08:45:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-from-import/</loc>
+    <lastmod>2015-05-12T07:41:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/bs4-example/</loc>
+    <lastmod>2015-05-12T03:50:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/beautiful-soul-4-for-python3/</loc>
+    <lastmod>2015-05-11T13:29:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-filename/</loc>
+    <lastmod>2015-05-11T09:14:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/requests-html/</loc>
+    <lastmod>2015-05-11T05:44:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-scope/</loc>
+    <lastmod>2015-05-10T04:24:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/django-python3-install/</loc>
+    <lastmod>2015-05-09T07:25:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-dict-get/</loc>
+    <lastmod>2015-05-08T15:34:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-for-level/</loc>
+    <lastmod>2015-05-08T15:16:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-requirements-pip/</loc>
+    <lastmod>2015-05-08T03:17:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-name/</loc>
+    <lastmod>2015-05-08T02:47:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/sae-django/</loc>
+    <lastmod>2015-05-05T13:26:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/05/python-guide-chinese/</loc>
+    <lastmod>2015-05-05T06:13:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/redis-php-array/</loc>
+    <lastmod>2015-04-21T03:09:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/jquery-best-practice/</loc>
+    <lastmod>2015-04-16T15:41:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/terminal-python3/</loc>
+    <lastmod>2015-04-12T07:05:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/jquery-eval-json/</loc>
+    <lastmod>2015-04-11T08:58:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/jquery-grep/</loc>
+    <lastmod>2015-04-10T16:28:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/mysql-commit/</loc>
+    <lastmod>2015-04-07T15:25:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/js-null-undefined/</loc>
+    <lastmod>2015-04-02T15:58:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/jquery-performance/</loc>
+    <lastmod>2015-04-02T14:44:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/04/jsonp-ajax/</loc>
+    <lastmod>2015-04-01T15:12:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/js-bibao/</loc>
+    <lastmod>2015-03-30T16:00:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/ying-hua/</loc>
+    <lastmod>2015-03-29T12:29:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/sequel-import/</loc>
+    <lastmod>2015-03-21T10:50:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/mamp-mysql-pass/</loc>
+    <lastmod>2015-03-14T16:53:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/change-things/</loc>
+    <lastmod>2015-03-14T04:10:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/beautiful-scenery-in-dream/</loc>
+    <lastmod>2015-03-14T04:07:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/mac-sublime-package-control/</loc>
+    <lastmod>2015-03-11T14:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/stronger/</loc>
+    <lastmod>2015-03-06T16:49:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/03/php-api-token/</loc>
+    <lastmod>2015-03-03T11:57:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/02/macbook-move/</loc>
+    <lastmod>2015-02-12T16:38:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/02/macbook-keyboard/</loc>
+    <lastmod>2015-02-12T05:31:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/seo-yoast-tips/</loc>
+    <lastmod>2015-01-31T03:36:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/php-globals-global-difference/</loc>
+    <lastmod>2015-01-31T02:28:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/char-varchar/</loc>
+    <lastmod>2015-01-30T02:57:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/add_rewrite_tag_rule/</loc>
+    <lastmod>2015-01-29T06:09:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/qin-hu-wust/</loc>
+    <lastmod>2015-01-29T05:48:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/mysql-regexp/</loc>
+    <lastmod>2015-01-29T03:16:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/f100-font-awesome/</loc>
+    <lastmod>2015-01-20T06:08:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/css-content/</loc>
+    <lastmod>2015-01-20T05:58:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/pc-js-mobile/</loc>
+    <lastmod>2015-01-18T15:23:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/require-once-include/</loc>
+    <lastmod>2015-01-16T02:15:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2015/01/flowplayer-web-video/</loc>
+    <lastmod>2015-01-09T09:33:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/how-to-read-a-book/</loc>
+    <lastmod>2014-12-24T07:19:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/php-xml2json/</loc>
+    <lastmod>2014-12-11T02:46:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/extension-loaded-json/</loc>
+    <lastmod>2014-12-09T07:34:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/baby-name-star/</loc>
+    <lastmod>2014-12-08T03:42:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/html6-namespace/</loc>
+    <lastmod>2014-12-08T02:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/jobs-apple/</loc>
+    <lastmod>2014-12-08T02:12:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/telephone-bind/</loc>
+    <lastmod>2014-12-07T05:13:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/mysql-update-left-join/</loc>
+    <lastmod>2014-12-05T07:35:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/hk-50y/</loc>
+    <lastmod>2014-12-05T03:29:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/wp-plugin-database/</loc>
+    <lastmod>2014-12-03T08:51:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/euc-cn/</loc>
+    <lastmod>2014-12-01T10:21:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/wordpress-query-rewrite/</loc>
+    <lastmod>2014-12-01T06:54:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/php-array-static/</loc>
+    <lastmod>2014-12-01T06:18:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/ma-yun-yu-lu/</loc>
+    <lastmod>2014-12-01T05:29:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/12/php-xss/</loc>
+    <lastmod>2014-12-01T02:21:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/nginx-reverse-proxy/</loc>
+    <lastmod>2014-11-29T04:16:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/find-in-set/</loc>
+    <lastmod>2014-11-29T02:07:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/quote-life-light/</loc>
+    <lastmod>2014-11-28T05:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/seo-optimize/</loc>
+    <lastmod>2014-11-26T12:48:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/preg_match_illegal_parameters/</loc>
+    <lastmod>2014-11-26T04:01:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/css-query-iframe-height/</loc>
+    <lastmod>2014-11-24T07:22:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/sublime-plugin-php/</loc>
+    <lastmod>2014-11-22T08:19:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/str_preg_relace/</loc>
+    <lastmod>2014-11-20T08:37:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/baidu-transform/</loc>
+    <lastmod>2014-11-16T12:33:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/outbound-link-seo/</loc>
+    <lastmod>2014-11-14T03:28:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/life-want/</loc>
+    <lastmod>2014-11-12T15:03:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/directory_separator/</loc>
+    <lastmod>2014-11-12T07:11:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/php-line-class-dir/</loc>
+    <lastmod>2014-11-12T06:46:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/baidu-zhanzhang-title/</loc>
+    <lastmod>2014-11-12T05:39:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/phpcms/</loc>
+    <lastmod>2014-11-12T03:53:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/11/phpcms-re-develop/</loc>
+    <lastmod>2014-11-12T03:53:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/10/php-tostring/</loc>
+    <lastmod>2014-10-29T09:32:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/04/navicat-sql-server-2000/</loc>
+    <lastmod>2014-04-22T06:03:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/03/wordpress-upload-path/</loc>
+    <lastmod>2014-03-19T02:58:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/03/php-fopen-filesize-fread-fclose/</loc>
+    <lastmod>2014-03-09T06:07:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/01/2013-summary/</loc>
+    <lastmod>2014-01-22T16:45:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/01/wordpress-shortinit/</loc>
+    <lastmod>2014-01-22T12:40:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2014/01/virtue-programer/</loc>
+    <lastmod>2014-01-11T16:25:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/11/left-join-inner/</loc>
+    <lastmod>2013-11-15T05:53:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/11/active-learning/</loc>
+    <lastmod>2013-11-14T05:16:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/11/php-reflectionclass-object/</loc>
+    <lastmod>2013-11-12T05:16:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/10/jobs-proverbs/</loc>
+    <lastmod>2013-10-21T12:29:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/10/fullpage-js/</loc>
+    <lastmod>2013-10-19T14:32:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/09/wust-cat/</loc>
+    <lastmod>2013-09-21T08:38:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/09/used-to-change/</loc>
+    <lastmod>2013-09-19T05:55:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/09/remembering-that-i-will-be-dead-soon/</loc>
+    <lastmod>2013-09-14T14:47:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/09/navicat-sql/</loc>
+    <lastmod>2013-09-05T16:21:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/06/jquery-enter/</loc>
+    <lastmod>2013-06-27T16:37:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/04/php-serialize-json/</loc>
+    <lastmod>2013-04-16T06:12:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/03/di-gui/</loc>
+    <lastmod>2013-03-15T15:29:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/03/pdo-statement-bindparam/</loc>
+    <lastmod>2013-03-03T09:51:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/03/php-memcache/</loc>
+    <lastmod>2013-03-03T09:13:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/03/php-webservice/</loc>
+    <lastmod>2013-03-02T05:18:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/03/unsigned/</loc>
+    <lastmod>2013-03-01T13:42:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2013/01/juhui/</loc>
+    <lastmod>2013-01-25T12:38:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/12/enum-set/</loc>
+    <lastmod>2012-12-20T02:03:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/12/php-save-cookie/</loc>
+    <lastmod>2012-12-19T09:32:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/12/navica-10/</loc>
+    <lastmod>2012-12-19T01:29:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/11/thinkphp-rbac/</loc>
+    <lastmod>2012-11-25T07:15:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/11/thinkphp-sql/</loc>
+    <lastmod>2012-11-17T16:28:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/11/php-zuhe/</loc>
+    <lastmod>2012-11-04T06:20:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/11/substr_str_replace/</loc>
+    <lastmod>2012-11-03T13:40:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/11/php-scandir/</loc>
+    <lastmod>2012-11-03T08:30:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/optimize-mysql/</loc>
+    <lastmod>2012-10-15T06:40:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/mysql-index/</loc>
+    <lastmod>2012-10-13T08:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/array_merge/</loc>
+    <lastmod>2012-10-11T02:57:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/mysql-myisam-innodb/</loc>
+    <lastmod>2012-10-11T02:39:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/face-change/</loc>
+    <lastmod>2012-10-06T04:34:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/embrace-change/</loc>
+    <lastmod>2012-10-06T04:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/do-not-afraid-change/</loc>
+    <lastmod>2012-10-06T04:26:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/change/</loc>
+    <lastmod>2012-10-06T04:24:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/jobs-abandoned-chosen-special/</loc>
+    <lastmod>2012-10-06T04:16:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/jobs-hardworking/</loc>
+    <lastmod>2012-10-06T04:12:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/apple-marketing-philosophy/</loc>
+    <lastmod>2012-10-06T04:09:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/php-efficiency/</loc>
+    <lastmod>2012-10-05T03:00:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/10/php-super-global/</loc>
+    <lastmod>2012-10-02T09:19:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/php-pdo-prepare/</loc>
+    <lastmod>2012-09-30T04:03:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/jquery-cookie-usage/</loc>
+    <lastmod>2012-09-27T06:10:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/10-golden-lessons-from-steve-jobs/</loc>
+    <lastmod>2012-09-27T02:35:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/http-200-301-403-404-500/</loc>
+    <lastmod>2012-09-26T15:41:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/php-session-cookies/</loc>
+    <lastmod>2012-09-26T01:46:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/html-5/</loc>
+    <lastmod>2012-09-25T15:49:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/steve-gates/</loc>
+    <lastmod>2012-09-22T06:48:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/php_set_get/</loc>
+    <lastmod>2012-09-14T04:18:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/php-ref-counter/</loc>
+    <lastmod>2012-09-13T15:08:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/array-adding/</loc>
+    <lastmod>2012-09-13T04:10:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/javascript-keywords/</loc>
+    <lastmod>2012-09-12T15:04:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/php-count-array/</loc>
+    <lastmod>2012-09-10T14:42:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/stack-php/</loc>
+    <lastmod>2012-09-09T07:54:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/09/linus-torvalds/</loc>
+    <lastmod>2012-09-04T16:07:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/08/intuition/</loc>
+    <lastmod>2012-08-14T05:19:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/08/follow-your-heart/</loc>
+    <lastmod>2012-08-14T05:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/08/steve-jobs-love-letter/</loc>
+    <lastmod>2012-08-14T05:05:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/05/css-sprites/</loc>
+    <lastmod>2012-05-16T02:41:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/05/html5-css3-video-player/</loc>
+    <lastmod>2012-05-12T05:02:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/05/javascript-class-extend/</loc>
+    <lastmod>2012-05-07T12:06:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/03/spring-outing/</loc>
+    <lastmod>2012-03-17T02:28:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/03/web-optimization/</loc>
+    <lastmod>2012-03-06T08:47:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/01/12306/</loc>
+    <lastmod>2012-01-19T14:06:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2012/01/mor/</loc>
+    <lastmod>2012-01-12T14:29:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/11/image-search/</loc>
+    <lastmod>2011-11-22T11:14:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/11/linuxc/</loc>
+    <lastmod>2011-11-14T04:10:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/treasure/</loc>
+    <lastmod>2011-10-31T13:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/pv/</loc>
+    <lastmod>2011-10-25T06:52:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/jquery-2/</loc>
+    <lastmod>2011-10-24T14:16:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/jquery-nth-child/</loc>
+    <lastmod>2011-10-24T14:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/css/</loc>
+    <lastmod>2011-10-22T04:48:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/the-shawshank-redemption-quote/</loc>
+    <lastmod>2011-10-21T03:01:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/10/css_img/</loc>
+    <lastmod>2011-10-15T16:43:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2011/09/stay-hungry-stay-foolish/</loc>
+    <lastmod>2011-09-18T07:06:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/2009/01/welcome/</loc>
+    <lastmod>2009-01-01T10:53:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</loc>
+    <lastmod>2009-01-01T10:53:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>提交PHP组件到Packagist 发布自己的Composer包 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">提交PHP组件到Packagist 发布自己的Composer包</h1>
+    <span class="post-date">Jul 13, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>Composer是PHP的一个依赖管理工具，它使得PHP焕发新的生机，有了现代化的WEB开发规范，Packagist是PHP组件的库，也有其他的镜像。</p>
+
+<p>在Packagist上提交了一个自己开发的PHP组件，这样其他开发者就可以使用Composer使用这个包了。这个组件并没什么功能，主要是看看提交PHP组件的流程，并记录了过程中遇到的问题及解决方法，以供参考。</p>
+
+<h3 id="提交php组件步骤">提交PHP组件步骤：</h3>
+
+<p>1.新建一个项目目录，创建一个composer.json文件，格式如下：</p>
+
+<pre class="lang:php decode:true ">{
+    "name": "your-vendor-name/package-name",
+    "description": "A short description of what your package does",
+    "require": {
+        "php": "^5.3.3 || ^7.0",
+        "another-vendor/package": "1.*"
+    }
+}</pre>
+
+<p>这个json格式的文件中包含组件的基本信息，这里还差自动加载的方式，要根据具体开发模式指定自动加载方式，这里require可以指定这个组件依赖的其他组件，composer都会自动解决依赖。</p>
+
+<p>附上完整的composer.json内容作为示例：</p>
+
+<pre class="lang:js decode:true ">{
+    "name": "tanteng/laravel-page-loaded-time",
+    "description": "Display page loaded time",
+    "keywords": ["laravel","performance"],
+    "homepage": "https://github.com/tanteng/laravel-page-loaded-time",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "tanteng",
+        "email": "tanteng@qq.com",
+        "homepage": "https://www.tanteng.me",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+        "php": "^5.3.3 || ^7.0",
+        "laravel/framework": "~4.0"
+    },
+    "autoload": {
+      "psr-4": { "Loading\\": "" }
+    }
+}</pre>
+
+<p>2.开发组件功能</p>
+
+<p>要注意遵循psr规范，使用命名空间。</p>
+
+<p>3.把组件提交到Github上</p>
+
+<p>提交组件到Packagist之前需要先把代码提交到github上，在Packagist只需填写组件的github地址。</p>
+
+<p>4.提交组件地址到Packagist</p>
+
+<p>这样就完成的PHP组件提交到Packagist的过程，具体请参见Packagist官网。</p>
+
+<h3 id="问题-使用composer-require找不到组件">问题：使用composer require找不到组件</h3>
+
+<p>组件提交到Packagist上，提示发布成功了，但是使用composer命令却找不到组件：</p>
+
+<pre class="lang:php decode:true">composer require tanteng/laravel-page-loaded-time</pre>
+
+<p>如图：</p>
+
+<p><img class="alignnone size-full wp-image-10231" src="https://blog.tanteng.me/wp-content/uploads/2016/07/composer-not-found.png" alt="composer-not-found" width="699" height="168" /></p>
+
+<p>由于我的composer使用的国内镜像，猜测可能是没有同步的原因，使用这个命令把“源”改回去还是不行。</p>
+
+<pre class="lang:php decode:true">composer config -g repo.packagist composer https://packagist.org</pre>
+
+<p><strong>原来我的组件还没有在github上发布正式，这个时候还是开发版本<span class="version-number">dev-master</span>.应该加上dev-master版本。</strong></p>
+
+<pre class="lang:php decode:true">composer require tanteng/laravel-page-loaded-time:dev-master</pre>
+
+<p>果然指定了dev-master版本可以成功更新组件，但是这样不行，我们要有一个正式版本。</p>
+
+<p><img class="alignnone size-full wp-image-10234" src="https://blog.tanteng.me/wp-content/uploads/2016/07/composer-dev-master.png" alt="composer-dev-master" width="680" height="307" /></p>
+
+<h3 id="github发布版本">github发布版本</h3>
+
+<p>进入组件的github主页，找到导航上“releases”，点击进去如图页面，就可以创建一个版本，填写好信息之后即可发布版本。</p>
+
+<p><img class="alignnone size-full wp-image-10225" src="https://blog.tanteng.me/wp-content/uploads/2016/07/create_release.png" alt="create_release" width="800" height="386" /></p>
+
+<p>按照页面上的提示填写内容，完成后发布。发布版本后，通过composer require发现还是找不到包。</p>
+
+<h3 id="设置自动更新版本">设置自动更新版本</h3>
+
+<p><img class="alignnone size-full wp-image-10232" src="https://blog.tanteng.me/wp-content/uploads/2016/07/auto-update.png" alt="auto-update" width="735" height="365" /></p>
+
+<p>原来还要在Github上配置一下自动更新。具体步骤参考：<a href="https://packagist.org/about#how-to-update-packages" target="_blank" rel="nofollow"><a href="https://packagist.org/about#how-to-update-packages">https://packagist.org/about#how-to-update-packages</a></a></p>
+
+<p>我直接通过手动的方式发送curl请求来设置，这样还简单一点，不过这样每次发新的版本都需要这样请求一下：</p>
+
+<pre class="wrap:true lang:php decode:true ">curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=tanteng&apiToken=secret' -d'{"repository":{"url":"https://github.com/tanteng/laravel-page-loaded-time"}}'</pre>
+
+<p>返回{&#8220;status&#8221;:&#8221;success&#8221;}表示成功。</p>
+
+<p>再打开<a href="https://packagist.org/packages/tanteng/laravel-page-loaded-time" target="_blank" rel="nofollow"><a href="https://packagist.org/packages/tanteng/laravel-page-loaded-time">https://packagist.org/packages/tanteng/laravel-page-loaded-time</a></a>，发现已经是正式版本了。</p>
+
+<p>我用的是composer国内镜像，因为众所周知的原因，连代码仓库也要被墙，我服！等了几个小时再试，这个时候镜像同步更新了，再次输入：composer require tanteng/laravel-page-loaded-time,这个时候可以成功更新了。如图，vendor文件夹下也自动装载了依赖的其他组件。</p>
+
+<p><img class="alignnone size-full wp-image-10242" src="https://blog.tanteng.me/wp-content/uploads/2016/07/success.png" alt="success" width="853" height="276" /></p>
+
+<h3 id="有用的链接">有用的链接</h3>
+
+<ul>
+<li><a href="http://pkg.phpcomposer.com/" target="_blank" rel="nofollow">Packagist中国镜像</a></li>
+<li><a href="https://packagist.org/" target="_blank" rel="nofollow">Packagist官网</a></li>
+</ul>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

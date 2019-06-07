@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>REST模式GET，POST，PUT，DELETE &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">REST模式GET，POST，PUT，DELETE</h1>
+    <span class="post-date">May 23, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>HTTP常见的请求方式我们熟知的有GET和POST，这两个很好理解，但是在Rest中跟我们平常的理解又有所不同，本文重点介绍一下Rest模式这几种方式的概念，以及它们的使用场景。</p>
+
+<p>GET，POST，PUT，DELETE的含义：</p>
+
+<ol>
+<li>POST   /uri     创建</li>
+<li>DELETE /uri/xxx 删除</li>
+<li>PUT    /uri/xxx 更新或创建</li>
+<li>GET    /uri/xxx 查看</li>
+</ol>
+
+<p>首先讲GET，GET是HTTP请求中最常见的，我们访问一个网址，打开一个网页，都是GET请求，GET操作是安全的，也就是无论我们请求多少次，得到的内容是不变的（浏览次数+1，页面内容重新发布等情况除外，因为这不是GET操作引起的，跟你发送GET请求无关）。</p>
+
+<p>PUT，DELETE操作是幂等的。<strong>所谓幂等是指不管进行多少次操作，结果都一样。</strong>比如我用PUT修改一篇文章，然后在做同样的操作，每次操作后的结果并没有不同，DELETE也是一样。顺便说一句，因为GET操作是安全的，所以它自然也是幂等的。</p>
+
+<p>……</p>
+
+<p>如果想全面了解什么是REST API，它们的区别，使用场景等资料，具体请参见以下文章：</p>
+
+<p>PUT 还是 POST ?</p>
+
+<p><a href="http://www.oschina.net/translate/put-or-post" target="_blank" rel="nofollow"><a href="http://www.oschina.net/translate/put-or-post">http://www.oschina.net/translate/put-or-post</a></a></p>
+
+<p>Rest模式get,put,post,delete含义与区别</p>
+
+<p><a href="http://www.cnblogs.com/zhangpengshou/archive/2012/07/09/2583096.html" target="_blank" rel="nofollow"><a href="http://www.cnblogs.com/zhangpengshou/archive/2012/07/09/2583096.html">http://www.cnblogs.com/zhangpengshou/archive/2012/07/09/2583096.html</a></a></p>
+
+<p>REST 入门介绍</p>
+
+<p><a href="http://www.cnblogs.com/shanyou/archive/2012/05/12/2496959.html" target="_blank" rel="nofollow"><a href="http://www.cnblogs.com/shanyou/archive/2012/05/12/2496959.html">http://www.cnblogs.com/shanyou/archive/2012/05/12/2496959.html</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

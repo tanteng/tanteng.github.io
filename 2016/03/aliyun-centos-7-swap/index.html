@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>在阿里云CentOS 7创建swap分区 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">在阿里云CentOS 7创建swap分区</h1>
+    <span class="post-date">Mar 29, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>创建swap分区是为了弥补物理内存的不足，也就是虚拟内存的概念，把硬盘的一部分划分作为虚拟内存，但这个空间不是越大越好，硬盘的速度远低于内存，设置不当反而拖慢系统的速度。</p>
+
+<p>阿里云的主机默认没有swap分区，可以使用free命令查看：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" target="_blank"><img class="alignnone wp-image-9771 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" alt="aliyun_swap" width="519" height="112" /></a></p>
+
+<p>这是在阿里云CentOS 7系统上创建好swap分区后的截图。下面记录在阿里云CentOS 7上创建swap分区的步骤：</p>
+
+<p>①使用dd命令创建一个swap分区</p>
+
+<pre class="lang:sh decode:true ">dd if=/dev/zero of=/home/swap bs=1024 count=1048576</pre>
+
+<p>count的值是：size（多少M）* 1024，我这里设置的1G虚拟内存，也就是count=1024000.</p>
+
+<p>②格式化swap分区</p>
+
+<pre class="lang:sh decode:true ">mkswap /home/swap</pre>
+
+<p>③把格式化后的文件分区设置为swap分区</p>
+
+<pre class="lang:sh decode:true ">swapon /home/swap</pre>
+
+<p>（关闭SWAP分区命令为：[root@localhost Desktop]#swapoff /home/swap）</p>
+
+<p>此时，swap分区已经创建好了，使用free命令查看，可见多了一个挂载分区。</p>
+
+<p>④swap分区自动挂载</p>
+
+<p>vi /etc/fstab</p>
+
+<p>在文件末尾加上</p>
+
+<p>/home/swap swap swap default 0 0</p>
+
+<h4 id="参考文章">参考文章：</h4>
+
+<ul>
+<li><a href="https://hacpai.com/article/1375928433630" target="_blank" rel="nofollow">centos添加swap分区</a></li>
+<li><a href="http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html" target="_blank" rel="nofollow">MariaDB宕机内存不足添加swap分区</a></li>
+</ul>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

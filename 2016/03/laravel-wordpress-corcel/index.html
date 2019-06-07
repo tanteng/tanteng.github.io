@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel集成WordPress扩展包——Corcel &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel集成WordPress扩展包——Corcel</h1>
+    <span class="post-date">Mar 20, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a><a class="label" href="http://tanteng.me/categories/wordpress">WordPress</a>
+    </span>
+    <p>Corcel是一个可以适用于Laravel框架的集成Wordpress的扩展包，使用wordpress的后台发布文章，通过它的接口可以在Laravel中方便的调取文章等，安装和使用也非常简单。</p>
+
+<p>Corcel的Github地址：<a href="https://github.com/jgrossi/corcel" target="_blank" rel="nofollow"><a href="https://github.com/jgrossi/corcel">https://github.com/jgrossi/corcel</a></a></p>
+
+<p>这里讲一下大概的过程，具体的安装和使用见github主页上的说明。</p>
+
+<p>一、数据库迁徙</p>
+
+<p>需要把Wordpress的数据库迁徙到Laravel的服务器上，也就是新建一个数据库，放wordpress的数据表。</p>
+
+<p>在laravel的config/database.php配置文件的connections数组中，添加wordpress数据库的定义。</p>
+
+<p>在阿里云CentOS上通过wget方式下载sql文件，并使用source导入sql文件到数据库，请见：<a href="https://blog.tanteng.me/2016/03/mysql-source-import-sql/" target="_blank">wget和source导入sql文件</a></p>
+
+<p>二、新建model类</p>
+
+<p>要使用Corcel扩展包的功能，需要使用model类，这个类继承Corcel的类，如在Models文件夹下新建了一个Wp.php的模型：</p>
+
+<pre class="lang:php decode:true ">&lt;?php
+
+namespace App\Models;
+
+use Corcel\Post as Corcel;
+
+class Wp extends Corcel
+{
+    protected $connection = 'wordpress';
+}</pre>
+
+<p>这里通过connection的属性定义了要连接的数据库，并且继承Corcel\Post类，实现Corcel提供的各种接口。</p>
+
+<p>三、测试Laravel调取Wordpress文章</p>
+
+<p>新建一个TestController的控制器，在控制器中写个测试方法：</p>
+
+<pre class="lang:php decode:true ">//laravel查询wordpress文章
+public function testWp()
+{
+    $post = Wp::find(9569);
+    echo $post-&gt;post_title;
+}</pre>
+
+<p>增加路由规则：</p>
+
+<pre class="lang:php decode:true ">Route::get('/test/wp', ['uses'=&gt;'TestController@testWp']);</pre>
+
+<p>在浏览器中打开，可以看到效果，读取到了wordpress数据库中的文章，并且输出文章标题。</p>
+
+<p>更多用法请见Corcel扩展包Github主页。</p>
+
+<h4 id="补充">补充：</h4>
+
+<p class="">
+  重写getUrlAttribute方法：
+</p>
+
+<p class="">
+  为了方便获取博客文章的真实url，而不是形如https://blog.tanteng.me/?p=9562这样的url，真实的url是https://blog.tanteng.me/2016/03/laravel-wordpress-corcel/这样的，只需要在新建的Model中重写扩展包vendor/jgrossi/corcel/src/Post.php的getUrlAttribute方法即可，Like this:
+</p>
+
+<pre class="lang:php mark:10-16 decode:true ">&lt;?php
+
+namespace App\Models;
+
+use Corcel\Post as Corcel;
+
+class Wp extends Corcel
+{
+    protected $connection = 'wordpress';
+    protected $domain = 'https://blog.tanteng.me/';
+
+    //重写获取wordpress文章url方法
+    public function getUrlAttribute()
+    {
+        return $this-&gt;domain.date('Y/m/',strtotime($this-&gt;post_date)).$this-&gt;slug.'/';
+    }
+}</pre>
+
+<p>在控制器中打印：</p>
+
+<pre class="lang:php mark:8 decode:true ">//laravel查询wordpress文章
+public function testWp()
+{
+    $post = Wp::find(9569);
+    //dd($post);
+    echo $post-&gt;post_title;
+    echo '&lt;br&gt;';
+    echo $post-&gt;url;
+}</pre>
+
+<p>输出结果：</p>
+
+<blockquote>
+<p>配置nginx 301跳转到www域</p>
+
+<p><a href="https://blog.tanteng.me/2016/03/nginx-301/">https://blog.tanteng.me/2016/03/nginx-301/</a></p>
+</blockquote>
+
+<p>这样就根据自己博客的url规则显示真实链接地址了。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

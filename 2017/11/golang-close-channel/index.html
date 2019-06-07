@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Golang 如何优雅关闭 channel &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Golang 如何优雅关闭 channel</h1>
+    <span class="post-date">Nov 17, 2017 &middot; 2 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+    </span>
+    <p>Golang 内建的 close 方法可以关闭 channel，如果往已经关闭的 channel 发送数据，则会报错：panic: close of closed channel.</p>
+
+<p>看如下代码，在一段时间内，生产者可以不断往 channel 写入数据，消费者进行处理，一段时间后 channel 关闭了，这个时候如果还有数据往 channel 发送，程序就会报错。</p>
+
+<pre class="lang:go decode:true ">package main
+
+import (
+    "fmt"
+    "sync"
+    "time"
+)
+
+func main() {
+    jobs := make(chan int)
+    var wg sync.WaitGroup
+    go func() {
+        time.Sleep(time.Second * 3)
+        close(jobs)
+    }()
+    go func() {
+        for i := 0; ; i++ {
+            jobs &lt;- i
+            fmt.Println("produce:", i)
+        }
+    }()
+    wg.Add(1)
+    go func() {
+        defer wg.Done()
+        for i := range jobs {
+            fmt.Println("consume:", i)
+        }
+    }()
+    wg.Wait()
+}
+</pre>
+
+<p>多运行几次出错的概率会比较大：</p>
+
+<pre class="lang:go decode:true ">produce: 33334
+consume: 33334
+consume: 33335
+produce: 33335
+produce: 33336
+consume: 33336
+consume: 33337
+produce: 33337
+produce: 33338
+consume: 33338
+consume: 33339
+produce: 33339
+produce: 33340
+consume: 33340
+panic: send on closed channel
+
+goroutine 19 [running]:
+panic(0x49b660, 0xc042410bb0)
+        C:/Go/src/runtime/panic.go:500 +0x1af
+main.main.func2(0xc04203a180)
+        C:/Users/tanteng/Go/src/examples/channel_close.go:18 +0x6b
+created by main.main
+        C:/Users/tanteng/Go/src/examples/channel_close.go:21 +0xb8
+exit status 2</pre>
+
+<h3 id="如何优雅关闭-channel">如何优雅关闭 channel</h3>
+
+<p><strong>那么在往通道发数据前如何判断通道是否关闭呢？</strong></p>
+
+<h4 id="1-ok-jobs">1._,ok := &lt;- jobs</h4>
+
+<p>此时如果 channel 关闭，ok 值为 false，如果 channel 没有关闭，则会漏掉一个 jobs</p>
+
+<h4 id="2-使用-select-方式">2.使用 select 方式</h4>
+
+<p>再创建一个 channel，叫做 timeout，如果超时往这个 channel 发送 true，在生产者发送数据给 jobs 的 channel，用 select 监听 timeout，如果超时则关闭 jobs 的 channel.</p>
+
+<p>完整代码如下：</p>
+
+<pre class="lang:go decode:true">package main
+
+import (
+    "fmt"
+    "sync"
+    "time"
+)
+
+func main() {
+    jobs := make(chan int)
+    timeout := make(chan bool)
+    var wg sync.WaitGroup
+    go func() {
+        time.Sleep(time.Second * 3)
+        timeout &lt;- true
+    }()
+    go func() {
+        for i := 0; ; i++ {
+            select {
+            case &lt;-timeout:
+                close(jobs)
+                return
+
+            default:
+                jobs &lt;- i
+                fmt.Println("produce:", i)
+            }
+        }
+    }()
+    wg.Add(1)
+    go func() {
+        defer wg.Done()
+        for i := range jobs {
+            fmt.Println("consume:", i)
+        }
+    }()
+    wg.Wait()
+}
+</pre>
+
+<p>这样就可以保证不会往已经关闭的 channel 中发送数据了。</p>
+
+<hr />
+
+<p>后记：很高兴本文被 GoCN 网站每日新闻收录（<a href="https://gocn.io/question/1329" target="_blank" rel="noopener nofollow"><a href="https://gocn.io/question/1329">https://gocn.io/question/1329</a></a>），例子其实是参考网上的一篇文章，内容是根据自己的理解整理。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

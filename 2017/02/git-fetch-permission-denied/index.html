@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>文件权限问题导致的 git fetch 命令执行失败 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">文件权限问题导致的 git fetch 命令执行失败</h1>
+    <span class="post-date">Feb 16, 2017 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>在一个基于 git 的发布系统中拉取代码，发现无法拉取最新的提交记录，通过调试和查看日志文件找到一行错误：<strong>error: cannot open .git/FETCH_HEAD: Permission denied</strong>，原因是文件权限问题导致。</p>
+
+<h3 id="问题原因">问题原因</h3>
+
+<p>Permission denied，应该权限问题，到项目 .git 目录下查看文件的用户和组：</p>
+
+<p><img class="alignnone size-full wp-image-11233" src="https://blog.tanteng.me/wp-content/uploads/2017/02/git_20170216152807.png" alt="" width="873" height="374" /></p>
+
+<p>发现 FETCH_HEAD 的用户和组都是 root 权限，而发布系统的运行进程是 nobody 用户，所以没有权限执行这个 git 命令：git fetch -q &#8211;all</p>
+
+<h3 id="解决办法">解决办法</h3>
+
+<p>于是使用 chown 把该文件用户和组权限都改成 nobody，再试就正常了。</p>
+
+<p><img src="https://blog.tanteng.me/wp-content/uploads/2017/02/git_20170216153220.png" alt="" width="560" height="360" /></p>
+
+<h3 id="排查问题">排查问题</h3>
+
+<p>更新分支执行的 git 命令如下：</p>
+
+<p>cd /data/vhosts/project  &amp;&amp; git checkout -q master &amp;&amp; git fetch -q &#8211;all &amp;&amp; git/bin/git clean -fd &amp;&amp; git/bin/git reset -q &#8211;hard origin/master</p>
+
+<p>最后发现是其中 git fetch -q &#8211;all 出现权限错误，这种多个命令 &amp;&amp; 组合的形式即使中间命令报错了，整体执行报错也不会输出错误，所以日志一开始并没有提示有什么错误，后来把多个命令从第一个命令开始执行，再一个个加后面的命令，才定位到问题。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

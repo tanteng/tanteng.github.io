@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/find-in-set/">mysql排序order by find_in_set</a>
+      </h1>
+      <span class="post-date">Nov 29, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+      </span>
+      
+      <p>mysql进行排序的时候如果需要按照原始的顺序排序，就可以使用order by find_in_set()方法，具体用法如下：</p>
+
+<pre class="lang:mysql decode:true" title="FIND_IN_SET">select * from ecs_goods where goods_id in ($idList) order by FIND_IN_SET(goods_id,'$idList')</pre>
+
+<p>这句mysql语句用到了find_in_set进行排序，意思是根据goods_id在$idList这个变量中的前后顺序进行排序。</p>
+      <a href="http://tanteng.me/2014/11/find-in-set/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/quote-life-light/">《不可承受的生命之轻》经典语录</a>
+      </h1>
+      <span class="post-date">Nov 28, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E7%B2%BE%E5%BD%A9%E7%BD%91%E6%91%98">精彩网摘</a><a class="label" href="http://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97">网摘日志</a>
+      </span>
+      
+      <p>《不可承受的生命之轻》是捷克裔法国作家米兰·昆德拉于1984年所写的小说，这本小说中有很多经典的语录。以下语录摘自本书。</p>
+
+<p>人永远都无法知道自己该要什么，因为人只能活一次，既不能拿它跟前世相比，也不能在来生加以修正。没有任何方法可以检验哪种抉择是好的，因为不存在任何比较。一切都是马上经历，仅此一次，不能准备。</p>
+
+<p><img class="alignnone aligncenter" src="http://www.dayecn.com/upload/2014/10/20141012103616547.jpg" alt="不能承受的生命之轻" width="500" height="571" /></p>
+      <a href="http://tanteng.me/2014/11/quote-life-light/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/seo-optimize/">SEO优化技巧</a>
+      </h1>
+      <span class="post-date">Nov 26, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91">互联网</a>
+      </span>
+      
+      <p>wordpress SEO by yoast这款插件告诉了我们很多SEO优化的技巧，我们在编辑内容的时候，发布或者更新文章，都可以看到wordpress SEO插件提示的SEO优化tips，非常有道理而且非常有用，下面就是从wordpress SEO by yoast学到的SEO优化技巧。</p>
+      <a href="http://tanteng.me/2014/11/seo-optimize/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/preg_match_illegal_parameters/">preg_match过滤URL非法参数</a>
+      </h1>
+      <span class="post-date">Nov 26, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>PHP开发中经常用到URL传递参数，对传递的参数要进行安全过滤，过滤URL中非法参数，这是php安全的一个细小的地方，却事关安全的大事。URL参数一般都是数字或者字母加上&#8221;-&#8220;或者&#8221;_&#8221;组成，参数带有其他的符号的都要进行过滤，以免带来安全问题。对URL传参进行非法字符过滤，用preg_match很容易判断非法的参数。</p>
+
+<pre lang="php">if(!preg_match("/^[a-z0-9_\-]+$/i",$this->commentid)) 
+    $this->_show_msg(L('illegal_parameters'));
+</pre>
+      <a href="http://tanteng.me/2014/11/preg_match_illegal_parameters/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/css-query-iframe-height/">使用css media query控制iframe高度</a>
+      </h1>
+      <span class="post-date">Nov 24, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E5%89%8D%E7%AB%AF">前端</a>
+      </span>
+      
+      <p>在这个场景下，需要使用css media query控制iframe高度：比如一个iframe视频在PC网页上的高度和手机网页上的高度不同。iframe的高度只能设置成固定高度或者所在div的百分比，我们可以通过css query控制这个div的高度，实现iframe在PC和手机上不同高度。</p>
+
+<p>首先，我们在没有定义CSS Media Query的样式里添加：</p>
+
+<pre lang="css">.iframe_height{
+    height: 260px;
+}
+</pre>
+      <a href="http://tanteng.me/2014/11/css-query-iframe-height/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/sublime-plugin-php/">Sublime必备插件for PHP</a>
+      </h1>
+      <span class="post-date">Nov 22, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>Sublime Text真是一款写代码的利器，轻巧快捷，而且功能强大，用来写PHP代码再好不过了，告别以前用的笨重臃肿的Zend Studio，感觉一身轻松，PHP代码也更加优雅。但是PHP开发也经常和javascript，css，html等打交道，虽然Sublime Text本身也对他们友好，但是有以下PHP开发Sublime必备插件就更好了。</p>
+      <a href="http://tanteng.me/2014/11/sublime-plugin-php/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/str_preg_relace/">str_replace和preg_relace的用法和区别</a>
+      </h1>
+      <span class="post-date">Nov 20, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>str_replace和preg_relace这两个PHP系统函数都是用来“替换”的函数，str_replace主要用于字符串替换，而preg_relace顾名思义用于正则表达式替换，他们的具体用法和区别本文将举例说明。</p>
+
+<h2 id="str-replace的用法">str_replace的用法</h2>
+
+<h3 id="1-字符串替换">1.字符串替换</h3>
+
+<p>比如变量$a=&#8217;sina,sohu,tantengvip&#8217;,我要把这个$a字符串中的sina替换成qq，那么这样用str_replace函数：</p>
+
+<pre lang="php">$a = str_replace('sina','qq',$a);
+</pre>
+      <a href="http://tanteng.me/2014/11/str_preg_relace/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/baidu-transform/">如何禁止手机百度搜索自动转码</a>
+      </h1>
+      <span class="post-date">Nov 16, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      <p>很多站长朋友都知道，网站在百度手机搜索中打开的时候，百度会对网页进行自动转码，变成“优化”之后的手机版网页，但是百度网页自动转码的效果并不让人满意，再说很多网站有自己的自适应手机版的网页，或者有对应的手机版本网站，不需要百度网页自动转码。那么如何禁止手机端百度搜索自动转码呢？</p>
+      <a href="http://tanteng.me/2014/11/baidu-transform/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/outbound-link-seo/">出站链接对SEO的作用和好处</a>
+      </h1>
+      <span class="post-date">Nov 14, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/wordpress">WordPress</a>
+      </span>
+      
+      <p>出站链接对SEO的作用是什么？使用wordpress seo插件的同学应该会注意到，发布文章的时候它会检测你设置的目标关键词，并给出SEO优化的提示，经常会提示：此页没有出站链接，请考虑适当增加一些。那么出站链接对SEO有什么作用和好处？</p>
+      <a href="http://tanteng.me/2014/11/outbound-link-seo/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2014/11/life-want/">不能承受生命之轻：人永远都无法知道自己该要什么</a>
+      </h1>
+      <span class="post-date">Nov 12, 2014 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">读书笔记</a>
+      </span>
+      
+      <p>《不能承受生命之轻》有这么一句名句：</p>
+
+<p>人永远都无法知道自己该要什么，因为人只能活一次，既不能拿它跟前世相比，也不能在来生加以修正。没有任何方法可以检验哪种抉择是好的，因为不存在任何比较。一切都是马上经历，仅此一次，不能准备。——摘自《不能承受生命之轻》</p>
+
+<p>说的很对啊，人生就是一副草图，甚至草图都不算，草图是画好了的，而人生不知道下一秒会发生什么，是永远都完成不了的草图。</p>
+      <a href="http://tanteng.me/2014/11/life-want/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/41/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/41/">41</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/42/">42</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/43/">43</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/43/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

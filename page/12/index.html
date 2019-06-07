@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/2017-php-way/">韩天峰：2017 年 PHP 程序员未来路在何方</a>
+      </h1>
+      <span class="post-date">Mar 31, 2017 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
+      <a href="http://tanteng.me/2017/03/2017-php-way/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/laravel-model-join-wrong-id/">Laravel 关联查询返回错误的 id</a>
+      </h1>
+      <span class="post-date">Mar 31, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>在 Laravel Eloquent 中使用 join 关联查询，如果两张表有名称相同的字段，如 id，那么它的值会默认被后来的同名字段重写，返回不是期望的结果。例如以下关联查询：</p>
+
+<pre class="lang:php decode:true">$priority = Priority::rightJoin('touch', 'priorities.touch_id', '=', 'touch.id')
+    -&gt;where('priorities.type', 1)
+    -&gt;orderBy('priorities.total_score', 'desc')
+    -&gt;orderBy('touch.created_at', 'desc')
+    -&gt;get();</pre>
+      <a href="http://tanteng.me/2017/03/laravel-model-join-wrong-id/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/virtualbox-blue-screen/">VirtualBox启动蓝屏问题</a>
+      </h1>
+      <span class="post-date">Mar 24, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      <p>用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox 软件都无法正常运行。</p>
+
+<p><img class="alignnone size-full wp-image-11331" src="https://blog.tanteng.me/wp-content/uploads/2017/03/bootingvm.png" alt="" width="943" height="505" /></p>
+      <a href="http://tanteng.me/2017/03/virtualbox-blue-screen/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/baidu-union-verify-https-website/">百度联盟如何验证 HTTPS 站点</a>
+      </h1>
+      <span class="post-date">Mar 22, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91">互联网</a>
+      </span>
+      
+      <p>本站是 HTTPS 站点，在百度联盟添加站点页面，输入 blog.tanteng.me 点击“验证”进入验证页面，提示两种方式，1. 把文件放根目录 2. 添加 meta 信息，都试了，无法验证。</p>
+
+<pre class="lang:default decode:true">[root@iZ94r80gdghZ public]# curl blog.tanteng.me
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx/1.10.1&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <a href="http://tanteng.me/2017/03/baidu-union-verify-https-website/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/linux-nginx-ip/">使用 Linux 命令分析 Nginx 日志统计 ip 访问数</a>
+      </h1>
+      <span class="post-date">Mar 16, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。
+Linux 命令如下：
+cat access.log | awk &#8216;{print $1}&#8217; | sort | uniq -c | sort -k1nr | head -10
+效果如图所示：
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/03/php-float-rand/">PHP 浮点数范围随机</a>
+      </h1>
+      <span class="post-date">Mar 1, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      PHP 浮点数范围随机代码：
+private function frand($min, $max, $decimals = 0) { $scale = pow(10, $decimals); return mt_rand($min * $scale, $max * $scale) / $scale; } &nbsp;
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/02/go-websocket-demo/">Go 搭建 WebSocket 服务端例子</a>
+      </h1>
+      <span class="post-date">Feb 27, 2017 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/go">Go</a>
+      </span>
+      
+      <p>WebSocket 是一个基于 HTML5 规范的，可以实现客户端和服务器双向通信的协议，弥补了 HTTP 协议只能客户端主动发请求，服务器响应，而服务器不能给客户端推送数据的不足。</p>
+
+<h3 id="websocket-握手">WebSocket 握手</h3>
+
+<pre class="lang:default decode:true">GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com</pre>
+
+<p>重点如下两个 header：</p>
+
+<pre class="lang:default decode:true">Upgrade: websocket
+Connection: Upgrade</pre>
+
+<p>Upgrade 表示升级到 WebSocket 协议，Connection 表示这个 HTTP 请求是一次协议升级，Origin 表示发请求的来源。</p>
+
+<h3 id="websocket-api">WebSocket API</h3>
+
+<p>① 打开新的 WebSocket 连接</p>
+
+<p>② 可选的回调，在连接出错时调用</p>
+
+<p>③ 可选的回调，在连接终止时调用</p>
+
+<p>④ 可选的回调，在 WebSocket 连接建立时调用</p>
+
+<p>⑤ 客户端向服务器发送消息</p>
+
+<p>⑥ 回调函数，接收服务器主动发送的消息</p>
+
+<p>⑦ 根据接收到的消息，决定调用二进制还是文本处理逻辑</p>
+
+<p>下面 js 示例包括了上面大部分的 API.</p>
+
+<h3 id="go-搭建-websocket-服务端的例子">Go 搭建 WebSocket 服务端的例子</h3>
+
+<p>Go 搭建一个简单 WebSocket 服务端代码例子 test.go, 如下：</p>
+
+<pre class="lang:go decode:true ">package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+
+    "golang.org/x/net/websocket"
+)
+
+func Echo(ws *websocket.Conn) {
+    var err error
+
+    for {
+        var reply string
+
+        if err = websocket.Message.Receive(ws, &reply); err != nil {
+            fmt.Println("Can't receive")
+            break
+        }
+
+        fmt.Println("Received back from client: " + reply)
+
+        msg := "Received:  " + reply
+        fmt.Println("Sending to client: " + msg)
+
+        if err = websocket.Message.Send(ws, msg); err != nil {
+            fmt.Println("Can't send")
+            break
+        }
+    }
+}
+
+func main() {
+    http.Handle("/", websocket.Handler(Echo))
+
+    if err := http.ListenAndServe(":1234", nil); err != nil {
+        log.Fatal("ListenAndServe:", err)
+    }
+}
+</pre>
+      <a href="http://tanteng.me/2017/02/go-websocket-demo/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/02/free-up-ubuntu-disk/">清理 Ubuntu 系统硬盘空间</a>
+      </h1>
+      <span class="post-date">Feb 23, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      <p>To delete downloaded packages (.deb) already installed (and no longer needed)</p>
+
+<pre class="lang:default decode:true">sudo apt-get clean</pre>
+      <a href="http://tanteng.me/2017/02/free-up-ubuntu-disk/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/02/create-laravel-5-pakage/">如何创建 Laravel 5 扩展包</a>
+      </h1>
+      <span class="post-date">Feb 20, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      本文介绍了创建 Laravel 5 扩展包的步骤。
+链接：
+http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2017/02/git-fetch-permission-denied/">文件权限问题导致的 git fetch 命令执行失败</a>
+      </h1>
+      <span class="post-date">Feb 16, 2017 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      <p>在一个基于 git 的发布系统中拉取代码，发现无法拉取最新的提交记录，通过调试和查看日志文件找到一行错误：<strong>error: cannot open .git/FETCH_HEAD: Permission denied</strong>，原因是文件权限问题导致。</p>
+      <a href="http://tanteng.me/2017/02/git-fetch-permission-denied/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/11/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/11/">11</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/12/">12</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/13/">13</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/13/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/10/nginx-map-http-user-agent/">使用 Nginx map 指令匹配 User Agent 自定义值</a>
+      </h1>
+      <span class="post-date">Oct 10, 2016 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+      </span>
+      
+      <p>本文介绍有关 User-Agent 的知识，以及使用 Nginx map 指令配合正则表达式匹配 User Agent 自定义值，通过捕获 UA 自定义值，可以做很多事情，其中一个场景是：让一台测试机支持多个测试同时测试一个项目，原理就是匹配 UA 值，设置不同的 WEB 根目录。</p>
+      <a href="http://tanteng.me/2016/10/nginx-map-http-user-agent/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/10/laravel-session-middleware/">Laravel Session 保存机制和 terminate 中间件</a>
+      </h1>
+      <span class="post-date">Oct 7, 2016 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>在 Laravel 中可以使用 Session 的 get, put, pull, set, has, flash 等方法进行操作，如：Session::put([&#8216;domain&#8217;=&gt;&#8217;tanteng.me&#8217;, &#8216;host&#8217;=&gt;&#8217;aliyun&#8217;])，就可以设置两个 session 值，看看 put 方法：</p>
+
+<pre class="lang:php decode:true " title="代码位于vendor/laravel/framework/src/Illuminate/Session/Store.php">/**
+ * Put a key / value pair or array of key / value pairs in the session.
+ *
+ * @param  string|array  $key
+ * @param  mixed       $value
+ * @return void
+ */
+public function put($key, $value = null)
+{
+    if (! is_array($key)) {
+        $key = [$key =&gt; $value];
+    }
+
+    foreach ($key as $arrayKey =&gt; $arrayValue) {
+        $this-&gt;set($arrayKey, $arrayValue);
+    }
+}</pre>
+      <a href="http://tanteng.me/2016/10/laravel-session-middleware/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/10/php-foreach-batch/">PHP 遍历元素并分批处理</a>
+      </h1>
+      <span class="post-date">Oct 6, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>读取一个 txt 文本文件，里面是一行一个 userid，需要给这些用户发送文件（做什么不重要），发送文件接口支持一次最多发 10 个用户，所以需要分批发送，每 10 个 userid 作为一批。</p>
+      <a href="http://tanteng.me/2016/10/php-foreach-batch/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/sso-access/">SSO单点登录系统接入</a>
+      </h1>
+      <span class="post-date">Sep 30, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>简单讲一下 SSO 单点登录系统的接入的原理，前提是系统本身有完善的用户认证功能，即基本的用户登录功能，那做起来就很方便了。</p>
+
+<p>SSO 登录请求接口往往是接口加上一个回调地址，访问这个地址会跳转到回调地址并带上一个 ticket 参数，拿着这个 ticket 参数再请求接口可以获取到用户信息，如果存在用户则自动登录，不存在就新增用户并登录。</p>
+      <a href="http://tanteng.me/2016/09/sso-access/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/mysql-master-slave-and-master-master/">MySQL主从和双主架构的适用场景</a>
+      </h1>
+      <span class="post-date">Sep 28, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+      </span>
+      
+      <p>本文介绍 MySQL 主从和双主架构的适用场景。</p>
+
+<h3 id="mysql主从">MySQL主从</h3>
+
+<p>MySQL主从架构的适用场景是读写分离，通过主库写，从库读，大多数场景是读的情况比较多，单一 master 多 slave 的架构可以很好解决读压力大的问题。</p>
+
+<p><img class="alignnone wp-image-10946 size-full aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2016/09/master-slave.jpg" alt="master-slave" width="401" height="299" /></p>
+      <a href="http://tanteng.me/2016/09/mysql-master-slave-and-master-master/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/register-shutdown-function/">PHP捕捉异常中断</a>
+      </h1>
+      <span class="post-date">Sep 28, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。</p>
+      <a href="http://tanteng.me/2016/09/register-shutdown-function/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/git-work-stage/">Git 工作区和暂存区</a>
+      </h1>
+      <span class="post-date">Sep 27, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      链接：Git 工作区和暂存区
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/modern-php/">《性感的 PHP — 现代化 PHP 开发》PPT 分享</a>
+      </h1>
+      <span class="post-date">Sep 25, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>说好的把这次技术分享的 PPT 发出来的，一直没时间弄，现在整理了一下，并导出了一份 PDF 版的 PPT，给大家参考。（PS：本次技术分享仅仅是介绍一些关于现代化 PHP 开发的技术，并不是讲某个方面的高深技术和经验，即便如此，针对目前的 PHP 现状，很多项目，公司和开发者，还在使用过时的 PHP 技术，这个分享还是有价值的）。</p>
+
+<p>本次技术分享主要讲了一些现代化 PHP 开发的技术，PPT 重点介绍了命名空间，闭包，匿名函数，Traits 这些新特性，以及介绍了 Composer 依赖包管理器和 PSR 规范。</p>
+      <a href="http://tanteng.me/2016/09/modern-php/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/php-binary-safe/">PHP二进制安全</a>
+      </h1>
+      <span class="post-date">Sep 25, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>补充一下 PHP 的基础知识，什么是二进制安全？</p>
+
+<p>这得从 C 语言说起。</p>
+
+<blockquote>
+<p>C字符串中的字符必须符合某种编码（ 比如 ASCII）， 并且除了字符串的末尾之外， 字符串里面不能包含空字符， 否则最先被程序读入的空字符将被误认为是字符串结尾， 这些限制使得 C 字符串只能保存文本数据， 而不能保存像图片、 音频、 视频、 压缩文件这样的二进制数据。</p>
+</blockquote>
+
+<p>以上这段文字摘自《Redis设计与实现》。</p>
+      <a href="http://tanteng.me/2016/09/php-binary-safe/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2016/09/mysql-unique-duplicate/">MySQL唯一索引和插入重复自动更新</a>
+      </h1>
+      <span class="post-date">Sep 23, 2016 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+      </span>
+      
+      <p>有时我们在往数据库插入数据的时候，需要判断某个字段是否存在，如果存在则执行更新操作，如果不存在则执行插入操作，如果每次首先查询一次判断是否存在，再执行插入或者更新操作，就十分不方便。</p>
+      <a href="http://tanteng.me/2016/09/mysql-unique-duplicate/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/14/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/14/">14</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/15/">15</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/16/">16</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/16/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

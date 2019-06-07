@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP二进制安全 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP二进制安全</h1>
+    <span class="post-date">Sep 25, 2016 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>补充一下 PHP 的基础知识，什么是二进制安全？</p>
+
+<p>这得从 C 语言说起。</p>
+
+<blockquote>
+<p>C字符串中的字符必须符合某种编码（ 比如 ASCII）， 并且除了字符串的末尾之外， 字符串里面不能包含空字符， 否则最先被程序读入的空字符将被误认为是字符串结尾， 这些限制使得 C 字符串只能保存文本数据， 而不能保存像图片、 音频、 视频、 压缩文件这样的二进制数据。</p>
+</blockquote>
+
+<p>以上这段文字摘自《Redis设计与实现》。</p>
+
+<p>举个例子，如果一个字符串包含 C 语言中表示结束的 &#8216;\0&#8217;, 如字符串：Redis\0Cluster\0，这个时候会误以为在第一个&#8221;\0&#8243;处字符串结束了，这也是非二进制安全的。</p>
+
+<p>PHP 二进制安全简单说就是传入的参数支持二进制数据，包括&#8221;\0&#8243;这种在 C 中表示字符串结束的字符，如 strlen 函数，可以传入 strlen(&#8216;Redis\0Cluster\0&#8217;) 这种参数。</p>
+
+<p>再如 PHP 中的 strcoll 和 strcmp 函数：</p>
+
+<pre class="lang:php decode:true ">$string1 = "Hello";
+$string2 = "Hello\x00Hello";
+echo strcoll($string1, $string2); // 返回0, 由于是非二进制安全，误判为相等
+echo strcmp($string1, $string2); // 返回负数</pre>
+
+<p>他们分别用于非二进制安全和二进制安全的情况。因此很多函数会表明是否是二进制安全的，要注意在正确的场景下使用。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

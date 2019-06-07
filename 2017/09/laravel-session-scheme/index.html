@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel Sessionid 处理机制 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel Sessionid 处理机制</h1>
+    <span class="post-date">Sep 11, 2017 &middot; 2 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>在 Laravel 的配置文件 config/session.php 中可以设置 Session Cookie Name，比如这个项目中设置名称为“sns_session”：</p>
+
+<pre class="lang:php decode:true ">/*
+|--------------------------------------------------------------------------
+| Session Cookie Name
+|--------------------------------------------------------------------------
+|
+| Here you may change the name of the cookie used to identify a session
+| instance by ID. The name specified here will get used every time a
+| new session cookie is created by the framework for every driver.
+|
+*/
+
+'cookie' =&gt; 'sns_session',</pre>
+
+<p>我们可以看到刷新页面，查看 cookie，会发现一个名称为 sns_session 的 cookie，名字就是我们自定义的。</p>
+
+<p>这个 sessionid 就是 cookie 和 session 联系的桥梁，服务器通过这个 sessionid 判断来自哪个客户端的请求。</p>
+
+<h3 id="laravel-的-sessionid-每次刷新发生变化">Laravel 的 sessionid 每次刷新发生变化</h3>
+
+<p><strong>但是，每次刷新页面，这个 cookie 值都会发生改变！</strong>那么这样服务器如何保持会话呢？因为你的 sessionid 总是在变。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/09/laravel-session.png" target="_blank"><img class="alignnone size-full wp-image-11604" src="https://blog.tanteng.me/wp-content/uploads/2017/09/laravel-session.png" alt="" width="672" height="256" /></a></p>
+
+<h3 id="laravel-对-cookie-进行加密">Laravel 对 cookie 进行加密</h3>
+
+<p>我们在 vendor/laravel/framework/src/Illuminate/Session/Store.php 的 save 方法中调试一下，打印一下这里的调用栈：</p>
+
+<pre class="lang:php decode:true">/**
+ * {@inheritdoc}
+ */
+public function save()
+{
+    $this-&gt;addBagDataToSession();
+
+    $this-&gt;ageFlashData();
+
+    $this-&gt;handler-&gt;write($this-&gt;getId(), $this-&gt;prepareForStorage(serialize($this-&gt;attributes)));
+
+    $this-&gt;started = false;
+
+    dd(debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT,5));
+}</pre>
+
+<p>每次刷新页面，这个 Store 对象的 id 属性其实是没有变化的，这个属性就是 sessionid 这个 cookie 的值。<strong>也就是说，sessionid 的值并不是每次发生变化，而是写 cookie 的时候，值发生了变化。</strong></p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/09/laravel-session2.png" target="_blank"><img class="alignnone size-full wp-image-11607" src="https://blog.tanteng.me/wp-content/uploads/2017/09/laravel-session2.png" alt="" width="932" height="363" /></a></p>
+
+<p>在 vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php 中的 encrypt 方法找到了原因，这个中间件对所有 cookie 值进行了加密处理，它被包含在 web 中间件。</p>
+
+<pre class="lang:php decode:true ">protected function encrypt(Response $response)
+{
+    foreach ($response-&gt;headers-&gt;getCookies() as $cookie) {
+        if ($this-&gt;isDisabled($cookie-&gt;getName())) {
+            continue;
+        }
+
+        $response-&gt;headers-&gt;setCookie($this-&gt;duplicate(
+            $cookie, $this-&gt;encrypter-&gt;encrypt($cookie-&gt;getValue())
+        ));
+    }
+    return $response;
+}</pre>
+
+<p>而这种加密方式是每次加密的结果都不同，所以表现为 sessionid 的值每次都发生了变化，而实际上并没有改变。在需要用到这个 cookie 的时候会被解密回去。</p>
+
+<p><strong>Laravel 框架这样设计的目的可能是为了防止 session 劫持吧！考虑还是比较全面的！</strong></p>
+
+<h3 id="其他补充知识">其他补充知识</h3>
+
+<h4 id="原生-php-设置-session-名称">原生 PHP 设置 session 名称</h4>
+
+<p>session_name() 函数：</p>
+
+<pre class="lang:php decode:true ">&lt;?php
+
+/* 设置会话名称为 WebsiteID */
+
+$previous_name = session_name("WebsiteID");
+
+echo "The previous session name was $previous_name&lt;br /&gt;";
+?&gt;</pre>
+
+<p class="para rdfs-comment">
+  <span class="function"><strong>session_name()</strong></span> 函数返回当前会话名称。 如果指定 <code class="parameter">name</code> 参数， <span class="function"><strong>session_name()</strong></span> 函数会更新会话名称， 并返回 <em class="emphasis">原来的</em> 会话名称。
+</p>
+
+<p class="para">
+  请求开始的时候，会话名称会被重置并且存储到 <em>session.name</em> 配置项。 因此，要想设置会话名称，那么对于每个请求，都需要在 调用 <span class="function">session_start()</span> 或者 <span class="function">session_register()</span> 函数 之前调用 <span class="function"><strong>session_name()</strong></span> 函数。
+</p>
+
+<h4 id="4COOKIE和SESSION的区别和关系">COOKIE和SESSION的区别和关系</h4>
+
+<ol>
+<li>COOKIE保存在客户端，而SESSION则保存在服务器端</li>
+<li>从安全性来讲，SESSION的安全性更高</li>
+<li>从保存内容的类型的角度来讲，COOKIE只保存字符串（及能够自动转换成字符串）</li>
+<li>从保存内容的大小来看，COOKIE保存的内容是有限的，比较小，而SESSION基本上没有这个限制</li>
+<li>从性能的角度来讲，用SESSION的话，对服务器的压力会更大一些</li>
+<li>SEEION依赖于COOKIE，但如果禁用COOKIE，也可以通过url传递</li>
+</ol>
+
+<p>（本文为小谈博客原创，转载请注明出处！原文地址：<a href="https://blog.tanteng.me/2017/09/laravel-session-scheme/" target="_blank" rel="noopener"><a href="https://blog.tanteng.me/2017/09/laravel-session-scheme/">https://blog.tanteng.me/2017/09/laravel-session-scheme/</a></a>）</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

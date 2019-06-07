@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP队列服务HTTPSQS的安装和使用 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP队列服务HTTPSQS的安装和使用</h1>
+    <span class="post-date">Aug 11, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>HTTPSQS(HTTP Simple Queue Service)是一个基于HTTP GET/POST请求的简单队列服务。<figure id="attachment_8542" style="width: 500px" class="wp-caption alignnone"></p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png" target="_blank"><img class="wp-image-8542 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png" alt="PHP队列服务HTTPSQS的安装和使用" width="500" height="503" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png 500w, https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements-150x150.png 150w, https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements-298x300.png 298w" sizes="(max-width: 500px) 100vw, 500px" /></a><figcaption class="wp-caption-text">PHP队列原理图</figcaption></figure></p>
+
+<p>队列（Queue）又称先进先出表（First In First Out），即先进入队列的元素，先从队列中取出。加入元素的一头叫“队头”，取出元素的一头叫“队尾”。利用消息队列可以很好地异步处理数据传送和存储， 当你频繁地向数据库中插入数据、频繁地向搜索引擎提交数据，就可采取消息队列来异步插入。另外，还可以将较慢的处理逻辑、有并发数量限制的处理逻辑，通过消息队列放在后台处理，例如FLV视频转换、发送手机短信、发送电子邮件等，也就是实现异步请求。</p>
+
+<h3 id="httpsqs-具有以下特征">HTTPSQS 具有以下特征：</h3>
+
+<p>● 非常简单，基于 HTTP GET/POST 协议。PHP、Java、Perl、Shell、Python、Ruby等支持HTTP协议的编程语言均可调用。</p>
+
+<p>● 非常快速，入队列、出队列速度超过10000次/秒。</p>
+
+<p>● 高并发，支持上万的并发连接，C10K不成问题。</p>
+
+<p>● 支持多队列。</p>
+
+<p>● 单个队列支持的最大队列数量高达10亿条。</p>
+
+<p>● 低内存消耗，海量数据存储，存储几十GB的数据只需不到100MB的物理内存缓冲区。</p>
+
+<p>● 可以在不停止服务的情况下便捷地修改单个队列的最大队列数量。</p>
+
+<p>● 可以实时查看队列状态（入队列位置、出队列位置、未读队列数量、最大队列数量）。</p>
+
+<p>● 可以查看指定队列ID（队列点）的内容，包括未出、已出的队列内容。</p>
+
+<p>● 查看队列内容时，支持多字符集编码。</p>
+
+<p>● 源代码不超过800行，适合二次开发。</p>
+
+<h3 id="httpsqs使用示例">HTTPSQS使用示例：</h3>
+
+<pre class="lang:php decode:true ">//生成对账单
+public function create_dzd()
+{
+    $sl_id = I('get.sl_id','','intval');
+    $sl_uid = I('get.sl_uid','','intval');
+
+    $this-&gt;send_task-&gt;startTrans();//开启事务
+
+    $data['st_params'] = $sl_id;
+    $data['st_seller_id'] = $sl_uid;
+    $data['st_type'] = 3;
+    $data['st_add_time'] = time();
+    $data['st_success'] = 1;//1后台生成对账单
+    $data['st_is_compelete'] = 0;
+    $data['st_ip'] = get_client_ip(1);
+    $id = $this-&gt;send_task-&gt;add($data);
+    if($id){
+        $httpsqs = $this-&gt;getHttpsqs();
+        $name = self::EXPORT_RECORD;
+        $rs = $httpsqs-&gt;put($name, $id);
+        if($rs){
+            $this-&gt;send_task-&gt;commit();
+            $this-&gt;ajaxReturn(array('code'=&gt;0, 'msg'=&gt;'已经开始生成！'));
+        }else{
+            $this-&gt;send_task-&gt;rollback();
+            $this-&gt;ajaxReturn(array('code'=&gt;2, 'msg'=&gt;'生成对账单失败'));
+        }
+    }else{
+        $this-&gt;ajaxReturn(array('code'=&gt;3, 'msg'=&gt;'生成对账单失败'));
+    }
+}</pre>
+
+<p>这就是一个队列的应用，生成对账单，入队列，同时把记录写入到一张表记录。另一个java脚本读取队列，进行处理，更新记录。</p>
+
+<p>HTTPSQS封装在一个类中，调用的时候这样调用：</p>
+
+<pre class="lang:php decode:true">//初始化队列服务
+private function getHttpsqs()
+{
+    import("COM.Httpsqs");
+    $httpsqs = new Httpsqs("192.168.1.8", 1218, "dafadsfasfsadfsa", 'utf-8');
+    return $httpsqs;
+}</pre>
+
+<p>但是要使用HTTPSQS，必须有一台队列服务器，这个服务器装了队列服务。</p>
+
+<p>以上初始化队列，也指定了ip，端口，来连接队列服务器，才能进行队列的操作。</p>
+
+<p>HTTPSQS服务器端安装方法：</p>
+
+<pre class="lang:sh decode:true ">ulimit -SHn 65535
+
+wget http://httpsqs.googlecode.com/files/libevent-2.0.12-stable.tar.gz
+tar zxvf libevent-2.0.12-stable.tar.gz
+cd libevent-2.0.12-stable/
+./configure --prefix=/usr/local/libevent-2.0.12-stable/
+make
+make install
+cd ../
+
+wget http://httpsqs.googlecode.com/files/tokyocabinet-1.4.47.tar.gz
+tar zxvf tokyocabinet-1.4.47.tar.gz
+cd tokyocabinet-1.4.47/
+./configure --prefix=/usr/local/tokyocabinet-1.4.47/
+#注：在32位Linux操作系统上编译Tokyo cabinet，请使用./configure --enable-off64代替./configure，可以使数据库文件突破2GB的限制。
+#./configure --enable-off64 --prefix=/usr/local/tokyocabinet-1.4.47/
+make
+make install
+cd ../
+
+wget http://httpsqs.googlecode.com/files/httpsqs-1.7.tar.gz
+tar zxvf httpsqs-1.7.tar.gz
+cd httpsqs-1.7/
+make
+make install
+cd ../</pre>
+
+<p>更具体的服务器端HTTPSQS队列服务的安装和编译，参考：<a href="https://code.google.com/p/httpsqs/" target="_blank" rel="nofollow"><a href="https://code.google.com/p/httpsqs/">https://code.google.com/p/httpsqs/</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/chmod-number/">Chmod命令修改目录权限数字含义</a>
+      </h1>
+      <span class="post-date">Nov 10, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      <p>常见的目录权限：</p>
+
+<p>-rw&#8212;&#8212;- (600) &#8212; 只有属主有读写权限。</p>
+
+<p>-rw-r&#8211;r&#8211; (644) &#8212; 只有属主有读写权限；而属组用户和其他用户只有读权限。</p>
+
+<p>-rwx&#8212;&#8212; (700) &#8212; 只有属主有读、写、执行权限。</p>
+
+<p>-rwxr-xr-x (755) &#8212; 属主有读、写、执行权限；而属组用户和其他用户只有读、执行权限。</p>
+      <a href="http://tanteng.me/2015/11/chmod-number/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/php-stdclass/">PHP中stdClass的意义</a>
+      </h1>
+      <span class="post-date">Nov 8, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。</p>
+      <a href="http://tanteng.me/2015/11/php-stdclass/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/mac-git-missing-xcrun/">Mac终端git命令提示错误:missing xcrun</a>
+      </h1>
+      <span class="post-date">Nov 8, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      <p>在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&#8217;t start Git，点击&#8221;fix it&#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：</p>
+
+<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
+      <a href="http://tanteng.me/2015/11/mac-git-missing-xcrun/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/python3-requests-get-post/">Python3 Requests模块get和post示例</a>
+      </h1>
+      <span class="post-date">Nov 5, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>使用Python3的Requests模块用于模拟get和post请求非常简单强大，可以构造header头，传递各种类型参数，cookies，session等，模拟不同的请求，这里只演示一下最简单的get和post示例。</p>
+      <a href="http://tanteng.me/2015/11/python3-requests-get-post/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/sourcetree-release/">SourceTree提交代码合并到发布分支操作步骤</a>
+      </h1>
+      <span class="post-date">Nov 5, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a>
+      </span>
+      
+      <p>发布代码有一个发布分支，汇总所有要发布的分支，需要把各个分支合并到发布分支上来，每个提交的分支作为一个“点”，以下是SourceTree提交分支到发布分支的操作步骤：</p>
+
+<p>1.最好以自己的分支再创建一个新的分支，防止操作过程有不可逆的失误。</p>
+
+<p>2.找到第一次提交修改上次提交，右键重置到当前分支，选择软合并，这样就把自己的分支合并成一个“点”，然后提交代码。</p>
+
+<p>3.到要合并的主分支，切换到“所有分支”，找到自己刚提交的点，右键“遴选”，再推送到远端。</p>
+      <a href="http://tanteng.me/2015/11/sourcetree-release/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/python3-wechat/">如何使用python3刷微信步数</a>
+      </h1>
+      <span class="post-date">Nov 4, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>由于微信第三方接口的漏洞，一款乐动力的运动APP可以用来刷微信步数，原理很简单，伪造POST请求就可以了。</p>
+
+<p style="text-align: center;">
+  <a href="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg" target="_blank"><img class="alignnone size-full wp-image-8853" src="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg" alt="微信刷步数" width="320" height="568" srcset="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg 320w, https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs-169x300.jpg 169w" sizes="(max-width: 320px) 100vw, 320px" /></a>
+</p>
+      <a href="http://tanteng.me/2015/11/python3-wechat/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/wechat-rewrd-wordpress-plugin/">微信打赏WordPress插件</a>
+      </h1>
+      <span class="post-date">Nov 4, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a><a class="label" href="http://tanteng.me/categories/wordpress">WordPress</a><a class="label" href="http://tanteng.me/categories/wordpress-plugins">WordPress Plugins</a>
+      </span>
+      
+      <p>折腾了一个WordPress小插件，给每篇文章下面添加一个微信打赏功能，安装插件后，可在后台设置自己的微信收款二维码图片。</p>
+
+<h3 id="后台设置页面">后台设置页面</h3>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png" target="_blank"><img class="alignnone wp-image-8841 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png" alt="wechat-reward16" width="946" height="436" srcset="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png 946w, https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16-300x138.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+      <a href="http://tanteng.me/2015/11/wechat-rewrd-wordpress-plugin/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/redis-incr/">Redis INCR的应用场景</a>
+      </h1>
+      <span class="post-date">Nov 2, 2015 &middot; 2 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/redis">Redis</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+      </span>
+      
+      <p>Redis INCR的应用场景主要是计数器和限速器。</p>
+
+<h2 id="模式-计数器">模式：计数器</h2>
+
+<p>计数器是 Redis 的原子性自增操作可实现的最直观的模式了，它的想法相当简单：每当某个操作发生时，向 Redis 发送一个 INCR 命令。</p>
+      <a href="http://tanteng.me/2015/11/redis-incr/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/11/redis-lock-incr/">Redis加锁防止重复操作的原理</a>
+      </h1>
+      <span class="post-date">Nov 2, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>使用Redis加锁的方式可以防止重复操作，包括表单提交，ajax等http请求，它的原理就是redis的incr命令给键自增，如果返回值不是1，就表示是重复请求，具体看代码：</p>
+
+<pre class="lang:php decode:true">/**
+ * 锁定请求
+ * @param int $expire 锁定时间
+ * @param string $mark 自定义标记
+ * @return bool
+ */
+protected function lock($expire=1,$mark=''){
+    $url=strtolower(MODULE_NAME.'/'.ACTION_NAME);//操作地址
+    $prefix='lock_';$sid=$_COOKIE[C("SESSION_OPTIONS.name")];
+    $key=$prefix.md5($sid.$url.$mark);//令牌键值
+    /**
+     * @var Redis $redis
+     */
+    $redis = D('Redis');
+    if($redis-&gt;incr($key)==1){
+        return $redis-&gt;expire($key,$expire);
+    }
+    return false;
+}</pre>
+      <a href="http://tanteng.me/2015/11/redis-lock-incr/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/10/call-user-func-vs-new-class/">call_user_func与实例化的区别</a>
+      </h1>
+      <span class="post-date">Oct 30, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+      </span>
+      
+      <p>使用call_user_func可以执行一个类的某个方法，而且可以给方法传参数，它跟实例化一个类再调用方法有什么区别呢？看下面的例子。</p>
+
+<pre class="lang:php decode:true ">class A
+{
+    public function __Construct($a,$b,$c)
+    {
+        echo 'Construct'.$a.$b.$c;
+    }
+
+    public function test($a,$b,$c)
+    {
+        echo ' test'.$a.$b.$c;
+    }
+}
+
+$a = new A(1,2,3);
+$a-&gt;test(1,2,3);
+
+call_user_func(['A','test'],1,2,3);</pre>
+      <a href="http://tanteng.me/2015/10/call-user-func-vs-new-class/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/26/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/26/">26</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/27/">27</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/28/">28</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/28/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

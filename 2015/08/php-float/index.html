@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP浮点数运算精度的问题 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP浮点数运算精度的问题</h1>
+    <span class="post-date">Aug 12, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>在用PHP进行浮点数的运算中，遇到一个坑，没有得到预期中的结果，如下代码：</p>
+
+<pre class="lang:php decode:true">$a = 69.1;
+
+$b = $a*100;
+
+$c = $b-6910;</pre>
+
+<p>你猜$c的值是多少？$c输出的值是-9.0949470177293E-13.为什么会这样？</p>
+
+<p>在PHP官网Float浮点型页面中，讲到：</p>
+
+<h1 id="浮点数的精度-title">浮点数的精度 {.title}</h1>
+
+<blockquote>
+<p class="para">
+  浮点数的精度有限。尽管取决于系统，PHP 通常使用 IEEE 754 双精度格式，则由于取整而导致的最大相对误差为 1.11e-16。非基本数学运算可能会给出更大误差，并且要考虑到进行复合运算时的误差传递。
+</p>
+
+<p class="para">
+  此外，以十进制能够精确表示的有理数如 <em>0.1</em> 或 <em>0.7</em>，无论有多少尾数都不能被内部所使用的二进制精确表示，因此不能在不丢失一点点精度的情况下转换为二进制的格式。这就会造成混乱的结果：例如，<em>floor((0.1+0.7)*10)</em> 通常会返回 <em>7</em> 而不是预期中的 <em>8</em>，因为该结果内部的表示其实是类似 <em>7.9999999999999991118&#8230;</em>。
+</p>
+
+<p class="para">
+  所以永远不要相信浮点数结果精确到了最后一位，也永远不要比较两个浮点数是否相等。如果确实需要更高的精度，应该使用任意精度数学函数或者gmp函数。
+</p>
+</blockquote>
+
+<h3 id="那么如何正确处理php浮点数计算有误的问题呢">那么如何正确处理PHP浮点数计算有误的问题呢？</h3>
+
+<pre class="lang:php decode:true ">$x = 8 - 6.4;  // which is equal to 1.6
+$y = 1.6;
+var_dump($x == $y); // is not true</pre>
+
+<p>以上例子中$x和$y的值并不等。解决办法是用round()函数，如：</p>
+
+<pre class="lang:php decode:true ">var_dump(round($x, 2) == round($y, 2)); // this is true</pre>
+
+<p>问题的原因在于$x并不是1.6，而是<code>&lt;span class=&quot;html&quot;&gt;1.599999.&lt;/span&gt;</code></p>
+
+<p>所以本文开头的例子改成下面这样就OK了：</p>
+
+<pre class="lang:php mark:5 decode:true ">$a = 69.1;
+
+$b = $a*100;
+
+$c = round($b)-6910;</pre>
+
+<p>或者使用number_format((float)$a, 2)格式化。</p>
+
+<p>再看一个关于PHP浮点数算出来结果不符合预期的例子。</p>
+
+<pre class="lang:php decode:true ">$a = intval( 0.58*100 );
+
+$b = 0.58*100;</pre>
+
+<p>$a的值出乎意料的是57，$b的值是58.</p>
+
+<p>解决办法是：</p>
+
+<pre class="lang:php decode:true">$a = intval( (0.58*1000)/10 );</pre>
+
+<p>或者使用Binary Calculator，即BCMath扩展解决以上问题。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

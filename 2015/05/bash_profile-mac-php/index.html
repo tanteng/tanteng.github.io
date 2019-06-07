@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>修改bash_profile文件切换Mac默认PHP版本为MAMP &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">修改bash_profile文件切换Mac默认PHP版本为MAMP</h1>
+    <span class="post-date">May 30, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>Mac自带了PHP开发环境，但是很多开发者装了MAMP集成环境，打开终端输入：which php，会显示/usr/bin/php，是系统自带的PHP版本，要切换默认的PHP版本为MAMP下的PHP，需要修改系统bash_profile并执行这个shell脚本。</p>
+
+<p>打开终端，输入：</p>
+
+<pre class="lang:vim decode:true ">sudo nano ~/.bash_profile</pre>
+
+<p>然后把以下代码添加到bash_profile脚本最后面：</p>
+
+<pre class="lang:vim decode:true "># Setting PATH for MAMP
+PATH="/Applications/MAMP/bin/php/php5.6.2/bin:$PATH"
+export PATH</pre>
+
+<p>如图所示：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/05/bash_profile.png" target="_blank"><img class="alignnone size-full wp-image-8177" src="https://blog.tanteng.me/wp-content/uploads/2015/05/bash_profile.png" alt="bash_profile" width="569" height="364" srcset="https://blog.tanteng.me/wp-content/uploads/2015/05/bash_profile.png 569w, https://blog.tanteng.me/wp-content/uploads/2015/05/bash_profile-300x192.png 300w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>然后按Control+O保存，再按Control+X退出。</p>
+
+<p>这个时候别忘了执行一遍这个bash_profile脚本，否则不会生效，执行bash_profile脚本的命令是source：</p>
+
+<pre class="lang:vim decode:true ">source .bash_profile</pre>
+
+<p>这个时候再输入：which php命令，是不是就切换成了MAMP目录下的PHP版本了。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

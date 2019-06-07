@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</h1>
+    <span class="post-date">Jan 14, 2017 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。</p>
+
+<h3 id="空间占用大的原因">空间占用大的原因</h3>
+
+<p>发现 /var/spool/postfix/maildrop 这个目录占用了 6G 多的空间，网上找到一样的问题，原因是：</p>
+
+<blockquote>
+<p>由于 Linux 在执行 cron 时，会将 cron 执行脚本中的 output 和 warning 信息，都会以邮件的形式发送 cron 所有者， 而由于客户环境中的 sendmail 和 postfix 没有正常运行，导致邮件发送不成功，全部小文件堆积在了 maildrop 目录下面，而且没有自动清理转换的机制，所以长达一年的时间，此目录已堆积了大量的文件。查看 man cron 的信息，可以知道会发送给 cron owner.</p>
+</blockquote>
+
+<p>于是尝试删除这个目录下的内容，但是执行 rm -rf ./* 竟然提示参数列表过长，后来使用如下命令删除：</p>
+
+<p>ls | xargs rm -f</p>
+
+<p>通过管道的方式删除。</p>
+
+<h3 id="脚本重定向输出">脚本重定向输出</h3>
+
+<p>所以注意在 crontab 脚本输出内容到日志，或者 /dev/null 2&gt;&amp;1，避免产生大量不必要的文件。</p>
+
+<h4 id="几个-linux-查找文件和空间的命令">几个 Linux 查找文件和空间的命令</h4>
+
+<p>find . -type f -size +1000000k 查找大文件和目录</p>
+
+<p>du -s * | sort -nr | head 显示前十个占用空间最大的文件或目录</p>
+
+<p>du -sh * 遍历目录大小</p>
+
+<p>df -hl 系统各挂载硬盘空间大小</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

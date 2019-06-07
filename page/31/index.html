@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>小谈博客 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://tanteng.me/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 &middot; TonyTan" />
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python-encoding-style/">Python编码风格</a>
+      </h1>
+      <span class="post-date">Jul 14, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p><span id="131">对于 Python 而言， <span id="index-7"> </span> PEP 8 已成为大多数项目遵循的风格指南；</span><span id="132">它给出了一个高度可读，视觉友好的编码风格。</span><span id="133">每个 Python 开发者应该阅读一下；</span><span id="134">这里是为你提取出来的最重要的要点：</span></p>
+      <a href="http://tanteng.me/2015/07/python-encoding-style/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python3-sys-argv/">Python3接收命令行参数sys.argv用法</a>
+      </h1>
+      <span class="post-date">Jul 13, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>Python3中，使用sys.argv可以接收命令行传入的参数，需要import sys模块，sys.argv第一个参数是文件名，无需定义，第二参数开始是命令行输入的参数，以空格隔开。</p>
+
+<p>举例如下，运行sys_argv.py脚本附带两个参数分别是run1和run2，运行结果如下：</p>
+
+<pre class="lang:python decode:true">&gt;&gt;&gt;python3 sys_argv.py run1 run2
+I'm action1
+I'm action2</pre>
+      <a href="http://tanteng.me/2015/07/python3-sys-argv/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python-self/">为什么Python类的方法需要加self作为第一个参数？</a>
+      </h1>
+      <span class="post-date">Jul 12, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>为什么Python类的方法需要加self作为第一个参数？比如Python类的方法都是这样定义的：</p>
+
+<pre>class CharField(Field):
+    description = _("String (up to %(max_length)s)")
+
+    def __init__(self, *args, **kwargs):
+        super(CharField, self).__init__(*args, **kwargs)
+        self.validators.append(validators.MaxLengthValidator(self.max_length))
+
+    def check(self, **kwargs):
+        errors = super(CharField, self).check(**kwargs)
+        errors.extend(self._check_max_length_attribute(**kwargs))
+        return errors</pre>
+
+<p>看到一篇文章讲这个问题，转载过来了。</p>
+      <a href="http://tanteng.me/2015/07/python-self/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/local-variable-referenced-before-assignment/">local variable ‘count’ referenced before assignment</a>
+      </h1>
+      <span class="post-date">Jul 11, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>在写一个Python闭包函数实现计数器功能的时候，出现了报错：local variable &#8216;count&#8217; referenced before assignment.这是怎么回事呢？</p>
+      <a href="http://tanteng.me/2015/07/local-variable-referenced-before-assignment/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python-closure/">Python函数中的函数(闭包示例)</a>
+      </h1>
+      <span class="post-date">Jul 11, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>Python函数中也可以定义函数，也就是闭包。跟js中的闭包概念其实差不多，举个Python中闭包的例子。</p>
+
+<pre class="lang:python decode:true">def make_adder(addend):
+    def adder(augend):
+        return augend + addend
+    return adder
+
+p = make_adder(23)
+q = make_adder(44)
+
+print(p(100))
+print(q(100))</pre>
+
+<p>运行结果是：123和144.</p>
+      <a href="http://tanteng.me/2015/07/python-closure/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python-args-kwargs/">Python3可变参数*args,**kwargs及区别</a>
+      </h1>
+      <span class="post-date">Jul 11, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>在Python的函数参数中经常可以看到*args和**kwargs这样的写法，这是Python的魔法参数，也就是可变参数，它支持传入多个参数，下面看看它们的区别。</p>
+      <a href="http://tanteng.me/2015/07/python-args-kwargs/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python3-ascii-letters/">Python3基础:String模块ascii_letters和digits</a>
+      </h1>
+      <span class="post-date">Jul 11, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>本文介绍Python3中String模块ascii_letters和digits方法，其中ascii_letters是生成所有字母，从a-z和A-Z,digits是生成所有数字0-9.</p>
+      <a href="http://tanteng.me/2015/07/python3-ascii-letters/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python3-floor-division/">Python3中的真除和Floor除法</a>
+      </h1>
+      <span class="post-date">Jul 10, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>在Python3中，除法运算有两种，一种是真除，一种是Floor除法，这两者是有分别的，分别如代码所示：</p>
+
+<pre class="lang:python decode:true python">&gt;&gt;&gt;10/4
+2.5
+&gt;&gt;&gt;10//4
+2
+&gt;&gt;&gt;10/4.0
+2.5
+&gt;&gt;&gt;10//4.0
+2.0</pre>
+      <a href="http://tanteng.me/2015/07/python3-floor-division/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python-mongodb-save-file/">Python保存MongoDB上的文件到本地</a>
+      </h1>
+      <span class="post-date">Jul 10, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的gridfs方法操作文档。以下示例是把MongoDB上GridFS存的excel文档保存到本地。
+from pymongo import MongoClient import gridfs client = MongoClient('mongodb://username:pwd@192.168.1.22:27017/send_excel') db = client.js_send_excel fs = gridfs.GridFS(db) files = fs.find() print('总数：', files.count()) for ffle in files: if ffle.filename.find('.xls') &gt; 0: with open(ffle.filename, 'wb') as f1: f1.write(ffle.read()) &nbsp;
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://tanteng.me/2015/07/python%E4%B8%AD%E7%9A%84switch-case/">Python中的switch case</a>
+      </h1>
+      <span class="post-date">Jul 9, 2015 &middot; 1 minute read
+      
+      <br/>
+      <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+      </span>
+      
+      <p>Python本身并没有其他语言都有的switch,case这种语言结构，那么在Python中，是如何代替switch的呢？</p>
+
+<p>Python使用字典的数据类型来代替switch，发挥switch的功能，代码如下：</p>
+      <a href="http://tanteng.me/2015/07/python%E4%B8%AD%E7%9A%84switch-case/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/30/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/30/">30</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/31/">31</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/32/">32</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/32/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+  </div>
+</div>
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

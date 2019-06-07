@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Flowplayer免费WEB视频播放器 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Flowplayer免费WEB视频播放器</h1>
+    <span class="post-date">Jan 9, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E5%89%8D%E7%AB%AF">前端</a>
+    </span>
+    <p>Flowplayer是一款免费的WEB视频播放器，支持播放flv、swf等流媒体以及图片文件，能够非常流畅的播放视频文件，支持自定义配置和扩展。可以方便的引用，嵌入到网页中。不需要优酷等第三方视频播放。</p>
+
+<h4 id="1-加载flowplayer-js">1、加载flowplayer.js</h4>
+
+<p>在要播放视频的页面的head之间加入flowplayer.js。</p>
+
+<pre class="lang:js decode:true">&lt;script type="text/javascript" src="js/flowplayer-3.2.6.min.js"&gt;&lt;/script&gt;</pre>
+
+<p>您可以到flowplyer官网上下载最新版本：<a href="http://flowplayer.org/download/index.html" target="_blank" rel="nofollow"><a href="http://flowplayer.org/download/index.html">http://flowplayer.org/download/index.html</a></a></p>
+
+<h4 id="2-xhtml">2、XHTML</h4>
+
+<p>在需要加入播放器的地方加入如下一段代码：</p>
+
+<pre class="lang:xhtml decode:true">&lt;a href="flowplayer.flv" style="display:block;width:520px;height:330px" id="player"&gt;&lt;/a&gt;</pre>
+
+<p>将a标签的href属性指向要播放的视频地址，然后设置样式，宽度和高度，以及设置display:block，当然关键的是还要给a标签指定一个id，以便于JS调用。</p>
+
+<p>当然你也可以只在html中指定一个DIV，然后由Javascript来控制播放地址，如：</p>
+
+<pre class="lang:xhtml decode:true">&lt;div id="player2" style="width:520px; height:330px"&gt; &lt;/div&gt;</pre>
+
+<h4 id="3-javascript">3、Javascript</h4>
+
+<p>在页面底部计入javascript脚本调用播放器：</p>
+
+<pre class="lang:js decode:true">&lt;script type="text/javascript"&gt; 
+flowplayer("player", "flowplayer-3.2.7.swf"); 
+&lt;/script&gt;</pre>
+
+<p>使用flowplayer()函数调用播放器，第一个参数是播放器的id，第二个参数是播放器的路径，它是一个flash文件，一定要保证播放器的路径正确。</p>
+
+<p>如果不是使用a标签调用视频文件，而是使用DIV来调用，则代码如下：</p>
+
+<pre class="lang:js decode:true ">flowplayer( 
+    "player2",  
+    "flowplayer-3.2.7.swf",{ 
+      clip: { 
+        url: "flowplayer.flv", 
+        autoPlay: false,  
+        autoBuffering: true  
+      } 
+    } 
+);</pre>
+
+<p>flowplayer() 函数的第三个参数是可以进行多项设置的，其实就是高级设置。clip方法里的url：表示视频文件的真实地 址，autoPlay：表示是否自动播放，默认是true，autoBuffering：表示是否自动缓冲，即当视频文件设置为不自动播放时，播放器仍然 预先下载视频文件内容。</p>
+
+<p>flowplayer还支持播放列表，以及皮肤设置等多项高级设置，具体设置方法，感兴趣的同学可以请访问：<a href="http://flowplayer.org/documentation/configuration/index.html" target="_blank" rel="nofollow"><a href="http://flowplayer.org/documentation/configuration/index.html">http://flowplayer.org/documentation/configuration/index.html</a></a>。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

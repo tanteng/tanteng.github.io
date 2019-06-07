@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Sublime必备插件for PHP &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Sublime必备插件for PHP</h1>
+    <span class="post-date">Nov 22, 2014 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>Sublime Text真是一款写代码的利器，轻巧快捷，而且功能强大，用来写PHP代码再好不过了，告别以前用的笨重臃肿的Zend Studio，感觉一身轻松，PHP代码也更加优雅。但是PHP开发也经常和javascript，css，html等打交道，虽然Sublime Text本身也对他们友好，但是有以下PHP开发Sublime必备插件就更好了。</p>
+
+<h2 id="安装package-control">安装Package Control</h2>
+
+<p>Sublime Text安装插件之前必须先装一个插件：Package Control，功能就是安装包管理，安装方法：</p>
+
+<ol>
+<li>CTRL+` ，出现控制台</li>
+<li>粘贴以下代码至控制台</li>
+<li><code>import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')</code></li>
+<li><code>import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())</code></li>
+</ol>
+
+<p>其他方法：如果以上方法不能安装，请使用下面的方法</p>
+
+<ol>
+<li>选择菜单：Preferences &gt; Browse Packages</li>
+<li>打开sublime插件安装包文件夹</li>
+<li>下载文件并复制到打开的文件夹</li>
+<li>重启sublime</li>
+</ol>
+
+<h3 id="h3-4">JSFormat javascript格式化插件</h3>
+
+<p>对，就是要这个插件，有的js文件被压缩成一行不换行，找起来简直&#8230;转换来转换去又太麻烦，这个插件很好的解决了这个问题。</p>
+
+<p>使用：在已压缩的JS文件中，右键选择jsFormat或者使用默认快捷键（Ctrl+Alt+F）</p>
+
+<p><img class="alignnone size-full wp-image-6407" src="https://blog.tanteng.me/wp-content/uploads/2014/11/jsFormat.gif" alt="Javascript的代码格式化插件" width="817" height="284" /></p>
+
+<h3 id="h3-7">Alignment等号对齐插件</h3>
+
+<p>功能：”=”号对齐</p>
+
+<p>简介：变量定义太多，长短不一，可一键对齐</p>
+
+<p>使用：默认快捷键Ctrl+Alt+A和QQ截屏冲突，可设置其他快捷键如：Ctrl+Shift+Alt+A；先选择要对齐的文本</p>
+
+<p><img class="alignnone size-full wp-image-6408" src="https://blog.tanteng.me/wp-content/uploads/2014/11/align.gif" alt="Alignment" width="328" height="140" /></p>
+
+<h3 id="h3-12">jQuery代码提示Sublime插件</h3>
+
+<p>PHP开发中，经常也要用到jquery，写ajax请求之类的，有了这个jquery代码提示sublime插件，就非常方便写jquery函数，而不用去查手册了。</p>
+
+<p>功能：jQ函数提示</p>
+
+<p>简介：快捷输入jQ函数，是偷懒的好方法</p>
+
+<p><img class="alignnone size-full wp-image-6409" src="https://blog.tanteng.me/wp-content/uploads/2014/11/jquery.gif" alt="jquery sublime" width="397" height="200" /></p>
+
+<h3 id="h3-19">Trailing spaces 一键去除多余空格</h3>
+
+<p>没想到还有这个插件，很多时候复制的代码，末尾会出现很多空格，虽然不影响代码功能，但是追求完美的PHP程序员也要手动将多余的空格清除，有了这款插件就方便多了。</p>
+
+<p><strong>功能</strong>：检测并一键去除代码中多余的空格</p>
+
+<p><strong>简介</strong>：还在纠结代码中有多余的空格而显得代码不规范？或是有处女座情节？次插件帮你实现发现多余空格、一键删除空格、保存时自动删除多余空格，让你的代码规范清爽起来</p>
+
+<p><strong>使用</strong>：安装插件并重启，即可自动提示多余空格。一键删除多余空格：CTRL+SHITF+T（需配置），更多配置请点击标题。快捷键配置：在Preferences / Key Bindings – User加上代码（数组内）</p>
+
+<p><code>{ &quot;keys&quot;: [&quot;ctrl+shift+t&quot;], &quot;command&quot;: &quot;delete_trailing_spaces&quot; }</code></p>
+
+<p>以上就是针对PHP开发推荐的Sublime插件。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>jquery :nth-child()伪类选择器 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">jquery :nth-child()伪类选择器</h1>
+    <span class="post-date">Oct 24, 2011 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/%E5%89%8D%E7%AB%AF">前端</a>
+    </span>
+    <p>本来是css3的伪类选择器，可惜大部分浏览器都不支持，然而jquery却给借鉴过来了， 用起来很给力很给力！</p>
+
+<p><strong>语法：</strong></p>
+
+<pre>:nth-child(<em>an+b</em>)</pre>
+
+<p><strong>描述：</strong></p>
+
+<p>伪类<strong>:nth-child()</strong>的参数是_an+b_，如果按照w3.org上的描述，写成中文，很可能会让人头晕，再加上笔者的文笔水平有限，所以我决定避开an+b的说法，把它拆分成5种写法共5部分来说明。</p>
+
+<p>可惜目前能较好地支持她的只有Opera9+和Safari3+。</p>
+
+<h3 id="第一种-简单数字序号写法"><strong>第一种：简单数字序号写法</strong></h3>
+
+<p><strong>:nth-child(<em>number</em>)</strong></p>
+
+<p>直接匹配第number个元素。参数_number_必须为大于0的整数。</p>
+
+<p>例子：</p>
+
+<pre>li:nth-child(3){background:orange;}/*把第3个LI的背景设为橙色*/
+</pre>
+
+<h3 id="第二种-倍数写法"><strong>第二种：倍数写法</strong></h3>
+
+<pre>:nth-child(<em>an</em>)</pre>
+
+<p>匹配所有倍数为a的元素。其中参数_an_中的字母_n_不可缺省，它是倍数写法的标志，如3n、5n。</p>
+
+<p>例子：</p>
+
+<pre>li:nth-child(3n){background:orange;}/*把第3、第6、第9、…、所有3的倍数的LI的背景设为橙色*/</pre>
+
+<h3 id="第三种-倍数分组匹配"><strong>第三种：倍数分组匹配</strong></h3>
+
+<pre>:nth-child(<em>an+b</em>) 与 </strong><strong>:nth-child(<em>an-b</em>)</pre>
+
+<p>
+  先对元素进行分组，每组有<em>a</em>个，<em>b</em>为组内成员的序号，其中字母<em>n</em>和加号<em>+</em>不可缺省，位置不可调换，这是该写法的标志，其中<em>a</em>,<em>b</em>均为正整数或0。如3n+1、5n+1。但加号可以变为负号，此时匹配组内的第a-b个。（其实<em>an</em>前面也可以是负号，但留给下一部分讲。）
+</p>
+
+<p>
+  例子：
+</p>
+
+<pre>li:nth-child(3n+1){background:orange;}/*匹配第1、第4、第7、…、每3个为一组的第1个LI*/
+
+li:nth-child(3n+5){background:orange;}/*匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI*/
+
+li:nth-child(5n-1){background:orange;}/*匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI*/
+
+li:nth-child(3n±0){background:orange;}/*相当于(3n)*/
+
+li:nth-child(±0n+3){background:orange;}/*相当于(3)*/
+</pre>
+
+<h3>
+  <strong>第四种：反向倍数分组匹配</strong>
+</h3>
+
+<pre>:nth-child(<em>-an+b</em>)</pre>
+
+<p>
+  此处一负一正，均不可缺省，否则无意义。这时与<strong>:nth-child(<em>an+1</em>)</strong>相似，都是匹配第1个，但不同的是它是倒着算的，从第<em>b</em>个开始往回算，所以它所匹配的最多也不会超过<em>b</em>个。
+</p>
+
+<p>
+  例子：
+</p>
+
+<pre>
+li:nth-child(-3n+8){background:orange;}/*匹配第8、第5和第2个LI*/
+
+li:nth-child(-1n+8){background:orange;}/*或(<em>-n+8</em>)，匹配前8个（包括第8个）LI，这个较为实用点，用来限定前面N个匹配常会用到*/
+</pre>
+
+<h3>
+  <strong>第五种：奇偶匹配</strong>
+</h3>
+
+<pre>:nth-child(<em>odd</em>) 与 </strong><strong>:nth-child(<em>even</em>)</pre>
+
+<p>
+  分别匹配序号为奇数与偶数的元素。奇数(odd)与(2n+1)结果一样；偶数(even)与(2n+0)及(2n)结果一样。
+</p>
+
+<p>
+  使用:nth-child在chrome里面不支持群组选择的写法！要分开写！
+</p>
+
+<p>
+  （参考链接：<a href="http://www.wufangbo.com/jquery-nth-child" target="_blank" rel="nofollow">http://www.wufangbo.com/jquery-nth-child</a>）
+</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

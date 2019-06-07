@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>什么时候使用mysql事务？ &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">什么时候使用mysql事务？</h1>
+    <span class="post-date">Apr 7, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/mysql">MySQL</a><a class="label" href="http://tanteng.me/categories/php">PHP</a><a class="label" href="http://tanteng.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    </span>
+    <p>突然想到一个问题，mysql中我们经常用到事务，比如一次向几张表插入内容，如果中间出错了可以回滚，但是实际开发中，像这种一次可能向多个数据表写入数据的情况，并没有采用事务。</p>
+
+<p>比如一件商品表单，有商品基本信息，商品sku（颜色尺寸价格库存），商家信息，店铺信息，提交的时候是向不同的表插入或更新数据，并且都是等第一张表插入（或更新）完了，然后第二张表，第三张表。。。</p>
+
+<p>如果中间某个过程突然中断了，只向前一张表成功插入了数据，而后面的程序没有执行，不怕出现这种情况吗？</p>
+
+<p>再比如，文章表一般设计两张表，一张文章基本信息表，一张文章详情表，大内容放详情表，插入和读取数据也是分两步，也一般不用事务。</p>
+
+<p>我用到事务的一个地方是在一个广告联盟系统，根据接口数据计算广告费用并记录到广告报表，同时更新记录到用户收益表，年统计表等，用了事务，中间某个过程出错就回滚。</p>
+
+<p>为什么有的地方用事务，有的地方不用事务，使用事务的场景是什么？</p>
+
+<p>以下是V2EX网友的回答节选：</p>
+
+<p><strong>lianyue：</strong>设计金额 方便 或对数据准确性要求特稿 并且是多表才需要事务 需要的地方很少很少</p>
+
+<p>1 商品 插入优先 基本信息 然后 扩展信息 插入基本信息后才插入扩展信息 比如 颜色尺寸 插入失败大不了 没库存 重新编辑下就好了 失败率很低很低的</p>
+
+<p>2 文章也是 大不了文章没内容</p>
+
+<p>3 广告联盟 广告报表 可以直接用计划任务 定时统计下就好了 每次有浏览都更新2个表么</p>
+
+<p>比如每天凌晨后统计昨天的数据 看今天的数据直接 count 查询统计就好了 不需要事务</p>
+
+<p><strong>kchum：</strong>OLTP(On_line Transaction Processing 联机事务处理) 和 OLAP(OLAP:On_line Analytical Processing 联机分析处理) 的区别。</p>
+
+<p>关于银行金融，特别是涉及金钱的，当然要用事务。</p>
+
+<p>按照范式来说，确定应该保持数据的一致性，原子性。</p>
+
+<p>但我们在项目中为了性能，或者其他因素（lan）还不是严格对待。</p>
+
+<p>以上是我的见解</p>
+
+<p>我的理解是：比如一篇文章标题、作者等基本属性在一张表，内容等其他的在另一张表，填好表单提交的时候，不会因为第二张表没有插入数据而影响到后面的数据添加，就算内容没有发出去，可以在后台重新编辑保持即可。但是涉及到非常重要的领域，如金融，或者不能再次重新编辑的情况，要使用事务严格控制流程。</p>
+
+<p>在V2EX上的提问：<a href="https://www.v2ex.com/t/182216">https://www.v2ex.com/t/182216</a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Laravel Session 保存机制和 terminate 中间件 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Laravel Session 保存机制和 terminate 中间件</h1>
+    <span class="post-date">Oct 7, 2016 &middot; 2 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/laravel">Laravel</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>在 Laravel 中可以使用 Session 的 get, put, pull, set, has, flash 等方法进行操作，如：Session::put([&#8216;domain&#8217;=&gt;&#8217;tanteng.me&#8217;, &#8216;host&#8217;=&gt;&#8217;aliyun&#8217;])，就可以设置两个 session 值，看看 put 方法：</p>
+
+<pre class="lang:php decode:true " title="代码位于vendor/laravel/framework/src/Illuminate/Session/Store.php">/**
+ * Put a key / value pair or array of key / value pairs in the session.
+ *
+ * @param  string|array  $key
+ * @param  mixed       $value
+ * @return void
+ */
+public function put($key, $value = null)
+{
+    if (! is_array($key)) {
+        $key = [$key =&gt; $value];
+    }
+
+    foreach ($key as $arrayKey =&gt; $arrayValue) {
+        $this-&gt;set($arrayKey, $arrayValue);
+    }
+}</pre>
+
+<p>代码位于 vendor/laravel/framework/src/Illuminate/Session/Store.php</p>
+
+<p>它实际上通过 set 方法设置 session 值，set 方法：</p>
+
+<pre class="lang:php decode:true ">/**
+ * {@inheritdoc}
+ */
+public function set($name, $value)
+{
+    Arr::set($this-&gt;attributes, $name, $value);
+}</pre>
+
+<p>可见 set 方法仅仅是将值保存在 Store 这个类的属性 attributes 中，也就是你多个保存 session 的操作都是将值保存在一个地方，此时并没有真正设置，而是最后一次保存，保存 session 的方法是 Store 类的 save 方法。</p>
+
+<p>其中 save 方法：</p>
+
+<pre class="lang:php decode:true">/**
+ * {@inheritdoc}
+ */
+public function save()
+{
+    $this-&gt;addBagDataToSession();
+
+    $this-&gt;ageFlashData();
+
+    $this-&gt;handler-&gt;write($this-&gt;getId(), $this-&gt;prepareForStorage(serialize($this-&gt;attributes)));
+
+    $this-&gt;started = false;
+}</pre>
+
+<p><strong>那么在何处何时调用 save 方法设置 session 值呢？</strong></p>
+
+<h3 id="laravel-中间件-startsession">Laravel 中间件 StartSession</h3>
+
+<p>这里就用到了 terminate 中间件，StartSession 这个中间件有个 terminate 方法，如下：</p>
+
+<pre class="lang:php decode:true">/**
+ * Perform any final actions for the request lifecycle.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  \Symfony\Component\HttpFoundation\Response  $response
+ * @return void
+ */
+public function terminate($request, $response)
+{
+    if ($this-&gt;sessionHandled && $this-&gt;sessionConfigured() && ! $this-&gt;usingCookieSessions()) {
+        $this-&gt;manager-&gt;driver()-&gt;save();
+    }
+}</pre>
+
+<p class="lang:php decode:true ">
+  这里只讲讲 StartSession 的 terminate 方法，其中 $this->manager->driver()->save() 这句即是调用前文讲的 save 方法保存设置 session 值。
+</p>
+
+<h3 id="什么是-terminable-中间件">什么是 Terminable 中间件</h3>
+
+<p>这里引用其他地方的一句话：</p>
+
+<blockquote>
+<p><strong>有时候中间件需要在 HTTP 的响应已经发送到浏览器之后去做点事。</strong>比如在 Laravel 里包含的 session 这个中间件，它会在响应发送到浏览器之后，把 session 数据写入到存储里面。要实现这个功能，你可以把中间件定义成 terminable 。</p>
+</blockquote>
+
+<p>原来是在响应之后再做的事情，保存 session 的步骤是一次性在最后进行，这就是 Laravel Session 保存的机制，以及 terminate 中间件的用法。</p>
+
+<p>Laravel 的 Session 提供多个存储方式，file，memcache，redis，database 等等，可以通过配置文件设置。</p>
+
+<h4 id="参考链接">参考链接：</h4>
+
+<p><a href="http://ninghao.net/blog/2145" target="_blank" rel="nofollow">Laravel 5 中间件 Middleware 介绍</a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

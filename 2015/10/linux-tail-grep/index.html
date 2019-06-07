@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Linux命令:tail,grep &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Linux命令:tail,grep</h1>
+    <span class="post-date">Oct 21, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>
+    </span>
+    <p>今天来学习两个Linux命令：tail和grep.</p>
+
+<p>tail命令从指定点开始将文件写到标准输出.使用tail命令的-f选项可以方便的查阅正在改变的日志文件，常用来跟踪系统日志文件，tail -f filename会把filename里最尾部的内容显示在屏幕上，并且不断刷新，使你看到最新的文件内容。</p>
+
+<h3 id="tail命令参数">tail命令参数：</h3>
+
+<p>-f 循环读取</p>
+
+<p>-q 不显示处理信息</p>
+
+<p>-v 显示详细的处理信息</p>
+
+<p>-c&lt;数目&gt; 显示的字节数</p>
+
+<p>-n&lt;行数&gt; 显示行数</p>
+
+<p>&#8211;pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.</p>
+
+<p>-q, &#8211;quiet, &#8211;silent 从不输出给出文件名的首部</p>
+
+<p>-s, &#8211;sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒</p>
+
+<p>tail命令跟踪显示日志文件：</p>
+
+<pre class="lang:perl decode:true">[root@localhost ~]# tail -f test.log</pre>
+
+<p>这样就在窗口中可以看到最新的test.log的输出，自动刷新显示最新内容。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/10/tailf.png" target="_blank"><img class="alignnone wp-image-8703 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/10/tailf.png" alt="tail -f命令" width="979" height="174" srcset="https://blog.tanteng.me/wp-content/uploads/2015/10/tailf.png 979w, https://blog.tanteng.me/wp-content/uploads/2015/10/tailf-300x53.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>tail 命令可以和 grep 命令结合使用，如：</p>
+
+<pre class="lang:php decode:true ">tail -f app.log | grep debug</pre>
+
+<p>表示跟踪字符包含“debug”的内容。</p>
+
+<p>下面介绍另一个Linux命令grep。</p>
+
+<p>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。</p>
+
+<h3 id="grep命令主要参数">grep命令主要参数</h3>
+
+<p>－c：只输出匹配行的计数。</p>
+
+<p>－I：不区分大 小写(只适用于单字符)。</p>
+
+<p>－h：查询多文件时不显示文件名。</p>
+
+<p>－l：查询多文件时只输出包含匹配字符的文件名。</p>
+
+<p>－n：显示匹配行及 行号。</p>
+
+<p>－s：不显示不存在或无匹配文本的错误信息。</p>
+
+<p>－v：显示不包含匹配文本的所有行。</p>
+
+<p>pattern正则表达式主要参数：</p>
+
+<p>\： 忽略正则表达式中特殊字符的原有含义。</p>
+
+<p>^：匹配正则表达式的开始行。</p>
+
+<p>$: 匹配正则表达式的结束行。</p>
+
+<p>&lt;：从匹配正则表达 式的行开始。</p>
+
+<p>&gt;：到匹配正则表达式的行结束。</p>
+
+<p>[ ]：单个字符，如[A]即A符合要求 。</p>
+
+<p>[ &#8211; ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</p>
+
+<p>。：所有的单个字符。</p>
+
+<ul>
+<li>：有字符，长度可以为0。</li>
+</ul>
+
+<h4 id="grep命令使用简单实例">grep命令使用简单实例</h4>
+
+<p>$ grep ‘test’ d*</p>
+
+<p>显示所有以d开头的文件中包含 test的行。</p>
+
+<p>$ grep ‘test’ aa bb cc</p>
+
+<p>显示在aa，bb，cc文件中匹配test的行。</p>
+
+<p>$ grep ‘[a-z]{5}’ aa</p>
+
+<p>显示所有包含每个字符串至少有5个连续小写字符的字符串的行。</p>
+
+<p>$ grep ‘west.*\1′ aa</p>
+
+<p>如果west被匹配，则es就被存储到内存中，并标记为1，然后搜索任意个字符(.*)，这些字符后面紧跟着 另外一个es(\1)，找到就显示该行。如果用egrep或grep -E，就不用”\”号进行转义，直接写成’w(es)t.*\1′就可以了。</p>
+
+<h4 id="grep命令使用复杂实例">grep命令使用复杂实例</h4>
+
+<p>假设您正在’/usr/src/Linux/Doc’目录下搜索带字符串’magic’的文件：</p>
+
+<p>$ grep magic /usr/src/Linux/Doc/*</p>
+
+<p>sysrq.txt:* How do I enable the magic SysRQ key?</p>
+
+<p>sysrq.txt:* How do I use the magic SysRQ key?</p>
+
+<p>其中文件’sysrp.txt’包含该字符串，讨论的是 SysRQ 的功能。</p>
+
+<p>默认情况下，’grep’只搜索当前目录。如果 此目录下有许多子目录，’grep’会以如下形式列出：</p>
+
+<p>grep: sound: Is a directory</p>
+
+<p>这可能会使’grep’ 的输出难于阅读。这里有两种解决的办法：</p>
+
+<p>明确要求搜索子目录：grep -r</p>
+
+<p>或忽略子目录：grep -d skip</p>
+
+<p>如果有很多 输出时，您可以通过管道将其转到’less’上阅读：</p>
+
+<p>$ grep magic /usr/src/Linux/Documentation/* | less</p>
+
+<p>这样，您就可以更方便地阅读。</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

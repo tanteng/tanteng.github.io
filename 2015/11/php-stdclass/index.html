@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP中stdClass的意义 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">PHP中stdClass的意义</h1>
+    <span class="post-date">Nov 8, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/php">PHP</a>
+    </span>
+    <p>在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。</p>
+
+<p>如下代码所示：</p>
+
+<pre class="lang:php mark:1 decode:true">$tanteng = new stdClass();
+$tanteng-&gt;name = 'tanteng';
+$tanteng-&gt;email = 'xxx@qq.com';
+
+$info = get_object_vars($tanteng);
+print_r($info);exit;</pre>
+
+<p>输出：</p>
+
+<p>Array ( [name] =&gt; tanteng [email] =&gt; xxx@qq.com )</p>
+
+<p>get_object_vars的作用是返回由对象属性组成的关联数组。它的效果跟这样定义数组其实是一样的：</p>
+
+<pre class="lang:php decode:true">$tanteng = array();
+$tanteng['name'] = 'tanteng';
+$tanteng['email'] = 'xxx@qq.com';</pre>
+
+<p>可以这样理解：stdClass是一个内置类，它没有成员变量，也没有成员方法的一个类。new一个stdClass就是实例化了一个『空』对象，它本身没什么意义，但是用stdClass定义有什么好处呢？</p>
+
+<p>如下代码：</p>
+
+<pre class="lang:php decode:true">$user = new stdClass();
+$user-&gt;name = 'gouki';
+$user-&gt;hehe = 'hehe';
+$myUser = $user;
+$myUser-&gt;name = 'flypig';
+
+print_r($user);
+
+print_r($myUser);
+
+print_r($user);</pre>
+
+<p>这里$myUser被赋值$user，但其实并没有新开辟一块内存存储变量，$myUser还是指的stdClass这个对象，通过$myUser改变属性页就改变了$user的属性，并不是新建一个副本，如果程序中有许多这样的操作，使用stdClass的方式可以节省内存开销。</p>
+
+<p>运行结果：</p>
+
+<pre class="lang:php decode:true ">stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)
+stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)
+stdClass Object
+(
+    [name] =&gt; flypig
+    [hehe] =&gt; hehe
+)</pre>
+
+<p>从结果可以看出，改变$myUser的属性确实改变了$user声明的stdClass属性。而如果$user是一个数组，赋值给$myUser，那就拷贝了一个副本给$myUser，这样增大系统开销。</p>
+
+<p>当然，你也可以反过来，把一个数组转换为对象：</p>
+
+<pre class="lang:php decode:true ">$hehe['he1'] = 'he1';
+$hehe['he2'] = 'he2';
+
+$hh = (object) $hehe;
+
+print_r($hh);</pre>
+
+<p>打印结果：</p>
+
+<p>stdClass Object ( [he1] =&gt; he1 [he2] =&gt; he2 )</p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Python3 Requests模块get和post示例 &middot; TonyTan</title>
+
+  
+  <link rel="stylesheet" href="http://tanteng.me/css/poole.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/hyde-x.css">
+  <link rel="stylesheet" href="http://tanteng.me/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tanteng.me/touch-icon-144-precomposed.png">
+  <link href="http://tanteng.me/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Your default page description">
+  <meta name="keywords" content="your,default,page,keywords">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://tanteng.me/"><h1>小谈博客</h1></a>
+      <p class="lead">
+       一个专注WEB技术的博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://tanteng.me/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/tanteng"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/tanteng"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://www.instagram.com/tanteng1031"><i class="fa fa-instagram fa-3x"></i></a>
+      <a href="https://www.facebook.com/tanteng001"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2019 <a href="http://tanteng.me/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Python3 Requests模块get和post示例</h1>
+    <span class="post-date">Nov 5, 2015 &middot; 1 minute read
+    
+    <br/>
+    <a class="label" href="http://tanteng.me/categories/develop">Develop</a><a class="label" href="http://tanteng.me/categories/python3">Python3</a>
+    </span>
+    <p>使用Python3的Requests模块用于模拟get和post请求非常简单强大，可以构造header头，传递各种类型参数，cookies，session等，模拟不同的请求，这里只演示一下最简单的get和post示例。</p>
+
+<p>首先在PHP项目中写一个方法，可以通过http请求：</p>
+
+<pre class="lang:php decode:true ">public function pyrequests()
+{
+    $x = I('x');
+    $y = I('y');
+    $data = [
+        'aa'=&gt;'aaaaaaaa',
+        'bb'=&gt;'bbbbbbbb',
+        'hehe',
+        32,
+        'x'=&gt;$x,
+        'y'=&gt;$y,
+    ];
+    echo json_encode($data);exit;
+}</pre>
+
+<p>这是在TP框架下的写法，I表示获取get或post请求传的参数。访问网址比如是：<a href="http://www.xx.com/index/pyrequests">http://www.xx.com/index/pyrequests</a></p>
+
+<p>写一个py文件：</p>
+
+<pre class="lang:python decode:true">__author__ = 'tanteng'
+
+import requests
+
+def testrequests():
+
+    url = 'http://www.xxx.com/index/pyrequests'
+
+    params = {
+        'x':'xxxx',
+        'y':'yyyy'
+    }
+
+    re = requests.get(url,params)
+
+    return re
+
+
+if __name__ == '__main__':
+    re = testrequests()
+    print(re.text)</pre>
+
+<p>运行这个py文件，得到结果是：</p>
+
+<pre class="lang:js decode:true ">{"aa":"aaaaaaaa","bb":"bbbbbbbb","0":"hehe","1":32,"x":"xxxx","y":"yyyy"}</pre>
+
+<p>那说明通过Python3的requests模块发送get请求成功并得到了返回的数据。这里requests.get方法第一个参数表示请求的url，第二个参数表示传递的参数，还可以设置header头，cookies等等。requests.post方法使用类似，发送post请求。这里不做更多演示了，参考以下链接。</p>
+
+<p>Requests官方中文文档：<a href="http://cn.python-requests.org/en/latest/index.html" target="_blank" rel="nofollow"><a href="http://cn.python-requests.org/en/latest/index.html">http://cn.python-requests.org/en/latest/index.html</a></a></p>
+
+<p>Python requests构造post请求刷微信步（使用requests构造header发post请求）数：<a href="https://blog.tanteng.me/2015/11/python3-wechat/" target="_blank"><a href="https://blog.tanteng.me/2015/11/python3-wechat/">https://blog.tanteng.me/2015/11/python3-wechat/</a></a></p>
+
+<p>本人学习Python3的一些练手小示例，已传Github：<a href="https://github.com/tanteng/learn-python" target="_blank" rel="nofollow"><a href="https://github.com/tanteng/learn-python">https://github.com/tanteng/learn-python</a></a></p>
+  </div>
+  
+</div>
+
+
+
+
+<script src="http://tanteng.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
