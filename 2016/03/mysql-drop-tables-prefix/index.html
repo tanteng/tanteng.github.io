@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MySQL批量删除相同前缀的表 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>MySQL批量删除相同前缀的表</h1>
+  <time datetime=2016-03-24T05:49:04Z class="post-date">Thu, Mar 24, 2016</time>
+  <p>MySQL删除表的语法是drop table xxx，但是想要删除一个数据库中相同前缀的表，该怎么写MySQL语句呢？drop table like &#8216;xx_%&#8217;，drop table REGEXP &#8230;，drop语句模糊匹配和正则的形式都不支持。</p>
+
+<p>以下操作都在Linux下进行：</p>
+
+<p>1.查出所有相同前缀的表，用CONCAT函数拼接字符串</p>
+
+<pre class="lang:mysql decode:true ">SELECT
+    CONCAT(
+        'drop table ',
+        TABLE_NAME,
+        ';'
+    )
+FROM
+    information_schema.`TABLES`
+WHERE
+    TABLE_NAME LIKE 'wp_%';</pre>
+
+<p>这样查询出结果如下：</p>
+
+<p>MariaDB [blog.tanteng.me]&gt; SELECT CONCAT(&#8216;drop table &#8216;,TABLE_NAME,&#8217;;&#8217;) from information_schema.`TABLES` where TABLE_NAME LIKE &#8216;dy_%&#8217;;</p>
+
+<p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>
+
+<p>| CONCAT(&#8216;drop table &#8216;,TABLE_NAME,&#8217;;&#8217;) |</p>
+
+<p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>
+
+<p>| drop table dy_admin;                 |</p>
+
+<p>| drop table dy_admin_panel;           |</p>
+
+<p>| drop table dy_admin_role;            |</p>
+
+<p>| drop table dy_admin_role_priv;       |</p>
+
+<p>| drop table dy_announce;              |</p>
+
+<p>| drop table dy_attachment;            |</p>
+
+<p>把内容粘贴到记事本，使用查找替换功能去掉“|”，再复制内容到Lunux下新建的如xx.sql文件中。</p>
+
+<p>2.执行sql文件</p>
+
+<p>[root@iZ94r80gdghZ tanteng]# ls</p>
+
+<p>drop_tables.sql  test.sql</p>
+
+<p>[root@iZ94r80gdghZ tanteng]# <span style="color: #ff0000;">mysql -u root -p blog.tanteng.me &lt; drop_tables.sql</span></p>
+
+<p>大功告成，不过这种方法还是有点麻烦，但实现了目的。有更好的方法再分享出来。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

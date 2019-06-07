@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在旧有 PHP 系统上集成七牛云 PHP-SDK &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在旧有 PHP 系统上集成七牛云 PHP-SDK</h1>
+  <time datetime=2018-05-28T11:32:34Z class="post-date">Mon, May 28, 2018</time>
+  <p>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。</p>
+
+<pre class="lang:php decode:true ">&lt;?php
+
+use Qiniu\Auth;
+use Qiniu\Storage\UploadManager;
+
+//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
+spl_autoload_register('classLoader');
+
+function classLoader($class)
+{
+    $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $file = SDK_PATH . 'vendor/' . $path . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+    }
+}
+
+require_once SDK_PATH . 'vendor/Qiniu/functions.php';
+
+
+class xxxx extends baseIndex{
+
+//
+
+}</pre>
+
+<p>新建一个 vendor 文件夹存放第三方包，把七牛云 PHP-SDK 下载并复制到该目录下，如图所示。</p>
+
+<p><img class="aligncenter size-full wp-image-12330" src="https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180528192934.png" alt="" width="275" height="441" /></p>
+
+<p>因为是某个需求使用，暂时不考虑全局使用，那么就在需要用的类文件里使用 sql_autoload_register 注册自动加载机制即可，如上面代码所示。</p>
+
+<p>这样就可以开始使用七牛云的 PHP-SDK 了。本文仅为在旧系统使用开源包提供一种思路和方式。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

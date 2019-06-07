@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Go 搭建 WebSocket 服务端例子 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Go 搭建 WebSocket 服务端例子</h1>
+  <time datetime=2017-02-27T03:13:54Z class="post-date">Mon, Feb 27, 2017</time>
+  <p>WebSocket 是一个基于 HTML5 规范的，可以实现客户端和服务器双向通信的协议，弥补了 HTTP 协议只能客户端主动发请求，服务器响应，而服务器不能给客户端推送数据的不足。</p>
+
+<h3 id="websocket-握手">WebSocket 握手</h3>
+
+<pre class="lang:default decode:true">GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com</pre>
+
+<p>重点如下两个 header：</p>
+
+<pre class="lang:default decode:true">Upgrade: websocket
+Connection: Upgrade</pre>
+
+<p>Upgrade 表示升级到 WebSocket 协议，Connection 表示这个 HTTP 请求是一次协议升级，Origin 表示发请求的来源。</p>
+
+<h3 id="websocket-api">WebSocket API</h3>
+
+<p>① 打开新的 WebSocket 连接</p>
+
+<p>② 可选的回调，在连接出错时调用</p>
+
+<p>③ 可选的回调，在连接终止时调用</p>
+
+<p>④ 可选的回调，在 WebSocket 连接建立时调用</p>
+
+<p>⑤ 客户端向服务器发送消息</p>
+
+<p>⑥ 回调函数，接收服务器主动发送的消息</p>
+
+<p>⑦ 根据接收到的消息，决定调用二进制还是文本处理逻辑</p>
+
+<p>下面 js 示例包括了上面大部分的 API.</p>
+
+<h3 id="go-搭建-websocket-服务端的例子">Go 搭建 WebSocket 服务端的例子</h3>
+
+<p>Go 搭建一个简单 WebSocket 服务端代码例子 test.go, 如下：</p>
+
+<pre class="lang:go decode:true ">package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+
+    "golang.org/x/net/websocket"
+)
+
+func Echo(ws *websocket.Conn) {
+    var err error
+
+    for {
+        var reply string
+
+        if err = websocket.Message.Receive(ws, &reply); err != nil {
+            fmt.Println("Can't receive")
+            break
+        }
+
+        fmt.Println("Received back from client: " + reply)
+
+        msg := "Received:  " + reply
+        fmt.Println("Sending to client: " + msg)
+
+        if err = websocket.Message.Send(ws, msg); err != nil {
+            fmt.Println("Can't send")
+            break
+        }
+    }
+}
+
+func main() {
+    http.Handle("/", websocket.Handler(Echo))
+
+    if err := http.ListenAndServe(":1234", nil); err != nil {
+        log.Fatal("ListenAndServe:", err)
+    }
+}
+</pre>
+
+<p>运行服务端：</p>
+
+<pre class="lang:go decode:true">go run test.go</pre>
+
+<h3 id="客户端建立-websocket-和发送消息">客户端建立 WebSocket 和发送消息</h3>
+
+<p>在 Firefox 或 Chrome 控制台，可以用以下代码发起客户端的 WebSocket 连接：</p>
+
+<pre class="lang:js decode:true ">var wsServer = 'ws://localhost:1234';
+var websocket = new WebSocket(wsServer);
+websocket.onopen = function (evt) {
+    console.log("Connected to WebSocket server.");
+};
+
+websocket.onclose = function (evt) {
+    console.log("Disconnected");
+};
+
+websocket.onmessage = function (evt) {
+    console.log('Retrieved data from server: ' + evt.data);
+};
+
+websocket.onerror = function (evt, e) {
+    console.log('Error occured: ' + evt.data);
+};</pre>
+
+<p>执行以上代码，得到输出日志：Connected to WebSocket server，表示 WebSocket 连接建立成功。</p>
+
+<p>使用如下代码可以发送数据，如：</p>
+
+<pre class="lang:js decode:true ">websocket.send(2323)</pre>
+
+<p>并且马上得到服务端返回的内容，这里是原样返回。</p>
+
+<p>服务端日志如下：</p>
+
+<p><img class="alignnone size-full wp-image-11304" src="https://blog.tanteng.me/wp-content/uploads/2017/02/go-websocket-demo.png" alt="" width="529" height="141" /></p>
+
+<p>这就使用 Go 搭建了一个简单的 WebSocket 服务端。</p>
+
+<p>&nbsp;</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

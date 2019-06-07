@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>如何解决 SourceTree 一次性提交大量文件很慢的情况 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>如何解决 SourceTree 一次性提交大量文件很慢的情况</h1>
+  <time datetime=2015-11-11T10:04:55Z class="post-date">Wed, Nov 11, 2015</time>
+  <p>SourceTree提交代码卡死，特别是一次提交的代码文件很多的时候，这个时候建议用Git命令行的方式提交，就不会出现卡死的情况。</p>
+
+<p><a href="https://blog.tanteng.me/2015/11/sourcetree-commit-slowly/git-pull/" rel="attachment wp-att-8977" target="_blank"><img class="alignnone size-full wp-image-8977" src="https://blog.tanteng.me/wp-content/uploads/2015/11/git-pull.png" alt="git-pull" width="677" height="426" /></a></p>
+
+<p><a href="https://blog.tanteng.me/2015/11/sourcetree-commit-slowly/git-pull2/" rel="attachment wp-att-8978" target="_blank"><img class="alignnone size-full wp-image-8978" src="https://blog.tanteng.me/wp-content/uploads/2015/11/git-pull2.png" alt="git-pull2" width="677" height="426" /></a></p>
+
+<p>通过：</p>
+
+<p>git status</p>
+
+<p>git pull</p>
+
+<p>提交代码，一切顺利。因为之前SourceTree提交了代码，所以这里没用git commit filename.</p>
+
+<p>完整的建立仓库，添加文件，提交代码，推送的流程git命令：</p>
+
+<pre class="lang:sh decode:true dark ">mkdir dir
+cd dir
+git init
+touch README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin https://git.oschina.net/tanteng/dir.git
+git push -u origin master</pre>
+
+<p>以下两个Git命令可以解决SourceTree运行慢的：</p>
+
+<p>git gc</p>
+
+<p>git prune</p>
+
+<p>可以在SourceTree点击命令行模式打开Git命令行窗口输入，等待片刻执行完成，SourceTree的运行速度会有所提高。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

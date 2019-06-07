@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在 Laravel 中使用 gulp 构建前端资源 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在 Laravel 中使用 gulp 构建前端资源</h1>
+  <time datetime=2018-05-28T12:45:32Z class="post-date">Mon, May 28, 2018</time>
+  <p>最近把自己主页前端代码进一步规范了，使用 npm 引入一些前端的资源库，在 Laravel 5.5 中使用 gulp 遇到一些坑。</p>
+
+<p>mix.sass 无法直接使用 node_modules 文件夹里的，只能用 resource/assets/sass/app.scss 这个文件生成 css，然后和其他的 css 合并为一个文件。</p>
+
+<p>mix.scripts 可以使用 node_modules 文件夹里的 js，并和自己的 js 合并为一个文件。</p>
+
+<p>mix.copy 可以复制 node_modules 中的文件到指定的目录，比如字体。</p>
+
+<p>mix.version 可以给合并后的文件增加版本号。</p>
+
+<p>贴出我最终的配置如下：</p>
+
+<pre class="lang:js decode:true">elixir(function (mix) {
+    mix.sass([
+        'app.scss'
+    ], 'public/css')
+        .styles([
+            './public/css/app.css',
+            'style.css',
+            'pill.css',
+        ], 'public/css/site.css')
+        .styles([
+            './public/css/app.css',
+            'cover.css',
+        ], 'public/css/cover.css')
+        .scripts([
+            './node_modules/jquery/dist/jquery.min.js',
+            './node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+            'scrollerup.js'
+        ],'public/js/app.js')
+        .copy([
+            './node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff',
+            './node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2'
+        ], 'public/build/fonts/bootstrap')
+        .version([
+            'public/css/cover.css',
+            'public/css/site.css'
+        ]);
+});</pre>
+
+<p>以上代码出自我的 gulpfile.js 文件。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/05/WX20180528-204939@2x.png" target="_blank"><img class="aligncenter wp-image-12337 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/05/WX20180528-204939@2x.png" alt="" width="1800" height="998" /></a></p>
+
+<p>运行 gulp 命令，线上运行 gulp &#8211;production.</p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

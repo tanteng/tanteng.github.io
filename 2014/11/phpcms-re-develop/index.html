@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHPCMS二次开发的正确方式 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHPCMS二次开发的正确方式</h1>
+  <time datetime=2014-11-12T03:53:25Z class="post-date">Wed, Nov 12, 2014</time>
+  <p>PHPCMS二次开发如何不影响程序升级？因为对源程序进行修改之后，PHPCMS 的程序升级，新程序发布的时候，我们不方便进行升级，直接覆盖会覆盖掉我们的修改。</p>
+
+<h2 id="phpcms二次开发的正确方法">PHPCMS二次开发的正确方法</h2>
+
+<p>其实 PHPCMS 官方手册推荐了二次开发的方法：</p>
+
+<blockquote>
+<p>如果要对已存在的控制器进行二次开发，为了方便升级不建议直接对内核文件直接修改该，您可以通过&#8221;MY_*.php&#8221;的形式进行二次开发。</p>
+
+<p>例如您要对改phpcms/mood/index.php进行二次开发。您可以在与index.php同级的目录下建立&#8221;MY_index.php&#8221;</p>
+
+<p>MY_index.php代码如下</p>
+</blockquote>
+
+<p>同理，其他文件都可以这样，你要修改content.php，那么在同目录下新建MY_content.php，对要修改的方法进行重写就可以了。</p>
+
+<h2 id="phpcms-二次开发的原理">PHPCMS 二次开发的原理</h2>
+
+<p>这是怎么实现的呢？PHPCMS 的源程序在调用类的时候，进行了判断，如果有 MY_ 开头的类，则加载用户自定义的，没有就加载默认的。请看 PHPCMS 的源码：</p>
+
+<pre class="" lang="php">if (file_exists(PC_PATH.$path.DIRECTORY_SEPARATOR.$classname.'.class.php')) {
+    include PC_PATH.$path.DIRECTORY_SEPARATOR.$classname.'.class.php';
+    $name = $classname;
+    if ($my_path = self::my_path(PC_PATH.$path.DIRECTORY_SEPARATOR.$classname.'.class.php')) {
+        include $my_path;
+        $name = 'MY_'.$classname;
+    }
+    if ($initialize) {
+        $classes[$key] = new $name;
+    } else {
+        $classes[$key] = true;
+    }
+    return $classes[$key];
+} else {
+    return false;
+}
+</pre>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

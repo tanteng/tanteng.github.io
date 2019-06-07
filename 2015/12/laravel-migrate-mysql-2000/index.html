@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laravel 执行 migrate 命令:No such file or directory &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Laravel 执行 migrate 命令:No such file or directory</h1>
+  <time datetime=2015-12-20T09:50:22Z class="post-date">Sun, Dec 20, 2015</time>
+  <p>今天使用Laravel命令行工具操作数据库迁移操作时报错，提示mysql 2002错误，如图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png" rel="attachment wp-att-9354" target="_blank"><img class="alignnone wp-image-9354" src="https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png" alt="artisan-migrate-PDOException" width="420" height="118" /></a></p>
+
+<p>查看数据库配置没错呀，网站前台也可以打开，说明能连上，那是什么原因呢？</p>
+
+<p>在Laravel5中，有两种办法解决：</p>
+
+<h3 id="1-增加一个数据库配置项">1.增加一个数据库配置项</h3>
+
+<pre class="lang:php decode:true">'mysql' =&gt; [
+    'driver'    =&gt; 'mysql',
+    'host'      =&gt; env('DB_HOST', 'localhost'),
+    'database'  =&gt; env('DB_DATABASE', 'forge'),
+    'username'  =&gt; env('DB_USERNAME', 'forge'),
+    'password'  =&gt; env('DB_PASSWORD', ''),
+    'charset'   =&gt; 'utf8',
+    'collation' =&gt; 'utf8_general_ci',
+    'unix_socket'   =&gt; '/Applications/MAMP/tmp/mysql/mysql.sock',
+    'prefix'    =&gt; 'laravel_',
+    'strict'    =&gt; false,
+],</pre>
+
+<p class="lang:php decode:true ">
+  这里增加的一项是unix_socket，本机Mac上装的MAMP环境，路径是/Applications/MAMP/tmp/mysql/mysql.sock，查看自己路径的办法是在mysql中输入以下命令就可以看到：
+</p>
+
+<pre class="lang:mysql decode:true">show variables like '%sock%';</pre>
+
+<p>如下图所示：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/mysql-show-socket.png" rel="attachment wp-att-9355" target="_blank"><img class="alignnone size-full wp-image-9355" src="https://blog.tanteng.me/wp-content/uploads/2015/12/mysql-show-socket.png" alt="mysql-show-socket" width="500" height="301" /></a></p>
+
+<h3 id="2-修改-env配置">2.修改.env配置</h3>
+
+<p>这个办法只能是临时修改，让migrate可以执行，然后必须改回来。</p>
+
+<pre class="lang:php decode:true ">DB_HOST=localhost
+DB_CONNECTION=mysql
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=tanteng
+DB_PORT=8889</pre>
+
+<p>临时修改办法是把DB_HOST那里改成localhost:8889，也就是把端口号加上，再使用Laravel5的artisan命令执行migrate操作就可以了，但是操作完了要改回以前的写法，否则网站前台页面会打不开连不上数据库，提示错误：SQLSTATE[HY000] [2005] Unknown MySQL server host &#8216;localhost:8889&#8217; (0)</p>
+
+<p>好了，这样就解决了使用Laravel5的migrate报错的问题。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

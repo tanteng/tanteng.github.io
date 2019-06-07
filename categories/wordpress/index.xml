@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordPress on 小谈博客</title>
+    <link>https://tanteng.github.io/categories/wordpress/</link>
+    <description>Recent content in WordPress on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Sep 2017 04:32:13 +0000</lastBuildDate>
+    
+	<atom:link href="https://tanteng.github.io/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WordPress 使用 Redis 缓存</title>
+      <link>https://tanteng.github.io/2017/09/wp-redis/</link>
+      <pubDate>Wed, 13 Sep 2017 04:32:13 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2017/09/wp-redis/</guid>
+      <description>&lt;p&gt;给 WordPress 博客换了一个缓存插件 —— WP Redis，使用 Redis 缓存给博客提高速度和性能，之前用的插件 WP Super Cache 是基于文件缓存的，虽然也很不错，但是用 Redis 应该是更好的选择。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel集成WordPress扩展包——Corcel</title>
+      <link>https://tanteng.github.io/2016/03/laravel-wordpress-corcel/</link>
+      <pubDate>Sun, 20 Mar 2016 04:29:43 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2016/03/laravel-wordpress-corcel/</guid>
+      <description>&lt;p&gt;Corcel是一个可以适用于Laravel框架的集成Wordpress的扩展包，使用wordpress的后台发布文章，通过它的接口可以在Laravel中方便的调取文章等，安装和使用也非常简单。&lt;/p&gt;
+
+&lt;p&gt;Corcel的Github地址：&lt;a href=&#34;https://github.com/jgrossi/corcel&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;a href=&#34;https://github.com/jgrossi/corcel&#34;&gt;https://github.com/jgrossi/corcel&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这里讲一下大概的过程，具体的安装和使用见github主页上的说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>微信打赏WordPress插件</title>
+      <link>https://tanteng.github.io/2015/11/wechat-rewrd-wordpress-plugin/</link>
+      <pubDate>Wed, 04 Nov 2015 05:58:01 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2015/11/wechat-rewrd-wordpress-plugin/</guid>
+      <description>&lt;p&gt;折腾了一个WordPress小插件，给每篇文章下面添加一个微信打赏功能，安装插件后，可在后台设置自己的微信收款二维码图片。&lt;/p&gt;
+
+&lt;h3 id=&#34;后台设置页面&#34;&gt;后台设置页面&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-8841 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png&#34; alt=&#34;wechat-reward16&#34; width=&#34;946&#34; height=&#34;436&#34; srcset=&#34;https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png 946w, https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16-300x138.png 300w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WordPress标签云和列表移除指定ID不显示</title>
+      <link>https://tanteng.github.io/2015/06/cat-tag-exclude/</link>
+      <pubDate>Thu, 04 Jun 2015 05:04:36 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2015/06/cat-tag-exclude/</guid>
+      <description>&lt;p&gt;WordPress的标签页和列表挂件，如果想把某些标签或列表不予显示，可以使用如下两个钩子方法实现，具体代码如下：&lt;/p&gt;
+
+&lt;pre class=&#34;lang:php decode:true&#34;&gt;//移除部分标签不在标签云显示
+function remove_tags($args){
+    $new_args = array(
+            &#39;exclude&#39; =&amp;gt; &#39;30,40,128,131,83&#39;,
+        );
+    return array_merge($args,$new_args);
+}
+add_filter( &#39;widget_tag_cloud_args&#39;, &#39;remove_tags&#39; );
+
+//移除部分标签不在列表widget显示
+function exclude_widget_categories($args){
+    $exclude = &#34;4,6,12,88,172&#34;; // The IDs of the excluding categories
+    $args[&#34;exclude&#34;] = $exclude;
+    return $args;
+}
+add_filter(&#34;widget_categories_args&#34;,&#34;exclude_widget_categories&#34;);&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>wordpress自定义路由和url参数</title>
+      <link>https://tanteng.github.io/2015/01/add_rewrite_tag_rule/</link>
+      <pubDate>Thu, 29 Jan 2015 06:09:34 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2015/01/add_rewrite_tag_rule/</guid>
+      <description>&lt;p&gt;wordpress可以使用rewrite API让url更加美观，需要用到两个相关的rewite函数，分别是add_rewrite_tag和add_rewrite_rule。下面看看具体的例子如何自定义wordpress路由规则，和自定义url参数。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>wordpress插件安装数据库示例</title>
+      <link>https://tanteng.github.io/2014/12/wp-plugin-database/</link>
+      <pubDate>Wed, 03 Dec 2014 08:51:07 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2014/12/wp-plugin-database/</guid>
+      <description>&lt;p&gt;开发wordpress插件，安装插件后自动安装插件自带的数据库，如何实现？本文讲解wordpress插件开发之安装数据库，演示激活插件自动安装数据库示例。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>wordpress自定义参数和重写路由规则</title>
+      <link>https://tanteng.github.io/2014/12/wordpress-query-rewrite/</link>
+      <pubDate>Mon, 01 Dec 2014 06:54:25 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2014/12/wordpress-query-rewrite/</guid>
+      <description>&lt;p&gt;在wordpress的开发中，需要添加url自定义参数传送接收值，同时重写路由规则保证url地址的美观，要用到add_rewrite_rule函数，和init动作和query_vars过滤器。如下代码示例了添加url自定义参数和定义路由规则的方法：&lt;/p&gt;
+
+&lt;pre class=&#34;lang:php decode:true &#34; title=&#34;wordpress自定义参数和重写路由规则&#34;&gt;function products_plugin_rules() {
+   add_rewrite_rule(&#39;products/?([^/]*)&#39;, &#39;index.php?pagename=products&amp;product_id=$matches[1]&#39;, &#39;top&#39;);
+}
+
+function products_plugin_query_vars($vars) {
+   $vars[] = &#39;product_id&#39;;
+   return $vars;
+}
+
+add_action(&#39;init&#39;, &#39;products_plugin_rules&#39;);
+add_filter(&#39;query_vars&#39;, &#39;products_plugin_query_vars&#39;);
+&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>出站链接对SEO的作用和好处</title>
+      <link>https://tanteng.github.io/2014/11/outbound-link-seo/</link>
+      <pubDate>Fri, 14 Nov 2014 03:28:09 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2014/11/outbound-link-seo/</guid>
+      <description>&lt;p&gt;出站链接对SEO的作用是什么？使用wordpress seo插件的同学应该会注意到，发布文章的时候它会检测你设置的目标关键词，并给出SEO优化的提示，经常会提示：此页没有出站链接，请考虑适当增加一些。那么出站链接对SEO有什么作用和好处？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>wordpress自定义上传文件路径</title>
+      <link>https://tanteng.github.io/2014/03/wordpress-upload-path/</link>
+      <pubDate>Wed, 19 Mar 2014 02:58:06 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2014/03/wordpress-upload-path/</guid>
+      <description>&lt;p&gt;wordpress默认上传图片（文件）路径是uploads目录的‘年/月’文件夹，我们可以通过upload_dir钩子改变默认上传路径，自定义上传路径。&lt;/p&gt;
+
+&lt;p&gt;该函数指定了uploads的目录为uploads的avatar文件夹：&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34;&gt;function my_upload_dir($upload) {
+    $upload[&#39;subdir&#39;]   = &#39;/avatar&#39;;
+    $upload[&#39;path&#39;]     = $upload[&#39;basedir&#39;] . $upload[&#39;subdir&#39;];
+    $upload[&#39;url&#39;]      = $upload[&#39;baseurl&#39;] . $upload[&#39;subdir&#39;];
+    return $upload;
+}
+&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>wordpress隐秘常量SHORTINIT只加载必须的数据库操作文件</title>
+      <link>https://tanteng.github.io/2014/01/wordpress-shortinit/</link>
+      <pubDate>Wed, 22 Jan 2014 12:40:58 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2014/01/wordpress-shortinit/</guid>
+      <description>&lt;p&gt;wordpress有个隐秘的常量定义，define(&amp;#8216;SHORTINIT&amp;#8217;, true)，它可以尽可能少的加载wordpress文件，保留了基本的数据库操作类，即$wpdb，可以用来写处理ajax的php文件，加快ajax请求的响应速度！&lt;/p&gt;
+
+&lt;p&gt;Here is start my loader file, not pretty but works for specific needs:&lt;/p&gt;
+
+&lt;pre lang=&#34;php&#34;&gt;ini_set(&#39;html_errors&#39;, 0);
+define(&#39;SHORTINIT&#39;, true);
+require &#39;../../../../wp-load.php&#39;;
+require( ABSPATH . WPINC . &#39;/formatting.php&#39; );
+require( ABSPATH . WPINC . &#39;/meta.php&#39; );
+require( ABSPATH . WPINC . &#39;/post.php&#39; );
+wp_plugin_directory_constants();
+&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

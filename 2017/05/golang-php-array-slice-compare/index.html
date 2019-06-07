@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Golang slice 和 PHP 数组比较 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Golang slice 和 PHP 数组比较</h1>
+  <time datetime=2017-05-20T06:48:59Z class="post-date">Sat, May 20, 2017</time>
+  <div class="card-title">
+  <h2>
+    Creating
+  </h2>
+</div>
+
+<p>Create an array in PHP</p>
+
+<pre class="lang:default decode:true">$myStringArray = ["One","Two","Three"];</pre>
+
+<p>In Go creating the above is a little more verbose and like variable assignment above there&#8217;s also multiple ways to create a slice. The most similar way to that of PHP is as follows.</p>
+
+<pre class="lang:default decode:true">myStringArray := []string{"One","Two","Three"}</pre>
+
+<h3 id="appending">Appending</h3>
+
+<p>Things become a little trickier when you want to append to an array. In PHP world this is easy</p>
+
+<pre class="lang:default decode:true">$myStringArray=["One", "Two", "Three"];
+$myStringArray[] = "Four";</pre>
+
+<p>In Go you need to use the global append function</p>
+
+<pre class="lang:default decode:true">myStringArray := []string{"One","Two","Three"}
+myStringArray = append(myStringArray,"Four")
+fmt.Println(myStringArray)</pre>
+
+<h3 id="extracting">Extracting</h3>
+
+<p>PHPs vast suite of inbuilt array functions make working with arrays simple. For instance to extract part of an array in PHP you can use the array_slice function.</p>
+
+<pre class="lang:default decode:true">$myArray = ["a","b","c","d","e"];
+$myNewArray = array_slice($myArray,2,2); // ["c","d"]</pre>
+
+<p>To achieve the same functionality in Go a little piece of syntactical magic is required</p>
+
+<pre class="lang:default decode:true ">myArray := []string{"a", "b", "c", "d", "e"}
+myNewArray := myArray[2:4] // ["c","d"]</pre>
+
+<h3 id="iterating">Iterating</h3>
+
+<p>Iterating over a range of any function in PHP can be done using the construct.</p>
+
+<pre class="lang:default decode:true">$myStringArray = ["One","Two","Three"]
+foreach ($myStringArray as $key =&gt; value) {
+  echo $key." ".$string."\r\n";
+}
+//0 One
+//1 Two
+//3 Three</pre>
+
+<p>In Go we use the range construct</p>
+
+<pre class="lang:default decode:true">myStringArray := []string{"one","two","three"}
+for key,value := range myStringArray {
+  fmt.Println(key, value) 
+}</pre>
+
+<h3 id="imploding-and-exploding">Imploding and Exploding</h3>
+
+<p>Joining an array into a string in PHP can be done using the built in implode function</p>
+
+<pre class="lang:default decode:true">$myStringArray = ["One","Two","Three"];
+$myString = implode(" ",$myStringArray);
+echo $myString; // One Two Three</pre>
+
+<p>Golang uses the join function from the strings package which you are required to import to use</p>
+
+<pre class="lang:default decode:true">package main
+
+import (
+  "fmt"
+  "strings"
+)
+
+func main() {
+  myStringArray := []string{"one","two","three"}
+  fmt.Println(strings.Join(myStringArray, " "))
+}</pre>
+
+<p>To take a string and turn it into an array in PHP we use the explode function</p>
+
+<pre class="lang:default decode:true">$myString = "One Two Three";
+$myStringArray = explode(" ",$myString); // ["One", "Two", "Three"]</pre>
+
+<p>To take a string and turn it into an array in Golang we again need to use the strings package, but this time use the split function</p>
+
+<pre class="lang:default decode:true ">myString := "one two three"
+myStringArray := strings.Split(myString, " ")
+fmt.Println(myStringArray)</pre>
+
+<p>原文标题：Go compared with php. Arrays and slices</p>
+
+<p>原文链接：<a href="https://alanhollis.com/php/go-compared-with-php-arrays-and-slices/" target="_blank" rel="noopener noreferrer nofollow"><a href="https://alanhollis.com/php/go-compared-with-php-arrays-and-slices/">https://alanhollis.com/php/go-compared-with-php-arrays-and-slices/</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Composer设置忽略版本匹配 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Composer设置忽略版本匹配</h1>
+  <time datetime=2016-04-26T16:15:08Z class="post-date">Tue, Apr 26, 2016</time>
+  <p>执行composer install遇到错误：Your requirements could not be resolved to an installable set of packages. 这是因为不匹配composer.json要求的版本。</p>
+
+<p>完整错误如下：</p>
+
+<pre class="lang:php decode:true">vagrant@homestead:/usr/share/nginx/html/laravel-blog$ sudo composer install
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Installation request for doctrine/instantiator 1.0.3 -&gt; satisfiable by doctrine/instantiator[1.0.3].
+    - doctrine/instantiator 1.0.3 requires php ~5.3 -&gt; your PHP version (7.0.3) does not satisfy that requirement.
+  Problem 2
+    - doctrine/instantiator 1.0.3 requires php ~5.3 -&gt; your PHP version (7.0.3) does not satisfy that requirement.
+    - phpunit/phpunit-mock-objects 2.3.0 requires doctrine/instantiator ~1.0,&gt;=1.0.1 -&gt; satisfiable by doctrine/instantiator[1.0.3].
+    - Installation request for phpunit/phpunit-mock-objects 2.3.0 -&gt; satisfiable by phpunit/phpunit-mock-objects[2.3.0].</pre>
+
+<!--more-->
+
+<p>提示我的PHP 7版本太高，不符合composer.json需要的版本，但是在PHP 7下应该也是可以运行的，composer可以设置忽略版本匹配，命令是：</p>
+
+<pre class="lang:php decode:true">composer install --ignore-platform-reqs</pre>
+
+<p>or</p>
+
+<pre class="lang:php decode:true ">composer update --ignore-platform-reqs</pre>
+
+<p>再次执行composer命令可以正常安装包了。</p>
+
+<p>如果提示警告：</p>
+
+<pre class="lang:php decode:true ">Cannot create cache directory /home/vagrant/.composer/cache/repo/https---packagist.org/, or directory is not writable. Proceeding without cache
+Cannot create cache directory /home/vagrant/.composer/cache/files/, or directory is not writable. Proceeding without cache
+</pre>
+
+<p>这是在虚拟机中执行composer，提示这个目录没有可写权限，composer无法缓存下载的包，这样就每次都得重新下载，把目录改成可写可读即可。</p>
+
+<pre class="lang:php decode:true ">sudo chmod -R 777 /home/vagrant/.composer/cache/files/</pre>
+
+<p>另外，在虚拟机中也设置composer为国内镜像，不然下载速度慢的要死，执行：</p>
+
+<pre class="lang:php decode:true ">composer config -g repo.packagist composer https://packagist.phpcomposer.com
+</pre>
+
+<p>OK，大功告成。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

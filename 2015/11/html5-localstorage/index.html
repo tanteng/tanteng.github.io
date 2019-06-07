@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HTML5的本地存储方案localStorage &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>HTML5的本地存储方案localStorage</h1>
+  <time datetime=2015-11-16T06:20:03Z class="post-date">Mon, Nov 16, 2015</time>
+  <p>本地存储解决方案很多，比如Flash SharedObject、Google Gears、Cookie、DOM Storage、User Data、window.name、Silverlight、Open Database等。</p>
+
+<p><img class="alignnone wp-image-3718 size-full" title="20110515054811428" src="http://www.css88.com/wp-content/uploads/2011/06/20110515054811428.jpg" alt="html5的本地存储localStorage" width="600" height="202" /></p>
+
+<p>以下是各种本地存储方案的特点：</p>
+
+<ul>
+<li><strong>Cookie</strong><strong>：</strong> 在web中得到广泛应用，但局限性非常明显，容量太小，有些站点会因为出于安全的考虑而禁用cookie，cookie没有想象中的那么安全，Cookie 的内容会随着页面请求一并发往服务器。</li>
+<li><strong>Flash SharedObject</strong><strong>：</strong> 使用的是kissy的 store模块来调用Flash SharedObject。Flash SharedObject的优点是容量适中，基本上不存在兼容性问题，缺点是要在页面中引入特定的swf和js文件，增加额外负担，处理繁琐；还是有部分 机子没有flash运行环境。</li>
+<li><strong>Google Gears</strong><strong>：</strong> Google的离线方案，已经停止更新，官方推荐使用html5的localStorage方案。</li>
+<li><strong>User Data：</strong> 是微软为IE专门在系统中开辟的一块存储空间，所以说只支持Windows+IE的组 合，实际测试在2000（IE5.5）、XP（IE6、IE7），Vista（IE7）下都是可以正常使用的。在XP下，一般位于 C:\Documents and Settings\用户名\UserData，有些时候会在C:\Documents and Settings\用户名\Application Data\Microsoft\Internet Explorer\UserData。在Vista下，位于C:\Users\用户名\AppData\Roaming\Microsoft \Internet Explorer\UserData；单个文件的大小限制是128KB，一个域名下总共可以保存1024KB的文件，文件个数应该没有限制。在受限站点里 这两个值分别是64KB和640KB，所以如果考虑到各种情况的话，单个文件最好能控制64KB以下。</li>
+<li><strong>localStorage：</strong> 相对于上述本地存储方案，localStorage有自身的优点：容量大、易 用、强大、原生支持；缺点是兼容性差些（chrome,  safari, firefox，IE 9，IE8都支持 localStorage，主要是IE8以下版本不支持）、安全性也差些（所以请勿使用localStorage保存敏感信息）。</li>
+</ul>
+
+<h3 id="localstorage有非常通俗易懂的接口">localStorage有非常通俗易懂的接口:</h3>
+
+<ul>
+<li>localStorage.getItem(key):获取指定key本地存储的值</li>
+<li>localStorage.setItem(key,value)：将value存储到key字段</li>
+<li>localStorage.removeItem(key):删除指定key本地存储的值</li>
+</ul>
+
+<p>留意localStorage存储的值都是字符串类型，在处理复杂的数据时，比如json数据时，需要借助JSON类，将json字符串转换成真正 可用的json格式，localStorage第二个实战教程会重点演示相关功能。localStorage还提供了一个storage事件，在存储的值 改变后触发。</p>
+
+<p>检测浏览器是否支持的js：</p>
+
+<pre class="lang:js decode:true ">&lt;script type="text/javascript"&gt;
+    if(window.localStorage){
+        alert("浏览支持localStorage")
+    }else{
+        alert("浏览暂不支持localStorage")
+    }
+&lt;/script&gt;</pre>
+
+<p>或者：</p>
+
+<pre class="lang:js decode:true">&lt;script type="text/javascript"&gt;
+    if(typeof window.localStorage == 'undefined'){
+        alert("浏览暂不支持localStorage")
+    }else{
+        alert("浏览暂支持localStorage")
+    }
+&lt;/script&gt;</pre>
+
+<h3 id="html5-localstorage简单示例">HTML5 LocalStorage简单示例</h3>
+
+<p>下面使用LocalStorage设置和读取一个本地存储项：</p>
+
+<pre class="lang:js decode:true">&lt;script type="text/javascript"&gt;
+    localStorage.setItem('tantengvip','blog.tanteng.me')
+&lt;/script&gt;</pre>
+
+<p>目前浏览器都带有很好的开发者调试功能，下面分别是Chrome和Firefox的调试工具查看LocalStorage：（点击查看大图）</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/html5-localstorage.png" target="_blank" rel="attachment wp-att-9044"><img class="alignnone wp-image-9044 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/html5-localstorage.png" alt="html5-localstorage" width="835" height="279" /></a></p>
+
+<p>通过调式工具DOM下面的localhostStorage选项查看，发现已经成功存储了值。</p>
+
+<h3 id="localstorage的过期时间">LocalStorage的过期时间</h3>
+
+<p>localStorage是本地存储，没有过期一说，除非手动清除或者清缓存否则都会保留，但是可以存储的时候额外存储一个时间戳的字段，下次读取的时候根据时间戳判断是否过期，过期就删掉。</p>
+
+<p>如一个js项目store.js这样封装：</p>
+
+<pre class="lang:js decode:true ">var storeWithExpiration = {
+    set: function(key, val, exp) {
+        store.set(key, { val:val, exp:exp, time:new Date().getTime() })
+    },
+    get: function(key) {
+        var info = store.get(key)
+        if (!info) { return null }
+        if (new Date().getTime() - info.time &gt; info.exp) { return null }
+        return info.val
+    }
+}
+storeWithExpiration.set('foo', 'bar', 1000)
+setTimeout(function() { console.log(storeWithExpiration.get('foo')) }, 500) // -&gt; "bar"
+setTimeout(function() { console.log(storeWithExpiration.get('foo')) }, 1500) // -&gt; null</pre>
+
+<p>按照这样的方式设置localStorage的过期时间。</p>
+
+<p>store.js项目Github：</p>
+
+<p><a href="https://github.com/marcuswestin/store.js" target="_blank" rel="nofollow"><a href="https://github.com/marcuswestin/store.js">https://github.com/marcuswestin/store.js</a></a></p>
+
+<h3 id="localstorage的安全性">LocalStorage的安全性</h3>
+
+<p>localStorage不要存放敏感信息，它还没有针对xss的防范机制，安全性可能会存在问题。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在不同端口下模拟 Nginx 反向代理和负载均衡 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在不同端口下模拟 Nginx 反向代理和负载均衡</h1>
+  <time datetime=2016-10-30T14:56:12Z class="post-date">Sun, Oct 30, 2016</time>
+  <p>Nginx 是一个轻量级的 WEB 服务器，反向代理服务器和电子邮件服务器，本文介绍在虚拟机中使用不同的端口来模拟不同的服务器，并使用 Nginx 反向代理功能实现服务器负载均衡的效果。</p>
+
+<h3 id="新建两个站点">新建两个站点</h3>
+
+<p>首先新建两个 WEB 目录当做不同的服务器下的站点，一个是 website-A，一个是 website-B. 这两个站点目录应该是在不同的服务器上，而且代码是一模一样的，这里为了方便在一台虚拟机上模拟不同服务器，并且把两个站点目录下的首页做了一点修改，以区分访问到的是不同目录（服务器）下的站点。两个站点都只有一个简单的 index.html 的首页，里面内容是&#8221;This is website A&#8221;这样的。</p>
+
+<pre class="lang:vim decode:true">vagrant@homestead:~/html/load-balance$ ls
+website-A  website-B</pre>
+
+<h3 id="配置-nginx-反向代理和负载均衡">配置 Nginx 反向代理和负载均衡</h3>
+
+<p>在 /etc/nginx/sites-enabled 目录下新建一个文件，如: test-load-balance，内容如下：</p>
+
+<pre class="lang:php decode:true ">upstream tanteng_me {
+    server localhost:1031;
+    server localhost:1032;
+}
+
+server {
+    listen          80;
+    server_name     tanteng2.me www.tanteng2.me;
+
+    location / {
+        #设置主机头和客户端真实地址，以便服务器获取客户端真实IP
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass      http://tanteng_me;
+    }
+}</pre>
+
+<p>这个反向代理服务器监听 80 端口，并定义了一个服务器负载均衡的模块，这里两个不同的端口代表不同的服务器（由于是在一台虚拟机中，并没有安装多个虚拟机，因此采用不同的端口的方式来模拟）。</p>
+
+<h3 id="nginx-web-服务器配置">Nginx WEB 服务器配置</h3>
+
+<p>在 /etc/ngxin/conf.d/ 下新建 load-balance.conf，内容如下：</p>
+
+<pre class="lang:php decode:true ">server {
+    listen       1031;
+    server_name  tanteng2.me;
+    root   /usr/share/nginx/html/load-balance/website-A;
+    index  index.html index.htm;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+    try_files $uri $uri/ /index.php?$query_string;
+    }
+}
+
+server {
+    listen       1032;
+    server_name  tanteng2.me;
+    root   /usr/share/nginx/html/load-balance/website-B;
+    index  index.html index.htm;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+}</pre>
+
+<p>这里配置了两个服务器，通过监听不同的端口设置站点根目录分别是 website-A 和 website-B，经过以上配置之后，绑定虚拟机 host，并通过浏览器访问。</p>
+
+<p><img class="alignnone size-full wp-image-11063" src="https://blog.tanteng.me/wp-content/uploads/2016/10/nginx-website.png" alt="nginx-website" width="698" height="337" /><img class="alignnone size-full wp-image-11064" src="https://blog.tanteng.me/wp-content/uploads/2016/10/nginx-website2.png" alt="nginx-website2" width="698" height="337" /></p>
+
+<p>可以看到刷新页面，内容也在发生变化，说明通过负载均衡配置，实现了轮询服务器效果。</p>
+
+<p>本文介绍了在不同端口下模拟 Nginx 反向代理和负载均衡，不仅可以了解基本的 Nginx 反向代理和负载均衡配置，而且用这种不同端口模拟不同服务器的方式可以做另外一件事情，后续再讲。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP PDOStatement:bindParam的一个陷阱 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP PDOStatement:bindParam的一个陷阱</h1>
+  <time datetime=2013-03-03T09:51:34Z class="post-date">Sun, Mar 3, 2013</time>
+  <p>废话不多说, 直接看代码:</p>
+
+<pre lang="php"><?php
+$dbh = new PDO('mysql:host=localhost;dbname=test', "test");
+ 
+$query = <<<QUERY
+  INSERT INTO `user` (`username`, `password`) VALUES (:username, :password);
+QUERY;
+$statement = $dbh->prepare($query);
+ 
+$bind_params = array(':username' => "laruence", ':password' => "weibo");
+foreach( $bind_params as $key => $value ){
+    $statement->bindParam($key, $value);
+}
+$statement->execute();
+</pre>
+
+<p>请问, 最终执行的SQL语句是什么, 上面的代码是否有什么问题?</p>
+
+<p>Okey, 我想大部分同学会认为, 最终执行的SQL是:</p>
+
+<pre lang="php">INSERT INTO `user` (`username`, `password`) VALUES ("laruence", "weibo");
+</pre>
+
+<p>但是, 可惜的是, 你错了, 最终执行的SQL是:</p>
+
+<pre lang="php">INSERT INTO `user` (`username`, `password`) VALUES ("weibo", "weibo");
+</pre>
+
+<p>是不是很大的一个坑呢?</p>
+
+<p>—— 如果你想自己找到原因, 那么就不要继续往下读了———</p>
+
+<p>这个问题, 来自今天的一个Bug报告: #63281</p>
+
+<p>究其原因, 也就是bindParam和bindValue的不同之处, bindParam要求第二个参数是一个引用变量(reference).</p>
+
+<p>让我们把上面的代码的foreach拆开, 也就是这个foreach:</p>
+
+<pre lang="php"><?php
+foreach( $bind_params as $key => $value ){
+    $statement->bindParam($key, $value);
+}
+</pre>
+
+<p>相当于:</p>
+
+<pre lang="php"><?php
+//第一次循环
+$value = $bind_params[":username"];
+$statement->bindParam(":username", &$value); //此时, :username是对$value变量的引用
+ 
+//第二次循环
+$value = $bind_params[":password"]; //oops! $value被覆盖成了:password的值
+$statement->bindParam(":password", &$value);
+</pre>
+
+<p>所以, 在使用bindParam的时候, 尤其要注意和foreach联合使用的这个陷阱. 那么正确的作法呢?</p>
+
+<ol>
+<li>不要使用foreach, 而是手动赋值</li>
+</ol>
+
+<pre lang="php"><?php
+$statement->bindParam(":username", $bind_params[":username"]); //$value是引用变量了
+$statement->bindParam(":password", $bind_params[":password"]);
+</pre>
+
+<ol>
+<li><p>使用bindValue代替bindParam, 或者直接在execute中传递整个参数数组.</p></li>
+
+<li><p>使用foreach和reference(不推荐)</p></li>
+</ol>
+
+<pre lang="php"><?php
+foreach( $bind_params as $key => &$value ) { //注意这里
+    $statement->bindParam($key, $value);
+}
+</pre>
+
+<p>最后, 展开了说, 对于要求参数是引用, 并且有滞后处理的函数, 都要在使用foreach的时候, 谨慎!</p>
+
+<p>(转自风雪之隅：<a href="http://www.laruence.com/2012/10/16/2831.html" title="PDO绑定参数的一个陷阱" target="_blank" rel="nofollow"><a href="http://www.laruence.com/2012/10/16/2831.html">http://www.laruence.com/2012/10/16/2831.html</a></a>)</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

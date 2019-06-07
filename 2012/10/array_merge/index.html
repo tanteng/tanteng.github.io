@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>php合并数组的两种方法：&#43;和array_merge()的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>php合并数组的两种方法：&#43;和array_merge()的区别</h1>
+  <time datetime=2012-10-11T02:57:13Z class="post-date">Thu, Oct 11, 2012</time>
+  <p>PHP中两个数组合并可以使用+或者array_merge，但之间还是有区别的，而且这些区别如果了解不清楚项目中会要命的！</p>
+
+<p>主要区别是两个或者多个数组中如果出现相同键名，键名分为字符串或者数字，需要注意</p>
+
+<p>1）键名为数字时，array_merge()不会覆盖掉原来的值，但＋合并数组则会把最先出现的值作为最终结果返回，而把后面的数组拥有相同键名的那些值“抛弃”掉（不是覆盖）</p>
+
+<p>2）键名为字符时，＋仍然把最先出现的值作为最终结果返回，而把后面的数组拥有相同键名的那些值“抛弃”掉，但array_merge()此时会覆盖掉前面相同键名的值</p>
+
+<p>需要注意的是数组键形式 &#8216;数字&#8217; 等价于数字</p>
+
+<pre lang="php"><?php
+$a = array('a','b');
+$b = array('c', 'd');
+$c = $a + $b;
+var_dump($a);echo '<br>
+
+<br />';
+var_dump(array_merge($a, $b));
+echo '<br /><br />';
+
+$a = array(0 => 'a', 1 => 'b');
+$b = array(0 => 'c', 1 => 'b');
+$c = $a + $b;
+var_dump($c);echo '<br /><br />';
+var_dump(array_merge($a, $b));
+echo '<br /><br />';
+
+$a = array('a', 'b');
+$b = array('0' => 'c', 1 => 'b');
+$c = $a + $b;
+var_dump($c);echo '<br /><br />';
+var_dump(array_merge($a, $b));
+echo '<br /><br />';
+
+$a = array(0 => 'a', 1 => 'b');
+$b = array('0' => 'c', '1' => 'b');
+$c = $a + $b;
+var_dump($c);echo '<br /><br />';
+var_dump(array_merge($a, $b));
+echo '<br /><br />';
+
+$a = array('aa' => 'a', 'bb' => 'b');
+$b = array('0' => 'c', 'bb' => 'dd');
+$c = $a + $b;
+var_dump($c);echo '<br /><br />';//+会保留前面出现的值，抛弃重复键名的值
+var_dump(array_merge($a, $b));//array_merge()会覆盖前面相同键名的值
+?>
+</pre>
+
+<p>结果：</p>
+
+<pre lang="php">array(2) { [0]=> string(1) "a" [1]=> string(1) "b" } 
+
+array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "d" } 
+
+array(2) { [0]=> string(1) "a" [1]=> string(1) "b" } 
+
+array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "b" } 
+
+array(2) { [0]=> string(1) "a" [1]=> string(1) "b" } 
+
+array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "b" } 
+
+array(2) { [0]=> string(1) "a" [1]=> string(1) "b" } 
+
+array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "b" } 
+
+array(3) { ["aa"]=> string(1) "a" ["bb"]=> string(1) "b" [0]=> string(1) "c" } 
+
+array(3) { ["aa"]=> string(1) "a" ["bb"]=> string(2) "dd" [0]=> string(1) "c" } 
+</pre>
+
+<p>（修改自<a href="http://www.cnblogs.com/ixqbar/archive/2010/07/28/1786727.html）">http://www.cnblogs.com/ixqbar/archive/2010/07/28/1786727.html）</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

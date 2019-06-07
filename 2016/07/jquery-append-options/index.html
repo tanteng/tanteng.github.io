@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>更优雅的jQuery拼接下拉框方式 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>更优雅的jQuery拼接下拉框方式</h1>
+  <time datetime=2016-07-11T08:52:52Z class="post-date">Mon, Jul 11, 2016</time>
+  <p>在Stack Overflow浏览到一个问题：如何用jQuery更好的拼接下拉框代码？这个小需求在实践中也写过很多次，但是网友提供了一个更优雅的jQuery拼接下拉框方式。</p>
+
+<p>代码如下：</p>
+
+<pre class="lang:js decode:true ">var options = $("#options");
+$.each(result, function() {
+    options.append($("&lt;option /&gt;").val(this.ImageFolderID).text(this.Name));
+});</pre>
+
+<p><strong>不过这里得改进一下：</strong></p>
+
+<p>要在each之前清空一下下拉框的选项，不然触发不同的条件，选项会追加到后面。</p>
+
+<p>加一句options.empty()即可。</p>
+
+<p>再翻出自己前不久写的（第8-11行）：</p>
+
+<pre class="lang:js mark:8-11 decode:true ">//改变模板下拉框
+function changeTempalte(scene_id) {
+    $.post("/tipsadmin/getAllTemplate", {scene_id: scene_id}, function (data) {
+        if (data.length == 0) {
+            templateForm['bubble']();
+            return false;
+        }
+        option = '';
+        $.each(data, function (id, item) {
+            option += '&lt;option value="' + item.id + '"&gt;' + item.name + '&lt;/option&gt;';
+        });
+        $("#template_id").html(option);
+        //默认展示第一个模板
+        previewTemplate(data[0].id);
+    }, 'json');
+}</pre>
+
+<p>用的拼接字符串的写法，对比一下，代码明显不够优雅！</p>
+
+<p>链接：<a href="http://stackoverflow.com/questions/815103/jquery-best-practice-to-populate-drop-down" target="_blank" rel="nofollow"><a href="http://stackoverflow.com/questions/815103/jquery-best-practice-to-populate-drop-down">http://stackoverflow.com/questions/815103/jquery-best-practice-to-populate-drop-down</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

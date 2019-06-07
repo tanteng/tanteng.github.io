@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>文件权限问题导致的 git fetch 命令执行失败 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>文件权限问题导致的 git fetch 命令执行失败</h1>
+  <time datetime=2017-02-16T07:56:50Z class="post-date">Thu, Feb 16, 2017</time>
+  <p>在一个基于 git 的发布系统中拉取代码，发现无法拉取最新的提交记录，通过调试和查看日志文件找到一行错误：<strong>error: cannot open .git/FETCH_HEAD: Permission denied</strong>，原因是文件权限问题导致。</p>
+
+<h3 id="问题原因">问题原因</h3>
+
+<p>Permission denied，应该权限问题，到项目 .git 目录下查看文件的用户和组：</p>
+
+<p><img class="alignnone size-full wp-image-11233" src="https://blog.tanteng.me/wp-content/uploads/2017/02/git_20170216152807.png" alt="" width="873" height="374" /></p>
+
+<p>发现 FETCH_HEAD 的用户和组都是 root 权限，而发布系统的运行进程是 nobody 用户，所以没有权限执行这个 git 命令：git fetch -q &#8211;all</p>
+
+<h3 id="解决办法">解决办法</h3>
+
+<p>于是使用 chown 把该文件用户和组权限都改成 nobody，再试就正常了。</p>
+
+<p><img src="https://blog.tanteng.me/wp-content/uploads/2017/02/git_20170216153220.png" alt="" width="560" height="360" /></p>
+
+<h3 id="排查问题">排查问题</h3>
+
+<p>更新分支执行的 git 命令如下：</p>
+
+<p>cd /data/vhosts/project  &amp;&amp; git checkout -q master &amp;&amp; git fetch -q &#8211;all &amp;&amp; git/bin/git clean -fd &amp;&amp; git/bin/git reset -q &#8211;hard origin/master</p>
+
+<p>最后发现是其中 git fetch -q &#8211;all 出现权限错误，这种多个命令 &amp;&amp; 组合的形式即使中间命令报错了，整体执行报错也不会输出错误，所以日志一开始并没有提示有什么错误，后来把多个命令从第一个命令开始执行，再一个个加后面的命令，才定位到问题。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

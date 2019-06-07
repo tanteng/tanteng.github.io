@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>如何禁止手机百度搜索自动转码 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>如何禁止手机百度搜索自动转码</h1>
+  <time datetime=2014-11-16T12:33:19Z class="post-date">Sun, Nov 16, 2014</time>
+  <p>很多站长朋友都知道，网站在百度手机搜索中打开的时候，百度会对网页进行自动转码，变成“优化”之后的手机版网页，但是百度网页自动转码的效果并不让人满意，再说很多网站有自己的自适应手机版的网页，或者有对应的手机版本网站，不需要百度网页自动转码。那么如何禁止手机端百度搜索自动转码呢？</p>
+
+<h3 id="禁止手机百度搜索自动转码">禁止手机百度搜索自动转码</h3>
+
+<p>最简单的禁止百度手机版网页自动转码的方法是，通过设置cache-control的no-transform属性，在head里面添加如下代码：</p>
+
+<pre lang="html"><meta http-equiv="Cache-Control" content="no-transform" />
+
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+</pre>
+
+<p>这样百度读到meta信息，就不会对网页进行转码了，呈现的将是原来的网页。</p>
+
+<p>还有其他的禁止百度搜索网页自动转码的方法。</p>
+
+<p>1.通过修改handheld协议</p>
+
+<p>页面通过标签显式指定WAP网页，声明格式如下：</p>
+
+<p><link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="target" /></p>
+
+<p>如第三方站点不希望页面被转码，可添加此协议禁止百度手机搜索对网页自动转码。</p>
+
+<p>2.User-Agent相关TC抓取页面时，使用的User-Agent为：Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; baidu Transcoder;)</p>
+
+<p>以上就是禁止百度搜索自动转码的三个方法，一般采用设置cache-control的no-transform属性的方法就可以轻松实现了，不过还是要根据自己的情况采用吧。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

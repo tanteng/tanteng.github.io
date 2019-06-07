@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSS content属性 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>CSS content属性</h1>
+  <time datetime=2015-01-20T05:58:09Z class="post-date">Tue, Jan 20, 2015</time>
+  <p>浏览网页的时候，审查元素，发现css定义了content属性，很好奇，css content属性是什么？content属性怎么用呢？比如这一段css代码：</p>
+
+<pre class="lang:css decode:true ">/* Post formats */
+.genericon-standard:before {        content: '\f100'; }
+.genericon-aside:before {           content: '\f101'; }
+.genericon-image:before {           content: '\f102'; }
+.genericon-gallery:before {         content: '\f103'; }
+.genericon-video:before {           content: '\f104'; }
+.genericon-status:before {          content: '\f105'; }
+.genericon-quote:before {           content: '\f106'; }
+.genericon-link:before {            content: '\f107'; }
+.genericon-chat:before {            content: '\f108'; }
+.genericon-audio:before {           content: '\f109'; }</pre>
+
+<h3 id="css-content示例">CSS content示例</h3>
+
+<pre class="lang:css decode:true ">a:after{
+  content: " (" attr(href) ")";
+}</pre>
+
+<p>这个css content属性的意思是：给所有链接后面加上括号，括号里面的内容是链接地址。神奇吧！</p>
+
+<p>也就是说，本来是这样一个链接：<a title="css content属性" href="https://blog.tanteng.me/2015/01/css-content/" target="_blank">CSS content属性</a>。加上这个css的content属性后，页面上此处链接就会变成：<a title="css content属性" href="https://blog.tanteng.me/2015/01/css-content/" target="_blank">CSS content属性（<a href="https://blog.tanteng.me/2015/01/css-content/）">https://blog.tanteng.me/2015/01/css-content/）</a></a></p>
+
+<p>现在懂了content属性了。为了更好的理解，我们可以把content理解为内容，就是文字之类的，也就是给某个元素加上一些“文字”内容，以类为单位统一添加。</p>
+
+<h3 id="css-before属性">CSS  before属性</h3>
+
+<pre class="lang:css decode:true ">h1:before {content:url(/i/w3school_logo_white.gif)}</pre>
+
+<p>before属性表示该元素之前进行样式操作。比如这个代码，就是在所有h1的标题之前，用content属性显示一张图片。这样可以很方便的给某个类加上图标之类的样式。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

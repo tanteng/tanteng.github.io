@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>set_include_path和require,include &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>set_include_path和require,include</h1>
+  <time datetime=2016-05-04T04:04:53Z class="post-date">Wed, May 4, 2016</time>
+  <p>在PHP中经常使用include，require来引用其他文件，使用相对路径或者绝对路径，如果通过set_include_path函数或者ini_set(&#8216;include_path&#8217;,xxx)设置include_path配置选项，那么require文件如果在其他目录也可以直接引用。</p>
+
+<h3 id="span-class-dc-title-设置include-path配置选项-span"><span class="dc-title">设置include_path配置选项</span></h3>
+
+<p>如：require_once &#8220;class.smarttemplate.php&#8221;，这个文件其实并不在当前文件所在目录，但是同样可以这样直接引用。因为前面通过ini_set设置了include_path：</p>
+
+<pre class="lang:php decode:true ">// 包含配置文件和函数库路径
+ini_set('include_path', INCLUDE_PATH . DS . "library" . PATH_SEPARATOR . ini_get('include_path'));</pre>
+
+<h3 id="set-include-path函数">set_include_path函数</h3>
+
+<p>set_include_path函数和ini_set(&#8216;include_pah&#8217;,xxx)作用是一样的，只不过ini_set方式适合所有PHP版本，对现在来说两者没有差别。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jquery性能优化技巧 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jquery性能优化技巧</h1>
+  <time datetime=2015-04-02T14:44:21Z class="post-date">Thu, Apr 2, 2015</time>
+  <p>jquery是在客户端执行，相对于网站后端开发语言来说，往往不强调js，jquery性能优化的概念，但是在页面非常复杂，各种js，ajax请求多的情况下，优化jquery的性能可以大大提高用户体验，加快页面的响应速度，还是非常有必要的。</p>
+
+<p>下面谈谈jquery的性能优化技巧：</p>
+
+<p>1.尽量使用id选择器</p>
+
+<p>在jQuery中最快的选择器是ID选择器，因为它直接来自于JavaScript的getElementById()方法。</p>
+
+<p>这个就无需多言，也不举例说明了。</p>
+
+<p>2.缓存jquery对象</p>
+
+<p>这里用缓存这个词不太科学，其实就是把多次要用的jquery对象用一个变量保存起来，不用每次都去找。如：</p>
+
+<pre class="lang:js decode:true ">$("#traffic_light input.on").bind("click", function(){  });
+$("#traffic_light input.on").css("border", "1px dashed yellow");
+$("#traffic_light input.on").css("background-color", "orange");
+$("#traffic_light input.on").fadeIn("slow");</pre>
+
+<p>多次使用</p>
+
+<pre class="lang:js decode:true">$("#traffic_light input.on")</pre>
+
+<p>我们应该先将这个对象缓存进一个变量然后再操作，如下所示：</p>
+
+<pre class="lang:js decode:true">var $active_light = $("#traffic_light input.on");
+$active_light.bind("click", function(){  });
+$active_light.css("border", "1px dashed yellow");
+$active_light.css("background-color", "orange");
+$active_light.fadeIn("slow");</pre>
+
+<p>还可以有更优雅地写法：</p>
+
+<pre class="lang:js decode:true ">var $active_light = $("#traffic_light input.on");
+    $active_light.bind("click", function(){  })
+                        .css("border", "1px dashed yellow")
+                        .css("background-color", "orange")
+                        .fadeIn("slow");</pre>
+
+<p>这是jquery链式写法，看上去瞬间高大上。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

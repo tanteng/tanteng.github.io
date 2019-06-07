@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>《性感的 PHP — 现代化 PHP 开发》PPT 分享 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>《性感的 PHP — 现代化 PHP 开发》PPT 分享</h1>
+  <time datetime=2016-09-25T14:58:15Z class="post-date">Sun, Sep 25, 2016</time>
+  <p>说好的把这次技术分享的 PPT 发出来的，一直没时间弄，现在整理了一下，并导出了一份 PDF 版的 PPT，给大家参考。（PS：本次技术分享仅仅是介绍一些关于现代化 PHP 开发的技术，并不是讲某个方面的高深技术和经验，即便如此，针对目前的 PHP 现状，很多项目，公司和开发者，还在使用过时的 PHP 技术，这个分享还是有价值的）。</p>
+
+<p>本次技术分享主要讲了一些现代化 PHP 开发的技术，PPT 重点介绍了命名空间，闭包，匿名函数，Traits 这些新特性，以及介绍了 Composer 依赖包管理器和 PSR 规范。</p>
+
+<h3 id="主要内容">主要内容</h3>
+
+<p>PHP 正在重生。作为一门专注WEB开发的语言，它不断吸取其他语言的优点，如命名空间，闭包，性状，操作码缓存等特性，PSR 规范和Composer 包管理以及 PHP 7 的性能提升，PHP 正在变成一门现代化的语言，让我们一起聊聊 PHP 有哪些新的变化！</p>
+
+<ul>
+<li>命名空间</li>
+<li>PSR规范</li>
+<li>闭包和匿名函数</li>
+<li>Trait</li>
+<li>Composer包管理器</li>
+<li>PSR规范与自动加载</li>
+<li>语法新特性</li>
+<li>PHP 7性能</li>
+<li>Laravel框架介绍</li>
+</ul>
+
+<h3 id="全面的php技术栈">全面的PHP技术栈</h3>
+
+<p>我们先来回顾一下 WEB 开发所用到的技术和工具，这里的PHP可以替换为 Python，Java，.NET 等其他语言，因为 PHP 只是一门语言，而WEB开发的本质是一样的。我们的重点是掌握PHP本身，和它密切相关的如 MySQL，Nginx/Apache，Linux，前端方面至少熟悉 jQuery, css 等，但是当项目规模越来越大，并发量越来越高，我们就要用到 Redis，Memcache 等缓存技术，总之，我们要学的东西越来越多，才能满足高性能的 WEB 开发。这里只是列举了比较常用的技术和工具，欢迎大家进行补充。</p>
+
+<p><img src="https://oddgb63aa.qnssl.com/uploads/2016/09/mordern-php-part2.png" alt="PHP技术堆栈图" data-type="image" /></p>
+
+<h3 id="命名空间">命名空间</h3>
+
+<p>PHP一个重要的改变，就是引入了命名空间。命名空间是使PHP成为一门现代语言的重要特性，它不仅解决了第三方扩展包的类命名冲突的问题，还提供了良好的代码组织的方式，并且通过它进行自动加载。</p>
+
+<p>如 PHP 手册里所描述，命名空间好比操作系统中的目录，两个同名的文件可以共存在不同的目录下。同理两个同名的 PHP 类可以在不同的 PHP 命名空间下共存，就这么简单。</p>
+
+<p>因此把你的代码放在你的命名空间下就非常重要，避免其他开发者担心与第三方类库冲突。</p>
+
+<h3 id="psr-规范">PSR 规范</h3>
+
+<p>PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规范，是 PHP 开发的实践标准。</p>
+
+<p>PHP FIG，FIG 是 Framework Interoperability Group（框架可互用性小组）的缩写，由几位开源框架的开发者成立于 2009 年，从那开始也选取了很多其他成员进来（包括但不限于 Laravel, Joomla, Drupal, Composer, Phalcon, Slim, Symfony, Zend Framework 等），虽然不是「官方」组织，但也代表了大部分的 PHP 社区。</p>
+
+<p>项目的目的在于：通过框架作者或者框架的代表之间讨论，以最低程度的限制，制定一个协作标准，各个框架遵循统一的编码规范，避免各家自行发展的风格阻碍了 PHP 的发展，解决这个程序设计师由来已久的困扰。 <strong>自动加载</strong>规范非常重要，PHP 组件都遵循自动加载规范，才能通过 Composer 进行管理。</p>
+
+<h3 id="composer包管理器">Composer包管理器</h3>
+
+<p>Node.js 有 npm ，Python 有 pip，现在 PHP 有了 Composer，Composer 是 PHP 的一个包（PHP 组件）管理器，这些组件遵循 PSR 规范，因此可以快速应用到你的项目中，而且可以开源共同维护。</p>
+
+<p><img src="https://oddgb63aa.qnssl.com/uploads/2016/09/composer-php-package-manager.jpg" alt="Composer包管理器" data-type="image" /></p>
+
+<h4 id="php组件具备以下特点">PHP组件具备以下特点</h4>
+
+<ul>
+<li>作用单一：专注于解决一个问题，而且使用简单的接口封装功能</li>
+<li>小型：小巧玲珑，只包含解决某个问题所需的最少代码</li>
+<li>合作：PHP组件之间可以良好合作，组合在一起实现大型项目</li>
+<li>测试良好：本身提供测试，而且有充足的测试覆盖度</li>
+<li>文档完善：应该提供完善的文档，能让开发者轻易安装、理解和使用</li>
+</ul>
+
+<h3 id="php-新语法">PHP 新语法</h3>
+
+<p>PHP 5.6 —— PHP 7 提供了很多新的语法和特性，如闭包和匿名函数，Traits，运算符简写方式，数组简写方式，类型约束等等。</p>
+
+<h3 id="学习现代化-php-开发的最好方式">学习现代化 PHP 开发的最好方式</h3>
+
+<p>学习现代化 PHP 开发的最好方式是学习现代化的开发框架，如 Laravel，这些新的 PHP 概念和语法，以及 Composer，都在框架中广泛使用，并且还可以学习到很多有关设计模式的知识。</p>
+
+<h3 id="ppt-下载地址">PPT 下载地址</h3>
+
+<p><a href="https://oddgb63aa.qnssl.com/uploads/2016/08/modern-php.pdf" target="_blank" rel="noopener noreferrer nofollow">点此打开 PDF 版 PPT</a></p>
+
+<p>本文原文链接：<a href="https://www.tanteng.me/page/modern-php" target="_blank" rel="noopener noreferrer"><a href="https://www.tanteng.me/page/modern-php">https://www.tanteng.me/page/modern-php</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

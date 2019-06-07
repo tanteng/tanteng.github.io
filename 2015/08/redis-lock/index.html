@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用Redis防止重复提交 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用Redis防止重复提交</h1>
+  <time datetime=2015-08-11T08:21:10Z class="post-date">Tue, Aug 11, 2015</time>
+  <p>使用Redis可以很方便的防止表单或者按钮重复提交，给动作加锁，在一定时间内不能再次执行。</p>
+
+<pre class="lang:php decode:true ">//防止重复提交
+$lock_nopay = 'nopay_'.$sb_id.$sb_uid.$pay_money;
+if(!$this-&gt;lock(10,$lock_nopay)){
+    $this-&gt;error("当前取消打款操作尚未完成，请勿重复操作！");
+}</pre>
+
+<p>这里调用lock方法，锁定10秒钟，10秒钟内如果再次提交就中断操作，认为是重复提交。</p>
+
+<p>lock方法是这样写的：</p>
+
+<pre class="lang:php decode:true ">/**
+ * 锁定请求
+ * @param $expire 锁定时间
+ * @param $mark 自定义标记
+ * @return bool
+*/
+protected function lock($expire=1,$mark=''){
+    $url=strtolower(MODULE_NAME.'/'.ACTION_NAME);//操作地址
+    $prefix='lock_';$sid=session_id();
+    $key=$prefix.md5($sid.$url.$mark);//令牌键值
+    if(D('Redis')-&gt;incr($key)==1){
+        return D('Redis')-&gt;expire($key,$expire);
+    }
+    return false;
+}</pre>
+
+<p>使用redis的incr自增方法，和expire缓存时间方法，判断一定时间内是否是同一个请求，如果是同一个请求返回false，这样来防止表单或按钮重复提交。</p>
+
+<p>当方法执行完成，需要解除重复提交的锁定。</p>
+
+<pre class="lang:php decode:true ">//解除锁定
+$this-&gt;unlock($lock_nopay);</pre>
+
+<p>这样就是使用redis防止重复提交，或者按钮重复点击的完整方法。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

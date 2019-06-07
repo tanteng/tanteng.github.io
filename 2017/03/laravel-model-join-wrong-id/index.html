@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laravel 关联查询返回错误的 id &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Laravel 关联查询返回错误的 id</h1>
+  <time datetime=2017-03-31T04:50:37Z class="post-date">Fri, Mar 31, 2017</time>
+  <p>在 Laravel Eloquent 中使用 join 关联查询，如果两张表有名称相同的字段，如 id，那么它的值会默认被后来的同名字段重写，返回不是期望的结果。例如以下关联查询：</p>
+
+<pre class="lang:php decode:true">$priority = Priority::rightJoin('touch', 'priorities.touch_id', '=', 'touch.id')
+    -&gt;where('priorities.type', 1)
+    -&gt;orderBy('priorities.total_score', 'desc')
+    -&gt;orderBy('touch.created_at', 'desc')
+    -&gt;get();</pre>
+
+<p class="lang:php decode:true  ">
+  priorities 和 touch 这两张表都有 id 字段，如果这样构造查询的话，返回的查询结果如图：
+</p>
+
+<p class="lang:php decode:true  ">
+  <a href="https://blog.tanteng.me/wp-content/uploads/2017/03/laravel-join-wrong-id.png" target="_blank"><img class="alignnone wp-image-11351 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/laravel-join-wrong-id.png" alt="Laravel 关联查询返回错误的 id" width="331" height="548" /></a>
+</p>
+
+<p class="lang:php decode:true  ">
+  这里 id 的值不是 priorities 表的 id 字段，而是 touch 表的 id 字段，如果打印出执行的 sql 语句：
+</p>
+
+<pre class="lang:default decode:true ">select * from `priorities` 
+right join `touch` 
+on `priorities`.`touch_id` = `touch`.`id` 
+where `priorities`.`type` = '1' 
+order by `priorities`.`total_score` desc, `touch`.`created_at` desc</pre>
+
+<p>查询结果如图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/03/laravel-join-wrong-id2.png" target="_blank"><img class="alignnone wp-image-11352 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/laravel-join-wrong-id2.png" alt="" width="541" height="167" /></a></p>
+
+<p>使用 sql 查询的结果实际上是对的，另外一张表重名的 id 字段被默认命名为 id1，但是 Laravel 返回的 id 的值却不是图中的 id 字段，而是被重名的另外一张表的字段重写了。</p>
+
+<p><strong>解决办法是加一个 select 方法指定字段</strong>，正确的构造查询语句的代码：</p>
+
+<pre class="lang:php decode:true ">$priority = Priority::select(['priorities.*', 'touch.name', 'touch.add_user'])
+    -&gt;rightJoin('touch', 'priorities.touch_id', '=', 'touch.id')
+    -&gt;where('priorities.type', 1)
+    -&gt;orderBy('priorities.total_score', 'desc')
+    -&gt;orderBy('touch.created_at', 'desc')
+    -&gt;get();</pre>
+
+<p>这样就解决了问题，那么以后就要注意了，Laravel 两张表 join 的时候返回的字段最好要指定。</p>
+
+<p>这算不算是 Laravel 的一个 bug 呢？如果一个字段的值被同名的字段值重写了，这种情况要不要报一个错误出来，而不能默认继续执行下去。</p>
+
+<p>github 上有人也提出了同样的问题，作者也提供了解决办法，但并没其他更好的方案。</p>
+
+<p>Laravel 版本：5.3</p>
+
+<p>链接：<a href="https://github.com/laravel/framework/issues/4962" target="_blank" rel="nofollow"><a href="https://github.com/laravel/framework/issues/4962">https://github.com/laravel/framework/issues/4962</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python中requirements.pip文件的作用 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python中requirements.pip文件的作用</h1>
+  <time datetime=2015-05-08T03:17:35Z class="post-date">Fri, May 8, 2015</time>
+  <p>在很多Python项目中都包含一个requirements.pip文件，里面写的是一些包的名称和版本之类的信息，这是做什么用的呢？</p>
+
+<p>比如一个requirements.pip文件内容如下：</p>
+
+<p>html5lib==0.999</p>
+
+<p>ipdb==0.8</p>
+
+<p>ipython==2.3.1</p>
+
+<p>mongo==0.2.0</p>
+
+<p>path.py==7.0</p>
+
+<p>python-dateutil==2.3</p>
+
+<p>requests==2.5.0</p>
+
+<p>unicodecsv==0.9.4</p>
+
+<p>这里面写的是运行这个项目所需要的环境，包括一些库，运行之前需要使用<code>pip install -r requirements.pip</code>命令安装这些库。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

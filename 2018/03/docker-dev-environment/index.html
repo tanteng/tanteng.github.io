@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用 Docker 搭建开发环境 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用 Docker 搭建开发环境</h1>
+  <time datetime=2018-03-29T02:48:04Z class="post-date">Thu, Mar 29, 2018</time>
+  <p>做了一次分享，主题《使用 Docker 搭建开发环境》，简单介绍了一下 Docker 的概念，演示了使用 Docker-compose 构建全套 PHP 环境。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg" target="_blank"><img class="alignnone size-full wp-image-11994" src="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg" alt="" width="1024" height="762" /></a></p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunk6z87j21960xsjv3.jpg" target="_blank"><img class="alignnone size-full wp-image-11995" src="https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunk6z87j21960xsjv3.jpg" alt="" width="1024" height="766" /></a></p>
+
+<h3 id="主要内容">主要内容</h3>
+
+<ul>
+<li>镜像、容器、仓库概念</li>
+<li>容器与虚拟机的区别</li>
+<li>使⽤ Docker 搭建 PHP 环境</li>
+<li>介绍 docker-compose</li>
+</ul>
+
+<h3 id="articleHeader1">什么是 Docker？</h3>
+
+<p>Docker是⼀个基于 Linux 内核的 cgroup，namespace，以及AUFS 类的 Union FS 等技术，对进程进⾏封装隔离，属于操作系统层⾯的虚拟化技术。</p>
+
+<p>最初实现是基于 LXC，从 0.7 版本以后开始去除 LXC，转⽽使⽤⾃⾏开发的 libcontainer，从 1.11 开始，则进⼀步演进为使⽤ runC 和 containerd。</p>
+
+<p>Docker 在容器的基础上，进⾏了进⼀步的封装，从⽂件系统、⽹络互联到进程隔离等等，极⼤的简化了容器的创建和维护。使得 Docker 技术⽐虚拟机技术更为轻便、快捷。</p>
+
+<h3 id="articleHeader2">Docker应⽤场景</h3>
+
+<p>Docker 通常⽤于如下场景：</p>
+
+<ul>
+<li>web应⽤的⾃动化打包和发布；</li>
+<li>⾃动化测试和持续集成、发布；</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应⽤；</li>
+<li>从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建⾃⼰的PaaS环境。</li>
+</ul>
+
+<p>更多场景和优势：</p>
+
+<p>• 加速本地开发和构建流程，使其更加⾼效、更加轻量化</p>
+
+<p>• 能够让独⽴服务或应⽤程序在不同的环境中，得到相同的运⾏结果</p>
+
+<p>• ⽤ Docker 创建隔离的环境来进⾏测试</p>
+
+<p>• Docker 可以让开发者先在本机构建⼀个复杂的程序或架构进⾏测试，⽽不是⼀开始就在⽣产环境部署、测试</p>
+
+<p>• 构建⼀个多⽤户的平台即服务（PaaS）基础设施</p>
+
+<p>• 为开发、测试提供⼀个轻量级的独⽴沙盒环境</p>
+
+<h3 id="articleHeader3">Docker架构</h3>
+
+<h4 id="docker客户端和服务器">Docker客户端和服务器</h4>
+
+<ul>
+<li>Docker 是⼀个 C/S 架构的程序。Docker 客户端向服务器或守护进程发出请求，服务器或守护进程将完成所有⼯作并返回结果</li>
+<li>Docker 提供了⼀个命令⾏⼯具以及⼀整套 RESTful API</li>
+<li>可以在同⼀台宿主机上运⾏ Docker 守护进程，也可以从⼀个本地客户端运⾏另⼀台宿主机上远程 Docker 守护进程</li>
+</ul>
+
+<h3 id="articleHeader4">Docker镜像、容器、仓库</h3>
+
+<ul>
+<li><p>镜像是⼀个特殊的⽂件系统，提供容器运⾏所需的程序、⽂件、资源、配置，以及为运⾏时准备的配置参数（镜像不是Dockerfile⽂件）</p></li>
+
+<li><p>容器是是镜像的⼀个实例，是⼀个动态的概念，是运⾏状态下的镜像，它可以被创建、启动、停⽌、删除。（进程隔离）</p></li>
+
+<li><p>仓库是存放镜像的地⽅，如官⽅ Hub 仓库，上⾯有成千上万的镜像可以直接使⽤。</p></li>
+</ul>
+
+<h3 id="articleHeader5">Docker-compose介绍</h3>
+
+<p>Docker-compose是 Docker 官⽅编排（Orchestration）项⽬之⼀，负责快速的部署分布式应⽤。</p>
+
+<ul>
+<li>Docker Compose是⼀个 Python 写的⽤来定义和运⾏复杂应⽤的Docker⼯具。</li>
+<li>使⽤Compose可以定义和运⾏多个 Docker 容器的应⽤，使⽤⼀条命令来启动所需应⽤，完成⼀切准备⼯作</li>
+</ul>
+
+<h3 id="articleHeader6">使用 laradoc 搭建全套PHP环境步骤</h3>
+
+<p>仅需要三个步骤就完成了 PHP 全套环境的搭建，每次开机启动 PHP 环境也只需⼀个命令：</p>
+
+<ul>
+<li>克隆 laradock</li>
+<li>创建环境变量⽂件</li>
+<li>使⽤ docker-compose 启动所需服务</li>
+</ul>
+
+<h3 id="ppt-下载">PPT 下载</h3>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/03/docker-dev-env.pdf" target="_blank" rel="noopener">点击下载</a></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用 goroutine 并发写 map 问题 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用 goroutine 并发写 map 问题</h1>
+  <time datetime=2017-06-19T10:41:21Z class="post-date">Mon, Jun 19, 2017</time>
+  <p>使用 goroutine 并发写 map 是一个非线程安全的方式，要避免对一个全局变量在 goroutine 中进行写操作，这会导致并发写问题。</p>
+
+<p>以下例子可以触发此类错误：</p>
+
+<pre class="lang:go decode:true">package main
+
+var testMap = make(map[string]string)
+
+func main() {
+    for i := 0; i &lt; 33; i++ {
+        go func() {
+            testMap["aa"] = "bb"
+        }()
+    }
+}
+</pre>
+
+<p>对于 const 常量和只读全局变量，是线程安全的，但不能并发写。</p>
+
+<p>使用锁机制，或者 chan 同步 goroutine，或者不要这样定义全局变量，放到函数中定义变量并进行读写操作。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>brew安装错误:/usr/local/include is not writable &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>brew安装错误:/usr/local/include is not writable</h1>
+  <time datetime=2015-12-13T16:11:35Z class="post-date">Sun, Dec 13, 2015</time>
+  <p>在Mac上使用brew命令安装东西，提示/usr/local/include is not writable的错误，在Stack Overflow很快找到解决办法：</p>
+
+<p>Simple solution that worked for me:</p>
+
+<ol>
+<li>click on your background to go to finder</li>
+<li>click on go and go to folder /usr</li>
+<li>right click on local and do get info</li>
+<li>unlock the lock at the bottom</li>
+<li>click + sign and add your user to the list and give read/write privileges</li>
+<li>click on the gear sign at the bottom and choose apply to enclosed items to recurse under that directory and assign privileges too all directories beneath it.</li>
+</ol>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-read-write.png" rel="attachment wp-att-9338" target="_blank"><img class="alignnone wp-image-9338" src="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-read-write.png" alt="brew-read-write" width="300" height="224" /></a></p>
+
+<p>OK，大功告成，现在可以正常使用brew了。</p>
+
+<p>链接：<a href="http://stackoverflow.com/questions/10865795/changing-ownership-of-a-directory-in-os-x" target="_blank" rel="nofollow"><a href="http://stackoverflow.com/questions/10865795/changing-ownership-of-a-directory-in-os-x">http://stackoverflow.com/questions/10865795/changing-ownership-of-a-directory-in-os-x</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

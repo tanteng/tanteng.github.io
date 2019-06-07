@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MongoDB和MySQL对应关系 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>MongoDB和MySQL对应关系</h1>
+  <time datetime=2015-06-22T03:06:30Z class="post-date">Mon, Jun 22, 2015</time>
+  <p>MongoDB是nosql类型的数据库，MySQL是传统关系型的数据库，它们都是数据库，然而在语法、结构上都有很大差别，不过很多东西还是可以做类比，下面是MongoDB和MySQL一些对应关系。</p>
+
+<h3 id="mongodb和mysql术语上的对应关系">MongoDB和MySQL术语上的对应关系：</h3>
+
+<table border="1">
+  <colgroup> <col width="50%" /> <col width="50%" /></colgroup> <tr class="row-odd">
+    <th class="head">
+      SQL Terms/Concepts
+    </th>
+    
+    <th>
+      MongoDB Terms/Concepts
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      database
+    </td>
+    
+    <td>
+      database
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      table
+    </td>
+    
+    <td>
+      collection
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      row
+    </td>
+    
+    <td>
+      document or BSON document
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      column
+    </td>
+    
+    <td>
+      field
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      index
+    </td>
+    
+    <td>
+      index
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      table joins
+    </td>
+    
+    <td>
+      embedded documents and linking
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      primary key</p> 
+      
+      <p>
+        Specify any unique column or column combination as primary key.</td> 
+        
+        <td>
+          primary key</p> 
+          
+          <p>
+            In MongoDB, the primary key is automatically set to the _idfield.</td> </tr> 
+            
+            <tr>
+              <td>
+                aggregation (e.g. group by)
+              </td>
+              
+              <td>
+                aggregation pipeline</p> 
+                
+                <p>
+                  See the SQL to Aggregation Mapping Chart.</td> </tr> </tbody> </table> 
+                  
+
+<pre><code>              &lt;h3&gt;
+                MongoDB和MySQL在增删查改语句上的对应关系：
+              &lt;/h3&gt;
+
+              &lt;p&gt;
+                比如创建一张表，MongoDB语句如下：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:js decode:true &quot;&gt;db.users.insert( {
+user_id: &quot;abc123&quot;,
+age: 55,
+status: &quot;A&quot;
+</code></pre>
+
+<p>} )</pre></p>
+
+<pre><code>              &lt;p&gt;
+                或者
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:js decode:true &quot;&gt;db.createCollection(&quot;users&quot;)&lt;/pre&gt;
+
+              &lt;p&gt;
+                这对应的MySQL语句为：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:mysql decode:true &quot;&gt;CREATE TABLE users (
+id MEDIUMINT NOT NULL
+    AUTO_INCREMENT,
+user_id Varchar(30),
+age Number,
+status char(1),
+PRIMARY KEY (id)
+</code></pre>
+
+<p>)</pre></p>
+
+<pre><code>              &lt;p&gt;
+                再比如MongoDB和MySQL创建索引的方式对比：
+              &lt;/p&gt;
+
+              &lt;p&gt;
+                MongoDB创建索引语句：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:js decode:true &quot;&gt;db.users.createIndex( { user_id: 1 } )&lt;/pre&gt;
+
+              &lt;p&gt;
+                对应的MySQL语句是：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:mysql decode:true &quot;&gt;CREATE INDEX idx_user_id_asc
+</code></pre>
+
+<p>ON users(user_id)</pre></p>
+
+<pre><code>              &lt;p&gt;
+                再比如增加字段，MongoDB是nosql数据库，并没有MySQL固定表结构的概念，给MongoDB的集合（对应MySQL的表）添加字段，对于MongoDB来说就是加一个field。
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:js decode:true &quot;&gt;db.users.update(
+{ },
+{ $set: { join_date: new Date() } },
+{ multi: true }
+</code></pre>
+
+<p>)</pre></p>
+
+<pre><code>              &lt;p&gt;
+                第一个位置为空，说明是给集合里面每个元素都加上join_date的键值，这样相当于MySQL中一张表统一加上join_date这个字段，对应的sql语句如下：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:mysql decode:true &quot;&gt;ALTER TABLE users
+</code></pre>
+
+<p>ADD join_date DATETIME</pre></p>
+
+<pre><code>              &lt;p&gt;
+                再比如最常见的操作之一，增加一条数据，MongoDB的语法：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:js decode:true &quot;&gt;db.users.insert(
+</code></pre>
+
+<p>{ user_id: &ldquo;bcd001&rdquo;, age: 45, status: &ldquo;A&rdquo; }
+)</pre></p>
+
+<pre><code>              &lt;p&gt;
+                MySQL的sql语句：
+              &lt;/p&gt;
+
+              &lt;pre class=&quot;lang:mysql decode:true &quot;&gt;INSERT INTO users(user_id,
+              age,
+              status)
+</code></pre>
+
+<p>VALUES (&ldquo;bcd001&rdquo;,
+        45,
+        &ldquo;A&rdquo;)</pre></p>
+
+<pre><code>              &lt;p&gt;
+                具体请见：&lt;a href=&quot;http://docs.mongodb.org/manual/reference/sql-comparison/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;http://docs.mongodb.org/manual/reference/sql-comparison/&lt;/a&gt;
+              &lt;/p&gt;
+</code></pre>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

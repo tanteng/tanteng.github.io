@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP捕捉异常中断 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP捕捉异常中断</h1>
+  <time datetime=2016-09-28T09:31:50Z class="post-date">Wed, Sep 28, 2016</time>
+  <p>当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。</p>
+
+<p>比如判断一个脚本是否执行完成，可以设置一个属性为 false，在执行完成时设为 true，最后通过 register_shutdown_function 函数指定的方法进行判断，并做进一步异常处理，如代码所示：</p>
+
+<pre class="lang:php decode:true">class IndexController extends Controller
+{
+    /**
+     * 脚本执行是否完成
+     * @var bool
+     */
+    protected $complete = false;
+
+    public function __construct()
+    {
+        register_shutdown_function([$this, 'shutdown']);
+    }
+
+    /**
+     * 异常处理
+     */
+    public function shutdown()
+    {
+        if ($this-&gt;complete === false) {
+            dump('www.tanteng.me'); //此处应该输出日志并进行异常处理操作
+        }
+    }
+}</pre>
+
+<p>这样一来，可以快速定位脚本是否中断，通过 register_shutdown_function 处理异常并提高程序的健壮性，并且可以记录程序中断的状态，方便通过日志快速定位问题。</p>
+
+<h3 id="register-shutdown-function-执行机制">register_shutdown_function 执行机制</h3>
+
+<p>引用：</p>
+
+<blockquote>
+<p>PHP 把要调用的函数调入内存。当页面所有 PHP 语句都执行完成时，再调用此函数。注意，在这个时候从内存中调用，不是从 PHP 页面中调用，所以如果有路径信息，应使用绝对路径，因为 PHP 已经当原来的页面不存在了。就没有什么相对路径可言。</p>
+
+<p><strong>可以这样理解调用条件：</strong></p>
+
+<p>1、当页面被用户强制停止时</p>
+
+<p>2、当程序代码运行超时时</p>
+
+<p>3、当ＰＨＰ代码执行完成时</p>
+</blockquote>
+
+<h4 id="register-shutdown-function-官方手册-refname">register_shutdown_function 官方手册 {.refname}</h4>
+
+<p><a href="http://php.net/manual/zh/function.register-shutdown-function.php" target="_blank" rel="nofollow"><a href="http://php.net/manual/zh/function.register-shutdown-function.php">http://php.net/manual/zh/function.register-shutdown-function.php</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

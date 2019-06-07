@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crontab定时任务实例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Crontab定时任务实例</h1>
+  <time datetime=2016-05-03T12:46:28Z class="post-date">Tue, May 3, 2016</time>
+  <p>Linux系统使用Crontab跑计划任务，也就是定时任务，基本的语法格式是：</p>
+
+<p>2 */1 * * * /data/vhosts/example/cronjob/_run_1_hour.sh</p>
+
+<p>可以在一个sh脚本中指定执行一个或多个PHP脚本，当然也可以直接用PHP解释器运行PHP脚本。</p>
+
+<pre class="lang:sh decode:true ">#!/bin/sh
+cd /data/vhosts/web/cronjob
+RUNPATH=/data/vhosts/web/cronjob
+PHPEXEC=/usr/local/php-fcgi/bin/php
+
+# 每小时运行一次此脚本
+
+$PHPEXEC $RUNPATH/test_crontab.php</pre>
+
+<p>Crontab命令的格式说明如下：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/05/Crontab.png" target="_blank"><img class="alignnone size-full wp-image-10078" src="https://blog.tanteng.me/wp-content/uploads/2016/05/Crontab.png" alt="Crontab" width="542" height="450" /></a></p>
+
+<ul>
+<li>minute： 表示分钟，可以是从0到59之间的任何整数。</li>
+<li>hour：表示小时，可以是从0到23之间的任何整数。</li>
+<li>day：表示日期，可以是从1到31之间的任何整数。</li>
+<li>month：表示月份，可以是从1到12之间的任何整数。</li>
+<li>week：表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
+</ul>
+
+<h3 id="crontab格式">crontab格式</h3>
+
+<p>* * * * * command</p>
+
+<p>第1列表示分钟1～59 每分钟用*或者 */1表示</p>
+
+<p>第2列表示小时1～23（0表示0点）</p>
+
+<p>第3列表示日期1～31</p>
+
+<p>第4列表示月份1～12</p>
+
+<p>第5列标识号星期0～6（0表示星期天）</p>
+
+<h3 id="几个有用的crontab命令">几个有用的Crontab命令</h3>
+
+<p>crontab -l，列出所有的计划任务。</p>
+
+<p>crontab -e，编辑计划任务，可通过此命令添加计划任务。</p>
+
+<p>如，每一小时执行一次：</p>
+
+<p>0 */1 * * * /data/vhosts/web/cronjob/_run_1_hour.sh &gt;&gt; /data/vhosts/web/log/_run_1_hour_stop_tips.log</p>
+
+<p>这样写还可以记录脚本输入的内容到日志文件。如果你需要追加而不是覆盖，可以用 &gt;&gt;代替&gt;</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

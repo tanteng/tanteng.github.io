@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>友盟 IOS 推送官方 PHP SDK 自定义播示例有误 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>友盟 IOS 推送官方 PHP SDK 自定义播示例有误</h1>
+  <time datetime=2016-09-23T07:05:14Z class="post-date">Fri, Sep 23, 2016</time>
+  <p>最近用到友盟给 IOS 应用推送消息，友盟的推送分为单播，列播，广播，组播，文件播，和自定义播，在使用自定义播官方 PHP SDK 发现官方示例（<span class="version_sel">PHP SDK v1.4</span>）有误。</p>
+
+<p>主要问题，一个是请求 url 需要加 sign 签名，一个是解析数组 json_decode 函数使用问题，还有一个废弃的校验参数。</p>
+
+<p><span class="version_sel">官方 SDK 版本 ：PHP SDK v1.4</span></p>
+
+<p>文件名称：notification/ios/IOSCustomizedcast.php</p>
+
+<h3 id="1-请求-url-加签名">1.请求 url 加签名</h3>
+
+<p class="">
+  uploadContents 方法发送 curl 请求之前加上：
+</p>
+
+<pre class="lang:php decode:true ">$url = $this-&gt;host . $this-&gt;uploadPath;
+$postBody = json_encode($post);
+$sign = md5("POST" . $url . $postBody . $this-&gt;appMasterSecret);
+$url = $url . "?sign=" . $sign;</pre>
+
+<h3 id="2-解析返回结果-json-decode-使用错误">2.解析返回结果 json_decode 使用错误</h3>
+
+<p>同样是 uploadContents 方法，解析 curl 结果处修改为：</p>
+
+<pre class="lang:php decode:true ">$returnData = json_decode($result, true);</pre>
+
+<p>加 true 参数，后面用到的是数组的形式，而不是对象的形式。</p>
+
+<h3 id="3-去除多余参数">3.去除多余参数</h3>
+
+<p>同样是 uploadContents 方法开头处，去掉如下代码：</p>
+
+<pre class="lang:php decode:true ">if ($this-&gt;data["validation_token"] == NULL)
+    throw new Exception("validation_token should not be NULL!");</pre>
+
+<p>该文件经过以上修改之后，推送消息成功。</p>
+
+<p>同时这个问题已经在友盟官网论坛上发帖反馈。希望官方推出一个更完善的 PHP SDK，如针对不同的 PHP 框架，或出一个 composer 版本，建议官方人员对示例多加测试，以免误导开发者，有时间的话也可以自己封装一个。</p>
+
+<p>友盟推送官方 API 说明文档：<a href="http://dev.umeng.com/push/ios/api-doc" target="_blank" rel="nofollow"><a href="http://dev.umeng.com/push/ios/api-doc">http://dev.umeng.com/push/ios/api-doc</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

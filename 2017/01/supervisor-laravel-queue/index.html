@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用 Supervisor 管理 Laravel 队列进程 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用 Supervisor 管理 Laravel 队列进程</h1>
+  <time datetime=2017-01-07T12:48:53Z class="post-date">Sat, Jan 7, 2017</time>
+  <p>Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。</p>
+
+<h3 id="supervisor的安装">Supervisor的安装</h3>
+
+<ol>
+<li>使用 pip 工具进行安装：</li>
+</ol>
+
+<pre class="lang:python decode:true ">sudo pip install supervisor</pre>
+
+<ol>
+<li>Ubuntu 系统使用 apt-get</li>
+</ol>
+
+<pre class="lang:default decode:true ">sudo apt-get install supervisor</pre>
+
+<p>还有其他的安装方式，请见官网（<a href="http://supervisord.org/" target="_blank" rel="nofollow"><a href="http://supervisord.org/">http://supervisord.org/</a></a>）</p>
+
+<h3 id="supervisor的配置">Supervisor的配置</h3>
+
+<p>运行这个命令可以生成一个默认的配置文件：</p>
+
+<pre class="lang:default decode:true ">echo_supervisord_conf &gt; /etc/supervisord.conf</pre>
+
+<p>生成成功后，打开编辑这个文件，把最后的 include 块的注释打开，并修改如下：</p>
+
+<pre class="lang:default decode:true">[include]
+files = /etc/supervisor/*.conf</pre>
+
+<p>新增的 Supervisor 配置文件放在 /etc/supervisor 目录下，并且以 conf 结尾。</p>
+
+<p>这时我们使用新的配置文件来启动 Supervisor：</p>
+
+<pre class="lang:default decode:true ">supervisord -c /etc/supervisord.conf</pre>
+
+<p>如果提示已经有进程在运行，那么先 kill 掉它。</p>
+
+<h3 id="使用supervisor管理laravel队列进程">使用Supervisor管理Laravel队列进程</h3>
+
+<p>我们使用 Laravel 队列，会用到 php artisan queue:work 命令，让它监听队列，我们可以通过 nohup 方式让它在后台运行，但是进程如果意外中断是不会自动重启的，所以使用 Supervisor 来监控进程是个很好的方式。</p>
+
+<p>首先在 /etc/supervisor 目录下新增一个 Supervisor 的配置文件，如下：</p>
+
+<pre class="lang:default decode:true">[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /usr/share/nginx/html/tanteng.me/artisan queue:work --tries=3
+autostart=true
+autorestart=true
+user=vagrant
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/var/log/supervisor/laravel-queue.log</pre>
+
+<p>这里 user 填写网站运行进程的用户，如 vagrant，numprocs 表示启动多少个进程来监听 Laravel 队列。</p>
+
+<p>一切就绪后，我们使用如下命令就可以启动队列进程的监听了：</p>
+
+<pre class="lang:default decode:true ">sudo supervisorctl reread
+
+sudo supervisorctl update
+
+sudo supervisorctl start laravel-worker:*</pre>
+
+<p>但是在这一步，发生了错误，提示如下：</p>
+
+<p>laravel-worker:laravel-worker_00: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_01: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_02: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_03: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_04: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_05: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_06: ERROR (spawn error)</p>
+
+<p>laravel-worker:laravel-worker_07: ERROR (spawn error)</p>
+
+<p>查看 Supervisor 错误日志，提示如下：</p>
+
+<p>INFO spawnerr: unknown error making dispatchers for &#8216;laravel-worker_03&#8217;: EACCES</p>
+
+<p>原因是权限问题，解决方法是，把 Supervisor 的日志文件，和新增的配置文件中的日志文件，设置正确的用户和组，如本例通过 chown vagrant:vagrant file_name 设置日志文件用户和组权限，另外把日志文件权限设置为 777.</p>
+
+<p>再次经过上述步骤，成功开启进程管理：</p>
+
+<p>laravel-worker:laravel-worker_00: started</p>
+
+<p>laravel-worker:laravel-worker_01: started</p>
+
+<p>laravel-worker:laravel-worker_02: started</p>
+
+<p>laravel-worker:laravel-worker_03: started</p>
+
+<p>laravel-worker:laravel-worker_04: started</p>
+
+<p>laravel-worker:laravel-worker_05: started</p>
+
+<p>laravel-worker:laravel-worker_06: started</p>
+
+<p>laravel-worker:laravel-worker_07: started</p>
+
+<p>可以看到 Laravel 队列开始正常运行了，这里值得注意的是，如果 Laravel 处理队列的代码更改了，需要重启 Supervisor 的队列管理才能生效。</p>
+
+<h3 id="使用-supervisorctl">使用 supervisorctl</h3>
+
+<p>Supervisorctl 是 supervisord 的一个命令行客户端工具，启动时需要指定与 supervisord 使用同一份配置文件，否则与 supervisord 一样按照顺序查找配置文件。</p>
+
+<pre class="lang:default decode:true ">supervisorctl -c /etc/supervisord.conf</pre>
+
+<p>上面这个命令会进入 supervisorctl 的 shell 界面，然后可以执行不同的命令了：</p>
+
+<pre class="lang:default decode:true ">&gt; status    # 查看程序状态
+&gt; stop usercenter   # 关闭 usercenter 程序
+&gt; start usercenter  # 启动 usercenter 程序
+&gt; restart usercenter    # 重启 usercenter 程序
+&gt; reread    ＃ 读取有更新（增加）的配置文件，不会启动新添加的程序
+&gt; update    ＃ 重启配置文件修改过的程序</pre>
+
+<p>上面这些命令都有相应的输出，除了进入 supervisorctl 的 shell 界面，也可以直接在 bash 终端运行：</p>
+
+<pre class="lang:default decode:true ">$ supervisorctl status
+$ supervisorctl stop usercenter
+$ supervisorctl start usercenter
+$ supervisorctl restart usercenter
+$ supervisorctl reread
+$ supervisorctl update</pre>
+
+<p>更多用法，请参考如下链接。</p>
+
+<h3 id="链接">链接</h3>
+
+<ul>
+<li><a href="http://liyangliang.me/posts/2015/06/using-supervisor/" target="_blank" rel="nofollow">使用 Supervisor 管理进程</a></li>
+<li><a href="https://laravel.com/docs/5.3/queues#supervisor-configuration" target="_blank" rel="nofollow">Laravel 官方文档之队列管理</a></li>
+</ul>
+
+<p>&nbsp;</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

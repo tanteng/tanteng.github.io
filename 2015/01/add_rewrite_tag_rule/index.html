@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>wordpress自定义路由和url参数 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>wordpress自定义路由和url参数</h1>
+  <time datetime=2015-01-29T06:09:34Z class="post-date">Thu, Jan 29, 2015</time>
+  <p>wordpress可以使用rewrite API让url更加美观，需要用到两个相关的rewite函数，分别是add_rewrite_tag和add_rewrite_rule。下面看看具体的例子如何自定义wordpress路由规则，和自定义url参数。</p>
+
+<pre class="lang:php decode:true">add_action( 'init', 'my_rr_url' );
+function my_rr_url()
+{      
+    //Ensure the $wp_rewrite global is loaded
+    global $wp_rewrite;
+    add_rewrite_tag('%myname%','([^&]+)');
+    add_rewrite_rule( 'haha/([A-Za-z0-9]{1,})/?$','index.php?page_id=8&myname=$matches[1]', 'top' );
+ 
+    //Call flush_rules() as a method of the $wp_rewrite object
+    $wp_rewrite-&gt;flush_rules();
+}</pre>
+
+<h3 id="add-rewrite-tag自定义url参数">add_rewrite_tag自定义url参数</h3>
+
+<p>使用add_rewrite_tag函数可以添加自定义url参数，比如以上例子的&amp;myname=,告诉wordpress myname参数是合法的，因此使用add_rewrite_tag函数注册这个url参数。</p>
+
+<p>*add_rewrite_tag函数不是美化wordpress URL路由规则必须的，当你添加自定义参数时才会用到。比如本例添加了一个参数myname。</p>
+
+<h3 id="add-rewrite-rule自定义路由">add_rewrite_rule自定义路由</h3>
+
+<p>要美化wordpress的url，必须使用add_rewrite_rule函数，自定义url访问规则，告诉wordpress如何正确解析。如上例中的：</p>
+
+<pre class="lang:php decode:true">add_rewrite_rule( 'haha/([A-Za-z0-9]{1,})/?$','index.php?page_id=8&myname=$matches[1]', 'top' );</pre>
+
+<p>第一个匹配的参数是$matches[1]，第二个是$matches[2]，以此类推。</p>
+
+<p>熟悉使用了这个两个函数:add_rewrite_tag和add_rewrite_rule，就可以随心所欲的自定义wordpress网站的路由规则了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

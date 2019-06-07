@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Linux命令alias和ln（别名和链接命令） &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Linux命令alias和ln（别名和链接命令）</h1>
+  <time datetime=2016-03-27T12:24:31Z class="post-date">Sun, Mar 27, 2016</time>
+  <p>今天遇到个问题，我用 yum 的方式安装的 php7 的环境，包括 nginx ， php-fpm 等，使用的是 remi 源，安装成功，但是 PHP 的全局环境变量是 php70 ，也就是说在终端本来命令 php 是可用的，现在必须是 php70 了。</p>
+
+<p>由于不是自己编译安装的，用yum install的方式安装的PHP，改文件的方式不太好，这里有用到Linux的命令alias，执行alias命令：</p>
+
+<pre class="lang:vim decode:true ">[root@iZ94r80gdghZ ~]# alias php='php70'
+[root@iZ94r80gdghZ ~]# php</pre>
+
+<p>这样php命令就可以用了。</p>
+
+<p>另外遇到一个问题，使用 composer 的时候， composer 安装是正确的，单独 php composer.phar 没问题，把它设为全局调用的时候，在其他目录输入 composer 命令，就提示如下错误：</p>
+
+<p>[root@iZ94r80gdghZ bin]# composer</p>
+
+<p>/usr/bin/env: php: 没有那个文件或目录</p>
+
+<p>这应该是因为composer默认认为php是安装在/usr/local/bin/php的路径的，但是这个remi源提供的PHP不是这样的，不过有个办法，通过软链接的形式把目录链接起来。</p>
+
+<pre class="lang:vim decode:true ">[root@iZ94r80gdghZ bin]# ln -s /usr/bin/php70 /usr/local/bin/php
+[root@iZ94r80gdghZ bin]# composer</pre>
+
+<p>如此一来，可以正常使用了。这也是使用remi源安装PHP遇到的坑，还是自己亲自动手编译安装比较靠谱。</p>
+
+<p>感谢网友的回答：<a href="https://www.v2ex.com/t/266624" target="_blank" rel="nofollow"><a href="https://www.v2ex.com/t/266624">https://www.v2ex.com/t/266624</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

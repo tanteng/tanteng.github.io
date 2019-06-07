@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>优化mysql数据库的方法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>优化mysql数据库的方法</h1>
+  <time datetime=2012-10-15T06:40:05Z class="post-date">Mon, Oct 15, 2012</time>
+  <p>(1).数据库设计方面,这是DBA和Architect的责任,设计结构良好的数据库,必要的时候,去正规化(英文是这个:denormalize,中文翻译成啥我不知道),允许部分数据冗余,避免JOIN操作,以提高查询效率</p>
+
+<p>(2).系统架构设计方面,表散列,把海量数据散列到几个不同的表里面.快慢表,快表只留最新数据,慢表是历史存档.集群,主服务器Read &amp; write,从服务器read only,或者N台服务器,各机器互为Master</p>
+
+<p>(3).(1)和(2)超越PHP Programmer的要求了,会更好,不会没关系.检查有没有少加索引</p>
+
+<p>(4).写高效的SQL语句,看看有没有写低效的SQL语句,比如生成笛卡尔积的全连接啊,大量的Group By和order by,没有limit等等.必要的时候,把数据库逻辑封装到DBMS端的存储过程里面.缓存查询结果,explain每一个sql语句</p>
+
+<p>(5).所得皆必须,只从数据库取必需的数据,比如查询某篇文章的评论数,select count(*) &#8230; where article_id = ? 就可以了,不要先select * &#8230; where article_id = ?然后msql_num_rows. 只传送必须的SQL语句,比如修改文章的时候,如果用户只修改了标题,那就update &#8230; set title = ? where article_id = ?不要set content = ?(大文本)</p>
+
+<p>(6).必要的时候用不同的存储引擎.比如InnoDB可以减少死锁.HEAP可以提高一个数量级的查询速度</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

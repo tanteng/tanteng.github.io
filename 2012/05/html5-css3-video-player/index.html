@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HTML5&#43;CSS3&#43;jQuery视频播放器 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>HTML5&#43;CSS3&#43;jQuery视频播放器</h1>
+  <time datetime=2012-05-12T05:02:47Z class="post-date">Sat, May 12, 2012</time>
+  <blockquote>
+<p>毫无疑问HTML5已经是大势所趋，知名视频网站YouTube在两年前就开始推广HTML5播放器来代替Flash。虽然国内还没有完全普及HTML5浏览器，但在各大本土浏览器厂商的努力下，支持HTML5的浏览器在中国浏览器市场的占有率也在不断增长中。本教程将会手把手地教你制作一个基于HTML5&amp; CSS3&amp; JavaScript 技术的视频播放器。</p>
+</blockquote>
+
+<p><img class="alignnone" src="https://public.bay.livefilestore.com/y1peX9JxCFEOl9YogxRdp96se7Akf9zdKPUDzo7PaASwo7P-8ZzOfsLE3KPDOorms3h2NPYQdtprM_OjqmRc6z0Hw/138_120510135003_1.jpg?psid=1" alt="" width="576" height="241" /></p>
+
+<p>最终效果图</p>
+
+<p><strong>1.下载MediaElement.js</strong></p>
+
+<p>首先下载MediaElement.js脚本文件，这是一个开源的HTML5音、视频插件，解压后你会得到3个文件—— &#8220;flashmediaelement.swf&#8221;、 &#8220;mediaelement-and-player.min.js&#8221;和 &#8220;silverlightmediaelement.xap&#8221; ，分别是使用Flash、 JavaScript和 SilverLight实现视频播放，并且新建一个&#8221;js&#8221;文件夹并把它们放进去（当然本例中并不需要 &#8220;flashmediaelement.swf&#8221; 和 &#8220;silverlightmediaelement.xap&#8221; 两个文件，可以删去。）。</p>
+
+<p><strong>2.HTML标记</strong></p>
+
+<p>首先需要链接(link)一个jQuery库，这里使用的是Google托管的jQuery库。然后我们在链接&#8221;mediaelement-and-player.min.js&#8221;文件和CSS文件。</p>
+
+<pre lang="css"></pre>
+
+<p>当然我们还需要添加一个HTML5 video标记来创建一个视频播放器，再添加一些属性将它初始化。（注：poster是指视频的预览图）</p>
+
+<pre lang="css">&lt;video width="640" height="267" poster="media/cars.png"> 
+    &lt;source src="media/cars.mp4" type="video/mp4"> 
+&lt;/video> 
+</pre>
+
+<p>接下来我们再加入下面的代码来创建控制面板，需要添加的控制器或功能有：</p>
+
+<p>alwaysShowControls – &#8220;true&#8221;则设置video控制面板永远显示，&#8221;false&#8221;则在鼠标移走后隐藏。</p>
+
+<p>videoVolume – &#8220;horizontal&#8221;设置音量滑动控制器为水平</p>
+
+<p>其它功能：暂停播放、前进播放、声音和全屏</p>
+
+<pre lang="css"></pre>
+
+<p><strong>3.播放器基本样式设计</strong></p>
+
+<p>先修改一下样式设置：</p>
+
+<pre lang="css">.mejs-inner, 
+.mejs-inner div, 
+.mejs-inner a, 
+.mejs-inner span, 
+.mejs-inner button, 
+.mejs-inner img { 
+    margin: 0; 
+    padding: 0; 
+    border: none; 
+    outline: none; 
+} 
+</pre>
+
+<p>再给video container添加样式，下面的代码全部都是用来控制布局的，没有对播放器样式做任何修改。</p>
+
+<pre lang="css">.mejs-container { 
+    position: relative; 
+    background: #000000; 
+} 
+ 
+.mejs-inner { 
+    position: relative; 
+    width: inherit; 
+    height: inherit; 
+} 
+ 
+.me-plugin { position: absolute; } 
+ 
+.mejs-container-fullscreen .mejs-mediaelement, 
+.mejs-container-fullscreen video, 
+.mejs-embed, 
+.mejs-embed body, 
+.mejs-mediaelement { 
+    width: 100%; 
+    height: 100%; 
+} 
+ 
+.mejs-embed, 
+.mejs-embed body { 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
+} 
+ 
+.mejs-container-fullscreen { 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    overflow: hidden; 
+    z-index: 1000; 
+} 
+ 
+.mejs-background, 
+.mejs-mediaelement, 
+.mejs-poster, 
+.mejs-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+} 
+ 
+.mejs-poster img { display: block; } 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1p_Y-dzuhpjx_mVAib-D3n5iX5Q2DA-NFot0x_t7uW5pjsC9YZi8_3COxD9XWigDQ2R29YDzV1a5jd67nP8oWNGw/138_120510135122_1.jpg?psid=1" class="alignnone" width="576" height="242" /></p>
+
+<p><strong>4.控制面板样式设置</strong></p>
+
+<p>让我们先从添加“播放按钮”开始：</p>
+
+<pre lang="css">.mejs-overlay-play { cursor: pointer; } 
+ 
+.mejs-inner .mejs-overlay-button { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 50px; 
+    height: 50px; 
+    margin: -25px 0 0 -25px; 
+    background: url(../img/play.png) no-repeat; 
+} 
+</pre>
+
+<p>接下来再添加视频控制器布局：将它放在视频底部，高度为34px，再添加一个背景颜色，配合RGBA来设置透明度。最后给按钮添加基本样式和图元。</p>
+
+<pre lang="css">.mejs-container .mejs-controls { 
+    position: absolute; 
+    width: 100%; 
+    height: 34px; 
+    left: 0; 
+    bottom: 0; 
+    background: rgb(0,0,0); 
+    background: rgba(0,0,0, .7); 
+} 
+ 
+.mejs-controls .mejs-button button { 
+    display: block; 
+    cursor: pointer; 
+    width: 16px; 
+    height: 16px; 
+    background: transparent url(../img/controls.png); 
+} 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1p8Vayie6Un4bm3jbgJ8-LJ1bFV3v4fbY3-xzw0lZmp7pheSqMnlP-Kih3TRp_u1nNX2jSz05pqd2s9polAWJdvQ/138_120510135817_1.jpg?psid=1" class="alignnone" width="577" height="268" /></p>
+
+<p><strong>5.视频控制器</strong></p>
+
+<p>这一步我们要做的只是将控制器居右放置。所以首先我们将所有的按钮放到控制面板上，之后再对它们的宽度、位置和背景图片做详细的调整。</p>
+
+<pre lang="css">.mejs-controls div.mejs-playpause-button { 
+    position: absolute; 
+    top: 12px; 
+    left: 15px; 
+} 
+ 
+.mejs-controls .mejs-play button, 
+.mejs-controls .mejs-pause button { 
+    width: 12px; 
+    height: 12px; 
+    background-position: 0 0; 
+} 
+ 
+.mejs-controls .mejs-pause button { background-position: 0 -12px; } 
+ 
+.mejs-controls div.mejs-volume-button { 
+    position: absolute; 
+    top: 12px; 
+    left: 45px; 
+} 
+ 
+.mejs-controls .mejs-mute button, 
+.mejs-controls .mejs-unmute button { 
+    width: 14px; 
+    height: 12px; 
+    background-position: -12px 0; 
+} 
+ 
+.mejs-controls .mejs-unmute button { background-position: -12px -12px; } 
+ 
+.mejs-controls div.mejs-fullscreen-button { 
+    position: absolute; 
+    top: 7px; 
+    right: 7px; 
+} 
+ 
+.mejs-controls .mejs-fullscreen-button button, 
+.mejs-controls .mejs-unfullscreen button { 
+    width: 27px; 
+    height: 22px; 
+    background-position: -26px 0; 
+} 
+ 
+.mejs-controls .mejs-unfullscreen button { background-position: -26px -22px; } 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1p_Y-dzuhpjx-KUCizrsiaI6_LqfmEfO_zYd06W2MZ8D7JLhXxxjT3-iFWYa68qh7YsqwxZuD2GQ4akU_A41TKgA/138_120510135245_1.jpg?psid=1" class="alignnone" width="576" height="240" /></p>
+
+<p><strong>6.音量滑动控制器</strong></p>
+
+<p>音量滑动控制器的设置也一样，设置好位置和大小，再添加一个圆角效果就可以了。</p>
+
+<pre lang="css">.mejs-controls div.mejs-horizontal-volume-slider { 
+    position: absolute; 
+    cursor: pointer; 
+    top: 15px; 
+    left: 65px; 
+} 
+ 
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total { 
+    width: 60px; 
+    background: #d6d6d6; 
+} 
+ 
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current { 
+    position: absolute; 
+    width: 0; 
+    top: 0; 
+    left: 0; 
+} 
+ 
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total, 
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current { 
+    height: 4px; 
+ 
+    -webkit-border-radius: 2px; 
+    -moz-border-radius: 2px; 
+    border-radius: 2px; 
+} 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1pdVEr8kYgDu0flIhrZ_ytoVavHjpI5ab7wXbi3HrmR0nhX1LCXxB_9F01ywQhLBkR3OXQ0sCiHmitWisoufj5-w/138_120510135219_1.jpg?psid=1" class="alignnone" width="576" height="242" /></p>
+
+<p><strong>7.进度条</strong></p>
+
+<p>进度条的设置也同样简单，将它紧贴在控制面板上方就可以了，之后就是设置不同状态（all和loaded状态）的背景颜色。现在将它初始化为零就可以在影片播放时自动改变了。（但是你看不出来。）</p>
+
+<pre lang="css">.mejs-controls div.mejs-time-rail { 
+    position: absolute; 
+    width: 100%; 
+    left: 0; 
+    top: -10px; 
+} 
+ 
+.mejs-controls .mejs-time-rail span { 
+    position: absolute; 
+    display: block; 
+    cursor: pointer; 
+    width: 100%; 
+    height: 10px; 
+    top: 0; 
+    left: 0; 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-total { 
+    background: rgb(152,152,152); 
+    background: rgba(152,152,152, .5); 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-loaded { 
+    background: rgb(0,0,0); 
+    background: rgba(0,0,0, .3); 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-current { width: 0; } 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1pPoA0jyFag03ostRT7fuJnLdZZYutqDTDQQxIEtVbNkUHjgqzcSyOIrouONMzqJ_0ecAYKyHJSYUoSTcPzxxHGA/138_120510135306_1.jpg?psid=1" class="alignnone" width="576" height="241" /></p>
+
+<p><strong>8.进度条控制器和时间提示框</strong></p>
+
+<p>这一步就该给进度条添加一个进度条控制器和一个时间提示框，同样我们还是调整位置，设置宽度、高度和背景图片，再添加一些排版样式。</p>
+
+<pre lang="css">.mejs-controls .mejs-time-rail .mejs-time-handle { 
+    position: absolute; 
+    cursor: pointer; 
+    width: 16px; 
+    height: 18px; 
+    top: -3px; 
+    background: url(../img/handle.png); 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-float { 
+    position: absolute; 
+    display: none; 
+    width: 33px; 
+    height: 23px; 
+    top: -26px; 
+    margin-left: -17px; 
+    background: url(../img/tooltip.png); 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-float-current { 
+    position: absolute; 
+    display: block; 
+    left: 0; 
+    top: 4px; 
+ 
+    font-family: Helvetica, Arial, sans-serif; 
+    font-size: 10px; 
+    font-weight: bold; 
+    color: #666666; 
+    text-align: center; 
+} 
+ 
+.mejs-controls .mejs-time-rail .mejs-time-float-corner { display: none; }
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1prjBWwZxRg4Of-jqp-dgM8IZmddjz_mtiXN7VGEiiuQm_zSrdvdjax4WRW_OwWvlAMPi771iFobGaXqG8qTJqeA/138_120510135324_1.jpg?psid=1" class="alignnone" width="576" height="239" /></p>
+
+<p><strong>9.绿色的已播放进度条</strong></p>
+
+<p>本教程的最后一步就是在进度条和音量滑动条上添加绿色的已播放进度条和音量显示，这个也很简单。</p>
+
+<pre lang="css">.mejs-controls .mejs-time-rail .mejs-time-current, 
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current { 
+    background: #82d344; 
+    background: -webkit-linear-gradient(top, #82d344 0%, #51af34 100%); 
+    background: -moz-linear-gradient(top, #82d344 0%, #51af34 100%); 
+    background: -o-linear-gradient(top, #82d344 0%, #51af34 100%); 
+    background: -ms-linear-gradient(top, #82d344 0%, #51af34 100%); 
+    background: linear-gradient(top, #82d344 0%, #51af34 100%); 
+} 
+</pre>
+
+<p><img alt="" src="https://public.bay.livefilestore.com/y1peX9JxCFEOl9YogxRdp96se7Akf9zdKPUDzo7PaASwo7P-8ZzOfsLE3KPDOorms3h2NPYQdtprM_OjqmRc6z0Hw/138_120510135003_1.jpg?psid=1" class="alignnone" width="576" height="241" /></p>
+
+<p><strong>总结：虽然很简单，但这确实是一个很不错的开源（CC许可证3.0）视频播放器！经过设置还可以支持多种视频格式，所以它不仅仅可以被用来做网络视频播放器，如果你还愿意给它增加一些功能，甚至可以把它可以做成跨平台的本地视频播放器。</strong></p>
+
+<p>Demo下载地址：</p>
+
+<p>CSDN本地下载</p>
+
+<p>designmodo.com</p>
+
+<p>原文链接：designmodo.com</p>
+
+<p>(转自<a href="http://sd.csdn.net/a/20120509/2805471.html" target="_blank" rel="nofollow"><a href="http://sd.csdn.net/a/20120509/2805471.html">http://sd.csdn.net/a/20120509/2805471.html</a></a>)</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

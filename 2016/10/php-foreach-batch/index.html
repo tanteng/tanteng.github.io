@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP 遍历元素并分批处理 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP 遍历元素并分批处理</h1>
+  <time datetime=2016-10-06T10:03:35Z class="post-date">Thu, Oct 6, 2016</time>
+  <p>读取一个 txt 文本文件，里面是一行一个 userid，需要给这些用户发送文件（做什么不重要），发送文件接口支持一次最多发 10 个用户，所以需要分批发送，每 10 个 userid 作为一批。</p>
+
+<p>这种场景很常见，尤其是一次处理量太大了需要分批的情况。其实类似于如下例子，遍历每个数字，每 5 个作为一组（这里是 10 个）：</p>
+
+<p>1 2 3 4 5 | 6 7 8 9 10 | 11 12 13 14 15 | 16 17 18</p>
+
+<p>基本思想就是：遍历的时候计数，取模可以知道是否满足 10 个，每 10 个一发送。<strong>但是要注意最后如果存在剩余不足 10 个的情况不能漏了。</strong>代码如下：</p>
+
+<pre class="lang:php decode:true ">$uidFile = storage_path('app/public') . DIRECTORY_SEPARATOR . $task['uid_file'];
+$count = 0;
+$max = 10;
+
+//分批发送
+foreach (file($uidFile) as $line) {
+    $userID = intval($line);
+    if ($userID &lt;= 0) {
+        continue;
+    }
+    $userIDs[] = $userID;
+    $count++;
+    if ($count % $max == 0) {
+        $this-&gt;sendMail($userIDs, $files, (string)$task['note'], (int)$task['reward'], $task);
+        $userIDs = [];
+    }
+}
+
+if ($userIDs) {
+    $this-&gt;sendMail($userIDs, $files, (string)$task['note'], (int)$task['reward'], $task);
+}</pre>
+
+<p>省略上下文。</p>
+
+<p>补充一个更 Laravel 的方式：</p>
+
+<pre class="lang:php decode:true ">$uidFile = storage_path('app/public') . DIRECTORY_SEPARATOR . $task['uid_file'];
+$line = file($uidFile);
+$collect = collect($line)-&gt;chunk(10);
+foreach ($collect as $userIDs) {
+    $this-&gt;sendMail($userIDs, $files, (string)$task['note'], (int)$task['reward'], $task);
+}</pre>
+
+<p>（随手记录一下代码片段，以备日后参考）</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

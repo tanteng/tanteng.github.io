@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3 Requests模块get和post示例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3 Requests模块get和post示例</h1>
+  <time datetime=2015-11-05T06:48:23Z class="post-date">Thu, Nov 5, 2015</time>
+  <p>使用Python3的Requests模块用于模拟get和post请求非常简单强大，可以构造header头，传递各种类型参数，cookies，session等，模拟不同的请求，这里只演示一下最简单的get和post示例。</p>
+
+<p>首先在PHP项目中写一个方法，可以通过http请求：</p>
+
+<pre class="lang:php decode:true ">public function pyrequests()
+{
+    $x = I('x');
+    $y = I('y');
+    $data = [
+        'aa'=&gt;'aaaaaaaa',
+        'bb'=&gt;'bbbbbbbb',
+        'hehe',
+        32,
+        'x'=&gt;$x,
+        'y'=&gt;$y,
+    ];
+    echo json_encode($data);exit;
+}</pre>
+
+<p>这是在TP框架下的写法，I表示获取get或post请求传的参数。访问网址比如是：<a href="http://www.xx.com/index/pyrequests">http://www.xx.com/index/pyrequests</a></p>
+
+<p>写一个py文件：</p>
+
+<pre class="lang:python decode:true">__author__ = 'tanteng'
+
+import requests
+
+def testrequests():
+
+    url = 'http://www.xxx.com/index/pyrequests'
+
+    params = {
+        'x':'xxxx',
+        'y':'yyyy'
+    }
+
+    re = requests.get(url,params)
+
+    return re
+
+
+if __name__ == '__main__':
+    re = testrequests()
+    print(re.text)</pre>
+
+<p>运行这个py文件，得到结果是：</p>
+
+<pre class="lang:js decode:true ">{"aa":"aaaaaaaa","bb":"bbbbbbbb","0":"hehe","1":32,"x":"xxxx","y":"yyyy"}</pre>
+
+<p>那说明通过Python3的requests模块发送get请求成功并得到了返回的数据。这里requests.get方法第一个参数表示请求的url，第二个参数表示传递的参数，还可以设置header头，cookies等等。requests.post方法使用类似，发送post请求。这里不做更多演示了，参考以下链接。</p>
+
+<p>Requests官方中文文档：<a href="http://cn.python-requests.org/en/latest/index.html" target="_blank" rel="nofollow"><a href="http://cn.python-requests.org/en/latest/index.html">http://cn.python-requests.org/en/latest/index.html</a></a></p>
+
+<p>Python requests构造post请求刷微信步（使用requests构造header发post请求）数：<a href="https://blog.tanteng.me/2015/11/python3-wechat/" target="_blank"><a href="https://blog.tanteng.me/2015/11/python3-wechat/">https://blog.tanteng.me/2015/11/python3-wechat/</a></a></p>
+
+<p>本人学习Python3的一些练手小示例，已传Github：<a href="https://github.com/tanteng/learn-python" target="_blank" rel="nofollow"><a href="https://github.com/tanteng/learn-python">https://github.com/tanteng/learn-python</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

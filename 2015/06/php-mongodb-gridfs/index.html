@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP操作GridFS存储文件到MongoDB的三种方式 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP操作GridFS存储文件到MongoDB的三种方式</h1>
+  <time datetime=2015-06-18T08:47:59Z class="post-date">Thu, Jun 18, 2015</time>
+  <p>一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上传的文件存进MongoDB.</p>
+
+<pre class="lang:php mark:22 decode:true">//初始化gridfs 
+$conn = new Mongo(); //连接MongoDB 
+$db = $conn-&gt;photos; //选择数据库 
+$grid = $db-&gt;getGridFS(); //取得gridfs对象 
+
+//gridfs有三种方式存储文件 
+//第一种直接存储文件 
+$id = $grid-&gt;storeFile("./logo.png"); 
+
+//第二种存储文件二进制流 
+$data = get_file_contents("./logo.png"); 
+$id = $grid-&gt;storeBytes($data,array("parame"=&gt;’附加参数将随图片一起存入’)); 
+
+//第三种保存直接表单提交的文件$_FILES 
+$id = $grid-&gt;storeUpload('upfile'); 
+//相当于 
+$id = $grid-&gt;storeFile($_FILES[‘upfile’][‘tmp_name’]); 
+
+//--------------以上是保存图片--下面开始读取图片---------------- 
+
+//保存成功后返回$id = md5字符串 
+$logo = $grid-&gt;findOne(array('_id'=&gt;new MongoId($id))); //以_id为索引取得文件 
+header('Content-type: image/png'); //输出图片头 
+echo $logo -&gt;getBytes(); //输出数据流</pre>
+
+<p>注意：在使用$grid-&gt;finOne的时候，_id的值应该是MongoDB的ObjectId类型。</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP约束参数类型 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP约束参数类型</h1>
+  <time datetime=2015-10-29T03:10:33Z class="post-date">Thu, Oct 29, 2015</time>
+  <p>PHP5起可以约束参数类型，在Yii2框架中使用很多，可以指定一个类的方法或者函数参数必须是某个类型，类型可以是对象，数组，字符串，整形。如果指定了参数类型，那么传入的值必须是符合类型约束的，否则会报异常错误。</p>
+
+<p>在Yii2中新建一个model写个方法：</p>
+
+<pre class="lang:php decode:true ">namespace common\tanteng;
+
+use yii\base\InvalidParamException;
+
+class Tanteng
+{
+    public static function hello()
+    {
+        echo 'Hello.';
+    }
+
+    public function testarray(array $array)
+    {
+        var_dump($array);
+    }
+}</pre>
+
+<p>在Action中调用：</p>
+
+<pre class="lang:php decode:true ">namespace frontend\controllers;
+use yii;
+use yii\web\Controller;
+use frontend\models\TestInstance;
+use common\tanteng\Tanteng;
+
+class TestController extends Controller
+{    
+    public function actionTestarray()
+    {
+        $testarray = new Tanteng;
+        $testarray-&gt;testarray([3,3]);
+        exit;
+    }
+}</pre>
+
+<p>输出正常，该示例即为打印出传入的数组参数。如果故意不传入数组类型的参数，则会显示错误：</p>
+
+<p>PHP Recoverable Error – yii\base\ErrorException</p>
+
+<p>Argument 1 passed to common\tanteng\Tanteng::testarray() must be of the type array, integer given, called in D:\xampp\htdocs\yii2\frontend\controllers\TestController.php on line 41 and defined</p>
+
+<p>关于具体的PHP类型约束，参加官方手册：<a href="http://php.net/manual/zh/language.oop5.typehinting.php" target="_blank" rel="nofollow"><a href="http://php.net/manual/zh/language.oop5.typehinting.php">http://php.net/manual/zh/language.oop5.typehinting.php</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

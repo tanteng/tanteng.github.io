@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PV原语实现进程同步和互斥的原理实例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PV原语实现进程同步和互斥的原理实例</h1>
+  <time datetime=2011-10-25T06:52:26Z class="post-date">Tue, Oct 25, 2011</time>
+  <p><strong>PV原语的含义</strong></p>
+
+<p>P操作和V操作是不可中断的程序段，称为原语。PV原语及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。信号量sem是一整数，sem大于等于零时代表可供并发进程使用的资源实体数，但sem小于零时则表示正在等待使用临界区的进程数。</p>
+
+<p>P原语操作的动作是：</p>
+
+<p>（1）sem减1；</p>
+
+<p>（2）若sem减1后仍大于或等于零，则进程继续执行；</p>
+
+<p>（3）若sem减1后小于零，则该进程被阻塞后进入与该信号相对应的队列中，然后转进程调度。</p>
+
+<p>V原语操作的动作是：</p>
+
+<p>（1）sem加1；</p>
+
+<p>（2）若相加结果大于零，则进程继续执行；</p>
+
+<p>（3）若相加结果小于或等于零，则从该信号的等待队列中唤醒一等待进程，然后再返回原进程继续执行或转进程调度。</p>
+
+<p>PV操作对于每一个进程来说，都只能进行一次，而且必须成对使用。在PV原语执行期间不允许有中断的发生。</p>
+
+<p><strong>用PV原语实现进程的互斥</strong></p>
+
+<p>由于用于互斥的信号量sem与所有的并发进程有关，所以称之为公有信号量。公有信号量的值反映了公有资源的数量。只要把临界区置于P(sem)和 V(sem)之间，即可实现进程间的互斥。就象火车中的每节车厢只有一个卫生间，该车厢的所有旅客共享这个公有资源：卫生间，所以旅客间必须互斥进入卫生 间，只要把卫生间放在P(sem)和V(sem)之间，就可以到达互斥的效果。以下例子说明进程的互斥实现。</p>
+
+<p><strong>例1</strong></p>
+
+<p>生产围棋的工人不小心把相等数量的黑子和白子混装载一个箱子里，现要用自动分拣系统把黑子和白子分开，该系统由两个并发执行的进程组成，功能如下：</p>
+
+<p>（1）进程A专门拣黑子，进程B专门拣白子；</p>
+
+<p>（2）每个进程每次只拣一个子，当一个进程在拣子时不允许另一个进程去拣子；</p>
+
+<p><strong>分析：</strong></p>
+
+<p>第一步：确定进程间的关系。由功能（2）可知进程之间是互斥的关系。</p>
+
+<p>第二步：确定信号量及其值。由于进程A和进程B要互斥进入箱子去拣棋子，箱子是两个进程的公有资源，所以设置一个信号量s，其值取决于公有资源的数目，由于箱子只有一个，s的初值就设为1。</p>
+
+<p><strong>实现：</strong></p>
+
+<p>begin</p>
+
+<p>s:semaphore;</p>
+
+<p>s:=1;</p>
+
+<p>cobegin</p>
+
+<p>process A</p>
+
+<p>begin</p>
+
+<p>L1: P(s);</p>
+
+<p>拣黑子；</p>
+
+<p>V(s);</p>
+
+<p>goto L1;</p>
+
+<p>end;</p>
+
+<p>process B</p>
+
+<p>begin</p>
+
+<p>L2:P(s);</p>
+
+<p>拣白子；</p>
+
+<p>V(s);</p>
+
+<p>goto L2;</p>
+
+<p>end;</p>
+
+<p>coend;</p>
+
+<p>end;</p>
+
+<p>判断进程间是否互斥，关键是看进程间是否共享某一公有资源，一个公有资源与一个信号量相对应。确定信号量的值是一个关键点，它代表了可用资源实体数。如下实例：</p>
+
+<p>**例2</p>
+
+<p>** 　　某车站售票厅，任何时刻最多可容纳20名购票者进入，当售票厅中少于20名购票者时，厅外的购票者可立即进入，否则需要在外面等待。每个购票者可看成一个进程。</p>
+
+<p>分析：第一步：确定进程间的关系。售票厅是各进程共享的公有资源，当售票厅中多于20名购票者时，厅外的购票者需要在外面等待。所以进程间是互斥的关 系。第二步：确定信号量及其值。只有一个公有资源：售票厅，所以设置一个信号量s。售票厅最多容纳20个进程，即可用资源实体数为20，s的初值就设为 20。</p>
+
+<p>**实现：</p>
+
+<p>** 　　begin</p>
+
+<p>s:semaphore;</p>
+
+<p>s:=20;</p>
+
+<p>cobegin</p>
+
+<p>process PI(I=1,2,……)</p>
+
+<p>begin P(s);</p>
+
+<p>进入售票厅；</p>
+
+<p>购票；</p>
+
+<p>退出；</p>
+
+<p>V(s);</p>
+
+<p>end;</p>
+
+<p>coend</p>
+
+<p>当购票者进入售票厅前要执行P(s)操作，执行后若s大于或等于零，说明售票厅的人数还未满可进入。执行后若s小于零，则说明售票厅的人数已满不能进入。这个实现中同时最多允许20个进程进入售票厅购票，其余进程只能等待。</p>
+
+<p><strong>用PV原语实现进程的同步</strong></p>
+
+<p>与进程互斥不同，进程同步时的信号量只与制约进程及被制约进程有关而不是与整组并发进程有关，所以称该信号量为私有信号量。利用PV原语实现进程同步的 方法是：首先判断进程间的关系为同步的，且为各并发进程设置私有信号量，然后为私有信号量赋初值，最后利用PV原语和私有信号量规定各进程的执行顺序。下 面我们将例1增添一个条件，使其成为进程间是同步的。</p>
+
+<p>**例3</p>
+
+<p>** 　　在例1的基础之上再添加一个功能：</p>
+
+<p>（3）当一个进程拣了一个棋子（黑子或白子）以后，必让另一个进程拣一个棋子（黑子或白子）。</p>
+
+<p>**分析：</p>
+
+<p>** 　 　第一步：确定进程间的关系。由功能（1）（2）（3）可知，进程间的关系为同步关系。第二步：确定信号量及其值。进程A和B共享箱子这个公有资源，但规 定两个进程必须轮流去取不同色的棋子，因而相互间要互通消息。对于进程A可设置一个私有信号量s1，该私有信号量用于判断进程A是否能去拣黑子，初值为 1。对于进程B同样设置一个私有信号量s2，该私有信号量用于判断进程B是否能去拣白子，初值为0。当然你也可以设置s1初值为0，s2初值为1。</p>
+
+<p><strong>实现:</strong></p>
+
+<p>begin</p>
+
+<p>s1,s2:semaphore;</p>
+
+<p>s1:=1;s2:=0;</p>
+
+<p>cobegin</p>
+
+<p>process A</p>
+
+<p>begin</p>
+
+<p>L1: P(s1);</p>
+
+<p>拣黑子；</p>
+
+<p>V(s2);</p>
+
+<p>goto L1;</p>
+
+<p>end;</p>
+
+<p>process B</p>
+
+<p>begin</p>
+
+<p>L2:P(s2);</p>
+
+<p>拣白子；</p>
+
+<p>V(s1);</p>
+
+<p>goto L2;</p>
+
+<p>end;</p>
+
+<p>coend;</p>
+
+<p>end;</p>
+
+<p>另外一个问题就是P原语是不是一定在V原语的前面？回答是否定的。下面看一个例子。</p>
+
+<p><strong>例4</strong></p>
+
+<p>设在公共汽车上，司机和售票员的活动分别是：司机：启动车辆，正常行车，到站停车。售票员：上乘客，关车门，售票，开车门，下乘客。用PV操作对其控制。</p>
+
+<p><strong>分析：</strong></p>
+
+<p>第一步：确定进程间的关系。司机到站停车后，售票员方可工作。同样，售票员关车门后，司机才能工作。所以司机与售票员之间是一种同步关系。</p>
+
+<p>第二步：确定信号量及其值。由于司机与售票员之间要互通消息，司机进程设置一个私有信号量run，用于判断司机能否进行工作，初值为0。售票员进程设置一个私有信号量stop，用于判断是否停车，售票员是否能够开车门，初值为0。</p>
+
+<p><strong>实现：</strong></p>
+
+<p>begin stop ,run:semaphore</p>
+
+<p>stop:=0;run:=0;</p>
+
+<p>cobegin</p>
+
+<p>driver: begin</p>
+
+<p>L1: P(run);</p>
+
+<p>启动车辆；</p>
+
+<p>正常行车；</p>
+
+<p>到站停车；</p>
+
+<p>V(stop);</p>
+
+<p>goto  L1;</p>
+
+<p>end;</p>
+
+<p>conductor:begin</p>
+
+<p>L2:上乘客；</p>
+
+<p>关车门；</p>
+
+<p>V(run);</p>
+
+<p>售票；</p>
+
+<p>P(stop);</p>
+
+<p>开车门；</p>
+
+<p>下乘客；</p>
+
+<p>goto L2;</p>
+
+<p>end;</p>
+
+<p>coend;</p>
+
+<p>end;</p>
+
+<p>用PV操作还可以实现进程同步与互斥的混合问题，典型的如：多个生产者和多个消费者共享容量为n的缓存区。这个例子在很多书中都有介绍，在这里就不说了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

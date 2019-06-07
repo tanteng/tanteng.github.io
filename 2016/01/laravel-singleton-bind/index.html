@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laravel Ioc容器singleton和bind方法的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Laravel Ioc容器singleton和bind方法的区别</h1>
+  <time datetime=2016-01-29T06:06:19Z class="post-date">Fri, Jan 29, 2016</time>
+  <p>Laravel中使用Ioc容器的singleton方法和bind方法创建实例有什么区别呢？它们两个都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例，看下面的两个例子。</p>
+
+<p>1.Ioc容器bind方法</p>
+
+<pre class="lang:php decode:true">&lt;?php
+
+require __DIR__.'/../bootstrap/autoload.php';
+
+class tanteng
+{
+    public $name;
+}
+
+$container = new Illuminate\Container\Container();
+
+$container-&gt;bind('tanteng');
+
+$instance = $container-&gt;make('tanteng');
+$instance-&gt;name = 'tanteng';
+
+$instance2 = $container-&gt;make('tanteng');
+$instance2-&gt;name = 'tuntun';
+
+echo $instance-&gt;name.' '.$instance2-&gt;name;</pre>
+
+<!--more-->
+
+<p>输出的结果：</p>
+
+<p>tanteng tuntun</p>
+
+<p>结论：</p>
+
+<p>通过bind方法创建实例不是单例模式，而是创建新的实例。</p>
+
+<p>2.Ioc容器singleton方法</p>
+
+<pre class="lang:php decode:true">&lt;?php
+
+require __DIR__.'/../bootstrap/autoload.php';
+
+class single
+{
+    public $value;
+}
+
+$container = new Illuminate\Container\Container();
+
+$container-&gt;singleton('single');
+$instance3 = $container-&gt;make('single');
+$instance4 = $container-&gt;make('single');
+
+$instance3-&gt;value = 'aaaa';
+$instance4-&gt;value = 'bbbb';
+
+echo $instance3-&gt;value.' '.$instance4-&gt;value;</pre>
+
+<p>输出结果：</p>
+
+<p>bbbb bbbb</p>
+
+<p>结论：</p>
+
+<p>使用singleton创建实例使用的是单例模式，每次返回同一个实例。</p>
+
+<p>以上代码可以放在public下，如test.php运行。</p>
+
+<p>再看框架底层代码：</p>
+
+<pre class="lang:php decode:true ">public function singleton($abstract, $concrete = null)
+{
+    $this-&gt;bind($abstract, $concrete, true);
+}</pre>
+
+<p>发现singleton方法其实也是调用bind方法，只是最后一个参数是true，表示单例模式。框架源代码：Illuminate/Container/Container.php</p>
+
+<p>本站原创文章，转载请注明出处，原文网址：<a href="https://blog.tanteng.me/2016/01/laravel-singleton-bind/" target="_blank"><a href="https://blog.tanteng.me/2016/01/laravel-singleton-bind/">https://blog.tanteng.me/2016/01/laravel-singleton-bind/</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

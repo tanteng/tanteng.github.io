@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用mod_concatx扩展合并js,css &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用mod_concatx扩展合并js,css</h1>
+  <time datetime=2015-08-11T01:39:04Z class="post-date">Tue, Aug 11, 2015</time>
+  <p>PHP的mod_concatx模块扩展可以方便的把多个js，css文件合并成一个文件，以加速页面的渲染，减少请求时间和服务器压力。mod_concatx模块是在mod_concat基础上修改的。</p>
+
+<pre class="lang:xhtml decode:true ">&lt;link rel="stylesheet" type="text/css" media="screen" ←
+    href="http://lemon.holsman.net:8001/cdn/??music2.css,common.css" /&gt;
+&lt;script type="text/javascript"  ←
+    src="http://lemon.holsman.net:8001/cdn/??music2.js,mp.js,dalai_llama.js,ratings_widget.js,widget_config.js,common.js"&gt;&lt;/script&gt;
+&lt;script language="javascript" type="text/javascript" ←
+    src="http://tangerine.holsman.net:8001/o/??journals_blog_this.js,adsWrapper.js,flashtag.js,feeds_subscribe.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"  ←
+    src="http://orange.holsman.net:8001/digital/??dm_client_aol.js,cannae.js"&gt;&lt;/script&gt;</pre>
+
+<p>把多个css和js文件合并为一个文件后，页面上仅需引用一次，如：</p>
+
+<p><a href="http://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101125.css">http://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101125.css</a></p>
+
+<p>使用方法：</p>
+
+<pre class="lang:xhtml decode:true ">&lt;link href="/style/??css1.css,css2.css,css3.css" type="text/css" rel="stylesheet"/&gt;  
+&lt;script src="/js/??js1.js,js2.js,js3.js,js4.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+
+<p>关于mod_concatx的安装和配置：<a href="http://blog.csdn.net/mycwq/article/details/9361117" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/mycwq/article/details/9361117">http://blog.csdn.net/mycwq/article/details/9361117</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

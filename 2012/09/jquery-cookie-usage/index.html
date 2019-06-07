@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jquery cookie的用法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jquery cookie的用法</h1>
+  <time datetime=2012-09-27T06:10:43Z class="post-date">Thu, Sep 27, 2012</time>
+  <p>jQuery cookie是个很好的cookie插件，大概的使用方法如下：</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Create session cookie:</p>
+
+<pre lang="jquery">$.cookie('the_cookie', 'the_value'); </pre>
+
+<p>Create expiring cookie, 7 days from then:</p>
+
+<pre lang="jquery">$.cookie('the_cookie', 'the_value', { expires: 7 }); </pre>
+
+<p>Create expiring cookie, valid across entire site:</p>
+
+<pre lang="jquery">$.cookie('the_cookie', 'the_value', { expires: 7, path: '/' }); </pre>
+
+<p>Read cookie:</p>
+
+<pre lang="jquery">$.cookie('the_cookie'); // =&gt; "the_value" $.cookie('the_cookie', { raw: true }); // =&gt; "the_value" not URL decoded $.cookie('not_existing'); // =&gt; null </pre>
+
+<p>Delete cookie:</p>
+
+<pre lang="jquery">// returns false =&gt; No cookie found 
+// returns true =&gt; A cookie was found 
+$.removeCookie('the_cookie'[, options]);
+</pre>
+
+<p><em>Note: when deleting a cookie, you must pass the exact same path, domain and secure options that were used to set the cookie, unless you&#8217;re relying on the default options that is.</em></p>
+
+<h3 id="关于jquery-cookies用法的一个实例">关于jQuery cookies用法的一个实例：</h3>
+
+<p>jQuery保存窗口关闭之前文本框的文本： <a href="http://tanteng.sinaapp.com/2012/02/save-windows-text/" target="_blank" rel="nofollow"><a href="http://tanteng.sinaapp.com/2012/02/save-windows-text/">http://tanteng.sinaapp.com/2012/02/save-windows-text/</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

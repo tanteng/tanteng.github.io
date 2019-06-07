@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>将left join拆分成多条sql语句 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>将left join拆分成多条sql语句</h1>
+  <time datetime=2015-06-09T16:29:05Z class="post-date">Tue, Jun 9, 2015</time>
+  <p>本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。</p>
+
+<p>我们公司电商网站现在要做网站服务化，用java做中间件，PHP调用java接口获取数据，数据表也进行了拆分，分库，要求不使用连表查询，有连表查询的sql语句想办法拆分多条sql语句，然后统一使用java接口。</p>
+
+<p>这样做的目的一是为了网站服务化做调整，数据的增删查改都封装到具体的业务里面，二是为了提高性能，减少数据库压力，说来说去还是为了提高效率。</p>
+
+<p>我们看看一个join多张表的sql如何拆分多条sql。</p>
+
+<pre class="lang:mysql decode:true">select u1.uid,u1.uname,u2.add from user as u1 left join userinfo as u2 on u1.uid=u2.uid left join money as u3 on u1.uid=u3.uid where u1.country='c'</pre>
+
+<p>这条sql语句left join三张表，分别是user作为主表，连userinfo，money表。首先可以查出所有user的数据，有了第一条拆分的sql：</p>
+
+<pre class="lang:mysql decode:true">select uid,uname from user where country='c'</pre>
+
+<p>由于条件是user.uid=userinfo.uid，所以可以把取得的uid用&#8221;,&#8221;连接，第二个拆分的sql如下：</p>
+
+<pre class="lang:mysql decode:true">select uid,add from userinfo where uid in(32,34,23,23)</pre>
+
+<p>这样得出了符合第一个left join条件下的uid，uname和add字段的结果，其实到这里就已经实现了以上left join语句的需求，如果还要查询money表的字段，以此类推，把uid作为in的条件查money表。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

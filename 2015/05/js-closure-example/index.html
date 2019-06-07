@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JS闭包的两个例子 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>JS闭包的两个例子</h1>
+  <time datetime=2015-05-27T13:48:26Z class="post-date">Wed, May 27, 2015</time>
+  <p>之前一篇文章<a href="https://blog.tanteng.me/2015/05/js-closure/" target="_blank">详解js闭包</a>讲了什么是JS闭包，以及JS闭包的优缺点，本文再看两个JS闭包的例子，进一步理解JS闭包的作用域和特性。</p>
+
+<pre class="lang:js decode:true ">var foo = ( function() {
+    var secret = 'secret';
+    // “闭包”内的函数可以访问 secret 变量，而 secret 变量对于外部却是隐藏的
+    return {
+        get_secret: function () {
+            // 通过定义的接口来访问 secret
+            return secret;
+        },
+        new_secret: function ( new_secret ) {
+            // 通过定义的接口来修改 secret
+            secret = new_secret;
+        }
+    };
+} () );
+
+foo.get_secret (); // 得到 'secret'
+foo.secret; // Type error，访问不能
+foo.new_secret ('a new secret'); // 通过函数接口，我们访问并修改了 secret 变量
+foo.get_secret (); // 得到 'a new secret'</pre>
+
+<p>之所以可能通过这种方式在 JavaScript 种实现公有，私有，特权变量正是因为<strong>闭包</strong>，<strong>闭包是指在 JavaScript 中，内部函数总是可以访问其所在的外部函数中声明的参数和变量，即使在其外部函数被返回（寿命终结）了之后</strong>。</p>
+
+<pre class="lang:js decode:true ">var Foo = function(){
+      var name = 'fooname';
+      var age = 12;
+      this.getName = function(){
+          return name;
+      };
+      this.getAge = function(){
+          return age;
+      };
+  };
+  var foo = new Foo();
+
+  foo.name;        //  =&gt; undefined
+  foo.age;         //  =&gt; undefined
+  foo.getName();   //  =&gt; 'fooname'
+  foo.getAge();    //  =&gt; 12</pre>
+
+<p>需要注意的一点时，内部函数访问的是被创建的内部变量本身，而不是它的拷贝。所以在闭包函数内加入 loop 时要格外注意。另外当然的是，闭包特性也可以用于创建私有函数或方法。</p>
+
+<p>闭包是 JavaScript 一个非常重要的特性，这意味着当前作用域总是能够访问外部作用域中的变量。 因为函数是 JavaScript 中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数。</p>
+
+<p>再来一个：</p>
+
+<pre class="lang:js decode:true ">&lt;script type="text/javascript"&gt;
+    var name = "trigkit4";   
+    　　var segmentFault = {  
+    　　　　name : "My SF",  
+    　　　　getNameFunc : function(){  
+    　　　　　　return function(){  
+    　　　　　　　　return this.name;  
+    　　　　　};   
+    　　　　}   
+    };  
+    alert(segmentFault.getNameFunc()());  //弹出trigkit4
+&lt;/script&gt;</pre>
+
+<p>如需更加理解JS闭包，还是要在实际运用中使用JS闭包解决问题，这样才能深刻理解JS闭包和普通JS函数的区别。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

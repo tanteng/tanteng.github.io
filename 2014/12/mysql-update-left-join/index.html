@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>mysql关联表更新sql语句 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>mysql关联表更新sql语句</h1>
+  <time datetime=2014-12-05T07:35:41Z class="post-date">Fri, Dec 5, 2014</time>
+  <p>比如有两张表，其中一张表某个字段的值要关联另一张表进行统计，就要用到mysql的update方法，并且left join另一张表进行联合查询。</p>
+
+<p>表1</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join1.png" target="_blank"><img class="alignnone size-full wp-image-6747" src="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join1.png" alt="update left join" width="599" height="282" srcset="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join1.png 599w, https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join1-300x141.png 300w, https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join1-150x70.png 150w" sizes="(max-width: 599px) 100vw, 599px" /></a></p>
+
+<p>表2</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join2.png" target="_blank"><img class="alignnone size-full wp-image-6748" src="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join2.png" alt="mysql update left join" width="412" height="352" srcset="https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join2.png 412w, https://blog.tanteng.me/wp-content/uploads/2014/12/update_left_join2-300x256.png 300w" sizes="(max-width: 412px) 100vw, 412px" /></a></p>
+
+<p>需求是：统计表1中id，也就是表2中的tagid出现的次数，更新到表1的videonum字段中。这时候需要关联两张表更新表1并且进行统计.</p>
+
+<h3 id="mysql关联表更新统计">mysql关联表更新统计</h3>
+
+<p>sql语句如下：</p>
+
+<pre class="lang:php decode:true " title="mysql update left join语句的顺序和写法">UPDATE v9_keyword as a LEFT JOIN v9_keyword_data as b 
+on a.id=b.tagid 
+set a.videonum=(SELECT COUNT(tagid) from v9_keyword_data where tagid=a.id) 
+WHERE a.id=b.tagid;</pre>
+
+<p>注意update，left join，on，set，where的顺序和写法，另外这里统计a.videonum用到select子查询，为什么要这样用，请看这篇文章：<a title="mysql执行count错误Invalid use of group function" href="https://blog.tanteng.me/2014/12/mysql-invalid-use-of-group-function/" target="_blank">mysql执行count错误</a>。</p>
+
+<p>本文有两个重点：</p>
+
+<p>1.mysql update关联表更新的sql语句写法</p>
+
+<p>2.关联表统计某字段COUNT的正确用法</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

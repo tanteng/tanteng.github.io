@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>让你的 Laravel 应用与官方保持同步 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>让你的 Laravel 应用与官方保持同步</h1>
+  <time datetime=2016-08-03T02:55:32Z class="post-date">Wed, Aug 3, 2016</time>
+  <p>本文转自安正超博客：<a href="http://overtrue.me/articles/2015/06/sync-your-laravel-project.html" target="_blank" rel="nofollow"><a href="http://overtrue.me/articles/2015/06/sync-your-laravel-project.html">http://overtrue.me/articles/2015/06/sync-your-laravel-project.html</a></a></p>
+
+<h2 id="section">解决什么问题？</h2>
+
+<p>我们在用着 4.2，过了一段时间作者发布了 5.0，项目可能还没开发完，然后你又像我一样是一个不升级不舒服斯基，那么用升到最新版是你接下来要忙碌的事情。因为你不知道 4.2 ~ 5.0 变化了多少。所以你不可能手动一个个加上或者删除、修改。有的人可能是备份，然后用新版建立一个项目：<code class="highlighter-rouge">composer create-project laravel/laravel</code> ，然后把原来自己的代码拷过来，然而，变化不一定只是文件新增或者删除啊，可能是原来文件里改了一行，你却没法知道。所以这就头疼了。那么下面我就分享一个超简单的办法来解决这个问题：</p>
+
+<p>首先我们使用的是 <code class="highlighter-rouge">git</code>，如果你不熟悉它的话，起码你这时候应该去补补基本命令了。</p>
+
+<p>这里假设我们的项目叫做 <code class="highlighter-rouge">blog</code>, 然后我们第一步要做的事情是添加官方<code class="highlighter-rouge">git</code>源:</p>
+
+<pre class="lang:php decode:true ">cd blog # 切到项目根目录
+git remote add laravel https://github.com/laravel/laravel # 添加一个源</pre>
+
+<p>这里解释一下：</p>
+
+<p>因为我们的项目基本都已经有一个源<code class="highlighter-rouge">origin</code>，就是我们项目用于上传到公司 <code class="highlighter-rouge">gitlab</code> 或者 <code class="highlighter-rouge">bitbucket</code> 这样的网站用于项目代码管理的地方，所以我们不能破坏它。然后我们添加了一个叫做 <code class="highlighter-rouge">laravel</code>，这样就会有两个源了，意味着我们就可以从两个源同步代码。</p>
+
+<h2 id="larvel-">拉取 Larvel 的新版代码</h2>
+
+<h4 id="laravel-">拉取指定的 Laravel 分支</h4>
+
+<blockquote>
+<p>注意：在我们拉取 Laravel 源的代码前，请确认你的修改都已经保存并 <code class="highlighter-rouge">commit</code>。</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">shell git pull laravel master </code></p>
+
+<p>这里我们从 <code class="highlighter-rouge">laravel</code> 的源拉取 <code class="highlighter-rouge">master</code> 分支，当然你也可以拉取其它分支的代码。</p>
+
+<h4 id="section-1">合并冲突</h4>
+
+<p>拉取完代码，这时候通常是会冲突的，因为你的代码与官方的代码不一样了，冲突部分就是不相同的地方，那么你根据合并结果找到<code class="highlighter-rouge">CONFLICT (content): Merge conflict in xxxx.xxx</code> 部分的文件打开，找到冲突的地方合并就好了。</p>
+
+<p>解决完冲突你的代码结构就与官方一致了，而且这种合并方式不会让你落下任何一个不同的地方。</p>
+
+<p>当然以上的方法适用于任何 <code class="highlighter-rouge">git</code> 管理的项目。比如工作中，你 <code class="highlighter-rouge">fork</code> 了主项目，要经常同步主项目的更新时就用这个方法最简单了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

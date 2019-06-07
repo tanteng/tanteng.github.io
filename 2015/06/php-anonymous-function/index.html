@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP匿名函数 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP匿名函数</h1>
+  <time datetime=2015-06-01T09:00:12Z class="post-date">Mon, Jun 1, 2015</time>
+  <p>PHP5.3以来也出现了很多新的特性：</p>
+
+<p>PHP5.2 以前：autoload, PDO 和 MySQLi, 类型约束</p>
+
+<p>PHP5.2：JSON 支持</p>
+
+<p>PHP5.3：弃用的功能，匿名函数，新增魔术方法，命名空间，后期静态绑定，Heredoc 和 Nowdoc, const, 三元运算符，Phar</p>
+
+<p>PHP5.4：Short Open Tag, 数组简写形式，Traits, 内置 Web 服务器，细节修改</p>
+
+<p>PHP5.5：yield, list() 用于 foreach, 细节修改</p>
+
+<p>PHP5.6: 常量增强，可变函数参数，命名空间增强</p>
+
+<p>现在基本上都使用PHP5.3以后的版本，但是感觉普遍一个现象就是很多新特性，过了这么长时间，还没有完全普及，在项目中很少用到。</p>
+
+<p>看看PHP匿名函数：</p>
+
+<pre class="lang:php range:18-20 decode:true">'components' =&gt; [
+    'user' =&gt; [
+        'identityClass' =&gt; 'common\models\User',
+        'enableAutoLogin' =&gt; true,
+    ],
+    'log' =&gt; [
+        'traceLevel' =&gt; YII_DEBUG ? 3 : 0,
+        'targets' =&gt; [
+            [
+                'class' =&gt; 'yii\log\FileTarget',
+                'levels' =&gt; ['error', 'warning'],
+            ],
+        ],
+    ],
+    'errorHandler' =&gt; [
+        'errorAction' =&gt; 'site/error',
+    ],
+    'test' =&gt; function(){
+        return 'test';
+    },
+],</pre>
+
+<p>PHP匿名函数的定义很简单，就是给一个变量赋值，只不过这个值是个function。</p>
+
+<p>以上是使用Yii框架配置components文件，加了一个test的配置。</p>
+
+<p>在另一个模板页面打印试试：</p>
+
+<pre class="lang:php decode:true">&lt;?= Yii::$app-&gt;test ?&gt;//test</pre>
+
+<p>OK.</p>
+
+<h3 id="什么是php匿名函数">什么是PHP匿名函数？</h3>
+
+<p>看官方解释：</p>
+
+<blockquote>
+<p>匿名函数（Anonymous functions），也叫闭包函数（_closures_），允许 临时创建一个没有指定名称的函数。最经常用作回调函数（callback）参数的值。当然，也有其它应用的情况。</p>
+</blockquote>
+
+<h4 id="匿名函数示例">匿名函数示例</h4>
+
+<pre class="lang:php decode:true ">&lt;?php
+echo preg_replace_callback('~-([a-z])~', function ($match) {
+    return strtoupper($match[1]);
+}, 'hello-world');
+// 输出 helloWorld
+?&gt;</pre>
+
+<p>闭包函数也可以作为变量的值来使用。PHP 会自动把此种表达式转换成内置类 Closure 的对象实例。把一个 closure 对象赋值给一个变量的方式与普通变量赋值的语法是一样的，最后也要加上分号：</p>
+
+<h4 id="匿名函数变量赋值示例">匿名函数变量赋值示例</h4>
+
+<pre class="lang:php decode:true">&lt;?php
+$greet = function($name)
+{
+    printf("Hello %s\r\n", $name);
+};
+
+$greet('World');
+$greet('PHP');
+?&gt;</pre>
+
+<p class="simpara">
+  闭包可以从父作用域中继承变量。 任何此类变量都应该用 <em>use</em> 语言结构传递进去。
+</p>
+
+<h4 id="从父作用域继承变量">从父作用域继承变量</h4>
+
+<pre class="lang:php decode:true ">&lt;?php
+$message = 'hello';
+
+// 没有 "use"
+$example = function () {
+    var_dump($message);
+};
+echo $example();
+
+// 继承 $message
+$example = function () use ($message) {
+    var_dump($message);
+};
+echo $example();
+
+// Inherited variable's value is from when the function
+// is defined, not when called
+$message = 'world';
+echo $example();
+
+// Reset message
+$message = 'hello';
+
+// Inherit by-reference
+$example = function () use (&$message) {
+    var_dump($message);
+};
+echo $example();
+
+// The changed value in the parent scope
+// is reflected inside the function call
+$message = 'world';
+echo $example();
+
+// Closures can also accept regular arguments
+$example = function ($arg) use ($message) {
+    var_dump($arg . ' ' . $message);
+};
+$example("hello");
+?&gt;</pre>
+
+<p>以上例程的输出类似于：</p>
+
+<pre class="">Notice: Undefined variable: message in /example.php on line 6
+NULL
+string(5) "hello"
+string(5) "hello"
+string(5) "hello"
+string(5) "world"
+string(11) "hello world"</pre>
+
+<p><a href="http://php.net/manual/zh/functions.anonymous.php" target="_blank" rel="nofollow"><a href="http://php.net/manual/zh/functions.anonymous.php">http://php.net/manual/zh/functions.anonymous.php</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>str_replace和preg_relace的用法和区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>str_replace和preg_relace的用法和区别</h1>
+  <time datetime=2014-11-20T08:37:06Z class="post-date">Thu, Nov 20, 2014</time>
+  <p>str_replace和preg_relace这两个PHP系统函数都是用来“替换”的函数，str_replace主要用于字符串替换，而preg_relace顾名思义用于正则表达式替换，他们的具体用法和区别本文将举例说明。</p>
+
+<h2 id="str-replace的用法">str_replace的用法</h2>
+
+<h3 id="1-字符串替换">1.字符串替换</h3>
+
+<p>比如变量$a=&#8217;sina,sohu,tantengvip&#8217;,我要把这个$a字符串中的sina替换成qq，那么这样用str_replace函数：</p>
+
+<pre lang="php">$a = str_replace('sina','qq',$a);
+</pre>
+
+<p>这样就替换成功了。第一个参数是要查找的字符串，第二个参数是要替换成什么字符串，第三个参数是以什么变量输出。</p>
+
+<h3 id="2-带有数组形式的str-replace替换">2.带有数组形式的str_replace替换</h3>
+
+<p>还是变量$a=&#8217;sina,sohu,tantengvip&#8217;,我要把sina替换成qq，sohu替换成google，这样用str_replace函数：</p>
+
+<pre lang="php">$a = str_replace(array('sina','sohu'),array('qq','google'),$a);
+</pre>
+
+<p>这样同时进行了两个不同字符串的替换，这种用法很有用，和第一种情况的区别就是用数组可以同时处理多个替换的需求，叫做数组映像替换。</p>
+
+<h2 id="preg-relace正则表达式替换">preg_relace正则表达式替换</h2>
+
+<h3 id="1-不需要用到匹配结果的情况">1.不需要用到匹配结果的情况</h3>
+
+<p>比如有个字符串$a=&#8217;list-32&#8217;，这个字符串可能的形式很多，还可能是$a=&#8217;list-23&#8242;,或&#8217;list-33&#8242;,&#8217;list-99&#8217;，但是都有个特征就是，&#8217;list-&#8216;后面接数字，这个时候就要用正则表达式进行匹配了。</p>
+
+<p>要把后面的数字统一替换成一个字母&#8221;nums&#8221;怎么办？看以下代码：</p>
+
+<pre lang="php">$a = preg_replace('/list-([0-9]+)/','nums',$a);
+</pre>
+
+<p>第一个参数是正则表达式，用&#8217;//&#8217;里面内容代表正则表达式，关于正则表达式的含义和用法这里不多讲，这里匹配的是以list-开头的接数字的字符串的意思，其中括号里面的就是匹配的结果，可以多个括号，那么就是匹配到的不同分组，第二个参数是要替换成什么，第三个参数是以什么变量输出。</p>
+
+<h3 id="2-需要用到匹配结果的情况">2.需要用到匹配结果的情况</h3>
+
+<p>还是第一个情况的例子，我不是要把数字统一替换成字母“nums”，而是在这个数字后面再加上一个字符串“-list”，就是把“list-1”这样的变成“list-1-list”，这个时候要用到匹配到的结果。</p>
+
+<pre lang="php">$a = preg_replace('/list-([0-9]+)/','list-${1}-list',$a);
+</pre>
+
+<p>第二个参数${1}就是正则表达式匹配的结果，1表示第一个括号里面的，这里也只有一个括号，以此类推。</p>
+
+<p>这就是str_replace替换和preg_relace正则替换函数的基本用法，掌握了基本用法，就可以灵活运用处理很多问题，这两个函数是处理字符串非常常见的函数，功能十分强大。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

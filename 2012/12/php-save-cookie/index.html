@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>php中数组存入cookie的方法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>php中数组存入cookie的方法</h1>
+  <time datetime=2012-12-19T09:32:52Z class="post-date">Wed, Dec 19, 2012</time>
+  <p>cookie默认不能存数组，所以要采取另外的方法将数组存入cookie中。</p>
+
+<p><strong>方法一：先用serialize序列化数组，再存入COOKIE，读出来时用unserialize得到原来的数组</strong></p>
+
+<pre lang="php">//存入  
+$arr = array(1,2,3);  
+$arr_str = serialize($arr);    
+setcookie("a",$arr_str);  
+ 
+//取出  
+$arr_str = $_COOKIE['a'];  
+$arr = unserialize($arr_str); 
+</pre>
+
+<p>这样的写法是错误的：</p>
+
+<pre lang="php">$arr = array(1,2,3);   
+setcookie('a',$arr);   
+$arr = array(1,2,3);  
+setcookie('a',$arr);  
+
+$arr = array(1,2,3);
+setcookie('a',$arr);
+$arr = array(1,2,3);
+setcookie('a',$arr);
+报错如下：
+Warning: setcookie() expects parameter 2 to be string, array given in
+</pre>
+
+<p><strong>方法二：设定多键值cookie，注意必须给键值</strong></p>
+
+<pre lang="php">$arr = array(1,2,3); 
+setcookie("a[0]", $arr[0]); 
+setcookie("a[1]", $arr[1]); 
+setcookie("a[2]", $arr[2]); 结果：数组所有元素都存到了。
+数组长度 ：3
+Array ( [0] =&gt; 1 [1] =&gt; 2 [2] =&gt; 3 )
+</pre>
+
+<p>以下写法是错误的：</p>
+
+<pre lang="php">$arr = array(1,2,3);  
+setcookie("a[]", $arr[0]);  
+setcookie("a[]", $arr[1]);  
+setcookie("a[]", $arr[2]); 
+</pre>
+
+<p>(参考：<a href="http://blog.163.com/zengyin777@126/blog/static/48092647201102331046894/" target="_blank" rel="nofollow"><a href="http://blog.163.com/zengyin777@126/blog/static/48092647201102331046894/">http://blog.163.com/zengyin777@126/blog/static/48092647201102331046894/</a></a>)</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

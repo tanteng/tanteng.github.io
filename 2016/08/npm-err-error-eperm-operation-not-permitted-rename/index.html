@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>npm install 报错: operation not permitted, rename &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>npm install 报错: operation not permitted, rename</h1>
+  <time datetime=2016-08-12T12:30:45Z class="post-date">Fri, Aug 12, 2016</time>
+  <p>运行 npm install 命令安装依赖包，在 Mac 上的 Vagrant 装的虚拟机上没问题，在阿里云 CentOS 上也没问题，但是在 Windows 环境同样是 Vagrant 装的环境相同的虚拟机上就是不成功，报错如下：</p>
+
+<p>npm ERR! Error: EPERM: operation not permitted, rename &#8216;/usr/share/nginx/html/tanteng.me/node_modules/duplexify&#8217; -&gt; &#8216;/usr/share/nginx/html/tanteng.me/node_modules/.duplexify.DELETE&#8217;</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/08/operation-permitted.png" target="_blank"><img class="alignnone wp-image-10458 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/08/operation-permitted.png" alt="operation-permitted" width="1416" height="582" /></a></p>
+
+<p>之前遇到过 Windows 上 npm 安装依赖出现 symbol 的错误，解决方法是 sudo npm install &#8211;no-bin-links，加后面的参数即可。</p>
+
+<p>列出 Node.js 的安装目录，目录的权限属性如图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/08/npm-chown.png" target="_blank"><img class="alignnone wp-image-10460 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/08/npm-chown.png" alt="npm-chown" width="756" height="145" /></a></p>
+
+<p>这里执行命令：</p>
+
+<p>sudo chown vagrant:vagrant n node npm</p>
+
+<p>记住还要清除 npm 缓存：</p>
+
+<p>npm cache clean</p>
+
+<p>再次执行 sudo npm install &#8211;no-bin-links，Windows 环境下即使是在虚拟机也需要带上后面的参数。</p>
+
+<p>这个时候问题解决。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

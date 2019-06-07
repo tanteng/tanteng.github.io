@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nginx开启gzip压缩 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Nginx开启gzip压缩</h1>
+  <time datetime=2016-06-05T06:10:48Z class="post-date">Sun, Jun 5, 2016</time>
+  <p>在服务器Nginx开启gzip压缩是优化网站性能的方法之一，可以有效减少服务器带宽的消耗，缺点是会增大CPU的占用率，但是很多时候CPU往往是空闲最多的。</p>
+
+<p>引用nginx官网的介绍：</p>
+
+<blockquote>
+<p>The <code>ngx_http_gzip_module</code> module is a filter that compresses responses using the “gzip” method. This often helps to reduce the size of transmitted data by half or even more.</p>
+</blockquote>
+
+<h3 id="在nginx开启gzip压缩">在Nginx开启gzip压缩</h3>
+
+<p>打开nginx.conf文件，添加如下：</p>
+
+<pre class="lang:php decode:true ">gzip            on;
+gzip_min_length 1000;
+gzip_proxied    expired no-cache no-store private auth;
+gzip_types      text/plain application/xml;</pre>
+
+<h4 id="gzip参数介绍">gzip参数介绍</h4>
+
+<h5 id="gzip-on-off">gzip on|off</h5>
+
+<p>开启或者关闭gzip模块</p>
+
+<h5 id="gzip-min-length-1000">gzip_min_length 1000</h5>
+
+<p>设置允许压缩的页面最小字节数，页面字节数从header头中的Content-Length中进行获取。默认值是0，不管页面多大都压缩。建议设置成大于1k的字节数，小于1k可能会越压越大。 即: gzip_min_length 1024</p>
+
+<h5 id="gzip-proxied-expired-no-cache-no-store-private-auth">gzip_proxied expired no-cache no-store private auth;</h5>
+
+<p>Nginx作为反向代理的时候启用，开启或者关闭后端服务器返回的结果，匹配的前提是后端服务器必须要返回包含”Via”的 header头。</p>
+
+<h5 id="gzip-types-text-plain-application-xml">gzip_types text/plain application/xml;</h5>
+
+<p>匹配MIME类型进行压缩，（无论是否指定）”text/html”类型总是会被压缩的。</p>
+
+<h3 id="通过浏览器判断是否开启gzip压缩">通过浏览器判断是否开启gzip压缩</h3>
+
+<p>如firefox，打开一个网页，打开debug控制栏，如图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/check_gzip.png" target="_blank"><img class="alignnone size-full wp-image-10145" src="https://blog.tanteng.me/wp-content/uploads/2016/06/check_gzip.png" alt="check_gzip" width="700" height="337" /></a></p>
+
+<p>Content-Encoding字段是gzip，表示该网页是经过gzip压缩的。</p>
+
+<h4 id="有用的链接">有用的链接：</h4>
+
+<p><a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html" target="_blank" rel="nofollow">nginx官方网站ngx_http_gzip_module说明</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

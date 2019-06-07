@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在阿里云CentOS 7创建swap分区 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在阿里云CentOS 7创建swap分区</h1>
+  <time datetime=2016-03-29T01:52:34Z class="post-date">Tue, Mar 29, 2016</time>
+  <p>创建swap分区是为了弥补物理内存的不足，也就是虚拟内存的概念，把硬盘的一部分划分作为虚拟内存，但这个空间不是越大越好，硬盘的速度远低于内存，设置不当反而拖慢系统的速度。</p>
+
+<p>阿里云的主机默认没有swap分区，可以使用free命令查看：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" target="_blank"><img class="alignnone wp-image-9771 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" alt="aliyun_swap" width="519" height="112" /></a></p>
+
+<p>这是在阿里云CentOS 7系统上创建好swap分区后的截图。下面记录在阿里云CentOS 7上创建swap分区的步骤：</p>
+
+<p>①使用dd命令创建一个swap分区</p>
+
+<pre class="lang:sh decode:true ">dd if=/dev/zero of=/home/swap bs=1024 count=1048576</pre>
+
+<p>count的值是：size（多少M）* 1024，我这里设置的1G虚拟内存，也就是count=1024000.</p>
+
+<p>②格式化swap分区</p>
+
+<pre class="lang:sh decode:true ">mkswap /home/swap</pre>
+
+<p>③把格式化后的文件分区设置为swap分区</p>
+
+<pre class="lang:sh decode:true ">swapon /home/swap</pre>
+
+<p>（关闭SWAP分区命令为：[root@localhost Desktop]#swapoff /home/swap）</p>
+
+<p>此时，swap分区已经创建好了，使用free命令查看，可见多了一个挂载分区。</p>
+
+<p>④swap分区自动挂载</p>
+
+<p>vi /etc/fstab</p>
+
+<p>在文件末尾加上</p>
+
+<p>/home/swap swap swap default 0 0</p>
+
+<h4 id="参考文章">参考文章：</h4>
+
+<ul>
+<li><a href="https://hacpai.com/article/1375928433630" target="_blank" rel="nofollow">centos添加swap分区</a></li>
+<li><a href="http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html" target="_blank" rel="nofollow">MariaDB宕机内存不足添加swap分区</a></li>
+</ul>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

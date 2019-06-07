@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nginx开启SSI &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Nginx开启SSI</h1>
+  <time datetime=2016-04-08T12:47:34Z class="post-date">Fri, Apr 8, 2016</time>
+  <p>在一个HTML页面中发现一段这样的代码：</p>
+
+<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
+
+<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
+
+<h3 id="原来这是ssi-什么是是ssi">原来这是SSI，什么是是SSI？</h3>
+
+<blockquote>
+<p>SSI：Server Side Include，是一种基于服务端的网页制作技术，大多数（尤其是基于Unix平台）的web服务器如Netscape Enterprise Server等均支持SSI命令。</p>
+
+<p>它的工作原因是：在页面内容发送到客户端之前，使用SSI指令将文本、图片或代码信息包含到网页中。对于在多个文件中重复出现内容，使用SSI是一种简便的方法，将内容存入一个包含文件中即可，不必将其输入所有文件。通过一个非常简单的语句即可调用包含文件，此语句指示 Web 服务器将内容插入适当网页。而且，使用包含文件时，对内容的所有更改只需在一个地方就能完成。**</p>
+
+<p>**</p>
+</blockquote>
+
+<p>一个典型的应用场景就是登陆导航栏，当页面都是html静态页的时候，动态导航栏页面内容可以使用SSI包含。</p>
+
+<h3 id="在nginx配置中开启ssi">在Nginx配置中开启SSI</h3>
+
+<p>只需在server块中添加一行代码就可以开启SSI，如：</p>
+
+<pre class="lang:sh decode:true ">server {  
+        listen  10.3.9.27:80;  
+        server_name  www.tanteng.me;  
+        location / {  
+            ssi on;  
+            ssi_silent_errors on;  
+            ssi_types text/shtml;  
+            index index.shtml;  
+            root /usr/local/web/wwwroot;  
+            expires 30d;  
+            access_log      /data/logs/www.ball.com-access_log main;  
+        }  
+    }</pre>
+
+<p>我不知道SSI是不是一个很老的技术，现在似乎很少用这种方式引入其他页面，但也学到了一招，原来这样也可以。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DIRECTORY_SEPARATOR 和 PATH_SEPARATOR的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>DIRECTORY_SEPARATOR 和 PATH_SEPARATOR的区别</h1>
+  <time datetime=2015-05-21T10:25:40Z class="post-date">Thu, May 21, 2015</time>
+  <p>DIRECTORY_SEPARATOR：目录分隔符，linux上就是&#8217;/&#8217;,windows上是&#8217;&amp;#8217;.</p>
+
+<p>PATH_SEPARATOR：路径分隔符，include多个路径使用，在win下，当你要include多个路径的话，你要用&#8221;;&#8221;隔开，但在linux下就使用&#8221;:&#8221;隔开的。</p>
+
+<pre class="lang:php decode:true ">function __autoload(){
+    $dir = './libralies';
+    set_include_path(get_include_path(). PATH_SEPARATOR. $dir);
+    $class = str_replace('\\', '/', $class) . '.php'; 
+    require_once($class);
+}</pre>
+
+<p>根据目录或者命名空间自动加载</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

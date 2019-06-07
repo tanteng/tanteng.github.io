@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>php-fpm服务挂掉 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>php-fpm服务挂掉</h1>
+  <time datetime=2016-04-05T14:34:41Z class="post-date">Tue, Apr 5, 2016</time>
+  <p>今天发了个链接，可能同时在线的人瞬间比较多，结果网站报503错误，回去打开php-fpm错误日志一看，php-fpm服务挂掉了，报如下错误：</p>
+
+<pre class="lang:sh decode:true ">[04-Apr-2016 15:38:04] NOTICE: systemd monitor interval set to 10000ms
+[05-Apr-2016 19:03:08] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 8 children, there are 0 idle, and 29 total children
+[05-Apr-2016 19:03:09] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 16 children, there are 0 idle, and 34 total children
+[05-Apr-2016 19:03:11] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 39 total children
+[05-Apr-2016 19:03:12] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 44 total children
+[05-Apr-2016 19:03:13] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 49 total children
+[05-Apr-2016 19:03:14] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+</pre>
+
+<p>错误提示建议增加pm.start_servers数量，打开我的php-fpm配置：</p>
+
+<pre class="lang:sh decode:true ">pm.max_children = 50
+
+; The number of child processes created on startup.
+; Note: Used only when pm is set to 'dynamic'
+; Default Value: min_spare_servers + (max_spare_servers - min_spare_servers) / 2
+pm.start_servers = 15
+
+; The desired minimum number of idle server processes.
+; Note: Used only when pm is set to 'dynamic'
+; Note: Mandatory when pm is set to 'dynamic'
+pm.min_spare_servers = 5
+
+; The desired maximum number of idle server processes.
+; Note: Used only when pm is set to 'dynamic'
+; Note: Mandatory when pm is set to 'dynamic'
+pm.max_spare_servers = 35</pre>
+
+<p>这里pm.start_servers之前我设置为5，注意配置文件也说明start_servers的值默认是max_spare_servers-min_spare_servers的一半。(ps:具体的值要根据服务器配置情况和压力测试得出)</p>
+
+<p>网站服务器是阿里云1G带宽，1G内存，1核CPU配置，关键还在一台机子上装了数据库，redis各种服务。</p>
+
+<h3 id="几个php-fpm重要参数说明">几个php-fpm重要参数说明</h3>
+
+<pre class="lang:sh decode:true">pm.max_children = 24</pre>
+
+<p class="prettyprint prettyprinted">
+  static模式下创建的子进程数或dynamic模式下同一时刻允许最大的php-fpm子进程数量
+</p>
+
+<pre class="lang:sh decode:true">pm.start_servers = 16</pre>
+
+<p class="prettyprint prettyprinted">
+  动态方式下的起始php-fpm进程数量
+</p>
+
+<pre class="lang:sh decode:true">pm.min_spare_servers = 12</pre>
+
+<p class="prettyprint prettyprinted">
+  动态方式下服务器空闲时最小php-fpm进程数量
+</p>
+
+<pre class="lang:sh decode:true">pm.max_spare_servers = 24</pre>
+
+<p class="prettyprint prettyprinted">
+  动态方式下服务器空闲时最大php-fpm进程数量
+</p>
+
+<p class="prettyprint prettyprinted">
+  经验人士的总结：
+</p>
+
+<blockquote>
+<p class="prettyprint prettyprinted">
+  一般php-fpm进程占用20~30m左右的内存就按30m算。如果单独跑php-fpm，动态方式起始值可设置物理内存Mem/30M，由于大家一般Nginx、MySQL都在一台机器上，于是预留一半给它们，即php-fpm进程数为$Mem/2/30。
+</p>
+</blockquote>
+
+<p class="prettyprint prettyprinted">
+   调整之后的几个值是：
+</p>
+
+<pre class="lang:sh decode:true ">pm = dynamic
+pm.max_children = 50
+pm.start_servers = 15
+pm.min_spare_servers = 10
+pm.max_spare_servers = 40</pre>
+
+<p class="prettyprint prettyprinted">
+  重启php-fpm服务：service php70-php-fpm reload，继续使用top命令查看内存使用情况，发现十几个php-fpm启动。
+</p>
+
+<p class="prettyprint prettyprinted">
+  <a href="https://blog.tanteng.me/wp-content/uploads/2016/04/php-fpm.png" target="_blank"><img class="alignnone wp-image-9999 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/04/php-fpm.png" alt="php-fpm" width="720" height="426" /></a>
+</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

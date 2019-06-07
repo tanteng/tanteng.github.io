@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3异常处理和异常类型 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3异常处理和异常类型</h1>
+  <time datetime=2015-08-19T02:34:08Z class="post-date">Wed, Aug 19, 2015</time>
+  <h3 id="python的异常处理">Python的异常处理</h3>
+
+<p>如下是使用Python的xlrd模块打款excel文件，这个操作可能会出现异常，使用try捕捉异常，进行处理，防止程序的中断运行，并且记录异常信息到日志。</p>
+
+<pre class="lang:python decode:true ">def save_file(file, filename):
+    """
+    打开excel文件
+    """
+    try:
+        book = xlrd.open_workbook(file)
+        sheet = book.sheet_by_index(0)
+    except Exception as e:
+        logging.info('错误：{0} 文件：{1}'.format(e, file))
+        shutil.copy2(file, './error' + filename)
+        return False
+    row_nums = sheet.nrows
+    col_nums = sheet.ncols</pre>
+
+<p>以上代码捕获异常并且使用logging模块记录日志到日志中，并且使用shutil模块把异常的文件复制到另一个文件夹中。</p>
+
+<h3 id="python的异常类型">Python的异常类型</h3>
+
+<p>如下：</p>
+
+<table class="table table-bordered">
+  <tr>
+    <th>
+      <b>EXCEPTION NAME</b>
+    </th>
+    
+    <th>
+      <b>DESCRIPTION</b>
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Exception
+    </td>
+    
+    <td>
+      Base class for all exceptions
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      StopIteration
+    </td>
+    
+    <td>
+      Raised when the next() method of an iterator does not point to any object.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemExit
+    </td>
+    
+    <td>
+      Raised by the sys.exit() function.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      StandardError
+    </td>
+    
+    <td>
+      Base class for all built-in exceptions except StopIteration and SystemExit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ArithmeticError
+    </td>
+    
+    <td>
+      Base class for all errors that occur for numeric calculation.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      OverflowError
+    </td>
+    
+    <td>
+      Raised when a calculation exceeds maximum limit for a numeric type.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      FloatingPointError
+    </td>
+    
+    <td>
+      Raised when a floating point calculation fails.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ZeroDivisonError
+    </td>
+    
+    <td>
+      Raised when division or modulo by zero takes place for all numeric types.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      AssertionError
+    </td>
+    
+    <td>
+      Raised in case of failure of the Assert statement.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      AttributeError
+    </td>
+    
+    <td>
+      Raised in case of failure of attribute reference or assignment.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      EOFError
+    </td>
+    
+    <td>
+      Raised when there is no input from either the raw_input() or input() function and the end of file is reached.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ImportError
+    </td>
+    
+    <td>
+      Raised when an import statement fails.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      KeyboardInterrupt
+    </td>
+    
+    <td>
+      Raised when the user interrupts program execution, usually by pressing Ctrl+c.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      LookupError
+    </td>
+    
+    <td>
+      Base class for all lookup errors.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      IndexError KeyError
+    </td>
+    
+    <td>
+      Raised when an index is not found in a sequence. Raised when the specified key is not found in the dictionary.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      NameError
+    </td>
+    
+    <td>
+      Raised when an identifier is not found in the local or global namespace.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      UnboundLocalError EnvironmentError
+    </td>
+    
+    <td>
+      Raised when trying to access a local variable in a function or method but no value has been assigned to it. Base class for all exceptions that occur outside the Python environment.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      IOError IOError
+    </td>
+    
+    <td>
+      Raised when an input/ output operation fails, such as the print statement or the open() function when trying to open a file that does not exist. Raised for operating system-related errors.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SyntaxError IndentationError
+    </td>
+    
+    <td>
+      Raised when there is an error in Python syntax. Raised when indentation is not specified properly.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemError
+    </td>
+    
+    <td>
+      Raised when the interpreter finds an internal problem, but when this error is encountered the Python interpreter does not exit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      SystemExit
+    </td>
+    
+    <td>
+      Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.
+    </td>
+    
+    <td>
+      Raised when an operation or function is attempted that is invalid for the specified data type.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ValueError
+    </td>
+    
+    <td>
+      Raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      RuntimeError
+    </td>
+    
+    <td>
+      Raised when a generated error does not fall into any category.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      NotImplementedError
+    </td>
+    
+    <td>
+      Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented.
+    </td>
+  </tr>
+</table>
+
+<p>以上是具体的异常类型，可以捕捉指定的异常：</p>
+
+<pre class="lang:python decode:true ">import sys
+
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
+    raise</pre>
+
+<p>捕捉特定的异常类型并输出异常提示。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

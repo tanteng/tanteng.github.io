@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP笔试面试题精选（一） &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP笔试面试题精选（一）</h1>
+  <time datetime=2017-07-11T02:02:05Z class="post-date">Tue, Jul 11, 2017</time>
+  <p>本次课程主要围绕 PHP 面试和笔试中经常会出现的一些知识点，<strong>但是面试官会在笔试题基础上深入扩展，那么你知道如何更好的回答让面试官满意吗？</strong>题目收集自腾讯，迅雷，美图等公司的笔试面试题，以及本人面试经历中印象中的知识点，同时也分享一些面试的经验，相信对你一定有很大的参考价值。</p>
+
+<p>本期题目重点涉及基础知识，安全，跨域，及两个简单的设计模式，预告下期重点是：计算机网络，WebSocket，http协议，tcp协议相关</p>
+
+<p>讲座地址：<a href="https://segmentfault.com/l/1500000009732283" target="_blank" rel="noopener nofollow"><a href="https://segmentfault.com/l/1500000009732283">https://segmentfault.com/l/1500000009732283</a></a></p>
+
+<h2 id="一-php部分">一、PHP部分</h2>
+
+<p>1.函数内部 static 和 global 关键字的作用</p>
+
+<p><span style="color: #3366ff;">static 是静态变量,在局部函数中存在且只初始化一次,使用过后再次使用会使用上次执行的结果; 作为计数，程序内部缓存，单例模式中都有用到。</span></p>
+
+<p><span style="color: #3366ff;">global 关键字,引用全局变量，wordpress中大量用到，如面向过程开发。</span></p>
+
+<p><span style="color: #3366ff;">static 静态方法,是类的成员方法,但不需要实例化类可直接使用</span></p>
+
+<p><span style="color: #3366ff;">$GLOBAL 在函数内使用具有全局作用域的变量,如$GLOBAL[&#8216;a&#8217;]</span></p>
+
+<p>2.子类重写父类的 protected 方法有什么限制？或者说有什么要遵守的规则？</p>
+
+<p><span style="color: #3366ff;">用例子说明，以 Laravel 框架中的控制器作为说明</span></p>
+
+<p><span style="color: #3366ff;">①final修饰的类方法不可被子类重写</span></p>
+
+<p><span style="color: #3366ff;">②PHP是否重写父类方法只会根据方法名是否一致判断（5.3以后重写父类方法参数个数必须一致）</span></p>
+
+<p><span style="color: #3366ff;">③重写时访问级别只可以等于或者宽松于父类 不可提升访问级别</span></p>
+
+<p>3.PHP文件末尾是否应该加 ?&gt; 结束符号，为什么？</p>
+
+<p><span style="color: #3366ff;">主要防止 include，require 引用文件，把文件末尾可能的回车和空格等字符引用进来，还有一些函数必须在没有任何输出之前调用，就会造成不是期望的结果。PHP文件的编码不包含BOM的UTF8. 这也是PSR-2中的规范：纯PHP代码文件必须省略最后的 ?&gt; 结束标签。</span></p>
+
+<p>4.谈一谈 PHP 开源框架 CI，ThinkPHP，Laravel 的优缺点及选型依据</p>
+
+<p><span style="color: #3366ff;">CI非常轻量级，是一个简单的MVC框架，性能也很快。</span></p>
+
+<p><span style="color: #3366ff;">ThinkPHP3.2国内使用比较多，优点是文档非常多，各种问题解决方案比较多，缺点是代码不够规范，理念落后。</span></p>
+
+<p><span style="color: #3366ff;">Laravel 是一个现代化的PHP开发框架，代码优雅，使用 composer 方式扩展功能，社区活跃，缺点是比较重，比较适合做后台管理或者应用型WEB系统。</span></p>
+
+<p>5.Memcache 和 Redis 的读写性能（qps）如何？两者优缺点？Redis 支持哪些数据类型？Redis 如何持久化？</p>
+
+<p><span style="color: #3366ff;">读写性能：</span></p>
+
+<p><span style="color: #3366ff;">memcache更加快速，在读取性能上比 Redis 快，缺点是仅支持字符串。</span></p>
+
+<p><span style="color: #3366ff;">Redis支持丰富的数据结构类型，字符串，散列（哈希），集合，有序集合，还支持订阅发布，地理位置等等。</span></p>
+
+<p><span style="color: #3366ff;">实际运用中可以redis，memcache结合，memcache可作为session存储的方式，session都是KV类型键值对。</span></p>
+
+<p><span style="color: #3366ff;">Redis 提供了多种不同级别的持久化方式：</span></p>
+
+<ul>
+<li><span style="color: #3366ff;">RDB 持久化可以在指定的时间间隔内生成数据集的时间点快照（point-in-time snapshot）。</span></li>
+<li><span style="color: #3366ff;">AOF 持久化记录服务器执行的所有写操作命令，并在服务器启动时，通过重新执行这些命令来还原数据集。 AOF 文件中的命令全部以 Redis 协议的格式来保存，新命令会被追加到文件的末尾。 Redis 还可以在后台对 AOF 文件进行重写（rewrite），使得 AOF 文件的体积不会超出保存数据集状态所需的实际大小。</span></li>
+<li><span style="color: #3366ff;">Redis 还可以同时使用 AOF 持久化和 RDB 持久化。 在这种情况下， 当 Redis 重启时， 它会优先使用 AOF 文件来还原数据集， 因为 AOF 文件保存的数据集通常比 RDB 文件所保存的数据集更完整。</span></li>
+<li><span style="color: #3366ff;">你甚至可以关闭持久化功能，让数据只在服务器运行时存在。</span></li>
+</ul>
+
+<p><span style="color: #3366ff;">参见：<a href="http://doc.redisfans.com/topic/persistence.html" target="_blank" rel="nofollow"><a href="http://doc.redisfans.com/topic/persistence.html">http://doc.redisfans.com/topic/persistence.html</a></a></span></p>
+
+<p>6.使用 PHP 下载网络图片，有哪些方法？</p>
+
+<p><span style="color: #3366ff;">1.file_get_contents</span></p>
+
+<p><span style="color: #3366ff;">2.readfile读取内容</span></p>
+
+<p><span style="color: #3366ff;">3.fopen系列函数</span></p>
+
+<p><span style="color: #3366ff;">4.curl</span></p>
+
+<p>7.什么是 CGI？什么是 FastCGI？php-fpm，FastCGI，Nginx 之间是什么关系？</p>
+
+<p><span style="color: #3366ff;">CGI，通用网关接口，用于WEB服务器和应用程序间的交互，定义输入输出规范，用户的请求通过WEB服务器转发给FastCGI进程，FastCGI进程再调用应用程序进行处理，如php解析器，应用程序的处理结果如html返回给FastCGI，FastCGI返回给Nginx 进行输出。假设这里WEB服务器是Nginx，应用程序是 PHP，而 php-fpm 是管理 FastCGI 的，这也就是 php-fpm，FastCGI，和 Nginx 之间的关系。</span></p>
+
+<p><span style="color: #3366ff;">FastCGI 用来提高 cgi 程序性能，启动一个master，再启动多个 worker，不需要每次解析 php.ini. 而 php-fpm 实现了 FastCGI 协议，是 FastCGI 的进程管理器，支持平滑重启，可以启动的时候预先生成多个进程。</span></p>
+
+<p>8.什么是 CSRF 攻击 ？XSS 攻击？如何防范？</p>
+
+<p><span style="color: #3366ff;">CSRF，跨站请求伪造，攻击方伪装用户身份发送请求从而窃取信息或者破坏系统。</span></p>
+
+<p><span style="color: #3366ff;">讲述基本原理：用户访问A网站登陆并生成了cookie，再访问B网站，如果A网站存在CSRF漏洞，此时B网站给A网站的请求（此时相当于是用户访问），A网站会认为是用户发的请求，从而B网站就成功伪装了你的身份，因此叫跨站脚本攻击。</span></p>
+
+<p><span style="color: #3366ff;">CSRF防范：</span></p>
+
+<p><span style="color: #3366ff;">1.合理规范api请求方式，GET，POST</span></p>
+
+<p><span style="color: #3366ff;">2.对POST请求加token令牌验证，生成一个随机码并存入session，表单中带上这个随机码，提交的时候服务端进行验证随机码是否相同。</span></p>
+
+<p><span style="color: #3366ff;">XSS，跨站脚本攻击。</span></p>
+
+<p><span style="color: #3366ff;">防范：不相信任何输入，过滤输入。</span></p>
+
+<p>9.列举常用的设计模式并说明？单例模式，观察者模式等等</p>
+
+<p><span style="color: #3366ff;">看示例代码。</span></p>
+
+<p>10.写一段代码，实现PHP内部的通知机制，如当一个类的属性发生变化时，另外一个类就可以收到通知。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/07/observer.jpg" target="_blank"><img class="alignnone size-full wp-image-11525" src="https://blog.tanteng.me/wp-content/uploads/2017/07/observer.jpg" alt="" width="367" height="342" /></a></p>
+
+<p>观察者模式的应用，使用代码示例说明。</p>
+
+<p>对象的一种一对多的关系，当依赖的对象状态发生改变时，所有依赖它的对象都得到通知并被自动更新。</p>
+
+<p>观察者模式又称发布订阅模式。</p>
+
+<p>1.抽象主体（Subject）角色：主体角色将所有对观察者对象的引用保存在一个集合中，每个主体可以有任意多个观察者。 抽象主体提供了增加和删除观察者对象的接口。主体也就是被观察者。</p>
+
+<p>2.抽象观察者（Observer）角色：为所有的具体观察者定义一个接口，在观察的主体发生改变时更新自己。</p>
+
+<p>3.具体主体（ConcreteSubject）角色：存储相关状态到具体观察者对象，当具体主体的内部状态改变时，给所有登记过的观察者发出通知。具体主体角色通常用一个具体子类实现。</p>
+
+<p>4.具体观察者（ConcretedObserver）角色：存储一个具体主体对象，存储相关状态，实现抽象观察者角色所要求的更新接口，以使得其自身状态和主题的状态保持一致。</p>
+
+<h2 id="二-前端部分">二、前端部分</h2>
+
+<p>1.$(“#content .abc”) 和 $(“#content”).find(“.abc”) 哪个效率更高？</p>
+
+<p><span style="color: #3366ff;">后者，后者使用原生的document.getElementByN ame，ID&gt;Tag&gt;Class.</span></p>
+
+<p><span style="color: #3366ff;">$(“#content”).find(“.abc”) .find()方法会调用浏览器的原生方法（getElementById，getElementByName，getElementByTagName等等），所以速度较快。比$(“#content .abc”) 效率快很多。</span></p>
+
+<p><span style="color: #3366ff;">第一种慢的原因：在于 jQuery 内部使用各种选择器链条的选择顺序是从右到左，所以这条语句是先选.abc，然后再一个个过滤出父元素#content，这导致它慢很多。</span></p>
+
+<p>2.ajax 中如何执行跨域访问？同子域的情况如何处理？不同子域的情况如何处理？</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/07/tongyuan.png" target="_blank"><img class="alignnone size-full wp-image-11526" src="https://blog.tanteng.me/wp-content/uploads/2017/07/tongyuan.png" alt="" width="658" height="355" /></a></p>
+
+<p><span style="color: #3366ff;">跨域的存在是因为浏览器的同源策略，一个源表示协议，端口，域名都相同，否则就形成了跨域。</span></p>
+
+<p><span style="color: #3366ff;">①jsonp，非官方协议，简单实用</span></p>
+
+<p><span style="color: #3366ff;">通过JavaScript的callback方式调用，jQuery封装了jsonp方式的请求。</span></p>
+
+<p><span style="color: #3366ff;">callback({“result”:0,”msg”:”ok”,”data”:{xxx}})</span></p>
+
+<p><span style="color: #3366ff;">②服务器响应头</span></p>
+
+<p><span style="color: #3366ff;">header(&#8220;Access-Control-Allow-Origin:*&#8221;);</span></p>
+
+<p><span style="color: #3366ff;">/<em>星号表示所有的域都可以接受，</em>/</span></p>
+
+<p><span style="color: #3366ff;">header(“Access-Control-Allow-Methods:GET,POST&#8221;);</span></p>
+
+<p><span style="color: #3366ff;">③iframe实现跨域</span></p>
+
+<p>3.$(document).ready()函数作用域是什么？</p>
+
+<p><span style="color: #3366ff;">片段1：</span></p>
+
+<pre class="lang:js decode:true ">var MyProject = {};
+$(document).ready(function() {
+    MyProject.intro = "";
+    MyProject.intro = "something";
+});
+console.log(MyProject.intro); // "something"</pre>
+
+<p><span style="color: #3366ff;">片段2：</span></p>
+
+<pre class="lang:js decode:true ">$(document).ready(function() {
+    var1 = 12;      // no var =global
+    var var2 = 24;  // local
+});
+
+alert(var1)
+alert(var2)</pre>
+
+<p>4.$(this) 和 this 关键字在 jQuery 中有何不同？</p>
+
+<p><span style="color: #3366ff;">一个是jquery对象，一个是js的属性</span></p>
+
+<p>5.jsonp 和 iframe 跨域访问原理是什么？</p>
+
+<p><span style="color: #3366ff;">一个jsonp的例子，js代码：</span></p>
+
+<pre class="lang:js decode:true ">//JAVASCRIPT
+$.getJSON('http://www.example.com/jsonp.php?callback=?','firstname=Jeff',function(res){
+    alert('Your name is '+res.fullname);
+});
+
+//SERVER SIDE
+  &lt;?php
+ $fname = $_GET['firstname'];
+      if($fname=='Jeff'){
+          //header("Content-Type: application/json");
+         echo $_GET['callback'] . '(' . "{'fullname' : 'Jeff Hansen'}" . ')';
+      }
+?&gt;
+</pre>
+
+<p><span style="color: #3366ff;">Ajax发jsonp请求：</span></p>
+
+<pre class="lang:js decode:true ">$.ajax({
+        url: "http://api.flickr.com/services/rest/?method=flickr.interestingness.getList ",
+        dataType: "jsonp",
+        jsonp: 'jsoncallback',
+        success: function(data) {
+            alert(data);
+        }
+    });
+</pre>
+
+<p><span style="color: #3366ff;">注意：对于上面第二个ajax示例，url中不必带有callback参数，jquery会自动添加。</span></p>
+
+<p><span style="color: #3366ff;">Jsonp参数是callback名称，指的就是服务端$_GET[‘callback’]里的callback的名称。</span></p>
+
+<p><span style="color: #3366ff;">实际发的请求就是<a href="http://api.flickr.com/services/rest/?method=flickr.interestingness.getList?jsoncallback=jquery332232323&amp;_">http://api.flickr.com/services/rest/?method=flickr.interestingness.getList?jsoncallback=jquery332232323&amp;_</a> 1471419449018</span></p>
+
+<ul>
+<li><span style="color: #3366ff;">dataType: &#8216;jsonp&#8217;，用于表示这是一个 JSONP 请求。</span></li>
+<li><span style="color: #3366ff;">jsonp: &#8216;callback&#8217;，用于告知服务器根据这个参数获取回调函数的名称，通常约定就叫 callback。</span></li>
+<li><span style="color: #3366ff;">jsonpCallback: &#8216;dosomething&#8217;，回调函数的名称，也是前面callback参数的值，可省略，jquery会自动生成。</span></li>
+</ul>
+
+<p><span style="color: #3366ff;">JSONP 的原理</span></p>
+
+<p><span style="color: #3366ff;">AJAX 无法跨域是受到“同源政策”的限制，但是带有src属性的标签（例如<script>、<img>、<iframe>）是不受该政策限制的，因此我们可以通过向页面中动态添加<script>标签来完成对跨域资源的访问，这也是 JSONP 方案最核心的原理。</span></p>
+
+<p><span style="color: #3366ff;">缺点：防止xss注入</span></p>
+
+<p><span style="color: #3366ff;">Iframe跨域</span></p>
+
+<p><span style="color: #3366ff;">如果两个窗口一级域名相同，只是二级域名不同，document.domain设置为同一个主域</span></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

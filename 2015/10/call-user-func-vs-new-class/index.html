@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>call_user_func与实例化的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>call_user_func与实例化的区别</h1>
+  <time datetime=2015-10-30T10:43:23Z class="post-date">Fri, Oct 30, 2015</time>
+  <p>使用call_user_func可以执行一个类的某个方法，而且可以给方法传参数，它跟实例化一个类再调用方法有什么区别呢？看下面的例子。</p>
+
+<pre class="lang:php decode:true ">class A
+{
+    public function __Construct($a,$b,$c)
+    {
+        echo 'Construct'.$a.$b.$c;
+    }
+
+    public function test($a,$b,$c)
+    {
+        echo ' test'.$a.$b.$c;
+    }
+}
+
+$a = new A(1,2,3);
+$a-&gt;test(1,2,3);
+
+call_user_func(['A','test'],1,2,3);</pre>
+
+<p>类A有一个构造方法，如果用实例化的方式new A，会执行构造函数，而使用call_user_func的方式调用test方法，并没有出发构造函数，虽然都可以执行到方法，这就是两者的区别。</p>
+
+<p>那么在有的情况下，并不能直接实例化一个类，希望通过其他方式去得到一个类，而且能够执行类的构造方法怎么办？</p>
+
+<p>此时可以使用类的反射类和newInstanceArgs来创建一个新的类的实例，代码如下：</p>
+
+<pre class="lang:php decode:true ">$reflection = new ReflectionClass('A');
+$newclass = $reflection-&gt;newInstanceArgs([1,2,3]);
+$newclass-&gt;test(1,2,3);</pre>
+
+<p>它的效果等同于：</p>
+
+<pre class="lang:php decode:true ">$a = new A(1,2,3);
+$a-&gt;test(1,2,3);</pre>
+
+<h4 id="具体可以参见">具体可以参见：</h4>
+
+<p><a href="https://blog.tanteng.me/2015/10/php-reflectionclass/" target="_blank">PHP反射类ReflectionClass</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

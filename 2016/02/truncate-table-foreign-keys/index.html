@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>如何使用truncate table清空有外键约束的表 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>如何使用truncate table清空有外键约束的表</h1>
+  <time datetime=2016-02-18T03:36:42Z class="post-date">Thu, Feb 18, 2016</time>
+  <p>在MySQL中使用&#8221;truncate table 表名&#8221;语句可以清空一张表，并且计数器会重置，但是在存在外键约束的表中无法使用truncate，那怎么办？</p>
+
+<p>方法是首先禁用外键，使用truncate之后再恢复！</p>
+
+<p>1.禁止外键约束</p>
+
+<pre class="lang:mysql decode:true ">alter table tbl_b disable constraint FK_TBL_B_A;</pre>
+
+<p>2.再使用truncate清空表</p>
+
+<pre class="lang:mysql decode:true ">truncate table tbl_a;</pre>
+
+<p>3.恢复外键约束</p>
+
+<pre class="lang:mysql decode:true ">alter table tbl_b enable constraint FK_TBL_B_A;</pre>
+
+<p>总结：</p>
+
+<ol>
+<li><p>主外键是数据库提供的强约束，可以帮助我们控制主子表之间的关系，但同时还是一把双刃剑，当然，我们认为既然定义了主外键，就是需要这种强制关系，但有时可能就会有一些变更，因此，如何取舍，需要根据实际情况来决策。</p></li>
+
+<li><p>主外键关联中的主表，如果有数据，则不能直接用truncate方式删除，因为会认为有外键和其关联，不能直接截断主表，若需要做，可以先禁止外键约束，主表变成一个独立的表，这样就可以执行truncate了。</p></li>
+</ol>
+
+<p>参考链接：<a href="http://blog.csdn.net/bisal/article/details/46421903" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/bisal/article/details/46421903">http://blog.csdn.net/bisal/article/details/46421903</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

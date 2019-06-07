@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>防止表单重复提交的方式 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>防止表单重复提交的方式</h1>
+  <time datetime=2015-07-08T15:12:14Z class="post-date">Wed, Jul 8, 2015</time>
+  <p>关于防止表单重复提交的做法有很多，本人知道的有如下，简单讲讲几种方式。有redis，session，jquery等几种方法。</p>
+
+<p>1.有redis的环境</p>
+
+<p>把提交的动作action，参数之类的作为redis的key，存进redis，设置一个很短的缓存时间，提交的时候判断如果存在这个key，说明是重复提交数据。</p>
+
+<p>2.jquery前端判断</p>
+
+<p>除了在程序端判断重复提交外，在页面前端也加一层措施，如点击提交按钮，按钮状态不可用（有的按钮用的a标签），如果不是按钮button，可以用jquery在提交的时候设置一个属性值，如果有了这个属性值，表示已经提交。</p>
+
+<pre class="lang:js decode:true">$("body").data("applycancel","unlock");</pre>
+
+<p>3.表单隐藏域token</p>
+
+<p>生成一个随机数，放进session，给表单加一个隐藏域放进token，提交的时候判断表单的token隐藏域和session的值是否一致，如果不一致表示重复提交，处理表单的时候unset掉这个session。</p>
+
+<p>各位还有什么办法，什么办法最好，谢谢！</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

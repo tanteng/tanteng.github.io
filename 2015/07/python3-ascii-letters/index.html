@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3基础:String模块ascii_letters和digits &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3基础:String模块ascii_letters和digits</h1>
+  <time datetime=2015-07-11T05:10:10Z class="post-date">Sat, Jul 11, 2015</time>
+  <p>本文介绍Python3中String模块ascii_letters和digits方法，其中ascii_letters是生成所有字母，从a-z和A-Z,digits是生成所有数字0-9.</p>
+
+<p>示例如下：</p>
+
+<pre class="lang:python decode:true ">&gt;&gt;&gt; chars = string.ascii_letters + string.digits
+&gt;&gt;&gt; print(chars)
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</pre>
+
+<p>生成所有字母和数字干什么？在哪个场景中会用到呢，举个例子：比如生成激活码（优惠券），激活码一般都是字母和数字组成的，首先要有一个所有字母和数字的字符串，然后随机取出几个字母或数字。</p>
+
+<pre class="lang:python decode:true ">import random, string
+
+
+def rand_str(num, length=7):
+    f = open('Activation_code.txt', 'w')
+    for i in range(num):
+        chars = string.ascii_letters + string.digits
+        s = [random.choice(chars) for i in range(length)]
+        f.write('{0}\n'.format(''.join(s)))
+    f.close()
+
+
+if __name__ == '__main__':
+    rand_str(200)
+</pre>
+
+<p>执行结果片段：</p>
+
+<p>wz0dajI</p>
+
+<p>25vlulV</p>
+
+<p>zLHkx9Y</p>
+
+<p>GGzu0Ip</p>
+
+<p>RilbYKW</p>
+
+<p>4WZL2IC</p>
+
+<p>4syobYw</p>
+
+<p>kCMky7O</p>
+
+<p>oUPde55</p>
+
+<p>KrMRmUX</p>
+
+<p>Ct0W2Pm</p>
+
+<p>wMwpPdk</p>
+
+<p>ydPuy9h</p>
+
+<p>Z7vo3r9</p>
+
+<p>emcmQl0</p>
+
+<p>GeIDKw3</p>
+
+<p>PK9BLvg</p>
+
+<p>z4xNdVb</p>
+
+<p>I0EGA9O</p>
+
+<p>YPUh5UA</p>
+
+<p>69gISVt</p>
+
+<p>Xun7GI3</p>
+
+<p>YufPaD0</p>
+
+<p>DsYZx2Q</p>
+
+<p>3JfW1bh</p>
+
+<p>ydHELg6</p>
+
+<p>NxNMRBa</p>
+
+<p>（最后一段代码示例来自<a href="https://github.com/tanteng/python/blob/master/DIYgod/0001/random_string.py，经过修正以运行在Python3下）">https://github.com/tanteng/python/blob/master/DIYgod/0001/random_string.py，经过修正以运行在Python3下）</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

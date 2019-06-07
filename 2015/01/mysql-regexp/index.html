@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在mysql中使用正则表达式 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在mysql中使用正则表达式</h1>
+  <time datetime=2015-01-29T03:16:24Z class="post-date">Thu, Jan 29, 2015</time>
+  <p>正则表达式广泛用于各种程序编程的地方，在mysql sql语句中使用正则表达式也可以解决很多查询问题，化繁为简，并且巧妙运用可以提高mysql查询效率。本文讲讲mysql中如何使用regexp语法运行含有正则表达式的sql语句。</p>
+
+<pre class="lang:php mark:3 decode:true">SELECT prod_name
+FROM products
+WHERE prod_name REGEXP '1000|2000'
+ORDER BY prod_name;</pre>
+
+<p>在mysql中sql语句使用正则表达式，在需要的地方用REGEXP关键字，如例中所示，REGEXP正则表达式是&#8217;1000|2000&#8217;，表示1000或者2000，也就是查询prod_name字段为1000或者2000的结果。</p>
+
+<p>mysql中的正则表达式规则大致和其他地方的正则表达式规则相同，比如“\”转义，“|”或者，字母、数字的表示都相同。</p>
+
+<p>再如：</p>
+
+<pre class="lang:php mark:3 decode:true ">SELECT prod_name
+FROM products
+WHERE prod_name REGEXP '\\([0-9] sticks?\\)'
+ORDER BY prod_name;</pre>
+
+<p>可以查到的结果例如：</p>
+
+<p>(1 sticks)</p>
+
+<p>(3 sticks)</p>
+
+<p>(4)</p>
+
+<p>说明：&#8221;(&#8220;,&#8221;)&#8221;表示转义，包含&#8221;(&#8220;,&#8221;)&#8221;.问号表示可有可无。</p>
+
+<p>这就是在mysql中使用正则表达式的基本用法。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

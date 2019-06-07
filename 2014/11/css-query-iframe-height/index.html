@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用css media query控制iframe高度 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用css media query控制iframe高度</h1>
+  <time datetime=2014-11-24T07:22:13Z class="post-date">Mon, Nov 24, 2014</time>
+  <p>在这个场景下，需要使用css media query控制iframe高度：比如一个iframe视频在PC网页上的高度和手机网页上的高度不同。iframe的高度只能设置成固定高度或者所在div的百分比，我们可以通过css query控制这个div的高度，实现iframe在PC和手机上不同高度。</p>
+
+<p>首先，我们在没有定义CSS Media Query的样式里添加：</p>
+
+<pre lang="css">.iframe_height{
+    height: 260px;
+}
+</pre>
+
+<p>然后当宽度大于1024px的时候，设置CSS Media Query：</p>
+
+<pre lang="css">@media screen and (min-width: 1024px) {
+    .iframe_height{
+        height: 460px;
+    }
+}
+</pre>
+
+<p>引用iframe的时候需要嵌入在一个div中，div用.iframe_height的样式并把iframe高度设成100%，如：</p>
+
+<pre lang="html4strict"><div class="iframe_height">
+  <iframe src="http://player.youku.com/embed/XODI4OTg5NTky" width="100%" height="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  
+</div>
+</pre>
+
+<p>这样，在PC网页中显示的高度大好多的iframe，在手机中显示的是高度小一点的iframe。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

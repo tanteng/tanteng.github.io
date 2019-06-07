@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Golang 解析 json 数据 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Golang 解析 json 数据</h1>
+  <time datetime=2017-07-23T14:04:44Z class="post-date">Sun, Jul 23, 2017</time>
+  <p>使用 Golang 解析 json 数据，这种 json 格式是对象的数组，官方文档有一个示例：</p>
+
+<pre class="lang:go decode:true">var jsonBlob = []byte(`[  
+    {"Name": "Platypus", "Order": "Monotremata"},  
+    {"Name": "Quoll",    "Order": "Dasyuromorphia"}  
+]`)  
+type Animal struct {  
+    Name  string  
+    Order string  
+}  
+var animals []Animal  
+err := json.Unmarshal(jsonBlob, &animals)  
+if err != nil {  
+    fmt.Println("error:", err)  
+}  
+fmt.Printf("%+v", animals)</pre>
+
+<p>它可以把 json 数据的对象解析到对应的结构体中。</p>
+
+<p>如果是一维数组，带键值对的形式，如：<span style="font-size: 1rem;">{&#8220;A&#8221;:3,&#8221;B&#8221;:3,&#8221;C&#8221;:5,&#8221;D&#8221;:5}，代码如下：</span></p>
+
+<pre class="lang:go decode:true">func main() {
+    jsonData := []byte(`{"A":3,"B":3,"C":5,"D":5}`)
+    var a map[string]int
+    json.Unmarshal(jsonData, &a)
+    fmt.Printf("%+v\n", a)
+}</pre>
+
+<p>可见键值对形式的 json 可以映射到 map 中，或者 interface{}.</p>
+
+<p>如果是只有值的形式，如：[&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;,&#8221;d&#8221;,&#8221;e&#8221;]，代码如下：</p>
+
+<pre class="lang:go decode:true ">func main() {
+    jsonData := []byte(`["a","b","c","d","e"]`)
+    var a []string
+    json.Unmarshal(jsonData, &a)
+    fmt.Printf("%+v\n", a)
+}</pre>
+
+<p>可见只有值的形式可以映射到一个 slice 中。</p>
+
+<p>关于 json 数据解析对于类型，在函数注释中都已有说明：</p>
+
+<div>
+  <div>
+    To unmarshal JSON into an interface value,Unmarshal stores one of these in the interface value:
+  </div>
+  
+
+<p><div>
+    bool, for JSON booleans
+  </div></p>
+
+<p><div>
+    float64, for JSON numbers
+  </div></p>
+
+<p><div>
+    string, for JSON strings
+  </div></p>
+
+<p><div>
+    []interface{}, for JSON arrays
+  </div></p>
+
+<p><div>
+    map[string]interface{}, for JSON objects
+  </div></p>
+
+<p><div>
+    nil for JSON null
+  </div>
+</div></p>
+
+<h3 id="模拟-php-的-json-decode-jsonstring-true-函数">模拟 PHP 的 json_decode($jsonString, true) 函数</h3>
+
+<p>但是，看这种情况，在 PHP 中，如果用 json_decode(&#8216;[&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;,&#8221;d&#8221;,&#8221;e&#8221;]&#8217;, true) 这种第二个参数是 true 的解析 json，可以解析为带键值对的对象的形式：</p>
+
+<pre class="lang:go decode:true ">[
+    0=&gt;"a",
+    1=&gt;"b",
+    2=&gt;"c",
+    3=&gt;"d",
+    4=&gt;"e"
+]</pre>
+
+<p>这种 Golang 怎么做到呢？</p>
+
+<pre class="lang:go decode:true ">func main() {
+    jsonData := []byte(`["a","b","c","d","e"]`)
+    var a []string
+    json.Unmarshal(jsonData, &a)
+
+    newData := make(map[int]string)
+    for k, v := range a {
+        newData[k] = v
+    }
+
+    fmt.Printf("%+v\n", newData)
+}
+</pre>
+
+<p>应该没有内置函数，那就这样手动实现吧。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

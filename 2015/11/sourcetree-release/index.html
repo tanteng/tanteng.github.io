@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SourceTree提交代码合并到发布分支操作步骤 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>SourceTree提交代码合并到发布分支操作步骤</h1>
+  <time datetime=2015-11-05T06:03:41Z class="post-date">Thu, Nov 5, 2015</time>
+  <p>发布代码有一个发布分支，汇总所有要发布的分支，需要把各个分支合并到发布分支上来，每个提交的分支作为一个“点”，以下是SourceTree提交分支到发布分支的操作步骤：</p>
+
+<p>1.最好以自己的分支再创建一个新的分支，防止操作过程有不可逆的失误。</p>
+
+<p>2.找到第一次提交修改上次提交，右键重置到当前分支，选择软合并，这样就把自己的分支合并成一个“点”，然后提交代码。</p>
+
+<p>3.到要合并的主分支，切换到“所有分支”，找到自己刚提交的点，右键“遴选”，再推送到远端。</p>
+
+<p>遴选操作可能会有代码冲突，解决冲突即可。也可以使用变基再合并的方法。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

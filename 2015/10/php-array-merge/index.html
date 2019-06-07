@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP数组array_merge和&#43;的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP数组array_merge和&#43;的区别</h1>
+  <time datetime=2015-10-16T15:04:23Z class="post-date">Fri, Oct 16, 2015</time>
+  <p>这个例子比较全面的比较了PHP合并两个数组常见的方法array_merge和+的区别：</p>
+
+<pre class="lang:php decode:true">$array1 = array(
+    'test1' =&gt; 'test1',
+    'test2' =&gt; 'test2',
+    8       =&gt; '9',
+    '10'    =&gt; '1010',
+    's10'   =&gt; 's10',
+);
+
+$array2 = array(
+    'test1' =&gt; 'test1+',
+    'test2' =&gt; 'test2+',
+    '++'    =&gt; '++',
+    8       =&gt; '9999',
+    '10'    =&gt; '10101010',
+    's10'   =&gt; 's10101010',
+);
+
+$result = array_merge($array1,$array2);
+$result2 = $array1+$array2;
+var_dump($result);
+var_dump($result2);
+exit;</pre>
+
+<p>结果：</p>
+
+<pre class="lang:php decode:true ">array (size=8)
+  'test1' =&gt; string 'test1+' (length=6)
+  'test2' =&gt; string 'test2+' (length=6)
+  0 =&gt; string '9' (length=1)
+  1 =&gt; string '1010' (length=4)
+  's10' =&gt; string 's10101010' (length=9)
+  '++' =&gt; string '++' (length=2)
+  2 =&gt; string '9999' (length=4)
+  3 =&gt; string '10101010' (length=8)
+
+array (size=6)
+  'test1' =&gt; string 'test1' (length=5)
+  'test2' =&gt; string 'test2' (length=5)
+  8 =&gt; string '9' (length=1)
+  10 =&gt; string '1010' (length=4)
+  's10' =&gt; string 's10' (length=3)
+  '++' =&gt; string '++' (length=2)
+</pre>
+
+<p>其实大多数时候合并数组，都会用array_merge，毕竟相同的键，一般情况都以后面的为准。注意array_merge合并数组，如果两个键相同并且是数字，无论是整形还是字符串数字，都会重新从0开始作为键。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

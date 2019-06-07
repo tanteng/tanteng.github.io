@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3中的真除和Floor除法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3中的真除和Floor除法</h1>
+  <time datetime=2015-07-10T13:43:54Z class="post-date">Fri, Jul 10, 2015</time>
+  <p>在Python3中，除法运算有两种，一种是真除，一种是Floor除法，这两者是有分别的，分别如代码所示：</p>
+
+<pre class="lang:python decode:true python">&gt;&gt;&gt;10/4
+2.5
+&gt;&gt;&gt;10//4
+2
+&gt;&gt;&gt;10/4.0
+2.5
+&gt;&gt;&gt;10//4.0
+2.0</pre>
+
+<p>Python3中一个斜杠的除法是真除，这和其他编程语言是一样的，保留浮点数，Floor除法是去除浮点数保留整数的除法，所以叫做Floor除法。</p>
+
+<p>举个例子，什么时候要用到Floor除法。</p>
+
+<pre class="lang:python mark:1 decode:true ">xSize, ySize = avatar.size
+fontSize = min(xSize, ySize) // 11
+
+myFont = ImageFont.truetype("/Library/Fonts/OsakaMono.ttf", fontSize)</pre>
+
+<p>这里xSize和ySize表示图像的宽高像素，fontSize为字体大小必须传入整数，因此这里用的Floor除以11求整数，从这句代码中可以看出fontSize是宽高中较小一个缩小11的比例的整数。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

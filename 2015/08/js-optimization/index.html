@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JS代码优化及规范 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>JS代码优化及规范</h1>
+  <time datetime=2015-08-04T01:35:25Z class="post-date">Tue, Aug 4, 2015</time>
+  <p>1.不能用页面的index=0 1 2来寻找对应的值（防止列表结构（增加或者删除列）发生变化，代码就要做相应的修改）</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" target="_blank"><img class="alignnone wp-image-8477 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" alt="js1" width="484" height="332" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png 484w, https://blog.tanteng.me/wp-content/uploads/2015/08/js1-300x206.png 300w" sizes="(max-width: 484px) 100vw, 484px" /></a></p>
+
+<p>在标签中对每列的单元格添加唯一的标识。</p>
+
+<p>比如，每列的第一个单元格是联系人姓名 在td标签中添加属性”js-attr=&#8217;content-name&#8217;”</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js2.png" target="_blank"><img class="alignnone wp-image-8478 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js2.png" alt="js2" width="623" height="37" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js2.png 623w, https://blog.tanteng.me/wp-content/uploads/2015/08/js2-300x18.png 300w" sizes="(max-width: 623px) 100vw, 623px" /></a></p>
+
+<p>2.给a标签注册事件，加了href=&#8221;javascript:;&#8221;但是有的浏览器不兼容。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js3.png" target="_blank"><img class="alignnone wp-image-8479 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js3.png" alt="js3" width="496" height="175" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js3.png 496w, https://blog.tanteng.me/wp-content/uploads/2015/08/js3-300x106.png 300w" sizes="(max-width: 496px) 100vw, 496px" /></a></p>
+
+<p>所以在事件结束之后，要添加return false.防止a标签点击后跳转了,不执行点击事件:</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js4.png" target="_blank"><img class="alignnone wp-image-8480 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js4.png" alt="js4" width="487" height="178" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js4.png 487w, https://blog.tanteng.me/wp-content/uploads/2015/08/js4-300x110.png 300w" sizes="(max-width: 487px) 100vw, 487px" /></a></p>
+
+<p>3.在页面元素注册事件时，尽量防止元素后面直接写执行方法</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js5.png" target="_blank"><img class="alignnone wp-image-8481 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js5.png" alt="js5" width="467" height="101" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js5.png 467w, https://blog.tanteng.me/wp-content/uploads/2015/08/js5-300x65.png 300w" sizes="(max-width: 467px) 100vw, 467px" /></a></p>
+
+<p>这种写法跟 bind(‘click’,function(){})是一样的，都是直接绑定函数到每个单独的元素，不能绑定到还没有添加到页面里的元素。</p>
+
+<p>用live(‘事件名称’,function(){}),或者on(‘事件名称’,function(){})这样：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js6.png" target="_blank"><img class="alignnone wp-image-8482 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js6.png" alt="js6" width="449" height="91" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js6.png 449w, https://blog.tanteng.me/wp-content/uploads/2015/08/js6-300x61.png 300w" sizes="(max-width: 449px) 100vw, 449px" /></a></p>
+
+<p>是为了防止有时候JS 在标签渲染之前就已经执行，或者通过JS 添加相应便签，都会导致执行之后被渲染的元素是无法注册到该事件的。</p>
+
+<p>4.每个页面防止定义全局变量</p>
+
+<pre class="lang:js decode:true  ">var name = value;
+var name2 = value2;
+var name3 = value3;
+var name4 = value4;</pre>
+
+<p>而应该定义为局部变量：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js81.png" target="_blank"><img class="alignnone size-full wp-image-8485" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js81.png" alt="js8" width="353" height="230" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js81.png 353w, https://blog.tanteng.me/wp-content/uploads/2015/08/js81-300x195.png 300w" sizes="(max-width: 353px) 100vw, 353px" /></a></p>
+
+<p>或者写成</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js9.png" target="_blank"><img class="alignnone wp-image-8486 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js9.png" alt="js9" width="313" height="143" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js9.png 313w, https://blog.tanteng.me/wp-content/uploads/2015/08/js9-300x137.png 300w" sizes="(max-width: 313px) 100vw, 313px" /></a></p>
+
+<p>5.对于一个元素执行多种不同事件，尽量避免：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js10.png" target="_blank"><img class="alignnone wp-image-8487 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js10.png" alt="js10" width="305" height="185" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js10.png 305w, https://blog.tanteng.me/wp-content/uploads/2015/08/js10-300x182.png 300w" sizes="(max-width: 305px) 100vw, 305px" /></a></p>
+
+<p>应写成如下所示，增强代码的可读性：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js11.png" target="_blank"><img class="alignnone wp-image-8488 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js11.png" alt="js11" width="279" height="217" /></a></p>
+
+<p>6.尽量避免偷懒，少写花括号，即使只有一行代码</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js12.png" target="_blank"><img class="alignnone wp-image-8489 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js12.png" alt="js12" width="502" height="17" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js12.png 502w, https://blog.tanteng.me/wp-content/uploads/2015/08/js12-300x10.png 300w" sizes="(max-width: 502px) 100vw, 502px" /></a></p>
+
+<p>如果在if后再执行代码，就会容易混淆，可读性不高，如：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js13.png" target="_blank"><img class="alignnone wp-image-8490 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js13.png" alt="js13" width="340" height="47" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js13.png 340w, https://blog.tanteng.me/wp-content/uploads/2015/08/js13-300x41.png 300w" sizes="(max-width: 340px) 100vw, 340px" /></a></p>
+
+<p>正确格式为If(&#8230;){&#8230;} else{} ，比如：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js14.png" target="_blank"><img class="alignnone wp-image-8491 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js14.png" alt="js14" width="230" height="66" /></a></p>
+
+<p>7.对于一个功能模块的所有事件，零散注册：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js15.png" target="_blank"><img class="alignnone wp-image-8492 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js15.png" alt="js15" width="307" height="178" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js15.png 307w, https://blog.tanteng.me/wp-content/uploads/2015/08/js15-300x174.png 300w" sizes="(max-width: 307px) 100vw, 307px" /></a></p>
+
+<p>这样不能在其他地方被调用，定义一个方法将相关事件都装起来，然后在调用的时候，初始化原型对象，可以达到一次注册，多次调用：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js16.png" target="_blank"><img class="alignnone wp-image-8493 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js16.png" alt="js16" width="295" height="216" /></a></p>
+
+<p>8.查找多层父级元素时，避免：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js17.png" target="_blank"><img class="alignnone wp-image-8494 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js17.png" alt="js17" width="458" height="46" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js17.png 458w, https://blog.tanteng.me/wp-content/uploads/2015/08/js17-300x30.png 300w" sizes="(max-width: 458px) 100vw, 458px" /></a></p>
+
+<p>而应该用parents(‘属性或者样式或者其他识别方式’)，这样可以避免在HTML父级曾侧发生变化时，也能找到对应的元素：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js18.png" target="_blank"><img class="alignnone wp-image-8495 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js18.png" alt="js18" width="468" height="22" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js18.png 468w, https://blog.tanteng.me/wp-content/uploads/2015/08/js18-300x14.png 300w" sizes="(max-width: 468px) 100vw, 468px" /></a></p>
+
+<p>9.变量的定义：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js19.png" target="_blank"><img class="alignnone wp-image-8496 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js19.png" alt="js19" width="595" height="235" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js19.png 595w, https://blog.tanteng.me/wp-content/uploads/2015/08/js19-300x118.png 300w" sizes="(max-width: 595px) 100vw, 595px" /></a></p>
+
+<p>当一个对象需要多次被使用时，尽量用变量来赋值：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js20.png" target="_blank"><img class="alignnone wp-image-8497 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js20.png" alt="js20" width="971" height="56" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js20.png 971w, https://blog.tanteng.me/wp-content/uploads/2015/08/js20-300x17.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>一个对象需要修改多个属性也可以连着写。</p>
+
+<blockquote data-secret="5Amtq8BFgE" class="wp-embedded-content">
+  <p>
+    <a href="http://www.mrmuses.com/g-x-d-jquery-d-m-b-x-j-q-z-j-z-html5-z-g/" target="_blank" rel="nofollow">高效的jQuery代码编写技巧总结(转HTML5中国)</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="http://www.mrmuses.com/g-x-d-jquery-d-m-b-x-j-q-z-j-z-html5-z-g/embed/#?secret=5Amtq8BFgE" data-secret="5Amtq8BFgE" width="525" height="296" title="《高效的jQuery代码编写技巧总结(转HTML5中国)》—Mrmuses缪斯先生" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<p>为规范前端开发代码，提高代码质量，特制定此文档，其中<strong>声明</strong>，<strong>安全</strong>和<strong>分号</strong>这三节是必须执行的，组件类必须遵循<strong>注释规范</strong>。</p>
+
+<h2 id="声明">声明</h2>
+
+<ul>
+<li>变量声明必须加var关键字，严格控制作用域；</li>
+<li>建议使用驼峰式命名变量和函数，如：functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis,namespaceNamesLikeThis；</li>
+<li>私有成员变量和方法命名以下划线开头，如：var _this；</li>
+<li>常量定义单词全部大写，以下划线连接，但不要用const关键字来声明，如：SOME_CONSTANTS；</li>
+<li>函数参数大于3个时，应以对象形式作为参数集传递；</li>
+<li>禁止在代码块中声明函数，错误的范例：if (true) {function foo() {}}；</li>
+<li>禁止用new来实例化<strong>基本类型</strong>，错误的范例：var x = new Boolean(false)；</li>
+<li>直接定义数组或对象，而不使用new关键字声明，错误的范例：var a = new Array();var o = new Object()；</li>
+<li>使用单引号来定义字符串；</li>
+<li>文件名必须全部用小写，文件名分隔符用<strong>中划线</strong>连接，版本连接符用<strong>实心点</strong>，合并文件的文件名连接符用<strong>下划线</strong>，如：passport-core.min.js和reset-1.0_utils-1.0.css；</li>
+
+<li><p>审查用户输入，如：从URL获取参数，使用跳转页面的referer，用于eval或DOM操作的用户数据；</p></li>
+
+<li><p>禁止通过在iframe使用script进行跨域回调；</p></li>
+
+<li><p>警惕jquery xss，禁止这样的写法：$(window.location.hash)；</p></li>
+
+<li><p>禁止引用站外资源；</p></li>
+</ul>
+
+<h2 id="分号">分号</h2>
+
+<p><strong>函数表达式</strong>（有别于函数声明，如：function x(){}）必须用分号结束，下面是错误的范例，第三行漏掉分号，后面的函数被当作参数传递给myMethod，导致解析错误：</p>
+
+<pre class="lang:js decode:true">var myMethod = function () {
+    return 42;
+}(function () {   
+// 一个匿名函数，在这里会被错误解析当作参数调用导致报错 })();</pre>
+
+<h2 id="异常">异常</h2>
+
+<p>由于无法完美的控制都不出现异常，所以尽量在可能但不确定出现异常的地方（大量运算，AJAX请求，数组操作或DOM操作等）用try-catch(e)来抛出异常，这样有利于规模较大的项目中排查错误。使用自定义异常抛出错误信息，更有利于错误信息阅读，且更加通用，因为不同浏览器抛出的信息不一样，有时候可能很难定位到问题所在位置，特别是IE下可能遇到的如下报错信息：</p>
+
+<pre class="lang:js decode:true">Stack overflow at line: 0 
+或： 未知的运行时错误</pre>
+
+<h2 id="标准化代码编写">标准化代码编写</h2>
+
+<p>为获取最大化的可移植性和兼容性，代码中应使用标准中支持的方式来书写代码，虽然浏览器支持某些语法但不在规范中，你无法保证你将来不会遇到兼容其他浏览器的情况，如果这个浏览器完全或部分特性只按规范实现。</p>
+
+<pre class="lang:js decode:true">//错误的写法
+var char = 'hello world'[3];
+var myForm = document.myForm;  
+
+//正确的写法 
+var char = 'hello world'.charAt(3);
+var myForm = document.forms[0];
+//或者
+var myForm = document.getElementsByTagName('form')[0];</pre>
+
+<h2 id="面向对象编程">面向对象编程</h2>
+
+<ul>
+<li>类中的成员变量使用构造函数来初始化；</li>
+<li>除非是必须移除类的成员，否则析构函数中对成员的销毁应通过将其设置为null，而不是用delete，因为重新赋值方式性能比用delete好；</li>
+<li>避免通过prototype方式污染内置对象原型链；</li>
+</ul>
+
+<h2 id="作用域相关">作用域相关</h2>
+
+<ul>
+<li>不使用with关键字，容易造成作用域混乱；</li>
+<li>this仅用于类成员函数或对象中；</li>
+<li>通用全局函数，特别是通用组件代码应将业务逻辑放入闭包中，并通过“命名空间”将其引入</li>
+</ul>
+
+<p>若函数中使用到全局变量，则访问全局变量时应使用window来引入，如：</p>
+
+<pre class="lang:js decode:true">var somevar = 10；   
+function getvar() {
+    var num = window.somevar + 1;
+    return num;
+}</pre>
+
+<h2 id="杂项">杂项</h2>
+
+<ul>
+<li>尽量使用优雅的模版写法，避免多行字符串用\加换行的方式或使用+运算连接字符串这种难维护的编码方式；</li>
+<li>禁止使用IE条件编译@cc_on；</li>
+</ul>
+
+<h2 id="格式化代码">格式化代码</h2>
+
+<p>没有强制要求代码需格式化成什么样子，但尽量使代码具有较高的可读性。下面给出一些建议的代码风格：</p>
+
+<pre class="lang:js decode:true">// 花括号起始位置与语句开始在同一行
+if (something) {
+    //...
+} else {
+    //...
+}
+
+// 数组和对象书写
+var arr = [1, 2, 3];// [之后，]之前没有空格
+var obj = {a: 1, b: 2, c: 3};// {之后，}之前没有空格
+
+// 多行数组和对象书写
+var a = ['huangrongrong', 'chenying', 'small grey grey', 'shenshunlin'];
+var pos = {top: 10, right: 20, bottom: 15, left: 12};</pre>
+
+<p>作者：哈悠</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

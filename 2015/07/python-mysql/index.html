@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python连接Mysql常用的库（mysqlclient示例） &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python连接Mysql常用的库（mysqlclient示例）</h1>
+  <time datetime=2015-07-15T02:18:38Z class="post-date">Wed, Jul 15, 2015</time>
+  <p>Python连接Mysql常用的库有MySQLdb，mysqlclient，MySQL Connector/Python，但是django文档上推荐使用mysqlclient，以下截取django官网关于MySQL API的介绍。</p>
+
+<h3 id="mysql-db-api-drivers">MySQL DB API Drivers</h3>
+
+<p>The Python Database API is described in <span id="index-0"></span>PEP 249. MySQL has three prominent drivers that implement this API:</p>
+
+<ul>
+<li>MySQLdb is a native driver that has been developed and supported for over a decade by Andy Dustman.</li>
+<li>mysqlclient is a fork of <tt>MySQLdb</tt> which notably supports Python 3 and can be used as a drop-in replacement for MySQLdb. At the time of this writing, this is the recommended choice for using MySQL with Django.</li>
+<li>MySQL Connector/Python is a pure Python driver from Oracle that does not require the MySQL client library or any Python modules outside the standard library.</li>
+</ul>
+
+<p>All these drivers are thread-safe and provide connection pooling. MySQLdb is the only one not supporting Python 3 currently.</p>
+
+<p>In addition to a DB API driver, Django needs an adapter to access the database drivers from its ORM. Django provides an adapter for MySQLdb/mysqlclient while MySQL Connector/Python includes its own.</p>
+
+<p><span class="content">mysqlclient</span>连接MySQL读取数据示例：</p>
+
+<pre class="lang:python decode:true ">import MySQLdb
+
+db = MySQLdb.connect(host="localhost", user="root", passwd="", db="demo")
+c = db.cursor()
+max_price = 5
+c.execute("""SELECT * FROM think_node""")
+r = c.fetchone()
+print(r)</pre>
+
+<p>首先通过pip工具安装mysqlclient库，命令：pip install mysqlclient</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

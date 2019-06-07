@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3可变参数*args,**kwargs及区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3可变参数*args,**kwargs及区别</h1>
+  <time datetime=2015-07-11T13:37:44Z class="post-date">Sat, Jul 11, 2015</time>
+  <p>在Python的函数参数中经常可以看到*args和**kwargs这样的写法，这是Python的魔法参数，也就是可变参数，它支持传入多个参数，下面看看它们的区别。</p>
+
+<p><strong>*args表示任何多个无名参数，它是一个tuple；**kwargs表示关键字参数，它是一个 dict.</strong> 并且同时使用*args和**kwargs时，必须*args参数列要在**kwargs前，像foo(a=1, b=’2′, c=3, a’, 1, None, )这样调用的话，会提示语法错误“SyntaxError: non-keyword arg after keyword arg”。</p>
+
+<p>举例使用**kwargs可变参数创建字典：</p>
+
+<pre class="lang:python decode:true ">def kw_dict(**kwargs):
+    return kwargs</pre>
+
+<p>那么该函数的效果就定义了一个字典，kw_dict(a=1,b=2,c=3) 和{&#8216;a&#8217;:1, &#8216;b&#8217;:2, &#8216;c&#8217;:3}等效。</p>
+
+<p>Python的可变参数也叫动态参数，再看*args和**kwargs的简单基本用法。</p>
+
+<pre class="lang:python decode:true ">def alias(*args, **kwargs):
+    print('args=', args)
+    print('kwargs=', kwargs)
+
+alias(3, 23, 3, 3,a='hello',b=3,c='C')</pre>
+
+<p>运行效果如下：</p>
+
+<pre class="lang:python decode:true ">tantengdeMacBook-Pro:learn-python tanteng$ python3 args_kwargs.py 
+args= (3, 23, 3, 3)
+kwargs= {'a': 'hello', 'b': 3, 'c': 'C'}</pre>
+
+<p>args输出为tupple元祖，kwargs为字典。</p>
+
+<p>Github代码演示:</p>
+
+<p><a href="https://github.com/tanteng/learn-python/blob/master/args_kwargs.py" target="_blank" rel="nofollow"><a href="https://github.com/tanteng/learn-python/blob/master/args_kwargs.py">https://github.com/tanteng/learn-python/blob/master/args_kwargs.py</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

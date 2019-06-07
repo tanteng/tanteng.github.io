@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>优化 Laravel 网站打开速度 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>优化 Laravel 网站打开速度</h1>
+  <time datetime=2016-06-02T11:59:07Z class="post-date">Thu, Jun 2, 2016</time>
+  <p>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好优化提升网站的打开速度。</p>
+
+<h3 id="1-关闭debug">1.关闭debug</h3>
+
+<p>打开.env文件，把debug设置为false.</p>
+
+<pre class="lang:php decode:true ">APP_ENV=local
+APP_DEBUG=false
+APP_KEY=base64:sT/aTFeaE13eyao1Raee6jC9Ff+Yle1SE+wtyk0H6B4=</pre>
+
+<h3 id="2-缓存路由和配置">2.缓存路由和配置</h3>
+
+<p>php artisan route:cache</p>
+
+<p>php artisan config:cache</p>
+
+<h3 id="3-laravel优化命令">3.Laravel优化命令</h3>
+
+<p>php artisan optimize</p>
+
+<h3 id="4-composer优化">4.composer优化</h3>
+
+<p>sudo composer dump-autoload optimize</p>
+
+<h3 id="5-使用laravel缓存">5.使用Laravel缓存</h3>
+
+<p>使用Laravel的Cache方法缓存内容，有文件缓存，数据库缓存，redis缓存，使用redis也可以用predis组件，也可以多种缓存方式结合。在Laravel中使用缓存就是这么优雅方便：</p>
+
+<pre class="lang:php decode:true ">$lists = Cache::remember('travel.destination.lists', 20, function () {
+    return $this-&gt;destination-&gt;getList();
+});</pre>
+
+<h3 id="6-使用cdn">6.使用CDN</h3>
+
+<p>本站用的是七牛CDN，每月送你20G流量和20G存储空间，具体多少不记得了，总之对于小站来说完全足够了。</p>
+
+<h3 id="7-使用php-7并开启opcache">7.使用PHP 7并开启OPcache</h3>
+
+<blockquote data-secret="JktcTXNp4m" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2016/06/php7-opcache/" target="_blank">PHP 7安装和开启opcache</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2016/06/php7-opcache/embed/#?secret=JktcTXNp4m" data-secret="JktcTXNp4m" width="525" height="296" title="《PHP 7安装和开启opcache》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<h3 id="8-nginx开启gzip压缩">8.nginx开启gzip压缩</h3>
+
+<blockquote data-secret="7TklorVMFQ" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2016/06/nginx-gzip/" target="_blank">Nginx开启gzip压缩</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2016/06/nginx-gzip/embed/#?secret=7TklorVMFQ" data-secret="7TklorVMFQ" width="525" height="296" title="《Nginx开启gzip压缩》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<p>这不仅仅是针对Laravel网站的性能优化方法，其中很多是通用的网站性能优化的方法，当然还有很多可以优化的地方。</p>
+
+<p>可以把以上提到的优化命令写成一个脚本：</p>
+
+<pre class="lang:default decode:true ">#!/usr/bin/env bash
+php artisan clear-compiled
+php artisan cache:clear
+php artisan route:cache
+php artisan config:cache
+php artisan optimize --force
+composer dump-autoload --optimize
+chmod -R 777 storage
+chmod -R 777 bootstrap/cache</pre>
+
+<p>命名为 optimize.sh 放网站根目录，这样可以方便执行。</p>
+
+<p>以上都是本站（<a href="https://www.tanteng.me" target="_blank">tanteng.me</a>）和博客用到的提升网站速度的tips.转载请注明出处（<a href="https://blog.tanteng.me/2016/06/laravel-optimize/" target="_blank"><a href="https://blog.tanteng.me/2016/06/laravel-optimize/">https://blog.tanteng.me/2016/06/laravel-optimize/</a></a>）</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

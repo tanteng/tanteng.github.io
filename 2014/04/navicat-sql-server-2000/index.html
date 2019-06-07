@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Navicat将Sql Server 2000数据库导入（转换）到MySql中 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Navicat将Sql Server 2000数据库导入（转换）到MySql中</h1>
+  <time datetime=2014-04-22T06:03:20Z class="post-date">Tue, Apr 22, 2014</time>
+  <p>大家都知道， Sql Server 2000的数据库只能运行在MS系列平台下，而我们有时需要将MS下的数据库移植到Linux或其他平台上，这是可能需要数据库的导入导出功能，但这样也未免太繁琐了，下面介绍一种简便的方法一步实现数据库的移植。</p>
+
+<p>Navicat 8是针对mysql的一个很好用的图形化管理工具，利用它导入功能把数据从sqlserver2000中直接导入到MySQL中。</p>
+
+<p>下面请看步骤：</p>
+
+<p>1.在Navicat中新建一个数据库，打开之后，在table上右键选择“import wizard”。</p>
+
+<p><img src="http://my.csdn.net/uploads/201208/20/1345451952_1277.jpg" alt="Navicat将Sql Server 2000数据库导入（转换）到MySql中" /></p>
+
+<p>在弹出的选项卡中选择单选按钮“ODBC”，单击“next”。</p>
+
+<p><img src="http://my.csdn.net/uploads/201208/20/1345451973_1885.jpg" alt="Navicat将Sql Server 2000数据库导入（转换）到MySql中" /></p>
+
+<p>在弹出的“数据连接属性”对话框上选择““Microsoft  OLE DB Provider for SQL server”，单击“next”进入下一步</p>
+
+<p><img src="http://my.csdn.net/uploads/201208/20/1345451964_4790.jpg" alt="Navicat将Sql Server 2000数据库导入（转换）到MySql中" /></p>
+
+<p>2、在“连接”的卡中输入你的sqlserver2000 的信息，你可以输入你的sqlserver服务器的名称，或者是你想连接的计算机的ip（条件不严格也可以什么都不输，即为默认）,在“输入登陆服务器的信息”中，如果选择第二个单选按钮，需要输入你的sqlserver的名称和密码，然后选择你要导入数据源的数据库名称，单击“测试连接”，如果成功，就可以了，如果没有成功修改其他的选项，要根据错误提示信息来进行修改。</p>
+
+<p><img src="http://my.csdn.net/uploads/201208/20/1345452140_3419.jpg" alt="Navicat将Sql Server 2000数据库导入（转换）到MySql中" /></p>
+
+<p>如果没有问题，就可以成功导入了。</p>
+
+<p><img src="http://my.csdn.net/uploads/201208/20/1345452283_2873.jpg" alt="Navicat将Sql Server 2000数据库导入（转换）到MySql中" /></p>
+
+<p>3、如果导入有问题，可能的原因有(1):系统防火墙没有关闭；（2）：杀毒软件的防火墙没有关闭；（3）：sqlserver服务器没有正常启动;(4)可以换成系统身份进行连接</p>
+
+<p>（原文链接：<a href="http://blog.csdn.net/geekwangminli/article/details/7887138）">http://blog.csdn.net/geekwangminli/article/details/7887138）</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

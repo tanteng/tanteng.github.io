@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Beego 设置表名方法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Beego 设置表名方法</h1>
+  <time datetime=2017-04-02T11:57:57Z class="post-date">Sun, Apr 2, 2017</time>
+  <p>在 Beego 中如果要设置表名，可以使用如下方法，给这个 model 的 struct 增加一个 TableName 方法：</p>
+
+<pre class="lang:go decode:true ">type Comments struct {
+    Id          int64
+    ParentId    int64
+    DynamicId   string `orm:"size(128)"`
+    Content     string `orm:"type(longtext)"`
+    Userid      int64
+    ReplyUserid int64
+    Status      int64
+    IsDelete    int64
+    CreatedAt   string `orm:"size(128)"`
+    UpdatedAt   string `orm:"size(128)"`
+}
+
+func init() {
+    orm.RegisterModel(new(Comments))
+}
+
+// TableName 设置表名
+func (m *Comments) TableName() string {
+    return "comments_8"
+}</pre>
+
+<p>这样就可以了。</p>
+
+<p>而这种方式是错的，不能使用 orm 的 QueryTable 方法：</p>
+
+<pre class="lang:go decode:true ">// GetCommentsById retrieves Comments by Id. Returns error if
+// Id doesn't exist
+func GetCommentsById(id int64) (v *Comments, err error) {
+    o := orm.NewOrm()
+    o.QueryTable("comments_8")
+    v = &Comments{Id: id}
+    if err = o.Read(v); err == nil {
+        return v, nil
+    }
+    return nil, err
+}</pre>
+
+<p>记录一下。</p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

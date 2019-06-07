@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jsonp解决ajax跨域代码示例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jsonp解决ajax跨域代码示例</h1>
+  <time datetime=2015-04-01T15:12:45Z class="post-date">Wed, Apr 1, 2015</time>
+  <p>有两个子域名，a.xx.com和b.xx.com，现在我在a.xx.com一个页面中发送ajax请求b.xx.com一个控制器中的方法，希望得到返回数据，但是返回状态302，应该是跨域问题没有解决。</p>
+
+<p>解决ajax跨域问题的一个办法是使用jsonp，jquery封装了ajax方法和getJason方法，工作中也遇到了跨域问题，记录一下jsonp的用法和示例。</p>
+
+<pre class="lang:js decode:true ">(function($) {
+var url = 'http://www.jquery4u.com/scripts/jquery4u-sites.json?callback=?';
+ 
+$.ajax({
+   type: 'GET',
+    url: url,
+    async: false,
+    jsonpCallback: 'jsonCallback',
+    contentType: "application/json",
+    dataType: 'jsonp',
+    success: function(json) {
+       console.dir(json.sites);
+    },
+    error: function(e) {
+       console.log(e.message);
+    }
+});
+ 
+})(jQuery);</pre>
+
+<p>这是jquery的ajax方法，使用jsonp的时候定义参数参考如上代码。往往请求的url后面要带一个?callback=?，问号后面可以带参数，也可以留空。本例不做具体讲解，只记录用法。</p>
+
+<pre class="lang:js decode:true">/* Loading JSON objects using JSONP */
+(function($) {
+    var url = 'http://www.jquery4u.com/scripts/jquery4u.settings.json';
+    $.ajax({
+       type: 'GET',
+        url: url,
+        async: false,
+        contentType: "application/json",
+        dataType: 'jsonp'
+    });
+})(jQuery);</pre>
+
+<p>本例是直接请求json文件。</p>
+
+<pre class="lang:js decode:true ">$.getJSON('ajax/test.json', function(data) {
+  var items = [];
+
+  $.each(data, function(key, val) {
+    items.push('&lt;li id="' + key + '"&gt;' + val + '&lt;/li&gt;');
+  });
+
+  $('&lt;ul/&gt;', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
+});</pre>
+
+<p>本例是使用jquery的getJSON方法请求，getJSON方法自动支持jsonp，是jQuery封装好的。</p>
+
+<pre class="lang:js decode:true ">&lt;script&gt;
+    // 客户端使用getJSON方法请求另一台机子上的脚本
+    // 浏览器会生成一个随机的callback参数
+    $.getJSON("http://172.22.22.120/new/ajax_jsonp.php?callback=?",function(json){
+        alert(json.website);
+    });
+&lt;/script&gt;</pre>
+
+<p>getJSON跨域请求例子，注意url后面带?callback=?，否则就是一般的请求json返回数据，不能跨域，带这个，加不加参数视情况而定，就是jsonp跨域。</p>
+
+<p>至于上文中讲的参数后面带个?callback=?,是这样的：</p>
+
+<blockquote>
+<p>从 1.2 版本开始，jQuery 拥有对 JSONP 回调的本地支持。如果指定了 JSONP 回调，就可以加载位于另一个域的 JSON 数据，回调的语法为：url?callback=?。jQuery 自动将 ? 替换为要调用的生成函数名。</p>
+</blockquote>
+
+<p>如果不给callback加参数，它实际上是自动把&#8221;?&#8221;替换成了jQuery1710392661566192821_1428040200757这样的东西。</p>
+
+<p>你也可以给callback带参数，如?callback=hello，那么php（或者其他语言程序）首先要获取$_GET[&#8216;callback&#8217;],输出地时候是：$_GET[&#8216;callback&#8217;]+(json格式数据)，然后在页面上，有个function hello()方法处理返回的数据。（这里只是大概描述下过程，一般情况不用加callback参数，直接带个问号）</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

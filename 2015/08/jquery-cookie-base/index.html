@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jQuery.cookie的基本用法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jQuery.cookie的基本用法</h1>
+  <time datetime=2015-08-14T01:35:24Z class="post-date">Fri, Aug 14, 2015</time>
+  <p>jQuery.cookie的基本用法：</p>
+
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+
+<pre class="lang:js decode:true">&lt;script src="/path/to/jquery.cookie.js"&gt;&lt;/script&gt;</pre>
+
+<p>Create session cookie:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">$.cookie('name', 'value');</pre>
+</div>
+
+<p>Create expiring cookie, 7 days from then:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">$.cookie('name', 'value', { expires: 7 });</pre>
+</div>
+
+<p>Create expiring cookie, valid across entire site:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">$.cookie('name', 'value', { expires: 7, path: '/' });</pre>
+</div>
+
+<p>Read cookie:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">$.cookie('name'); // =&gt; "value"
+$.cookie('nothing'); // =&gt; undefined</pre>
+</div>
+
+<p>Read all available cookies:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">$.cookie(); // =&gt; { "name": "value" }</pre>
+</div>
+
+<p>Delete cookie:</p>
+
+<div class="highlight highlight-javascript">
+  <pre class="lang:js decode:true">// Returns true when cookie was successfully deleted, otherwise false
+$.removeCookie('name'); // =&gt; true
+$.removeCookie('nothing'); // =&gt; false
+
+// Need to use the same attributes (path, domain) as what the cookie was written with
+$.cookie('name', 'value', { path: '/' });
+// This won't work!
+$.removeCookie('name'); // =&gt; false
+// This will work!
+$.removeCookie('name', { path: '/' }); // =&gt; true</pre>
+</div>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

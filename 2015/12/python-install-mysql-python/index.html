@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>安装MySQL-python包遇到的问题 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>安装MySQL-python包遇到的问题</h1>
+  <time datetime=2015-12-13T16:24:57Z class="post-date">Sun, Dec 13, 2015</time>
+  <p>使用pip install MySQL-python的方式安装，遇到以下几个问题：</p>
+
+<p>1.提示错误EnvironmentError: mysql_config not found</p>
+
+<p>这是因为本机是Mac OSX系统，并且装的MySQL是MAMP集成环境中的，实际上mysql_config这个文件是存在的，但是默认包里面的路径有问题，可以重新装一个MySQL到系统默认位置，不过既然已经有了MySQL不想重复装。</p>
+
+<p>解决办法是从pypi官网下载一个MySQL-python包，然后修改其中的setup_posix.py文件，找到定义mysql_config路径的地方，如修改为：/Applications/MAMP/Library/bin/mysql_config，具体路径根据情况而定。可以搜索mysql_config，如果找到了就以那个路径为准，这是MAMP下Mysql_config文件的位置。</p>
+
+<p>然后进入到包目录，使用python setup.py install命令开始安装。</p>
+
+<p>2.上面的错误解决了，又提示错误fatal error: &#8216;my_config.h&#8217; file not found</p>
+
+<p>这是因为MAMP自带的MySQL不包含dev headers，使用brew install mysql-connector-c安装。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-install-mysql-connector-c.png" rel="attachment wp-att-9340" target="_blank"><img class="alignnone size-full wp-image-9340" src="https://blog.tanteng.me/wp-content/uploads/2015/12/brew-install-mysql-connector-c.png" alt="brew install mysql-connector-c" width="585" height="361" /></a></p>
+
+<p>安装完成后，再回到Python重新安装MySQL-python包就可以了。</p>
+
+<p>如果使用brew install mysql-connector-c遇到问题可以参见链接：</p>
+
+<p><a href="https://blog.tanteng.me/2015/12/brew-folder-not-writable/" target="_blank"><a href="https://blog.tanteng.me/2015/12/brew-folder-not-writable/">https://blog.tanteng.me/2015/12/brew-folder-not-writable/</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

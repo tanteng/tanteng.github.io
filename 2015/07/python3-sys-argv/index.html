@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python3接收命令行参数sys.argv用法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python3接收命令行参数sys.argv用法</h1>
+  <time datetime=2015-07-13T15:59:45Z class="post-date">Mon, Jul 13, 2015</time>
+  <p>Python3中，使用sys.argv可以接收命令行传入的参数，需要import sys模块，sys.argv第一个参数是文件名，无需定义，第二参数开始是命令行输入的参数，以空格隔开。</p>
+
+<p>举例如下，运行sys_argv.py脚本附带两个参数分别是run1和run2，运行结果如下：</p>
+
+<pre class="lang:python decode:true">&gt;&gt;&gt;python3 sys_argv.py run1 run2
+I'm action1
+I'm action2</pre>
+
+<p>py示例代码：</p>
+
+<pre class="lang:python decode:true ">import sys
+
+# sys.argv接收参数，第一个参数是文件名，第二个参数开始是用户输入的参数，以空格隔开
+
+def run1():
+    print('I\'m action1')
+
+
+def run2():
+    print('I\'m action2')
+
+
+if 2 &gt; len(sys.argv):
+    print('none')
+else:
+    action1 = sys.argv[1]
+    action2 = sys.argv[2]
+
+    if 'run1' == action1:
+        run1()
+    if 'run2' == action2:
+        run2()</pre>
+
+<p>本代码已提交到Github上：<a href="https://github.com/tanteng/learn-python/blob/master/sys_argv.py" target="_blank" rel="nofollow"><a href="https://github.com/tanteng/learn-python/blob/master/sys_argv.py">https://github.com/tanteng/learn-python/blob/master/sys_argv.py</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

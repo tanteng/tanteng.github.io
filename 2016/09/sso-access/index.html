@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SSO单点登录系统接入 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>SSO单点登录系统接入</h1>
+  <time datetime=2016-09-30T11:55:23Z class="post-date">Fri, Sep 30, 2016</time>
+  <p>简单讲一下 SSO 单点登录系统的接入的原理，前提是系统本身有完善的用户认证功能，即基本的用户登录功能，那做起来就很方便了。</p>
+
+<p>SSO 登录请求接口往往是接口加上一个回调地址，访问这个地址会跳转到回调地址并带上一个 ticket 参数，拿着这个 ticket 参数再请求接口可以获取到用户信息，如果存在用户则自动登录，不存在就新增用户并登录。</p>
+
+<p>比如这个 SSO 模型实现了两个方法，一个是获取接口 url，一个是凭 ticket 获取用户信息：</p>
+
+<pre class="lang:php decode:true ">interface SSOLogin
+{
+    /**
+     * 获取登录用户信息
+     * @param $ticket
+     * @return mixed
+     */
+    public function getInfoFromTicket($ticket);
+
+    /**
+     * 单点登录授权地址
+     * @return mixed
+     */
+    public function getAuthUrl();
+}</pre>
+
+<p>再来看看控制器的主要方法，比如回调地址是跳转到控制器 <a href="http://www.example.com/sso/check?ticket=xxxx">http://www.example.com/sso/check?ticket=xxxx</a></p>
+
+<pre class="lang:php decode:true ">/**
+ * 检测是否单点登录
+ * @return bool|string
+ */
+public function actionCheck()
+{
+    $ticket = Yii::$app-&gt;getRequest()-&gt;get('ticket');
+    if (!$ticket) {
+        return $this-&gt;renderAuthError('请先授权', sprintf('&lt;a href="%s"&gt;点击登录单点登录系统&lt;/a&gt;', SSOlogin::getInstance()-&gt;getAuthUrl()));
+    }
+    $userInfo = SSOlogin::getInstance()-&gt;getInfoFromTicket($ticket);
+    if (empty($userInfo['username'])) {
+        return $this-&gt;renderAuthError('请先授权', sprintf('&lt;a href="%s"&gt;点击登录单点登录系统&lt;/a&gt;', SSOlogin::getInstance()-&gt;getAuthUrl()));
+    }
+
+    $username = $this-&gt;getUserName($userInfo['username']);
+    $user = User::find()-&gt;canLogin()-&gt;username($username)-&gt;one();
+    if (!$user) {
+        $newUser = [];
+        $newUser['username'] = $userInfo['username'];
+        $newUser['email'] = $this-&gt;getUserName($userInfo['username']);
+        $newUser['role'] = User::ROLE_DEV;
+        $newUser['is_email_verified'] = 1;
+        $newUser['realname'] = $userInfo['truename'];
+        $user = $this-&gt;addUser($newUser);
+    }
+    $isLogin = Yii::$app-&gt;user-&gt;login($user, 3600 * 24 * 30);
+    if ($isLogin) {
+        $this-&gt;redirect('/task/index');
+    }
+    return true;
+}</pre>
+
+<p>大概看看这个控制器逻辑就明白了。SSO 接口起到的作用就是获取用户信息，拿这个用户信息跟系统用户表对比，存在用户则进行登录，不存在创建用户并登录。</p>
+
+<p>这是一个内部的单点系统，集成到后台，可能其他的 SSO 跟这不太一样，但基本原理过程差不多。</p>
+
+<p>总结就是两个步骤：</p>
+
+<p>1.授权地址</p>
+
+<p><a href="http://sso.xxx.net/server/login?service=%s&amp;serverlogin=%s">http://sso.xxx.net/server/login?service=%s&amp;serverlogin=%s</a></p>
+
+<p>第一个%s是回调地址，第二个%s我这里写的地址是一样的，请求这个地址它会跳转到你的回调地址并带一个ticket参数，你要获取这个ticket</p>
+
+<p>2.获取用户信息</p>
+
+<p><a href="http://sso.xxx.net/server/serviceValidate?service={$_authBackUrl}&amp;ticket={$ticket">http://sso.xxx.net/server/serviceValidate?service={$_authBackUrl}&amp;ticket={$ticket</a>}</p>
+
+<p>拿着上面返回的ticket请求用户信息，如果存在，对比你应用的用户，如果有这个用户就让他登录，没有就创建用户并登录，不存在表示非法用户</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

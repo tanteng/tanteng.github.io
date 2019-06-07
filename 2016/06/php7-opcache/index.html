@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP 7安装和开启opcache &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP 7安装和开启opcache</h1>
+  <time datetime=2016-06-02T16:20:20Z class="post-date">Thu, Jun 2, 2016</time>
+  <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
+
+<blockquote>
+<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
+</blockquote>
+
+<p>我的阿里云服务器是通过一个叫remi的centos源提供的PHP 7，默认没装opcache，用yum list yum70*命令搜索一下，果然有，于是install下来：</p>
+
+<p>yum install php70-php-opcache.x86_64</p>
+
+<p>然后重启php-fpm，使用service php70-php-fpm restart命令。（不同的系统和环境根据自己的情况安装和开启opache）</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/opcache.png" target="_blank"><img class="alignnone size-full wp-image-10128" src="https://blog.tanteng.me/wp-content/uploads/2016/06/opcache.png" alt="opcache" width="900" height="425" /></a></p>
+
+<p>新建一个php文件，用phpinfo()函数显示php.ini信息，如果可以找到OPcache项，说明成功启用了。安装和启用PHP 7，就是给PHP 7再加一个翅膀！</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

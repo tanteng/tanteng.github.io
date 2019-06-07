@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>让PyCharm可以识别virtualenv中的包 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>让PyCharm可以识别virtualenv中的包</h1>
+  <time datetime=2015-12-10T01:49:49Z class="post-date">Thu, Dec 10, 2015</time>
+  <p>比如安装Flask框架，需要在virtualenv虚拟环境中安装依赖包，也运行在virtualenv环境中，PyCharm IDE无法识别Flask和依赖包，也就不能转到定义，智能提示等，如何让PyCharm可以识别virtualenv中的包？</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png" rel="attachment wp-att-9164" target="_blank"><img class="alignnone size-full wp-image-9164" src="https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png" alt="flask-pycharm-setting-interpreter" width="1109" height="701" srcset="https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png 1109w, https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter-768x485.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>以Windows为例，在PyCharm菜单File-&gt;Settings打开的窗口中，找到Project-Interpreter，如图所示，默认会有系统安装的Python环境，如2.7或3.5，但是virtualenv是一种隔离的虚拟环境，需要手动添加，在红圈处添加本地环境。路径就是项目的venv目录。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/venv-python.png" rel="attachment wp-att-9165" target="_blank"><img class="alignnone size-full wp-image-9165" src="https://blog.tanteng.me/wp-content/uploads/2015/12/venv-python.png" alt="venv-python" width="204" height="383" /></a></p>
+
+<p>venv目录结构</p>
+
+<p>可以看到这里也有一个python.exe，可见virtualenv是一个完整的隔离的虚拟python运行环境，相当于一个新的版本了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

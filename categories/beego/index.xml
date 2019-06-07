@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>beego on 小谈博客</title>
+    <link>https://tanteng.github.io/categories/beego/</link>
+    <description>Recent content in beego on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 Apr 2017 11:57:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://tanteng.github.io/categories/beego/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beego 设置表名方法</title>
+      <link>https://tanteng.github.io/2017/04/beego-table-name/</link>
+      <pubDate>Sun, 02 Apr 2017 11:57:57 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2017/04/beego-table-name/</guid>
+      <description>&lt;p&gt;在 Beego 中如果要设置表名，可以使用如下方法，给这个 model 的 struct 增加一个 TableName 方法：&lt;/p&gt;
+
+&lt;pre class=&#34;lang:go decode:true &#34;&gt;type Comments struct {
+    Id          int64
+    ParentId    int64
+    DynamicId   string `orm:&#34;size(128)&#34;`
+    Content     string `orm:&#34;type(longtext)&#34;`
+    Userid      int64
+    ReplyUserid int64
+    Status      int64
+    IsDelete    int64
+    CreatedAt   string `orm:&#34;size(128)&#34;`
+    UpdatedAt   string `orm:&#34;size(128)&#34;`
+}
+
+func init() {
+    orm.RegisterModel(new(Comments))
+}
+
+// TableName 设置表名
+func (m *Comments) TableName() string {
+    return &#34;comments_8&#34;
+}&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

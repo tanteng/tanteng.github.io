@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>php 对一组单词进行所有可能情况的排列组合 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>php 对一组单词进行所有可能情况的排列组合</h1>
+  <time datetime=2012-11-04T06:20:50Z class="post-date">Sun, Nov 4, 2012</time>
+  <p>有一个数组每个元素是长度不确定的单词：</p>
+
+<div id="code_block_0">
+  <pre lang="php">$words = array('china','mother','father','hello','welcome');</pre>
+  
+  <div title="复制代码">
+    这个数组元素个数不确定，寻求用php打印这些元素的所有排列组合算法 <strong>最好能控制组合长度，比如getCombines($words,$len=0)，这个$len就是控制组合有几个元素组成的，如果为0则打印所有组合</strong>
+  </div>
+</div>
+
+<pre lang="php">$words = array('china','mother','father','hello','welcome');
+$res = array();
+getCombines($words, 3);
+print_r($res);
+function getCombines($arr, $len=0, $str="") {
+    global $res;
+    $arr_len = count($arr);
+    if($len == 0){
+        $res[] = $str;
+    }else{
+        for($i=0; $i&lt;$arr_len; $i++){
+            $tmp = array_shift($arr);
+            if (empty($str))
+            {
+                getCombines($arr, $len-1, $tmp);
+            }
+            else 
+            {
+                getCombines($arr, $len-1, $str.",".$tmp);
+            }
+            array_push($arr, $tmp);
+        }
+    }
+}
+</pre>
+
+<p>参考：<a href="http://www.dewen.org/q/5845/php+%E5%AF%B9%E4%B8%80%E7%BB%84%E5%8D%95%E8%AF%8D%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88">http://www.dewen.org/q/5845/php+%E5%AF%B9%E4%B8%80%E7%BB%84%E5%8D%95%E8%AF%8D%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

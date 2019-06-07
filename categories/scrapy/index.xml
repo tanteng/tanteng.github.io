@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrapy on 小谈博客</title>
+    <link>https://tanteng.github.io/categories/scrapy/</link>
+    <description>Recent content in Scrapy on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 26 Nov 2015 03:39:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://tanteng.github.io/categories/scrapy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在windows上安装Python2.7 Scrapy模块</title>
+      <link>https://tanteng.github.io/2015/11/windows-python27-scrapy/</link>
+      <pubDate>Thu, 26 Nov 2015 03:39:21 +0000</pubDate>
+      
+      <guid>https://tanteng.github.io/2015/11/windows-python27-scrapy/</guid>
+      <description>&lt;p&gt;由于Scrapy目前对Python2.7的支持最好，Python3下可能会有问题，所以还是在Python2.7下装Scrapy模块。&lt;/p&gt;
+
+&lt;p&gt;在Mac上自带的Python2.7环境安装Scrapy模块，一路顺风，直接pip install -i &lt;a href=&#34;http://pypi.douban.com/simple&#34;&gt;http://pypi.douban.com/simple&lt;/a&gt; Scrapy,自动安装所需的模块，一切OK.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

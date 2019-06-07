@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jQuery用eval解析json字符串 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jQuery用eval解析json字符串</h1>
+  <time datetime=2015-04-11T08:58:38Z class="post-date">Sat, Apr 11, 2015</time>
+  <p>这里以jquery异步获取的数据类型——json对象和字符串为依据，分别介绍两种方式获取到的结果处理方式。</p>
+
+<p>1.对于服务器返回的JSON字符串，如果jquery异步请求没做类型说明，或者以字符串方式接受，那么需要做一次对象化处理，方式不是太麻烦，就是将该字符串放于eval()中执行一次。这种方式也适合以普通javascipt方式获取json对象，以下举例说明：</p>
+
+<pre class="lang:js decode:true">var dataObj=eval("("+data+")");//转换为json对象 
+alert(dataObj.root.length);//输出root的子对象数量 
+$.each(dataObj.root,fucntion(idx,item){ 
+if(idx==0){ 
+return true; 
+} 
+
+//输出每个root子对象的名称和值 
+alert("name:"+item.name+",value:"+item.value); 
+})</pre>
+
+<p>2.对于服务器返回的JSON字符串，如果jquery异步请求将type（一般为这个配置属性）设为“json”，或者利用$.getJSON()方法获得服务器返回，那么就不需要eval（）方法了，因为这时候得到的结果已经是json对象了，只需直接调用该对象即可，这里以$.getJSON方法为例说明数据处理方法：</p>
+
+<pre class="lang:js decode:true">$.getJSON("http://gaoyusi.blog.163.com/",{param:"gaoyusi"},function(data){ 
+//此处返回的data已经是json对象 
+//以下其他操作同第一种情况 
+$.each(data.root,function(idx,item){ 
+if(idx==0){ 
+return true;//同countinue，返回false同break 
+}</pre>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

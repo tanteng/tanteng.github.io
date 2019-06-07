@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>在windows上安装Python2.7 Scrapy模块 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>在windows上安装Python2.7 Scrapy模块</h1>
+  <time datetime=2015-11-26T03:39:21Z class="post-date">Thu, Nov 26, 2015</time>
+  <p>由于Scrapy目前对Python2.7的支持最好，Python3下可能会有问题，所以还是在Python2.7下装Scrapy模块。</p>
+
+<p>在Mac上自带的Python2.7环境安装Scrapy模块，一路顺风，直接pip install -i <a href="http://pypi.douban.com/simple">http://pypi.douban.com/simple</a> Scrapy,自动安装所需的模块，一切OK.</p>
+
+<p>但是在Windows环境Python2.7下安装Scrapy，各种问题，问题不断，一个个根据错误提示去网上找解决办法，记录一下一些坑。</p>
+
+<p>首先是pip install Scrapy这样的方式可能会安装不了，原因是pypi官网被墙，唉。。解决办法如上文中使用pip镜像的方式安装模块。</p>
+
+<p>安装过程中会有错误，根据错误提示去网上找一般都能找到解决办法，安装完在终端运行scrapy命令，也会有报错，如果提示缺少其他依赖模块，就一一安装。</p>
+
+<p>注意本文说的环境是：</p>
+
+<p>Windows 7 64位系统，Python2.7.</p>
+
+<p>以下是在Windows上安装lxml模块的方法。</p>
+
+<h3 id="windwos下安装lxml">Windwos下安装lxml</h3>
+
+<p>从<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/这个网址里面，找到lxml，按ctrl+F5快速查找，然后下载对应的whl文件，比如下载到D:lxml-3.4.4-cp27-none-win32.whl">http://www.lfd.uci.edu/~gohlke/pythonlibs/这个网址里面，找到lxml，按ctrl+F5快速查找，然后下载对应的whl文件，比如下载到D:lxml-3.4.4-cp27-none-win32.whl</a>. 然后使用pip install安装，如下所示：</p>
+
+<pre class="lang:xhtml decode:true ">C:\Users\Administrator&gt;pip install D:\lxml-3.4.4-cp27-none-win32.whl
+Unpacking d:\lxml-3.4.4-cp27-none-win32.whl
+Installing collected packages: lxml
+Successfully installed lxml
+Cleaning up...</pre>
+
+<p>特别注意一点，<strong>下载下来的whl文件不要改文件名</strong>，否则会出错，由于文件名太长了我改了文件名，安装就是不成功。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/windows-scrapy.png" target="_blank"><img class="alignnone wp-image-9125 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/windows-scrapy.png" alt="windows-scrapy" width="660" height="426" /></a></p>
+
+<p>在终端输入scrapy，出现这样的界面表示Scrapy模块安装成功了。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/scrapy-packages.png" target="_blank"><img class="alignnone wp-image-9126 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/scrapy-packages.png" alt="scrapy-packages" width="294" height="550" /></a></p>
+
+<p>这里大部分都是安装scrapy依赖安装的模块。</p>
+
+<p>到编写第一个srapy程序运行后才发现，还有模块没有安装。</p>
+
+<p><strong>安装cryptography模块</strong></p>
+
+<p>提示错误：ImportError: No module named cryptography.hazmat.bindings.openssl.binding</p>
+
+<p>pip install -i <a href="http://pypi.douban.com/simple">http://pypi.douban.com/simple</a> cryptography</p>
+
+<p><strong>安装pywin32模块</strong></p>
+
+<p>提示错误：exceptions.ImportError: No module named win32api</p>
+
+<p>下载安装文件地址：<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build 20219/" target="_blank" rel="nofollow"><a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build">http://sourceforge.net/projects/pywin32/files/pywin32/Build</a> 20219/</a></p>
+
+<p>找到自己需要的版本，如我的<a class="name" title="Click to download pywin32-219.win32-py2.7.exe" href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download" target="_blank" rel="nofollow">pywin32-219.win32-py2.7.exe</a></p>
+
+<p>下载进行自动安装即可。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

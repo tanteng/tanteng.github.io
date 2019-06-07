@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python作用域代码演示 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python作用域代码演示</h1>
+  <time datetime=2015-05-10T04:24:45Z class="post-date">Sun, May 10, 2015</time>
+  <p>每一个编程语言都有变量的作用域的概念，Python也不例外，以下是Python作用域的代码演示：</p>
+
+<pre class="lang:python decode:true ">def scope_test():
+    def do_local():
+        spam = "local spam"
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+    def do_global():
+        global spam
+        spam = "global spam"
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+
+scope_test()
+print("In global scope:", spam)</pre>
+
+<p>程序的输出结果：</p>
+
+<pre class="lang:python decode:true ">After local assignment: test spam
+After nonlocal assignment: nonlocal spam
+After global assignment: nonlocal spam
+In global scope: global spam</pre>
+
+<p>注意： <em>local</em> 赋值语句是无法改变 _scope<em>test</em> 的 <em>spam</em> 绑定。 <tt class="xref std std-keyword docutils literal"><span class="pre">nonlocal</span></tt> 赋值语句改变了 _scope<em>test</em> 的 <em>spam</em> 绑定，并且 <tt class="xref std std-keyword docutils literal"><span class="pre">global</span></tt> 赋值语句从模块级改变了 spam 绑定。</p>
+
+<p>其中，nonlocal是Python 3新增的关键字。</p>
+
+<p>你也可以看到在 <tt class="xref std std-keyword docutils literal"><span class="pre">global</span></tt> 赋值语句之前对 spam 是没有预先绑定的。</p>
+
+<p>小结：</p>
+
+<ul>
+<li>遇到在程序中访问全局变量并且要修改全局变量的值的情况可以使用：global关键字，在函数中声明此变量是全局变量</li>
+<li>nonlocal关键字用来在函数或其他作用域中使用外层(非全局)变量。</li>
+</ul>
+
+<p>global关键字很好理解，其他语言大体也如此。这里再举一个nonlocal的例子：</p>
+
+<pre class="lang:python decode:true">def make_counter():
+    count = 0
+    def counter():
+        nonlocal count
+        count += 1
+        return count
+    return counter
+    
+def make_counter_test():
+  mc = make_counter()
+  print(mc())
+  print(mc())
+  print(mc())</pre>
+
+<p>运行结果：</p>
+
+<pre class="lang:python decode:true  ">1
+2
+3</pre>
+
+<p>部分摘自：</p>
+
+<p><a href="http://www.pythontab.com/html/pythontutorial3/classes.html#tut-scopeexample">http://www.pythontab.com/html/pythontutorial3/classes.html#tut-scopeexample</a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP中serialize和json序列化与反序列化的区别 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP中serialize和json序列化与反序列化的区别</h1>
+  <time datetime=2015-11-12T06:53:20Z class="post-date">Thu, Nov 12, 2015</time>
+  <p>在PHP中，serialize和json两种方式对一个对象或数组进行序列化或反序列化有什么区别呢？</p>
+
+<p>假设一个对象和一个数组：</p>
+
+<pre class="lang:php decode:true ">$web = new stdClass;
+$web-&gt;site = 'tantengvip';
+$web-&gt;owner = 'tuntun';
+$web-&gt;age = 5;</pre>
+
+<p>和</p>
+
+<pre class="lang:php decode:true ">$web = array();
+$web['site'] = 'tantengvip';
+$web['owner'] = 'tuntun';
+$web['age'] = 5;</pre>
+
+<p>对它们分别用serialize函数和unserialize函数进行序列化和反序列化，看看打印结果分别是什么，如下：</p>
+
+<p><strong>使用serialize方式：</strong></p>
+
+<pre class="lang:php decode:true ">var_dump(serialize($web));
+var_dump(unserialize(serialize($web)));
+var_dump(json_encode($web));
+var_dump(json_decode(json_encode($web)));</pre>
+
+<p>结果：</p>
+
+<pre class="lang:php decode:true ">string 'O:8:"stdClass":3:{s:4:"site";s:10:"tantengvip";s:5:"owner";s:6:"tuntun";s:3:"age";i:5;}' (length=87)
+
+object(stdClass)[127]
+  public 'site' =&gt; string 'tantengvip' (length=10)
+  public 'owner' =&gt; string 'tuntun' (length=6)
+  public 'age' =&gt; int 5
+
+string '{"site":"tantengvip","owner":"tuntun","age":5}' (length=46)
+
+object(stdClass)[127]
+  public 'site' =&gt; string 'tantengvip' (length=10)
+  public 'owner' =&gt; string 'tuntun' (length=6)
+  public 'age' =&gt; int 5
+</pre>
+
+<p><strong>使用json方式：</strong></p>
+
+<pre class="lang:php decode:true ">var_dump(serialize($web));
+var_dump(unserialize(serialize($web)));
+var_dump(json_encode($web));
+var_dump(json_decode(json_encode($web),true));</pre>
+
+<p>结果</p>
+
+<pre class="lang:php decode:true ">string 'a:3:{s:4:"site";s:10:"tantengvip";s:5:"owner";s:6:"tuntun";s:3:"age";i:5;}' (length=74)
+
+array (size=3)
+  'site' =&gt; string 'tantengvip' (length=10)
+  'owner' =&gt; string 'tuntun' (length=6)
+  'age' =&gt; int 5
+
+string '{"site":"tantengvip","owner":"tuntun","age":5}' (length=46)
+
+array (size=3)
+  'site' =&gt; string 'tantengvip' (length=10)
+  'owner' =&gt; string 'tuntun' (length=6)
+  'age' =&gt; int 5
+</pre>
+
+<p>我们发现，对于前面定义的这样一个对象或数组，用serialize和json进行序列化，反序列化回来的结果和原来是一样的，并没有什么区别，除了序列化的格式不同而已。</p>
+
+<p>那么它们到底有何区别？以下文字总结很好，就不自己加以说明了，可以写代码验证。（<a href="http://www.opstool.com/article/262" target="_blank" rel="nofollow">链接</a>）</p>
+
+<h3 id="使用json序列化和反序列化">使用json序列化和反序列化</h3>
+
+<p><strong>优势：</strong></p>
+
+<ul>
+<li>变量序列化后依然可读</li>
+<li>可以给其他系统使用，因为JSON格式是标准的</li>
+</ul>
+
+<p><strong>劣势：</strong></p>
+
+<ul>
+<li>只对UFT-8的数据有效，其他编码可能不能很好工作</li>
+<li>只对stdClass类的示例有效</li>
+</ul>
+
+<h3 id="使用-span-class-content-serialize-span-方式序列化和反序列化">使用<span class="content">serialize</span>方式序列化和反序列化</h3>
+
+<p><strong>优势：</strong></p>
+
+<ul>
+<li>允许非UTF-8的变量</li>
+<li>支持除了stdClass 示例外的其他实例</li>
+</ul>
+
+<p><strong>劣势：</strong></p>
+
+<ul>
+<li>编码后的文本对人来说是不可读的</li>
+<li>无法被其他语言的系统引用</li>
+</ul>
+
+<p>好，写个代码看看：</p>
+
+<pre class="lang:php decode:true ">class Test
+{
+    private $pri = 'pri';
+    public $class = 'Test';
+    public function __construct()
+    {
+        $this-&gt;class = 'Test construct';
+        $this-&gt;pri = 'pri construct';
+    }
+}
+
+$test = new Test();
+
+var_dump(serialize($test));
+var_dump(unserialize(serialize($test)));
+
+var_dump(json_encode($test));
+var_dump(json_decode(json_encode($test)));</pre>
+
+<p>结果：</p>
+
+<pre class="lang:php decode:true ">string 'O:4:"Test":2:{s:9:"�Test�pri";s:13:"pri construct";s:5:"class";s:14:"Test construct";}' (length=86)
+
+object(Test)[127]
+  private 'pri' =&gt; string 'pri construct' (length=13)
+  public 'class' =&gt; string 'Test construct' (length=14)
+
+string '{"class":"Test construct"}' (length=26)
+
+object(stdClass)[127]
+  public 'class' =&gt; string 'Test construct' (length=14)
+</pre>
+
+<p>我们发现，json序列化和反序列化丢失了类中的私有成员变量，而<span class="content">serialize</span>序列化和反序列化只要是类的变量都可以，但是类的成员方法都无法进行序列化和反序列化。</p>
+
+<p>在一般情况，还是使用json比较好，因为json是跨平台的通用格式，除了json，用xml也比较好。那在什么时候使用<span class="content">serialize</span>方式呢？</p>
+
+<p>在对一个类进行<span class="content">serialize反</span>序列化的时候会默认调用魔术方法__wakeUp()，这样就使得对象能够重新建立起序列化时未能保留的各种状态。例如：数据库连接等。那就是另外一个问题了，这里不做深究了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

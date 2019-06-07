@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CentOS 7 安装 PHP 7 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>CentOS 7 安装 PHP 7</h1>
+  <time datetime=2016-02-03T09:53:28Z class="post-date">Wed, Feb 3, 2016</time>
+  <p>在centos7通过yum安装PHP7，首先在终端运行：</p>
+
+<p>rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a></p>
+
+<p>提示错误：</p>
+
+<p>error: Failed dependencies:</p>
+
+<p>epel-release &gt;= 7 is needed by webtatic-release-7-3.noarch</p>
+
+<p>需要先安装epel-release。</p>
+
+<p>1.安装epel-release</p>
+
+<p>通过命令：</p>
+
+<p>rpm -ivh <a href="http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm">http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm</a></p>
+
+<p>成功安装。</p>
+
+<p>2.安装PHP7</p>
+
+<p>终端再次运行如下命令：</p>
+
+<p>rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a></p>
+
+<p>成功获取PHP7的yum源，然后再执行：</p>
+
+<p>yum install php70w</p>
+
+<p>这样就大功告成了。</p>
+
+<p>3.验证安装</p>
+
+<p>终端命令：php -v，显示当前PHP版本，信息如下：</p>
+
+<pre class="lang:php decode:true ">[root@iZ94w0kemvtZ /]# php -v
+PHP 7.0.2 (cli) (built: Jan  9 2016 14:00:11) ( NTS )
+Copyright (c) 1997-2015 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies</pre>
+
+<p>这样就在CentOS 7下通过yum安装成功PHP7.</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

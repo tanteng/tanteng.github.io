@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python字典get方法小例子 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python字典get方法小例子</h1>
+  <time datetime=2015-05-08T15:34:06Z class="post-date">Fri, May 8, 2015</time>
+  <p>Python定义一个字典：dict = {&#8216;iphone&#8217;:&#8217;apple&#8217;,&#8217;xiaomi&#8217;,&#8217;xiaomi&#8217;,&#8217;huawei&#8217;:&#8217;hua&#8217;}，那么我要查找键名为xiaomi对应的值，如果我们知道存在这个键，直接dict[&#8216;xiaomi&#8217;]就好了，但是要判断有没有这个键存在怎么办呢？</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png" target="_blank"><img class="alignnone size-full wp-image-8013" src="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png" alt="py2" width="440" height="272" srcset="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png 440w, https://blog.tanteng.me/wp-content/uploads/2015/05/py2-300x185.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+
+<p>如图，判断roledict中有没有owner这个键，第一个方法：</p>
+
+<pre class="lang:python decode:true ">if 'owner' in roledict:
+    owner = roledict['owner']
+else:
+    owner = admin</pre>
+
+<p>这样写占据了四行代码位置。</p>
+
+<pre class="lang:python decode:true ">owner = roledict.get('owner',admin)</pre>
+
+<p>用字典的get方法可以读取值，并且返回不存在的时候的值，只用一句话。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

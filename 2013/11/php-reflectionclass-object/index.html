@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP反射类ReflectionClass和ReflectionObject &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>PHP反射类ReflectionClass和ReflectionObject</h1>
+  <time datetime=2013-11-12T05:16:10Z class="post-date">Tue, Nov 12, 2013</time>
+  <p>PHP中的反射类，用来分析php程序，导出或提取出关于类、方法、属性、参数等的详细信息，包括注释。</p>
+
+<p>看一个这样的问题，php类的成员变量没有在类中声明，而是在函数中声明，有什么不同？</p>
+
+<pre lang="php">class test{
+    private $name;
+    private $sex;
+    function __construct(){
+        $this->aaa='aaa';
+    }
+}
+
+$test=new test();
+
+$reflect=new ReflectionClass($test);
+$pro=$reflect->getDefaultProperties();
+print_r($pro);//打印结果：Array ( [name] => [sex] => )
+
+echo $test->aaa;//打印结果：aaa
+</pre>
+
+<p>在这个test类中，声明了两个成员变量$name和$sex，但是在构造函数中，又声明了一个变量$aaa，初始化类，使用反射类打印默认成员属性只有声明的两个成员变量属性，但是打印类的$aaa变量发现还是可以输出结果。</p>
+
+<p>请问类的成员变量不用声明，在函数中声明也是可以的吗，有什么区别？</p>
+
+<p>在你这个例子中，使用ReflectionClass是不恰当的，因为__construct只有在实例化class时，才会执行。</p>
+
+<p>也就是说ReflectionClass更多的是反射类声明时的结构，而不是类实例化后的结构，所以没有输出属性aaa是正确，因为属性aaa确实是（在类声明时）不存在的。</p>
+
+<p>那么怎么看属性aaa呢，应该用ReflectionObject反射实例化后的结构，例如</p>
+
+<pre lang="php"><?php
+class test{
+    private $name;
+    private $sex;
+    function __construct(){
+        $this->aaa='aaa';
+    }
+}
+
+$test=new test();
+
+$reflect=new ReflectionObject($test);
+$pro=$reflect->getProperties();
+print_r($pro);
+</pre>
+
+<p>经过实例化以后，属性aaa才会存在，这时你就能看到属性aaa了</p>
+
+<p>因为php是“动态”语言，所有可以</p>
+
+<blockquote>
+<p>类的成员变量不用声明，在函数中声明也是可以的</p>
+</blockquote>
+
+<p>和你在类中直接用public $aaa是没有区别的。(回答：<a href="http://www.dewen.org/people/38623222" target="_blank" rel="nofollow">lazyboy</a>)</p>
+
+<p>动态产生的对象属性是全局性的，这与变量无需声明就可访问是一脉相承的</p>
+
+<p>但是由于一些学究的批评，php 开始逐渐放弃这种轻巧的表述方法了</p>
+
+<p>所以，应该尽量不要这样做（回答：<a href="http://bbs.csdn.net/topics/390639915?page=1#post-396055944" target="_blank" rel="nofollow">xuzuning</a>）</p>
+
+<p>同时这个例子就讲了PHP反射类ReflectionClass和ReflectionObject的用法。</p>
+
+<p>（参考链接：<a href="http://www.dewen.org/q/15437/php类的成员变量没有声明" target="_blank" rel="nofollow"><a href="http://www.dewen.org/q/15437/php类的成员变量没有声明">http://www.dewen.org/q/15437/php类的成员变量没有声明</a></a>）</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

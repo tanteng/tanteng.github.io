@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>bs4(beautiful soup 4)简单抓取示例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>bs4(beautiful soup 4)简单抓取示例</h1>
+  <time datetime=2015-05-12T03:50:01Z class="post-date">Tue, May 12, 2015</time>
+  <p>参照bs4官方中文文档<a href="http://beautifulsoup.readthedocs.org/en/latest/" target="_blank" rel="nofollow"><a href="http://beautifulsoup.readthedocs.org/en/latest/">http://beautifulsoup.readthedocs.org/en/latest/</a></a>照着写了个简单的例子，感觉它非常强大！！</p>
+
+<pre class="lang:python decode:true ">import urllib.request
+from bs4 import BeautifulSoup
+import sys
+
+url = 'https://blog.tanteng.me'
+html = urllib.request.urlopen(url).read()
+
+soup = BeautifulSoup(html)
+h1s = soup.find_all('h1',class_='entry-title')
+
+'''打印所有H1标题和链接'''
+for h1 in h1s:
+    #print(h1)
+    print(h1.get_text())
+    print(h1.a.attrs['href'])</pre>
+
+<p>结果：</p>
+
+<p>D:\learn-python&gt;python test.py</p>
+
+<p>beautiful soul 4 for Python3中文文档</p>
+
+<blockquote data-secret="SUA6EDzVdB" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/beautiful-soul-4-for-python3/" target="_blank">beautiful soul 4 for Python3中文文档</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/beautiful-soul-4-for-python3/embed/#?secret=SUA6EDzVdB" data-secret="SUA6EDzVdB" width="525" height="296" title="《beautiful soul 4 for Python3中文文档》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python文件名不能和已有模块名重名</p>
+
+<blockquote data-secret="9lVNGrIEkR" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-filename/" target="_blank">Python文件名不能和已有模块名重名</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-filename/embed/#?secret=9lVNGrIEkR" data-secret="9lVNGrIEkR" width="525" height="296" title="《Python文件名不能和已有模块名重名》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python3 requests包抓取并保存网页源码</p>
+
+<blockquote data-secret="qbeIdd4f3O" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/requests-html/" target="_blank">Python3 requests包抓取并保存网页源码</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/requests-html/embed/#?secret=qbeIdd4f3O" data-secret="qbeIdd4f3O" width="525" height="296" title="《Python3 requests包抓取并保存网页源码》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python作用域代码演示</p>
+
+<blockquote data-secret="evFkhz2Mpl" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-scope/" target="_blank">Python作用域代码演示</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-scope/embed/#?secret=evFkhz2Mpl" data-secret="evFkhz2Mpl" width="525" height="296" title="《Python作用域代码演示》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>深入理解django url原理</p>
+
+<p><a href="https://blog.tanteng.me/2015/05/django-url/">https://blog.tanteng.me/2015/05/django-url/</a></p>
+
+<p>使用Mac终端svn命令从SAE检出代码</p>
+
+<blockquote data-secret="Xtkee5pb8I" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/mac-svn-sae/" target="_blank">使用Mac终端svn命令从SAE检出代码</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/mac-svn-sae/embed/#?secret=Xtkee5pb8I" data-secret="Xtkee5pb8I" width="525" height="296" title="《使用Mac终端svn命令从SAE检出代码》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>使用pip安装Django for Python3</p>
+
+<blockquote data-secret="7wUmLXSyyK" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/django-python3-install/" target="_blank">使用pip安装Django for Python3</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/django-python3-install/embed/#?secret=7wUmLXSyyK" data-secret="7wUmLXSyyK" width="525" height="296" title="《使用pip安装Django for Python3》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python字典get方法小例子</p>
+
+<blockquote data-secret="Wt0EN3ISUj" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-dict-get/" target="_blank">Python字典get方法小例子</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-dict-get/embed/#?secret=Wt0EN3ISUj" data-secret="Wt0EN3ISUj" width="525" height="296" title="《Python字典get方法小例子》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python减少循环层次和缩进技巧</p>
+
+<blockquote data-secret="WsPqGMcHcL" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-for-level/" target="_blank">Python减少循环层次和缩进技巧</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-for-level/embed/#?secret=WsPqGMcHcL" data-secret="WsPqGMcHcL" width="525" height="296" title="《Python减少循环层次和缩进技巧》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python中__new__和__init__的区别</p>
+
+<blockquote data-secret="K05Fc3k6e2" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-new-init/" target="_blank">Python中__new__和__init__的区别</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-new-init/embed/#?secret=K05Fc3k6e2" data-secret="K05Fc3k6e2" width="525" height="296" title="《Python中__new__和__init__的区别》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python中requirements.pip文件的作用</p>
+
+<blockquote data-secret="j6uegow6YN" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-requirements-pip/" target="_blank">Python中requirements.pip文件的作用</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-requirements-pip/embed/#?secret=j6uegow6YN" data-secret="j6uegow6YN" width="525" height="296" title="《Python中requirements.pip文件的作用》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>Python中__name__的含义</p>
+
+<blockquote data-secret="dNW96vMrJr" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-name/" target="_blank">Python中__name__的含义</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-name/embed/#?secret=dNW96vMrJr" data-secret="dNW96vMrJr" width="525" height="296" title="《Python中__name__的含义》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>用python列举牌类游戏斗牛中所有牛牛的情况</p>
+
+<p><a href="https://blog.tanteng.me/2015/05/python-niu-niu/">https://blog.tanteng.me/2015/05/python-niu-niu/</a></p>
+
+<p>ThinkPHP标签if condition嵌套bug</p>
+
+<p><a href="https://blog.tanteng.me/2015/05/thinkphp-if-condition-bug/">https://blog.tanteng.me/2015/05/thinkphp-if-condition-bug/</a></p>
+
+<p>在SAE上部署django</p>
+
+<blockquote data-secret="0Hw5khBZzv" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/sae-django/" target="_blank">在SAE上部署django</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/sae-django/embed/#?secret=0Hw5khBZzv" data-secret="0Hw5khBZzv" width="525" height="296" title="《在SAE上部署django》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  
+
+<p>python中文基础教程</p>
+
+<blockquote data-secret="67IXmJaDjz" class="wp-embedded-content">
+  <p>
+    <a href="https://blog.tanteng.me/2015/05/python-guide-chinese/" target="_blank">python中文基础教程</a>
+  </p>
+</blockquote>
+
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.tanteng.me/2015/05/python-guide-chinese/embed/#?secret=67IXmJaDjz" data-secret="67IXmJaDjz" width="525" height="296" title="《python中文基础教程》—小谈博客" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

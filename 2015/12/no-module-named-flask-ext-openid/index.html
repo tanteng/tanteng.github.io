@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flask-website: No module named flask.ext.openid &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Flask-website: No module named flask.ext.openid</h1>
+  <time datetime=2015-12-09T10:35:12Z class="post-date">Wed, Dec 9, 2015</time>
+  <p>在本地运行Flask官网程序（Github:<a href="https://github.com/mitsuhiko/flask-website" target="_blank" rel="nofollow"><a href="https://github.com/mitsuhiko/flask-website">https://github.com/mitsuhiko/flask-website</a></a>），安装好requirements.txt里所依赖的模块后，运行报错：No module named flask.ext.openid.</p>
+
+<p>这里需要把flask_website目录下的\__init__.py文件进行如下修改：</p>
+
+<pre class="lang:python decode:true  "># from flask_openid.ext.openid import OpenID
+from flask_openid import OpenID</pre>
+
+<p class="">
+  再运行run.py启动网站，通过浏览器访问127.0.0.1:5000成功访问！
+</p>
+
+<pre class="lang:python decode:true">(venv) D:\flask-website&gt;python run.py
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 328-241-599
+127.0.0.1 - - [09/Dec/2015 18:18:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Dec/2015 18:18:25] "GET /static/style.css HTTP/1.1" 304 -</pre>
+
+<p class="">
+  本地环境版本：
+</p>
+
+<p class="">
+  python:2.7.9<br /> Flask:0.10.1
+</p>
+
+<p class="">
+  Flask-website是一个很好的学习Flask框架开发的完整例子。
+</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

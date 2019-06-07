@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>使用pip镜像方式安装python包 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>使用pip镜像方式安装python包</h1>
+  <time datetime=2015-11-24T03:44:36Z class="post-date">Tue, Nov 24, 2015</time>
+  <p>使用pip安装python包由于官网经常被墙无法安装，可以使用pip镜像方式安装python包。</p>
+
+<h3 id="几个pypi镜像地址">几个pypi镜像地址</h3>
+
+<ul>
+<li>pypi.python.org</li>
+<li>pypi.douban.com</li>
+<li>pypi.hustunique.com</li>
+<li>pypi.gocept.com</li>
+<li>pypi.tuna.tsinghua.edu.cn</li>
+</ul>
+
+<h3 id="pip镜像方式安装方法">pip镜像方式安装方法</h3>
+
+<p>一般pip安装python包的语法是：</p>
+
+<pre class="lang:python decode:true">pip install requests</pre>
+
+<p>那么使用镜像的方式，如清华大学的pypi镜像pypi.tuna.tsinghua.edu.cn，在命令行输入：</p>
+
+<pre class="lang:python decode:true">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  requests</pre>
+
+<p>**注意-i参数的网址要加https，后面路径是simple.这样就从清华的pypi镜像安装requests包了。豆瓣的不需要https.</p>
+
+<p>**</p>
+
+<pre class="lang:python decode:true  ">pip install -i http://pypi.douban.com/simple Scrapy</pre>
+
+<p>升级一个python包也可以使用pip镜像的方式：</p>
+
+<pre class="lang:python decode:true">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade  requests</pre>
+
+<p>使用pip镜像安装包截图：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/pip-mirror-install.png" target="_blank"><img class="alignnone wp-image-9090 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/pip-mirror-install.png" alt="pip-mirror-install" width="1134" height="668" /></a></p>
+
+<p>速度很快，无连不上，中断的问题。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

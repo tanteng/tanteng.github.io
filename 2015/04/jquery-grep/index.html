@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jQuery基础之grep用法示例 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>jQuery基础之grep用法示例</h1>
+  <time datetime=2015-04-10T16:28:50Z class="post-date">Fri, Apr 10, 2015</time>
+  <p>看看jquery的grep的用法代码示例：</p>
+
+<pre class="lang:js decode:true">&lt;script&gt;
+var arr = [ 1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1 ];
+$( "div" ).text( arr.join( ", " ) );
+ 
+arr = jQuery.grep(arr, function( n, i ) {
+  return ( n !== 5 && i &gt; 4 );
+});
+$( "p" ).text( arr.join( ", " ) );
+ 
+arr = jQuery.grep(arr, function( a ) {
+  return a !== 9;
+});
+ 
+$( "span" ).text( arr.join( ", " ) );
+&lt;/script&gt;</pre>
+
+<p>jQuery的grep函数的作用是“筛选”，遍历数组，返回符合筛选条件的元素，grep函数第一个参数是数组，第二个是function函数，<span class="keyword">function</span>( n, i )，n表示遍历的元素值，i是索引。</p>
+
+<p>此段jquery代码实现的效果是：</p>
+
+<pre class="lang:xhtml decode:true">1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1
+1, 9, 4, 7, 3, 8, 6, 9, 1
+1, 4, 7, 3, 8, 6, 1</pre>
+
+<p>关于jQuery grep函数用法还有一个地方要知道：</p>
+
+<pre class="lang:js decode:true ">$.grep( [ 0, 1, 2 ], function( n, i ) {
+    return n &gt; 0;
+}, true );</pre>
+
+<p>如果第三个参数为true，那么就是“反着来”，比如上例，返回的是小于等于0的元素。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

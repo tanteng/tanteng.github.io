@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MySQL主从和双主架构的适用场景 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>MySQL主从和双主架构的适用场景</h1>
+  <time datetime=2016-09-28T10:20:18Z class="post-date">Wed, Sep 28, 2016</time>
+  <p>本文介绍 MySQL 主从和双主架构的适用场景。</p>
+
+<h3 id="mysql主从">MySQL主从</h3>
+
+<p>MySQL主从架构的适用场景是读写分离，通过主库写，从库读，大多数场景是读的情况比较多，单一 master 多 slave 的架构可以很好解决读压力大的问题。</p>
+
+<p><img class="alignnone wp-image-10946 size-full aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2016/09/master-slave.jpg" alt="master-slave" width="401" height="299" /></p>
+
+<h3 id="mysql双主">MySQL双主</h3>
+
+<p>MySQL双主架构的适用场景举个例子，比如一个应用前台和后台用的不同的服务器，数据库大多数是主从结构，但是日志数据库，需要共用一个，这个时候可以把两边的日志数据库设为双主。</p>
+
+<p><img class="alignnone size-full wp-image-10947 aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2016/09/master-master.jpg" alt="master-master" width="331" height="137" /></p>
+
+<p>双主数据库一个特点是，在 A 数据库上的任何操作，在 B 数据库也进行了同样的操作，反过来也是。还有一个现象可以发现，A，B 两个数据库插入数据的自增 ID 的递增值一般都是 2，这是避免主键冲突。</p>
+
+<p>有关主从和双主的 MySQL 原理和配置请参考：</p>
+
+<p><a href="http://blog.csdn.net/sz_bdqn/article/details/46277831" target="_blank" rel="nofollow"><a href="http://blog.csdn.net/sz_bdqn/article/details/46277831">http://blog.csdn.net/sz_bdqn/article/details/46277831</a></a></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

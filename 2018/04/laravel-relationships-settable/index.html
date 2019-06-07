@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laravel 模型间关系设置分表方法 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Laravel 模型间关系设置分表方法</h1>
+  <time datetime=2018-04-19T11:49:32Z class="post-date">Thu, Apr 19, 2018</time>
+  <p>在实际开发中经常用到分库分表，比如用户表分成 100 张，那么这个时候查询数据需要设置分表，比如 Laravel 的 Model 类中提供了 setTable 方法：</p>
+
+<pre class="lang:php decode:true">/**
+ * Set the table associated with the model.
+ *
+ * @param  string  $table
+ * @return $this
+ */
+public function setTable($table)
+{
+    $this-&gt;table = $table;
+
+    return $this;
+}</pre>
+
+<p>那么对数据表的增删改查需要先 new 一个模型实例，再设置表名。如：</p>
+
+<pre class="lang:php decode:true ">(new Circle())-&gt;setTable("t_group_" . hashID($userid, 20))
+-&gt;newQuery()
+-&gt;where('group_id', $request-&gt;group_id)
+-&gt;update($attributes);</pre>
+
+<p>这个很简单，那么在模型间关系比如 HasOne，HasMany 等使用这种方式的情况下，如何设置分表呢？</p>
+
+<p>找了半天没找到好的办法，以 HasOne 为例，看了 Model 类 HasOne 函数的实现方法，没有地方可以设置表名，只好复制一份 HasOne 方法进行修改。比如改成 myHasOne，加上 $table 参数可以设置表名，并且在对象实例化后调用 setTable，果然就可以了。</p>
+
+<p>代码如下：</p>
+
+<pre class="lang:php decode:true ">public function detail()
+{
+    return $this-&gt;myHasOne(Circle::class, 'group_id', 'group_id', 't_group_' . hashID($this-&gt;userid, 20));
+}
+
+public function myHasOne($related, $foreignKey = null, $localKey = null, $table)
+{
+    $foreignKey = $foreignKey ?: $this-&gt;getForeignKey();
+
+    $instance = (new $related)-&gt;setTable($table);
+
+    $localKey = $localKey ?: $this-&gt;getKeyName();
+
+    return new HasOne($instance-&gt;newQuery(), $this, $instance-&gt;getTable() . '.' . $foreignKey, $localKey);
+}</pre>
+
+<p>不知道大家有没有更优雅的方式。</p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+
+<p><audio style="display: none;" controls="controls"></audio></p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

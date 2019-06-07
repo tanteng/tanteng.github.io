@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>httpd-vhosts设置域名别名 &middot; 小谈博客</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://tanteng.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://tanteng.github.io/"><h1>小谈博客</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://tanteng.github.io/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>httpd-vhosts设置域名别名</h1>
+  <time datetime=2015-11-19T06:24:43Z class="post-date">Thu, Nov 19, 2015</time>
+  <p>在Apache的httpd-vhosts可以配置虚拟主机域名，也可以设置域名别名，如域名www.yii2.com，可以给它设置一个或多个域名别名，通过www.yii3.com,www.yii4.com访问。</p>
+
+<p>在httpd-vhosts.conf中这样定义：</p>
+
+<pre class="lang:php decode:true ">&lt;VirtualHost *:80&gt;
+   DocumentRoot "/xampp/htdocs/yii2/frontend/web"
+    ServerName www.yii2.com
+    ServerAlias www.yii2.com www.yii3.com www.yii4.com
+    ErrorLog "logs/www.yii2.com-error.log"
+    CustomLog "logs/www.yii2.com-access.log" combined
+&lt;/VirtualHost&gt;</pre>
+
+<p>ServerAlias可以设置域名别名，也支持正则表达式，如www.yii*.com.</p>
+
+<p>同时添加hosts：</p>
+
+<pre class="lang:php decode:true ">127.0.0.1 www.yii2.com
+127.0.0.1 www.yii3.com
+127.0.0.1 www.yii4.com</pre>
+
+<p>重启apache，通过域名别名也可以访问原域名了。</p>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>
