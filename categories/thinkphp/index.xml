@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ThinkPHP on 小谈博客</title>
-    <link>https://tanteng.github.io/categories/thinkphp/</link>
+    <link>http://tanteng.me/categories/thinkphp/</link>
     <description>Recent content in ThinkPHP on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 19 Jun 2015 09:44:09 +0000</lastBuildDate>
     
-	<atom:link href="https://tanteng.github.io/categories/thinkphp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tanteng.me/categories/thinkphp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ThinkPHP扩展MongoDB Model支持getGridFS存取文件</title>
-      <link>https://tanteng.github.io/2015/06/thinkphp-mongodb-getgridfs/</link>
+      <link>http://tanteng.me/2015/06/thinkphp-mongodb-getgridfs/</link>
       <pubDate>Fri, 19 Jun 2015 09:44:09 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/06/thinkphp-mongodb-getgridfs/</guid>
+      <guid>http://tanteng.me/2015/06/thinkphp-mongodb-getgridfs/</guid>
       <description>&lt;p&gt;ThinkPHP自带MongoDB Model，Model继承MongoDBModel可以操作MongoDB数据库，但只能操作基本的一些MongoDB操作，无法操作getGridFS存取文件，需要扩展Driver/Db/DbMongo.class.php文件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>left join多张表查出重复数据的解决办法</title>
-      <link>https://tanteng.github.io/2015/05/left-join-duplication/</link>
+      <link>http://tanteng.me/2015/05/left-join-duplication/</link>
       <pubDate>Tue, 19 May 2015 08:53:04 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/05/left-join-duplication/</guid>
+      <guid>http://tanteng.me/2015/05/left-join-duplication/</guid>
       <description>&lt;p&gt;今天线上出现一个问题，查询售后订单出现很多重复的内容，经查，是left join多张表导致的查询出重复数据。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>ThinkPHP的RBAC（基于角色权限控制）详解</title>
-      <link>https://tanteng.github.io/2012/11/thinkphp-rbac/</link>
+      <link>http://tanteng.me/2012/11/thinkphp-rbac/</link>
       <pubDate>Sun, 25 Nov 2012 07:15:58 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2012/11/thinkphp-rbac/</guid>
+      <guid>http://tanteng.me/2012/11/thinkphp-rbac/</guid>
       <description>&lt;h1 id=&#34;一-什么是rbac&#34;&gt;一、什么是RBAC&lt;/h1&gt;
 
 &lt;p&gt;基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。&lt;/p&gt;
@@ -46,10 +46,10 @@
     
     <item>
       <title>thinkphp的sql优化原则</title>
-      <link>https://tanteng.github.io/2012/11/thinkphp-sql/</link>
+      <link>http://tanteng.me/2012/11/thinkphp-sql/</link>
       <pubDate>Sat, 17 Nov 2012 16:28:14 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2012/11/thinkphp-sql/</guid>
+      <guid>http://tanteng.me/2012/11/thinkphp-sql/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;这不仅仅是针对thinkphp的，也可以针对所有mysql数据库的sql优化。摘自thinkphp官方手册的一篇文章。&lt;/p&gt;
 &lt;/blockquote&gt;

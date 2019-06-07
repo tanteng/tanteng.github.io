@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on 小谈博客</title>
-    <link>https://tanteng.github.io/categories/redis/</link>
+    <link>http://tanteng.me/categories/redis/</link>
     <description>Recent content in Redis on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 24 Jun 2018 02:43:46 +0000</lastBuildDate>
     
-	<atom:link href="https://tanteng.github.io/categories/redis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tanteng.me/categories/redis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Redis 的事务到底是不是原子性的</title>
-      <link>https://tanteng.github.io/2018/06/redis-transaction-atomic/</link>
+      <link>http://tanteng.me/2018/06/redis-transaction-atomic/</link>
       <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/06/redis-transaction-atomic/</guid>
+      <guid>http://tanteng.me/2018/06/redis-transaction-atomic/</guid>
       <description>&lt;p&gt;ACID 中关于原子性的定义：&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -26,29 +26,29 @@
     
     <item>
       <title>Redis 实现访问频次限制的几种方式</title>
-      <link>https://tanteng.github.io/2017/10/redis-ip-limit/</link>
+      <link>http://tanteng.me/2017/10/redis-ip-limit/</link>
       <pubDate>Wed, 25 Oct 2017 14:28:25 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/10/redis-ip-limit/</guid>
+      <guid>http://tanteng.me/2017/10/redis-ip-limit/</guid>
       <description>链接：
 https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
     </item>
     
     <item>
       <title>Redis有序集合常用命令</title>
-      <link>https://tanteng.github.io/2016/07/redis-sorted-set/</link>
+      <link>http://tanteng.me/2016/07/redis-sorted-set/</link>
       <pubDate>Tue, 19 Jul 2016 10:55:25 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/07/redis-sorted-set/</guid>
+      <guid>http://tanteng.me/2016/07/redis-sorted-set/</guid>
       <description>&lt;p&gt;小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>解决 Redis 只读不可写的问题</title>
-      <link>https://tanteng.github.io/2016/07/misconf-redis-configured-save-rdb-snapshots/</link>
+      <link>http://tanteng.me/2016/07/misconf-redis-configured-save-rdb-snapshots/</link>
       <pubDate>Fri, 15 Jul 2016 02:15:42 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/07/misconf-redis-configured-save-rdb-snapshots/</guid>
+      <guid>http://tanteng.me/2016/07/misconf-redis-configured-save-rdb-snapshots/</guid>
       <description>&lt;p&gt;在 Redis 终端上进行读写操作，发现只读不可写，GET 操作是正常的，SET 操作提示错误：(error)MISCONF Redis is configured to save RDB snapshots,but is currently not able to persist on disk. Commands that may modify the data set are disabled. 如图所示：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/07/misconf-redis-is-configured-to-save-rdb-snapashots.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-10253 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/07/misconf-redis-is-configured-to-save-rdb-snapashots.png&#34; alt=&#34;misconf-redis-is-configured-to-save-rdb-snapashots&#34; width=&#34;732&#34; height=&#34;120&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
@@ -56,19 +56,19 @@ https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
     
     <item>
       <title>Redis未授权访问漏洞</title>
-      <link>https://tanteng.github.io/2016/03/redis-6379-safe/</link>
+      <link>http://tanteng.me/2016/03/redis-6379-safe/</link>
       <pubDate>Mon, 21 Mar 2016 06:07:24 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/redis-6379-safe/</guid>
+      <guid>http://tanteng.me/2016/03/redis-6379-safe/</guid>
       <description>&lt;p&gt;在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阿里云CentOS安装Redis并配置生产环境自动启动</title>
-      <link>https://tanteng.github.io/2016/03/centos-redis-server/</link>
+      <link>http://tanteng.me/2016/03/centos-redis-server/</link>
       <pubDate>Sun, 06 Mar 2016 15:27:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/centos-redis-server/</guid>
+      <guid>http://tanteng.me/2016/03/centos-redis-server/</guid>
       <description>&lt;p&gt;在阿里云CentOS 7系统安装Redis服务，并配置生产环境自动启动。1.安装redis 2.生成环境启动redis的配置，并介绍CentOS下update-rc.d命令不可用的解决方案。&lt;/p&gt;
 
 &lt;p&gt;1.安装redis&lt;/p&gt;
@@ -84,10 +84,10 @@ https://www.cnblogs.com/gavanwanggw/p/7240675.html</description>
     
     <item>
       <title>Redis INCR的应用场景</title>
-      <link>https://tanteng.github.io/2015/11/redis-incr/</link>
+      <link>http://tanteng.me/2015/11/redis-incr/</link>
       <pubDate>Mon, 02 Nov 2015 05:59:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/11/redis-incr/</guid>
+      <guid>http://tanteng.me/2015/11/redis-incr/</guid>
       <description>&lt;p&gt;Redis INCR的应用场景主要是计数器和限速器。&lt;/p&gt;
 
 &lt;h2 id=&#34;模式-计数器&#34;&gt;模式：计数器&lt;/h2&gt;

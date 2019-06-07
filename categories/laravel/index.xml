@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on 小谈博客</title>
-    <link>https://tanteng.github.io/categories/laravel/</link>
+    <link>http://tanteng.me/categories/laravel/</link>
     <description>Recent content in Laravel on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 15 Sep 2018 05:41:51 +0000</lastBuildDate>
     
-	<atom:link href="https://tanteng.github.io/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tanteng.me/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Laravel 错误和异常处理用法</title>
-      <link>https://tanteng.github.io/2018/09/laravel-error-handing/</link>
+      <link>http://tanteng.me/2018/09/laravel-error-handing/</link>
       <pubDate>Sat, 15 Sep 2018 05:41:51 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/09/laravel-error-handing/</guid>
+      <guid>http://tanteng.me/2018/09/laravel-error-handing/</guid>
       <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 用户授权系统使用小结</title>
-      <link>https://tanteng.github.io/2018/09/laravel-authorize-gates/</link>
+      <link>http://tanteng.me/2018/09/laravel-authorize-gates/</link>
       <pubDate>Fri, 14 Sep 2018 11:04:59 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/09/laravel-authorize-gates/</guid>
+      <guid>http://tanteng.me/2018/09/laravel-authorize-gates/</guid>
       <description>&lt;h3 id=&#34;-1&#34;&gt;基本用法&lt;/h3&gt;
 
 &lt;p&gt;示例&lt;/p&gt;
@@ -37,10 +37,10 @@
     
     <item>
       <title>Laravel chunk 使用注意的问题</title>
-      <link>https://tanteng.github.io/2018/08/laravel-chunk-tip/</link>
+      <link>http://tanteng.me/2018/08/laravel-chunk-tip/</link>
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/08/laravel-chunk-tip/</guid>
+      <guid>http://tanteng.me/2018/08/laravel-chunk-tip/</guid>
       <description>&lt;p&gt;使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:default decode:true &#34;&gt;User::where(&#39;approved&#39;, 0)-&amp;gt;chunk(100, function ($users) {
@@ -56,19 +56,19 @@
     
     <item>
       <title>Laravel 中为何不使用 blpop 取队列？</title>
-      <link>https://tanteng.github.io/2018/08/laravel-why-not-use-blpop/</link>
+      <link>http://tanteng.me/2018/08/laravel-why-not-use-blpop/</link>
       <pubDate>Tue, 31 Jul 2018 17:18:21 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/08/laravel-why-not-use-blpop/</guid>
+      <guid>http://tanteng.me/2018/08/laravel-why-not-use-blpop/</guid>
       <description>&lt;p&gt;Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 中间件原理</title>
-      <link>https://tanteng.github.io/2018/07/understand-laravel-middleware/</link>
+      <link>http://tanteng.me/2018/07/understand-laravel-middleware/</link>
       <pubDate>Sun, 29 Jul 2018 16:25:08 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/understand-laravel-middleware/</guid>
+      <guid>http://tanteng.me/2018/07/understand-laravel-middleware/</guid>
       <description>&lt;p&gt;Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。&lt;/p&gt;
 
 &lt;p&gt;本文就来探究 Laravel 中间件的实现原理，看 Laravel 如何把 PHP 的 array_reduce 函数和闭包用到了极致。&lt;/p&gt;</description>
@@ -76,19 +76,19 @@
     
     <item>
       <title>Laravel 事件系统用法总结</title>
-      <link>https://tanteng.github.io/2018/06/laravel-event/</link>
+      <link>http://tanteng.me/2018/06/laravel-event/</link>
       <pubDate>Sun, 17 Jun 2018 02:10:52 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/06/laravel-event/</guid>
+      <guid>http://tanteng.me/2018/06/laravel-event/</guid>
       <description>&lt;p&gt;Laravel 的事件提供了一个简单的观察者实现，能够订阅和监听应用中发生的各种事件。事件类保存在 app/Events 目录中，而这些事件的的监听器则被保存在 app/Listeners 目录下。这些目录只有当你使用 Artisan 命令来生成事件和监听器时才会被自动创建。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在 Laravel 中使用 gulp 构建前端资源</title>
-      <link>https://tanteng.github.io/2018/05/laravel-5-5-gulp/</link>
+      <link>http://tanteng.me/2018/05/laravel-5-5-gulp/</link>
       <pubDate>Mon, 28 May 2018 12:45:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/05/laravel-5-5-gulp/</guid>
+      <guid>http://tanteng.me/2018/05/laravel-5-5-gulp/</guid>
       <description>&lt;p&gt;最近把自己主页前端代码进一步规范了，使用 npm 引入一些前端的资源库，在 Laravel 5.5 中使用 gulp 遇到一些坑。&lt;/p&gt;
 
 &lt;p&gt;mix.sass 无法直接使用 node_modules 文件夹里的，只能用 resource/assets/sass/app.scss 这个文件生成 css，然后和其他的 css 合并为一个文件。&lt;/p&gt;
@@ -98,10 +98,10 @@
     
     <item>
       <title>Laravel 模型间关系设置分表方法</title>
-      <link>https://tanteng.github.io/2018/04/laravel-relationships-settable/</link>
+      <link>http://tanteng.me/2018/04/laravel-relationships-settable/</link>
       <pubDate>Thu, 19 Apr 2018 11:49:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/04/laravel-relationships-settable/</guid>
+      <guid>http://tanteng.me/2018/04/laravel-relationships-settable/</guid>
       <description>&lt;p&gt;在实际开发中经常用到分库分表，比如用户表分成 100 张，那么这个时候查询数据需要设置分表，比如 Laravel 的 Model 类中提供了 setTable 方法：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true&#34;&gt;/**
@@ -120,10 +120,10 @@ public function setTable($table)
     
     <item>
       <title>Laravel 依赖注入源码解析</title>
-      <link>https://tanteng.github.io/2018/01/laravel-dependency/</link>
+      <link>http://tanteng.me/2018/01/laravel-dependency/</link>
       <pubDate>Thu, 18 Jan 2018 09:25:57 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/01/laravel-dependency/</guid>
+      <guid>http://tanteng.me/2018/01/laravel-dependency/</guid>
       <description>&lt;p&gt;在 Laravel 的控制器的构造方法或者成员方法，都可以通过类型约束的方式使用依赖注入，如：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true&#34;&gt;public function store(Request $request)
@@ -138,10 +138,10 @@ public function setTable($table)
     
     <item>
       <title>Laravel Redis 多个进程同时取队列问题</title>
-      <link>https://tanteng.github.io/2017/12/laravel-supervisor-queue/</link>
+      <link>http://tanteng.me/2017/12/laravel-supervisor-queue/</link>
       <pubDate>Sat, 23 Dec 2017 11:26:19 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/12/laravel-supervisor-queue/</guid>
+      <guid>http://tanteng.me/2017/12/laravel-supervisor-queue/</guid>
       <description>&lt;p&gt;&lt;strong&gt;开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：&lt;/p&gt;
@@ -161,10 +161,10 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>使用 Laravel 消息队列要注意的问题</title>
-      <link>https://tanteng.github.io/2017/12/laravel-queue-tips/</link>
+      <link>http://tanteng.me/2017/12/laravel-queue-tips/</link>
       <pubDate>Mon, 11 Dec 2017 10:08:13 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/12/laravel-queue-tips/</guid>
+      <guid>http://tanteng.me/2017/12/laravel-queue-tips/</guid>
       <description>&lt;p&gt;使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实际中可能还会出现各种各样的问题，为了保证系统&lt;strong&gt;可靠性&lt;/strong&gt;，还要注意几个问题。&lt;/p&gt;
 
 &lt;h3 id=&#34;一-执行失败重试次数设置&#34;&gt;一、执行失败重试次数设置&lt;/h3&gt;
@@ -176,19 +176,19 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>Laravel 中的简单工厂和抽象工厂</title>
-      <link>https://tanteng.github.io/2017/11/laravel-factory-pattern/</link>
+      <link>http://tanteng.me/2017/11/laravel-factory-pattern/</link>
       <pubDate>Wed, 22 Nov 2017 03:35:54 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/11/laravel-factory-pattern/</guid>
+      <guid>http://tanteng.me/2017/11/laravel-factory-pattern/</guid>
       <description>&lt;p&gt;设计模式之工厂模式分为三种：简单工厂、工厂方法和抽象工厂模式，有时也把简单工厂和工厂方法这两种归为一类。工厂模式属于“创建”型的设计模式，顾名思义用来实例化对象，调用者不需要关心对象的具体创建过程，以达到解耦的目的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 服务提供者和门面模式</title>
-      <link>https://tanteng.github.io/2017/11/laravel-facade-service-provider/</link>
+      <link>http://tanteng.me/2017/11/laravel-facade-service-provider/</link>
       <pubDate>Sun, 05 Nov 2017 16:30:33 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/11/laravel-facade-service-provider/</guid>
+      <guid>http://tanteng.me/2017/11/laravel-facade-service-provider/</guid>
       <description>&lt;p&gt;以 Laravel 自带的文件系统为例，在 config/app.php 的配置文件的 providers 数组中，注册了一个服务提供者：&lt;/p&gt;
 
 &lt;p class=&#34;lang:php decode:true  &#34;&gt;
@@ -204,19 +204,19 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>使用 Docker 搭建 Laravel 本地环境</title>
-      <link>https://tanteng.github.io/2017/10/docker-laravel-local-environment/</link>
+      <link>http://tanteng.me/2017/10/docker-laravel-local-environment/</link>
       <pubDate>Sat, 14 Oct 2017 11:28:48 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/10/docker-laravel-local-environment/</guid>
+      <guid>http://tanteng.me/2017/10/docker-laravel-local-environment/</guid>
       <description>&lt;p&gt;Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同时响应速度很慢，现在有了 docker 这种更好的方式，可以轻松方便的搭建整套 PHP 开发环境。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel Sessionid 处理机制</title>
-      <link>https://tanteng.github.io/2017/09/laravel-session-scheme/</link>
+      <link>http://tanteng.me/2017/09/laravel-session-scheme/</link>
       <pubDate>Mon, 11 Sep 2017 03:41:20 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/09/laravel-session-scheme/</guid>
+      <guid>http://tanteng.me/2017/09/laravel-session-scheme/</guid>
       <description>&lt;p&gt;在 Laravel 的配置文件 config/session.php 中可以设置 Session Cookie Name，比如这个项目中设置名称为“sns_session”：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true &#34;&gt;/*
@@ -239,19 +239,19 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>注意 Laravel 清除缓存 php artisan cache:clear 的使用</title>
-      <link>https://tanteng.github.io/2017/05/laravel-cache-clear-warning/</link>
+      <link>http://tanteng.me/2017/05/laravel-cache-clear-warning/</link>
       <pubDate>Tue, 23 May 2017 09:29:27 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/05/laravel-cache-clear-warning/</guid>
+      <guid>http://tanteng.me/2017/05/laravel-cache-clear-warning/</guid>
       <description>&lt;p&gt;Laravel 的命令 php artisan cache:clear 用来清除各种缓存，如页面，Redis，配置文件等缓存，它会清空 Redis 数据库的全部数据，比如默认使用的 Redis 的数据库是 db0，那么执行这个命令后，会清空 db0 中所有数据。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在 Laravel 中设置 Etag 缓存</title>
-      <link>https://tanteng.github.io/2017/05/laravel-etag-middleware/</link>
+      <link>http://tanteng.me/2017/05/laravel-etag-middleware/</link>
       <pubDate>Fri, 19 May 2017 04:51:35 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/05/laravel-etag-middleware/</guid>
+      <guid>http://tanteng.me/2017/05/laravel-etag-middleware/</guid>
       <description>&lt;p&gt;本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。&lt;/p&gt;
 
 &lt;h3 id=&#34;什么是-etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
@@ -263,10 +263,10 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>Laravel 关联查询返回错误的 id</title>
-      <link>https://tanteng.github.io/2017/03/laravel-model-join-wrong-id/</link>
+      <link>http://tanteng.me/2017/03/laravel-model-join-wrong-id/</link>
       <pubDate>Fri, 31 Mar 2017 04:50:37 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/03/laravel-model-join-wrong-id/</guid>
+      <guid>http://tanteng.me/2017/03/laravel-model-join-wrong-id/</guid>
       <description>&lt;p&gt;在 Laravel Eloquent 中使用 join 关联查询，如果两张表有名称相同的字段，如 id，那么它的值会默认被后来的同名字段重写，返回不是期望的结果。例如以下关联查询：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true&#34;&gt;$priority = Priority::rightJoin(&#39;touch&#39;, &#39;priorities.touch_id&#39;, &#39;=&#39;, &#39;touch.id&#39;)
@@ -278,10 +278,10 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>如何创建 Laravel 5 扩展包</title>
-      <link>https://tanteng.github.io/2017/02/create-laravel-5-pakage/</link>
+      <link>http://tanteng.me/2017/02/create-laravel-5-pakage/</link>
       <pubDate>Mon, 20 Feb 2017 08:39:36 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/02/create-laravel-5-pakage/</guid>
+      <guid>http://tanteng.me/2017/02/create-laravel-5-pakage/</guid>
       <description>本文介绍了创建 Laravel 5 扩展包的步骤。
 链接：
 http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</description>
@@ -289,28 +289,28 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
     
     <item>
       <title>使用 Supervisor 管理 Laravel 队列进程</title>
-      <link>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</link>
+      <link>http://tanteng.me/2017/01/supervisor-laravel-queue/</link>
       <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</guid>
+      <guid>http://tanteng.me/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 5.3 后台管理系统搭建</title>
-      <link>https://tanteng.github.io/2016/12/laravel-admin-install/</link>
+      <link>http://tanteng.me/2016/12/laravel-admin-install/</link>
       <pubDate>Sat, 24 Dec 2016 07:13:14 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/12/laravel-admin-install/</guid>
+      <guid>http://tanteng.me/2016/12/laravel-admin-install/</guid>
       <description>&lt;p&gt;网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 使用 env 读取环境变量为 null 的问题</title>
-      <link>https://tanteng.github.io/2016/12/laravel-env-null/</link>
+      <link>http://tanteng.me/2016/12/laravel-env-null/</link>
       <pubDate>Sun, 04 Dec 2016 15:35:18 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/12/laravel-env-null/</guid>
+      <guid>http://tanteng.me/2016/12/laravel-env-null/</guid>
       <description>&lt;p&gt;不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。&lt;/p&gt;
 
 &lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
@@ -318,10 +318,10 @@ http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/</des
     
     <item>
       <title>Laravel Session 保存机制和 terminate 中间件</title>
-      <link>https://tanteng.github.io/2016/10/laravel-session-middleware/</link>
+      <link>http://tanteng.me/2016/10/laravel-session-middleware/</link>
       <pubDate>Fri, 07 Oct 2016 16:47:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/10/laravel-session-middleware/</guid>
+      <guid>http://tanteng.me/2016/10/laravel-session-middleware/</guid>
       <description>&lt;p&gt;在 Laravel 中可以使用 Session 的 get, put, pull, set, has, flash 等方法进行操作，如：Session::put([&amp;#8216;domain&amp;#8217;=&amp;gt;&amp;#8217;tanteng.me&amp;#8217;, &amp;#8216;host&amp;#8217;=&amp;gt;&amp;#8217;aliyun&amp;#8217;])，就可以设置两个 session 值，看看 put 方法：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true &#34; title=&#34;代码位于vendor/laravel/framework/src/Illuminate/Session/Store.php&#34;&gt;/**
@@ -345,10 +345,10 @@ public function put($key, $value = null)
     
     <item>
       <title>让你的 Laravel 应用与官方保持同步</title>
-      <link>https://tanteng.github.io/2016/08/laravel-office-sync/</link>
+      <link>http://tanteng.me/2016/08/laravel-office-sync/</link>
       <pubDate>Wed, 03 Aug 2016 02:55:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/08/laravel-office-sync/</guid>
+      <guid>http://tanteng.me/2016/08/laravel-office-sync/</guid>
       <description>&lt;p&gt;本文转自安正超博客：&lt;a href=&#34;http://overtrue.me/articles/2015/06/sync-your-laravel-project.html&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;a href=&#34;http://overtrue.me/articles/2015/06/sync-your-laravel-project.html&#34;&gt;http://overtrue.me/articles/2015/06/sync-your-laravel-project.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;section&#34;&gt;解决什么问题？&lt;/h2&gt;
@@ -358,46 +358,46 @@ public function put($key, $value = null)
     
     <item>
       <title>Laravel 分割 routes.php 路由文件的最佳方式</title>
-      <link>https://tanteng.github.io/2016/08/laravel-routes-map/</link>
+      <link>http://tanteng.me/2016/08/laravel-routes-map/</link>
       <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/08/laravel-routes-map/</guid>
+      <guid>http://tanteng.me/2016/08/laravel-routes-map/</guid>
       <description>&lt;p&gt;Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，如何去维护？如果不同的人都在同一个文件定义路由，这就造成了冲突，因此我们有必要将 routes.php 文件分割成多个文件，可以按照功能模块来划分，下面介绍一种很优雅的方式。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 调试工具 laravel-debugbar 打印日志消息</title>
-      <link>https://tanteng.github.io/2016/08/laravel-debugbar-facade/</link>
+      <link>http://tanteng.me/2016/08/laravel-debugbar-facade/</link>
       <pubDate>Mon, 01 Aug 2016 15:57:59 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/08/laravel-debugbar-facade/</guid>
+      <guid>http://tanteng.me/2016/08/laravel-debugbar-facade/</guid>
       <description>&lt;p&gt;使用 Laravel 的调试工具 laravel-debugbar 的 Facade 方式 Debugbar::info(), Debugbar::error()等方法打印日志消息，页面打不开，查看 PHP 错误日志报错：Call to undefined method DebugBar\DebugBar::info().&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 调试工具 laravel-debugbar</title>
-      <link>https://tanteng.github.io/2016/08/laravel-debugbar-sql/</link>
+      <link>http://tanteng.me/2016/08/laravel-debugbar-sql/</link>
       <pubDate>Mon, 01 Aug 2016 13:10:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/08/laravel-debugbar-sql/</guid>
+      <guid>http://tanteng.me/2016/08/laravel-debugbar-sql/</guid>
       <description>&lt;p&gt;给 Laravel 项目安装了 debugbar 调试工具，在 debug 模式下打开页面底部会出现一个工具条，点开可以查看各项性能统计，最重要的是打印页面执行的 sql 语句和调试内容。下面利用 debugbar 工具找到一个 sql 查询的优化点。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 5.2 队列的配置和使用</title>
-      <link>https://tanteng.github.io/2016/07/laravel-5-queue/</link>
+      <link>http://tanteng.me/2016/07/laravel-5-queue/</link>
       <pubDate>Sun, 10 Jul 2016 10:14:21 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/07/laravel-5-queue/</guid>
+      <guid>http://tanteng.me/2016/07/laravel-5-queue/</guid>
       <description>&lt;p&gt;队列常常用于两种场景，一种是高并发的情况，一种是耗时的操作，可以将任务放到队列中去，消费者从队列取任务执行，当然还有失败的情况如何处理，以及延迟，重试，更复杂的情况还有优先级的实现。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel Elixir运行gulp命令:Error in plugin ‘gulp-notify’</title>
-      <link>https://tanteng.github.io/2016/06/gulp-notify-notify-send-must-be-installed/</link>
+      <link>http://tanteng.me/2016/06/gulp-notify-notify-send-must-be-installed/</link>
       <pubDate>Mon, 20 Jun 2016 12:58:36 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/06/gulp-notify-notify-send-must-be-installed/</guid>
+      <guid>http://tanteng.me/2016/06/gulp-notify-notify-send-must-be-installed/</guid>
       <description>&lt;p&gt;Laravel Elixir运行gulp命令出现错误提示：&lt;/p&gt;
 
 &lt;p&gt;[20:24:02] gulp-notify: [Error in notifier] Error in plugin &amp;#8216;gulp-notify&amp;#8217;&lt;/p&gt;
@@ -409,10 +409,10 @@ public function put($key, $value = null)
     
     <item>
       <title>优化 Laravel 网站打开速度</title>
-      <link>https://tanteng.github.io/2016/06/laravel-optimize/</link>
+      <link>http://tanteng.me/2016/06/laravel-optimize/</link>
       <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/06/laravel-optimize/</guid>
+      <guid>http://tanteng.me/2016/06/laravel-optimize/</guid>
       <description>&lt;p&gt;Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好优化提升网站的打开速度。&lt;/p&gt;
 
 &lt;h3 id=&#34;1-关闭debug&#34;&gt;1.关闭debug&lt;/h3&gt;
@@ -432,29 +432,29 @@ APP_KEY=base64:sT/aTFeaE13eyao1Raee6jC9Ff+Yle1SE+wtyk0H6B4=&lt;/pre&gt;
     
     <item>
       <title>Mac上安装Homestead</title>
-      <link>https://tanteng.github.io/2016/04/homestead/</link>
+      <link>http://tanteng.me/2016/04/homestead/</link>
       <pubDate>Sun, 03 Apr 2016 10:12:00 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/04/homestead/</guid>
+      <guid>http://tanteng.me/2016/04/homestead/</guid>
       <description>&lt;p&gt;之前在Windows上用VirtualBox+Vagrant装了一个CentOS 7的虚拟机，回家后又把Mac上的PHP集成开发环境MAMP给卸载了，也用VirtualBox+Vagrant装一个虚拟机，这次用的是Laravel官方封装好的box——Homestead.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关于Laravel跳转redirect方法</title>
-      <link>https://tanteng.github.io/2016/03/laravel-redirect/</link>
+      <link>http://tanteng.me/2016/03/laravel-redirect/</link>
       <pubDate>Thu, 31 Mar 2016 02:50:42 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/laravel-redirect/</guid>
+      <guid>http://tanteng.me/2016/03/laravel-redirect/</guid>
       <description>这是一个链接，关于Laravel跳转方法redirect()的使用。
 http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
     </item>
     
     <item>
       <title>Laravel集成WordPress扩展包——Corcel</title>
-      <link>https://tanteng.github.io/2016/03/laravel-wordpress-corcel/</link>
+      <link>http://tanteng.me/2016/03/laravel-wordpress-corcel/</link>
       <pubDate>Sun, 20 Mar 2016 04:29:43 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/laravel-wordpress-corcel/</guid>
+      <guid>http://tanteng.me/2016/03/laravel-wordpress-corcel/</guid>
       <description>&lt;p&gt;Corcel是一个可以适用于Laravel框架的集成Wordpress的扩展包，使用wordpress的后台发布文章，通过它的接口可以在Laravel中方便的调取文章等，安装和使用也非常简单。&lt;/p&gt;
 
 &lt;p&gt;Corcel的Github地址：&lt;a href=&#34;https://github.com/jgrossi/corcel&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;a href=&#34;https://github.com/jgrossi/corcel&#34;&gt;https://github.com/jgrossi/corcel&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
@@ -464,10 +464,10 @@ http://laraveldaily.com/all-about-redirects-in-laravel-5/</description>
     
     <item>
       <title>PHP闭包函数传参及使用外部变量</title>
-      <link>https://tanteng.github.io/2016/03/php-closure-use/</link>
+      <link>http://tanteng.me/2016/03/php-closure-use/</link>
       <pubDate>Tue, 08 Mar 2016 04:14:17 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/php-closure-use/</guid>
+      <guid>http://tanteng.me/2016/03/php-closure-use/</guid>
       <description>&lt;p&gt;在Laravel控制器写两个方法，一个是在内部创建一个闭包函数，一个是执行传过来的闭包函数，测试闭包的写法，use使用外部变量，及闭包函数的传参。如下：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true &#34;&gt;//测试闭包传参及use使用外部变量
@@ -490,19 +490,19 @@ protected function execClosure($name, Closure $closure)
     
     <item>
       <title>Laravel Nginx配置示例</title>
-      <link>https://tanteng.github.io/2016/02/laravel-nginx-server-conf/</link>
+      <link>http://tanteng.me/2016/02/laravel-nginx-server-conf/</link>
       <pubDate>Sat, 20 Feb 2016 16:43:57 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/02/laravel-nginx-server-conf/</guid>
+      <guid>http://tanteng.me/2016/02/laravel-nginx-server-conf/</guid>
       <description>&lt;p&gt;这是一个Laravel框架运行nginx服务器的配置示例，Laravel框架版本5.2&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 5.2自带用户注册和登录认证</title>
-      <link>https://tanteng.github.io/2016/02/laravel-5-2-auth/</link>
+      <link>http://tanteng.me/2016/02/laravel-5-2-auth/</link>
       <pubDate>Fri, 19 Feb 2016 07:14:06 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/02/laravel-5-2-auth/</guid>
+      <guid>http://tanteng.me/2016/02/laravel-5-2-auth/</guid>
       <description>&lt;p&gt;Laravel 5.2自带用户注册和登录认证，安装好Laravel后，在app根目录执行php artisan make:auth,即可自动安装一个简易的功能完整的用户认证系统。&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&#34;alignnone wp-image-9509 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/02/laravel-login.png&#34; alt=&#34;laravel-login&#34; width=&#34;750&#34; height=&#34;460&#34; /&gt;&lt;/p&gt;</description>
@@ -510,28 +510,28 @@ protected function execClosure($name, Closure $closure)
     
     <item>
       <title>Laravel维护模式的实现原理</title>
-      <link>https://tanteng.github.io/2016/02/laravel-maintenance/</link>
+      <link>http://tanteng.me/2016/02/laravel-maintenance/</link>
       <pubDate>Thu, 18 Feb 2016 14:35:06 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/02/laravel-maintenance/</guid>
+      <guid>http://tanteng.me/2016/02/laravel-maintenance/</guid>
       <description>&lt;p&gt;Laravel开启维护模式的方法是：php artisan down,关闭维护模式的命令是：php artisan up，当开启维护模式后，打开网站任何链接都提示“维护中”，当然这是可自定义的，并且返回503的HTTP码，这其实就是通过中间件来实现的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel Ioc容器singleton和bind方法的区别</title>
-      <link>https://tanteng.github.io/2016/01/laravel-singleton-bind/</link>
+      <link>http://tanteng.me/2016/01/laravel-singleton-bind/</link>
       <pubDate>Fri, 29 Jan 2016 06:06:19 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/01/laravel-singleton-bind/</guid>
+      <guid>http://tanteng.me/2016/01/laravel-singleton-bind/</guid>
       <description>&lt;p&gt;Laravel中使用Ioc容器的singleton方法和bind方法创建实例有什么区别呢？它们两个都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例，看下面的两个例子。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel构造函数自动依赖注入</title>
-      <link>https://tanteng.github.io/2016/01/laravel-construct-ioc/</link>
+      <link>http://tanteng.me/2016/01/laravel-construct-ioc/</link>
       <pubDate>Thu, 28 Jan 2016 05:59:41 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/01/laravel-construct-ioc/</guid>
+      <guid>http://tanteng.me/2016/01/laravel-construct-ioc/</guid>
       <description>&lt;p&gt;在Laravel的构造函数中可以实现自动依赖注入，而不需要实例化之前先实例化需要的类，如代码所示：&lt;/p&gt;
 
 &lt;pre class=&#34;lang:php decode:true &#34;&gt;&amp;lt;?php
@@ -571,10 +571,10 @@ class ForumThreadsController extends Controller implements ThreadCreatorListener
     
     <item>
       <title>在Laravel中注册Facades的步骤</title>
-      <link>https://tanteng.github.io/2016/01/laravel-facades-register/</link>
+      <link>http://tanteng.me/2016/01/laravel-facades-register/</link>
       <pubDate>Wed, 27 Jan 2016 06:42:52 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/01/laravel-facades-register/</guid>
+      <guid>http://tanteng.me/2016/01/laravel-facades-register/</guid>
       <description>&lt;p&gt;在Laravel中将类注册为Fcade可以使用Ioc容器，每次使用这个类的时候只会初始化一次类，类似单例模式，而且可以像使用静态方法调用类的方法，下面是在Laravel中注册Facades的步骤。&lt;/p&gt;
 
 &lt;p&gt;1.在项目app目录的Providers/AppServiceProvider.php中的register方法新增方法，代码如下。&lt;/p&gt;</description>
@@ -582,10 +582,10 @@ class ForumThreadsController extends Controller implements ThreadCreatorListener
     
     <item>
       <title>Laravel中Trait的使用</title>
-      <link>https://tanteng.github.io/2015/12/laravel-trait/</link>
+      <link>http://tanteng.me/2015/12/laravel-trait/</link>
       <pubDate>Mon, 21 Dec 2015 14:03:18 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/12/laravel-trait/</guid>
+      <guid>http://tanteng.me/2015/12/laravel-trait/</guid>
       <description>&lt;p&gt;看看PHP官方手册对Trait的定义：&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -605,10 +605,10 @@ class ForumThreadsController extends Controller implements ThreadCreatorListener
     
     <item>
       <title>Laravel 执行 migrate 命令:No such file or directory</title>
-      <link>https://tanteng.github.io/2015/12/laravel-migrate-mysql-2000/</link>
+      <link>http://tanteng.me/2015/12/laravel-migrate-mysql-2000/</link>
       <pubDate>Sun, 20 Dec 2015 09:50:22 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/12/laravel-migrate-mysql-2000/</guid>
+      <guid>http://tanteng.me/2015/12/laravel-migrate-mysql-2000/</guid>
       <description>&lt;p&gt;今天使用Laravel命令行工具操作数据库迁移操作时报错，提示mysql 2002错误，如图：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png&#34; rel=&#34;attachment wp-att-9354&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-9354&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2015/12/artisan-migrate-PDOException.png&#34; alt=&#34;artisan-migrate-PDOException&#34; width=&#34;420&#34; height=&#34;118&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>

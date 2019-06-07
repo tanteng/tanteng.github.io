@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yii 2.0 on 小谈博客</title>
-    <link>https://tanteng.github.io/categories/yii-2.0/</link>
+    <link>http://tanteng.me/categories/yii-2.0/</link>
     <description>Recent content in Yii 2.0 on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 29 Oct 2015 03:10:33 +0000</lastBuildDate>
     
-	<atom:link href="https://tanteng.github.io/categories/yii-2.0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tanteng.me/categories/yii-2.0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP约束参数类型</title>
-      <link>https://tanteng.github.io/2015/10/php-oop-typehinting/</link>
+      <link>http://tanteng.me/2015/10/php-oop-typehinting/</link>
       <pubDate>Thu, 29 Oct 2015 03:10:33 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/10/php-oop-typehinting/</guid>
+      <guid>http://tanteng.me/2015/10/php-oop-typehinting/</guid>
       <description>&lt;p&gt;PHP5起可以约束参数类型，在Yii2框架中使用很多，可以指定一个类的方法或者函数参数必须是某个类型，类型可以是对象，数组，字符串，整形。如果指定了参数类型，那么传入的值必须是符合类型约束的，否则会报异常错误。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>深入理解Yii2</title>
-      <link>https://tanteng.github.io/2015/06/yii2-digpage/</link>
+      <link>http://tanteng.me/2015/06/yii2-digpage/</link>
       <pubDate>Fri, 05 Jun 2015 15:54:34 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/06/yii2-digpage/</guid>
+      <guid>http://tanteng.me/2015/06/yii2-digpage/</guid>
       <description>推荐一个网站：
 http://www.digpage.com/index.html</description>
     </item>

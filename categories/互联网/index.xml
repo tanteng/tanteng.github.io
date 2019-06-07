@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>互联网 on 小谈博客</title>
-    <link>https://tanteng.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/</link>
+    <link>http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91/</link>
     <description>Recent content in 互联网 on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 03 Feb 2019 15:30:05 +0000</lastBuildDate>
     
-	<atom:link href="https://tanteng.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tanteng.me/categories/%E4%BA%92%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>本周阅读清单20190128</title>
-      <link>https://tanteng.github.io/2019/02/reding-list-28/</link>
+      <link>http://tanteng.me/2019/02/reding-list-28/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2019/02/reding-list-28/</guid>
+      <guid>http://tanteng.me/2019/02/reding-list-28/</guid>
       <description>1.golang select-case 实现机制
 https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-select-case实现机制.html
 2.如何优雅的控制 goroutine 的数量
@@ -33,10 +33,10 @@ https://zhuanlan.zhihu.com/p/30743094﻿</description>
     
     <item>
       <title>本周阅读清单20190103</title>
-      <link>https://tanteng.github.io/2019/01/reding-list-27/</link>
+      <link>http://tanteng.me/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2019/01/reding-list-27/</guid>
+      <guid>http://tanteng.me/2019/01/reding-list-27/</guid>
       <description>1.TDSQL 特有的 MySQL 内核功能介绍
 https://zhuanlan.zhihu.com/p/50774800
 2.MySQL 主键设计
@@ -51,10 +51,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181210</title>
-      <link>https://tanteng.github.io/2019/01/reding-list-26/</link>
+      <link>http://tanteng.me/2019/01/reding-list-26/</link>
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2019/01/reding-list-26/</guid>
+      <guid>http://tanteng.me/2019/01/reding-list-26/</guid>
       <description>go 指针和内存分配详解   https://segmentfault.com/a/1190000017473672
  初探 Go 的编译命令执行过程   https://halfrost.com/go_command/
  [译]代码审查之最佳实践   https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ
@@ -64,10 +64,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181123</title>
-      <link>https://tanteng.github.io/2018/12/reding-list-25/</link>
+      <link>http://tanteng.me/2018/12/reding-list-25/</link>
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/12/reding-list-25/</guid>
+      <guid>http://tanteng.me/2018/12/reding-list-25/</guid>
       <description>MySQL的异步复制和半同步复制   https://www.jianshu.com/p/d877cbe9f0f0
  Go调度器原理浅析   https://www.cnblogs.com/ralap7/p/9190416.html
  golang后台服务设计精要   http://litang.me/post/golang-server-design/
@@ -77,10 +77,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181112</title>
-      <link>https://tanteng.github.io/2018/11/reding-list-24/</link>
+      <link>http://tanteng.me/2018/11/reding-list-24/</link>
       <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/11/reding-list-24/</guid>
+      <guid>http://tanteng.me/2018/11/reding-list-24/</guid>
       <description>腾讯云点播视频加密方案   https://cloud.tencent.com/document/product/266/9638
  HTTP Live Streaming (HLS) &amp;#8211; 概念   https://www.jianshu.com/p/2ce402a485ca
  RTMP HLS HTTP 直播协议一次看个够   https://www.jianshu.com/p/4c89b2c83e59
@@ -90,10 +90,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181105</title>
-      <link>https://tanteng.github.io/2018/11/reding-list-23/</link>
+      <link>http://tanteng.me/2018/11/reding-list-23/</link>
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/11/reding-list-23/</guid>
+      <guid>http://tanteng.me/2018/11/reding-list-23/</guid>
       <description>Writing Protobuf Services in PHP   https://mattallan.org/posts/protobuf-php-services/
  Practical Persistence in Go: Organising Database Access   https://www.alexedwards.net/blog/organising-database-access
  CORS 跨域 Cookie 的设置与获取   https://www.jianshu.com/p/13d53acc124f
@@ -103,10 +103,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181022</title>
-      <link>https://tanteng.github.io/2018/10/reding-list-22/</link>
+      <link>http://tanteng.me/2018/10/reding-list-22/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/10/reding-list-22/</guid>
+      <guid>http://tanteng.me/2018/10/reding-list-22/</guid>
       <description>Practical Go: Real world advice for writing maintainable Go programs   https://dave.cheney.net/practical-go/presentations/qcon-china.html
  What happened to MySQL 6 &amp;amp; 7?   https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7
  工厂模式——看这一篇就够了   https://juejin.im/entry/58f5e080b123db2fa2b3c4c6
@@ -116,10 +116,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20181008</title>
-      <link>https://tanteng.github.io/2018/10/reding-list-21/</link>
+      <link>http://tanteng.me/2018/10/reding-list-21/</link>
       <pubDate>Tue, 23 Oct 2018 09:28:52 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/10/reding-list-21/</guid>
+      <guid>http://tanteng.me/2018/10/reding-list-21/</guid>
       <description>Laravel 中的 Pivot 表与多对多关系   https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html
  Laravel 的 tap 函数用法   https://laravel-china.org/articles/3893/laravel-tap-usage
  Laravel 5.5 模型关联   https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333
@@ -130,10 +130,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180924</title>
-      <link>https://tanteng.github.io/2018/10/reding-list-20/</link>
+      <link>http://tanteng.me/2018/10/reding-list-20/</link>
       <pubDate>Sat, 06 Oct 2018 14:28:23 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/10/reding-list-20/</guid>
+      <guid>http://tanteng.me/2018/10/reding-list-20/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;iOS 中使用 Protocol Buffers
 &lt;br /&gt;&lt;/li&gt;
@@ -158,10 +158,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180903</title>
-      <link>https://tanteng.github.io/2018/09/reding-list-19/</link>
+      <link>http://tanteng.me/2018/09/reding-list-19/</link>
       <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/09/reding-list-19/</guid>
+      <guid>http://tanteng.me/2018/09/reding-list-19/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;聊聊加密那点事——PHP加密最佳实践
 &lt;br /&gt;&lt;/li&gt;
@@ -179,10 +179,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180827</title>
-      <link>https://tanteng.github.io/2018/09/reding-list-18/</link>
+      <link>http://tanteng.me/2018/09/reding-list-18/</link>
       <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/09/reding-list-18/</guid>
+      <guid>http://tanteng.me/2018/09/reding-list-18/</guid>
       <description>&lt;p&gt;1. Windows Subsystem for Linux 之体验&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
@@ -198,10 +198,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180730</title>
-      <link>https://tanteng.github.io/2018/08/reding-list-17/</link>
+      <link>http://tanteng.me/2018/08/reding-list-17/</link>
       <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/08/reding-list-17/</guid>
+      <guid>http://tanteng.me/2018/08/reding-list-17/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;PHP : 令人困惑的 strtotime
 &lt;br /&gt;&lt;/li&gt;
@@ -220,10 +220,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180723</title>
-      <link>https://tanteng.github.io/2018/07/reding-list-16/</link>
+      <link>http://tanteng.me/2018/07/reding-list-16/</link>
       <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/reding-list-16/</guid>
+      <guid>http://tanteng.me/2018/07/reding-list-16/</guid>
       <description>&lt;p&gt;1. GoLang: When to use string pointers&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&#34;&gt;https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
@@ -242,10 +242,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180716</title>
-      <link>https://tanteng.github.io/2018/07/reding-list-15/</link>
+      <link>http://tanteng.me/2018/07/reding-list-15/</link>
       <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/reding-list-15/</guid>
+      <guid>http://tanteng.me/2018/07/reding-list-15/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;初探 Go 的编译命令执行过程
 &lt;br /&gt;&lt;/li&gt;
@@ -274,10 +274,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180709</title>
-      <link>https://tanteng.github.io/2018/07/reding-list-14/</link>
+      <link>http://tanteng.me/2018/07/reding-list-14/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/reding-list-14/</guid>
+      <guid>http://tanteng.me/2018/07/reding-list-14/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;深入浅出 TCP/IP 协议栈
 &lt;br /&gt;&lt;/li&gt;
@@ -309,10 +309,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180702</title>
-      <link>https://tanteng.github.io/2018/07/reding-list-13/</link>
+      <link>http://tanteng.me/2018/07/reding-list-13/</link>
       <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/reding-list-13/</guid>
+      <guid>http://tanteng.me/2018/07/reding-list-13/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;HTTP/2 服务器推送（server push）教程
 &lt;br /&gt;&lt;/li&gt;
@@ -337,10 +337,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180625</title>
-      <link>https://tanteng.github.io/2018/06/reding-list-12/</link>
+      <link>http://tanteng.me/2018/06/reding-list-12/</link>
       <pubDate>Fri, 29 Jun 2018 13:29:54 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/06/reding-list-12/</guid>
+      <guid>http://tanteng.me/2018/06/reding-list-12/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;了解 Nginx 基本概念
 &lt;br /&gt;&lt;/li&gt;
@@ -365,10 +365,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180619</title>
-      <link>https://tanteng.github.io/2018/06/reding-list-11/</link>
+      <link>http://tanteng.me/2018/06/reding-list-11/</link>
       <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/06/reding-list-11/</guid>
+      <guid>http://tanteng.me/2018/06/reding-list-11/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;MySQL 索引背后的数据结构及算法原理
 &lt;br /&gt;&lt;/li&gt;
@@ -393,10 +393,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180528</title>
-      <link>https://tanteng.github.io/2018/06/reding-list-9/</link>
+      <link>http://tanteng.me/2018/06/reding-list-9/</link>
       <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/06/reding-list-9/</guid>
+      <guid>http://tanteng.me/2018/06/reding-list-9/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;在 Laravel 中使用 Vue 组件化开发
 &lt;br /&gt;&lt;/li&gt;
@@ -421,10 +421,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180514</title>
-      <link>https://tanteng.github.io/2018/05/reding-list-8/</link>
+      <link>http://tanteng.me/2018/05/reding-list-8/</link>
       <pubDate>Sat, 26 May 2018 15:08:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/05/reding-list-8/</guid>
+      <guid>http://tanteng.me/2018/05/reding-list-8/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Go语言中的错误处理
 &lt;br /&gt;&lt;/li&gt;
@@ -446,10 +446,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180507</title>
-      <link>https://tanteng.github.io/2018/05/reding-list-7/</link>
+      <link>http://tanteng.me/2018/05/reding-list-7/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/05/reding-list-7/</guid>
+      <guid>http://tanteng.me/2018/05/reding-list-7/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Golang CSP 并发模型
 &lt;br /&gt;&lt;/li&gt;
@@ -474,10 +474,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180430</title>
-      <link>https://tanteng.github.io/2018/05/reding-list-6/</link>
+      <link>http://tanteng.me/2018/05/reding-list-6/</link>
       <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/05/reding-list-6/</guid>
+      <guid>http://tanteng.me/2018/05/reding-list-6/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Learning Elasticsearch with Laravel
 &lt;br /&gt;&lt;/li&gt;
@@ -502,10 +502,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180423</title>
-      <link>https://tanteng.github.io/2018/04/reding-list/</link>
+      <link>http://tanteng.me/2018/04/reding-list/</link>
       <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/04/reding-list/</guid>
+      <guid>http://tanteng.me/2018/04/reding-list/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Redis 事务与关系型数据库事务比较
 &lt;br /&gt;&lt;/li&gt;
@@ -530,10 +530,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180416</title>
-      <link>https://tanteng.github.io/2018/04/reding-list-4/</link>
+      <link>http://tanteng.me/2018/04/reding-list-4/</link>
       <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/04/reding-list-4/</guid>
+      <guid>http://tanteng.me/2018/04/reding-list-4/</guid>
       <description>&lt;p&gt;1.缓存击穿、失效以及热点key问题&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/d5a3668d4dad&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/d5a3668d4dad&#34;&gt;https://www.jianshu.com/p/d5a3668d4dad&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
@@ -549,10 +549,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180410</title>
-      <link>https://tanteng.github.io/2018/04/reding-list-3/</link>
+      <link>http://tanteng.me/2018/04/reding-list-3/</link>
       <pubDate>Tue, 10 Apr 2018 12:10:34 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/04/reding-list-3/</guid>
+      <guid>http://tanteng.me/2018/04/reding-list-3/</guid>
       <description>&lt;p&gt;1.聊聊 Linux 五种 I/O 进程模型&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/486b0965c296&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.jianshu.com/p/486b0965c296&#34;&gt;https://www.jianshu.com/p/486b0965c296&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
@@ -568,10 +568,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180402</title>
-      <link>https://tanteng.github.io/2018/04/reding-list-2/</link>
+      <link>http://tanteng.me/2018/04/reding-list-2/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/04/reding-list-2/</guid>
+      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Redis集群技术及Codis实践
 &lt;br /&gt;&lt;/li&gt;
@@ -596,10 +596,10 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>本周阅读清单20180326</title>
-      <link>https://tanteng.github.io/2018/03/reding-list-5/</link>
+      <link>http://tanteng.me/2018/03/reding-list-5/</link>
       <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/03/reding-list-5/</guid>
+      <guid>http://tanteng.me/2018/03/reding-list-5/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;Redis内存使用优化与存储
 &lt;br /&gt;&lt;/li&gt;
@@ -624,28 +624,28 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>计算机的一些概念在生活中的场景</title>
-      <link>https://tanteng.github.io/2017/10/computer-concepts-in-life/</link>
+      <link>http://tanteng.me/2017/10/computer-concepts-in-life/</link>
       <pubDate>Sun, 08 Oct 2017 06:14:13 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/10/computer-concepts-in-life/</guid>
+      <guid>http://tanteng.me/2017/10/computer-concepts-in-life/</guid>
       <description>&lt;p&gt;计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP / IP身世之谜</title>
-      <link>https://tanteng.github.io/2017/08/tcp-ip-life-ex/</link>
+      <link>http://tanteng.me/2017/08/tcp-ip-life-ex/</link>
       <pubDate>Wed, 02 Aug 2017 03:02:01 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/08/tcp-ip-life-ex/</guid>
+      <guid>http://tanteng.me/2017/08/tcp-ip-life-ex/</guid>
       <description>&lt;p&gt;1972年，全世界电脑业和通讯业的专家学者在美国华盛顿举行了第一届国际计算机通信会议，就在不同的计算机网络之间进行通信达成协议，会议决定成立Internet工作组，负责建立一种能保证计算机之间进行通信的标准规范（即“通信协议”），而这个组织第一位主席美国人文顿·瑟夫（Vinton G.Cerf）则被不少人称为“互联网之父”；1973年，美国国防部也开始研究如何实现各种不同网络之间的互联问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>百度联盟如何验证 HTTPS 站点</title>
-      <link>https://tanteng.github.io/2017/03/baidu-union-verify-https-website/</link>
+      <link>http://tanteng.me/2017/03/baidu-union-verify-https-website/</link>
       <pubDate>Wed, 22 Mar 2017 15:44:05 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/03/baidu-union-verify-https-website/</guid>
+      <guid>http://tanteng.me/2017/03/baidu-union-verify-https-website/</guid>
       <description>&lt;p&gt;本站是 HTTPS 站点，在百度联盟添加站点页面，输入 blog.tanteng.me 点击“验证”进入验证页面，提示两种方式，1. 把文件放根目录 2. 添加 meta 信息，都试了，无法验证。&lt;/p&gt;
 
 &lt;pre class=&#34;lang:default decode:true&#34;&gt;[root@iZ94r80gdghZ public]# curl blog.tanteng.me
@@ -660,38 +660,38 @@ https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</descripti
     
     <item>
       <title>网站的五个“端”</title>
-      <link>https://tanteng.github.io/2015/10/website-client/</link>
+      <link>http://tanteng.me/2015/10/website-client/</link>
       <pubDate>Fri, 16 Oct 2015 15:09:28 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/10/website-client/</guid>
+      <guid>http://tanteng.me/2015/10/website-client/</guid>
       <description>网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”成了大型网站必备的标配。
 PC、手机站是独立的两套模板，核心的业务逻辑是一样的，Android和ios手机客户端都是通过api接口调用，其中pad端网站可以是客户端中嵌入一个H5页面。</description>
     </item>
     
     <item>
       <title>mac下sublime安装package control组件命令</title>
-      <link>https://tanteng.github.io/2015/03/mac-sublime-package-control/</link>
+      <link>http://tanteng.me/2015/03/mac-sublime-package-control/</link>
       <pubDate>Wed, 11 Mar 2015 14:36:36 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/03/mac-sublime-package-control/</guid>
+      <guid>http://tanteng.me/2015/03/mac-sublime-package-control/</guid>
       <description>&lt;p&gt;在mac下安装sublime插件，首先要安装package control组件，需要按contro＋｀ 键调出控制台，然后输入以下针对OS X系统的命令即可。必须在联网模式下。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在macbook上怎么移动文件</title>
-      <link>https://tanteng.github.io/2015/02/macbook-move/</link>
+      <link>http://tanteng.me/2015/02/macbook-move/</link>
       <pubDate>Thu, 12 Feb 2015 16:38:04 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/02/macbook-move/</guid>
+      <guid>http://tanteng.me/2015/02/macbook-move/</guid>
       <description>在macbook上怎么移动文件？ 先Command+C复制，再Option+Command+V就是移动。</description>
     </item>
     
     <item>
       <title>macbook常用快捷键大全</title>
-      <link>https://tanteng.github.io/2015/02/macbook-keyboard/</link>
+      <link>http://tanteng.me/2015/02/macbook-keyboard/</link>
       <pubDate>Thu, 12 Feb 2015 05:31:37 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/02/macbook-keyboard/</guid>
+      <guid>http://tanteng.me/2015/02/macbook-keyboard/</guid>
       <description>&lt;p&gt;macbook常用快捷键大全，什么都不说了，直接上图，点击查看大图。上面有完整的macbook常用快捷键大全。很直观。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-7775 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png&#34; alt=&#34;macbook_kuaijiejian&#34; width=&#34;1920&#34; height=&#34;1080&#34; srcset=&#34;https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian.png 1920w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-300x169.png 300w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-1024x576.png 1024w, https://blog.tanteng.me/wp-content/uploads/2015/02/macbook_kuaijiejian-900x506.png 900w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
@@ -699,37 +699,37 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>SEO优化技巧：从yoast的wordpress seo提示学到的</title>
-      <link>https://tanteng.github.io/2015/01/seo-yoast-tips/</link>
+      <link>http://tanteng.me/2015/01/seo-yoast-tips/</link>
       <pubDate>Sat, 31 Jan 2015 03:36:28 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2015/01/seo-yoast-tips/</guid>
+      <guid>http://tanteng.me/2015/01/seo-yoast-tips/</guid>
       <description>&lt;p&gt;以下是一款wordpress seo优化插件：wordpress seo by yoast给网页提供的SEO优化技巧提示，从中我们可以学习如何优化SEO，如何取标题，还有元描述，图像，出站链接对网站SEO优化的作用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>乔布斯给苹果公司命名</title>
-      <link>https://tanteng.github.io/2014/12/jobs-apple/</link>
+      <link>http://tanteng.me/2014/12/jobs-apple/</link>
       <pubDate>Mon, 08 Dec 2014 02:12:16 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2014/12/jobs-apple/</guid>
+      <guid>http://tanteng.me/2014/12/jobs-apple/</guid>
       <description>&lt;p&gt;乔布斯对公司苹果的命名：Apple，就是个创举，跟计算机毫无关系，但是苹果是每个人都吃的，叫这个名字很容易记住，让当时人们对计算机机器和锋利的外观有耳目一新的感觉，而且代表健康，他还想到一点Apple在电话簿中排第一。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SEO优化技巧</title>
-      <link>https://tanteng.github.io/2014/11/seo-optimize/</link>
+      <link>http://tanteng.me/2014/11/seo-optimize/</link>
       <pubDate>Wed, 26 Nov 2014 12:48:42 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2014/11/seo-optimize/</guid>
+      <guid>http://tanteng.me/2014/11/seo-optimize/</guid>
       <description>&lt;p&gt;wordpress SEO by yoast这款插件告诉了我们很多SEO优化的技巧，我们在编辑内容的时候，发布或者更新文章，都可以看到wordpress SEO插件提示的SEO优化tips，非常有道理而且非常有用，下面就是从wordpress SEO by yoast学到的SEO优化技巧。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>百度站长平台：如何写出搜索引擎喜欢的标题</title>
-      <link>https://tanteng.github.io/2014/11/baidu-zhanzhang-title/</link>
+      <link>http://tanteng.me/2014/11/baidu-zhanzhang-title/</link>
       <pubDate>Wed, 12 Nov 2014 05:39:19 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2014/11/baidu-zhanzhang-title/</guid>
+      <guid>http://tanteng.me/2014/11/baidu-zhanzhang-title/</guid>
       <description>&lt;p&gt;这篇文章摘自百度站长平台站长学院。看看官方告诉我们如何写出搜索引擎喜欢的标题。&lt;/p&gt;
 
 &lt;p&gt;在与大中型网站SEO人员沟通的过程中常听到这样的报怨：SEO地位低，净收拾产品技术编辑的烂摊子了。起初我们感觉非常不可思议，但后来发现这种情况还非常普遍。相应的，对于那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时，要设计出吸引用户和搜索引擎的标题；而不是单纯地把优化工作全部扔给SEO人员。所以，今天我们想跟产品人员和编辑说说网页标题该怎么写。&lt;/p&gt;
@@ -745,10 +745,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>程序员的三种美德</title>
-      <link>https://tanteng.github.io/2014/01/virtue-programer/</link>
+      <link>http://tanteng.me/2014/01/virtue-programer/</link>
       <pubDate>Sat, 11 Jan 2014 16:25:35 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2014/01/virtue-programer/</guid>
+      <guid>http://tanteng.me/2014/01/virtue-programer/</guid>
       <description>&lt;p&gt;Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;懒惰&lt;/strong&gt;：&lt;/p&gt;
@@ -760,10 +760,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>2007年乔布斯和盖茨的对话（视频）</title>
-      <link>https://tanteng.github.io/2012/09/steve-gates/</link>
+      <link>http://tanteng.me/2012/09/steve-gates/</link>
       <pubDate>Sat, 22 Sep 2012 06:48:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2012/09/steve-gates/</guid>
+      <guid>http://tanteng.me/2012/09/steve-gates/</guid>
       <description>&lt;p&gt;&lt;em&gt;You and I have memories longer than the road that stretches out ahead. “好了，史蒂夫，我觉得我们可以换一种方式来看待这个问题。我觉得现在的情况更接近于这样——我们都有个有钱的邻居，叫施乐，我闯进他们家准备偷电视机的时候，发现你已经把它盗走了。&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;_&lt;/p&gt;</description>
@@ -771,10 +771,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>Linux发明人《Linus Torvalds自传》摘录</title>
-      <link>https://tanteng.github.io/2012/09/linus-torvalds/</link>
+      <link>http://tanteng.me/2012/09/linus-torvalds/</link>
       <pubDate>Tue, 04 Sep 2012 16:07:50 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2012/09/linus-torvalds/</guid>
+      <guid>http://tanteng.me/2012/09/linus-torvalds/</guid>
       <description>&lt;div&gt;
   &lt;p&gt;
     除了程序员，大概很少人知道Linux操作系统。
@@ -797,10 +797,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>12306铁道部订票网站性能分析</title>
-      <link>https://tanteng.github.io/2012/01/12306/</link>
+      <link>http://tanteng.me/2012/01/12306/</link>
       <pubDate>Thu, 19 Jan 2012 14:06:04 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2012/01/12306/</guid>
+      <guid>http://tanteng.me/2012/01/12306/</guid>
       <description>&lt;p&gt;12306.cn网站挂了，被全国人民骂了。我这两天也在思考这个事，我想以这个事来粗略地和大家讨论一下网站性能的问题。因为仓促，而且完全基于 本人有限的经验和了解，所以，如果有什么问题还请大家一起讨论和指正。（这又是一篇长文，只讨论性能问题，不讨论那些UI，用户体验，或是是否把支付和购 票下单环节分开的功能性的东西）&lt;/p&gt;
 
 &lt;h4 id=&#34;业务&#34;&gt;业务&lt;/h4&gt;
@@ -814,10 +814,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>搜索相似图片的原理</title>
-      <link>https://tanteng.github.io/2011/11/image-search/</link>
+      <link>http://tanteng.me/2011/11/image-search/</link>
       <pubDate>Tue, 22 Nov 2011 11:14:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2011/11/image-search/</guid>
+      <guid>http://tanteng.me/2011/11/image-search/</guid>
       <description>&lt;div&gt;
   &lt;div id=&#34;ArticleCnt&#34;&gt;
     &lt;p&gt;
@@ -845,10 +845,10 @@ PC、手机站是独立的两套模板，核心的业务逻辑是一样的，And
     
     <item>
       <title>在Linux中用gcc运行C语言程序</title>
-      <link>https://tanteng.github.io/2011/11/linuxc/</link>
+      <link>http://tanteng.me/2011/11/linuxc/</link>
       <pubDate>Mon, 14 Nov 2011 04:10:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2011/11/linuxc/</guid>
+      <guid>http://tanteng.me/2011/11/linuxc/</guid>
       <description>&lt;p&gt;&lt;strong&gt;编译简单的 C 程序&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;C 语言经典的入门例子是 &lt;strong&gt;Hello World&lt;/strong&gt;，下面是一示例代码：&lt;/p&gt;
@@ -863,10 +863,10 @@ int main(void)
     
     <item>
       <title>PV原语实现进程同步和互斥的原理实例</title>
-      <link>https://tanteng.github.io/2011/10/pv/</link>
+      <link>http://tanteng.me/2011/10/pv/</link>
       <pubDate>Tue, 25 Oct 2011 06:52:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2011/10/pv/</guid>
+      <guid>http://tanteng.me/2011/10/pv/</guid>
       <description>&lt;p&gt;&lt;strong&gt;PV原语的含义&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;P操作和V操作是不可中断的程序段，称为原语。PV原语及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。信号量sem是一整数，sem大于等于零时代表可供并发进程使用的资源实体数，但sem小于零时则表示正在等待使用临界区的进程数。&lt;/p&gt;
@@ -882,10 +882,10 @@ int main(void)
     
     <item>
       <title>乔布斯的Stay Hungry, Stay Foolish</title>
-      <link>https://tanteng.github.io/2011/09/stay-hungry-stay-foolish/</link>
+      <link>http://tanteng.me/2011/09/stay-hungry-stay-foolish/</link>
       <pubDate>Sun, 18 Sep 2011 07:06:36 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2011/09/stay-hungry-stay-foolish/</guid>
+      <guid>http://tanteng.me/2011/09/stay-hungry-stay-foolish/</guid>
       <description>&lt;p&gt;2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;什么叫 Hungry？&lt;/strong&gt;&lt;/p&gt;
@@ -899,10 +899,10 @@ int main(void)
     
     <item>
       <title>小谈博客</title>
-      <link>https://tanteng.github.io/2009/01/welcome/</link>
+      <link>http://tanteng.me/2009/01/welcome/</link>
       <pubDate>Thu, 01 Jan 2009 10:53:14 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2009/01/welcome/</guid>
+      <guid>http://tanteng.me/2009/01/welcome/</guid>
       <description>很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！</description>
     </item>
     
