@@ -143,266 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/04/composer-ignore-reqs/" >Composer设置忽略版本匹配</a>
-        </span>
-        <span class="item__date">
-          Apr 26, 2016
-        </span>
-        <span >
-        
-        <p>执行composer install遇到错误：Your requirements could not be resolved to an installable set of packages. 这是因为不匹配composer.json要求的版本。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/composer-ignore-reqs/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/jquery-on-dom/" >jQuery事件绑定on()与弹窗</a>
-        </span>
-        <span class="item__date">
-          Apr 25, 2016
-        </span>
-        <span >
-        
-        <p>页面上经常会有弹窗，有的弹窗是动态生成的，有的弹窗是在页面底部隐藏的，对于动态生成的弹窗，如果要监听弹窗的事件，可以使用jQuery的事件绑定on()方法实现。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/jquery-on-dom/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/git-init/" >初始化一个 git 项目</a>
-        </span>
-        <span class="item__date">
-          Apr 18, 2016
-        </span>
-        <span >
-        
-        <h4 id="git-global-setup">Git global setup</h4>
-
-<p><code class="lang:default decode:true light-well">git config &ndash;global user.name &ldquo;谈腾&rdquo;
-git config &ndash;global user.email &ldquo;tanteng@qq.com&rdquo;</code></p>
-
-<h4 id="create-a-new-repository">Create a new repository</h4>
-
-<p><code class="lang:default decode:true">git clone git@gitlab.example.com:xx.git
-cd adminsns.xunlei.cn
-touch README.md
-git add README.md
-git commit -m &ldquo;add README&rdquo;
-git push -u origin master</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/git-init/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/crontab-demo/" >Crontab 定时任务格式和使用实例</a>
-        </span>
-        <span class="item__date">
-          Apr 16, 2016
-        </span>
-        <span >
-        
-        <h3 id="crontab的文件格式">crontab的文件格式</h3>
-
-<p>分 时 日 月 星期 要运行的命令</p>
-
-<ul>
-<li>第1列分钟0～59</li>
-<li>第2列小时0～23（0表示子夜）</li>
-<li>第3列日1～31</li>
-<li>第4列月1～12</li>
-<li>第5列星期0～7（0和7表示星期天）</li>
-<li>第6列要运行的命令</li>
-</ul>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/crontab-demo/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/nginx-set-fastcgi-param/" >Nginx 设置 $_SERVER 变量</a>
-        </span>
-        <span class="item__date">
-          Apr 13, 2016
-        </span>
-        <span >
-        
-        <p>在有的PHP中定义ENVIRONMENT常量，可以区分开发环境和生产环境，如：</p>
-
-<p><code>define(&lsquo;ENVIRONMENT&rsquo;, isset($_SERVER[&lsquo;CI_ENV&rsquo;]) ? $_SERVER[&lsquo;CI_ENV&rsquo;] : &lsquo;development&rsquo;);
-switch (ENVIRONMENT)
-{
-    case &lsquo;development&rsquo;:
-        error_reporting(-1);
-        ini_set(&lsquo;display_errors&rsquo;, 1);
-    break;</p>
-
-<pre><code>case 'testing':
-case 'production':
-    ini_set('display_errors', 0);
-    if (version_compare(PHP_VERSION, '5.3', '&amp;gt;='))
-    {
-        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED &amp; ~E_STRICT &amp; ~E_USER_NOTICE &amp; ~E_USER_DEPRECATED);
-    }
-    else
-    {
-        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_USER_NOTICE);
-    }
-break;
-
-default:
-    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-    echo 'The application environment is not set correctly.';
-    exit(1); // EXIT_ERROR
-</code></pre>
-
-<p>}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/nginx-set-fastcgi-param/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/linux-grep/" >Linux命令：强大的grep命令</a>
-        </span>
-        <span class="item__date">
-          Apr 13, 2016
-        </span>
-        <span >
-        
-        <p>grep是一个文本搜索工具，用于在Linux系统下查找文件，帮你在浩瀚的文件中匹配字符串找到你要找的文件位置，支持正则表达式，它非常强大。</p>
-
-<p><code>grep -rnw &lsquo;/path/to/somewhere/&rsquo; -e &ldquo;pattern&rdquo;</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/linux-grep/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/vagrantfile-synced-folder/" >巧用vagrant建立映射目录解决环境兼容问题</a>
-        </span>
-        <span class="item__date">
-          Apr 8, 2016
-        </span>
-        <span >
-        
-        <p>使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：</p>
-
-<p><code>config.vm.synced_folder &quot;../website&quot;, &quot;/usr/share/nginx/html&quot;</code></p>
-
-<p>表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/vagrantfile-synced-folder/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/nginx-ssi/" >Nginx开启SSI</a>
-        </span>
-        <span class="item__date">
-          Apr 8, 2016
-        </span>
-        <span >
-        
-        <p>在一个HTML页面中发现一段这样的代码：</p>
-
-<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
-
-<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/nginx-ssi/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/php-fpm-start-servers/" >php-fpm服务挂掉</a>
-        </span>
-        <span class="item__date">
-          Apr 5, 2016
-        </span>
-        <span >
-        
-        <p>今天发了个链接，可能同时在线的人瞬间比较多，结果网站报503错误，回去打开php-fpm错误日志一看，php-fpm服务挂掉了，报如下错误：</p>
-
-<p><code class="lang:sh decode:true ">[04-Apr-2016 15:38:04] NOTICE: systemd monitor interval set to 10000ms
-[05-Apr-2016 19:03:08] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 8 children, there are 0 idle, and 29 total children
-[05-Apr-2016 19:03:09] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 16 children, there are 0 idle, and 34 total children
-[05-Apr-2016 19:03:11] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 39 total children
-[05-Apr-2016 19:03:12] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 44 total children
-[05-Apr-2016 19:03:13] WARNING: [pool www] seems busy (you may need to increase pm.start_servers, or pm.min/max_spare_servers), spawning 32 children, there are 0 idle, and 49 total children
-[05-Apr-2016 19:03:14] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/php-fpm-start-servers/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/04/git-config-safe/" >.git/config文件泄露修复</a>
         </span>
         <span class="item__date">
@@ -428,6 +168,199 @@ default:
         </span>
         
           ... <a class="read-more-symbol" href="/2016/04/git-config-safe/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/homestead/" >Mac上安装Homestead</a>
+        </span>
+        <span class="item__date">
+          Apr 3, 2016
+        </span>
+        <span >
+        
+        <p>之前在Windows上用VirtualBox+Vagrant装了一个CentOS 7的虚拟机，回家后又把Mac上的PHP集成开发环境MAMP给卸载了，也用VirtualBox+Vagrant装一个虚拟机，这次用的是Laravel官方封装好的box——Homestead.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/homestead/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/centos-7-repo/" >常用的CentOS 7 yum源集合</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2016
+        </span>
+        <span >
+        
+        <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/centos-7-repo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/laravel-redirect/" >关于Laravel跳转redirect方法</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2016
+        </span>
+        <span >
+        
+        这是一个链接，关于Laravel跳转方法redirect()的使用。 http://laraveldaily.com/all-about-redirects-in-laravel-5/
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/php-fpm-conf/" >PHP-FPM性能优化参考</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2016
+        </span>
+        <span >
+        
+        <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
+
+<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/php-fpm-conf/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/aliyun-centos-7-swap/" >在阿里云CentOS 7创建swap分区</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2016
+        </span>
+        <span >
+        
+        <p>创建swap分区是为了弥补物理内存的不足，也就是虚拟内存的概念，把硬盘的一部分划分作为虚拟内存，但这个空间不是越大越好，硬盘的速度远低于内存，设置不当反而拖慢系统的速度。</p>
+
+<p>阿里云的主机默认没有swap分区，可以使用free命令查看：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" target="_blank"><img class="alignnone wp-image-9771 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" alt="aliyun_swap" width="519" height="112" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/aliyun-centos-7-swap/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/centos7-mariadb-break/" >CentOS 7.0 MariaDB异常结束的解决方法</a>
+        </span>
+        <span class="item__date">
+          Mar 28, 2016
+        </span>
+        <span >
+        
+        CentOS 7.0 x64下MariaDB异常结束的解决方法 http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/innodb_buffer_pool_size/" >MySQL数据库性能优化之缓存参数设置</a>
+        </span>
+        <span class="item__date">
+          Mar 28, 2016
+        </span>
+        <span >
+        
+        <p>网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/innodb_buffer_pool_size/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/linux-alias-ln/" >Linux命令alias和ln（别名和链接命令）</a>
+        </span>
+        <span class="item__date">
+          Mar 27, 2016
+        </span>
+        <span >
+        
+        <p>今天遇到个问题，我用 yum 的方式安装的 php7 的环境，包括 nginx ， php-fpm 等，使用的是 remi 源，安装成功，但是 PHP 的全局环境变量是 php70 ，也就是说在终端本来命令 php 是可用的，现在必须是 php70 了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/linux-alias-ln/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/nginx-buffer-params/" >Nginx性能调优之buffer参数设置</a>
+        </span>
+        <span class="item__date">
+          Mar 27, 2016
+        </span>
+        <span >
+        
+        <p>打开Nginx的error.log日志文件，发现很多warn的警告错误，提示：</p>
+
+<p>①2016/03/25 13:18:35 [warn] 1171#0: *10875 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/0/08/0000000080 while reading upstream, client: 106.38.241.105, server: blog.tanteng.me, request: “GET /page/38/ HTTP/1.1”, upstream: “fastcgi://127.0.0.1:9000”, host: “blog.tanteng.me”.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/nginx-buffer-params/">➦</a>
         
         </div>
         
@@ -884,43 +817,7 @@ default:
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -928,7 +825,7 @@ default:
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

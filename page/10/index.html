@@ -143,253 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/06/golang-function-done/" >在 Golang 定时任务中判断函数是否执行完成</a>
-        </span>
-        <span class="item__date">
-          Jun 19, 2017
-        </span>
-        <span >
-        
-        <p>使用 golang 的定时任务（采用 robfig/cron 包），每 5s 调用一个函数进行处理，但是这个函数的处理可能会耗时，在没有执行完之前如果再次调用，就会导致计算结果不对。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/06/golang-function-done/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/06/web-api-security/" >WEB API接口安全和防刷</a>
-        </span>
-        <span class="item__date">
-          Jun 16, 2017
-        </span>
-        <span >
-        
-        <p>做各种活动经常会涉及到送会员、礼券、奖品、抽奖、刷榜等业务，这些活动都有一个共同点，那就是恶意用户找到漏洞请求接口从而获取利益，所以要做好这些WEB接口的安全，这里总结一下实践中对这些WEB接口做的安全措施和防刷机制。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/06/web-api-security/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/06/alter-table-utf8mb4/" >修改数据库、表、字段为 utf8mb4 编码</a>
-        </span>
-        <span class="item__date">
-          Jun 9, 2017
-        </span>
-        <span >
-        
-        创建 utf8mb4 数据库： create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 修改数据库、表、字段为 utf8mb4 编码： # For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/06/alter-table-utf8mb4/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/06/golang-oop-extends/" >Golang中的面向对象继承</a>
-        </span>
-        <span class="item__date">
-          Jun 3, 2017
-        </span>
-        <span >
-        
-        <p>Golang的面向对象机制与Smalltalk或者Java等传统面向对象的编程语言不同。传统面向对象编程语言的一个重要特性是继承机制。因为继承机制支持在关联对象间进行代码复用和数据共享。继承机制曾在代码复用和数据共享的设计模式占据主导地位，但是目前组合这一古老的技术重新焕发了活力。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/06/golang-oop-extends/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/trie-intro/" >Trie 树结构介绍</a>
-        </span>
-        <span class="item__date">
-          May 26, 2017
-        </span>
-        <span >
-        
-        使用一个 Golang 的敏感词过滤服务（https://github.com/huayuego/wordfilter），这个服务用到了 Trie 树存储词典。 这篇
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/trie-intro/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/cgi-fastcgi-php-fpm/" >关于 cgi, fastcgi, php-fpm 的关系</a>
-        </span>
-        <span class="item__date">
-          May 25, 2017
-        </span>
-        <span >
-        
-        几个链接： https://www.zhihu.com/question/30672017 http://www.lxlxw.me/?p=216 http://www.tuicool.com/articles/Ir2AreE
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/laravel-cache-clear-warning/" >注意 Laravel 清除缓存 php artisan cache:clear 的使用</a>
-        </span>
-        <span class="item__date">
-          May 23, 2017
-        </span>
-        <span >
-        
-        <p>Laravel 的命令 php artisan cache:clear 用来清除各种缓存，如页面，Redis，配置文件等缓存，它会清空 Redis 数据库的全部数据，比如默认使用的 Redis 的数据库是 db0，那么执行这个命令后，会清空 db0 中所有数据。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/laravel-cache-clear-warning/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/mysql-my-cnf/" >MySQL 配置文件 my.cnf 详细说明</a>
-        </span>
-        <span class="item__date">
-          May 22, 2017
-        </span>
-        <span >
-        
-        <p>本文记录MySQL配置文件my.cnf的详细说明。</p>
-
-<h3 id="linux系统mysql配置文件读取顺序">Linux系统MySQL配置文件读取顺序</h3>
-
-<table>
-<thead>
-<tr>
-<th>文件名字</th>
-<th>作用</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>/etc/my.cnf</td>
-<td>全局配置</td>
-</tr>
-
-<tr>
-<td>/etc/mysql/my.cnf</td>
-<td>全局配置</td>
-</tr>
-
-<tr>
-<td>SYSCONFDIR/my.cnf</td>
-<td>全局配置</td>
-</tr>
-
-<tr>
-<td>$MYSQL_HOME/my.cnf</td>
-<td>Server-specific 服务器特定的选项 (仅适用于服务端)</td>
-</tr>
-
-<tr>
-<td>defaults-extra-file</td>
-<td>如果有的话指定该文件<code>--defaults-extra-file=文件名字</code></td>
-</tr>
-
-<tr>
-<td>~/.my.cnf</td>
-<td>Server-specific 服务器特定的选项</td>
-</tr>
-
-<tr>
-<td>~/.mylogin.cnf</td>
-<td>User-specific 登录路径选择 （仅适用于客户端）</td>
-</tr>
-</tbody>
-</table>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/mysql-my-cnf/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/golang-php-array-slice-compare/" >Golang slice 和 PHP 数组比较</a>
-        </span>
-        <span class="item__date">
-          May 20, 2017
-        </span>
-        <span >
-        
-        <div class="card-title">
-  <h2>
-    Creating
-  </h2>
-</div>
-
-<p>Create an array in PHP</p>
-
-<p><code class="lang:default decode:true">$myStringArray = [&ldquo;One&rdquo;,&ldquo;Two&rdquo;,&ldquo;Three&rdquo;];</code></p>
-
-<p>In Go creating the above is a little more verbose and like variable assignment above there&#8217;s also multiple ways to create a slice. The most similar way to that of PHP is as follows.</p>
-
-<p><code class="lang:default decode:true">myStringArray := []string{&ldquo;One&rdquo;,&ldquo;Two&rdquo;,&ldquo;Three&rdquo;}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/golang-php-array-slice-compare/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/05/golang-byte-slice/" >Golang 字节切片初始化</a>
         </span>
         <span class="item__date">
@@ -402,6 +155,229 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2017/05/golang-byte-slice/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/laravel-etag-middleware/" >在 Laravel 中设置 Etag 缓存</a>
+        </span>
+        <span class="item__date">
+          May 19, 2017
+        </span>
+        <span >
+        
+        <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
+
+<h3 id="什么是-etag">什么是“ETag”？</h3>
+
+<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
+
+<p>浏览器根据状态码判断是否缓存过期。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/laravel-etag-middleware/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/linux-clear-cache-buffer/" >在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a>
+        </span>
+        <span class="item__date">
+          May 18, 2017
+        </span>
+        <span >
+        
+        在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/golang-append-slice-to-slice/" >Golang append slice to slice</a>
+        </span>
+        <span class="item__date">
+          May 10, 2017
+        </span>
+        <span >
+        
+        <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
+
+<p>片段1：</p>
+
+<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println(&ldquo;result:&ldquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
+
+<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/golang-append-slice-to-slice/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/shell-check-url/" >Shell 脚本请求 url 判断状态码</a>
+        </span>
+        <span class="item__date">
+          May 2, 2017
+        </span>
+        <span >
+        
+        Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl=&lsquo;./check_url.txt&rsquo; DATE_N=date &quot;+%Y-%m-%d %H:%M:%S&quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/shell-check-url/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/netstat-tcp-state/" >netstat 命令统计 tcp 各状态数量</a>
+        </span>
+        <span class="item__date">
+          Apr 28, 2017
+        </span>
+        <span >
+        
+        <p>统计 tcp 各种状态的个数：</p>
+
+<p><code class="lang:default decode:true">netstat -n | awk &lsquo;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&rsquo;</code></p>
+
+<p>结果：</p>
+
+<p><code class="lang:default decode:true ">[nobody@test14439 ~]$ netstat -n | awk &lsquo;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&rsquo;
+TIME_WAIT 418
+CLOSE_WAIT 109
+ESTABLISHED 65
+SYN_RECV 1</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/netstat-tcp-state/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/deadline/" >解决拖延症的好方法</a>
+        </span>
+        <span class="item__date">
+          Apr 23, 2017
+        </span>
+        <span >
+        
+        解决拖延症的好方法就是给自己设定一个最后期限（Deadline） ​​​​
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/golang-rand-int/" >Golang 生成整数随机数</a>
+        </span>
+        <span class="item__date">
+          Apr 22, 2017
+        </span>
+        <span >
+        
+        <p>生成一个给定范围的随机数，用 PHP 就太简单不过了，而且可以指定从负数到正整数的范围，如：</p>
+
+<p><code>&lt;?php
+echo mt_rand(-988, 888);</code></p>
+
+<p>这样就随机生成 -988 到 888 的随机数。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/golang-rand-int/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/nginx-13-permission-denied-111-connection-refused/" >Nginx 报错和解决方法记录</a>
+        </span>
+        <span class="item__date">
+          Apr 19, 2017
+        </span>
+        <span >
+        
+        <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
+
+<h3 id="13-permission-denied">13: Permission denied</h3>
+
+<p>Nginx错误：</p>
+
+<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() &#8220;/data/vhosts/xunlei.com/test/&#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &#8220;GET / HTTP/1.1&#8221;, host: &#8220;www.test.com&#8221;</p>
+
+<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/nginx-13-permission-denied-111-connection-refused/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/churchill-motto/" >丘吉尔名言</a>
+        </span>
+        <span class="item__date">
+          Apr 12, 2017
+        </span>
+        <span >
+        
+        <p>我没有别的，只有热血、辛劳、眼泪和汗水献给大家……你们问：我们的目的是什么？我可以用一个词来答复：胜利，不惜一切代价去争取胜利，无论多么恐怖也要争取胜利，无论道路多么遥远艰难，也要争取胜利，因为没有胜利就无法生存。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/churchill-motto/">➦</a>
         
         </div>
         
@@ -858,43 +834,7 @@
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -902,7 +842,7 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

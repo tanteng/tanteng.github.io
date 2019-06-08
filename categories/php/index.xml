@@ -6,10 +6,28 @@
     <description>Recent content in PHP on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Sep 2018 05:41:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 07:52:26 +0000</lastBuildDate>
     
 	<atom:link href="http://tanteng.me/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>本周阅读清单20181105</title>
+      <link>http://tanteng.me/2018/11/reding-list-23/</link>
+      <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/11/reding-list-23/</guid>
+      <description>1.Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ 2.Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access 3.CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f 4.Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e 5.govendor 使用 https://www.orztu.com/post/using-govendor/</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180903</title>
+      <link>http://tanteng.me/2018/09/reding-list-19/</link>
+      <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/09/reding-list-19/</guid>
+      <description>1.聊聊加密那点事——PHP加密最佳实践 https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice 2.etcd：从应用场景到实现原理的全方位解读 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle 3.大家的公司 Code Review 都是怎么做的？ https://www.zhihu.com/question/41089988 4.gRPC 和 restful 转换 https://github.com/grpc-ecosystem/grpc-gateway 5.</description>
+    </item>
     
     <item>
       <title>Laravel 错误和异常处理用法</title>
@@ -18,21 +36,6 @@
       
       <guid>http://tanteng.me/2018/09/laravel-error-handing/</guid>
       <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Laravel 用户授权系统使用小结</title>
-      <link>http://tanteng.me/2018/09/laravel-authorize-gates/</link>
-      <pubDate>Fri, 14 Sep 2018 11:04:59 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/09/laravel-authorize-gates/</guid>
-      <description>&lt;h3 id=&#34;-1&#34;&gt;基本用法&lt;/h3&gt;
-
-&lt;p&gt;示例&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$this-&amp;gt;authorize(&amp;lsquo;update&amp;rsquo;, $post);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;第一个参数 $ability,表示具备什么权限。第二个参数 $post，是一个模型实例。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,25 +78,30 @@
     </item>
     
     <item>
-      <title>Laravel 事件系统用法总结</title>
-      <link>http://tanteng.me/2018/06/laravel-event/</link>
-      <pubDate>Sun, 17 Jun 2018 02:10:52 +0000</pubDate>
+      <title>本周阅读清单20180723</title>
+      <link>http://tanteng.me/2018/07/reding-list-16/</link>
+      <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/06/laravel-event/</guid>
-      <description>&lt;p&gt;Laravel 的事件提供了一个简单的观察者实现，能够订阅和监听应用中发生的各种事件。事件类保存在 app/Events 目录中，而这些事件的的监听器则被保存在 app/Listeners 目录下。这些目录只有当你使用 Artisan 命令来生成事件和监听器时才会被自动创建。&lt;/p&gt;</description>
+      <guid>http://tanteng.me/2018/07/reding-list-16/</guid>
+      <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
     </item>
     
     <item>
-      <title>在 Laravel 中使用 gulp 构建前端资源</title>
-      <link>http://tanteng.me/2018/05/laravel-5-5-gulp/</link>
-      <pubDate>Mon, 28 May 2018 12:45:32 +0000</pubDate>
+      <title>本周阅读清单20180716</title>
+      <link>http://tanteng.me/2018/07/reding-list-15/</link>
+      <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/05/laravel-5-5-gulp/</guid>
-      <description>&lt;p&gt;最近把自己主页前端代码进一步规范了，使用 npm 引入一些前端的资源库，在 Laravel 5.5 中使用 gulp 遇到一些坑。&lt;/p&gt;
-
-&lt;p&gt;mix.sass 无法直接使用 node_modules 文件夹里的，只能用 resource/assets/sass/app.scss 这个文件生成 css，然后和其他的 css 合并为一个文件。&lt;/p&gt;
-
-&lt;p&gt;mix.scripts 可以使用 node_modules 文件夹里的 js，并和自己的 js 合并为一个文件。&lt;/p&gt;</description>
+      <guid>http://tanteng.me/2018/07/reding-list-15/</guid>
+      <description>1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180528</title>
+      <link>http://tanteng.me/2018/06/reding-list-9/</link>
+      <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-9/</guid>
+      <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
     </item>
     
     <item>
@@ -102,65 +110,43 @@
       <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</guid>
-      <description>&lt;p&gt;最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;lt;?php&lt;/p&gt;
-
-&lt;p&gt;use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;&lt;/p&gt;
-
-&lt;p&gt;//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&amp;lsquo;classLoader&amp;rsquo;);&lt;/p&gt;
-
-&lt;p&gt;function classLoader($class)
-{
-    $path = str_replace(&amp;rsquo;\&amp;rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &amp;lsquo;vendor/&amp;rsquo; . $path . &amp;lsquo;.php&amp;rsquo;;
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}&lt;/p&gt;
-
-&lt;p&gt;require_once SDK_PATH . &amp;lsquo;vendor/Qiniu/functions.php&amp;rsquo;;&lt;/p&gt;
-
-&lt;p&gt;class xxxx extends baseIndex{&lt;/p&gt;
-
-&lt;p&gt;//&lt;/p&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;</description>
+      <description>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不</description>
     </item>
     
     <item>
-      <title>PHP 查找数组中第 K 大的元素</title>
-      <link>http://tanteng.me/2018/05/php-find-the-k-largest/</link>
-      <pubDate>Fri, 25 May 2018 08:36:17 +0000</pubDate>
+      <title>本周阅读清单20180430</title>
+      <link>http://tanteng.me/2018/05/reding-list-6/</link>
+      <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/05/php-find-the-k-largest/</guid>
-      <description>&lt;p&gt;比如一个数组 [33, 5, 1, 90, 99, 3, 45, 13]，要找出第 K 大的元素，首先可以使用快速排序算法对数组进行排序，然后从排序后的数组中就很容易得到这个元素。&lt;/p&gt;</description>
+      <guid>http://tanteng.me/2018/05/reding-list-6/</guid>
+      <description>1.Learning Elasticsearch with Laravel https://michaelstivala.com/learning-elasticsearch-with-laravel/ 2.MQ(消息队列)常见的应用场景解析 https://juejin.im/post/5add63c951882567183eb956 3.WebSocket 通信过程与实现 https://segmentfault.com/a/1190000014643900 4.技术与贫富分化 http://www.ruanyifeng.com/blog/2010/08/technology_and_income_disparity.html 5.PHP HTTP客户端-Guzzle原理解析 https://segmentfault.com/p/1210000010203531/read 6.PHP扩</description>
     </item>
     
     <item>
-      <title>Laravel 模型间关系设置分表方法</title>
-      <link>http://tanteng.me/2018/04/laravel-relationships-settable/</link>
-      <pubDate>Thu, 19 Apr 2018 11:49:32 +0000</pubDate>
+      <title>本周阅读清单20180423</title>
+      <link>http://tanteng.me/2018/04/reding-list/</link>
+      <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/04/laravel-relationships-settable/</guid>
-      <description>&lt;p&gt;在实际开发中经常用到分库分表，比如用户表分成 100 张，那么这个时候查询数据需要设置分表，比如 Laravel 的 Model 类中提供了 setTable 方法：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/**
- * Set the table associated with the model.
- *
- * @param  string  $table
- * @return $this
- */
-public function setTable($table)
-{
-    $this-&amp;gt;table = $table;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;return $this;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;</description>
+      <guid>http://tanteng.me/2018/04/reding-list/</guid>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180416</title>
+      <link>http://tanteng.me/2018/04/reding-list-4/</link>
+      <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-4/</guid>
+      <description>1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180410</title>
+      <link>http://tanteng.me/2018/04/reding-list-3/</link>
+      <pubDate>Tue, 10 Apr 2018 12:10:34 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-3/</guid>
+      <description>1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.</description>
     </item>
     
     <item>
@@ -173,14 +159,12 @@ public function setTable($table)
     </item>
     
     <item>
-      <title>使用 Docker 搭建开发环境</title>
-      <link>http://tanteng.me/2018/03/docker-dev-environment/</link>
-      <pubDate>Thu, 29 Mar 2018 02:48:04 +0000</pubDate>
+      <title>本周阅读清单20180402</title>
+      <link>http://tanteng.me/2018/04/reding-list-2/</link>
+      <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/03/docker-dev-environment/</guid>
-      <description>&lt;p&gt;做了一次分享，主题《使用 Docker 搭建开发环境》，简单介绍了一下 Docker 的概念，演示了使用 Docker-compose 构建全套 PHP 环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-11994&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg&#34; alt=&#34;&#34; width=&#34;1024&#34; height=&#34;762&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
+      <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
     </item>
     
     <item>
@@ -198,6 +182,15 @@ echo $foo + $bar;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景下PHP 的 COW 对内存进行优化。比如：变量的多次赋值、函数参数传递，并在函数体内修改实参等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180326</title>
+      <link>http://tanteng.me/2018/03/reding-list-5/</link>
+      <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/03/reding-list-5/</guid>
+      <description>1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩</description>
     </item>
     
     <item>
@@ -355,19 +348,20 @@ max_execution_time = 80&lt;/code&gt;&lt;/p&gt;
       <guid>http://tanteng.me/2017/10/php-intval-precision/</guid>
       <description>&lt;p&gt;在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;lt;?php
-$n=&amp;ldquo;19.99&amp;rdquo;;
-print intval($n*100); // prints 1998&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$n=&amp;quot;19.99&amp;quot;; print intval($n*100); // prints 1998
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
 
 &lt;p&gt;1.转换成字符串再 intval&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;print intval(strval($n*100)); // prints 1999&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print intval(strval($n*100)); // prints 1999
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;php -r &amp;ldquo;echo round(19.99*100);&amp;rdquo;&lt;/code&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;php -r &amp;quot;echo round(19.99*100);&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -386,15 +380,6 @@ print intval($n*100); // prints 1998&lt;/code&gt;&lt;/p&gt;
       
       <guid>http://tanteng.me/2017/09/laradock-ssh-workspace/</guid>
       <description>&lt;p&gt;最近在学习 Docker，发现 Laradock 这个项目，它是以 docker-compose 方式快速搭建一整套 PHP 开发环境的镜像，可以按需启动需要的容器，包括 MySQL，Redis，Nginx，Memcache，RabbitMQ，Mongo 等一系列 WEB 开发需要的软件。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WordPress 使用 Redis 缓存</title>
-      <link>http://tanteng.me/2017/09/wp-redis/</link>
-      <pubDate>Wed, 13 Sep 2017 04:32:13 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/09/wp-redis/</guid>
-      <description>&lt;p&gt;给 WordPress 博客换了一个缓存插件 —— WP Redis，使用 Redis 缓存给博客提高速度和性能，之前用的插件 WP Super Cache 是基于文件缓存的，虽然也很不错，但是用 Redis 应该是更好的选择。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2254,13 +2239,7 @@ print_r($pro);//打印结果：Array ( [name] =&amp;gt; [sex] =&amp;gt; )&lt;/p&
       <pubDate>Thu, 05 Sep 2013 16:21:06 +0000</pubDate>
       
       <guid>http://tanteng.me/2013/09/navicat-sql/</guid>
-      <description>&lt;p&gt;我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。&lt;/p&gt;
-
-&lt;p&gt;我用同样的方法导入sae其他的应用的sql文件，都是正常的。&lt;/p&gt;
-
-&lt;p&gt;报错截图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;attachment-full&#34; src=&#34;http://tanteng-wordpress.stor.sinaapp.com/uploads/2013/09/201304181305293855.pngpsid1&#34; alt=&#34;201304181305293855&#34; width=&#34;408&#34; height=&#34;354&#34; /&gt;&lt;/p&gt;</description>
+      <description>在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。 解决办法： try using these commands from mysql terminal set global max_allowed_packet=1000000000; set</description>
     </item>
     
     <item>
@@ -2661,62 +2640,6 @@ return $subject;
 &lt;p&gt;5. php中session的过期回收机制&lt;/p&gt;
 
 &lt;p&gt;6. php中session的客户端存储机制&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>详解php的魔术方法__get()和__set()</title>
-      <link>http://tanteng.me/2012/09/php_set_get/</link>
-      <pubDate>Fri, 14 Sep 2012 04:18:42 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php_set_get/</guid>
-      <description>&lt;p&gt;先看看php官方文档的解释:&lt;/p&gt;
-
-&lt;p&gt;__set() is run when writing data to inaccessible properties.&lt;/p&gt;
-
-&lt;p&gt;__get() is utilized for reading data from inaccessible properties.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>php引用计数器进行垃圾收集机制</title>
-      <link>http://tanteng.me/2012/09/php-ref-counter/</link>
-      <pubDate>Thu, 13 Sep 2012 15:08:26 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php-ref-counter/</guid>
-      <description>&lt;p&gt;PHP 有一个非常简单的垃圾收集器，它实际上将对不再位于内存范围（scope）中的对象进行垃圾收集。垃圾收集的内部方式是使用一个引用计数器，因此当计数器达到 0 时（意味着对该对象的引用都不可用），对象将被当作垃圾收集并从内存中删除。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PHP 数组相加：array(“a”)&#43;array(“b”)结果还是array(“a”)</title>
-      <link>http://tanteng.me/2012/09/array-adding/</link>
-      <pubDate>Thu, 13 Sep 2012 04:10:12 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/array-adding/</guid>
-      <description>&lt;p&gt;在网上看到一道题：&lt;/p&gt;
-
-&lt;p&gt;array(&amp;#8220;a&amp;#8221;)+array(&amp;#8220;b&amp;#8221;)的结果是___&lt;/p&gt;
-
-&lt;p&gt;A.array(&amp;#8220;a&amp;#8221;,&amp;#8221;b&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;B.array(&amp;#8220;b&amp;#8221;,&amp;#8221;a&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;C.array(&amp;#8220;b&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;D.array(&amp;#8220;a&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;答案：D&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>php递归统计多位数组个数count（$array，1）</title>
-      <link>http://tanteng.me/2012/09/php-count-array/</link>
-      <pubDate>Mon, 10 Sep 2012 14:42:10 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php-count-array/</guid>
-      <description>&lt;p&gt;下面程序运行结果为（）&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;php&#34;&gt;$numb=array(array(10,15,30),array(10,15,30),array(10,15,30));
-echo count($numb,1);
-&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -185,39 +185,33 @@
 
 <p>在 $dontReport 中可以定义忽略的异常类名：</p>
 
-<p><code class="lang:php decode:true ">protected $dontReport = [
+<pre><code>protected $dontReport = [
     \Illuminate\Auth\AuthenticationException::class,
     \Illuminate\Auth\Access\AuthorizationException::class,
     \Symfony\Component\HttpKernel\Exception\HttpException::class,
     \Illuminate\Database\Eloquent\ModelNotFoundException::class,
     \Illuminate\Validation\ValidationException::class,
-];</code></p>
+];
+</code></pre>
 
-<p data-source-line="16">
-  这些异常就不会经过 report 方法。
-</p>
+<p>这些异常就不会经过 report 方法。</p>
 
-<h3 id="几个重要方法" data-source-line="18">
-  几个重要方法
-</h3>
+<h3 id="几个重要方法">几个重要方法</h3>
 
-<p data-source-line="20">
-  主要介绍这三个方法，report，render 和 unauthenticated 的用法。
-</p>
+<p>主要介绍这三个方法，report，render 和 unauthenticated 的用法。</p>
 
-<h4 id="report方法" data-source-line="22">
-  report方法
-</h4>
+<h4 id="eport方法">eport方法</h4>
 
 <p data-source-line="24">
   report 方法可以用来记录日志，可以根据不同的异常类型（包括自定义异常类型），如 ClientException，ConnectException 定制不同的日志级别和日志内容。
 </p>
 
-<p><code class="lang:php decode:true ">if ($exception instanceof ABCException) {
-    Log::emergency(&lsquo;ABC异常&rsquo;, $context);
+<pre><code class="language-php">if ($exception instanceof ABCException) {
+    Log::emergency('ABC异常', $context);
 } else if ($exception instanceof HeheException) {
-    Log::info(&lsquo;Hehe异常&rsquo;, $context);
-}</code></p>
+    Log::info('Hehe异常', $context);
+}
+</code></pre>
 
 <p data-source-line="34">
   report 方法没有返回值，也不应该在这里中断程序。
@@ -231,11 +225,12 @@
   render 方法可以根据不同的异常类型，返回不同的数据。如：
 </p>
 
-<p><code class="lang:php decode:true ">if (get_class($exception) == &lsquo;Exception&rsquo; || $exception instanceof NotAllowedException) {
-    return response()-&gt;json([&lsquo;message&rsquo; =&gt; $exception-&gt;getMessage()], 400);
+<pre><code class="language-php">if (get_class($exception) == 'Exception' || $exception instanceof NotAllowedException) {
+    return response()-&amp;gt;json(['message' =&amp;gt; $exception-&amp;gt;getMessage()], 400);
 } elseif ( $exception instanceof ValidationException) {
-    return response()-&gt;json([&lsquo;message&rsquo; =&gt; &lsquo;校验失败&rsquo;, &lsquo;errors&rsquo;=&gt; $exception-&gt;validator-&gt;errors()], 400);
-}</code></p>
+    return response()-&amp;gt;json(['message' =&amp;gt; '校验失败', 'errors'=&amp;gt; $exception-&amp;gt;validator-&amp;gt;errors()], 400);
+}
+</code></pre>
 
 <h4 id="unauthenticated" data-source-line="48">
   unauthenticated
@@ -245,22 +240,21 @@
   在访问需要登录态的页面时，用户未登录就会进入这个方法进行处理，举个例子说明：
 </p>
 
-<p><code class="lang:php decode:true ">protected function unauthenticated($request, AuthenticationException $exception)
+<pre><code class="language-php">protected function unauthenticated($request, AuthenticationException $exception)
 {
-    if ($request-&gt;expectsJson()) {
-        return response()-&gt;json([&lsquo;error&rsquo; =&gt; &lsquo;Unauthenticated.&rsquo;], 401);
-    }</p>
+    if ($request-&amp;gt;expectsJson()) {
+        return response()-&amp;gt;json(['error' =&amp;gt; 'Unauthenticated.'], 401);
+    }
 
-<pre><code>//如果是后台页面未认证,跳转到后台登陆页面
-$guard = $exception-&amp;gt;guards();
-if (in_array('admin', $guard)) {
-    return redirect()-&amp;gt;guest('/admin/login');
+    //如果是后台页面未认证,跳转到后台登陆页面
+    $guard = $exception-&amp;gt;guards();
+    if (in_array('admin', $guard)) {
+        return redirect()-&amp;gt;guest('/admin/login');
+    }
+
+    return redirect()-&amp;gt;guest('login');
 }
-
-return redirect()-&amp;gt;guest('login');
 </code></pre>
-
-<p>}</code></p>
 
 <p data-source-line="69">
   如果是返回 json，则统一返回格式。
@@ -286,9 +280,9 @@ return redirect()-&amp;gt;guest('login');
 
 <div class="navigation navigation-single">
     
-    <a href="/2018/09/laravel-authorize-gates/" class="navigation-prev">
+    <a href="/2018/09/redis-scan/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Laravel 用户授权系统使用小结</span>
+      <span class="navigation-tittle">Redis生产环境查看数据库键</span>
     </a>
     
     

@@ -143,284 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/02/git-reset-commit-id/" >git reset 重置到某次提交</a>
-        </span>
-        <span class="item__date">
-          Feb 13, 2017
-        </span>
-        <span >
-        
-        记一次 git 重置操作的过程： 把本地master代码回撤到有问题的提交点之前，git reset -q &#8211;hard commid-id 将本地master强行推送到远端，需先在gitlab上
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/02/git-reset-commit-id/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/02/login-replay-attacks/" >登录重放攻击及安全防御</a>
-        </span>
-        <span class="item__date">
-          Feb 1, 2017
-        </span>
-        <span >
-        
-        <p>现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下：</p>
-
-<p>1、前端web页面用户输入账号、密码，点击登录。</p>
-
-<p>2、请求提交之前，web端首先通过客户端脚本如javascript对密码原文进行md5加密。</p>
-
-<p>3、提交账号、md5之后的密码</p>
-
-<p>4、请求提交至后端，验证账号与密码是否与数据库中的一致，一致则认为登录成功，反之失败。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/02/login-replay-attacks/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/mysql-alter-table-big-data/" >MySQL大表加字段思路</a>
-        </span>
-        <span class="item__date">
-          Jan 19, 2017
-        </span>
-        <span >
-        
-        <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
-
-<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &ldquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
-
-<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/mysql-alter-table-big-data/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/php-pack/" >PHP二进制封包</a>
-        </span>
-        <span class="item__date">
-          Jan 19, 2017
-        </span>
-        <span >
-        
-        <p>通过 TCP/IP 协议传输数据经常会用二进制数据包的形式，在 PHP 中可使用 pack() 和 unpack() 函数进行二进制封包和解包，通过 socket 建立 TCP 连接，并将数据包传输出去</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/php-pack/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/mysql-explain/" >Mysql性能优化–Explain详解</a>
-        </span>
-        <span class="item__date">
-          Jan 19, 2017
-        </span>
-        <span >
-        
-        <h3 id="explain">EXPLAIN</h3>
-
-<p>mysql explain命令是查询性能优化不可缺少的一部分。</p>
-
-<h4 id="toc_1">explain output columns</h4>
-
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>说明</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td>执行编号，标识select所属的行。如果在语句中没有子查询或者关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</td>
-</tr>
-
-<tr>
-<td>select_type</td>
-<td>显示本行是简单或是复杂select。如果查询有任何复杂的子查询，则最外层标记为primary（derived、Union、Union resuit）</td>
-</tr>
-
-<tr>
-<td>table</td>
-<td>访问引用哪个表（引用某个查询，如“derived3”）</td>
-</tr>
-
-<tr>
-<td>partitions</td>
-<td>匹配的分区</td>
-</tr>
-
-<tr>
-<td>type</td>
-<td>数据访问/读取操作类型（all、index、range、ref、eq_ref、const/system、NULL）。join类型</td>
-</tr>
-
-<tr>
-<td>possible_keys</td>
-<td>揭示哪一些索引可能有利于高效的查找</td>
-</tr>
-
-<tr>
-<td>key</td>
-<td>此次查询中确切使用到的索引.</td>
-</tr>
-
-<tr>
-<td>key_len</td>
-<td>显示mysql在索引里使用的字节数</td>
-</tr>
-
-<tr>
-<td>ref</td>
-<td>哪个字段或常数与key一起被使用</td>
-</tr>
-
-<tr>
-<td>rows</td>
-<td>为了找到所需的列而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</td>
-</tr>
-
-<tr>
-<td>filtered</td>
-<td>表示此查询条件所过滤的数据的百分比</td>
-</tr>
-
-<tr>
-<td>Extra</td>
-<td>额外信息，如using index、filesort等</td>
-</tr>
-</tbody>
-</table>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/mysql-explain/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/linux-postfix-maildrop/" >Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</a>
-        </span>
-        <span class="item__date">
-          Jan 14, 2017
-        </span>
-        <span >
-        
-        <p>MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/linux-postfix-maildrop/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/supervisor-laravel-queue/" >使用 Supervisor 管理 Laravel 队列进程</a>
-        </span>
-        <span class="item__date">
-          Jan 7, 2017
-        </span>
-        <span >
-        
-        <p>Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/supervisor-laravel-queue/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/window-location-reload-and-href/" >window.location.reload()和window.location.href=””的区别</a>
-        </span>
-        <span class="item__date">
-          Dec 31, 2016
-        </span>
-        <span >
-        
-        <p>window.location.reload() 和 window.location.href=&#8221;&#8221; 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" target="_blank"><img class="alignnone wp-image-11348 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" alt="window.location.reload()和window.location.href=''的区别" width="368" height="207" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/window-location-reload-and-href/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/laravel-admin-install/" >Laravel 5.3 后台管理系统搭建</a>
-        </span>
-        <span class="item__date">
-          Dec 24, 2016
-        </span>
-        <span >
-        
-        <p>网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/laravel-admin-install/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/12/nginx-test-environment/" >使用 Nginx 反向代理和负载均衡搭建多人测试环境</a>
         </span>
         <span class="item__date">
@@ -435,6 +157,237 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/12/nginx-test-environment/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/12/reading-and-maturing-personalities/" >阅读与心智的成长</a>
+        </span>
+        <span class="item__date">
+          Dec 5, 2016
+        </span>
+        <span >
+        
+        <p>以下摘自《如何阅读一本书》第二十一章。</p>
+
+<p>我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。</p>
+
+<p><strong>所谓主动的阅读，也就是能提出问题来。</strong>我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/12/reading-and-maturing-personalities/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/12/laravel-env-null/" >Laravel 使用 env 读取环境变量为 null 的问题</a>
+        </span>
+        <span class="item__date">
+          Dec 4, 2016
+        </span>
+        <span >
+        
+        <p>不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。</p>
+
+<p>在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/12/laravel-env-null/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/12/road-to-myself/" >每个人的生活都是一条通向自身的道路</a>
+        </span>
+        <span class="item__date">
+          Dec 2, 2016
+        </span>
+        <span >
+        
+        看到一句话，很有道理：&#8221;每个人的生活都是一条通向自身的道路。每个人的真正职责只有一个：找到自我。” ​​​​ 出处：每个人的生命都是
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/12/road-to-myself/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/12/linux-cmd/" >Linux 中执行命令 ; 和 &amp;&amp; 的区别</a>
+        </span>
+        <span class="item__date">
+          Nov 30, 2016
+        </span>
+        <span >
+        
+        在 Linux 中经常使用到一个命令，如 make &amp;&amp; make install，这里也可以使用 make ; make install，那么在 Linux 中执行命令 ; 和 &amp;&amp; 有何区别？ &amp;&amp; 表示第一个命令执行
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/12/linux-cmd/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/11/grep-tail-last-line/" >grep 查找匹配的最后一行</a>
+        </span>
+        <span class="item__date">
+          Nov 20, 2016
+        </span>
+        <span >
+        
+        grep 查找匹配的最后一行，如： grep &ldquo;哈哈&rdquo; aa.log | tail -1
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/11/php-array-sort-order/" >PHP数组同值稳定排序</a>
+        </span>
+        <span class="item__date">
+          Nov 16, 2016
+        </span>
+        <span >
+        
+        <p>在 PHP 中对数组排序有很多函数，如 sort, asort, arsort, ksort, krsort, uasort 等等，但是有一个问题，如一个数组：</p>
+
+<p><code class="lang:php decode:true ">$test = array(1 =&gt; 0, 99 =&gt; 0, 87 =&gt; 0, 45 =&gt; 0, 67 =&gt; 0, 11 =&gt; 1, 2 =&gt; 0);</code></p>
+
+<p>用 asort 函数对其进行排序，asort($test) 结果如下（转换为 json 格式）：</p>
+
+<p><code class="lang:php decode:true ">{&ldquo;67&rdquo;:0,&ldquo;2&rdquo;:0,&ldquo;1&rdquo;:0,&ldquo;45&rdquo;:0,&ldquo;87&rdquo;:0,&ldquo;99&rdquo;:0,&ldquo;11&rdquo;:1}</code></p>
+
+<p>可以看到排序虽然正确，值为 1 的元素排到后面去了，但是值为 0 的元素顺序跟以前不一样了，如何保证 PHP 数组同值元素排序后顺序保持不变呢？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/11/php-array-sort-order/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/11/flock-write/" >PHP写文件加锁</a>
+        </span>
+        <span class="item__date">
+          Nov 13, 2016
+        </span>
+        <span >
+        
+        <p>用 PHP 的 file_put_contents 函数以追加的方式，循环 10 w 次写文件，耗时很多。因为 file_put_contents 函数每次都要打开文件，写入文件，然后关闭文件。</p>
+
+<p>以下是测试：</p>
+
+<p><code>public function handle()
+{
+    $testTxt = storage_path(&lsquo;test.txt&rsquo;);
+    for ($i = 0; $i &lt; 100000; $i++) {
+        $this-&gt;comment(&lsquo;writing&hellip;&rsquo;);
+        file_put_contents($testTxt, &lsquo;wo shi tanteng.&rsquo; . PHP_EOL, FILE_APPEND);
+    }
+    $this-&gt;comment(&lsquo;time:&rsquo; . round(microtime(true) - LARAVEL_START, 2));
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/11/flock-write/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/10/nginx-load-balance-conf/" >在不同端口下模拟 Nginx 反向代理和负载均衡</a>
+        </span>
+        <span class="item__date">
+          Oct 30, 2016
+        </span>
+        <span >
+        
+        <p>Nginx 是一个轻量级的 WEB 服务器，反向代理服务器和电子邮件服务器，本文介绍在虚拟机中使用不同的端口来模拟不同的服务器，并使用 Nginx 反向代理功能实现服务器负载均衡的效果。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/10/nginx-load-balance-conf/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/10/php-json-encode-and-decode/" >PHP json_encode 数组键是否从0开始并且连续的区别</a>
+        </span>
+        <span class="item__date">
+          Oct 28, 2016
+        </span>
+        <span >
+        
+        <p>对以下两个数组进行 json_encode 编码，这两个数组的区别是，一个键是从0开始，并且连续，另一个键不连续，那么打印的结果有什么不同呢？</p>
+
+<p><code>print_r(json_encode([
+    0 =&gt; 5,
+    1 =&gt; 4,
+    2 =&gt; 1
+]));</p>
+
+<p>print_r(json_encode([
+    0 =&gt; 5,
+    1 =&gt; 4,
+    5 =&gt; 1
+]));</code></p>
+
+<p>打印结果：</p>
+
+<p>[5,4,1]</p>
+
+<p>{&#8220;0&#8243;:5,&#8221;1&#8243;:4,&#8221;5&#8221;:1}</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/10/php-json-encode-and-decode/">➦</a>
         
         </div>
         
@@ -891,43 +844,7 @@
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -935,7 +852,7 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

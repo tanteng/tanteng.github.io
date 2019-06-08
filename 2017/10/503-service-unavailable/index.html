@@ -166,6 +166,9 @@ nginx 在这里充当的是反向代理服务器的角色，是把http协议请�
           
           
               <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/nginx">NGINX</a>
               
           
       
@@ -181,7 +184,7 @@ nginx 在这里充当的是反向代理服务器的角色，是把http协议请�
   
   
   <div class="post">
-    <p>502 bad gateway</p>
+    <h3 id="502-bad-gateway">502 bad gateway</h3>
 
 <p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
 
@@ -189,21 +192,19 @@ nginx 在这里充当的是反向代理服务器的角色，是把http协议请�
 
 <p>解释：出现502错误，通常意味着一两个机器已经不正确，简单点说，就是机器挂掉了。理论点儿说，nginx执行请求的时候，却收到了上游服务器的无效响应</p>
 
-<p>503 service unavailable</p>
+<h3 id="503-service-unavailable">503 service unavailable</h3>
 
 <p>灾难事件：临时的服务器维护/过载，服务器当前无法处理请求，报503</p>
 
 <p>问题原因：</p>
 
-<ol>
-<li><p>请求用户量太多，服务器为了保护自己不挂掉，机智的拒绝某些用户的访问，这些用户就会收到 503 这个错误.</p></li>
+<p>1.请求用户量太多，服务器为了保护自己不挂掉，机智的拒绝某些用户的访问，这些用户就会收到 503 这个错误.</p>
 
-<li><p>以 PHP 作为后端语言的话，一个http请求占用一个php-fpm进程，瞬时请求量过大时，没有足够的php-fpm进程去处理请求，就会返回 503 service unavailable</p></li>
-</ol>
+<p>2.以 PHP 作为后端语言的话，一个http请求占用一个php-fpm进程，瞬时请求量过大时，没有足够的php-fpm进程去处理请求，就会返回 503 service unavailable</p>
 
 <p>解决办法： 等一会儿仔访问该网站或者尝试强刷新页面，问题一般就能够解决了。</p>
 
-<p>504 请求超时</p>
+<h3 id="504-请求超时">504 请求超时</h3>
 
 <p>事件描述：dns 查询过程超时，返回 504；摸不着头脑，不管访问什么网站，都报504 这个错误</p>
 

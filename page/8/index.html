@@ -143,248 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/10/docker-laravel-local-environment/" >使用 Docker 搭建 Laravel 本地环境</a>
-        </span>
-        <span class="item__date">
-          Oct 14, 2017
-        </span>
-        <span >
-        
-        <p>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同时响应速度很慢，现在有了 docker 这种更好的方式，可以轻松方便的搭建整套 PHP 开发环境。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/docker-laravel-local-environment/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/mysql-rand-range/" >MySQL 生成给定范围随机数</a>
-        </span>
-        <span class="item__date">
-          Oct 9, 2017
-        </span>
-        <span >
-        
-        <p>MySQL 的 rand() 函数是随机生成区间为 [0,1) 的浮点数，那么如何让它生成给定两个整数之间的随机数呢？试了一下这样可行：</p>
-
-<p><code class="lang:mysql decode:true">select ROUND(RAND()*(10-1)+1);</code></p>
-
-<p>也就是：</p>
-
-<p><code class="lang:default decode:true">select ROUND(RAND()*(max-min)+min);</code></p>
-
-<p>经测可行。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/mysql-rand-range/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/503-service-unavailable/" >服务器返回 502,503,504 原因及解决办法</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <p>502 bad gateway</p>
-
-<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
-
-<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/503-service-unavailable/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/computer-concepts-in-life/" >计算机的一些概念在生活中的场景</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/computer-concepts-in-life/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/checking-whether-the-c-compiler-works-no/" >macOS 使用 brew 安装编译错误</a>
-        </span>
-        <span class="item__date">
-          Oct 6, 2017
-        </span>
-        <span >
-        
-        <p>在使用 Mac 的 brew 安装一些工具的时候报错：checking whether the C compiler works&#8230; no，如图，这是怎么回事呢？？</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/10/WX20181006-195406@2x.png" target="_blank" rel="noopener"><img class="aligncenter wp-image-12633 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/10/WX20181006-195406@2x.png" alt="checking whether the C compiler works... no" width="1460" height="874" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/checking-whether-the-c-compiler-works-no/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/laradock-ssh-workspace/" >Laradock 使用 ssh 方式连接 workspace</a>
-        </span>
-        <span class="item__date">
-          Sep 21, 2017
-        </span>
-        <span >
-        
-        <p>最近在学习 Docker，发现 Laradock 这个项目，它是以 docker-compose 方式快速搭建一整套 PHP 开发环境的镜像，可以按需启动需要的容器，包括 MySQL，Redis，Nginx，Memcache，RabbitMQ，Mongo 等一系列 WEB 开发需要的软件。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/laradock-ssh-workspace/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/wp-redis/" >WordPress 使用 Redis 缓存</a>
-        </span>
-        <span class="item__date">
-          Sep 13, 2017
-        </span>
-        <span >
-        
-        <p>给 WordPress 博客换了一个缓存插件 —— WP Redis，使用 Redis 缓存给博客提高速度和性能，之前用的插件 WP Super Cache 是基于文件缓存的，虽然也很不错，但是用 Redis 应该是更好的选择。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/wp-redis/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/debug-backtrace-php/" >PHP 调试函数 debug_backtrace</a>
-        </span>
-        <span class="item__date">
-          Sep 11, 2017
-        </span>
-        <span >
-        
-        <p>有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样：</p>
-
-<p><code class="lang:php decode:true ">public function update(Request $request, $id)
-{
-    dd(debug_backtrace());
-    $getGameID = function ($request) {
-        if (!$request-&gt;game_id) {
-            return 1000 + intval($request-&gt;id);
-        }
-        return $request-&gt;game_id;
-    };</p>
-
-<pre><code>$previews = $this-&amp;gt;getGamePreviews($request-&amp;gt;game_preview);
-
-$request-&amp;gt;merge([
-    'game_preview' =&amp;gt; json_encode($previews),
-    'game_id'      =&amp;gt; $getGameID($request)
-]);
-EgretGame::where('id', $id)-&amp;gt;update($request-&amp;gt;except(['_token', '_method']));
-return redirect()-&amp;gt;route('egretgame.index')-&amp;gt;with('success', '编辑成功！');
-</code></pre>
-
-<p>}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/debug-backtrace-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/laravel-session-scheme/" >Laravel Sessionid 处理机制</a>
-        </span>
-        <span class="item__date">
-          Sep 11, 2017
-        </span>
-        <span >
-        
-        <p>在 Laravel 的配置文件 config/session.php 中可以设置 Session Cookie Name，比如这个项目中设置名称为“sns_session”：</p>
-
-<p><code class="lang:php decode:true ">/*
-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-| Session Cookie Name
-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-|
-| Here you may change the name of the cookie used to identify a session
-| instance by ID. The name specified here will get used every time a
-| new session cookie is created by the framework for every driver.
-|
-*/</p>
-
-<p>&lsquo;cookie&rsquo; =&gt; &lsquo;sns_session&rsquo;,</code></p>
-
-<p>我们可以看到刷新页面，查看 cookie，会发现一个名称为 sns_session 的 cookie，名字就是我们自定义的。</p>
-
-<p>这个 sessionid 就是 cookie 和 session 联系的桥梁，服务器通过这个 sessionid 判断来自哪个客户端的请求。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/laravel-session-scheme/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/09/git-merge-rebase/" >Git 变基和合并</a>
         </span>
         <span class="item__date">
@@ -392,17 +150,248 @@ return redirect()-&amp;gt;route('egretgame.index')-&amp;gt;with('success', '编�
         </span>
         <span >
         
-        <h2 id="_rebasing">变基</h2>
-
-<div class="paragraph">
-  <p>
-    在 Git 中整合来自不同分支的修改主要有两种方法：<code>merge</code> 以及 <code>rebase</code>。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操作的惊艳之处，以及指出在何种情况下你应避免使用它。
-  </p>
-</div>
+        变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
         
         </span>
         
           ... <a class="read-more-symbol" href="/2017/09/git-merge-rebase/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
+        </span>
+        <span class="item__date">
+          Sep 2, 2017
+        </span>
+        <span >
+        
+        <p>关于 PHP 的错误和异常处理，总结如下。</p>
+
+<h3 id="1-设置-php-错误级别">1.设置 PHP 错误级别</h3>
+
+<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/php-error-handle/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/08/golang-generic/" >Golang 中”泛型”的支持</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2017
+        </span>
+        <span >
+        
+        <p>Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Golang的设计和实现者并没有把这个泛型支持作为紧急需要增加的特性。但是，如果真的没有泛型，就一定不行了么？答案当然是否定的。没有泛型也可以，而且我觉得代码更简单，直接，有趣（个人观点，勿喷）。</p>
+
+<p>我们这里打算以一些例子来讲解Golang中如何处理这个问题。</p>
+
+<p>首先，我们看一个冒泡排序的问题。针对整型数组切片的排序。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/08/golang-generic/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/08/tcp-ip-life-ex/" >TCP / IP身世之谜</a>
+        </span>
+        <span class="item__date">
+          Aug 2, 2017
+        </span>
+        <span >
+        
+        <p>1972年，全世界电脑业和通讯业的专家学者在美国华盛顿举行了第一届国际计算机通信会议，就在不同的计算机网络之间进行通信达成协议，会议决定成立Internet工作组，负责建立一种能保证计算机之间进行通信的标准规范（即“通信协议”），而这个组织第一位主席美国人文顿·瑟夫（Vinton G.Cerf）则被不少人称为“互联网之父”；1973年，美国国防部也开始研究如何实现各种不同网络之间的互联问题。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/08/tcp-ip-life-ex/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/golang-decode-json/" >Golang 解析 json 数据</a>
+        </span>
+        <span class="item__date">
+          Jul 23, 2017
+        </span>
+        <span >
+        
+        <p>使用 Golang 解析 json 数据，这种 json 格式是对象的数组，官方文档有一个示例：</p>
+
+<p><code class="lang:go decode:true">var jsonBlob = []byte(<code>[  
+    {&quot;Name&quot;: &quot;Platypus&quot;, &quot;Order&quot;: &quot;Monotremata&quot;},  
+    {&quot;Name&quot;: &quot;Quoll&quot;,    &quot;Order&quot;: &quot;Dasyuromorphia&quot;}  
+]</code>)<br />
+type Animal struct {<br />
+    Name  string<br />
+    Order string<br />
+}<br />
+var animals []Animal<br />
+err := json.Unmarshal(jsonBlob, &amp;animals)<br />
+if err != nil {<br />
+    fmt.Println(&ldquo;error:&ldquo;, err)<br />
+}<br />
+fmt.Printf(&ldquo;%+v&rdquo;, animals)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/golang-decode-json/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
+        </span>
+        <span class="item__date">
+          Jul 22, 2017
+        </span>
+        <span >
+        
+        <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
+
+<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/php-curl-guzzlehttp/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/php-examination-part-1/" >PHP笔试面试题精选（一）</a>
+        </span>
+        <span class="item__date">
+          Jul 11, 2017
+        </span>
+        <span >
+        
+        <p>本次课程主要围绕 PHP 面试和笔试中经常会出现的一些知识点，<strong>但是面试官会在笔试题基础上深入扩展，那么你知道如何更好的回答让面试官满意吗？</strong>题目收集自腾讯，迅雷，美图等公司的笔试面试题，以及本人面试经历中印象中的知识点，同时也分享一些面试的经验，相信对你一定有很大的参考价值。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/php-examination-part-1/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/go-producer-consumer/" >Go 模拟生产者消费者</a>
+        </span>
+        <span class="item__date">
+          Jul 8, 2017
+        </span>
+        <span >
+        
+        <p>Go 的一个模拟生产者和消费者的例子，用 m 个 goroutine 生产产品，用 n 个 goroutine 消费产品，使用 2 个 channel，一个有缓冲的通道用于存放产品，一个无缓冲的通道用于标识生成或者消费过程完成。</p>
+
+<p>例子演示了 Go 中 goroutine 和 channel 的使用，理解 Go 中的并发概念。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/go-producer-consumer/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/defer-golang/" >defer使用规则</a>
+        </span>
+        <span class="item__date">
+          Jul 6, 2017
+        </span>
+        <span >
+        
+        <p>在golang当中，defer代码块会在函数调用链表中增加一个函数调用。这个函数调用不是普通的函数调用，而是会在函数正常返回，也就是return之后添加一个函数调用。因此，defer通常用来释放函数内部变量。</p>
+
+<p>为了更好的学习defer的行为，我们首先来看下面一段代码:</p>
+
+<p><code class="lang:go decode:true ">func CopyFile(dstName, srcName string) (written int64, err error) {
+    src, err := os.Open(srcName)
+    if err != nil {
+        return
+    }</p>
+
+<pre><code>dst, err := os.Create(dstName)
+if err != nil {
+    return
+}
+
+written, err = io.Copy(dst, src)
+dst.Close()
+src.Close()
+return
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/defer-golang/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/06/golang-month-iteration/" >Golang 遍历一个月写法</a>
+        </span>
+        <span class="item__date">
+          Jun 20, 2017
+        </span>
+        <span >
+        
+        Golang 遍历一个月每天写法： // CreateOnlineTable 创建统计用户在线时长表 func CreateOnlineTable() { year, month, _ := time.Now().Date() t := time.Date(year, month+1, 0, 0, 0, 0, 0, time.UTC) for day := 1; day &lt;= t.Day(); day++ { date := time.Now().Format(&ldquo;200601&rdquo;) + fmt.Sprintf(&ldquo;%02d&rdquo;, day) tableName := fmt.Sprintf(utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online&rdquo;, &ldquo;db&rdquo;), date) template := utils.LoadIniConfig(&ldquo;online&rdquo;, &ldquo;online_template&rdquo;, &ldquo;db&rdquo;) sql :=
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/06/golang-month-iteration/">➦</a>
         
         </div>
         
@@ -859,43 +848,7 @@ return redirect()-&amp;gt;route('egretgame.index')-&amp;gt;with('success', '编�
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -903,7 +856,7 @@ return redirect()-&amp;gt;route('egretgame.index')-&amp;gt;with('success', '编�
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

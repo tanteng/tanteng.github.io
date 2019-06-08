@@ -6,19 +6,10 @@
     <description>Recent content in WordPress on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Sep 2017 04:32:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Mar 2016 04:29:43 +0000</lastBuildDate>
     
 	<atom:link href="http://tanteng.me/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>WordPress 使用 Redis 缓存</title>
-      <link>http://tanteng.me/2017/09/wp-redis/</link>
-      <pubDate>Wed, 13 Sep 2017 04:32:13 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/09/wp-redis/</guid>
-      <description>&lt;p&gt;给 WordPress 博客换了一个缓存插件 —— WP Redis，使用 Redis 缓存给博客提高速度和性能，之前用的插件 WP Super Cache 是基于文件缓存的，虽然也很不错，但是用 Redis 应该是更好的选择。&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Laravel集成WordPress扩展包——Corcel</title>

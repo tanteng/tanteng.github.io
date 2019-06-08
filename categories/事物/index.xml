@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>事物 on 小谈博客</title>
+    <link>http://tanteng.me/categories/%E4%BA%8B%E7%89%A9/</link>
+    <description>Recent content in 事物 on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jun 2018 02:43:46 +0000</lastBuildDate>
+    
+	<atom:link href="http://tanteng.me/categories/%E4%BA%8B%E7%89%A9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis 的事务到底是不是原子性的</title>
+      <link>http://tanteng.me/2018/06/redis-transaction-atomic/</link>
+      <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/redis-transaction-atomic/</guid>
+      <description>ACID 中关于原子性的定义： 原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执</description>
+    </item>
+    
+  </channel>
+</rss>

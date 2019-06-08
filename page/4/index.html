@@ -143,98 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2018/06/reding-list-9/" >本周阅读清单20180528</a>
-        </span>
-        <span class="item__date">
-          Jun 6, 2018
-        </span>
-        <span >
-        
-        <ol>
-<li>在 Laravel 中使用 Vue 组件化开发
-<br /></li>
-</ol>
-
-<p><a href="https://pigjian.com/article/laravel-vue" target="_blank" rel="noopener nofollow"><a href="https://pigjian.com/article/laravel-vue">https://pigjian.com/article/laravel-vue</a></a></p>
-
-<ol>
-<li>理解 PHP 内核中 SAPI 的作用
-<br /></li>
-</ol>
-
-<p><a href="https://foio.github.io/php-sapi/" target="_blank" rel="noopener nofollow"><a href="https://foio.github.io/php-sapi/">https://foio.github.io/php-sapi/</a></a></p>
-
-<ol>
-<li>使用 Redis 实现单机锁
-<br /></li>
-</ol>
-
-<p><a href="https://huoding.com/2015/09/14/463" target="_blank" rel="noopener nofollow"><a href="https://huoding.com/2015/09/14/463">https://huoding.com/2015/09/14/463</a></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/06/reding-list-9/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2018/05/vscode-debug-golang/" >使用 VS Code 断点调试 golang 项目</a>
-        </span>
-        <span class="item__date">
-          May 29, 2018
-        </span>
-        <span >
-        
-        <p>在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang 项目。</p>
-
-<h3 id="准备工作">准备工作</h3>
-
-<p>如果没有安装 delve 插件，会报错：</p>
-
-<p>Failded to continue:&#8221;Cannot find Delve debugger. Install from <a href="https://github.com/derekparker/delve">https://github.com/derekparker/delve</a> &amp; ensure it is in your &#8220;GOPATH/bin&#8221; or &#8220;PATH&#8221;</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/05/vscode-debug-golang/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2018/05/laravel-5-5-gulp/" >在 Laravel 中使用 gulp 构建前端资源</a>
-        </span>
-        <span class="item__date">
-          May 28, 2018
-        </span>
-        <span >
-        
-        <p>最近把自己主页前端代码进一步规范了，使用 npm 引入一些前端的资源库，在 Laravel 5.5 中使用 gulp 遇到一些坑。</p>
-
-<p>mix.sass 无法直接使用 node_modules 文件夹里的，只能用 resource/assets/sass/app.scss 这个文件生成 css，然后和其他的 css 合并为一个文件。</p>
-
-<p>mix.scripts 可以使用 node_modules 文件夹里的 js，并和自己的 js 合并为一个文件。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/05/laravel-5-5-gulp/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2018/05/php-qiniu-sdk-not-support-composer/" >在旧有 PHP 系统上集成七牛云 PHP-SDK</a>
         </span>
         <span class="item__date">
@@ -242,57 +150,11 @@
         </span>
         <span >
         
-        <p>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。</p>
-
-<p><code class="lang:php decode:true ">&lt;?php</p>
-
-<p>use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;</p>
-
-<p>//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
-
-<p>function classLoader($class)
-{
-    $path = str_replace(&rsquo;\&rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &lsquo;vendor/&rsquo; . $path . &lsquo;.php&rsquo;;
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}</p>
-
-<p>require_once SDK_PATH . &lsquo;vendor/Qiniu/functions.php&rsquo;;</p>
-
-<p>class xxxx extends baseIndex{</p>
-
-<p>//</p>
-
-<p>}</code></p>
+        最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不
         
         </span>
         
           ... <a class="read-more-symbol" href="/2018/05/php-qiniu-sdk-not-support-composer/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2018/05/laravel-datatables/" >在 Laravel 中使用 DataTables 插件</a>
-        </span>
-        <span class="item__date">
-          May 28, 2018
-        </span>
-        <span >
-        
-        <p>DataTables 是一个 jQuery 的表格插件，记录一下在 Laravel 中使用的常用功能和用法，比如 ajax 获取数据，自定义搜索，效果展现，选项说明等等，有一些细节记录下来方便以后查看。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/05/laravel-datatables/">➦</a>
         
         </div>
         
@@ -309,77 +171,11 @@ spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
         </span>
         <span >
         
-        <ol>
-<li>Go语言中的错误处理
-<br /></li>
-</ol>
-
-<p><a href="http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/" target="_blank" rel="noopener nofollow"><a href="http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/">http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/</a></a></p>
-
-<ol>
-<li>深入理解 PHP opcode 优化
-<br /></li>
-</ol>
-
-<p><a href="https://tech.youzan.com/understanding-opcode-optimization-in-php/" target="_blank" rel="noopener nofollow"><a href="https://tech.youzan.com/understanding-opcode-optimization-in-php/">https://tech.youzan.com/understanding-opcode-optimization-in-php/</a></a></p>
-
-<p>3. 基于timestamp和nonce的防止重放攻击方案</p>
-
-<p><a href="https://blog.csdn.net/koastal/article/details/53456696" target="_blank" rel="noopener nofollow"><a href="https://blog.csdn.net/koastal/article/details/53456696">https://blog.csdn.net/koastal/article/details/53456696</a></a></p>
+        1.Go语言中的错误处理 http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/ 2.深入理解 PHP opcode 优化 https://tech.youzan.com/understanding-opcode-optimization-in-php/ 3.基于timestamp和nonce的防止重放攻击方案 https://blog.csdn.net/koastal/article/details/53456696 4.一个防止重放攻击的 Laravel package https://github.com/ruogoo/replay-attack 5.理
         
         </span>
         
           ... <a class="read-more-symbol" href="/2018/05/reding-list-8/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2018/05/php-find-the-k-largest/" >PHP 查找数组中第 K 大的元素</a>
-        </span>
-        <span class="item__date">
-          May 25, 2018
-        </span>
-        <span >
-        
-        <p>比如一个数组 [33, 5, 1, 90, 99, 3, 45, 13]，要找出第 K 大的元素，首先可以使用快速排序算法对数组进行排序，然后从排序后的数组中就很容易得到这个元素。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/05/php-find-the-k-largest/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2018/05/web-auth/" >WEB开发——用户认证模块</a>
-        </span>
-        <span class="item__date">
-          May 21, 2018
-        </span>
-        <span >
-        
-        <p>一个 WEB 项目，用户认证模块几乎是必不可少的，除非不需要用户登陆使用，用户认证的方式主要有基于 Basic 的认证，基于 session 的方案，JWT 方案等。以传统的 session 方案说明，无论哪种方式，它至少包含下列的几个方法：</p>
-
-<ul>
-<li>注册（严格说不属于用户认证模块）</li>
-<li>登录</li>
-<li>退出</li>
-<li>重置密码</li>
-<li>基本权限（权限管理也可以和用户认证分开）</li>
-</ul>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/05/web-auth/">➦</a>
         
         </div>
         
@@ -396,26 +192,7 @@ spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
         </span>
         <span >
         
-        <ol>
-<li>Golang CSP 并发模型
-<br /></li>
-</ol>
-
-<p><a href="https://www.jianshu.com/p/36e246c6153d" target="_blank" rel="noopener nofollow"><a href="https://www.jianshu.com/p/36e246c6153d">https://www.jianshu.com/p/36e246c6153d</a></a></p>
-
-<ol>
-<li>深入理解 Go Channel
-<br /></li>
-</ol>
-
-<p><a href="http://legendtkl.com/2017/07/30/understanding-golang-channel/" target="_blank" rel="noopener nofollow"><a href="http://legendtkl.com/2017/07/30/understanding-golang-channel/">http://legendtkl.com/2017/07/30/understanding-golang-channel/</a></a></p>
-
-<ol>
-<li>谈谈 HTTP/2 的协议协商机制
-<br /></li>
-</ol>
-
-<p><a href="https://imququ.com/post/protocol-negotiation-in-http2.html" target="_blank" rel="noopener nofollow"><a href="https://imququ.com/post/protocol-negotiation-in-http2.html">https://imququ.com/post/protocol-negotiation-in-http2.html</a></a></p>
+        1.Golang CSP 并发模型 https://www.jianshu.com/p/36e246c6153d 2.深入理解 Go Channel http://legendtkl.com/2017/07/30/understanding-golang-channel/ 3.谈谈 HTTP/2 的协议协商机制 https://imququ.com/post/protocol-negotiation-in-http2.html 4.【重温】中本聪《比特币：一种点对点的电子现金系统》 https://zhuanlan.zhihu.com/p/28108862 5.详解区块链 P2P 网络 https://keeganlee.me/post/blockchain/20180313 6.
         
         </span>
         
@@ -436,30 +213,141 @@ spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
         </span>
         <span >
         
-        <ol>
-<li>Learning Elasticsearch with Laravel
-<br /></li>
-</ol>
-
-<p><a href="https://michaelstivala.com/learning-elasticsearch-with-laravel/" target="_blank" rel="noopener nofollow"><a href="https://michaelstivala.com/learning-elasticsearch-with-laravel/">https://michaelstivala.com/learning-elasticsearch-with-laravel/</a></a></p>
-
-<ol>
-<li>MQ(消息队列)常见的应用场景解析
-<br /></li>
-</ol>
-
-<p><a href="https://juejin.im/post/5add63c951882567183eb956" target="_blank" rel="noopener nofollow"><a href="https://juejin.im/post/5add63c951882567183eb956">https://juejin.im/post/5add63c951882567183eb956</a></a></p>
-
-<ol>
-<li>WebSocket 通信过程与实现
-<br /></li>
-</ol>
-
-<p><a href="https://segmentfault.com/a/1190000014643900" target="_blank" rel="noopener nofollow"><a href="https://segmentfault.com/a/1190000014643900">https://segmentfault.com/a/1190000014643900</a></a></p>
+        1.Learning Elasticsearch with Laravel https://michaelstivala.com/learning-elasticsearch-with-laravel/ 2.MQ(消息队列)常见的应用场景解析 https://juejin.im/post/5add63c951882567183eb956 3.WebSocket 通信过程与实现 https://segmentfault.com/a/1190000014643900 4.技术与贫富分化 http://www.ruanyifeng.com/blog/2010/08/technology_and_income_disparity.html 5.PHP HTTP客户端-Guzzle原理解析 https://segmentfault.com/p/1210000010203531/read 6.PHP扩
         
         </span>
         
           ... <a class="read-more-symbol" href="/2018/05/reding-list-6/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/05/golang-str-length/" >Golang 统计字符串字数</a>
+        </span>
+        <span class="item__date">
+          May 2, 2018
+        </span>
+        <span >
+        
+        <p>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。</p>
+
+<p><img class="aligncenter wp-image-12274 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180509104614-1.png" alt="" width="591" height="157" /></p>
+
+<p>golang 可以使用正则和 unicode 包的方法判断。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/05/golang-str-length/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list/" >本周阅读清单20180423</a>
+        </span>
+        <span class="item__date">
+          Apr 28, 2018
+        </span>
+        <span >
+        
+        1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-4/" >本周阅读清单20180416</a>
+        </span>
+        <span class="item__date">
+          Apr 22, 2018
+        </span>
+        <span >
+        
+        1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-4/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-3/" >本周阅读清单20180410</a>
+        </span>
+        <span class="item__date">
+          Apr 10, 2018
+        </span>
+        <span >
+        
+        1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-3/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/php-interview-2/" >PHP知识整理之——PHP基础、WEB安全、网络</a>
+        </span>
+        <span class="item__date">
+          Apr 10, 2018
+        </span>
+        <span >
+        
+        <p>本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/php-interview-2/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/04/reding-list-2/" >本周阅读清单20180402</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2018
+        </span>
+        <span >
+        
+        Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/04/reding-list-2/">➦</a>
         
         </div>
         
@@ -912,43 +800,7 @@ spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -956,7 +808,7 @@ spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

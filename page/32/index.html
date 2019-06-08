@@ -143,214 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/07/php-return/" >PHP return 的其他用法</a>
-        </span>
-        <span class="item__date">
-          Jul 8, 2015
-        </span>
-        <span >
-        
-        <p>PHP 的 return 的含义大家很清楚了，几乎随处可见，但是见过在函数外使用 return 的吗？如下代码：</p>
-
-<p><code>require_once(&lsquo;./bb-load.php&rsquo;);</p>
-
-<p>bb_repermalink(); // The magic happens here.</p>
-
-<p>if ($self) {
-    if (strpos($self, &lsquo;.php&rsquo;) !== false) {
-        require($self);
-    } else {
-        require(BB_PATH . &lsquo;profile-base.php&rsquo;);
-    }
-    return;
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/php-return/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/form-submit/" >防止表单重复提交的方式</a>
-        </span>
-        <span class="item__date">
-          Jul 8, 2015
-        </span>
-        <span >
-        
-        <p>关于防止表单重复提交的做法有很多，本人知道的有如下，简单讲讲几种方式。有redis，session，jquery等几种方法。</p>
-
-<p>1.有redis的环境</p>
-
-<p>把提交的动作action，参数之类的作为redis的key，存进redis，设置一个很短的缓存时间，提交的时候判断如果存在这个key，说明是重复提交数据。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/form-submit/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/authentication-failed/" >PHP连接mongodb认证错误:Failed to connect,Authentication failed</a>
-        </span>
-        <span class="item__date">
-          Jul 8, 2015
-        </span>
-        <span >
-        
-        <p>PHP扩展php_mongo.dll无法通过用户名密码认证的方式连接mongodb数据库，报错如下：<strong>Fatal error</strong>: Uncaught exception &#8216;MongoConnectionException&#8217; with message &#8216;Failed to connect to: 127.0.0.1:27017: Authentication failed on database &#8216;js_send_excel&#8217; with username &#8216;tanteng22&#8242;: auth failed&#8217; in D:\xampp\htdocs\v3\index.php:6 Stack trace: #0 D:\xampp\htdocs\v3\index.php(6): MongoClient-&gt;__construct(&#8216;mongodb://tante&#8230;&#8217;) #1 {main} thrown in <strong>D:\xampp\htdocs\v3\index.php</strong> on line <strong>6</strong></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/authentication-failed/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/pymongo-cllient/" >Python连接MongoDB数据库示例（带用户名密码）</a>
-        </span>
-        <span class="item__date">
-          Jul 7, 2015
-        </span>
-        <span >
-        
-        Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/pymongo-cllient/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/jquery-inarray/" >jQuery inArray不存在返回-1</a>
-        </span>
-        <span class="item__date">
-          Jul 6, 2015
-        </span>
-        <span >
-        
-        判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1. //
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/jquery-inarray/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python-import-this/" >Python彩蛋import this</a>
-        </span>
-        <span class="item__date">
-          Jul 5, 2015
-        </span>
-        <span >
-        
-        <p>Python有个彩蛋，比如在交互模式下输入import this，便会看到如下语句，这是Python的一些思想哲学以及Python的理念。</p>
-
-<p><img class="alignnone wp-image-8363 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/07/python_import_this.jpg" alt="python彩蛋" width="684" height="440" srcset="https://blog.tanteng.me/wp-content/uploads/2015/07/python_import_this.jpg 684w, https://blog.tanteng.me/wp-content/uploads/2015/07/python_import_this-300x193.jpg 300w" sizes="(max-width: 684px) 100vw, 684px" /></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-import-this/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/array-map-reduce-foreach/" >用array_map()和array_reduce()替代foreach循环</a>
-        </span>
-        <span class="item__date">
-          Jul 3, 2015
-        </span>
-        <span >
-        
-        <p>有时候不一定非得使用foreach，有更好的PHP内置数组函数处理数组，如使用array_map()和array_reduce()替代foreach循环。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/array-map-reduce-foreach/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/php-array-reduce/" >理解PHP array_reduce函数</a>
-        </span>
-        <span class="item__date">
-          Jul 3, 2015
-        </span>
-        <span >
-        
-        <p>PHP的array_reduce函数作用是（官方定义）：array_reduce() 将回调函数 function 迭代地作用到 input 数组中的每一个单元中，从而将数组简化为单一的值。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/php-array-reduce/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/mongodb-mysql/" >MongoDB和MySQL对应关系</a>
-        </span>
-        <span class="item__date">
-          Jun 22, 2015
-        </span>
-        <span >
-        
-        <p>MongoDB是nosql类型的数据库，MySQL是传统关系型的数据库，它们都是数据库，然而在语法、结构上都有很大差别，不过很多东西还是可以做类比，下面是MongoDB和MySQL一些对应关系。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/mongodb-mysql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/06/mongodb-xshell/" >如何设置服务器上的MongoDB让别的机子远程连接？</a>
         </span>
         <span class="item__date">
@@ -363,6 +155,226 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2015/06/mongodb-xshell/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/thinkphp-mongodb-getgridfs/" >ThinkPHP扩展MongoDB Model支持getGridFS存取文件</a>
+        </span>
+        <span class="item__date">
+          Jun 19, 2015
+        </span>
+        <span >
+        
+        <p>ThinkPHP自带MongoDB Model，Model继承MongoDBModel可以操作MongoDB数据库，但只能操作基本的一些MongoDB操作，无法操作getGridFS存取文件，需要扩展Driver/Db/DbMongo.class.php文件。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/thinkphp-mongodb-getgridfs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/php-mongodb-gridfs/" >PHP操作GridFS存储文件到MongoDB的三种方式</a>
+        </span>
+        <span class="item__date">
+          Jun 18, 2015
+        </span>
+        <span >
+        
+        一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/php-mongodb-gridfs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/mongodb-gridfs-php/" >MongoDB GridFS存取文件PHP示例</a>
+        </span>
+        <span class="item__date">
+          Jun 18, 2015
+        </span>
+        <span >
+        
+        <p>最近项目需要用到MongoDB存取文件，这里有个简单的PHP示例：</p>
+
+<p><code class="lang:php decode:true ">public function run(){
+    //初始化gridfs
+    $m = new MongoClient(); // 连接
+    $db = $m-&gt;selectDB(&ldquo;excel&rdquo;);
+    //dump($m);exit;
+    //$collection = $db-&gt;testexcel;
+    $grid = $db-&gt;getGridFS(); //取得gridfs对象</p>
+
+<pre><code>//gridfs有三种方式存储文件
+//第一种直接存储文件
+$id = $grid-&amp;gt;storeFile(dirname(__FILE__).&quot;/EmptyAction.class.php&quot;);
+echo $id;
+
+//获取文件
+$file = $grid-&amp;gt;findOne(array('_id'=&amp;gt;$id)); //以_id为索引取得文件 
+//header('Content-type: image/png'); //输出图片头 
+dump($file);
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/mongodb-gridfs-php/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/mongodb-excel/" >MongoDB存取Excel文件</a>
+        </span>
+        <span class="item__date">
+          Jun 17, 2015
+        </span>
+        <span >
+        
+        <p>这里有个使用MongoDB存取word文件的示例，原理是一样的。MongoDB可以用来存文件。<figure id="attachment_8317" style="width: 885px" class="wp-caption alignnone"></p>
+
+<p><a href="https://blog.tanteng.me/2015/06/mongodb-excel/attachment/201409090909031/" target="_blank"><img class="wp-image-8317 size-full" title="MongoDB存excel" src="https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031.png" alt="MongoDB存excel" width="885" height="398" srcset="https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031.png 885w, https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031-300x135.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a><figcaption class="wp-caption-text">MongoDB存excel</figcaption></figure></p>
+
+<p>它实际上是把文件转换成二进制文件，以键值对形式存储到MongoDB中。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/mongodb-excel/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/window-location-assign-href/" >window.location.assign和window.location.href区别</a>
+        </span>
+        <span class="item__date">
+          Jun 12, 2015
+        </span>
+        <span >
+        
+        <p>window.location.assign(url) 和 window.location.href=url 实现功能是一样的，都是跳转到网址，只是用法稍微不同。</p>
+
+<p><code class="lang:js decode:true ">window.location.assign(url);
+window.location = url;
+window.location.href = url;</code></p>
+
+<p>最大的不同是，assign 会添加记录到浏览历史，点击后退可以返回之前页面。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/window-location-assign-href/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/sublime-php-html-js/" >sublime插件推荐（PHP,html,js）</a>
+        </span>
+        <span class="item__date">
+          Jun 12, 2015
+        </span>
+        <span >
+        
+        这是几款针对PHP,html,js的sublime插件，推荐使用。 DocBlockr 代码注释自动生成 Go To Definition 代码引用位置 PHPcs 语法检查 jQuery jQuery自动提示 PHPdoc 也是
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/sublime-php-html-js/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/wang-xiao-bo-internet/" >程序员作家王小波：从Internet说起</a>
+        </span>
+        <span class="item__date">
+          Jun 11, 2015
+        </span>
+        <span >
+        
+        <p>作家王小波，同时也是一名程序员，自己会写软件，还写了五笔输入法，这是他的一篇文章，很Internet有关——《从Internet说起》。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/wang-xiao-bo-internet/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/mysql-zerofill/" >MySQL zerofill是什么意思？</a>
+        </span>
+        <span class="item__date">
+          Jun 11, 2015
+        </span>
+        <span >
+        
+        zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/mysql-zerofill/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/left-join-split-sql/" >将left join拆分成多条sql语句</a>
+        </span>
+        <span class="item__date">
+          Jun 9, 2015
+        </span>
+        <span >
+        
+        <p>本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/left-join-split-sql/">➦</a>
         
         </div>
         
@@ -819,43 +831,7 @@
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -863,7 +839,7 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

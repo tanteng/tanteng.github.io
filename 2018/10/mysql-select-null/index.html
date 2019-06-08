@@ -22,10 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL 字段为 NULL 的查询问题"/>
-<meta name="twitter:description" content="假设 code 字段是可为 NULL &hellip; AND code NOT IN () &hellip; &hellip; AND (code IS NULL or code NOT IN()) &hellip; 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL ="/>
+<meta name="twitter:description" content="Mysql难以优化引用可空列查询，它会使索引、索引统计和值更加复杂。可空列需要更多的存储空间，还需要mysql内部进行特殊处理。可空列被索引后，每条记录都需要一个额外的字节，还能导致MYisam 中固定大小的索引变成可变大小的索引。"/>
 
 <meta property="og:title" content="MySQL 字段为 NULL 的查询问题" />
-<meta property="og:description" content="假设 code 字段是可为 NULL &hellip; AND code NOT IN () &hellip; &hellip; AND (code IS NULL or code NOT IN()) &hellip; 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL =" />
+<meta property="og:description" content="Mysql难以优化引用可空列查询，它会使索引、索引统计和值更加复杂。可空列需要更多的存储空间，还需要mysql内部进行特殊处理。可空列被索引后，每条记录都需要一个额外的字节，还能导致MYisam 中固定大小的索引变成可变大小的索引。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2018/10/mysql-select-null/" />
 <meta property="article:published_time" content="2018-10-30T03:29:00&#43;00:00"/>
@@ -176,12 +176,11 @@
   
   
   <div class="post">
-    <p>假设 code 字段是可为 NULL</p>
+    <p>假设 MySQL 中某数据表 code 字段是可为 NULL</p>
 
-<p><code>
-&hellip; AND code NOT IN () &hellip;
-&hellip; AND (code IS NULL or code NOT IN()) &hellip;
-</code></p>
+<pre><code class="language-mysql">... AND code NOT IN () ...
+... AND (code IS NULL or code NOT IN()) ...
+</code></pre>
 
 <p>是不一样的，第一个查不出 code IS NULL 的数据。</p>
 

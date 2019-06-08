@@ -143,218 +143,38 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/01/virtue-programer/" >程序员的三种美德</a>
+          <a href="/2013/03/di-gui/" >已知f(1)=2;f(2)=3;f(n)=f(n-1)&#43;f(n-2);用递归和非递归方法计算F($n)的值</a>
         </span>
         <span class="item__date">
-          Jan 11, 2014
+          Mar 15, 2013
         </span>
         <span >
         
-        Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。 懒惰： 是这样一种品质，它使得你花大力气去避
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/01/virtue-programer/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/11/left-join-inner/" >left join,inner join区别</a>
-        </span>
-        <span class="item__date">
-          Nov 15, 2013
-        </span>
-        <span >
-        
-        <p>假设我们有两张表。Table A 是左边的表。Table B 是右边的表。其各有四条记录，其中有两条记录name是相同的，如下所示：让我们看看不同JOIN的不同</p>
+        <p>有一道题是这样的：f(1)=2;f(2)=3;f(n)=f(n-1)+f(n-2),写一个foo($num)方法。采用递归和非递归两种方式，计算出值。</br></p>
 
-<div>
-  <table width="222" border="0" cellspacing="0" cellpadding="0">
-    <colgroup> <col width="86" /> <col width="136" /></colgroup> <tr>
-      <td colspan="2" width="222">
-        A表
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        id
-      </td>
-      
-      <td>
-        name
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        1
-      </td>
-      
-      <td>
-        Pirate
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        2
-      </td>
-      
-      <td>
-        Monkey
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        3
-      </td>
-      
-      <td>
-        Ninja
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        4
-      </td>
-      
-      <td>
-        Spaghetti
-      </td>
-    </tr>
-  </table>
-  
-  <table width="222" border="0" cellspacing="0" cellpadding="0">
-    <colgroup> <col width="86" /> <col width="136" /></colgroup> <tr>
-      <td colspan="2" width="222">
-        B表
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        id
-      </td>
-      
-      <td>
-        name
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        1
-      </td>
-      
-      <td>
-        Rutabaga
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        2
-      </td>
-      
-      <td>
-        Pirate
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        3
-      </td>
-      
-      <td>
-        Darth Vade
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        4
-      </td>
-      
-      <td>
-        Ninja
-      </td>
-    </tr>
-  </table>
-</div>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/11/left-join-inner/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/11/active-learning/" >主动学习和被动学习</a>
-        </span>
-        <span class="item__date">
-          Nov 14, 2013
-        </span>
-        <span >
-        
-        <p>以下几幅图是主动学习和被动学习的效率对比，也就是学习金字塔。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/11/active-learning/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/11/php-reflectionclass-object/" >PHP反射类ReflectionClass和ReflectionObject</a>
-        </span>
-        <span class="item__date">
-          Nov 12, 2013
-        </span>
-        <span >
-        
-        <p>PHP中的反射类，用来分析php程序，导出或提取出关于类、方法、属性、参数等的详细信息，包括注释。</p>
+<p><strong>1.递归方法</strong></p>
 
-<p>看一个这样的问题，php类的成员变量没有在类中声明，而是在函数中声明，有什么不同？</p>
-
-<p><code lang="php">class test{
-    private $name;
-    private $sex;
-    function __construct(){
-        $this-&gt;aaa=&lsquo;aaa&rsquo;;
+<p><code lang="php">&lt;?php
+function foo($num){
+    if ($num&gt;0){
+        if($num==1){
+            return 2;
+        }
+        elseif ($num==2){
+            return 3;
+        }
+        else{
+            return foo($num-1)+foo($num-2);
+        }
     }
 }</p>
 
-<p>$test=new test();</p>
-
-<p>$reflect=new ReflectionClass($test);
-$pro=$reflect-&gt;getDefaultProperties();
-print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
-
-<p>echo $test-&gt;aaa;//打印结果：aaa
+<p>echo foo(5);
 </code></p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/11/php-reflectionclass-object/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/03/di-gui/">➦</a>
         
         </div>
         
@@ -364,22 +184,35 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/10/jobs-proverbs/" >乔布斯13条箴言</a>
+          <a href="/2013/03/pdo-statement-bindparam/" >PHP PDOStatement:bindParam的一个陷阱</a>
         </span>
         <span class="item__date">
-          Oct 21, 2013
+          Mar 3, 2013
         </span>
         <span >
         
-        <p>乔布斯是一个无与伦比的演讲者与推销者，在他56岁的生命中，说过的金句比以下Business Insider网站列出的13条要多得多——有些甚至是更加精彩的的句子。</p>
+        <p>废话不多说, 直接看代码:</p>
 
-<p><strong>关于计算机</strong></p>
+<p><code lang="php">&lt;?php
+$dbh = new PDO(&lsquo;mysql:host=localhost;dbname=test&rsquo;, &ldquo;test&rdquo;);</p>
 
-<p>“计算机要对这些简单的指令进行处理——‘调用个数值，把它跟现有的数值相加，并将结果写在这儿，看一看是不是比另外一个数值大’——但要以某种速度执行这些任务，比如每秒100万次。当计算机以每秒100万次的速度运行时，结果就像是魔法。”</p>
+<p>$query = &lt;&lt;<QUERY
+  INSERT INTO `user` (`username`, `password`) VALUES (:username, :password);
+QUERY;
+$statement = $dbh->prepare($query);</p>
+
+<p>$bind_params = array(&rsquo;:username&rsquo; =&gt; &ldquo;laruence&rdquo;, &lsquo;:password&rsquo; =&gt; &ldquo;weibo&rdquo;);
+foreach( $bind_params as $key =&gt; $value ){
+    $statement-&gt;bindParam($key, $value);
+}
+$statement-&gt;execute();
+</code></p>
+
+<p>请问, 最终执行的SQL语句是什么, 上面的代码是否有什么问题?</p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/10/jobs-proverbs/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/03/pdo-statement-bindparam/">➦</a>
         
         </div>
         
@@ -389,18 +222,26 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/10/fullpage-js/" >FullPage.js轻松实现全屏滚动</a>
+          <a href="/2013/03/php-memcache/" >php当中的memcache应用</a>
         </span>
         <span class="item__date">
-          Oct 19, 2013
+          Mar 3, 2013
         </span>
         <span >
         
-        <p>FullPage.js 是一个简单而易于使用的插件，用来创建全屏滚动网站（也被称为单页网站）。除了可以创建全屏滚动效果以外，也可以给网站添加一些水平的滑块效果。能够自适应不同的屏幕尺寸，包括平板电脑和移动设备。<img src="http://www.admin10000.com/UploadFiles/Document/201310/12/20131012142015906515.JPG" alt="" /></p>
+        <p><strong>安装memcached扩展的方法：</strong></p>
+
+<p>解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install</p>
+
+<p>将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。</p>
+
+<p>然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;</p>
+
+<p>在phpinfo（）下查看，是否引用了memcache扩展。</p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/10/fullpage-js/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/03/php-memcache/">➦</a>
         
         </div>
         
@@ -410,16 +251,24 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/09/wust-cat/" >武科大TOM猫</a>
+          <a href="/2013/03/php-webservice/" >php的webservice示例</a>
         </span>
         <span class="item__date">
-          Sep 21, 2013
+          Mar 2, 2013
         </span>
         <span >
         
-        武科大黄家湖校区南园某垃圾桶旁长期蹲守一只猫，很可爱，不管怎么弄它，它都很淡定，不怕人，经常有路过的人跟它玩耍，给它吃的。
+        <p>首先大家要简单了解了何谓webservice，接下来就做两个非常简单的例子，webservice还是逃不开server端与client端。</p>
+
+<p>我测试的环境为：apache2.2.11 php5.2.10</p>
+
+<p>做这个测试之前，要确认你的php配置文件中已经将soap扩展打开，即extension=php_soap.dll;</p>
+
+<p>OK 现在我们来体验webservice</p>
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2013/03/php-webservice/">➦</a>
         
         </div>
         
@@ -429,18 +278,18 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/09/used-to-change/" >习惯改变</a>
+          <a href="/2013/03/unsigned/" >数据库UNSIGNED属性</a>
         </span>
         <span class="item__date">
-          Sep 19, 2013
+          Mar 1, 2013
         </span>
         <span >
         
-        害怕改变，是因为熟悉了旧的环境，我们对未知事物总是充满疑惑，然而改变不一定是不好的，改变也许会带来更多意想不到的收获，一切都在改变，习惯变化
+        unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/09/used-to-change/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/03/unsigned/">➦</a>
         
         </div>
         
@@ -450,28 +299,22 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/09/remembering-that-i-will-be-dead-soon/" >乔布斯：记住你即将死去</a>
+          <a href="/2013/01/juhui/" >五年后的同学聚会,你该参加吗?</a>
         </span>
         <span class="item__date">
-          Sep 14, 2013
+          Jan 25, 2013
         </span>
         <span >
         
-        <p><strong>记住你即将死去(Remembering that I&#8217;ll be dead soon.)</strong></p>
+        <p>这两天又被人问到为什么留在BeBeyond。看来“梦想”这个事情，还是挺奢侈的。呵呵……所以很想和大家分享两个让我感触很深的故事。</p>
 
-<p>——乔布斯在斯坦福大学的演讲稿</p>
+<p>第一个故事来自于一本书，书名好像是《记住你是谁：15位哈佛教授震撼心灵的人生故事》（可能不是这个，我记不清了），是商务出版社出的《哈佛经典系列》，《蓝海战略》是这套丛书其中的一本。</p>
 
-<p>Remembering that I&#8217;ll be dead soon.</p>
-
-<p>记住你即将死去。</p>
-
-<p>If you live each day as if it was your last, someday you&#8217;ll most certainly be right.</p>
-
-<p>如果你把每一天都当作生命中最后一天去生活的话,那么有一天你会发现你是正确的。</p>
+<p>这个故事是这样的。哈佛商学院的毕业生每5年就会有一次同学聚会，所以一个哈佛教授问即将毕业的学生说：“5年后，你会得到一张请柬，邀请你参加同学聚会，你该去吗？”（请大家停顿一下想想，你会去吗？）似乎答案应该是“去”，对吧？有什么理由不去呢？能够叙叙旧，维护下个人人际网，说不定还能碰上些新的商业机会，多好！</p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/09/remembering-that-i-will-be-dead-soon/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/01/juhui/">➦</a>
         
         </div>
         
@@ -481,24 +324,109 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/09/navicat-sql/" >用navicat导入sql大文件</a>
+          <a href="/2012/12/enum-set/" >数据库字段类型Enum（枚举）和Set（集合）的区别（转）</a>
         </span>
         <span class="item__date">
-          Sep 5, 2013
+          Dec 20, 2012
         </span>
         <span >
         
-        <p>我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。</p>
+        <p><strong>Enum枚举，Set集合。</strong></p>
 
-<p>我用同样的方法导入sae其他的应用的sql文件，都是正常的。</p>
+<p>ENUM和SET都是比较特殊的字符串数据列类型，它们的取值范围是一个预先定义好的列表。ENUM或SET数据列的取值只能从这个列表中进行选择。ENUM和SET的主要区别是：</p>
 
-<p>报错截图：</p>
+<p><strong><em>ENUM只能取单值</em></strong>，它的数据列表是一个枚举集合。它的合法取值列表最多允许有65535个成员。例如：ENUM(&#8220;N&#8221;,&#8221;Y&#8221;)表示，该数据列的取值要么是&#8221;Y&#8221;，要么就是&#8221;N&#8221;。</p>
 
-<p><img class="attachment-full" src="http://tanteng-wordpress.stor.sinaapp.com/uploads/2013/09/201304181305293855.pngpsid1" alt="201304181305293855" width="408" height="354" /></p>
+<p><strong><em>SET可取多值</em></strong>。它的合法取值列表最多允许有64个成员。空字符串也是一个合法的SET值。</p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/09/navicat-sql/">➦</a>
+          ... <a class="read-more-symbol" href="/2012/12/enum-set/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/12/php-save-cookie/" >php中数组存入cookie的方法</a>
+        </span>
+        <span class="item__date">
+          Dec 19, 2012
+        </span>
+        <span >
+        
+        <p>cookie默认不能存数组，所以要采取另外的方法将数组存入cookie中。</p>
+
+<p><strong>方法一：先用serialize序列化数组，再存入COOKIE，读出来时用unserialize得到原来的数组</strong></p>
+
+<p><code lang="php">//存入<br />
+$arr = array(1,2,3);<br />
+$arr_str = serialize($arr);<br />
+setcookie(&ldquo;a&rdquo;,$arr_str);</p>
+
+<p>//取出<br />
+$arr_str = $_COOKIE[&lsquo;a&rsquo;];<br />
+$arr = unserialize($arr_str);
+</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/12/php-save-cookie/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/12/navica-10/" >Navicat10.x注册码</a>
+        </span>
+        <span class="item__date">
+          Dec 19, 2012
+        </span>
+        <span >
+        
+        <p><strong>Navicat10.x注册码：</strong></p>
+
+<p>NAVD-IO5R-4VGM-TIZD</p>
+
+<p>NAVL-RK72-URYA-CINR</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/12/navica-10/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/11/thinkphp-rbac/" >ThinkPHP的RBAC（基于角色权限控制）详解</a>
+        </span>
+        <span class="item__date">
+          Nov 25, 2012
+        </span>
+        <span >
+        
+        <h1 id="一-什么是rbac">一、什么是RBAC</h1>
+
+<p>基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。</p>
+
+<p>在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。</p>
+
+<p>在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/11/thinkphp-rbac/">➦</a>
         
         </div>
         
@@ -955,43 +883,7 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -999,7 +891,7 @@ print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

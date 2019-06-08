@@ -143,256 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/10/php-reflectionclass/" >PHP反射类ReflectionClass</a>
-        </span>
-        <span class="item__date">
-          Oct 30, 2015
-        </span>
-        <span >
-        
-        <p class="lang:php decode:true ">
-  首先定义一个类A，用ReflectionClass得到A的反射类对象，通过ReflectionClass对象可以得到类的各种属性，包括命名空间，父类，类名等，使用newInstanceArgs可以传入构造函数的参数创建一个新的类的实例。
-</p>
-
-<p><code>class A
-{
-    public $name;</p>
-
-<pre><code>public function __Construct($name,$des)
-{
-    $this-&amp;gt;name = $name.','.$des;
-}
-public function aa()
-{
-    echo $this-&amp;gt;name;
-}
-</code></pre>
-
-<p>}</p>
-
-<p>$class = new ReflectionClass(&lsquo;A&rsquo;);</p>
-
-<p>$aaa = $class-&gt;newInstanceArgs([&lsquo;blog.tanteng.me&rsquo;,&lsquo;blog&rsquo;]);</p>
-
-<p>$aaa-&gt;aa();</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-reflectionclass/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-oop-typehinting/" >PHP约束参数类型</a>
-        </span>
-        <span class="item__date">
-          Oct 29, 2015
-        </span>
-        <span >
-        
-        <p>PHP5起可以约束参数类型，在Yii2框架中使用很多，可以指定一个类的方法或者函数参数必须是某个类型，类型可以是对象，数组，字符串，整形。如果指定了参数类型，那么传入的值必须是符合类型约束的，否则会报异常错误。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-oop-typehinting/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-simple-singleton-pattern-class/" >写一个PHP单例模式的类</a>
-        </span>
-        <span class="item__date">
-          Oct 25, 2015
-        </span>
-        <span >
-        
-        <p>最近为了解决一个问题，需要写一个PHP的单例模式的类，以前也小有研究，其实项目中包括框架自身许多地方也是使用的单例模式，但没自己写过，于是自己随手写了一个实现单机模式的简单类。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-simple-singleton-pattern-class/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/redis-jquery-ajax/" >如何防止ajax重复提交</a>
-        </span>
-        <span class="item__date">
-          Oct 25, 2015
-        </span>
-        <span >
-        
-        <p>关于防止重复提交，可以参考如下链接：</p>
-
-<ol>
-<li><a href="https://blog.tanteng.me/2015/08/redis-lock/" target="_blank">使用Redis加锁防止重复提交</a></li>
-<li><a href="https://blog.tanteng.me/2015/07/form-submit/" target="_blank">防止表单重复提交的几种方式</a></li>
-<li><a href="https://blog.tanteng.me/2015/05/js-lock/" target="_blank">jquery的data方法用法</a></li>
-</ol>
-
-<p>本文讲讲如何使用redis和jquery防止ajax重复提交，如果按钮是button，点击按钮之后，js使按钮禁用，程序那边同时也加锁即可。如果按钮是a标签，则需要使用jquery的data方法在页面上加锁，具体方法见上面第3个链接。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/redis-jquery-ajax/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/linux-tail-grep/" >Linux命令:tail,grep</a>
-        </span>
-        <span class="item__date">
-          Oct 21, 2015
-        </span>
-        <span >
-        
-        <p>今天来学习两个Linux命令：tail和grep.</p>
-
-<p>tail命令从指定点开始将文件写到标准输出.使用tail命令的-f选项可以方便的查阅正在改变的日志文件，常用来跟踪系统日志文件，tail -f filename会把filename里最尾部的内容显示在屏幕上，并且不断刷新，使你看到最新的文件内容。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/linux-tail-grep/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/website-client/" >网站的五个“端”</a>
-        </span>
-        <span class="item__date">
-          Oct 16, 2015
-        </span>
-        <span >
-        
-        网站的五个“端”：PC端、手机站、Android客户端（手机app和平板）、iOS客户端（iPhone和iPad）、微信端，现在这五个“端”
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/website-client/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-array-merge/" >PHP数组array_merge和&#43;的区别</a>
-        </span>
-        <span class="item__date">
-          Oct 16, 2015
-        </span>
-        <span >
-        
-        <p>这个例子比较全面的比较了PHP合并两个数组常见的方法array_merge和+的区别：</p>
-
-<p><code>$array1 = array(
-    &lsquo;test1&rsquo; =&gt; &lsquo;test1&rsquo;,
-    &lsquo;test2&rsquo; =&gt; &lsquo;test2&rsquo;,
-    8       =&gt; &lsquo;9&rsquo;,
-    &lsquo;10&rsquo;    =&gt; &lsquo;1010&rsquo;,
-    &lsquo;s10&rsquo;   =&gt; &lsquo;s10&rsquo;,
-);</p>
-
-<p>$array2 = array(
-    &lsquo;test1&rsquo; =&gt; &lsquo;test1+&rsquo;,
-    &lsquo;test2&rsquo; =&gt; &lsquo;test2+&rsquo;,
-    &lsquo;++&rsquo;    =&gt; &lsquo;++&rsquo;,
-    8       =&gt; &lsquo;9999&rsquo;,
-    &lsquo;10&rsquo;    =&gt; &lsquo;10101010&rsquo;,
-    &lsquo;s10&rsquo;   =&gt; &lsquo;s10101010&rsquo;,
-);</p>
-
-<p>$result = array_merge($array1,$array2);
-$result2 = $array1+$array2;
-var_dump($result);
-var_dump($result2);
-exit;</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-array-merge/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/mac-ip-addr/" >Mac终端如何查看本机ip和mac地址</a>
-        </span>
-        <span class="item__date">
-          Oct 10, 2015
-        </span>
-        <span >
-        
-        <p>windows命令行输入ipconfig即可查看本机的ip地址和mac物理地址，macbook终端输入什么命令查看本机ip和mac地址呢？</p>
-
-<p>打开终端输入ifconfig命名，会显示一大堆关于网络、网卡的信息，如下：</p>
-
-<p>tantengdeMacBook-Pro:~ tanteng$ ifconfig</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/mac-ip-addr/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/09/program-language-performance/" >关于编程语言的性能</a>
-        </span>
-        <span class="item__date">
-          Sep 27, 2015
-        </span>
-        <span >
-        
-        关于“性能”，Charles 在算法导论课上的观点很好： 在编程上，性能的重要性是排在用户体验、安全性、可扩展性、稳定性等方面之后，是最不重要的
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/09/program-language-performance/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/09/mac-firefox-hostadmin/" >Mac下firefox插件hostadmin切换host权限不足</a>
         </span>
         <span class="item__date">
@@ -405,6 +155,259 @@ exit;</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/09/mac-firefox-hostadmin/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/09/php-lower-diff/" >PHP变量名区分大小写，函数和方法名不区分大小写</a>
+        </span>
+        <span class="item__date">
+          Sep 4, 2015
+        </span>
+        <span >
+        
+        PHP变量名区分大小写，函数和方法名不区分大小写
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/python-excption/" >Python3异常处理和异常类型</a>
+        </span>
+        <span class="item__date">
+          Aug 19, 2015
+        </span>
+        <span >
+        
+        <h3 id="python的异常处理">Python的异常处理</h3>
+
+<p>如下是使用Python的xlrd模块打款excel文件，这个操作可能会出现异常，使用try捕捉异常，进行处理，防止程序的中断运行，并且记录异常信息到日志。</p>
+
+<p><code class="lang:python decode:true ">def save_file(file, filename):
+    &ldquo;&rdquo;&rdquo;
+    打开excel文件
+    &ldquo;&rdquo;&rdquo;
+    try:
+        book = xlrd.open_workbook(file)
+        sheet = book.sheet_by_index(0)
+    except Exception as e:
+        logging.info(&lsquo;错误：{0} 文件：{1}&rsquo;.format(e, file))
+        shutil.copy2(file, &lsquo;./error&rsquo; + filename)
+        return False
+    row_nums = sheet.nrows
+    col_nums = sheet.ncols</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/python-excption/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/python-for-else/" >Python中for循环的else</a>
+        </span>
+        <span class="item__date">
+          Aug 17, 2015
+        </span>
+        <span >
+        
+        <p class="">
+  Python中循环语句for或者while后else表示循环条件不成立的时候执行，如：
+</p>
+
+<p><code class="lang:python decode:true "># -<em>- coding:utf-8 -</em>-
+for i in range(10):
+    print(i)</p>
+
+<pre><code>if i == 5:  # 此时不会执行else，当i大于等于10的时候，就不满足for条件，就执行else
+    print(&quot;Too big - I'm giving up!&quot;)
+    break
+</code></pre>
+
+<p>else:
+    print(&ldquo;Completed successfully&rdquo;)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/python-for-else/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/jquery-cookie-base/" >jQuery.cookie的基本用法</a>
+        </span>
+        <span class="item__date">
+          Aug 14, 2015
+        </span>
+        <span >
+        
+        <p>jQuery.cookie的基本用法：</p>
+
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+
+<p><code class="lang:js decode:true">&lt;script src=&ldquo;/path/to/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
+
+<p>Create session cookie:</p>
+
+<div class="highlight highlight-javascript">
+  <code class="lang:js decode:true">$.cookie('name', 'value');</code>
+</div>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie-base/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/jquery-cookie/" >使用jquery的cookie实例</a>
+        </span>
+        <span class="item__date">
+          Aug 13, 2015
+        </span>
+        <span >
+        
+        <p>jquery的cookie插件可以方便操作cookie，首先引入jquery.cookie.js文件，可以去官网下载。</p>
+
+<p><code class="lang:js decode:true">&lt;script type=&ldquo;text/javascript&rdquo; src=&rdquo;<strong>STATIC</strong>/common/js/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
+
+<p>以下使用jquery的cookie实现一个简单的功能，一个公共栏，可以点击展开或者收缩，第一次进入页面默认展开，第二次以后进入页面默认收缩，但是点击也可以展开。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php-float/" >PHP浮点数运算精度的问题</a>
+        </span>
+        <span class="item__date">
+          Aug 12, 2015
+        </span>
+        <span >
+        
+        <p>在用PHP进行浮点数的运算中，遇到一个坑，没有得到预期中的结果，如下代码：</p>
+
+<p><code>$a = 69.1;</p>
+
+<p>$b = $a*100;</p>
+
+<p>$c = $b-6910;</code></p>
+
+<p>你猜$c的值是多少？$c输出的值是-9.0949470177293E-13.为什么会这样？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php-float/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/virtualbox-vagrant/" >使用vagrant安装VirtualBox虚拟机说明</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2015
+        </span>
+        <span >
+        
+        <p><img class="alignnone size-full wp-image-8553" src="https://blog.tanteng.me/wp-content/uploads/2015/08/111.png" alt="111" width="96" height="173" /></p>
+
+<p>首先安装这个玩意VirtualBox~~</p>
+
+<p><img class="alignnone size-full wp-image-8554" src="https://blog.tanteng.me/wp-content/uploads/2015/08/222.png" alt="222" width="98" height="131" /></p>
+
+<p>然后安装这个玩意vagrant</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/virtualbox-vagrant/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php-closure-demo/" >PHP匿名函数的实例</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2015
+        </span>
+        <span >
+        
+        PHP5.3起就支持匿名函数，可以放心在生产环境中使用，对于PHP的很多新特性该用的地方要大胆使用，可以使代码更简洁，功能实现也更加方便。 以
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php-closure-demo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/redis-lock/" >使用Redis防止重复提交</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2015
+        </span>
+        <span >
+        
+        <p>使用Redis可以很方便的防止表单或者按钮重复提交，给动作加锁，在一定时间内不能再次执行。</p>
+
+<p><code class="lang:php decode:true ">//防止重复提交
+$lock<em>nopay = &lsquo;nopay</em>&rsquo;.$sb_id.$sb_uid.$pay_money;
+if(!$this-&gt;lock(10,$lock_nopay)){
+    $this-&gt;error(&ldquo;当前取消打款操作尚未完成，请勿重复操作！&rdquo;);
+}</code></p>
+
+<p>这里调用lock方法，锁定10秒钟，10秒钟内如果再次提交就中断操作，认为是重复提交。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/redis-lock/">➦</a>
         
         </div>
         
@@ -861,43 +864,7 @@ exit;</code></p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -905,7 +872,7 @@ exit;</code></p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

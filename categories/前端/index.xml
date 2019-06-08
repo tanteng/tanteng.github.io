@@ -6,19 +6,10 @@
     <description>Recent content in 前端 on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 May 2018 11:02:34 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Dec 2016 02:55:00 +0000</lastBuildDate>
     
 	<atom:link href="http://tanteng.me/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>在 Laravel 中使用 DataTables 插件</title>
-      <link>http://tanteng.me/2018/05/laravel-datatables/</link>
-      <pubDate>Mon, 28 May 2018 11:02:34 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/laravel-datatables/</guid>
-      <description>&lt;p&gt;DataTables 是一个 jQuery 的表格插件，记录一下在 Laravel 中使用的常用功能和用法，比如 ajax 获取数据，自定义搜索，效果展现，选项说明等等，有一些细节记录下来方便以后查看。&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>window.location.reload()和window.location.href=””的区别</title>
@@ -461,31 +452,6 @@ $( &amp;ldquo;p&amp;rdquo; ).text( arr.join( &amp;ldquo;, &amp;rdquo; ) );&lt;/p
     </item>
     
     <item>
-      <title>jquery cookie的用法</title>
-      <link>http://tanteng.me/2012/09/jquery-cookie-usage/</link>
-      <pubDate>Thu, 27 Sep 2012 06:10:43 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/jquery-cookie-usage/</guid>
-      <description>&lt;p&gt;jQuery cookie是个很好的cookie插件，大概的使用方法如下：&lt;/p&gt;
-
-&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Create session cookie:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Create expiring cookie, 7 days from then:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;, { expires: 7 }); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Create expiring cookie, valid across entire site:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;, { expires: 7, path: &amp;lsquo;/&amp;rsquo; }); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Read cookie:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>HTTP状态码200、301、403、404、500等</title>
       <link>http://tanteng.me/2012/09/http-200-301-403-404-500/</link>
       <pubDate>Wed, 26 Sep 2012 15:41:36 +0000</pubDate>
@@ -500,146 +466,6 @@ $( &amp;ldquo;p&amp;rdquo; ).text( arr.join( &amp;ldquo;, &amp;rdquo; ) );&lt;/p
 &lt;p&gt;404 &amp;#8211; 请求的网页不存在&lt;/p&gt;
 
 &lt;p&gt;503 &amp;#8211; 服务器超时&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>全面介绍HTML5</title>
-      <link>http://tanteng.me/2012/09/html-5/</link>
-      <pubDate>Tue, 25 Sep 2012 15:49:24 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/html-5/</guid>
-      <description>&lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;
-
-&lt;h3 id=&#34;什么是html5&#34;&gt;什么是HTML5&lt;/h3&gt;
-
-&lt;h3 id=&#34;html5新特性和效果&#34;&gt;HTML5新特性和效果&lt;/h3&gt;
-
-&lt;h3 id=&#34;html5目前存在的应用局限&#34;&gt;HTML5目前存在的应用局限&lt;/h3&gt;
-
-&lt;h3 id=&#34;讨论-html5适合应用于我们哪些项目&#34;&gt;讨论：HTML5适合应用于我们哪些项目？&lt;/h3&gt;</description>
-    </item>
-    
-    <item>
-      <title>javascript的关键字和保留字</title>
-      <link>http://tanteng.me/2012/09/javascript-keywords/</link>
-      <pubDate>Wed, 12 Sep 2012 15:04:04 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/javascript-keywords/</guid>
-      <description>&lt;p&gt;1、关键字&lt;/p&gt;
-
-&lt;p&gt;break&lt;/p&gt;
-
-&lt;p&gt;case&lt;/p&gt;
-
-&lt;p&gt;catch&lt;/p&gt;
-
-&lt;p&gt;continue&lt;/p&gt;
-
-&lt;p&gt;default&lt;/p&gt;
-
-&lt;p&gt;delete&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>CSS Sprites技术，利用background属性进行图片分割</title>
-      <link>http://tanteng.me/2012/05/css-sprites/</link>
-      <pubDate>Wed, 16 May 2012 02:41:43 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/css-sprites/</guid>
-      <description>&lt;p&gt;CSS Sprites 技术对于广大的前端工程师来说应该是一点也不陌生。这个被国内开发者昵称为CSS精灵 CSS雪碧的家伙到底解决了什么问题，我们又怎样合理使用这个技术呢？下面让我们详细的聊聊。&lt;/p&gt;
-
-&lt;p&gt;在大家还在拨号上网的“远古时期”，由于网速的限制，页面开发者都喜欢把网页里面的图片字节数控制的非常小，往往在一个图片文件夹里散落着n多的小碎图。随着网络技术的发展，网速的提升，大家越来越重视页面的加载速度，页面效率问题，因为每加载一张图片都会产生一次浏览器请求数，发起的请求数越多那么页面加载的速度也越慢。还有当页面加载时，图片一个个的零星显示，鼠标经过时候背景闪白等也都是我们不能忍受的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;于是乎将页面中的背景图整合到一起，利用“background-image”，“background- repeat”，“background-position”的组合进行背景定位的技术被广泛使用与了页面构建中，这就是CSS Sprites。&lt;/strong&gt;当然CSS Sprites技术也存在着维护不便，内存占用大等等的缺点。&lt;/p&gt;
-
-&lt;p&gt;好了，如果我只说这些，那么这篇文章就有点太水了。前面那些只是对CSS Sprites技术的一个普及。作为一个开发者我们应该对它有一个更全面的认识，挖掘深度内容，这样才能有利于我们效率开发，团队协作。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HTML5&#43;CSS3&#43;jQuery视频播放器</title>
-      <link>http://tanteng.me/2012/05/html5-css3-video-player/</link>
-      <pubDate>Sat, 12 May 2012 05:02:47 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/html5-css3-video-player/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;毫无疑问HTML5已经是大势所趋，知名视频网站YouTube在两年前就开始推广HTML5播放器来代替Flash。虽然国内还没有完全普及HTML5浏览器，但在各大本土浏览器厂商的努力下，支持HTML5的浏览器在中国浏览器市场的占有率也在不断增长中。本教程将会手把手地教你制作一个基于HTML5&amp;amp; CSS3&amp;amp; JavaScript 技术的视频播放器。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img class=&#34;alignnone&#34; src=&#34;https://public.bay.livefilestore.com/y1peX9JxCFEOl9YogxRdp96se7Akf9zdKPUDzo7PaASwo7P-8ZzOfsLE3KPDOorms3h2NPYQdtprM_OjqmRc6z0Hw/138_120510135003_1.jpg?psid=1&#34; alt=&#34;&#34; width=&#34;576&#34; height=&#34;241&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最终效果图&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何用javascript实现类继承</title>
-      <link>http://tanteng.me/2012/05/javascript-class-extend/</link>
-      <pubDate>Mon, 07 May 2012 12:06:53 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/javascript-class-extend/</guid>
-      <description>&lt;p&gt;本文着重解析javascript类继承机制，从底层剖析javascript是怎样实现“继承”的。&lt;/p&gt;
-
-&lt;p&gt;目前 javascript的实现继承方式并不是通过“extend”关键字来实现的，而是通过 constructor function（构造方法）和prototype属性来实现继承。首先我们创建一个animal 类&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;javascript&#34;&gt;var animal =  function (){   //这就是constructor function 了
-   this .name = &amp;lsquo;pipi&amp;rsquo;;
-   this .age = 10;
-   this .height = 0;
-}
- //建立一个动物的实例
- var  a1 =   new  animal ();&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;构造函数与其他普通函数区别在于，1.构造函数里有 this关键字，2.调用构造函数是使用的new关键字。通过new运算符调用构造函数 animal 后，系统就会返回一个对象，这个对象就相当于&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>jQuery常用技巧</title>
-      <link>http://tanteng.me/2011/10/jquery-2/</link>
-      <pubDate>Mon, 24 Oct 2011 14:16:15 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/jquery-2/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1、关于页面元素的引用 &lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;通过jquery的$()引用元素包括通过id、class、元素名以及元素的层级关系及dom或者xpath条件等方法，且返回的对象为jquery对象（集合对象），不能直接调用dom定义的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2、jQuery对象与dom对象的转换&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;只有jquery对象才能使用jquery定义的方法。注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是 jquery对象。&lt;/p&gt;
-
-&lt;p&gt;普通的dom对象一般可以通过$()转换成jquery对象。&lt;/p&gt;
-
-&lt;p&gt;如：$(document.getElementById(&amp;#8220;msg&amp;#8221;))则为jquery对象，可以使用jquery的方法。&lt;/p&gt;
-
-&lt;p&gt;由于jquery对象本身是一个集合。所以如果jquery对象要转换为dom对象则必须取出其中的某一项，一般可通过索引取出。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>jquery :nth-child()伪类选择器</title>
-      <link>http://tanteng.me/2011/10/jquery-nth-child/</link>
-      <pubDate>Mon, 24 Oct 2011 14:06:00 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/jquery-nth-child/</guid>
-      <description>&lt;p&gt;本来是css3的伪类选择器，可惜大部分浏览器都不支持，然而jquery却给借鉴过来了， 用起来很给力很给力！&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;:nth-child(&lt;em&gt;an+b&lt;/em&gt;)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;描述：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;伪类&lt;strong&gt;:nth-child()&lt;/strong&gt;的参数是_an+b_，如果按照w3.org上的描述，写成中文，很可能会让人头晕，再加上笔者的文笔水平有限，所以我决定避开an+b的说法，把它拆分成5种写法共5部分来说明。&lt;/p&gt;
-
-&lt;p&gt;可惜目前能较好地支持她的只有Opera9+和Safari3+。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Css设置img属性让图片水平居中，居左，居右</title>
-      <link>http://tanteng.me/2011/10/css_img/</link>
-      <pubDate>Sat, 15 Oct 2011 16:43:02 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/css_img/</guid>
-      <description>&lt;p&gt;图片的居中显示css有很多方法，但在很多情况下有的方法无效，这是件很头疼的事情，在研究wordprss程序的时候，无意发现这个系统的官方处理图片居中，居左，居右的css写法，分享一下！&lt;/p&gt;
-
-&lt;p&gt;比如一个图片的&lt;img class=&amp;#8221;alignleft &amp;#8220;&gt;，居左，设置图片的img属性左浮动；居右，设置右浮动；水平居中，设置margin:auto。后来一想，这个办法很不错，应该是一个在很多情况下都有效的方法！&lt;/p&gt;</description>
     </item>
     
   </channel>

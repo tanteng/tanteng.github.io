@@ -143,222 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/05/php-composer/" >PHP 开发者该知道的 5 个 Composer 小技巧</a>
-        </span>
-        <span class="item__date">
-          May 26, 2015
-        </span>
-        <span >
-        
-        Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/php-composer/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/rest-get-post-put-delete/" >REST模式GET，POST，PUT，DELETE</a>
-        </span>
-        <span class="item__date">
-          May 23, 2015
-        </span>
-        <span >
-        
-        <p>HTTP常见的请求方式我们熟知的有GET和POST，这两个很好理解，但是在Rest中跟我们平常的理解又有所不同，本文重点介绍一下Rest模式这几种方式的概念，以及它们的使用场景。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/rest-get-post-put-delete/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/directory-path-separator/" >DIRECTORY_SEPARATOR 和 PATH_SEPARATOR的区别</a>
-        </span>
-        <span class="item__date">
-          May 21, 2015
-        </span>
-        <span >
-        
-        <p>DIRECTORY_SEPARATOR：目录分隔符，linux上就是&#8217;/&#8217;,windows上是&#8217;&amp;#8217;.</p>
-
-<p>PATH_SEPARATOR：路径分隔符，include多个路径使用，在win下，当你要include多个路径的话，你要用&#8221;;&#8221;隔开，但在linux下就使用&#8221;:&#8221;隔开的。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/directory-path-separator/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/utf8mb4/" >关于 utf8mb4，它和 utf8 有什么区别</a>
-        </span>
-        <span class="item__date">
-          May 20, 2015
-        </span>
-        <span >
-        
-        <p>最近经常看到一个没见过的编码格式叫utf8mb4，总是和emoj表情联系在一起，什么是utf8mb4，它和utf8有什么区别呢？</p>
-
-<p>utf8mb4是一种可支持4个字节UTF编码，一个字符最多能有4字节，所以能支持更多的字符集。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/utf8mb4/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/left-join-duplication/" >left join多张表查出重复数据的解决办法</a>
-        </span>
-        <span class="item__date">
-          May 19, 2015
-        </span>
-        <span >
-        
-        <p>今天线上出现一个问题，查询售后订单出现很多重复的内容，经查，是left join多张表导致的查询出重复数据。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/left-join-duplication/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/js-lock/" >js防止按钮重复提交</a>
-        </span>
-        <span class="item__date">
-          May 19, 2015
-        </span>
-        <span >
-        
-        <p>js控制按钮防止ajax重复提交数据，按钮不是button，是a标签。</p>
-
-<p><code class="lang:js decode:true">if($(&ldquo;body&rdquo;).data(&ldquo;applycancel&rdquo;)==&ldquo;lock&rdquo;){
-  return false;
-}else{
-    $(&ldquo;body&rdquo;).data(&ldquo;applycancel&rdquo;,&ldquo;lock&rdquo;);
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/js-lock/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/django-querysets/" >如何高效使用Django QuerySets</a>
-        </span>
-        <span class="item__date">
-          May 15, 2015
-        </span>
-        <span >
-        
-        这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子： http://www.oschina.net/translate/django-querysets
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-fib-generator/" >Python斐波拉契数列生成器</a>
-        </span>
-        <span class="item__date">
-          May 13, 2015
-        </span>
-        <span >
-        
-        <p>利用Python生成器定义斐波拉契数列generator：</p>
-
-<p><code class="lang:python decode:true">def fib(max):
-    n, a, b = 0, 0, 1
-    while n &lt; max:
-        yield b
-        a, b = b, a + b
-        n = n + 1</p>
-
-<p>for i in fib(30):
-    print(i)</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-fib-generator/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python3-mysql/" >Python 3使用Mysql几种方式</a>
-        </span>
-        <span class="item__date">
-          May 12, 2015
-        </span>
-        <span >
-        
-        <p>There are currently a few options for using Python 3 with mysql:</p>
-
-<p><a href="https://pypi.python.org/pypi/mysql-connector-python" target="_blank" rel="nofollow"><a href="https://pypi.python.org/pypi/mysql-connector-python">https://pypi.python.org/pypi/mysql-connector-python</a></a></p>
-
-<ul>
-<li>Officially supported by Oracle</li>
-<li>Pure python</li>
-<li>A little slow</li>
-<li>Not compatible with MySQLdb</li>
-</ul>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python3-mysql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/05/python-tablib-excel/" >Python使用tablib生成excel文件简单示例</a>
         </span>
         <span class="item__date">
@@ -378,6 +162,252 @@ with open(&lsquo;excel.xlsx&rsquo;, &lsquo;wb&rsquo;) as f:
         </span>
         
           ... <a class="read-more-symbol" href="/2015/05/python-tablib-excel/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-from-import/" >from urllib import request和import urlib.request的区别</a>
+        </span>
+        <span class="item__date">
+          May 12, 2015
+        </span>
+        <span >
+        
+        <p>Python中from urllib import request和import urlib.request的区别：</p>
+
+<p><code class="lang:python decode:true ">from urllib import request</p>
+
+<h1 id="access-request-directly">access request directly.</h1>
+
+<p>mine = request()</p>
+
+<p>import urllib.request</p>
+
+<h1 id="used-as-urllib-request">used as urllib.request</h1>
+
+<p>mine = urllib.request()</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-from-import/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/bs4-example/" >bs4(beautiful soup 4)简单抓取示例</a>
+        </span>
+        <span class="item__date">
+          May 12, 2015
+        </span>
+        <span >
+        
+        <p>参照bs4官方中文文档<a href="http://beautifulsoup.readthedocs.org/en/latest/" target="_blank" rel="nofollow"><a href="http://beautifulsoup.readthedocs.org/en/latest/">http://beautifulsoup.readthedocs.org/en/latest/</a></a>照着写了个简单的例子，感觉它非常强大！！</p>
+
+<p><code class="lang:python decode:true ">import urllib.request
+from bs4 import BeautifulSoup
+import sys</p>
+
+<p>url = &lsquo;<a href="https://blog.tanteng.me'">https://blog.tanteng.me'</a>
+html = urllib.request.urlopen(url).read()</p>
+
+<p>soup = BeautifulSoup(html)
+h1s = soup.find<em>all(&lsquo;h1&rsquo;,class</em>=&lsquo;entry-title&rsquo;)</p>
+
+<p>&rdquo;&lsquo;打印所有H1标题和链接&rdquo;&rsquo;
+for h1 in h1s:
+    #print(h1)
+    print(h1.get_text())
+    print(h1.a.attrs[&lsquo;href&rsquo;])</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/bs4-example/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/beautiful-soul-4-for-python3/" >beautiful soul 4 for Python3中文文档</a>
+        </span>
+        <span class="item__date">
+          May 11, 2015
+        </span>
+        <span >
+        
+        beautiful soul 4 for Python3中文文档： http://beautifulsoup.readthedocs.org/en/latest/#
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-filename/" >Python文件名不能和已有模块名重名</a>
+        </span>
+        <span class="item__date">
+          May 11, 2015
+        </span>
+        <span >
+        
+        今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&#8217;modul
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-filename/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/requests-html/" >Python3 requests包抓取并保存网页源码</a>
+        </span>
+        <span class="item__date">
+          May 11, 2015
+        </span>
+        <span >
+        
+        <p>使用Python 3的requests模块抓取网页源码并保存到文件示例：</p>
+
+<p><code class="lang:python mark:3-4 decode:true">import requests
+html = requests.get(&ldquo;<a href="http://www.baidu.com&quot;">http://www.baidu.com&quot;</a>)
+with open(&lsquo;test.txt&rsquo;,&lsquo;w&rsquo;,encoding=&lsquo;utf-8&rsquo;) as f:
+    f.write(html.text)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/requests-html/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-scope/" >Python作用域代码演示</a>
+        </span>
+        <span class="item__date">
+          May 10, 2015
+        </span>
+        <span >
+        
+        <p>每一个编程语言都有变量的作用域的概念，Python也不例外，以下是Python作用域的代码演示：</p>
+
+<p><code class="lang:python decode:true ">def scope_test():
+    def do_local():
+        spam = &ldquo;local spam&rdquo;
+    def do_nonlocal():
+        nonlocal spam
+        spam = &ldquo;nonlocal spam&rdquo;
+    def do_global():
+        global spam
+        spam = &ldquo;global spam&rdquo;</p>
+
+<pre><code>spam = &quot;test spam&quot;
+do_local()
+print(&quot;After local assignment:&quot;, spam)
+do_nonlocal()
+print(&quot;After nonlocal assignment:&quot;, spam)
+do_global()
+print(&quot;After global assignment:&quot;, spam)
+</code></pre>
+
+<p>scope_test()
+print(&ldquo;In global scope:&ldquo;, spam)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-scope/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/django-python3-install/" >使用pip安装Django for Python3</a>
+        </span>
+        <span class="item__date">
+          May 9, 2015
+        </span>
+        <span >
+        
+        <p>Django官网介绍说，推荐使用Python 3，对应的Django版本是1.8.1，使用pip install Django==1.8.1通过Python命令行下载并安装。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/django-python3-install/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-dict-get/" >Python字典get方法小例子</a>
+        </span>
+        <span class="item__date">
+          May 8, 2015
+        </span>
+        <span >
+        
+        <p>Python定义一个字典：dict = {&#8216;iphone&#8217;:&#8217;apple&#8217;,&#8217;xiaomi&#8217;,&#8217;xiaomi&#8217;,&#8217;huawei&#8217;:&#8217;hua&#8217;}，那么我要查找键名为xiaomi对应的值，如果我们知道存在这个键，直接dict[&#8216;xiaomi&#8217;]就好了，但是要判断有没有这个键存在怎么办呢？</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png" target="_blank"><img class="alignnone size-full wp-image-8013" src="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png" alt="py2" width="440" height="272" srcset="https://blog.tanteng.me/wp-content/uploads/2015/05/py2.png 440w, https://blog.tanteng.me/wp-content/uploads/2015/05/py2-300x185.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-dict-get/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-for-level/" >Python减少循环层次和缩进技巧</a>
+        </span>
+        <span class="item__date">
+          May 8, 2015
+        </span>
+        <span >
+        
+        <p>我们知道Python中冒号和缩进代表大括号，这样写已经可以节省很多代码行数，但是可以更优化，尽可能减少循环的层次和缩进，让代码看起来更简洁，逻辑更清楚。不仅Python语言如此，其他语言也一样。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/05/py1.png" target="_blank"><img class="alignnone size-full wp-image-8008" src="https://blog.tanteng.me/wp-content/uploads/2015/05/py1.png" alt="py1" width="440" height="275" srcset="https://blog.tanteng.me/wp-content/uploads/2015/05/py1.png 440w, https://blog.tanteng.me/wp-content/uploads/2015/05/py1-300x188.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-for-level/">➦</a>
         
         </div>
         
@@ -834,43 +864,7 @@ with open(&lsquo;excel.xlsx&rsquo;, &lsquo;wb&rsquo;) as f:
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -878,7 +872,7 @@ with open(&lsquo;excel.xlsx&rsquo;, &lsquo;wb&rsquo;) as f:
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

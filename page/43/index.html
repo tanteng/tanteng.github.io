@@ -143,18 +143,18 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/11/directory_separator/" >PHP常量DIRECTORY_SEPARATOR用法</a>
+          <a href="/2014/01/virtue-programer/" >程序员的三种美德</a>
         </span>
         <span class="item__date">
-          Nov 12, 2014
+          Jan 11, 2014
         </span>
         <span >
         
-        PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（
+        Perl 语言之父 Larry Wall 说过，好的程序员有 3 种美德：懒惰、急躁和傲慢（Laziness, Impatience and hubris）。 懒惰： 是这样一种品质，它使得你花大力气去避
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/11/directory_separator/">➦</a>
+          ... <a class="read-more-symbol" href="/2014/01/virtue-programer/">➦</a>
         
         </div>
         
@@ -164,24 +164,136 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/11/php-line-class-dir/" >PHP 的“魔术常量”:__LINE__,__FILE__等</a>
+          <a href="/2013/11/left-join-inner/" >left join,inner join区别</a>
         </span>
         <span class="item__date">
-          Nov 12, 2014
+          Nov 15, 2013
         </span>
         <span >
         
-        <p>以下是在PHP开发中经常要用到的常量，称为PHP魔术常量：</p>
+        <p>假设我们有两张表。Table A 是左边的表。Table B 是右边的表。其各有四条记录，其中有两条记录name是相同的，如下所示：让我们看看不同JOIN的不同</p>
 
-<p>__LINE__ 文件中的当前行号。</p>
-
-<p>__FILE__ 文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。自 PHP 4.0.2 起，__FILE__ 总是包含一个绝对路径（如果是符号连接，则是解析后的绝对路径），而在此之前的版本有时会包含一个相对路径。</p>
-
-<p>__DIR__ 文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。它等价于 dirname(__FILE__)。除非是根目录，否则目录中名不包括末尾的斜杠。（PHP 5.3.0中新增）</p>
+<div>
+  <table width="222" border="0" cellspacing="0" cellpadding="0">
+    <colgroup> <col width="86" /> <col width="136" /></colgroup> <tr>
+      <td colspan="2" width="222">
+        A表
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        id
+      </td>
+      
+      <td>
+        name
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        1
+      </td>
+      
+      <td>
+        Pirate
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        2
+      </td>
+      
+      <td>
+        Monkey
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        3
+      </td>
+      
+      <td>
+        Ninja
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        4
+      </td>
+      
+      <td>
+        Spaghetti
+      </td>
+    </tr>
+  </table>
+  
+  <table width="222" border="0" cellspacing="0" cellpadding="0">
+    <colgroup> <col width="86" /> <col width="136" /></colgroup> <tr>
+      <td colspan="2" width="222">
+        B表
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        id
+      </td>
+      
+      <td>
+        name
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        1
+      </td>
+      
+      <td>
+        Rutabaga
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        2
+      </td>
+      
+      <td>
+        Pirate
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        3
+      </td>
+      
+      <td>
+        Darth Vade
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        4
+      </td>
+      
+      <td>
+        Ninja
+      </td>
+    </tr>
+  </table>
+</div>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/11/php-line-class-dir/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/11/left-join-inner/">➦</a>
         
         </div>
         
@@ -191,144 +303,37 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/11/baidu-zhanzhang-title/" >百度站长平台：如何写出搜索引擎喜欢的标题</a>
+          <a href="/2013/11/php-reflectionclass-object/" >PHP反射类ReflectionClass和ReflectionObject</a>
         </span>
         <span class="item__date">
-          Nov 12, 2014
+          Nov 12, 2013
         </span>
         <span >
         
-        <p>这篇文章摘自百度站长平台站长学院。看看官方告诉我们如何写出搜索引擎喜欢的标题。</p>
+        <p>PHP中的反射类，用来分析php程序，导出或提取出关于类、方法、属性、参数等的详细信息，包括注释。</p>
 
-<p>在与大中型网站SEO人员沟通的过程中常听到这样的报怨：SEO地位低，净收拾产品技术编辑的烂摊子了。起初我们感觉非常不可思议，但后来发现这种情况还非常普遍。相应的，对于那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时，要设计出吸引用户和搜索引擎的标题；而不是单纯地把优化工作全部扔给SEO人员。所以，今天我们想跟产品人员和编辑说说网页标题该怎么写。</p>
+<p>看一个这样的问题，php类的成员变量没有在类中声明，而是在函数中声明，有什么不同？</p>
 
-<p>一，标题的结构</p>
+<p><code lang="php">class test{
+    private $name;
+    private $sex;
+    function __construct(){
+        $this-&gt;aaa=&lsquo;aaa&rsquo;;
+    }
+}</p>
 
-<p>1，标题字数控制在60个字节内</p>
+<p>$test=new test();</p>
 
-<p>从以往的经验看，检索用户比较喜欢50个字节左右的标题；对于产品人员和编辑来说，过短的标题有可能无法全面表达网页主题；对于搜索引擎来说，标题过长意味着“超标”，只会保留前60个字节的内容。</p>
+<p>$reflect=new ReflectionClass($test);
+$pro=$reflect-&gt;getDefaultProperties();
+print_r($pro);//打印结果：Array ( [name] =&gt; [sex] =&gt; )</p>
 
-<p>反面case:福州到北京旅游_北京旅游天气如何_北京旅游景点介绍_北京好玩吗_现在去北京旅游会热吗</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/baidu-zhanzhang-title/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/phpcms-re-develop/" >PHPCMS二次开发的正确方式</a>
-        </span>
-        <span class="item__date">
-          Nov 12, 2014
-        </span>
-        <span >
-        
-        <p>PHPCMS二次开发如何不影响程序升级？因为对源程序进行修改之后，PHPCMS 的程序升级，新程序发布的时候，我们不方便进行升级，直接覆盖会覆盖掉我们的修改。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/phpcms-re-develop/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/10/php-tostring/" >PHP魔术方法：toString</a>
-        </span>
-        <span class="item__date">
-          Oct 29, 2014
-        </span>
-        <span >
-        
-        <p>PHP的魔术方法toString，可以直接echo这个实例输出字符串，示例如下：</p>
-
-<p><code class="lang:php decode:true ">class haha
-{
-    public function __toString()
-    {
-        return $this-&gt;test();
-    }</p>
-
-<pre><code>protected function test()
-{
-    return 'hehe';
-}
-</code></pre>
-
-<p>}</p>
-
-<p>$aa = new haha();
-echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_dump还是打印这个示例的结构。</code></p>
-
-<p>打印结果：hehe</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/10/php-tostring/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/04/navicat-sql-server-2000/" >Navicat将Sql Server 2000数据库导入（转换）到MySql中</a>
-        </span>
-        <span class="item__date">
-          Apr 22, 2014
-        </span>
-        <span >
-        
-        <p>大家都知道， Sql Server 2000的数据库只能运行在MS系列平台下，而我们有时需要将MS下的数据库移植到Linux或其他平台上，这是可能需要数据库的导入导出功能，但这样也未免太繁琐了，下面介绍一种简便的方法一步实现数据库的移植。</p>
-
-<p>Navicat 8是针对mysql的一个很好用的图形化管理工具，利用它导入功能把数据从sqlserver2000中直接导入到MySQL中。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/04/navicat-sql-server-2000/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/03/wordpress-upload-path/" >wordpress自定义上传文件路径</a>
-        </span>
-        <span class="item__date">
-          Mar 19, 2014
-        </span>
-        <span >
-        
-        <p>wordpress默认上传图片（文件）路径是uploads目录的‘年/月’文件夹，我们可以通过upload_dir钩子改变默认上传路径，自定义上传路径。</p>
-
-<p>该函数指定了uploads的目录为uploads的avatar文件夹：</p>
-
-<p><code lang="php">function my_upload_dir($upload) {
-    $upload[&lsquo;subdir&rsquo;]   = &lsquo;/avatar&rsquo;;
-    $upload[&lsquo;path&rsquo;]     = $upload[&lsquo;basedir&rsquo;] . $upload[&lsquo;subdir&rsquo;];
-    $upload[&lsquo;url&rsquo;]      = $upload[&lsquo;baseurl&rsquo;] . $upload[&lsquo;subdir&rsquo;];
-    return $upload;
-}
+<p>echo $test-&gt;aaa;//打印结果：aaa
 </code></p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/03/wordpress-upload-path/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/11/php-reflectionclass-object/">➦</a>
         
         </div>
         
@@ -338,18 +343,18 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/03/php-fopen-filesize-fread-fclose/" >PHP函数:fopen,filesize,fread,fclose</a>
+          <a href="/2013/10/jobs-proverbs/" >乔布斯13条箴言</a>
         </span>
         <span class="item__date">
-          Mar 9, 2014
+          Oct 21, 2013
         </span>
         <span >
         
-        PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。 $file = fopen(FILE,&lsquo;r&rsquo;); $file_data
+        乔布斯是一个无与伦比的演讲者与推销者，在他56岁的生命中，说过的金句比以下Business Insider网站列出的13条要多得多——有些甚至
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/03/php-fopen-filesize-fread-fclose/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/10/jobs-proverbs/">➦</a>
         
         </div>
         
@@ -359,22 +364,18 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/01/2013-summary/" >密码保护：2013年终总结</a>
+          <a href="/2013/10/fullpage-js/" >FullPage.js轻松实现全屏滚动</a>
         </span>
         <span class="item__date">
-          Jan 22, 2014
+          Oct 19, 2013
         </span>
         <span >
         
-        <p>2013年是我的本命年，这一年也是很不平凡的一年，发生了很多事情，它是转折的一年，也是很有意义的一年。</p>
-
-<p>这一年，我毕业了。</p>
-
-<p>刚刚过去的大学生活，也许将永不复返了，回想起曾经的大学，最大的收获就是认识了很多新的同学，学到了很多自己感兴趣的知识。这么多年，发生了很多事情，很多事情也发生了变化，我也和从前不一样了。</p>
+        <p>FullPage.js 是一个简单而易于使用的插件，用来创建全屏滚动网站（也被称为单页网站）。除了可以创建全屏滚动效果以外，也可以给网站添加一些水平的滑块效果。能够自适应不同的屏幕尺寸，包括平板电脑和移动设备。<img src="http://www.admin10000.com/UploadFiles/Document/201310/12/20131012142015906515.JPG" alt="" /></p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/01/2013-summary/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/10/fullpage-js/">➦</a>
         
         </div>
         
@@ -384,29 +385,128 @@ echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_du
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/01/wordpress-shortinit/" >wordpress隐秘常量SHORTINIT只加载必须的数据库操作文件</a>
+          <a href="/2013/09/used-to-change/" >习惯改变</a>
         </span>
         <span class="item__date">
-          Jan 22, 2014
+          Sep 19, 2013
         </span>
         <span >
         
-        <p>wordpress有个隐秘的常量定义，define(&#8216;SHORTINIT&#8217;, true)，它可以尽可能少的加载wordpress文件，保留了基本的数据库操作类，即$wpdb，可以用来写处理ajax的php文件，加快ajax请求的响应速度！</p>
+        害怕改变，是因为熟悉了旧的环境，我们对未知事物总是充满疑惑，然而改变不一定是不好的，改变也许会带来更多意想不到的收获，一切都在改变，习惯变化
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2013/09/used-to-change/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2013/09/remembering-that-i-will-be-dead-soon/" >乔布斯：记住你即将死去</a>
+        </span>
+        <span class="item__date">
+          Sep 14, 2013
+        </span>
+        <span >
+        
+        <p><strong>记住你即将死去(Remembering that I&#8217;ll be dead soon.)</strong></p>
 
-<p>Here is start my loader file, not pretty but works for specific needs:</p>
+<p>——乔布斯在斯坦福大学的演讲稿</p>
 
-<p><code lang="php">ini_set(&lsquo;html_errors&rsquo;, 0);
-define(&lsquo;SHORTINIT&rsquo;, true);
-require &lsquo;../../../../wp-load.php&rsquo;;
-require( ABSPATH . WPINC . &lsquo;/formatting.php&rsquo; );
-require( ABSPATH . WPINC . &lsquo;/meta.php&rsquo; );
-require( ABSPATH . WPINC . &lsquo;/post.php&rsquo; );
-wp_plugin_directory_constants();
+<p>Remembering that I&#8217;ll be dead soon.</p>
+
+<p>记住你即将死去。</p>
+
+<p>If you live each day as if it was your last, someday you&#8217;ll most certainly be right.</p>
+
+<p>如果你把每一天都当作生命中最后一天去生活的话,那么有一天你会发现你是正确的。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2013/09/remembering-that-i-will-be-dead-soon/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2013/09/navicat-sql/" >用navicat导入sql大文件</a>
+        </span>
+        <span class="item__date">
+          Sep 5, 2013
+        </span>
+        <span >
+        
+        在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。 解决办法： try using these commands from mysql terminal set global max_allowed_packet=1000000000; set
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2013/09/navicat-sql/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2013/06/jquery-enter/" >jQuery回车键绑定点击事件</a>
+        </span>
+        <span class="item__date">
+          Jun 27, 2013
+        </span>
+        <span >
+        
+        当按下回车键时，绑定按钮点击事件代码如下，通过检测按下的键值，回车键keycode为13，判断是否是回车键，然后完成相应的方法。
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2013/04/php-serialize-json/" >PHP的序列化和json以及区别</a>
+        </span>
+        <span class="item__date">
+          Apr 16, 2013
+        </span>
+        <span >
+        
+        <h3 id="序列化和反序列化">序列化和反序列化</h3>
+
+<p>序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。</p>
+
+<p><code lang="php">&lt;?php
+$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);
+//序列化数组
+$s = serialize($a);
+echo $s;
+//输出结果：a:3:{s:1:&ldquo;a&rdquo;;s:5:&ldquo;Apple&rdquo;;s:1:&ldquo;b&rdquo;;s:6:&ldquo;banana&rdquo;;s:1:&ldquo;c&rdquo;;s:7:&ldquo;Coconut&rdquo;;}
+echo &lsquo;</p>
+
+<p><br /><br />&rsquo;;
+//反序列化
+$o = unserialize($s);
+print_r($o);
+//输出结果 Array ( [a] =&gt; Apple [b] =&gt; banana [c] =&gt; Coconut )
+?&gt;
 </code></p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2014/01/wordpress-shortinit/">➦</a>
+          ... <a class="read-more-symbol" href="/2013/04/php-serialize-json/">➦</a>
         
         </div>
         
@@ -863,43 +963,7 @@ wp_plugin_directory_constants();
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -907,7 +971,7 @@ wp_plugin_directory_constants();
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

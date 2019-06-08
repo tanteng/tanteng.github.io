@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ELK on 小谈博客</title>
+    <link>http://tanteng.me/categories/elk/</link>
+    <description>Recent content in ELK on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 May 2018 04:39:53 +0000</lastBuildDate>
+    
+	<atom:link href="http://tanteng.me/categories/elk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本周阅读清单20180430</title>
+      <link>http://tanteng.me/2018/05/reding-list-6/</link>
+      <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/05/reding-list-6/</guid>
+      <description>1.Learning Elasticsearch with Laravel https://michaelstivala.com/learning-elasticsearch-with-laravel/ 2.MQ(消息队列)常见的应用场景解析 https://juejin.im/post/5add63c951882567183eb956 3.WebSocket 通信过程与实现 https://segmentfault.com/a/1190000014643900 4.技术与贫富分化 http://www.ruanyifeng.com/blog/2010/08/technology_and_income_disparity.html 5.PHP HTTP客户端-Guzzle原理解析 https://segmentfault.com/p/1210000010203531/read 6.PHP扩</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180423</title>
+      <link>http://tanteng.me/2018/04/reding-list/</link>
+      <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list/</guid>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+    </item>
+    
+  </channel>
+</rss>

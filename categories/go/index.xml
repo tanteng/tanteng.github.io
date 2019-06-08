@@ -17,13 +17,7 @@
       <pubDate>Tue, 29 May 2018 06:34:04 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/05/vscode-debug-golang/</guid>
-      <description>&lt;p&gt;在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang 项目。&lt;/p&gt;
-
-&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
-
-&lt;p&gt;如果没有安装 delve 插件，会报错：&lt;/p&gt;
-
-&lt;p&gt;Failded to continue:&amp;#8221;Cannot find Delve debugger. Install from &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;https://github.com/derekparker/delve&lt;/a&gt; &amp;amp; ensure it is in your &amp;#8220;GOPATH/bin&amp;#8221; or &amp;#8220;PATH&amp;#8221;&lt;/p&gt;</description>
+      <description>在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang</description>
     </item>
     
     <item>

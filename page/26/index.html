@@ -143,234 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/12/windows-python-279/" >Windows升级Python2.7.6到2.7.9版本</a>
-        </span>
-        <span class="item__date">
-          Dec 8, 2015
-        </span>
-        <span >
-        
-        <p>Windows上升级Python2.7.6版本到2.7.9版本，因为都是2.7版本，是同一个安装目录，直接下载一个2.7.9版本的安装程序，覆盖原路径即可。经测可行。</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/12/python279.png" target="_blank"><img class="alignnone size-full wp-image-9139" src="https://blog.tanteng.me/wp-content/uploads/2015/12/python279.png" alt="python279" width="499" height="428" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/12/windows-python-279/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/12/flask-sslcontext/" >Flask安装: A true SSLContext object is not available</a>
-        </span>
-        <span class="item__date">
-          Dec 8, 2015
-        </span>
-        <span >
-        
-        <p>如果安装Flask出现这样的报错:InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL</p>
-
-<p>appropriately and may cause certain SSL connections to fail. For more information, see <a href="https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning">https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning</a>.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/12/flask-sslcontext/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/windows-python27-scrapy/" >在windows上安装Python2.7 Scrapy模块</a>
-        </span>
-        <span class="item__date">
-          Nov 26, 2015
-        </span>
-        <span >
-        
-        <p>由于Scrapy目前对Python2.7的支持最好，Python3下可能会有问题，所以还是在Python2.7下装Scrapy模块。</p>
-
-<p>在Mac上自带的Python2.7环境安装Scrapy模块，一路顺风，直接pip install -i <a href="http://pypi.douban.com/simple">http://pypi.douban.com/simple</a> Scrapy,自动安装所需的模块，一切OK.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/windows-python27-scrapy/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/python-singleton/" >Python3单例模式示例</a>
-        </span>
-        <span class="item__date">
-          Nov 24, 2015
-        </span>
-        <span >
-        
-        <p>当我们理解了Python的__new__方法后，我们还可以利用它来做一些其他有趣的事情，比如实现设计模式中的单例模式(singleton) 。</p>
-
-<p>因为类每一次实例化后产生的过程都是通过__new__来控制的，所以通过重载__new__方法，我们可以很简单的实现单例模式。</p>
-
-<p>先看在python3中怎么实现单例模式：</p>
-
-<p><code class="lang:python decode:true">class Singleton(object):
-    def <strong>new</strong>(cls):
-        if not hasattr(cls, &lsquo;instance&rsquo;):
-            cls.instance = super(Singleton, cls).<strong>new</strong>(cls)
-        return cls.instance</p>
-
-<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
-    a = Singleton()
-    b = Singleton()
-    print(id(a))
-    print(id(b))</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/python-singleton/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/pip-mirror/" >使用pip镜像方式安装python包</a>
-        </span>
-        <span class="item__date">
-          Nov 24, 2015
-        </span>
-        <span >
-        
-        <p>使用pip安装python包由于官网经常被墙无法安装，可以使用pip镜像方式安装python包。</p>
-
-<h3 id="几个pypi镜像地址">几个pypi镜像地址</h3>
-
-<ul>
-<li>pypi.python.org</li>
-<li>pypi.douban.com</li>
-<li>pypi.hustunique.com</li>
-<li>pypi.gocept.com</li>
-<li>pypi.tuna.tsinghua.edu.cn</li>
-</ul>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/pip-mirror/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/httpd-vhost-domain-alias/" >httpd-vhosts设置域名别名</a>
-        </span>
-        <span class="item__date">
-          Nov 19, 2015
-        </span>
-        <span >
-        
-        <p>在Apache的httpd-vhosts可以配置虚拟主机域名，也可以设置域名别名，如域名www.yii2.com，可以给它设置一个或多个域名别名，通过www.yii3.com,www.yii4.com访问。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/httpd-vhost-domain-alias/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/python-ebook/" >学python的几本电子书</a>
-        </span>
-        <span class="item__date">
-          Nov 17, 2015
-        </span>
-        <span >
-        
-        看云上几本学python的免费电子书： 链接：http://www.kancloud.cn/tag/Python
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/html5-localstorage/" >HTML5的本地存储方案localStorage</a>
-        </span>
-        <span class="item__date">
-          Nov 16, 2015
-        </span>
-        <span >
-        
-        <p>本地存储解决方案很多，比如Flash SharedObject、Google Gears、Cookie、DOM Storage、User Data、window.name、Silverlight、Open Database等。</p>
-
-<p><img class="alignnone wp-image-3718 size-full" title="20110515054811428" src="http://www.css88.com/wp-content/uploads/2011/06/20110515054811428.jpg" alt="html5的本地存储localStorage" width="600" height="202" /></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/html5-localstorage/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/serialize-json-diff/" >PHP中serialize和json序列化与反序列化的区别</a>
-        </span>
-        <span class="item__date">
-          Nov 12, 2015
-        </span>
-        <span >
-        
-        <p>在PHP中，serialize和json两种方式对一个对象或数组进行序列化或反序列化有什么区别呢？</p>
-
-<p>假设一个对象和一个数组：</p>
-
-<p><code class="lang:php decode:true ">$web = new stdClass;
-$web-&gt;site = &lsquo;tantengvip&rsquo;;
-$web-&gt;owner = &lsquo;tuntun&rsquo;;
-$web-&gt;age = 5;</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/serialize-json-diff/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/11/sourcetree-commit-slowly/" >如何解决 SourceTree 一次性提交大量文件很慢的情况</a>
         </span>
         <span class="item__date">
@@ -385,6 +157,243 @@ $web-&gt;age = 5;</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/11/sourcetree-commit-slowly/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/chmod-number/" >Chmod命令修改目录权限数字含义</a>
+        </span>
+        <span class="item__date">
+          Nov 10, 2015
+        </span>
+        <span >
+        
+        <p>常见的目录权限：</p>
+
+<p>-rw&#8212;&#8212;- (600) &#8212; 只有属主有读写权限。</p>
+
+<p>-rw-r&#8211;r&#8211; (644) &#8212; 只有属主有读写权限；而属组用户和其他用户只有读权限。</p>
+
+<p>-rwx&#8212;&#8212; (700) &#8212; 只有属主有读、写、执行权限。</p>
+
+<p>-rwxr-xr-x (755) &#8212; 属主有读、写、执行权限；而属组用户和其他用户只有读、执行权限。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/chmod-number/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/php-stdclass/" >PHP中stdClass的意义</a>
+        </span>
+        <span class="item__date">
+          Nov 8, 2015
+        </span>
+        <span >
+        
+        <p>在WordPress中很多地方使用stdClass来定义一个对象（而通常是用数组的方式），然后使用get_object_vars来把定义的对象『转换』成数组。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/php-stdclass/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/mac-git-missing-xcrun/" >Mac终端git命令提示错误:missing xcrun</a>
+        </span>
+        <span class="item__date">
+          Nov 8, 2015
+        </span>
+        <span >
+        
+        <p>在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&#8217;t start Git，点击&#8221;fix it&#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：</p>
+
+<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/mac-git-missing-xcrun/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/python3-requests-get-post/" >Python3 Requests模块get和post示例</a>
+        </span>
+        <span class="item__date">
+          Nov 5, 2015
+        </span>
+        <span >
+        
+        <p>使用Python3的Requests模块用于模拟get和post请求非常简单强大，可以构造header头，传递各种类型参数，cookies，session等，模拟不同的请求，这里只演示一下最简单的get和post示例。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/python3-requests-get-post/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/sourcetree-release/" >SourceTree提交代码合并到发布分支操作步骤</a>
+        </span>
+        <span class="item__date">
+          Nov 5, 2015
+        </span>
+        <span >
+        
+        <p>发布代码有一个发布分支，汇总所有要发布的分支，需要把各个分支合并到发布分支上来，每个提交的分支作为一个“点”，以下是SourceTree提交分支到发布分支的操作步骤：</p>
+
+<p>1.最好以自己的分支再创建一个新的分支，防止操作过程有不可逆的失误。</p>
+
+<p>2.找到第一次提交修改上次提交，右键重置到当前分支，选择软合并，这样就把自己的分支合并成一个“点”，然后提交代码。</p>
+
+<p>3.到要合并的主分支，切换到“所有分支”，找到自己刚提交的点，右键“遴选”，再推送到远端。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/sourcetree-release/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/python3-wechat/" >如何使用python3刷微信步数</a>
+        </span>
+        <span class="item__date">
+          Nov 4, 2015
+        </span>
+        <span >
+        
+        <p>由于微信第三方接口的漏洞，一款乐动力的运动APP可以用来刷微信步数，原理很简单，伪造POST请求就可以了。</p>
+
+<p style="text-align: center;">
+  <a href="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg" target="_blank"><img class="alignnone size-full wp-image-8853" src="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg" alt="微信刷步数" width="320" height="568" srcset="https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs.jpg 320w, https://blog.tanteng.me/wp-content/uploads/2015/11/swxbs-169x300.jpg 169w" sizes="(max-width: 320px) 100vw, 320px" /></a>
+</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/python3-wechat/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/wechat-rewrd-wordpress-plugin/" >微信打赏WordPress插件</a>
+        </span>
+        <span class="item__date">
+          Nov 4, 2015
+        </span>
+        <span >
+        
+        <p>折腾了一个WordPress小插件，给每篇文章下面添加一个微信打赏功能，安装插件后，可在后台设置自己的微信收款二维码图片。</p>
+
+<h3 id="后台设置页面">后台设置页面</h3>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png" target="_blank"><img class="alignnone wp-image-8841 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png" alt="wechat-reward16" width="946" height="436" srcset="https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16.png 946w, https://blog.tanteng.me/wp-content/uploads/2015/11/wechat-reward16-300x138.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/wechat-rewrd-wordpress-plugin/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/redis-incr/" >Redis INCR的应用场景</a>
+        </span>
+        <span class="item__date">
+          Nov 2, 2015
+        </span>
+        <span >
+        
+        <p>Redis INCR的应用场景主要是计数器和限速器。</p>
+
+<h2 id="模式-计数器">模式：计数器</h2>
+
+<p>计数器是 Redis 的原子性自增操作可实现的最直观的模式了，它的想法相当简单：每当某个操作发生时，向 Redis 发送一个 INCR 命令。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/redis-incr/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/redis-lock-incr/" >Redis加锁防止重复操作的原理</a>
+        </span>
+        <span class="item__date">
+          Nov 2, 2015
+        </span>
+        <span >
+        
+        <p>使用Redis加锁的方式可以防止重复操作，包括表单提交，ajax等http请求，它的原理就是redis的incr命令给键自增，如果返回值不是1，就表示是重复请求，具体看代码：</p>
+
+<p><code>/**
+ * 锁定请求
+ * @param int $expire 锁定时间
+ * @param string $mark 自定义标记
+ * @return bool
+ */
+protected function lock($expire=1,$mark=&ldquo;){
+    $url=strtolower(MODULE_NAME.&lsquo;/&rsquo;.ACTION<em>NAME);//操作地址
+    $prefix=&lsquo;lock</em>&rsquo;;$sid=$_COOKIE[C(&ldquo;SESSION_OPTIONS.name&rdquo;)];
+    $key=$prefix.md5($sid.$url.$mark);//令牌键值
+    /**
+     * @var Redis $redis
+     */
+    $redis = D(&lsquo;Redis&rsquo;);
+    if($redis-&gt;incr($key)==1){
+        return $redis-&gt;expire($key,$expire);
+    }
+    return false;
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/redis-lock-incr/">➦</a>
         
         </div>
         
@@ -841,43 +850,7 @@ $web-&gt;age = 5;</code></p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -885,7 +858,7 @@ $web-&gt;age = 5;</code></p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

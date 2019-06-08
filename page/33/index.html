@@ -143,226 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/06/thinkphp-mongodb-getgridfs/" >ThinkPHP扩展MongoDB Model支持getGridFS存取文件</a>
-        </span>
-        <span class="item__date">
-          Jun 19, 2015
-        </span>
-        <span >
-        
-        <p>ThinkPHP自带MongoDB Model，Model继承MongoDBModel可以操作MongoDB数据库，但只能操作基本的一些MongoDB操作，无法操作getGridFS存取文件，需要扩展Driver/Db/DbMongo.class.php文件。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/thinkphp-mongodb-getgridfs/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/php-mongodb-gridfs/" >PHP操作GridFS存储文件到MongoDB的三种方式</a>
-        </span>
-        <span class="item__date">
-          Jun 18, 2015
-        </span>
-        <span >
-        
-        一般情况采取第一种方法，直接传文件，第二种方法适合生成的数据不用保存到本地再上传而是直接以二进制存到MongoDB，第三种方式是直接把表单上
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/php-mongodb-gridfs/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/mongodb-gridfs-php/" >MongoDB GridFS存取文件PHP示例</a>
-        </span>
-        <span class="item__date">
-          Jun 18, 2015
-        </span>
-        <span >
-        
-        <p>最近项目需要用到MongoDB存取文件，这里有个简单的PHP示例：</p>
-
-<p><code class="lang:php decode:true ">public function run(){
-    //初始化gridfs
-    $m = new MongoClient(); // 连接
-    $db = $m-&gt;selectDB(&ldquo;excel&rdquo;);
-    //dump($m);exit;
-    //$collection = $db-&gt;testexcel;
-    $grid = $db-&gt;getGridFS(); //取得gridfs对象</p>
-
-<pre><code>//gridfs有三种方式存储文件
-//第一种直接存储文件
-$id = $grid-&amp;gt;storeFile(dirname(__FILE__).&quot;/EmptyAction.class.php&quot;);
-echo $id;
-
-//获取文件
-$file = $grid-&amp;gt;findOne(array('_id'=&amp;gt;$id)); //以_id为索引取得文件 
-//header('Content-type: image/png'); //输出图片头 
-dump($file);
-</code></pre>
-
-<p>}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/mongodb-gridfs-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/mongodb-excel/" >MongoDB存取Excel文件</a>
-        </span>
-        <span class="item__date">
-          Jun 17, 2015
-        </span>
-        <span >
-        
-        <p>这里有个使用MongoDB存取word文件的示例，原理是一样的。MongoDB可以用来存文件。<figure id="attachment_8317" style="width: 885px" class="wp-caption alignnone"></p>
-
-<p><a href="https://blog.tanteng.me/2015/06/mongodb-excel/attachment/201409090909031/" target="_blank"><img class="wp-image-8317 size-full" title="MongoDB存excel" src="https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031.png" alt="MongoDB存excel" width="885" height="398" srcset="https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031.png 885w, https://blog.tanteng.me/wp-content/uploads/2015/06/201409090909031-300x135.png 300w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a><figcaption class="wp-caption-text">MongoDB存excel</figcaption></figure></p>
-
-<p>它实际上是把文件转换成二进制文件，以键值对形式存储到MongoDB中。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/mongodb-excel/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/window-location-assign-href/" >window.location.assign和window.location.href区别</a>
-        </span>
-        <span class="item__date">
-          Jun 12, 2015
-        </span>
-        <span >
-        
-        <p>window.location.assign(url) 和 window.location.href=url 实现功能是一样的，都是跳转到网址，只是用法稍微不同。</p>
-
-<p><code class="lang:js decode:true ">window.location.assign(url);
-window.location = url;
-window.location.href = url;</code></p>
-
-<p>最大的不同是，assign 会添加记录到浏览历史，点击后退可以返回之前页面。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/window-location-assign-href/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/sublime-php-html-js/" >sublime插件推荐（PHP,html,js）</a>
-        </span>
-        <span class="item__date">
-          Jun 12, 2015
-        </span>
-        <span >
-        
-        这是几款针对PHP,html,js的sublime插件，推荐使用。 DocBlockr 代码注释自动生成 Go To Definition 代码引用位置 PHPcs 语法检查 jQuery jQuery自动提示 PHPdoc 也是
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/sublime-php-html-js/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/wang-xiao-bo-internet/" >程序员作家王小波：从Internet说起</a>
-        </span>
-        <span class="item__date">
-          Jun 11, 2015
-        </span>
-        <span >
-        
-        <p>作家王小波，同时也是一名程序员，自己会写软件，还写了五笔输入法，这是他的一篇文章，很Internet有关——《从Internet说起》。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/wang-xiao-bo-internet/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/mysql-zerofill/" >MySQL zerofill是什么意思？</a>
-        </span>
-        <span class="item__date">
-          Jun 11, 2015
-        </span>
-        <span >
-        
-        zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/mysql-zerofill/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/left-join-split-sql/" >将left join拆分成多条sql语句</a>
-        </span>
-        <span class="item__date">
-          Jun 9, 2015
-        </span>
-        <span >
-        
-        <p>本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/left-join-split-sql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/06/practice-and-perfect/" >Practice reduces the imperfection的意思</a>
         </span>
         <span class="item__date">
@@ -375,6 +155,269 @@ window.location.href = url;</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/06/practice-and-perfect/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/yii2-digpage/" >深入理解Yii2</a>
+        </span>
+        <span class="item__date">
+          Jun 5, 2015
+        </span>
+        <span >
+        
+        推荐一个网站： http://www.digpage.com/index.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/array-unshift-shift-pop-push/" >array_unshift,array_shift及array_pop,array_push的定义</a>
+        </span>
+        <span class="item__date">
+          Jun 4, 2015
+        </span>
+        <span >
+        
+        array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下： a
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/array-unshift-shift-pop-push/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/cat-tag-exclude/" >WordPress标签云和列表移除指定ID不显示</a>
+        </span>
+        <span class="item__date">
+          Jun 4, 2015
+        </span>
+        <span >
+        
+        <p>WordPress的标签页和列表挂件，如果想把某些标签或列表不予显示，可以使用如下两个钩子方法实现，具体代码如下：</p>
+
+<p><code>//移除部分标签不在标签云显示
+function remove_tags($args){
+    $new_args = array(
+            &lsquo;exclude&rsquo; =&gt; &lsquo;30,40,128,131,83&rsquo;,
+        );
+    return array_merge($args,$new_args);
+}
+add_filter( &lsquo;widget_tag_cloud_args&rsquo;, &lsquo;remove_tags&rsquo; );</p>
+
+<p>//移除部分标签不在列表widget显示
+function exclude_widget_categories($args){
+    $exclude = &ldquo;4,6,12,88,172&rdquo;; // The IDs of the excluding categories
+    $args[&ldquo;exclude&rdquo;] = $exclude;
+    return $args;
+}
+add_filter(&ldquo;widget_categories_args&rdquo;,&ldquo;exclude_widget_categories&rdquo;);</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/cat-tag-exclude/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/pc-mobile-adapter/" >PC站和移动站适配三种方式</a>
+        </span>
+        <span class="item__date">
+          Jun 4, 2015
+        </span>
+        <span >
+        
+        <h3 id="pc站和移动站适配三种方式">PC站和移动站适配三种方式</h3>
+
+<p>目前较流量的PC站与移动站配置方式有三种，百度站在搜索引擎角度将这三种分别称为跳转适配、代码适配和自适应，以下为这三种配置方式的名词解释及异同对比。</p>
+
+<p>1，<strong>跳转适配</strong>：该方法会利用单独的网址向每种设备提供不同的代码。这种配置会尝试检测用户所使用的设备或<span lang="EN-US">ua</span>，然后使用 <span lang="EN-US">HTTP </span>重定向和 <span lang="EN-US">Vary HTTP </span>标头重定向到相应的页面。</p>
+
+<p>2，<strong>代码适配</strong>：该方法使用相同的网址（不考虑用户所使用的设备），但会根据服务器对用户所用浏览器的了解（<span lang="EN-US">ua</span>），针对不同设备类型生成不同版本的 <span lang="EN-US">HTML</span>。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/pc-mobile-adapter/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/06/php-anonymous-function/" >PHP匿名函数</a>
+        </span>
+        <span class="item__date">
+          Jun 1, 2015
+        </span>
+        <span >
+        
+        <p>PHP5.3以来也出现了很多新的特性：</p>
+
+<p>PHP5.2 以前：autoload, PDO 和 MySQLi, 类型约束</p>
+
+<p>PHP5.2：JSON 支持</p>
+
+<p>PHP5.3：弃用的功能，匿名函数，新增魔术方法，命名空间，后期静态绑定，Heredoc 和 Nowdoc, const, 三元运算符，Phar</p>
+
+<p>PHP5.4：Short Open Tag, 数组简写形式，Traits, 内置 Web 服务器，细节修改</p>
+
+<p>PHP5.5：yield, list() 用于 foreach, 细节修改</p>
+
+<p>PHP5.6: 常量增强，可变函数参数，命名空间增强</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/06/php-anonymous-function/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/bash_profile-mac-php/" >修改bash_profile文件切换Mac默认PHP版本为MAMP</a>
+        </span>
+        <span class="item__date">
+          May 30, 2015
+        </span>
+        <span >
+        
+        <p>Mac自带了PHP开发环境，但是很多开发者装了MAMP集成环境，打开终端输入：which php，会显示/usr/bin/php，是系统自带的PHP版本，要切换默认的PHP版本为MAMP下的PHP，需要修改系统bash_profile并执行这个shell脚本。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/bash_profile-mac-php/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/js-closure-example/" >JS闭包的两个例子</a>
+        </span>
+        <span class="item__date">
+          May 27, 2015
+        </span>
+        <span >
+        
+        <p>之前一篇文章<a href="https://blog.tanteng.me/2015/05/js-closure/" target="_blank">详解js闭包</a>讲了什么是JS闭包，以及JS闭包的优缺点，本文再看两个JS闭包的例子，进一步理解JS闭包的作用域和特性。</p>
+
+<p><code class="lang:js decode:true ">var foo = ( function() {
+    var secret = &lsquo;secret&rsquo;;
+    // “闭包”内的函数可以访问 secret 变量，而 secret 变量对于外部却是隐藏的
+    return {
+        get_secret: function () {
+            // 通过定义的接口来访问 secret
+            return secret;
+        },
+        new_secret: function ( new_secret ) {
+            // 通过定义的接口来修改 secret
+            secret = new_secret;
+        }
+    };
+} () );</p>
+
+<p>foo.get_secret (); // 得到 &lsquo;secret&rsquo;
+foo.secret; // Type error，访问不能
+foo.new_secret (&lsquo;a new secret&rsquo;); // 通过函数接口，我们访问并修改了 secret 变量
+foo.get_secret (); // 得到 &lsquo;a new secret&rsquo;</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/js-closure-example/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/php-static-bind/" >初识PHP Static延迟静态绑定</a>
+        </span>
+        <span class="item__date">
+          May 27, 2015
+        </span>
+        <span >
+        
+        <p>PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。</p>
+
+<p><code>class A<br />
+{<br />
+    public static function echoClass(){<br />
+        echo <strong>CLASS</strong>;<br />
+    }</p>
+
+<pre><code>public static function test(){  
+    self::echoClass();        
+}
+</code></pre>
+
+<p>}</p>
+
+<p>class B extends A<br />
+{<br />
+    public static function echoClass()<br />
+    {<br />
+         echo <strong>CLASS</strong>;<br />
+    }<br />
+}</p>
+
+<p>B::test(); //输出A</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/php-static-bind/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/js-closure/" >详解js闭包</a>
+        </span>
+        <span class="item__date">
+          May 26, 2015
+        </span>
+        <span >
+        
+        详解js闭包： http://segmentfault.com/a/1190000000652891
+        
+        </span>
         
         </div>
         
@@ -831,43 +874,7 @@ window.location.href = url;</code></p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -875,7 +882,7 @@ window.location.href = url;</code></p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

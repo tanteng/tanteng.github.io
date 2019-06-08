@@ -143,223 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2014/11/find-in-set/" >mysql排序order by find_in_set</a>
-        </span>
-        <span class="item__date">
-          Nov 29, 2014
-        </span>
-        <span >
-        
-        <p>mysql进行排序的时候如果需要按照原始的顺序排序，就可以使用order by find_in_set()方法，具体用法如下：</p>
-
-<p><code class="lang:mysql decode:true" title="FIND_IN_SET">select * from ecs_goods where goods_id in ($idList) order by FIND_IN_SET(goods_id,&lsquo;$idList&rsquo;)</code></p>
-
-<p>这句mysql语句用到了find_in_set进行排序，意思是根据goods_id在$idList这个变量中的前后顺序进行排序。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/find-in-set/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/quote-life-light/" >《不可承受的生命之轻》经典语录</a>
-        </span>
-        <span class="item__date">
-          Nov 28, 2014
-        </span>
-        <span >
-        
-        <p>《不可承受的生命之轻》是捷克裔法国作家米兰·昆德拉于1984年所写的小说，这本小说中有很多经典的语录。以下语录摘自本书。</p>
-
-<p>人永远都无法知道自己该要什么，因为人只能活一次，既不能拿它跟前世相比，也不能在来生加以修正。没有任何方法可以检验哪种抉择是好的，因为不存在任何比较。一切都是马上经历，仅此一次，不能准备。</p>
-
-<p><img class="alignnone aligncenter" src="http://www.dayecn.com/upload/2014/10/20141012103616547.jpg" alt="不能承受的生命之轻" width="500" height="571" /></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/quote-life-light/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/seo-optimize/" >SEO优化技巧</a>
-        </span>
-        <span class="item__date">
-          Nov 26, 2014
-        </span>
-        <span >
-        
-        <p>wordpress SEO by yoast这款插件告诉了我们很多SEO优化的技巧，我们在编辑内容的时候，发布或者更新文章，都可以看到wordpress SEO插件提示的SEO优化tips，非常有道理而且非常有用，下面就是从wordpress SEO by yoast学到的SEO优化技巧。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/seo-optimize/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/preg_match_illegal_parameters/" >preg_match过滤URL非法参数</a>
-        </span>
-        <span class="item__date">
-          Nov 26, 2014
-        </span>
-        <span >
-        
-        <p>PHP开发中经常用到URL传递参数，对传递的参数要进行安全过滤，过滤URL中非法参数，这是php安全的一个细小的地方，却事关安全的大事。URL参数一般都是数字或者字母加上&#8221;-&#8220;或者&#8221;_&#8221;组成，参数带有其他的符号的都要进行过滤，以免带来安全问题。对URL传参进行非法字符过滤，用preg_match很容易判断非法的参数。</p>
-
-<p><code lang="php">if(!preg<em>match(&ldquo;/^[a-z0-9</em>-]+$/i&rdquo;,$this-&gt;commentid))
-    $this-&gt;_show_msg(L(&lsquo;illegal_parameters&rsquo;));
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/preg_match_illegal_parameters/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/css-query-iframe-height/" >使用css media query控制iframe高度</a>
-        </span>
-        <span class="item__date">
-          Nov 24, 2014
-        </span>
-        <span >
-        
-        <p>在这个场景下，需要使用css media query控制iframe高度：比如一个iframe视频在PC网页上的高度和手机网页上的高度不同。iframe的高度只能设置成固定高度或者所在div的百分比，我们可以通过css query控制这个div的高度，实现iframe在PC和手机上不同高度。</p>
-
-<p>首先，我们在没有定义CSS Media Query的样式里添加：</p>
-
-<p><code lang="css">.iframe_height{
-    height: 260px;
-}
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/css-query-iframe-height/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/sublime-plugin-php/" >Sublime必备插件for PHP</a>
-        </span>
-        <span class="item__date">
-          Nov 22, 2014
-        </span>
-        <span >
-        
-        <p>Sublime Text真是一款写代码的利器，轻巧快捷，而且功能强大，用来写PHP代码再好不过了，告别以前用的笨重臃肿的Zend Studio，感觉一身轻松，PHP代码也更加优雅。但是PHP开发也经常和javascript，css，html等打交道，虽然Sublime Text本身也对他们友好，但是有以下PHP开发Sublime必备插件就更好了。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/sublime-plugin-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/str_preg_relace/" >str_replace和preg_relace的用法和区别</a>
-        </span>
-        <span class="item__date">
-          Nov 20, 2014
-        </span>
-        <span >
-        
-        <p>str_replace和preg_relace这两个PHP系统函数都是用来“替换”的函数，str_replace主要用于字符串替换，而preg_relace顾名思义用于正则表达式替换，他们的具体用法和区别本文将举例说明。</p>
-
-<h2 id="str-replace的用法">str_replace的用法</h2>
-
-<h3 id="1-字符串替换">1.字符串替换</h3>
-
-<p>比如变量$a=&#8217;sina,sohu,tantengvip&#8217;,我要把这个$a字符串中的sina替换成qq，那么这样用str_replace函数：</p>
-
-<p><code lang="php">$a = str_replace(&lsquo;sina&rsquo;,&lsquo;qq&rsquo;,$a);
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/str_preg_relace/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/baidu-transform/" >如何禁止手机百度搜索自动转码</a>
-        </span>
-        <span class="item__date">
-          Nov 16, 2014
-        </span>
-        <span >
-        
-        <p>很多站长朋友都知道，网站在百度手机搜索中打开的时候，百度会对网页进行自动转码，变成“优化”之后的手机版网页，但是百度网页自动转码的效果并不让人满意，再说很多网站有自己的自适应手机版的网页，或者有对应的手机版本网站，不需要百度网页自动转码。那么如何禁止手机端百度搜索自动转码呢？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/baidu-transform/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2014/11/outbound-link-seo/" >出站链接对SEO的作用和好处</a>
-        </span>
-        <span class="item__date">
-          Nov 14, 2014
-        </span>
-        <span >
-        
-        <p>出站链接对SEO的作用是什么？使用wordpress seo插件的同学应该会注意到，发布文章的时候它会检测你设置的目标关键词，并给出SEO优化的提示，经常会提示：此页没有出站链接，请考虑适当增加一些。那么出站链接对SEO有什么作用和好处？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2014/11/outbound-link-seo/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2014/11/life-want/" >不能承受生命之轻：人永远都无法知道自己该要什么</a>
         </span>
         <span class="item__date">
@@ -376,6 +159,254 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2014/11/life-want/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/11/directory_separator/" >PHP常量DIRECTORY_SEPARATOR用法</a>
+        </span>
+        <span class="item__date">
+          Nov 12, 2014
+        </span>
+        <span >
+        
+        PHP常量DIRECTORYSEPARATOR代表反斜杠，因为windows系统和linux系统的反斜杠不一样。在 Windows 中，斜线（/）和反斜线（
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/11/directory_separator/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/11/php-line-class-dir/" >PHP 的“魔术常量”:__LINE__,__FILE__等</a>
+        </span>
+        <span class="item__date">
+          Nov 12, 2014
+        </span>
+        <span >
+        
+        <p>以下是在PHP开发中经常要用到的常量，称为PHP魔术常量：</p>
+
+<p>__LINE__ 文件中的当前行号。</p>
+
+<p>__FILE__ 文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。自 PHP 4.0.2 起，__FILE__ 总是包含一个绝对路径（如果是符号连接，则是解析后的绝对路径），而在此之前的版本有时会包含一个相对路径。</p>
+
+<p>__DIR__ 文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。它等价于 dirname(__FILE__)。除非是根目录，否则目录中名不包括末尾的斜杠。（PHP 5.3.0中新增）</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/11/php-line-class-dir/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/11/baidu-zhanzhang-title/" >百度站长平台：如何写出搜索引擎喜欢的标题</a>
+        </span>
+        <span class="item__date">
+          Nov 12, 2014
+        </span>
+        <span >
+        
+        <p>这篇文章摘自百度站长平台站长学院。看看官方告诉我们如何写出搜索引擎喜欢的标题。</p>
+
+<p>在与大中型网站SEO人员沟通的过程中常听到这样的报怨：SEO地位低，净收拾产品技术编辑的烂摊子了。起初我们感觉非常不可思议，但后来发现这种情况还非常普遍。相应的，对于那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时，要设计出吸引用户和搜索引擎的标题；而不是单纯地把优化工作全部扔给SEO人员。所以，今天我们想跟产品人员和编辑说说网页标题该怎么写。</p>
+
+<p>一，标题的结构</p>
+
+<p>1，标题字数控制在60个字节内</p>
+
+<p>从以往的经验看，检索用户比较喜欢50个字节左右的标题；对于产品人员和编辑来说，过短的标题有可能无法全面表达网页主题；对于搜索引擎来说，标题过长意味着“超标”，只会保留前60个字节的内容。</p>
+
+<p>反面case:福州到北京旅游_北京旅游天气如何_北京旅游景点介绍_北京好玩吗_现在去北京旅游会热吗</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/11/baidu-zhanzhang-title/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/11/phpcms-re-develop/" >PHPCMS二次开发的正确方式</a>
+        </span>
+        <span class="item__date">
+          Nov 12, 2014
+        </span>
+        <span >
+        
+        <p>PHPCMS二次开发如何不影响程序升级？因为对源程序进行修改之后，PHPCMS 的程序升级，新程序发布的时候，我们不方便进行升级，直接覆盖会覆盖掉我们的修改。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/11/phpcms-re-develop/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/10/php-tostring/" >PHP魔术方法：toString</a>
+        </span>
+        <span class="item__date">
+          Oct 29, 2014
+        </span>
+        <span >
+        
+        <p>PHP的魔术方法toString，可以直接echo这个实例输出字符串，示例如下：</p>
+
+<p><code class="lang:php decode:true ">class haha
+{
+    public function __toString()
+    {
+        return $this-&gt;test();
+    }</p>
+
+<pre><code>protected function test()
+{
+    return 'hehe';
+}
+</code></pre>
+
+<p>}</p>
+
+<p>$aa = new haha();
+echo $aa;exit;//注意，只有echo的时候才会输出字符串，如果var_dump还是打印这个示例的结构。</code></p>
+
+<p>打印结果：hehe</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/10/php-tostring/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/04/navicat-sql-server-2000/" >Navicat将Sql Server 2000数据库导入（转换）到MySql中</a>
+        </span>
+        <span class="item__date">
+          Apr 22, 2014
+        </span>
+        <span >
+        
+        <p>大家都知道， Sql Server 2000的数据库只能运行在MS系列平台下，而我们有时需要将MS下的数据库移植到Linux或其他平台上，这是可能需要数据库的导入导出功能，但这样也未免太繁琐了，下面介绍一种简便的方法一步实现数据库的移植。</p>
+
+<p>Navicat 8是针对mysql的一个很好用的图形化管理工具，利用它导入功能把数据从sqlserver2000中直接导入到MySQL中。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/04/navicat-sql-server-2000/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/03/wordpress-upload-path/" >wordpress自定义上传文件路径</a>
+        </span>
+        <span class="item__date">
+          Mar 19, 2014
+        </span>
+        <span >
+        
+        <p>wordpress默认上传图片（文件）路径是uploads目录的‘年/月’文件夹，我们可以通过upload_dir钩子改变默认上传路径，自定义上传路径。</p>
+
+<p>该函数指定了uploads的目录为uploads的avatar文件夹：</p>
+
+<p><code lang="php">function my_upload_dir($upload) {
+    $upload[&lsquo;subdir&rsquo;]   = &lsquo;/avatar&rsquo;;
+    $upload[&lsquo;path&rsquo;]     = $upload[&lsquo;basedir&rsquo;] . $upload[&lsquo;subdir&rsquo;];
+    $upload[&lsquo;url&rsquo;]      = $upload[&lsquo;baseurl&rsquo;] . $upload[&lsquo;subdir&rsquo;];
+    return $upload;
+}
+</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/03/wordpress-upload-path/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/03/php-fopen-filesize-fread-fclose/" >PHP函数:fopen,filesize,fread,fclose</a>
+        </span>
+        <span class="item__date">
+          Mar 9, 2014
+        </span>
+        <span >
+        
+        PHP操作文件常用函数：fopen打开一个文件句柄，filesize读取文件大小，fread读取文件，fclose关闭文件操作句柄。 $file = fopen(FILE,&lsquo;r&rsquo;); $file_data
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/03/php-fopen-filesize-fread-fclose/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2014/01/wordpress-shortinit/" >wordpress隐秘常量SHORTINIT只加载必须的数据库操作文件</a>
+        </span>
+        <span class="item__date">
+          Jan 22, 2014
+        </span>
+        <span >
+        
+        <p>wordpress有个隐秘的常量定义，define(&#8216;SHORTINIT&#8217;, true)，它可以尽可能少的加载wordpress文件，保留了基本的数据库操作类，即$wpdb，可以用来写处理ajax的php文件，加快ajax请求的响应速度！</p>
+
+<p>Here is start my loader file, not pretty but works for specific needs:</p>
+
+<p><code lang="php">ini_set(&lsquo;html_errors&rsquo;, 0);
+define(&lsquo;SHORTINIT&rsquo;, true);
+require &lsquo;../../../../wp-load.php&rsquo;;
+require( ABSPATH . WPINC . &lsquo;/formatting.php&rsquo; );
+require( ABSPATH . WPINC . &lsquo;/meta.php&rsquo; );
+require( ABSPATH . WPINC . &lsquo;/post.php&rsquo; );
+wp_plugin_directory_constants();
+</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2014/01/wordpress-shortinit/">➦</a>
         
         </div>
         
@@ -832,43 +863,7 @@
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -876,7 +871,7 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

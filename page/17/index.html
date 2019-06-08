@@ -143,222 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/08/laravel-debugbar-sql/" >Laravel 调试工具 laravel-debugbar</a>
-        </span>
-        <span class="item__date">
-          Aug 1, 2016
-        </span>
-        <span >
-        
-        <p>给 Laravel 项目安装了 debugbar 调试工具，在 debug 模式下打开页面底部会出现一个工具条，点开可以查看各项性能统计，最重要的是打印页面执行的 sql 语句和调试内容。下面利用 debugbar 工具找到一个 sql 查询的优化点。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/08/laravel-debugbar-sql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/php7-performance-inisight-into/" >PHP 7 性能洞察，一张图告诉你</a>
-        </span>
-        <span class="item__date">
-          Jul 29, 2016
-        </span>
-        <span >
-        
-        <p>PHP 7 发布，最大的特点是经过很多优化性能得到大幅提升，几乎翻倍，甚至比 Facebook 开发的 HHVM 虚拟机性能更快，下面这张图对比了 PHP 5.6，HHVM 和 PHP 7 下的性能对比，带你洞察 PHP 7 的性能。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/php7-performance-inisight-into/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/jquery-intput-file-width-height/" >jQuery 获取 intput file 图片的宽高和大小</a>
-        </span>
-        <span class="item__date">
-          Jul 25, 2016
-        </span>
-        <span >
-        
-        <p>如何判断input file表单里上传的图片的宽高和大小呢？这个时候图片还没真正上传，也不是在页面上展示，不能使用$(&#8220;#id&#8221;).width(),$(&#8220;#id&#8221;).height()这种方式。</p>
-
-<p>在Stack Overflow找到一个方法获取input file图片文件的宽高：</p>
-
-<p><code class="lang:js decode:true ">var _URL = window.URL || window.webkitURL;
-$(&ldquo;#file&rdquo;).change(function (e) {
-    var file, img;
-    if ((file = this.files[0])) {
-        img = new Image();
-        img.onload = function () {
-            alert(this.width + &ldquo; &rdquo; + this.height);
-        };
-        img.src = _URL.createObjectURL(file);
-    }
-});</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/jquery-intput-file-width-height/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/php-exec-status/" >判断PHP的exec函数是否执行成功</a>
-        </span>
-        <span class="item__date">
-          Jul 21, 2016
-        </span>
-        <span >
-        
-        <p class="refname">
-  做一个代码发布的系统，需要用到PHP的exec函数来执行Linux下的命令和git，svn命令，如何判断PHP的exec函数是否执行成功呢？
-</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/php-exec-status/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/redis-sorted-set/" >Redis有序集合常用命令</a>
-        </span>
-        <span class="item__date">
-          Jul 19, 2016
-        </span>
-        <span >
-        
-        <p>小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/redis-sorted-set/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/misconf-redis-configured-save-rdb-snapshots/" >解决 Redis 只读不可写的问题</a>
-        </span>
-        <span class="item__date">
-          Jul 15, 2016
-        </span>
-        <span >
-        
-        <p>在 Redis 终端上进行读写操作，发现只读不可写，GET 操作是正常的，SET 操作提示错误：(error)MISCONF Redis is configured to save RDB snapshots,but is currently not able to persist on disk. Commands that may modify the data set are disabled. 如图所示：</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/07/misconf-redis-is-configured-to-save-rdb-snapashots.png" target="_blank"><img class="alignnone wp-image-10253 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/07/misconf-redis-is-configured-to-save-rdb-snapashots.png" alt="misconf-redis-is-configured-to-save-rdb-snapashots" width="732" height="120" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/misconf-redis-configured-save-rdb-snapshots/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/submit-composer-packagist/" >提交PHP组件到Packagist 发布自己的Composer包</a>
-        </span>
-        <span class="item__date">
-          Jul 13, 2016
-        </span>
-        <span >
-        
-        <p>Composer是PHP的一个依赖管理工具，它使得PHP焕发新的生机，有了现代化的WEB开发规范，Packagist是PHP组件的库，也有其他的镜像。</p>
-
-<p>在Packagist上提交了一个自己开发的PHP组件，这样其他开发者就可以使用Composer使用这个包了。这个组件并没什么功能，主要是看看提交PHP组件的流程，并记录了过程中遇到的问题及解决方法，以供参考。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/submit-composer-packagist/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/jquery-append-options/" >更优雅的jQuery拼接下拉框方式</a>
-        </span>
-        <span class="item__date">
-          Jul 11, 2016
-        </span>
-        <span >
-        
-        <p>在Stack Overflow浏览到一个问题：如何用jQuery更好的拼接下拉框代码？这个小需求在实践中也写过很多次，但是网友提供了一个更优雅的jQuery拼接下拉框方式。</p>
-
-<p>代码如下：</p>
-
-<p><code class="lang:js decode:true ">var options = $(&ldquo;#options&rdquo;);
-$.each(result, function() {
-    options.append($(&rdquo;&lt;option /&gt;&rdquo;).val(this.ImageFolderID).text(this.Name));
-});</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/jquery-append-options/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/laravel-5-queue/" >Laravel 5.2 队列的配置和使用</a>
-        </span>
-        <span class="item__date">
-          Jul 10, 2016
-        </span>
-        <span >
-        
-        <p>队列常常用于两种场景，一种是高并发的情况，一种是耗时的操作，可以将任务放到队列中去，消费者从队列取任务执行，当然还有失败的情况如何处理，以及延迟，重试，更复杂的情况还有优先级的实现。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/laravel-5-queue/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/07/ssrf-shell/" >解决一个SSRF漏洞</a>
         </span>
         <span class="item__date">
@@ -373,6 +157,221 @@ $.each(result, function() {
         </span>
         
           ... <a class="read-more-symbol" href="/2016/07/ssrf-shell/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/07/gulp-watch/" >使用 gulp watch</a>
+        </span>
+        <span class="item__date">
+          Jul 5, 2016
+        </span>
+        <span >
+        
+        在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/07/gulp-watch/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/php-curl-post-send-file/" >PHP Curl 上传文件</a>
+        </span>
+        <span class="item__date">
+          Jun 30, 2016
+        </span>
+        <span >
+        
+        记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&lsquo;curl_file_create&rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &lsquo;@&rsquo; . realpath($file); } $post = array(&lsquo;filename&rsquo; =&gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/php-curl-post-send-file/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/binshm-bad-interpreter-no-file-directory/" >执行sh脚本：/bin/sh^M: bad interpreter: No such file or directory</a>
+        </span>
+        <span class="item__date">
+          Jun 21, 2016
+        </span>
+        <span >
+        
+        <p>执行sh脚本错误：/bin/sh^M: bad interpreter: No such file or directory，这是windows下编码不同造成的，在Linux下修复方法如下，记录一下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/binshm-bad-interpreter-no-file-directory/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/gulp-notify-notify-send-must-be-installed/" >Laravel Elixir运行gulp命令:Error in plugin ‘gulp-notify’</a>
+        </span>
+        <span class="item__date">
+          Jun 20, 2016
+        </span>
+        <span >
+        
+        <p>Laravel Elixir运行gulp命令出现错误提示：</p>
+
+<p>[20:24:02] gulp-notify: [Error in notifier] Error in plugin &#8216;gulp-notify&#8217;</p>
+
+<p>Message:notify-send must be installed on the system.</p>
+
+<p>虽然不影响最终的发布，但是还是解决这个问题。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/gulp-notify-notify-send-must-be-installed/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/mysql-command/" >常用Linux操作数据库命令及MySQL语句</a>
+        </span>
+        <span class="item__date">
+          Jun 15, 2016
+        </span>
+        <span >
+        
+        <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
+
+<h3 id="数据库表导入">数据库表导入</h3>
+
+<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
+
+<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/mysql-command/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/generating-a-new-ssh-key/" >gitlab 和本机建立 ssh 信任</a>
+        </span>
+        <span class="item__date">
+          Jun 8, 2016
+        </span>
+        <span >
+        
+        <p>从Gitlab上使用ssh方式拉取git代码报错：The remote end hung up unexpected，经过排查，是公钥生成可能有问题，重新生成一下，然后在Gitlab上添加SSH key，再次拉取代码就好了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/generating-a-new-ssh-key/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/nginx-gzip/" >Nginx开启gzip压缩</a>
+        </span>
+        <span class="item__date">
+          Jun 5, 2016
+        </span>
+        <span >
+        
+        <p>在服务器Nginx开启gzip压缩是优化网站性能的方法之一，可以有效减少服务器带宽的消耗，缺点是会增大CPU的占用率，但是很多时候CPU往往是空闲最多的。</p>
+
+<p>引用nginx官网的介绍：</p>
+
+<blockquote>
+<p>The <code>ngx_http_gzip_module</code> module is a filter that compresses responses using the “gzip” method. This often helps to reduce the size of transmitted data by half or even more.</p>
+</blockquote>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/nginx-gzip/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/jquery-iframe/" >jQuery操作iframe页面DOM</a>
+        </span>
+        <span class="item__date">
+          Jun 3, 2016
+        </span>
+        <span >
+        
+        <p>如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" target="_blank"><img class="alignnone size-full wp-image-10135" src="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" alt="jquery_iframe" width="1092" height="514" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/jquery-iframe/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/mysql-data-length/" >MySQL查看数据库大小</a>
+        </span>
+        <span class="item__date">
+          Jun 3, 2016
+        </span>
+        <span >
+        
+        <p>1、进入information_schema 数据库（存放了其他的数据库的信息）</p>
+
+<p>use information_schema;</p>
+
+<p>2、查询所有数据的大小：</p>
+
+<p>select concat(round(sum(data_length/1024/1024),2),&#8217;MB&#8217;) as data from tables;</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/mysql-data-length/">➦</a>
         
         </div>
         
@@ -829,43 +828,7 @@ $.each(result, function() {
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -873,7 +836,7 @@ $.each(result, function() {
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

@@ -17,7 +17,7 @@
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/10/mysql-select-null/</guid>
-      <description>假设 code 字段是可为 NULL &amp;hellip; AND code NOT IN () &amp;hellip; &amp;hellip; AND (code IS NULL or code NOT IN()) &amp;hellip; 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL =</description>
+      <description>假设 MySQL 中某数据表 code 字段是可为 NULL ... AND code NOT IN () ... ... AND (code IS NULL or code NOT IN()) ... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to</description>
     </item>
     
     <item>
@@ -36,21 +36,6 @@
       
       <guid>http://tanteng.me/2018/09/laravel-error-handing/</guid>
       <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Laravel 用户授权系统使用小结</title>
-      <link>http://tanteng.me/2018/09/laravel-authorize-gates/</link>
-      <pubDate>Fri, 14 Sep 2018 11:04:59 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/09/laravel-authorize-gates/</guid>
-      <description>&lt;h3 id=&#34;-1&#34;&gt;基本用法&lt;/h3&gt;
-
-&lt;p&gt;示例&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$this-&amp;gt;authorize(&amp;lsquo;update&amp;rsquo;, $post);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;第一个参数 $ability,表示具备什么权限。第二个参数 $post，是一个模型实例。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -111,150 +96,12 @@
     </item>
     
     <item>
-      <title>Redis 的事务到底是不是原子性的</title>
-      <link>http://tanteng.me/2018/06/redis-transaction-atomic/</link>
-      <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/06/redis-transaction-atomic/</guid>
-      <description>&lt;p&gt;ACID 中关于原子性的定义：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被恢复（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>本周阅读清单20180604</title>
-      <link>http://tanteng.me/2018/06/reding-list-10/</link>
-      <pubDate>Mon, 18 Jun 2018 14:36:24 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/06/reding-list-10/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;深入介绍 Golang 中的 bufio.Scanner
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/37673679&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/37673679&#34;&gt;https://zhuanlan.zhihu.com/p/37673679&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Redis 的通信协议
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://redisdoc.com/topic/protocol.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://redisdoc.com/topic/protocol.html&#34;&gt;http://redisdoc.com/topic/protocol.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用 Redis 实现支持优先级的消息队列
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/laozhbook/p/redis_queue.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/laozhbook/p/redis_queue.html&#34;&gt;https://www.cnblogs.com/laozhbook/p/redis_queue.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Laravel 事件系统用法总结</title>
-      <link>http://tanteng.me/2018/06/laravel-event/</link>
-      <pubDate>Sun, 17 Jun 2018 02:10:52 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/06/laravel-event/</guid>
-      <description>&lt;p&gt;Laravel 的事件提供了一个简单的观察者实现，能够订阅和监听应用中发生的各种事件。事件类保存在 app/Events 目录中，而这些事件的的监听器则被保存在 app/Listeners 目录下。这些目录只有当你使用 Artisan 命令来生成事件和监听器时才会被自动创建。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>使用 VS Code 断点调试 golang 项目</title>
       <link>http://tanteng.me/2018/05/vscode-debug-golang/</link>
       <pubDate>Tue, 29 May 2018 06:34:04 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/05/vscode-debug-golang/</guid>
-      <description>&lt;p&gt;在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang 项目。&lt;/p&gt;
-
-&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
-
-&lt;p&gt;如果没有安装 delve 插件，会报错：&lt;/p&gt;
-
-&lt;p&gt;Failded to continue:&amp;#8221;Cannot find Delve debugger. Install from &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;https://github.com/derekparker/delve&lt;/a&gt; &amp;amp; ensure it is in your &amp;#8220;GOPATH/bin&amp;#8221; or &amp;#8220;PATH&amp;#8221;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在 Laravel 中使用 gulp 构建前端资源</title>
-      <link>http://tanteng.me/2018/05/laravel-5-5-gulp/</link>
-      <pubDate>Mon, 28 May 2018 12:45:32 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/laravel-5-5-gulp/</guid>
-      <description>&lt;p&gt;最近把自己主页前端代码进一步规范了，使用 npm 引入一些前端的资源库，在 Laravel 5.5 中使用 gulp 遇到一些坑。&lt;/p&gt;
-
-&lt;p&gt;mix.sass 无法直接使用 node_modules 文件夹里的，只能用 resource/assets/sass/app.scss 这个文件生成 css，然后和其他的 css 合并为一个文件。&lt;/p&gt;
-
-&lt;p&gt;mix.scripts 可以使用 node_modules 文件夹里的 js，并和自己的 js 合并为一个文件。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
-      <link>http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</link>
-      <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</guid>
-      <description>&lt;p&gt;最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;lt;?php&lt;/p&gt;
-
-&lt;p&gt;use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;&lt;/p&gt;
-
-&lt;p&gt;//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&amp;lsquo;classLoader&amp;rsquo;);&lt;/p&gt;
-
-&lt;p&gt;function classLoader($class)
-{
-    $path = str_replace(&amp;rsquo;\&amp;rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &amp;lsquo;vendor/&amp;rsquo; . $path . &amp;lsquo;.php&amp;rsquo;;
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}&lt;/p&gt;
-
-&lt;p&gt;require_once SDK_PATH . &amp;lsquo;vendor/Qiniu/functions.php&amp;rsquo;;&lt;/p&gt;
-
-&lt;p&gt;class xxxx extends baseIndex{&lt;/p&gt;
-
-&lt;p&gt;//&lt;/p&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在 Laravel 中使用 DataTables 插件</title>
-      <link>http://tanteng.me/2018/05/laravel-datatables/</link>
-      <pubDate>Mon, 28 May 2018 11:02:34 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/laravel-datatables/</guid>
-      <description>&lt;p&gt;DataTables 是一个 jQuery 的表格插件，记录一下在 Laravel 中使用的常用功能和用法，比如 ajax 获取数据，自定义搜索，效果展现，选项说明等等，有一些细节记录下来方便以后查看。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PHP 查找数组中第 K 大的元素</title>
-      <link>http://tanteng.me/2018/05/php-find-the-k-largest/</link>
-      <pubDate>Fri, 25 May 2018 08:36:17 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/php-find-the-k-largest/</guid>
-      <description>&lt;p&gt;比如一个数组 [33, 5, 1, 90, 99, 3, 45, 13]，要找出第 K 大的元素，首先可以使用快速排序算法对数组进行排序，然后从排序后的数组中就很容易得到这个元素。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WEB开发——用户认证模块</title>
-      <link>http://tanteng.me/2018/05/web-auth/</link>
-      <pubDate>Mon, 21 May 2018 04:55:17 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/web-auth/</guid>
-      <description>&lt;p&gt;一个 WEB 项目，用户认证模块几乎是必不可少的，除非不需要用户登陆使用，用户认证的方式主要有基于 Basic 的认证，基于 session 的方案，JWT 方案等。以传统的 session 方案说明，无论哪种方式，它至少包含下列的几个方法：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;注册（严格说不属于用户认证模块）&lt;/li&gt;
-&lt;li&gt;登录&lt;/li&gt;
-&lt;li&gt;退出&lt;/li&gt;
-&lt;li&gt;重置密码&lt;/li&gt;
-&lt;li&gt;基本权限（权限管理也可以和用户认证分开）&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang</description>
     </item>
     
     <item>
@@ -271,47 +118,12 @@ spl_autoload_register(&amp;lsquo;classLoader&amp;rsquo;);&lt;/p&gt;
     </item>
     
     <item>
-      <title>Laravel 模型间关系设置分表方法</title>
-      <link>http://tanteng.me/2018/04/laravel-relationships-settable/</link>
-      <pubDate>Thu, 19 Apr 2018 11:49:32 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/04/laravel-relationships-settable/</guid>
-      <description>&lt;p&gt;在实际开发中经常用到分库分表，比如用户表分成 100 张，那么这个时候查询数据需要设置分表，比如 Laravel 的 Model 类中提供了 setTable 方法：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/**
- * Set the table associated with the model.
- *
- * @param  string  $table
- * @return $this
- */
-public function setTable($table)
-{
-    $this-&amp;gt;table = $table;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;return $this;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>PHP知识整理之——PHP基础、WEB安全、网络</title>
       <link>http://tanteng.me/2018/04/php-interview-2/</link>
       <pubDate>Tue, 10 Apr 2018 03:11:14 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/04/php-interview-2/</guid>
       <description>&lt;p&gt;本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用 Docker 搭建开发环境</title>
-      <link>http://tanteng.me/2018/03/docker-dev-environment/</link>
-      <pubDate>Thu, 29 Mar 2018 02:48:04 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/03/docker-dev-environment/</guid>
-      <description>&lt;p&gt;做了一次分享，主题《使用 Docker 搭建开发环境》，简单介绍了一下 Docker 的概念，演示了使用 Docker-compose 构建全套 PHP 环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-11994&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2018/03/62669ad9gy1fprunalxubj219c0xqaev.jpg&#34; alt=&#34;&#34; width=&#34;1024&#34; height=&#34;762&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -613,19 +425,20 @@ return err
       <guid>http://tanteng.me/2017/10/php-intval-precision/</guid>
       <description>&lt;p&gt;在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;lt;?php
-$n=&amp;ldquo;19.99&amp;rdquo;;
-print intval($n*100); // prints 1998&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$n=&amp;quot;19.99&amp;quot;; print intval($n*100); // prints 1998
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
 
 &lt;p&gt;1.转换成字符串再 intval&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;print intval(strval($n*100)); // prints 1999&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print intval(strval($n*100)); // prints 1999
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;php -r &amp;ldquo;echo round(19.99*100);&amp;rdquo;&lt;/code&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;php -r &amp;quot;echo round(19.99*100);&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -660,7 +473,7 @@ print intval($n*100); // prints 1998&lt;/code&gt;&lt;/p&gt;
       <pubDate>Sun, 08 Oct 2017 14:44:08 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/10/503-service-unavailable/</guid>
-      <description>&lt;p&gt;502 bad gateway&lt;/p&gt;
+      <description>&lt;h3 id=&#34;502-bad-gateway&#34;&gt;502 bad gateway&lt;/h3&gt;
 
 &lt;p&gt;问题原因：服务器作为网关或代理，从上游服务器收到无效响应。&lt;/p&gt;
 
@@ -685,15 +498,6 @@ print intval($n*100); // prints 1998&lt;/code&gt;&lt;/p&gt;
       
       <guid>http://tanteng.me/2017/09/laradock-ssh-workspace/</guid>
       <description>&lt;p&gt;最近在学习 Docker，发现 Laradock 这个项目，它是以 docker-compose 方式快速搭建一整套 PHP 开发环境的镜像，可以按需启动需要的容器，包括 MySQL，Redis，Nginx，Memcache，RabbitMQ，Mongo 等一系列 WEB 开发需要的软件。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WordPress 使用 Redis 缓存</title>
-      <link>http://tanteng.me/2017/09/wp-redis/</link>
-      <pubDate>Wed, 13 Sep 2017 04:32:13 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/09/wp-redis/</guid>
-      <description>&lt;p&gt;给 WordPress 博客换了一个缓存插件 —— WP Redis，使用 Redis 缓存给博客提高速度和性能，之前用的插件 WP Super Cache 是基于文件缓存的，虽然也很不错，但是用 Redis 应该是更好的选择。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -759,13 +563,7 @@ return redirect()-&amp;amp;gt;route(&#39;egretgame.index&#39;)-&amp;amp;gt;with(
       <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/09/git-merge-rebase/</guid>
-      <description>&lt;h2 id=&#34;_rebasing&#34;&gt;变基&lt;/h2&gt;
-
-&lt;div class=&#34;paragraph&#34;&gt;
-  &lt;p&gt;
-    在 Git 中整合来自不同分支的修改主要有两种方法：&lt;code&gt;merge&lt;/code&gt; 以及 &lt;code&gt;rebase&lt;/code&gt;。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操作的惊艳之处，以及指出在何种情况下你应避免使用它。
-  &lt;/p&gt;
-&lt;/div&gt;</description>
+      <description>变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操</description>
     </item>
     
     <item>
@@ -5068,13 +4866,7 @@ print_r($pro);//打印结果：Array ( [name] =&amp;gt; [sex] =&amp;gt; )&lt;/p&
       <pubDate>Thu, 05 Sep 2013 16:21:06 +0000</pubDate>
       
       <guid>http://tanteng.me/2013/09/navicat-sql/</guid>
-      <description>&lt;p&gt;我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。&lt;/p&gt;
-
-&lt;p&gt;我用同样的方法导入sae其他的应用的sql文件，都是正常的。&lt;/p&gt;
-
-&lt;p&gt;报错截图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;attachment-full&#34; src=&#34;http://tanteng-wordpress.stor.sinaapp.com/uploads/2013/09/201304181305293855.pngpsid1&#34; alt=&#34;201304181305293855&#34; width=&#34;408&#34; height=&#34;354&#34; /&gt;&lt;/p&gt;</description>
+      <description>在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。 解决办法： try using these commands from mysql terminal set global max_allowed_packet=1000000000; set</description>
     </item>
     
     <item>
@@ -5451,31 +5243,6 @@ return $subject;
     </item>
     
     <item>
-      <title>jquery cookie的用法</title>
-      <link>http://tanteng.me/2012/09/jquery-cookie-usage/</link>
-      <pubDate>Thu, 27 Sep 2012 06:10:43 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/jquery-cookie-usage/</guid>
-      <description>&lt;p&gt;jQuery cookie是个很好的cookie插件，大概的使用方法如下：&lt;/p&gt;
-
-&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Create session cookie:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Create expiring cookie, 7 days from then:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;, { expires: 7 }); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Create expiring cookie, valid across entire site:&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;jquery&#34;&gt;$.cookie(&amp;lsquo;the_cookie&amp;rsquo;, &amp;lsquo;the_value&amp;rsquo;, { expires: 7, path: &amp;lsquo;/&amp;rsquo; }); &lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Read cookie:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>HTTP状态码200、301、403、404、500等</title>
       <link>http://tanteng.me/2012/09/http-200-301-403-404-500/</link>
       <pubDate>Wed, 26 Sep 2012 15:41:36 +0000</pubDate>
@@ -5512,100 +5279,6 @@ return $subject;
     </item>
     
     <item>
-      <title>全面介绍HTML5</title>
-      <link>http://tanteng.me/2012/09/html-5/</link>
-      <pubDate>Tue, 25 Sep 2012 15:49:24 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/html-5/</guid>
-      <description>&lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;
-
-&lt;h3 id=&#34;什么是html5&#34;&gt;什么是HTML5&lt;/h3&gt;
-
-&lt;h3 id=&#34;html5新特性和效果&#34;&gt;HTML5新特性和效果&lt;/h3&gt;
-
-&lt;h3 id=&#34;html5目前存在的应用局限&#34;&gt;HTML5目前存在的应用局限&lt;/h3&gt;
-
-&lt;h3 id=&#34;讨论-html5适合应用于我们哪些项目&#34;&gt;讨论：HTML5适合应用于我们哪些项目？&lt;/h3&gt;</description>
-    </item>
-    
-    <item>
-      <title>详解php的魔术方法__get()和__set()</title>
-      <link>http://tanteng.me/2012/09/php_set_get/</link>
-      <pubDate>Fri, 14 Sep 2012 04:18:42 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php_set_get/</guid>
-      <description>&lt;p&gt;先看看php官方文档的解释:&lt;/p&gt;
-
-&lt;p&gt;__set() is run when writing data to inaccessible properties.&lt;/p&gt;
-
-&lt;p&gt;__get() is utilized for reading data from inaccessible properties.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>php引用计数器进行垃圾收集机制</title>
-      <link>http://tanteng.me/2012/09/php-ref-counter/</link>
-      <pubDate>Thu, 13 Sep 2012 15:08:26 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php-ref-counter/</guid>
-      <description>&lt;p&gt;PHP 有一个非常简单的垃圾收集器，它实际上将对不再位于内存范围（scope）中的对象进行垃圾收集。垃圾收集的内部方式是使用一个引用计数器，因此当计数器达到 0 时（意味着对该对象的引用都不可用），对象将被当作垃圾收集并从内存中删除。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PHP 数组相加：array(“a”)&#43;array(“b”)结果还是array(“a”)</title>
-      <link>http://tanteng.me/2012/09/array-adding/</link>
-      <pubDate>Thu, 13 Sep 2012 04:10:12 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/array-adding/</guid>
-      <description>&lt;p&gt;在网上看到一道题：&lt;/p&gt;
-
-&lt;p&gt;array(&amp;#8220;a&amp;#8221;)+array(&amp;#8220;b&amp;#8221;)的结果是___&lt;/p&gt;
-
-&lt;p&gt;A.array(&amp;#8220;a&amp;#8221;,&amp;#8221;b&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;B.array(&amp;#8220;b&amp;#8221;,&amp;#8221;a&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;C.array(&amp;#8220;b&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;D.array(&amp;#8220;a&amp;#8221;)&lt;/p&gt;
-
-&lt;p&gt;答案：D&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>javascript的关键字和保留字</title>
-      <link>http://tanteng.me/2012/09/javascript-keywords/</link>
-      <pubDate>Wed, 12 Sep 2012 15:04:04 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/javascript-keywords/</guid>
-      <description>&lt;p&gt;1、关键字&lt;/p&gt;
-
-&lt;p&gt;break&lt;/p&gt;
-
-&lt;p&gt;case&lt;/p&gt;
-
-&lt;p&gt;catch&lt;/p&gt;
-
-&lt;p&gt;continue&lt;/p&gt;
-
-&lt;p&gt;default&lt;/p&gt;
-
-&lt;p&gt;delete&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>php递归统计多位数组个数count（$array，1）</title>
-      <link>http://tanteng.me/2012/09/php-count-array/</link>
-      <pubDate>Mon, 10 Sep 2012 14:42:10 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/09/php-count-array/</guid>
-      <description>&lt;p&gt;下面程序运行结果为（）&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;php&#34;&gt;$numb=array(array(10,15,30),array(10,15,30),array(10,15,30));
-echo count($numb,1);
-&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>PHP对象在内存堆栈中的分配</title>
       <link>http://tanteng.me/2012/09/stack-php/</link>
       <pubDate>Sun, 09 Sep 2012 07:54:05 +0000</pubDate>
@@ -5618,172 +5291,6 @@ echo count($numb,1);
 &lt;p&gt;&lt;strong&gt;代码段&lt;/strong&gt;（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法&lt;/p&gt;
 
 &lt;p&gt;**&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>CSS Sprites技术，利用background属性进行图片分割</title>
-      <link>http://tanteng.me/2012/05/css-sprites/</link>
-      <pubDate>Wed, 16 May 2012 02:41:43 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/css-sprites/</guid>
-      <description>&lt;p&gt;CSS Sprites 技术对于广大的前端工程师来说应该是一点也不陌生。这个被国内开发者昵称为CSS精灵 CSS雪碧的家伙到底解决了什么问题，我们又怎样合理使用这个技术呢？下面让我们详细的聊聊。&lt;/p&gt;
-
-&lt;p&gt;在大家还在拨号上网的“远古时期”，由于网速的限制，页面开发者都喜欢把网页里面的图片字节数控制的非常小，往往在一个图片文件夹里散落着n多的小碎图。随着网络技术的发展，网速的提升，大家越来越重视页面的加载速度，页面效率问题，因为每加载一张图片都会产生一次浏览器请求数，发起的请求数越多那么页面加载的速度也越慢。还有当页面加载时，图片一个个的零星显示，鼠标经过时候背景闪白等也都是我们不能忍受的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;于是乎将页面中的背景图整合到一起，利用“background-image”，“background- repeat”，“background-position”的组合进行背景定位的技术被广泛使用与了页面构建中，这就是CSS Sprites。&lt;/strong&gt;当然CSS Sprites技术也存在着维护不便，内存占用大等等的缺点。&lt;/p&gt;
-
-&lt;p&gt;好了，如果我只说这些，那么这篇文章就有点太水了。前面那些只是对CSS Sprites技术的一个普及。作为一个开发者我们应该对它有一个更全面的认识，挖掘深度内容，这样才能有利于我们效率开发，团队协作。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HTML5&#43;CSS3&#43;jQuery视频播放器</title>
-      <link>http://tanteng.me/2012/05/html5-css3-video-player/</link>
-      <pubDate>Sat, 12 May 2012 05:02:47 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/html5-css3-video-player/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;毫无疑问HTML5已经是大势所趋，知名视频网站YouTube在两年前就开始推广HTML5播放器来代替Flash。虽然国内还没有完全普及HTML5浏览器，但在各大本土浏览器厂商的努力下，支持HTML5的浏览器在中国浏览器市场的占有率也在不断增长中。本教程将会手把手地教你制作一个基于HTML5&amp;amp; CSS3&amp;amp; JavaScript 技术的视频播放器。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img class=&#34;alignnone&#34; src=&#34;https://public.bay.livefilestore.com/y1peX9JxCFEOl9YogxRdp96se7Akf9zdKPUDzo7PaASwo7P-8ZzOfsLE3KPDOorms3h2NPYQdtprM_OjqmRc6z0Hw/138_120510135003_1.jpg?psid=1&#34; alt=&#34;&#34; width=&#34;576&#34; height=&#34;241&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最终效果图&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何用javascript实现类继承</title>
-      <link>http://tanteng.me/2012/05/javascript-class-extend/</link>
-      <pubDate>Mon, 07 May 2012 12:06:53 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/05/javascript-class-extend/</guid>
-      <description>&lt;p&gt;本文着重解析javascript类继承机制，从底层剖析javascript是怎样实现“继承”的。&lt;/p&gt;
-
-&lt;p&gt;目前 javascript的实现继承方式并不是通过“extend”关键字来实现的，而是通过 constructor function（构造方法）和prototype属性来实现继承。首先我们创建一个animal 类&lt;/p&gt;
-
-&lt;p&gt;&lt;code lang=&#34;javascript&#34;&gt;var animal =  function (){   //这就是constructor function 了
-   this .name = &amp;lsquo;pipi&amp;rsquo;;
-   this .age = 10;
-   this .height = 0;
-}
- //建立一个动物的实例
- var  a1 =   new  animal ();&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;构造函数与其他普通函数区别在于，1.构造函数里有 this关键字，2.调用构造函数是使用的new关键字。通过new运算符调用构造函数 animal 后，系统就会返回一个对象，这个对象就相当于&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>提高Web性能的几个方法</title>
-      <link>http://tanteng.me/2012/03/web-optimization/</link>
-      <pubDate>Tue, 06 Mar 2012 08:47:27 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/03/web-optimization/</guid>
-      <description>&lt;p&gt;（一）尽量减少 HTTP 请求&lt;/p&gt;
-
-&lt;p&gt;有几种常见的方法能切实减少 HTTP 请求：&lt;/p&gt;
-
-&lt;p&gt;1、 合并脚本跟样式文件，如可以把多个 CSS 文件合成一个，把多个 JS 文件合成一个。&lt;/p&gt;
-
-&lt;p&gt;2、 CSS Sprites 利用 CSS background 相关元素进行背景图绝对定位,把多个图片合成一个图片。&lt;/p&gt;
-
-&lt;p&gt;（二）使用浏览器缓存&lt;/p&gt;
-
-&lt;p&gt;在用户浏览网站的不同页面时，很多内容是重复的，比如相同的JS、CSS、图片等。如果我们能够建议甚至强制浏览器在本地缓存这些文件，将大大降低页面产生的流量，从而降低页面载入时间。&lt;/p&gt;
-
-&lt;p&gt;根据服务器端的响应header，一个文件对浏览器而言，有几级不同的缓存状态。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>从技术角度分析铁道部的购票网站为什么这么慢</title>
-      <link>http://tanteng.me/2012/01/mor/</link>
-      <pubDate>Thu, 12 Jan 2012 14:29:12 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2012/01/mor/</guid>
-      <description>&lt;p&gt;这个网站的前端基本架构是jQuery+Struts+CDN(即content distribution network)。&lt;/p&gt;
-
-&lt;p&gt;首先，这个查询列车信息的querySingleAction.do，把这些HTML也跟着传过来了，用JS写不更好吗？&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;alignnone&#34; alt=&#34;&#34; src=&#34;https://public.bay.livefilestore.com/y1pDHD9hcAEItvGz7WBxRFammAPvWcBWvY69rPJLZVj0_U6725wH3tPb2oIzDYldnd5LNig8tLwkORNUAuR4R_CNw/mor1.jpg?psid=1&#34; width=&#34;580&#34; height=&#34;315&#34; /&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>jQuery常用技巧</title>
-      <link>http://tanteng.me/2011/10/jquery-2/</link>
-      <pubDate>Mon, 24 Oct 2011 14:16:15 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/jquery-2/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1、关于页面元素的引用 &lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;通过jquery的$()引用元素包括通过id、class、元素名以及元素的层级关系及dom或者xpath条件等方法，且返回的对象为jquery对象（集合对象），不能直接调用dom定义的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2、jQuery对象与dom对象的转换&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;只有jquery对象才能使用jquery定义的方法。注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是 jquery对象。&lt;/p&gt;
-
-&lt;p&gt;普通的dom对象一般可以通过$()转换成jquery对象。&lt;/p&gt;
-
-&lt;p&gt;如：$(document.getElementById(&amp;#8220;msg&amp;#8221;))则为jquery对象，可以使用jquery的方法。&lt;/p&gt;
-
-&lt;p&gt;由于jquery对象本身是一个集合。所以如果jquery对象要转换为dom对象则必须取出其中的某一项，一般可通过索引取出。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>jquery :nth-child()伪类选择器</title>
-      <link>http://tanteng.me/2011/10/jquery-nth-child/</link>
-      <pubDate>Mon, 24 Oct 2011 14:06:00 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/jquery-nth-child/</guid>
-      <description>&lt;p&gt;本来是css3的伪类选择器，可惜大部分浏览器都不支持，然而jquery却给借鉴过来了， 用起来很给力很给力！&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;:nth-child(&lt;em&gt;an+b&lt;/em&gt;)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;描述：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;伪类&lt;strong&gt;:nth-child()&lt;/strong&gt;的参数是_an+b_，如果按照w3.org上的描述，写成中文，很可能会让人头晕，再加上笔者的文笔水平有限，所以我决定避开an+b的说法，把它拆分成5种写法共5部分来说明。&lt;/p&gt;
-
-&lt;p&gt;可惜目前能较好地支持她的只有Opera9+和Safari3+。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>30个最常用css选择器</title>
-      <link>http://tanteng.me/2011/10/css/</link>
-      <pubDate>Sat, 22 Oct 2011 04:48:33 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/css/</guid>
-      <description>&lt;div id=&#34;cnblogs_post_body&#34;&gt;
-  &lt;div id=&#34;article-detail-content&#34;&gt;
-    &lt;p&gt;
-      你也许已经掌握了id、class、后台选择器这些基本的css选择器。但这远远不是css的全部。下面向大家系统的解析css中30个最常用的选择器，包括我们最头痛的浏览器兼容性问题。掌握了它们，才能真正领略css的巨大灵活性。
-    &lt;/p&gt;
-    
-    &lt;h2&gt;
-      1. *
-    &lt;/h2&gt;
-    
-    &lt;code&gt;* {
-    margin: 0;
-    padding: 0;
-   }&lt;/code&gt;
-    
-    &lt;p&gt;
-      星状选择符会在页面上的每一个元素上起作用。web设计者经常用它将页面中所有元素的margin和padding设置为0。 *选择符也可以在子选择器中使用。
-    &lt;/p&gt;
-    
-    &lt;code&gt;#container * {
-     border: 1px solid black;
-   }&lt;/code&gt;</description>
-    </item>
-    
-    <item>
-      <title>Css设置img属性让图片水平居中，居左，居右</title>
-      <link>http://tanteng.me/2011/10/css_img/</link>
-      <pubDate>Sat, 15 Oct 2011 16:43:02 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2011/10/css_img/</guid>
-      <description>&lt;p&gt;图片的居中显示css有很多方法，但在很多情况下有的方法无效，这是件很头疼的事情，在研究wordprss程序的时候，无意发现这个系统的官方处理图片居中，居左，居右的css写法，分享一下！&lt;/p&gt;
-
-&lt;p&gt;比如一个图片的&lt;img class=&amp;#8221;alignleft &amp;#8220;&gt;，居左，设置图片的img属性左浮动；居右，设置右浮动；水平居中，设置margin:auto。后来一想，这个办法很不错，应该是一个在很多情况下都有效的方法！&lt;/p&gt;</description>
     </item>
     
   </channel>

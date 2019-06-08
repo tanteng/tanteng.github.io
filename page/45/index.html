@@ -143,16 +143,22 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/06/jquery-enter/" >jQuery回车键绑定点击事件</a>
+          <a href="/2012/11/thinkphp-sql/" >thinkphp的sql优化原则</a>
         </span>
         <span class="item__date">
-          Jun 27, 2013
+          Nov 17, 2012
         </span>
         <span >
         
-        当按下回车键时，绑定按钮点击事件代码如下，通过检测按下的键值，回车键keycode为13，判断是否是回车键，然后完成相应的方法。
+        <blockquote>
+<p>这不仅仅是针对thinkphp的，也可以针对所有mysql数据库的sql优化。摘自thinkphp官方手册的一篇文章。</p>
+</blockquote>
+
+<p>通常网站的性能瓶颈在数据库查询，如果你希望你的网站在一定阶段之内保持稳定，优化你的SQL和数据库是非常必要的一个优化环节。优化数据库是一个很大的话题，这里只是摘要一些比较关键的优化参考建议，并且需要具体分析项目的情况才能给出最合理的优化建议，所以具体的优化建议你应该咨询你公司的架构师或者DBA。</p>
         
         </span>
+        
+          ... <a class="read-more-symbol" href="/2012/11/thinkphp-sql/">➦</a>
         
         </div>
         
@@ -162,36 +168,26 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/04/php-serialize-json/" >PHP的序列化和json以及区别</a>
+          <a href="/2012/11/php-zuhe/" >php 对一组单词进行所有可能情况的排列组合</a>
         </span>
         <span class="item__date">
-          Apr 16, 2013
+          Nov 4, 2012
         </span>
         <span >
         
-        <h3 id="序列化和反序列化">序列化和反序列化</h3>
+        <p>有一个数组每个元素是长度不确定的单词：</p>
 
-<p>序列化是将变量转换为可保存或传输的字符串的过程；反序列化就是在适当的时候把这个字符串再转化成原来的变量使用。这两个过程结合起来，可以轻松地存储和传输数据，使程序更具维护性。</p>
-
-<p><code lang="php">&lt;?php
-$a = array(&lsquo;a&rsquo; =&gt; &lsquo;Apple&rsquo; ,&lsquo;b&rsquo; =&gt; &lsquo;banana&rsquo; , &lsquo;c&rsquo; =&gt; &lsquo;Coconut&rsquo;);
-//序列化数组
-$s = serialize($a);
-echo $s;
-//输出结果：a:3:{s:1:&ldquo;a&rdquo;;s:5:&ldquo;Apple&rdquo;;s:1:&ldquo;b&rdquo;;s:6:&ldquo;banana&rdquo;;s:1:&ldquo;c&rdquo;;s:7:&ldquo;Coconut&rdquo;;}
-echo &lsquo;</p>
-
-<p><br /><br />&rsquo;;
-//反序列化
-$o = unserialize($s);
-print_r($o);
-//输出结果 Array ( [a] =&gt; Apple [b] =&gt; banana [c] =&gt; Coconut )
-?&gt;
-</code></p>
+<div id="code_block_0">
+  <code lang="php">$words = array('china','mother','father','hello','welcome');</code>
+  
+  <div title="复制代码">
+    这个数组元素个数不确定，寻求用php打印这些元素的所有排列组合算法 <strong>最好能控制组合长度，比如getCombines($words,$len=0)，这个$len就是控制组合有几个元素组成的，如果为0则打印所有组合</strong>
+  </div>
+</div>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2013/04/php-serialize-json/">➦</a>
+          ... <a class="read-more-symbol" href="/2012/11/php-zuhe/">➦</a>
         
         </div>
         
@@ -201,238 +197,215 @@ print_r($o);
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2013/03/di-gui/" >已知f(1)=2;f(2)=3;f(n)=f(n-1)&#43;f(n-2);用递归和非递归方法计算F($n)的值</a>
+          <a href="/2012/11/substr_str_replace/" >使用substr函数来实现str_replace的功能</a>
         </span>
         <span class="item__date">
-          Mar 15, 2013
+          Nov 3, 2012
         </span>
         <span >
         
-        <p>有一道题是这样的：f(1)=2;f(2)=3;f(n)=f(n-1)+f(n-2),写一个foo($num)方法。采用递归和非递归两种方式，计算出值。</br></p>
+        <p>要求不使用substr函数来实现str_replace的功能，如何来做呢？</p>
 
-<p><strong>1.递归方法</strong></p>
+<p>下面是一个使用substr的版本，思路供参考。</p>
 
-<p><code lang="php">&lt;?php
-function foo($num){
-    if ($num&gt;0){
-        if($num==1){
-            return 2;
-        }
-        elseif ($num==2){
-            return 3;
-        }
-        else{
-            return foo($num-1)+foo($num-2);
-        }
+<p><code lang="php">function str_replace($search=&ldquo;, $replace=&rdquo;, $subject=&ldquo;){
+    $search_length = strlen($search);
+    $replace_length = strlen($replace);
+    $subject_length = strlen($subject);
+    if($search_length==0) return $subject;
+    if($subject_length==0) return &ldquo;;
+    if($search_length &gt; $subject_length) return $subject;</p>
+
+<pre><code>for($i=0;$i&amp;lt;$subject_length; $i++){
+    if(substr($subject, $i, $search_length)==$search){
+        $subject = substr($subject, 0, $i).$replace.substr($subject, $i+$search_length);
+        $i += $replace_length;
     }
-}</p>
-
-<p>echo foo(5);
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/03/di-gui/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/03/pdo-statement-bindparam/" >PHP PDOStatement:bindParam的一个陷阱</a>
-        </span>
-        <span class="item__date">
-          Mar 3, 2013
-        </span>
-        <span >
-        
-        <p>废话不多说, 直接看代码:</p>
-
-<p><code lang="php">&lt;?php
-$dbh = new PDO(&lsquo;mysql:host=localhost;dbname=test&rsquo;, &ldquo;test&rdquo;);</p>
-
-<p>$query = &lt;&lt;<QUERY
-  INSERT INTO `user` (`username`, `password`) VALUES (:username, :password);
-QUERY;
-$statement = $dbh->prepare($query);</p>
-
-<p>$bind_params = array(&rsquo;:username&rsquo; =&gt; &ldquo;laruence&rdquo;, &lsquo;:password&rsquo; =&gt; &ldquo;weibo&rdquo;);
-foreach( $bind_params as $key =&gt; $value ){
-    $statement-&gt;bindParam($key, $value);
 }
-$statement-&gt;execute();
-</code></p>
+return $subject;
+</code></pre>
 
-<p>请问, 最终执行的SQL语句是什么, 上面的代码是否有什么问题?</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/03/pdo-statement-bindparam/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/03/php-memcache/" >php当中的memcache应用</a>
-        </span>
-        <span class="item__date">
-          Mar 3, 2013
-        </span>
-        <span >
-        
-        <p><strong>安装memcached扩展的方法：</strong></p>
-
-<p>解压Memcached_1.2.5文档，cmd下执行memcached.exe -d -install</p>
-
-<p>将php5.3_vc6_memcachedll文档解压，将php_memcache.dll文件复制到php安装目录的ext文件目录中。</p>
-
-<p>然后在php.ini 当中填上这句话：extension=&#8221;php_memcache.dll&#8221;</p>
-
-<p>在phpinfo（）下查看，是否引用了memcache扩展。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/03/php-memcache/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/03/php-webservice/" >php的webservice示例</a>
-        </span>
-        <span class="item__date">
-          Mar 2, 2013
-        </span>
-        <span >
-        
-        <p>首先大家要简单了解了何谓webservice，接下来就做两个非常简单的例子，webservice还是逃不开server端与client端。</p>
-
-<p>我测试的环境为：apache2.2.11 php5.2.10</p>
-
-<p>做这个测试之前，要确认你的php配置文件中已经将soap扩展打开，即extension=php_soap.dll;</p>
-
-<p>OK 现在我们来体验webservice</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/03/php-webservice/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/03/unsigned/" >数据库UNSIGNED属性</a>
-        </span>
-        <span class="item__date">
-          Mar 1, 2013
-        </span>
-        <span >
-        
-        unsigned一般是无符号的意思，比如unsigned int就是无符号整数的意思，一般有符号数的最高位是符号位，表示数据的正负，不表示大小
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/03/unsigned/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2013/01/juhui/" >五年后的同学聚会,你该参加吗?</a>
-        </span>
-        <span class="item__date">
-          Jan 25, 2013
-        </span>
-        <span >
-        
-        <p>这两天又被人问到为什么留在BeBeyond。看来“梦想”这个事情，还是挺奢侈的。呵呵……所以很想和大家分享两个让我感触很深的故事。</p>
-
-<p>第一个故事来自于一本书，书名好像是《记住你是谁：15位哈佛教授震撼心灵的人生故事》（可能不是这个，我记不清了），是商务出版社出的《哈佛经典系列》，《蓝海战略》是这套丛书其中的一本。</p>
-
-<p>这个故事是这样的。哈佛商学院的毕业生每5年就会有一次同学聚会，所以一个哈佛教授问即将毕业的学生说：“5年后，你会得到一张请柬，邀请你参加同学聚会，你该去吗？”（请大家停顿一下想想，你会去吗？）似乎答案应该是“去”，对吧？有什么理由不去呢？能够叙叙旧，维护下个人人际网，说不定还能碰上些新的商业机会，多好！</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2013/01/juhui/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/12/enum-set/" >数据库字段类型Enum（枚举）和Set（集合）的区别（转）</a>
-        </span>
-        <span class="item__date">
-          Dec 20, 2012
-        </span>
-        <span >
-        
-        <p><strong>Enum枚举，Set集合。</strong></p>
-
-<p>ENUM和SET都是比较特殊的字符串数据列类型，它们的取值范围是一个预先定义好的列表。ENUM或SET数据列的取值只能从这个列表中进行选择。ENUM和SET的主要区别是：</p>
-
-<p><strong><em>ENUM只能取单值</em></strong>，它的数据列表是一个枚举集合。它的合法取值列表最多允许有65535个成员。例如：ENUM(&#8220;N&#8221;,&#8221;Y&#8221;)表示，该数据列的取值要么是&#8221;Y&#8221;，要么就是&#8221;N&#8221;。</p>
-
-<p><strong><em>SET可取多值</em></strong>。它的合法取值列表最多允许有64个成员。空字符串也是一个合法的SET值。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/12/enum-set/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/12/php-save-cookie/" >php中数组存入cookie的方法</a>
-        </span>
-        <span class="item__date">
-          Dec 19, 2012
-        </span>
-        <span >
-        
-        <p>cookie默认不能存数组，所以要采取另外的方法将数组存入cookie中。</p>
-
-<p><strong>方法一：先用serialize序列化数组，再存入COOKIE，读出来时用unserialize得到原来的数组</strong></p>
-
-<p><code lang="php">//存入<br />
-$arr = array(1,2,3);<br />
-$arr_str = serialize($arr);<br />
-setcookie(&ldquo;a&rdquo;,$arr_str);</p>
-
-<p>//取出<br />
-$arr_str = $_COOKIE[&lsquo;a&rsquo;];<br />
-$arr = unserialize($arr_str);
+<p>}
 </code></p>
         
         </span>
         
-          ... <a class="read-more-symbol" href="/2012/12/php-save-cookie/">➦</a>
+          ... <a class="read-more-symbol" href="/2012/11/substr_str_replace/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/11/php-scandir/" >使用php scandir函数遍历文件夹目录和所有文件</a>
+        </span>
+        <span class="item__date">
+          Nov 3, 2012
+        </span>
+        <span >
+        
+        使用php scandir函数遍历文件夹目录和所有文件 &lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/11/php-scandir/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/optimize-mysql/" >优化mysql数据库的方法</a>
+        </span>
+        <span class="item__date">
+          Oct 15, 2012
+        </span>
+        <span >
+        
+        <p>(1).数据库设计方面,这是DBA和Architect的责任,设计结构良好的数据库,必要的时候,去正规化(英文是这个:denormalize,中文翻译成啥我不知道),允许部分数据冗余,避免JOIN操作,以提高查询效率</p>
+
+<p>(2).系统架构设计方面,表散列,把海量数据散列到几个不同的表里面.快慢表,快表只留最新数据,慢表是历史存档.集群,主服务器Read &amp; write,从服务器read only,或者N台服务器,各机器互为Master</p>
+
+<p>(3).(1)和(2)超越PHP Programmer的要求了,会更好,不会没关系.检查有没有少加索引</p>
+
+<p>(4).写高效的SQL语句,看看有没有写低效的SQL语句,比如生成笛卡尔积的全连接啊,大量的Group By和order by,没有limit等等.必要的时候,把数据库逻辑封装到DBMS端的存储过程里面.缓存查询结果,explain每一个sql语句</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/optimize-mysql/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/mysql-index/" >mysql数据库建立索引的好处和代价</a>
+        </span>
+        <span class="item__date">
+          Oct 13, 2012
+        </span>
+        <span >
+        
+        <p>说起提高数据库性能，索引是最物美价廉的东西了。不用加内存，不用改程序，不用调sql，只要执行个正确的’create index’，查询速度就可能提高百倍千倍，这可真有诱惑力。可是天下没有免费的午餐，<strong>查询速度的提高是以插入、更新、删除的速度为代价的，这些写操作，增加了大量的I/O。</strong>由于索引的存储结构不同于表的存储，一个表的索引所占空间比数据所占空间还大的情况经常发生。</p>
+
+<p>这意味着我们在写数据库的时候做了很多额外的工作，而这个工作只是为了提高读的效率。因此，我们建立一个索引，必须保证这个索引不会“亏本”。</p>
+
+<p>**</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/mysql-index/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/array_merge/" >php合并数组的两种方法：&#43;和array_merge()的区别</a>
+        </span>
+        <span class="item__date">
+          Oct 11, 2012
+        </span>
+        <span >
+        
+        <p>PHP中两个数组合并可以使用+或者array_merge，但之间还是有区别的，而且这些区别如果了解不清楚项目中会要命的！</p>
+
+<p>主要区别是两个或者多个数组中如果出现相同键名，键名分为字符串或者数字，需要注意</p>
+
+<p>1）键名为数字时，array_merge()不会覆盖掉原来的值，但＋合并数组则会把最先出现的值作为最终结果返回，而把后面的数组拥有相同键名的那些值“抛弃”掉（不是覆盖）</p>
+
+<p>2）键名为字符时，＋仍然把最先出现的值作为最终结果返回，而把后面的数组拥有相同键名的那些值“抛弃”掉，但array_merge()此时会覆盖掉前面相同键名的值</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/array_merge/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/mysql-myisam-innodb/" >MYSQL中myisam和innodb引擎的区别</a>
+        </span>
+        <span class="item__date">
+          Oct 11, 2012
+        </span>
+        <span >
+        
+        <p>MyISAM 是MySQL中默认的存储引擎，一般来说不是有太多人关心这个东西。决定使用什么样的存储引擎是一个很tricky的事情，但是还是值我们去研究一下，这里的文章只考虑 MyISAM 和InnoDB这两个，因为这两个是最常见的。</p>
+
+<p>讲讲你对mysql myisam和innodb的认识。然后你认为他们的区别在那里？为什么？</p>
+
+<p>**</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/mysql-myisam-innodb/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/face-change/" >我们应该如何应对变化</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        <p>世事变化本无常，《谁动了我的奶酪？》告诉我们一个最简单的应对方法，那就是把跑鞋挂在脖子上，时刻准备穿上它，在千变万化的世界里奔跑追寻。</p>
+
+<p>拥有奶酪，就拥有幸福。</p>
+
+<p>奶酪对你越重要，你就越想抓住它。</p>
+
+<p>如果你不改变，你就会被淘汰。</p>
+
+<p>如果你无所畏惧，你会怎样做呢？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/face-change/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/embrace-change/" >拥抱变化</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        他不明白，为什么自己过去总是觉得变化会使事情变得更糟。而现在他认识到，变化将会使事情变得更好。 越早放弃旧的奶酪，你就越早发现新的奶酪。 ——《
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/embrace-change/">➦</a>
         
         </div>
         
@@ -887,45 +860,7 @@ $arr = unserialize($arr_str);
         
     
     
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -933,7 +868,7 @@ $arr = unserialize($arr_str);
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

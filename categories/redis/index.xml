@@ -6,10 +6,37 @@
     <description>Recent content in Redis on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jun 2018 02:43:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jul 2018 05:04:16 +0000</lastBuildDate>
     
 	<atom:link href="http://tanteng.me/categories/redis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>本周阅读清单20180723</title>
+      <link>http://tanteng.me/2018/07/reding-list-16/</link>
+      <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/07/reding-list-16/</guid>
+      <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180625</title>
+      <link>http://tanteng.me/2018/06/reding-list-12/</link>
+      <pubDate>Fri, 29 Jun 2018 13:29:54 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-12/</guid>
+      <description>1.了解 Nginx 基本概念 http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/ 2.Redis 和 I/O 多路复用 https://draveness.me/redis-io-multiplexing 3.Redis 为什么使</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180619</title>
+      <link>http://tanteng.me/2018/06/reding-list-11/</link>
+      <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-11/</guid>
+      <description>1.MySQL 索引背后的数据结构及算法原理 https://juejin.im/entry/591012d161ff4b006255b447 2.微信扫码登录原理 https://blog.csdn.net/qq_25827845/article/details/78823861 3.Redis 事务及 Watch 的实现原理 http://redisbook.readthedocs.io/en/latest/feature/transaction.html 4.Redis 事务到底是不是原子性的 https://blog.tanteng.me/2018/06/redis-transaction-atomic/ 5.LRU 缓存淘汰算法数据结构 https://zhuanlan.zhihu.com/p/34989978 6.Singleton Pattern in Go http://marcio.io/2015/07/singleton-pattern-in-go/</description>
+    </item>
     
     <item>
       <title>Redis 的事务到底是不是原子性的</title>
@@ -17,11 +44,61 @@
       <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/06/redis-transaction-atomic/</guid>
-      <description>&lt;p&gt;ACID 中关于原子性的定义：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被恢复（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>ACID 中关于原子性的定义： 原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180604</title>
+      <link>http://tanteng.me/2018/06/reding-list-10/</link>
+      <pubDate>Mon, 18 Jun 2018 14:36:24 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-10/</guid>
+      <description>1.深入介绍 Golang 中的 bufio.Scanner https://zhuanlan.zhihu.com/p/37673679 2.Redis 的通信协议 http://redisdoc.com/topic/protocol.html 3.用 Redis 实现支持优先级的消息队列 https://www.cnblogs.com/laozhbook/p/redis_queue.html 4.Go HTTP 服务器编程基础 http://cizixs.com/2016/08/17/golang-http-server-side 5.你真的了解 gzip 吗？ https://zhuanlan.zhihu.com/p/24764131</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180528</title>
+      <link>http://tanteng.me/2018/06/reding-list-9/</link>
+      <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/06/reding-list-9/</guid>
+      <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180423</title>
+      <link>http://tanteng.me/2018/04/reding-list/</link>
+      <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list/</guid>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180416</title>
+      <link>http://tanteng.me/2018/04/reding-list-4/</link>
+      <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-4/</guid>
+      <description>1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180402</title>
+      <link>http://tanteng.me/2018/04/reding-list-2/</link>
+      <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
+      <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180326</title>
+      <link>http://tanteng.me/2018/03/reding-list-5/</link>
+      <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
+      
+      <guid>http://tanteng.me/2018/03/reding-list-5/</guid>
+      <description>1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩</description>
     </item>
     
     <item>

@@ -143,232 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/05/python-name/" >Python中__name__的含义</a>
-        </span>
-        <span class="item__date">
-          May 8, 2015
-        </span>
-        <span >
-        
-        <p>学习python中会发现很多python脚本都会有一句话：if __name__ == &#8216;__main__&#8217;。这有点像C，java中的主函数。那么Python中__name__具有什么含义呢？网上很多说法和教程，但是百闻不如一见，要自己动手去发现。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-name/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/sae-django/" >在SAE上部署django</a>
-        </span>
-        <span class="item__date">
-          May 5, 2015
-        </span>
-        <span >
-        
-        <p>新浪SAE免费了，每月5G流量用不完，用来折腾一下Python，SAE支持PHP、Java、Python三大语言，SAE上的Python环境提供了django WEB开发框架，看看如何在SAE上部署django吧。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/sae-django/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-guide-chinese/" >python中文基础教程</a>
-        </span>
-        <span class="item__date">
-          May 5, 2015
-        </span>
-        <span >
-        
-        python中文基础教程： http://www.pythondoc.com/pythontutorial3/index.html
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/redis-php-array/" >Redis如何存取PHP多维数组</a>
-        </span>
-        <span class="item__date">
-          Apr 21, 2015
-        </span>
-        <span >
-        
-        <p>Redis本身不支持存取PHP数组的数据结构，但是如何存取PHP的数组呢？可以把数组序列化，以字符串的形式缓存到Redis中。</p>
-
-<p>其实很多框架或封装好的Redis类中，都做好了自动转化，直接存数据就可以了。如代码：</p>
-
-<p><code>public function testSavePHPArray() {
-    $array = [&lsquo;array1&rsquo;,&lsquo;array2&rsquo;,[&lsquo;array3key&rsquo;=&gt;&lsquo;array3value&rsquo;]];
-    $redis = RedisHandle::getInstance();
-    $redis-&gt;set(&lsquo;save_php_array_test&rsquo;,$array);
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/redis-php-array/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/jquery-best-practice/" >jQuery最佳实践</a>
-        </span>
-        <span class="item__date">
-          Apr 16, 2015
-        </span>
-        <span >
-        
-        jQuery最佳实践 本文介绍了jQuery的不同写法的效率，开发中可以借鉴这些经验，提高前端运行性能。 阮一峰博客：http://www.ru
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/jquery-best-practice/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/terminal-python3/" >在mac终端中如何切换到Python3</a>
-        </span>
-        <span class="item__date">
-          Apr 12, 2015
-        </span>
-        <span >
-        
-        <p>在Mac中自带了Python 2.7的版本，因此在终端中输入&#8221;python&#8221;命令默认进入了Python2.7的环境，那么如何在mac终端中如何切换到Python3呢？</p>
-
-<p>首先你得去Python官网下载mac版的Python 3.4并安装。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/terminal-python3/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/jquery-eval-json/" >jQuery用eval解析json字符串</a>
-        </span>
-        <span class="item__date">
-          Apr 11, 2015
-        </span>
-        <span >
-        
-        <p>这里以jquery异步获取的数据类型——json对象和字符串为依据，分别介绍两种方式获取到的结果处理方式。</p>
-
-<p>1.对于服务器返回的JSON字符串，如果jquery异步请求没做类型说明，或者以字符串方式接受，那么需要做一次对象化处理，方式不是太麻烦，就是将该字符串放于eval()中执行一次。这种方式也适合以普通javascipt方式获取json对象，以下举例说明：</p>
-
-<p><code class="lang:js decode:true">var dataObj=eval(&ldquo;(&rdquo;+data+&ldquo;)&rdquo;);//转换为json对象
-alert(dataObj.root.length);//输出root的子对象数量
-$.each(dataObj.root,fucntion(idx,item){
-if(idx==0){
-return true;
-}</p>
-
-<p>//输出每个root子对象的名称和值
-alert(&ldquo;name:&ldquo;+item.name+&rdquo;,value:&ldquo;+item.value);
-})</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/jquery-eval-json/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/jquery-grep/" >jQuery基础之grep用法示例</a>
-        </span>
-        <span class="item__date">
-          Apr 10, 2015
-        </span>
-        <span >
-        
-        <p>看看jquery的grep的用法代码示例：</p>
-
-<p><code class="lang:js decode:true">&lt;script&gt;
-var arr = [ 1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1 ];
-$( &ldquo;div&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
-
-<p>arr = jQuery.grep(arr, function( n, i ) {
-  return ( n !== 5 &amp;&amp; i &gt; 4 );
-});
-$( &ldquo;p&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
-
-<p>arr = jQuery.grep(arr, function( a ) {
-  return a !== 9;
-});</p>
-
-<p>$( &ldquo;span&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );
-&lt;/script&gt;</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/jquery-grep/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/mysql-commit/" >什么时候使用mysql事务？</a>
-        </span>
-        <span class="item__date">
-          Apr 7, 2015
-        </span>
-        <span >
-        
-        <p>突然想到一个问题，mysql中我们经常用到事务，比如一次向几张表插入内容，如果中间出错了可以回滚，但是实际开发中，像这种一次可能向多个数据表写入数据的情况，并没有采用事务。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/mysql-commit/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/04/js-null-undefined/" >js中Null，undefined，””，0，false的区别</a>
         </span>
         <span class="item__date">
@@ -383,6 +157,197 @@ $( &ldquo;p&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/04/js-null-undefined/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/jquery-performance/" >jquery性能优化技巧</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2015
+        </span>
+        <span >
+        
+        <p>jquery是在客户端执行，相对于网站后端开发语言来说，往往不强调js，jquery性能优化的概念，但是在页面非常复杂，各种js，ajax请求多的情况下，优化jquery的性能可以大大提高用户体验，加快页面的响应速度，还是非常有必要的。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/jquery-performance/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/jsonp-ajax/" >jsonp解决ajax跨域代码示例</a>
+        </span>
+        <span class="item__date">
+          Apr 1, 2015
+        </span>
+        <span >
+        
+        <p>有两个子域名，a.xx.com和b.xx.com，现在我在a.xx.com一个页面中发送ajax请求b.xx.com一个控制器中的方法，希望得到返回数据，但是返回状态302，应该是跨域问题没有解决。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/jsonp-ajax/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/js-bibao/" >js闭包之作用域链</a>
+        </span>
+        <span class="item__date">
+          Mar 30, 2015
+        </span>
+        <span >
+        
+        在理解闭包以前.最好能先理解一下作用域链的含义,简单来说,作用域链就是函数在定义的时候创建的,用于寻找使用到的变量的值的一个索引,而他内部的
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/js-bibao/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/ying-hua/" >满地樱花堆积</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2015
+        </span>
+        <span >
+        
+        <p>今天武汉下雨，和亲朋好友一起去武大赏樱花，今天也是武大赏樱花的最佳时间的最后一天。我们是下午5点去的，没有收门票，坐校车来到樱花大道，但是很多樱花都谢了，满地樱花堆积。</p>
+
+<p><img src="http://www.dayecn.com/upload/2015/03/20150329082206964.jpg" alt="武大赏樱" data-bd-imgshare-binded="1" /></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/ying-hua/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/sequel-import/" >sequel导入sql文件的时候提示错误</a>
+        </span>
+        <span class="item__date">
+          Mar 21, 2015
+        </span>
+        <span >
+        
+        <p>sequel 导入 sql 文件的时候提示错误：An error occurred when reading the file, as it could not be read in the encoding you selected utf8.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/sequel-import/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/mamp-mysql-pass/" >MAMP如何修改mysql密码</a>
+        </span>
+        <span class="item__date">
+          Mar 14, 2015
+        </span>
+        <span >
+        
+        <p>MAMP是OS X系统下常用的PHP集成环境，如何修改MAMP登陆mysql的密码呢？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/mamp-mysql-pass/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/change-things/" >你不知道事情是在变化的吗</a>
+        </span>
+        <span class="item__date">
+          Mar 14, 2015
+        </span>
+        <span >
+        
+        有一次做梦，我现在已经记不清楚做了什么梦，但是这个梦结尾是一个结论：你不知道事情是在变化的吗？我觉得这句话反应了现实，告诉我要以变化的眼光看
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/change-things/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/beautiful-scenery-in-dream/" >昨夜梦见的美景</a>
+        </span>
+        <span class="item__date">
+          Mar 14, 2015
+        </span>
+        <span >
+        
+        昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/beautiful-scenery-in-dream/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/mac-sublime-package-control/" >mac下sublime安装package control组件命令</a>
+        </span>
+        <span class="item__date">
+          Mar 11, 2015
+        </span>
+        <span >
+        
+        <p>在mac下安装sublime插件，首先要安装package control组件，需要按contro＋｀ 键调出控制台，然后输入以下针对OS X系统的命令即可。必须在联网模式下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/mac-sublime-package-control/">➦</a>
         
         </div>
         
@@ -839,43 +804,7 @@ $( &ldquo;p&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -883,7 +812,7 @@ $( &ldquo;p&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

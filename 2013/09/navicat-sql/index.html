@@ -22,22 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用navicat导入sql大文件"/>
-<meta name="twitter:description" content="我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。
-
-我用同样的方法导入sae其他的应用的sql文件，都是正常的。
-
-报错截图：
-
-"/>
+<meta name="twitter:description" content="在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。 解决办法： try using these commands from mysql terminal set global max_allowed_packet=1000000000; set"/>
 
 <meta property="og:title" content="用navicat导入sql大文件" />
-<meta property="og:description" content="我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。
-
-我用同样的方法导入sae其他的应用的sql文件，都是正常的。
-
-报错截图：
-
-" />
+<meta property="og:description" content="在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。 解决办法： try using these commands from mysql terminal set global max_allowed_packet=1000000000; set" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2013/09/navicat-sql/" />
 <meta property="article:published_time" content="2013-09-05T16:21:06&#43;00:00"/>
@@ -188,26 +176,18 @@
   
   
   <div class="post">
-    <p>我在SAE上用自带的Deferred Jobs工具把我的wordpress博客数据库导出来了，sql格式的，保证完整。我用本机navicat新建了一个数据库，编码都是utf8，然后运行sql文件导入，每次运行一会儿就卡住了，只能导入一小部分。</p>
+    <p>在 SAE 上用自带的 Deferred Jobs 工具把 wordpress 博客数据库导出 sql 文件。然而每次通过 Navicat 导入每次运行一会儿就卡住了，只能导入一小部分。</p>
 
-<p>我用同样的方法导入sae其他的应用的sql文件，都是正常的。</p>
-
-<p>报错截图：</p>
-
-<p><img class="attachment-full" src="http://tanteng-wordpress.stor.sinaapp.com/uploads/2013/09/201304181305293855.pngpsid1" alt="201304181305293855" width="408" height="354" /></p>
-
-<p>现在知道了，把滚动条一直滚到最前面，有错误提示：ERROR: 2006 MySQL server has gone away Error: 1153 Got a packet bigger than &#8216;max_allowed_packet&#8217; bytes</p>
-
-<p>然后用谷歌搜索，出来很多英文网站，点开一篇进去：</p>
-
-<p><a href="http://stackoverflow.com/questions/6921852/please-help-me-to-get-rid-of-this-errors" target="_blank" rel="nofollow"><a href="http://stackoverflow.com/questions/6921852/please-help-me-to-get-rid-of-this-errors">http://stackoverflow.com/questions/6921852/please-help-me-to-get-rid-of-this-errors</a></a></p>
+<p>解决办法：</p>
 
 <p>try using these commands from mysql terminal</p>
 
-<p><code lang="mysql">set global max_allowed_packet=1000000000;
-set global net_buffer_length=1000000;</code></p>
+<pre><code class="language-mysql">set global max_allowed_packet=1000000000; 
+set global net_buffer_length=1000000;
+</code></pre>
 
-<p>在mysql命令行下输入这两句，增加最大允许字节，看来要学会用谷歌，还要学好英文啊！！</p>
+<p>在 mysql 命令行下执行这两条语句，增加最大允许字节，就可以导入大的 sql 文件了。</p>
+
   </div>
   
 

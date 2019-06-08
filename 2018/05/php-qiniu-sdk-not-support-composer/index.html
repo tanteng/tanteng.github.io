@@ -22,60 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在旧有 PHP 系统上集成七牛云 PHP-SDK"/>
-<meta name="twitter:description" content="最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。
-
-&lt;?php
-
-use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;
-
-//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&lsquo;classLoader&rsquo;);
-
-function classLoader($class)
-{
-    $path = str_replace(&rsquo;\&rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &lsquo;vendor/&rsquo; . $path . &lsquo;.php&rsquo;;
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}
-
-require_once SDK_PATH . &lsquo;vendor/Qiniu/functions.php&rsquo;;
-
-class xxxx extends baseIndex{
-
-//
-
-}"/>
+<meta name="twitter:description" content="最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不"/>
 
 <meta property="og:title" content="在旧有 PHP 系统上集成七牛云 PHP-SDK" />
-<meta property="og:description" content="最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。
-
-&lt;?php
-
-use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;
-
-//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&lsquo;classLoader&rsquo;);
-
-function classLoader($class)
-{
-    $path = str_replace(&rsquo;\&rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &lsquo;vendor/&rsquo; . $path . &lsquo;.php&rsquo;;
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}
-
-require_once SDK_PATH . &lsquo;vendor/Qiniu/functions.php&rsquo;;
-
-class xxxx extends baseIndex{
-
-//
-
-}" />
+<meta property="og:description" content="最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/" />
 <meta property="article:published_time" content="2018-05-28T11:32:34&#43;00:00"/>
@@ -207,10 +157,10 @@ class xxxx extends baseIndex{
           in
           
           
-              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              <a class="badge badge-category" href="/categories/php">PHP</a>
               •
           
-              <a class="badge badge-category" href="/categories/php">PHP</a>
+              <a class="badge badge-category" href="/categories/%E4%B8%83%E7%89%9B%E4%BA%91">七牛云</a>
               
           
       
@@ -228,51 +178,52 @@ class xxxx extends baseIndex{
   <div class="post">
     <p>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不依赖其他的包，于是事情就变得简单了，只需要提供一个 sql_autoload_register 方法注册自动加载机制就可以使用了。</p>
 
-<p><code class="lang:php decode:true ">&lt;?php</p>
+<pre><code class="language-php">&lt;?php
 
-<p>use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;</p>
+use Qiniu\Auth;
+use Qiniu\Storage\UploadManager;
 
-<p>//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
-spl_autoload_register(&lsquo;classLoader&rsquo;);</p>
+//本框架不支持 composer，为了用七牛云，又不敢在全局用 sql_autoload_register，目前就在当前活动引入七牛云的 SDK
+spl_autoload_register('classLoader');
 
-<p>function classLoader($class)
+function classLoader($class)
 {
-    $path = str_replace(&rsquo;\&rsquo;, DIRECTORY_SEPARATOR, $class);
-    $file = SDK_PATH . &lsquo;vendor/&rsquo; . $path . &lsquo;.php&rsquo;;
+    $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $file = SDK_PATH . 'vendor/' . $path . '.php';
     if (file_exists($file)) {
         require_once $file;
     }
-}</p>
+}
 
-<p>require_once SDK_PATH . &lsquo;vendor/Qiniu/functions.php&rsquo;;</p>
+require_once SDK_PATH . 'vendor/Qiniu/functions.php';
 
-<p>class xxxx extends baseIndex{</p>
 
-<p>//</p>
+class xxxx extends baseIndex{
 
-<p>}</code></p>
+//
 
-<p>新建一个 vendor 文件夹存放第三方包，把七牛云 PHP-SDK 下载并复制到该目录下，如图所示。</p>
+}
+</code></pre>
 
-<p><img class="aligncenter size-full wp-image-12330" src="https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180528192934.png" alt="" width="275" height="441" /></p>
+<p>新建一个 vendor 文件夹存放第三方包，把七牛云 PHP-SDK 下载并复制到该目录下。</p>
 
 <p>因为是某个需求使用，暂时不考虑全局使用，那么就在需要用的类文件里使用 sql_autoload_register 注册自动加载机制即可，如上面代码所示。</p>
 
 <p>这样就可以开始使用七牛云的 PHP-SDK 了。本文仅为在旧系统使用开源包提供一种思路和方式。</p>
+
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/2018/05/laravel-datatables/" class="navigation-prev">
+    <a href="/2018/05/reding-list-8/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">在 Laravel 中使用 DataTables 插件</span>
+      <span class="navigation-tittle">本周阅读清单20180514</span>
     </a>
     
     
-    <a href="/2018/05/laravel-5-5-gulp/" class="navigation-next">
-      <span class="navigation-tittle">在 Laravel 中使用 gulp 构建前端资源</span>
+    <a href="/2018/05/vscode-debug-golang/" class="navigation-next">
+      <span class="navigation-tittle">使用 VS Code 断点调试 golang 项目</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     

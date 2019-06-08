@@ -24,9 +24,8 @@
 <meta name="twitter:title" content="PHP intval 转换浮点数精度丢失问题"/>
 <meta name="twitter:description" content="在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：
 
-&lt;?php
-$n=&ldquo;19.99&rdquo;;
-print intval($n*100); // prints 1998
+$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
+
 
 解决办法：
 
@@ -34,16 +33,17 @@ print intval($n*100); // prints 1998
 
 print intval(strval($n*100)); // prints 1999
 
+
 2.使用 round 函数替代 floatval
 
-php -r &ldquo;echo round(19.99*100);&rdquo;"/>
+php -r &quot;echo round(19.99*100);&quot;
+"/>
 
 <meta property="og:title" content="PHP intval 转换浮点数精度丢失问题" />
 <meta property="og:description" content="在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：
 
-&lt;?php
-$n=&ldquo;19.99&rdquo;;
-print intval($n*100); // prints 1998
+$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
+
 
 解决办法：
 
@@ -51,9 +51,11 @@ print intval($n*100); // prints 1998
 
 print intval(strval($n*100)); // prints 1999
 
+
 2.使用 round 函数替代 floatval
 
-php -r &ldquo;echo round(19.99*100);&rdquo;" />
+php -r &quot;echo round(19.99*100);&quot;
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2017/10/php-intval-precision/" />
 <meta property="article:published_time" content="2017-10-15T08:15:42&#43;00:00"/>
@@ -206,29 +208,29 @@ php -r &ldquo;echo round(19.99*100);&rdquo;" />
   <div class="post">
     <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
 
-<p><code class="lang:php decode:true ">&lt;?php
-$n=&ldquo;19.99&rdquo;;
-print intval($n*100); // prints 1998</code></p>
+<pre><code>$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
+</code></pre>
 
 <h3 id="解决办法">解决办法：</h3>
 
 <p>1.转换成字符串再 intval</p>
 
-<p><code>print intval(strval($n*100)); // prints 1999</code></p>
+<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
+</code></pre>
 
 <p>2.使用 round 函数替代 floatval</p>
 
-<p><code class="lang:php decode:true ">php -r &ldquo;echo round(19.99*100);&rdquo;</code></p>
+<pre><code class="language-php">php -r &quot;echo round(19.99*100);&quot;
+</code></pre>
 
 <p>3.先转换成字符串再取整</p>
 
-<p><code>print intval(strval($n*100)); // prints 1999</code></p>
+<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
+</code></pre>
 
 <p>4.使用 bc 系列函数</p>
 
 <p>具体原因：<a href="http://www.laruence.com/2013/03/26/2884.html" target="_blank" rel="noopener nofollow"><a href="http://www.laruence.com/2013/03/26/2884.html">http://www.laruence.com/2013/03/26/2884.html</a></a></p>
-
-<p>&nbsp;</p>
   </div>
   
 

@@ -143,389 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/08/mod-concat-js-css/" >使用mod_concatx扩展合并js,css</a>
-        </span>
-        <span class="item__date">
-          Aug 11, 2015
-        </span>
-        <span >
-        
-        <p>PHP的mod_concatx模块扩展可以方便的把多个js，css文件合并成一个文件，以加速页面的渲染，减少请求时间和服务器压力。mod_concatx模块是在mod_concat基础上修改的。</p>
-
-<p><code class="lang:xhtml decode:true ">&lt;link rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo; media=&ldquo;screen&rdquo; ←
-    href=&ldquo;<a href="http://lemon.holsman.net:8001/cdn/??music2.css,common.css&quot;">http://lemon.holsman.net:8001/cdn/??music2.css,common.css&quot;</a> /&gt;
-&lt;script type=&ldquo;text/javascript&rdquo;  ←
-    src=&ldquo;<a href="http://lemon.holsman.net:8001/cdn/??music2.js,mp.js,dalai_llama.js,ratings_widget.js,widget_config.js,common.js&quot;&gt;&lt;/script&gt;">http://lemon.holsman.net:8001/cdn/??music2.js,mp.js,dalai_llama.js,ratings_widget.js,widget_config.js,common.js&quot;&gt;&lt;/script&gt;</a>
-&lt;script language=&ldquo;javascript&rdquo; type=&ldquo;text/javascript&rdquo; ←
-    src=&ldquo;<a href="http://tangerine.holsman.net:8001/o/??journals_blog_this.js,adsWrapper.js,flashtag.js,feeds_subscribe.js&quot;&gt;&lt;/script&gt;">http://tangerine.holsman.net:8001/o/??journals_blog_this.js,adsWrapper.js,flashtag.js,feeds_subscribe.js&quot;&gt;&lt;/script&gt;</a>
-&lt;script type=&ldquo;text/javascript&rdquo;  ←
-    src=&ldquo;<a href="http://orange.holsman.net:8001/digital/??dm_client_aol.js,cannae.js&quot;&gt;&lt;/script&gt;">http://orange.holsman.net:8001/digital/??dm_client_aol.js,cannae.js&quot;&gt;&lt;/script&gt;</a></code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/mod-concat-js-css/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/php-yield/" >PHP5.5的迭代生成器</a>
-        </span>
-        <span class="item__date">
-          Aug 8, 2015
-        </span>
-        <span >
-        
-        <p>PHP5.5引入了迭代生成器的概念，迭代的概念早就在PHP有了，但是迭代生成器是PHP的一个新特性，这跟python3中的迭代生成器类似，看看PHP5.5的迭代生成器如何定义。</p>
-
-<p><code class="lang:php decode:true ">&lt;?php
-    function xrange($start, $end, $step = 1) {
-        for ($i = $start; $i &lt;= $end; $i += $step) {
-            yield $i;
-        }
-    }</p>
-
-<pre><code>foreach (xrange(1, 1000000) as $num) {
-    echo $num, &quot;\n&quot;;
-}&lt;/code&gt;
-</code></pre>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/php-yield/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/php5-6-curl/" >PHP5.6 curl去除@语法</a>
-        </span>
-        <span class="item__date">
-          Aug 4, 2015
-        </span>
-        <span >
-        
-        <p>在一个传图方法中用到了curl上传文件，在文件名前加上@语法表示上传文件，这在PHP5.3中是正常的，但是在PHP5.6中彻底废除了@语法，导致上传图片无法使用。</p>
-
-<p><code class="lang:php mark:5 decode:true ">//支持远程文件上传
-if(empty($urlinfo[&lsquo;host&rsquo;])){
-    $tmp_name=dirname($file[&lsquo;tmp_name&rsquo;]).&lsquo;/&rsquo;.$file[&lsquo;title&rsquo;].&lsquo;.&rsquo;.$file[&lsquo;extension&rsquo;];//加上文件后缀
-    rename($file[&lsquo;tmp_name&rsquo;],$tmp_name);
-    $fields[&lsquo;file&rsquo;] = &lsquo;@&rsquo;.$tmp_name;//加@符号curl就会把它当成是文件上传处理
-}else{
-    $fields[&lsquo;url&rsquo;]=$file[&lsquo;tmp_name&rsquo;];
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/php5-6-curl/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/js-optimization/" >JS代码优化及规范</a>
-        </span>
-        <span class="item__date">
-          Aug 4, 2015
-        </span>
-        <span >
-        
-        <p>1.不能用页面的index=0 1 2来寻找对应的值（防止列表结构（增加或者删除列）发生变化，代码就要做相应的修改）</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" target="_blank"><img class="alignnone wp-image-8477 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" alt="js1" width="484" height="332" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png 484w, https://blog.tanteng.me/wp-content/uploads/2015/08/js1-300x206.png 300w" sizes="(max-width: 484px) 100vw, 484px" /></a></p>
-
-<p>在标签中对每列的单元格添加唯一的标识。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/js-optimization/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/php-shell-php_eol/" >PHP在shell里面换行使用PHP_EOL</a>
-        </span>
-        <span class="item__date">
-          Aug 1, 2015
-        </span>
-        <span >
-        
-        <p>PHP在shell里面换行使用PHP_EOL，shell不认识<br><br/>之类的html标记。或者使用PHP_EOL (string)常量，可以取得运行系统中换行符。linux中是\n, win中是\r\n, mac中是\r.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/php-shell-php_eol/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python-gridfs-objectid/" >Python根据ObjectId下载GridFS文档</a>
-        </span>
-        <span class="item__date">
-          Jul 30, 2015
-        </span>
-        <span >
-        
-        <p>使用MongoDB的GridFS存取文件，如何用Python根据ObjectId来下载指定的文档呢？这里需要用到bson.objectid模块中的方法来生成MongoDB的ObjectId.</p>
-
-<p>查询语句：</p>
-
-<p><code class="lang:python decode:true ">file = fs.find_one({&rsquo;_id&rsquo;: ObjectId(&lsquo;55b98b70498e38fdda304209&rsquo;)})</code></p>
-
-<p>这里ObjectId需要引入bson.objectid才能使用。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-gridfs-objectid/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/sae-cron/" >在SAE执行PHP计划任务</a>
-        </span>
-        <span class="item__date">
-          Jul 23, 2015
-        </span>
-        <span >
-        
-        <p>在SAE中运行PHP计划任务，是编辑APPNAME/1/config.yaml文件(APPNAME是你的应用名，1代表版本号)，输入cron作业的描述。</p>
-
-<p>目前SAE平台支持使用类自然语言或者unix crontab语言描述cron任务。</p>
-
-<p>本页有两个示例代码，将下面的任意一种config.yaml保存后，放置于应用目录中即可。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/sae-cron/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/unix-timestamp/" >不同语言的Unix时间戳函数</a>
-        </span>
-        <span class="item__date">
-          Jul 21, 2015
-        </span>
-        <span >
-        
-        <p>以下是不同语言的Unix时间戳(Unix timestamp)函数：</p>
-
-<table>
-  <tr>
-    <td class="uttd">
-      Java
-    </td>
-    
-    <td>
-      time
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      JavaScript
-    </td>
-    
-    <td>
-      Math.round(new Date().getTime()/1000)<br /> getTime()返回数值的单位是毫秒
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      Microsoft .NET / C#
-    </td>
-    
-    <td>
-      epoch = (DateTime.Now.ToUniversalTime().Ticks &#8211; 621355968000000000) / 10000000
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      MySQL
-    </td>
-    
-    <td>
-      SELECT unix_timestamp(now())
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      Perl
-    </td>
-    
-    <td>
-      time
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      PHP
-    </td>
-    
-    <td>
-      time()
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      PostgreSQL
-    </td>
-    
-    <td>
-      SELECT extract(epoch FROM now())
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      Python
-    </td>
-    
-    <td>
-      先 import time 然后 time.time()
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      Ruby
-    </td>
-    
-    <td>
-      获取Unix时间戳：Time.now 或 Time.new<br /> 显示Unix时间戳：Time.now.to_i
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      SQL Server
-    </td>
-    
-    <td>
-      SELECT DATEDIFF(s, &#8216;1970-01-01 00:00:00&#8217;, GETUTCDATE())
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      Unix / Linux
-    </td>
-    
-    <td>
-      date +%s
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      VBScript / ASP
-    </td>
-    
-    <td>
-      DateDiff(&#8220;s&#8221;, &#8220;01/01/1970 00:00:00&#8221;, Now())
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="uttd">
-      其他操作系统<br /> (如果Perl被安装在系统中)
-    </td>
-    
-    <td>
-      命令行状态：perl -e &#8220;print time&#8221;
-    </td>
-  </tr>
-</table>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/unix-timestamp/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/phpstorm-9-0%E6%B3%A8%E5%86%8C%E7%A0%81license-key/" >PhpStorm 9.0注册码（License Key）</a>
-        </span>
-        <span class="item__date">
-          Jul 17, 2015
-        </span>
-        <span >
-        
-        <p>PhpStorm注册码</p>
-
-<p>User Name:</p>
-
-<p>EMBRACE</p>
-
-<p>License Key:</p>
-
-<p>===== LICENSE BEGIN =====</p>
-
-<p>43136-12042010</p>
-
-<p>00002UsvSON704l&#8221;dILe1PVx3y4&#8243;B3</p>
-
-<p>49AU6oSDJrsjE8nMOQh&#8221;8HTDJHIUUh</p>
-
-<p>gd1BebYc5U&#8221;6OxDbVsALB4Eb10PW8&#8243;</p>
-
-<p>===== LICENSE END =====</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/phpstorm-9-0%E6%B3%A8%E5%86%8C%E7%A0%81license-key/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/07/python-mysql/" >Python连接Mysql常用的库（mysqlclient示例）</a>
         </span>
         <span class="item__date">
@@ -538,6 +155,238 @@ if(empty($urlinfo[&lsquo;host&rsquo;])){
         </span>
         
           ... <a class="read-more-symbol" href="/2015/07/python-mysql/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python-encoding-style/" >Python编码风格</a>
+        </span>
+        <span class="item__date">
+          Jul 14, 2015
+        </span>
+        <span >
+        
+        <p><span id="131">对于 Python 而言， <span id="index-7"> </span> PEP 8 已成为大多数项目遵循的风格指南；</span><span id="132">它给出了一个高度可读，视觉友好的编码风格。</span><span id="133">每个 Python 开发者应该阅读一下；</span><span id="134">这里是为你提取出来的最重要的要点：</span></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python-encoding-style/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python3-sys-argv/" >Python3接收命令行参数sys.argv用法</a>
+        </span>
+        <span class="item__date">
+          Jul 13, 2015
+        </span>
+        <span >
+        
+        <p>Python3中，使用sys.argv可以接收命令行传入的参数，需要import sys模块，sys.argv第一个参数是文件名，无需定义，第二参数开始是命令行输入的参数，以空格隔开。</p>
+
+<p>举例如下，运行sys_argv.py脚本附带两个参数分别是run1和run2，运行结果如下：</p>
+
+<p><code class="lang:python decode:true">&gt;&gt;&gt;python3 sys_argv.py run1 run2
+I&rsquo;m action1
+I&rsquo;m action2</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python3-sys-argv/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python-self/" >为什么Python类的方法需要加self作为第一个参数？</a>
+        </span>
+        <span class="item__date">
+          Jul 12, 2015
+        </span>
+        <span >
+        
+        <p>为什么Python类的方法需要加self作为第一个参数？比如Python类的方法都是这样定义的：</p>
+
+<p><code>class CharField(Field):
+    description = _(&ldquo;String (up to %(max_length)s)&ldquo;)</p>
+
+<pre><code>def __init__(self, *args, **kwargs):
+    super(CharField, self).__init__(*args, **kwargs)
+    self.validators.append(validators.MaxLengthValidator(self.max_length))
+
+def check(self, **kwargs):
+    errors = super(CharField, self).check(**kwargs)
+    errors.extend(self._check_max_length_attribute(**kwargs))
+    return errors&lt;/code&gt;
+</code></pre>
+
+<p>看到一篇文章讲这个问题，转载过来了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python-self/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/local-variable-referenced-before-assignment/" >local variable ‘count’ referenced before assignment</a>
+        </span>
+        <span class="item__date">
+          Jul 11, 2015
+        </span>
+        <span >
+        
+        <p>在写一个Python闭包函数实现计数器功能的时候，出现了报错：local variable &#8216;count&#8217; referenced before assignment.这是怎么回事呢？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/local-variable-referenced-before-assignment/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python-closure/" >Python函数中的函数(闭包示例)</a>
+        </span>
+        <span class="item__date">
+          Jul 11, 2015
+        </span>
+        <span >
+        
+        <p>Python函数中也可以定义函数，也就是闭包。跟js中的闭包概念其实差不多，举个Python中闭包的例子。</p>
+
+<p><code class="lang:python decode:true">def make_adder(addend):
+    def adder(augend):
+        return augend + addend
+    return adder</p>
+
+<p>p = make_adder(23)
+q = make_adder(44)</p>
+
+<p>print(p(100))
+print(q(100))</code></p>
+
+<p>运行结果是：123和144.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python-closure/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python-args-kwargs/" >Python3可变参数*args,**kwargs及区别</a>
+        </span>
+        <span class="item__date">
+          Jul 11, 2015
+        </span>
+        <span >
+        
+        <p>在Python的函数参数中经常可以看到*args和**kwargs这样的写法，这是Python的魔法参数，也就是可变参数，它支持传入多个参数，下面看看它们的区别。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python-args-kwargs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python3-ascii-letters/" >Python3基础:String模块ascii_letters和digits</a>
+        </span>
+        <span class="item__date">
+          Jul 11, 2015
+        </span>
+        <span >
+        
+        <p>本文介绍Python3中String模块ascii_letters和digits方法，其中ascii_letters是生成所有字母，从a-z和A-Z,digits是生成所有数字0-9.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python3-ascii-letters/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python3-floor-division/" >Python3中的真除和Floor除法</a>
+        </span>
+        <span class="item__date">
+          Jul 10, 2015
+        </span>
+        <span >
+        
+        <p>在Python3中，除法运算有两种，一种是真除，一种是Floor除法，这两者是有分别的，分别如代码所示：</p>
+
+<p><code class="lang:python decode:true python">&gt;&gt;&gt;<sup>10</sup>&frasl;<sub>4</sub>
+2.5
+&gt;&gt;&gt;10//4
+2
+&gt;&gt;&gt;<sup>10</sup>&frasl;<sub>4</sub>.0
+2.5
+&gt;&gt;&gt;10//4.0
+2.0</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python3-floor-division/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python-mongodb-save-file/" >Python保存MongoDB上的文件到本地</a>
+        </span>
+        <span class="item__date">
+          Jul 10, 2015
+        </span>
+        <span >
+        
+        MongoDB上的文档通过GridFS来操作，Python也可以通过pymongo连接MongoDB数据库，使用pymongo模块的grid
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python-mongodb-save-file/">➦</a>
         
         </div>
         
@@ -994,43 +843,7 @@ if(empty($urlinfo[&lsquo;host&rsquo;])){
         
     
     
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/51/">51</a></li>
+    <li class="page-item"><a class="page-link" href="/page/47/">47</a></li>
     
     
     <li class="page-item">
@@ -1038,7 +851,7 @@ if(empty($urlinfo[&lsquo;host&rsquo;])){
     </li>
     
     <li class="page-item">
-        <a href="/page/51/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/47/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
