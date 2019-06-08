@@ -22,14 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Laravel 中间件原理"/>
-<meta name="twitter:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。
-
-本文就来探究 Laravel 中间件的实现原理，看 Laravel 如何把 PHP 的 array_reduce 函数和闭包用到了极致。"/>
+<meta name="twitter:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki"/>
 
 <meta property="og:title" content="Laravel 中间件原理" />
-<meta property="og:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。
-
-本文就来探究 Laravel 中间件的实现原理，看 Laravel 如何把 PHP 的 array_reduce 函数和闭包用到了极致。" />
+<meta property="og:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2018/07/understand-laravel-middleware/" />
 <meta property="article:published_time" content="2018-07-29T16:25:08&#43;00:00"/>
@@ -175,7 +171,7 @@
     
     
     <br/>
-    <i class="fas fa-clock"></i> 5 min read
+    <i class="fas fa-clock"></i> 4 min read
 </div>
 
 
@@ -183,7 +179,9 @@
   
   
   <div class="post">
-    <p>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。</p>
+    
+
+<p>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。</p>
 
 <p>本文就来探究 Laravel 中间件的实现原理，看 Laravel 如何把 PHP 的 array_reduce 函数和闭包用到了极致。</p>
 
@@ -191,16 +189,14 @@
 
 <h3 id="开始">开始</h3>
 
-<p>为了彻底弄懂 Laravel 中间件原理，可以构造一个路由，并使用 debug_backtrace 函数来打印方法调用过程。</p>
+<p>为了弄懂 Laravel 中间件原理，可以构造一个路由，并使用 debug_backtrace 函数来打印方法调用过程。</p>
 
-<p><code>Route::get(&lsquo;test&rsquo;,function(){
+<pre><code class="language-php">Route::get('test',function(){
    dump(debug_backtrace());
 });
-</code></p>
+</code></pre>
 
-<p>如图，可见许多地方都跟 Pipeline 组件有关，并且重复执行一个闭包方法。</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/07/laravel-pipeline-middleware.png" target="_blank" rel="noopener"><img class="aligncenter wp-image-12502 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/07/laravel-pipeline-middleware.png" alt="Laravel中间件原理" width="1422" height="1656" /></a></p>
+<p>可见许多地方都跟 Pipeline 组件有关，并且重复执行一个闭包方法。</p>
 
 <p>这里 pipes 数组就是需要用到的中间件。</p>
 
@@ -208,7 +204,7 @@
 
 <p>在 Laravel 框架 index.php 入口文件里，$kernel-&gt;handle() 方法就调用了 Pipeline 的方法，可以说它是贯穿始终的，这是把请求发到中间件进行处理的方法：</p>
 
-<p><code class="lang:default decode:true ">/**
+<pre><code class="language-php">/**
  * Send the given request through the middleware / router.
  *
  * @param  \Illuminate\Http\Request  $request
@@ -216,23 +212,22 @@
  */
 protected function sendRequestThroughRouter($request)
 {
-    $this-&gt;app-&gt;instance(&lsquo;request&rsquo;, $request);</p>
+    $this-&gt;app-&gt;instance('request', $request);
 
-<pre><code>Facade::clearResolvedInstance('request');
+    Facade::clearResolvedInstance('request');
 
-$this-&amp;gt;bootstrap();
+    $this-&gt;bootstrap();
 
-return (new Pipeline($this-&amp;gt;app))
-            -&amp;gt;send($request)
-            -&amp;gt;through($this-&amp;gt;app-&amp;gt;shouldSkipMiddleware() ? [] : $this-&amp;gt;middleware)
-            -&amp;gt;then($this-&amp;gt;dispatchToRouter());
+    return (new Pipeline($this-&gt;app))
+                -&gt;send($request)
+                -&gt;through($this-&gt;app-&gt;shouldSkipMiddleware() ? [] : $this-&gt;middleware)
+                -&gt;then($this-&gt;dispatchToRouter());
+}
 </code></pre>
-
-<p>}</code></p>
 
 <p>其中 send 方法是设置 passable 属性也就是 $request，through 是设置 pipes 属性，也就是需要用到的中间件，是一个数组，重点是这里的 then 方法，参数也是一个闭包函数。</p>
 
-<p><code class="lang:php decode:true ">/**
+<pre><code class="language-php">/**
  * Run the pipeline with a final destination callback.
  *
  * @param  \Closure  $destination
@@ -242,12 +237,11 @@ public function then(Closure $destination)
 {
     $pipeline = array_reduce(
         array_reverse($this-&gt;pipes), $this-&gt;carry(), $this-&gt;prepareDestination($destination)
-    );</p>
+    );
 
-<pre><code>return $pipeline($this-&amp;gt;passable);
+    return $pipeline($this-&gt;passable);
+}
 </code></pre>
-
-<p>}</code></p>
 
 <h4 id="array-reduce-使用">array_reduce 使用</h4>
 
@@ -255,15 +249,16 @@ public function then(Closure $destination)
 
 <p>先看一个官方例子明白它的基本用法：</p>
 
-<p><code class="lang:default decode:true">function sum($carry, $item)
+<pre><code class="language-php">function sum($carry, $item)
 {
     $carry += $item;
     return $carry;
-}</p>
+}
 
-<p>$a = array(1, 2, 3, 4, 5);</p>
+$a = array(1, 2, 3, 4, 5);
 
-<p>var_dump(array_reduce($a, &ldquo;sum&rdquo;)); // int(15)</code></p>
+var_dump(array_reduce($a, &quot;sum&quot;)); // int(15)
+</code></pre>
 
 <p>基础用法参考 PHP 文档：<a href="http://php.net/manual/zh/function.array-reduce.php" target="_blank" rel="noopener nofollow">array_reduce</a></p>
 
@@ -271,13 +266,13 @@ public function then(Closure $destination)
 
 <p>那么第二个参数的回调函数返回的是一个闭包呢？</p>
 
-<p><code>$arr = [&lsquo;AAAA&rsquo;, &lsquo;BBBB&rsquo;, &lsquo;CCCC&rsquo;];</p>
+<pre><code class="language-php">$arr = ['AAAA', 'BBBB', 'CCCC'];
 
-<p>$res = array_reduce($arr, function($carry, $item){
+$res = array_reduce($arr, function($carry, $item){
     return function() use ($carry,$item){
-        dump(&ldquo;item:&ldquo;.$item);
+        dump(&quot;item:&quot;.$item);
         if(is_null($carry)){
-            return &ldquo;CARRY is null. item:&ldquo;.$item;
+            return &quot;CARRY is null. item:&quot;.$item;
         }
         if($carry instanceof Closure){
             dump($carry());
@@ -285,9 +280,10 @@ public function then(Closure $destination)
         }
         return $item;
     };
-});</p>
+});
 
-<p>dump($res());</code></p>
+dump($res());
+</code></pre>
 
 <p>这个例子第二个参数回调函数返回的是一个闭包，也就是说 array_reduce 函数最终返回的也是一个闭包，除非执行这个闭包，否则里面的逻辑不会执行，这也是闭包的神奇之处，我们可以把函数“暂存”起来以后执行。</p>
 
@@ -309,7 +305,7 @@ public function then(Closure $destination)
 
 <p>接下来要分析 $this-&gt;carry() 这个方法，它是中间件实现的核心。</p>
 
-<p><code class="lang:php decode:true ">/**
+<pre><code class="language-php">/**
  * Get a Closure that represents a slice of the application onion.
  *
  * @return \Closure
@@ -320,33 +316,32 @@ protected function carry()
         return function ($passable) use ($stack, $pipe) {
             if (is_callable($pipe)) {
                 // If the pipe is an instance of a Closure, we will just call it directly but
-                // otherwise we&rsquo;ll resolve the pipes out of the container and call it with
+                // otherwise we'll resolve the pipes out of the container and call it with
                 // the appropriate method and arguments, returning the results back out.
                 return $pipe($passable, $stack);
             } elseif (! is_object($pipe)) {
-                list($name, $parameters) = $this-&gt;parsePipeString($pipe);</p>
+                list($name, $parameters) = $this-&gt;parsePipeString($pipe);
 
-<pre><code>            // If the pipe is a string we will parse the string and resolve the class out
-            // of the dependency injection container. We can then build a callable and
-            // execute the pipe function giving in the parameters that are required.
-            $pipe = $this-&amp;gt;getContainer()-&amp;gt;make($name);
+                // If the pipe is a string we will parse the string and resolve the class out
+                // of the dependency injection container. We can then build a callable and
+                // execute the pipe function giving in the parameters that are required.
+                $pipe = $this-&gt;getContainer()-&gt;make($name);
 
-            $parameters = array_merge([$passable, $stack], $parameters);
-        } else {
-            // If the pipe is already an object we'll just make a callable and pass it to
-            // the pipe as-is. There is no need to do any extra parsing and formatting
-            // since the object we're given was already a fully instantiated object.
-            $parameters = [$passable, $stack];
-        }
+                $parameters = array_merge([$passable, $stack], $parameters);
+            } else {
+                // If the pipe is already an object we'll just make a callable and pass it to
+                // the pipe as-is. There is no need to do any extra parsing and formatting
+                // since the object we're given was already a fully instantiated object.
+                $parameters = [$passable, $stack];
+            }
 
-        return method_exists($pipe, $this-&amp;gt;method)
-                        ? $pipe-&amp;gt;{$this-&amp;gt;method}(...$parameters)
-                        : $pipe(...$parameters);
+            return method_exists($pipe, $this-&gt;method)
+                            ? $pipe-&gt;{$this-&gt;method}(...$parameters)
+                            : $pipe(...$parameters);
+        };
     };
-};
+}
 </code></pre>
-
-<p>}</code></p>
 
 <p>这个 carry 方法返回一个闭包（或者说函数也可以），作为 array_reduce 的第二个参数作为回调函数。这个方法看上去很复杂，闭包里面返回闭包，但是搞清楚了之后就没这么难。</p>
 
@@ -368,28 +363,16 @@ protected function carry()
 
 <p>我们把控制器方法改成：</p>
 
-<p><code class="lang:php decode:true ">Route::get(&lsquo;test&rsquo;,function(){
-    dump(&lsquo;this is controller&rsquo;);
+<pre><code class="language-php">Route::get('test',function(){
+    dump('this is controller');
    //dump(debug_backtrace());
-});</code></p>
+});
+</code></pre>
 
-<p>然后随便找一个中间件在 $response = $next($request) 前后打印点内容：</p>
+<p>随便找一个中间件在 $response = $next($request) 前后打印点内容，这里 $next 就是前文中的 $stack，执行这句的时候就会把所有中间件都执行完，然后别忘了前面说的第一个闭包是 $this-&gt;dispatchToRouter() 提供的，它会进入到控制器逻辑，然后再是执行每个中间件中 $response = $next($request) 接下来的逻辑。</p>
 
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/07/WX20180730-001727@2x.png" target="_blank"><img class="aligncenter wp-image-12505 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/07/WX20180730-001727@2x.png" alt="Laravel 中间件" width="1402" height="1102" /></a></p>
+<p>这也是前置中间件和后置中间件的原理。</p>
 
-<p>执行，页面上的输出如图：</p>
-
-<p><img class="size-full wp-image-12506 aligncenter" src="https://blog.tanteng.me/wp-content/uploads/2018/07/WX20180730-001935@2x.png" alt="" width="326" height="230" /></p>
-
-<p>这是为什么呢？</p>
-
-<p><code>$response = $next($request);</code></p>
-
-<p>这里 $next 就是前文中的 $stack，执行这句的时候就会把所有中间件都执行完，然后别忘了前面说的第一个闭包是 $this-&gt;dispatchToRouter() 提供的，它会进入到控制器逻辑，然后再是执行每个中间件中 $response = $next($request) 接下来的逻辑。这也是前置中间件和后置中间件的原理。</p>
-
-<p>要彻底弄懂 Laravel 中间件原理，还需要亲自熟悉 array_reduce 方法和理解闭包的概念。</p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
   </div>
   
 
