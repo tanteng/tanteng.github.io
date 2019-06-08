@@ -6,10 +6,28 @@
     <description>Recent content in PHP on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Nov 2018 07:52:26 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 19:02:39 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>本周阅读清单20190508</title>
+      <link>https://tanteng.me/2019/05/reding-list-33/</link>
+      <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/05/reding-list-33/</guid>
+      <description>1.深入理解GO时间处理(time.Time) https://studygolang.com/articles/11975 2.上云，你需要了解的AK使用姿势 https://yq.aliyun.com/articles/55947 3.高并发集中访问造成连接MYSQL报Cannot assign requested a</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190305</title>
+      <link>https://tanteng.me/2019/03/reding-list-30/</link>
+      <pubDate>Tue, 05 Mar 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/03/reding-list-30/</guid>
+      <description>1.探索 Golang 一致性原语 https://wweir.cc/post/%E6%8E%A2%E7%B4%A2-golang-%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E8%AF%AD/ 2.My Standout Features in PHP7 https://medium.com/@jodylecompte/my-standout-features-in-php7-80ccd2763c55 3.为什么遍历 Go map 是无序的？ https://segmentfault.com/a/1190000018782278 4.我的游戏人生 http://miloyip.com/2010/my-life-as-a-game/ 5.String Data Type in Go https://medium.com/rungo/string-data-type-in-go-8af2b639478 6.PHP中处理Protocol Buffers</description>
+    </item>
     
     <item>
       <title>本周阅读清单20181105</title>

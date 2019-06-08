@@ -175,6 +175,117 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
+          <a href="/2017/09/debug-backtrace-php/" >PHP 调试函数 debug_backtrace</a>
+        </span>
+        <span class="item__date">
+          Sep 11, 2017
+        </span>
+        <span >
+        
+        有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;gt;game_id) {
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/debug-backtrace-php/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/09/git-merge-rebase/" >Git 变基和合并</a>
+        </span>
+        <span class="item__date">
+          Sep 5, 2017
+        </span>
+        <span >
+        
+        变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/git-merge-rebase/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
+        </span>
+        <span class="item__date">
+          Sep 2, 2017
+        </span>
+        <span >
+        
+        <p>关于 PHP 的错误和异常处理，总结如下。</p>
+
+<h3 id="1-设置-php-错误级别">1.设置 PHP 错误级别</h3>
+
+<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/php-error-handle/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/08/golang-generic/" >Golang 中”泛型”的支持</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2017
+        </span>
+        <span >
+        
+        Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/08/golang-generic/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
+        </span>
+        <span class="item__date">
+          Jul 22, 2017
+        </span>
+        <span >
+        
+        <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
+
+<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/php-curl-guzzlehttp/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
           <a href="/2017/05/laravel-etag-middleware/" >在 Laravel 中设置 Etag 缓存</a>
         </span>
         <span class="item__date">
@@ -284,123 +395,6 @@ fmt.Println(&ldquo;result:&ldquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p
         </span>
         
           ... <a class="read-more-symbol" href="/2017/04/netstat-tcp-state/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/04/nginx-permission-denied/" >Nginx 报错和解决方法记录</a>
-        </span>
-        <span class="item__date">
-          Apr 19, 2017
-        </span>
-        <span >
-        
-        <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
-
-<h3 id="13-permission-denied">13: Permission denied</h3>
-
-<p>Nginx错误：</p>
-
-<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() &#8220;/data/vhosts/xunlei.com/test/&#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &#8220;GET / HTTP/1.1&#8221;, host: &#8220;www.test.com&#8221;</p>
-
-<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/04/nginx-permission-denied/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
-        </span>
-        <span class="item__date">
-          Mar 31, 2017
-        </span>
-        <span >
-        
-        <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/2017-php-way/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/virtualbox-blue-screen/" >VirtualBox启动蓝屏问题</a>
-        </span>
-        <span class="item__date">
-          Mar 24, 2017
-        </span>
-        <span >
-        
-        用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/virtualbox-blue-screen/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/02/login-replay-attacks/" >登录重放攻击及安全防御</a>
-        </span>
-        <span class="item__date">
-          Feb 1, 2017
-        </span>
-        <span >
-        
-        现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/02/login-replay-attacks/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/01/mysql-alter-table-big-data/" >MySQL大表加字段思路</a>
-        </span>
-        <span class="item__date">
-          Jan 19, 2017
-        </span>
-        <span >
-        
-        <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
-
-<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &ldquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
-
-<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/01/mysql-alter-table-big-data/">➦</a>
         
         </div>
         

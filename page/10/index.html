@@ -175,6 +175,121 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
+          <a href="/2016/06/laravel-optimize/" >优化 Laravel 网站打开速度</a>
+        </span>
+        <span class="item__date">
+          Jun 2, 2016
+        </span>
+        <span >
+        
+        Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/laravel-optimize/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/vagrantfile-synced-folder/" >巧用vagrant建立映射目录解决环境兼容问题</a>
+        </span>
+        <span class="item__date">
+          Apr 8, 2016
+        </span>
+        <span >
+        
+        <p>使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：</p>
+
+<p><code>config.vm.synced_folder &quot;../website&quot;, &quot;/usr/share/nginx/html&quot;</code></p>
+
+<p>表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/vagrantfile-synced-folder/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/nginx-ssi/" >Nginx开启SSI</a>
+        </span>
+        <span class="item__date">
+          Apr 8, 2016
+        </span>
+        <span >
+        
+        <p>在一个HTML页面中发现一段这样的代码：</p>
+
+<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
+
+<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/nginx-ssi/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/centos-7-repo/" >常用的CentOS 7 yum源集合</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2016
+        </span>
+        <span >
+        
+        <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/centos-7-repo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/php-fpm-conf/" >PHP-FPM性能优化参考</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2016
+        </span>
+        <span >
+        
+        <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
+
+<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/php-fpm-conf/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
           <a href="/2016/03/innodb_buffer_pool_size/" >MySQL数据库性能优化之缓存参数设置</a>
         </span>
         <span class="item__date">
@@ -273,147 +388,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/02/crc32-mysql-index/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/01/repeat-group-having/" >查询数据库重复记录sql</a>
-        </span>
-        <span class="item__date">
-          Jan 25, 2016
-        </span>
-        <span >
-        
-        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/01/repeat-group-having/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/12/composer-autoload/" >Composer的自动加载机制</a>
-        </span>
-        <span class="item__date">
-          Dec 24, 2015
-        </span>
-        <span >
-        
-        <p>如项目下的composer.json文件中有autoload的定义：</p>
-
-<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
-        &ldquo;classmap&rdquo;: [
-            &ldquo;database&rdquo;
-        ],
-        &ldquo;psr-4&rdquo;: {
-            &ldquo;GrahamCampbell\BootstrapCMS\&ldquo;: &ldquo;app/&rdquo;
-        }
-    },</code></p>
-
-<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/12/composer-autoload/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/11/mac-git-missing-xcrun/" >Mac终端git命令提示错误:missing xcrun</a>
-        </span>
-        <span class="item__date">
-          Nov 8, 2015
-        </span>
-        <span >
-        
-        <p>在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&#8217;t start Git，点击&#8221;fix it&#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：</p>
-
-<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/11/mac-git-missing-xcrun/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/php-static-bind/" >初识PHP Static延迟静态绑定</a>
-        </span>
-        <span class="item__date">
-          May 27, 2015
-        </span>
-        <span >
-        
-        <p>PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。</p>
-
-<p><code>class A<br />
-{<br />
-    public static function echoClass(){<br />
-        echo <strong>CLASS</strong>;<br />
-    }</p>
-
-<pre><code>public static function test(){  
-    self::echoClass();        
-}
-</code></pre>
-
-<p>}</p>
-
-<p>class B extends A<br />
-{<br />
-    public static function echoClass()<br />
-    {<br />
-         echo <strong>CLASS</strong>;<br />
-    }<br />
-}</p>
-
-<p>B::test(); //输出A</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/php-static-bind/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/php-composer/" >PHP 开发者该知道的 5 个 Composer 小技巧</a>
-        </span>
-        <span class="item__date">
-          May 26, 2015
-        </span>
-        <span >
-        
-        Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/php-composer/">➦</a>
         
         </div>
         

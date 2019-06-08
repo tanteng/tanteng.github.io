@@ -175,6 +175,123 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
+          <a href="/2017/04/nginx-permission-denied/" >Nginx 报错和解决方法记录</a>
+        </span>
+        <span class="item__date">
+          Apr 19, 2017
+        </span>
+        <span >
+        
+        <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
+
+<h3 id="13-permission-denied">13: Permission denied</h3>
+
+<p>Nginx错误：</p>
+
+<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() &#8220;/data/vhosts/xunlei.com/test/&#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &#8220;GET / HTTP/1.1&#8221;, host: &#8220;www.test.com&#8221;</p>
+
+<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/nginx-permission-denied/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2017
+        </span>
+        <span >
+        
+        <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/2017-php-way/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/virtualbox-blue-screen/" >VirtualBox启动蓝屏问题</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2017
+        </span>
+        <span >
+        
+        用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/virtualbox-blue-screen/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/02/login-replay-attacks/" >登录重放攻击及安全防御</a>
+        </span>
+        <span class="item__date">
+          Feb 1, 2017
+        </span>
+        <span >
+        
+        现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/login-replay-attacks/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/mysql-alter-table-big-data/" >MySQL大表加字段思路</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2017
+        </span>
+        <span >
+        
+        <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
+
+<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &ldquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
+
+<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/mysql-alter-table-big-data/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
           <a href="/2017/01/linux-postfix-maildrop/" >Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</a>
         </span>
         <span class="item__date">
@@ -275,117 +392,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/12/nginx-test-environment/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/reading-and-maturing-personalities/" >阅读与心智的成长</a>
-        </span>
-        <span class="item__date">
-          Dec 5, 2016
-        </span>
-        <span >
-        
-        <p>以下摘自《如何阅读一本书》第二十一章。</p>
-
-<p>我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。</p>
-
-<p><strong>所谓主动的阅读，也就是能提出问题来。</strong>我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/reading-and-maturing-personalities/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/laravel-env-null/" >Laravel 使用 env 读取环境变量为 null 的问题</a>
-        </span>
-        <span class="item__date">
-          Dec 4, 2016
-        </span>
-        <span >
-        
-        <p>不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。</p>
-
-<p>在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/laravel-env-null/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/09/register-shutdown-function/" >PHP捕捉异常中断</a>
-        </span>
-        <span class="item__date">
-          Sep 28, 2016
-        </span>
-        <span >
-        
-        <p>当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/09/register-shutdown-function/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/09/vim-syntax/" >vim常用操作</a>
-        </span>
-        <span class="item__date">
-          Sep 21, 2016
-        </span>
-        <span >
-        
-        <p>vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/09/vim-syntax/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/09/lets-encrypt-multi-domain-https/" >Let’s Encrypt 开启多域名 HTTPS</a>
-        </span>
-        <span class="item__date">
-          Sep 12, 2016
-        </span>
-        <span >
-        
-        上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/09/lets-encrypt-multi-domain-https/">➦</a>
         
         </div>
         

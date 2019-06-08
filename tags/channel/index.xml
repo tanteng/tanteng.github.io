@@ -6,17 +6,17 @@
     <description>Recent content in channel on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 May 2019 17:10:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Apr 2019 17:10:19 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/tags/channel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang 如何优雅的退出程序</title>
-      <link>https://tanteng.me/2019/05/graceful-exit-golang/</link>
-      <pubDate>Wed, 08 May 2019 17:10:19 +0800</pubDate>
+      <link>https://tanteng.me/2019/04/graceful-exit-golang/</link>
+      <pubDate>Mon, 08 Apr 2019 17:10:19 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/05/graceful-exit-golang/</guid>
+      <guid>https://tanteng.me/2019/04/graceful-exit-golang/</guid>
       <description>在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。 func main() { ch := make(chan os.Signal, 1) //Handle SIGINT</description>
     </item>
     

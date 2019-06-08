@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Golang 如何优雅的退出程序 - 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang 如何优雅的退出程序"/>
+<meta name="twitter:description" content="在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。"/>
+
+<meta property="og:title" content="Golang 如何优雅的退出程序" />
+<meta property="og:description" content="在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tanteng.me/2019/04/graceful-exit-golang/" />
+<meta property="article:published_time" content="2019-04-08T17:10:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-04-08T17:10:19&#43;08:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.85099df2bbed192d9af2050a95eafd67452ceb28ea559b2a507ee29b1d44435b.css" integrity="sha256-hQmd8rvtGS2a8gUKler9Z0Us6yjqVZsqUH7imx1EQ1s=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>Home</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/categories/">
+						<span>Category</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Golang 如何优雅的退出程序</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 8, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/golang">GOLANG</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/golang">golang</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/channel">channel</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。</p>
+
+<pre><code>func main() {
+	ch := make(chan os.Signal, 1) //Handle SIGINT and SIGTERM
+	log.Println(&quot;wait gracefully signal&quot;)
+
+	// signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP, syscall.SIGUSR2)
+	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP) //window机子支持的信号量
+
+	sig := &lt;-ch
+	log.Println(&quot;INFO: Receive signal: &quot; + sig.String())
+
+	time.Sleep(3 * time.Second)
+
+	log.Println(&quot;INFO: Server gracefully stopped.&quot;)
+}
+</code></pre>
+
+<p>首先创建一个 channel，容量是 1，用来接收信号。</p>
+
+<p>signal.Notify 用来注册要接收的信号，例子中我们注册了 syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP, syscall.SIGUSR2 这些中断信号，如果符合条件，就会把信号发送到 ch 这个通道。</p>
+
+<p>sig 以阻塞的方式读取 ch 通道，一旦通道有数据，就开始往后面的逻辑执行，休眠几秒钟，这样就可以等待其他正在运行的 goroutine 执行完毕，达到优雅退出的效果。</p>
+
+<p>再看另外一个类似的例子：</p>
+
+<pre><code class="language-php">func main() {
+    // Go signal notification works by sending `os.Signal`
+    // values on a channel. We'll create a channel to
+    // receive these notifications (we'll also make one to
+    // notify us when the program can exit).
+    sigs := make(chan os.Signal, 1)
+    done := make(chan bool, 1)
+    
+    // `signal.Notify` registers the given channel to
+    // receive notifications of the specified signals.
+    signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+    
+    
+    // This goroutine executes a blocking receive for
+    // signals. When it gets one it'll print it out
+    // and then notify the program that it can finish.
+    go func() {
+        sig := &lt;-sigs
+        fmt.Println(sig)
+        done &lt;- true
+    }()
+    
+    
+    // The program will wait here until it gets the
+    // expected signal (as indicated by the goroutine
+    // above sending a value on `done`) and then exit.
+    fmt.Println(&quot;awaiting signal&quot;)
+    &lt;-done
+    fmt.Println(&quot;exiting&quot;)
+}
+</code></pre>
+
+<p>这个 demo 有一点不同，另开了一个协程，在协程中接收信号，并且往 done 发送 true，主程序阻塞读取 done 通道再完成退出。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2019/03/reding-list-31/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">本周阅读清单20190322</span>
+    </a>
+    
+    
+    <a href="/2019/04/reding-list-32/" class="navigation-next">
+      <span class="navigation-tittle">本周阅读清单20190408</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

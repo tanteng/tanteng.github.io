@@ -175,6 +175,125 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
+          <a href="/2017/12/laravel-supervisor-queue/" >Laravel Redis 多个进程同时取队列问题</a>
+        </span>
+        <span class="item__date">
+          Dec 23, 2017
+        </span>
+        <span >
+        
+        <p><strong>开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？</strong></p>
+
+<p>使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：</p>
+
+<p><code class="lang:default decode:true">[program:laravel-worker]
+process_name=%(program<em>name)s</em>%(process_num)02d
+command=php /var/www/xxx.cn/artisan queue:work &ndash;queue=sendfile &ndash;tries=3 &ndash;daemon
+autostart=true
+autorestart=true
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/var/www/xxx.cn/worker.log
+</code></p>
+
+<p>注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/12/laravel-supervisor-queue/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/12/mysql-optimize-tips/" >MySQL 数据库设计及性能优化Tips</a>
+        </span>
+        <span class="item__date">
+          Dec 17, 2017
+        </span>
+        <span >
+        
+        规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/12/mysql-optimize-tips/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/12/laravel-queue-tips/" >使用 Laravel 消息队列要注意的问题</a>
+        </span>
+        <span class="item__date">
+          Dec 11, 2017
+        </span>
+        <span >
+        
+        使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/12/laravel-queue-tips/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/11/mac-open-user-local/" >Mac 上如何打开 /usr/local 路径的文件夹</a>
+        </span>
+        <span class="item__date">
+          Nov 29, 2017
+        </span>
+        <span >
+        
+        在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/11/mac-open-user-local/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/11/golang-parameter-passing/" >如何理解 Golang 的参数传递都是值传递？</a>
+        </span>
+        <span class="item__date">
+          Nov 19, 2017
+        </span>
+        <span >
+        
+        <p>在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/11/golang-parameter-passing/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
           <a href="/2017/11/nginx-fastcgi-php-fpm/" >PHP-FPM,Nginx,FastCGI 之间的关系</a>
         </span>
         <span class="item__date">
@@ -290,117 +409,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2017/10/computer-concepts-in-life/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/debug-backtrace-php/" >PHP 调试函数 debug_backtrace</a>
-        </span>
-        <span class="item__date">
-          Sep 11, 2017
-        </span>
-        <span >
-        
-        有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;gt;game_id) {
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/debug-backtrace-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/git-merge-rebase/" >Git 变基和合并</a>
-        </span>
-        <span class="item__date">
-          Sep 5, 2017
-        </span>
-        <span >
-        
-        变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/git-merge-rebase/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
-        </span>
-        <span class="item__date">
-          Sep 2, 2017
-        </span>
-        <span >
-        
-        <p>关于 PHP 的错误和异常处理，总结如下。</p>
-
-<h3 id="1-设置-php-错误级别">1.设置 PHP 错误级别</h3>
-
-<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/php-error-handle/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/08/golang-generic/" >Golang 中”泛型”的支持</a>
-        </span>
-        <span class="item__date">
-          Aug 11, 2017
-        </span>
-        <span >
-        
-        Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/08/golang-generic/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
-        </span>
-        <span class="item__date">
-          Jul 22, 2017
-        </span>
-        <span >
-        
-        <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
-
-<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/07/php-curl-guzzlehttp/">➦</a>
         
         </div>
         

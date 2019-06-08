@@ -21,12 +21,57 @@
     </item>
     
     <item>
-      <title>Golang 如何优雅的退出程序</title>
-      <link>https://tanteng.me/2019/05/graceful-exit-golang/</link>
-      <pubDate>Wed, 08 May 2019 17:10:19 +0800</pubDate>
+      <title>本周阅读清单20190508</title>
+      <link>https://tanteng.me/2019/05/reding-list-33/</link>
+      <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/05/graceful-exit-golang/</guid>
+      <guid>https://tanteng.me/2019/05/reding-list-33/</guid>
+      <description>1.深入理解GO时间处理(time.Time) https://studygolang.com/articles/11975 2.上云，你需要了解的AK使用姿势 https://yq.aliyun.com/articles/55947 3.高并发集中访问造成连接MYSQL报Cannot assign requested a</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190408</title>
+      <link>https://tanteng.me/2019/04/reding-list-32/</link>
+      <pubDate>Mon, 08 Apr 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/04/reding-list-32/</guid>
+      <description>1.Redis Stream——作为消息队列的典型应用场景 https://yq.aliyun.com/articles/603193 2.深夜学算法之 Skiplist：让链表飞 https://www.jianshu.com/p/fcd18946994e 3.Redis Zset 内部实现 https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/ 4.函数调用中的栈帧 https://labrick.cc/2018/06/24/stack-in-call-func/ 5.Go高性能</description>
+    </item>
+    
+    <item>
+      <title>Golang 如何优雅的退出程序</title>
+      <link>https://tanteng.me/2019/04/graceful-exit-golang/</link>
+      <pubDate>Mon, 08 Apr 2019 17:10:19 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/04/graceful-exit-golang/</guid>
       <description>在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。 func main() { ch := make(chan os.Signal, 1) //Handle SIGINT</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190322</title>
+      <link>https://tanteng.me/2019/03/reding-list-31/</link>
+      <pubDate>Fri, 22 Mar 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/03/reding-list-31/</guid>
+      <description>1.深入解析 Go 总 Slice 底层实现 https://halfrost.com/go_slice/ 2.深度解密Go语言之关于 interface 的10个问题 https://www.cnblogs.com/qcrao-2018/p/10766091.html 3.Type assertions in Go https://medium.com/golangspec/type-assertions-in-go-e609759c42e1 4.Hive SQL 的编译过程 https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html 5.经济学十大定律-边际收益递减定律 https://xueqiu.com/1084912228/108513216</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190305</title>
+      <link>https://tanteng.me/2019/03/reding-list-30/</link>
+      <pubDate>Tue, 05 Mar 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/03/reding-list-30/</guid>
+      <description>1.探索 Golang 一致性原语 https://wweir.cc/post/%E6%8E%A2%E7%B4%A2-golang-%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E8%AF%AD/ 2.My Standout Features in PHP7 https://medium.com/@jodylecompte/my-standout-features-in-php7-80ccd2763c55 3.为什么遍历 Go map 是无序的？ https://segmentfault.com/a/1190000018782278 4.我的游戏人生 http://miloyip.com/2010/my-life-as-a-game/ 5.String Data Type in Go https://medium.com/rungo/string-data-type-in-go-8af2b639478 6.PHP中处理Protocol Buffers</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190225</title>
+      <link>https://tanteng.me/2019/02/reding-list-29/</link>
+      <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/02/reding-list-29/</guid>
+      <description>1.前缀索引，一种优化索引大小的解决方案 http://www.cnblogs.com/studyzy/p/4310653.html 2.[译]Go 调度器: M, P 和 G https://colobu.com/2017/05/04/go-scheduler/ 3.gRPC 安全认证 https://yuanxuxu.com/2018/11/21/grpc-token/ 4.Go 语言 Channel 实现原理精要 https://draveness.me/golang-channel 5.Go modules 详解 http://objcoding.com/2018/09/13/go-modules/</description>
     </item>
     
     <item>

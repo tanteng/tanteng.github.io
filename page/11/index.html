@@ -175,6 +175,147 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
+          <a href="/2016/01/repeat-group-having/" >查询数据库重复记录sql</a>
+        </span>
+        <span class="item__date">
+          Jan 25, 2016
+        </span>
+        <span >
+        
+        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/repeat-group-having/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/12/composer-autoload/" >Composer的自动加载机制</a>
+        </span>
+        <span class="item__date">
+          Dec 24, 2015
+        </span>
+        <span >
+        
+        <p>如项目下的composer.json文件中有autoload的定义：</p>
+
+<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
+        &ldquo;classmap&rdquo;: [
+            &ldquo;database&rdquo;
+        ],
+        &ldquo;psr-4&rdquo;: {
+            &ldquo;GrahamCampbell\BootstrapCMS\&ldquo;: &ldquo;app/&rdquo;
+        }
+    },</code></p>
+
+<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/12/composer-autoload/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/11/mac-git-missing-xcrun/" >Mac终端git命令提示错误:missing xcrun</a>
+        </span>
+        <span class="item__date">
+          Nov 8, 2015
+        </span>
+        <span >
+        
+        <p>在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&#8217;t start Git，点击&#8221;fix it&#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：</p>
+
+<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/11/mac-git-missing-xcrun/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/php-static-bind/" >初识PHP Static延迟静态绑定</a>
+        </span>
+        <span class="item__date">
+          May 27, 2015
+        </span>
+        <span >
+        
+        <p>PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。</p>
+
+<p><code>class A<br />
+{<br />
+    public static function echoClass(){<br />
+        echo <strong>CLASS</strong>;<br />
+    }</p>
+
+<pre><code>public static function test(){  
+    self::echoClass();        
+}
+</code></pre>
+
+<p>}</p>
+
+<p>class B extends A<br />
+{<br />
+    public static function echoClass()<br />
+    {<br />
+         echo <strong>CLASS</strong>;<br />
+    }<br />
+}</p>
+
+<p>B::test(); //输出A</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/php-static-bind/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/php-composer/" >PHP 开发者该知道的 5 个 Composer 小技巧</a>
+        </span>
+        <span class="item__date">
+          May 26, 2015
+        </span>
+        <span >
+        
+        Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/php-composer/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
           <a href="/2015/03/beautiful-scenery-in-dream/" >昨夜梦见的美景</a>
         </span>
         <span class="item__date">
@@ -289,117 +430,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2012/09/php-session-cookies/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/09/stack-php/" >PHP对象在内存堆栈中的分配</a>
-        </span>
-        <span class="item__date">
-          Sep 9, 2012
-        </span>
-        <span >
-        
-        <p>对象在PHP里面和整型、浮点型一样，也是一种数据类，都是存储不同类型数据用的， 在运行的时候都要加载到内存中去用，那么对象在内存里面是怎么体现的呢？内存从逻辑上说大体上是分为4段，<strong>栈空间段、堆空间段、代码段、初始化静态段</strong>，程序里面不同的声明放在不同的内存段里面。</p>
-
-<p><strong>数据段</strong>（data segment）通常是指用来存放程序中已初始化且不为0的全局变量如：静态变量和常量</p>
-
-<p><strong>代码段</strong>（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法</p>
-
-<p>**</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/09/stack-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/09/linus-torvalds/" >Linux发明人《Linus Torvalds自传》摘录</a>
-        </span>
-        <span class="item__date">
-          Sep 4, 2012
-        </span>
-        <span >
-        
-        除了程序员，大概很少人知道Linux操作系统。 它的发明者Linus Torvalds，知道的人就更少了。 他本人也很低调，深居简出，很少出席公众
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/09/linus-torvalds/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/08/intuition/" >内心平静下来——找到直觉</a>
-        </span>
-        <span class="item__date">
-          Aug 14, 2012
-        </span>
-        <span >
-        
-        <p>Coming back to America was, for me, much more of a cultural shock than going to India. The people in the Indian countryside don’t use their intellect like we do, they use their intuition instead, and their intuition is far more developed than in the rest of the world. Intuition is a very powerful thing, more powerful than intellect, in my opinion. That’s had a big impact on my work.</p>
-
-<p>Western rational thought is not an innate human characteristic; it is learned and is the great achievement of Western civilization. In the villages of India, they never learned it. They learned something else, which is in some ways just as valuable but in other ways is not. That’s the power of intuition and experiential wisdom. Coming back after seven months in Indian villages, I saw the craziness of the Western world as well as its capacity for rational thought. If you just sit and observe, you will see how restless your mind is.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/08/intuition/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/08/follow-your-heart/" >记住自己即将死去——追随内心</a>
-        </span>
-        <span class="item__date">
-          Aug 14, 2012
-        </span>
-        <span >
-        
-        Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life. Because almost everything—all external expectations, all pride, all fear of embarrassment or failure—these things just fall
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/08/follow-your-heart/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/08/steve-jobs-love-letter/" >Steve jobs的“情书”</a>
-        </span>
-        <span class="item__date">
-          Aug 14, 2012
-        </span>
-        <span >
-        
-        ——节选自《Steve Jobs》
-        
-        </span>
         
         </div>
         
