@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on 小谈博客</title>
-    <link>http://tanteng.me/categories/django/</link>
+    <link>https://tanteng.me/categories/django/</link>
     <description>Recent content in Django on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Nov 2015 02:05:28 +0000</lastBuildDate>
     
-	<atom:link href="http://tanteng.me/categories/django/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tanteng.me/categories/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>学python的几本电子书</title>
-      <link>http://tanteng.me/2015/11/python-ebook/</link>
+      <link>https://tanteng.me/2015/11/python-ebook/</link>
       <pubDate>Tue, 17 Nov 2015 02:05:28 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/11/python-ebook/</guid>
+      <guid>https://tanteng.me/2015/11/python-ebook/</guid>
       <description>看云上几本学python的免费电子书： 链接：http://www.kancloud.cn/tag/Python</description>
     </item>
     
     <item>
       <title>如何高效使用Django QuerySets</title>
-      <link>http://tanteng.me/2015/05/django-querysets/</link>
+      <link>https://tanteng.me/2015/05/django-querysets/</link>
       <pubDate>Fri, 15 May 2015 16:07:40 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/django-querysets/</guid>
+      <guid>https://tanteng.me/2015/05/django-querysets/</guid>
       <description>这是一篇很好的文章，讲如何高效使用Django QuerySets，有很多例子： http://www.oschina.net/translate/django-querysets</description>
     </item>
     
     <item>
       <title>Python斐波拉契数列生成器</title>
-      <link>http://tanteng.me/2015/05/python-fib-generator/</link>
+      <link>https://tanteng.me/2015/05/python-fib-generator/</link>
       <pubDate>Wed, 13 May 2015 08:08:58 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/python-fib-generator/</guid>
+      <guid>https://tanteng.me/2015/05/python-fib-generator/</guid>
       <description>&lt;p&gt;利用Python生成器定义斐波拉契数列generator：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:python decode:true&#34;&gt;def fib(max):
@@ -50,10 +50,10 @@
     
     <item>
       <title>bs4(beautiful soup 4)简单抓取示例</title>
-      <link>http://tanteng.me/2015/05/bs4-example/</link>
+      <link>https://tanteng.me/2015/05/bs4-example/</link>
       <pubDate>Tue, 12 May 2015 03:50:01 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/bs4-example/</guid>
+      <guid>https://tanteng.me/2015/05/bs4-example/</guid>
       <description>&lt;p&gt;参照bs4官方中文文档&lt;a href=&#34;http://beautifulsoup.readthedocs.org/en/latest/&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;a href=&#34;http://beautifulsoup.readthedocs.org/en/latest/&#34;&gt;http://beautifulsoup.readthedocs.org/en/latest/&lt;/a&gt;&lt;/a&gt;照着写了个简单的例子，感觉它非常强大！！&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:python decode:true &#34;&gt;import urllib.request
@@ -75,10 +75,10 @@ for h1 in h1s:
     
     <item>
       <title>使用pip安装Django for Python3</title>
-      <link>http://tanteng.me/2015/05/django-python3-install/</link>
+      <link>https://tanteng.me/2015/05/django-python3-install/</link>
       <pubDate>Sat, 09 May 2015 07:25:04 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/django-python3-install/</guid>
+      <guid>https://tanteng.me/2015/05/django-python3-install/</guid>
       <description>&lt;p&gt;Django官网介绍说，推荐使用Python 3，对应的Django版本是1.8.1，使用pip install Django==1.8.1通过Python命令行下载并安装。&lt;/p&gt;</description>
     </item>
     

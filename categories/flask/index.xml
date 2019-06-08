@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flask on 小谈博客</title>
-    <link>http://tanteng.me/categories/flask/</link>
+    <link>https://tanteng.me/categories/flask/</link>
     <description>Recent content in Flask on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Dec 2015 07:34:20 +0000</lastBuildDate>
     
-	<atom:link href="http://tanteng.me/categories/flask/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tanteng.me/categories/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SAE使用第三方Python依赖包</title>
-      <link>http://tanteng.me/2015/12/sae-python-vendor/</link>
+      <link>https://tanteng.me/2015/12/sae-python-vendor/</link>
       <pubDate>Sat, 12 Dec 2015 07:34:20 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/sae-python-vendor/</guid>
+      <guid>https://tanteng.me/2015/12/sae-python-vendor/</guid>
       <description>&lt;p&gt;在SAE上创建了一个Python Flask应用，可以正常运行，但是在本地安装测试了Flask-Cache模块后传上去，网站无法运行，提示缺少包，如何在SAE使用第三方Python依赖包呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flask配置本地虚拟主机访问及Apache反向代理</title>
-      <link>http://tanteng.me/2015/12/flask-vhost-apache-proxy/</link>
+      <link>https://tanteng.me/2015/12/flask-vhost-apache-proxy/</link>
       <pubDate>Fri, 11 Dec 2015 14:30:39 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/flask-vhost-apache-proxy/</guid>
+      <guid>https://tanteng.me/2015/12/flask-vhost-apache-proxy/</guid>
       <description>&lt;p&gt;本地访问Flask应用，首先要启动应用，如下：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:python decode:true &#34;&gt;(venv)tantengdeMacBook-Pro:pythonflask tanteng$ python run.py
@@ -38,10 +38,10 @@
     
     <item>
       <title>Flask配置文件使用类和继承方式</title>
-      <link>http://tanteng.me/2015/12/flask-config-extends-class/</link>
+      <link>https://tanteng.me/2015/12/flask-config-extends-class/</link>
       <pubDate>Fri, 11 Dec 2015 11:42:14 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/flask-config-extends-class/</guid>
+      <guid>https://tanteng.me/2015/12/flask-config-extends-class/</guid>
       <description>&lt;p&gt;Flask中加载配置文件的方法是：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:python mark:5 decode:true&#34;&gt;from flask import Flask, session, g, render_template&lt;/p&gt;
@@ -54,10 +54,10 @@ app.config.from_object(&amp;lsquo;websiteconfig&amp;rsquo;)&lt;/code&gt;&lt;/p&g
     
     <item>
       <title>让PyCharm可以识别virtualenv中的包</title>
-      <link>http://tanteng.me/2015/12/pycharm-virtualenv/</link>
+      <link>https://tanteng.me/2015/12/pycharm-virtualenv/</link>
       <pubDate>Thu, 10 Dec 2015 01:49:49 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/pycharm-virtualenv/</guid>
+      <guid>https://tanteng.me/2015/12/pycharm-virtualenv/</guid>
       <description>&lt;p&gt;比如安装Flask框架，需要在virtualenv虚拟环境中安装依赖包，也运行在virtualenv环境中，PyCharm IDE无法识别Flask和依赖包，也就不能转到定义，智能提示等，如何让PyCharm可以识别virtualenv中的包？&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png&#34; rel=&#34;attachment wp-att-9164&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-9164&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png&#34; alt=&#34;flask-pycharm-setting-interpreter&#34; width=&#34;1109&#34; height=&#34;701&#34; srcset=&#34;https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter.png 1109w, https://blog.tanteng.me/wp-content/uploads/2015/12/flask-pycharm-setting-interpreter-768x485.png 768w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
@@ -65,10 +65,10 @@ app.config.from_object(&amp;lsquo;websiteconfig&amp;rsquo;)&lt;/code&gt;&lt;/p&g
     
     <item>
       <title>Flask-website: No module named flask.ext.openid</title>
-      <link>http://tanteng.me/2015/12/no-module-named-flask-ext-openid/</link>
+      <link>https://tanteng.me/2015/12/no-module-named-flask-ext-openid/</link>
       <pubDate>Wed, 09 Dec 2015 10:35:12 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/no-module-named-flask-ext-openid/</guid>
+      <guid>https://tanteng.me/2015/12/no-module-named-flask-ext-openid/</guid>
       <description>&lt;p&gt;在本地运行Flask官网程序（Github:&lt;a href=&#34;https://github.com/mitsuhiko/flask-website&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;a href=&#34;https://github.com/mitsuhiko/flask-website&#34;&gt;https://github.com/mitsuhiko/flask-website&lt;/a&gt;&lt;/a&gt;），安装好requirements.txt里所依赖的模块后，运行报错：No module named flask.ext.openid.&lt;/p&gt;
 
 &lt;p&gt;这里需要把flask_website目录下的\__init__.py文件进行如下修改：&lt;/p&gt;
@@ -83,10 +83,10 @@ from flask_openid import OpenID&lt;/code&gt;&lt;/p&gt;
     
     <item>
       <title>第一个Flask程序</title>
-      <link>http://tanteng.me/2015/12/flask-hello-world/</link>
+      <link>https://tanteng.me/2015/12/flask-hello-world/</link>
       <pubDate>Tue, 08 Dec 2015 11:36:44 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/flask-hello-world/</guid>
+      <guid>https://tanteng.me/2015/12/flask-hello-world/</guid>
       <description>&lt;p&gt;第一个Flask程序从Hello World开始，首先安装好Flask环境及框架后，在目录新建hello.py，如下：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:python decode:true &#34;&gt;from flask import Flask
@@ -102,10 +102,10 @@ def hello_world():
     
     <item>
       <title>安装Flask出错解决以及pip trusted-host参数</title>
-      <link>http://tanteng.me/2015/12/trusted-host-pip/</link>
+      <link>https://tanteng.me/2015/12/trusted-host-pip/</link>
       <pubDate>Tue, 08 Dec 2015 11:31:50 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/trusted-host-pip/</guid>
+      <guid>https://tanteng.me/2015/12/trusted-host-pip/</guid>
       <description>&lt;p&gt;安装Flask报错：&lt;/p&gt;
 
 &lt;p&gt;The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS it is recommended to use HTTPS instead, otherwise you may&lt;/p&gt;
@@ -117,10 +117,10 @@ def hello_world():
     
     <item>
       <title>Flask安装: A true SSLContext object is not available</title>
-      <link>http://tanteng.me/2015/12/flask-sslcontext/</link>
+      <link>https://tanteng.me/2015/12/flask-sslcontext/</link>
       <pubDate>Tue, 08 Dec 2015 05:35:34 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/12/flask-sslcontext/</guid>
+      <guid>https://tanteng.me/2015/12/flask-sslcontext/</guid>
       <description>&lt;p&gt;如果安装Flask出现这样的报错:InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL&lt;/p&gt;
 
 &lt;p&gt;appropriately and may cause certain SSL connections to fail. For more information, see &lt;a href=&#34;https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning&#34;&gt;https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning&lt;/a&gt;.&lt;/p&gt;</description>

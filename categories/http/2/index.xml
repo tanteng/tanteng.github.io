@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP/2 on 小谈博客</title>
-    <link>http://tanteng.me/categories/http/2/</link>
+    <link>https://tanteng.me/categories/http/2/</link>
     <description>Recent content in HTTP/2 on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Jul 2018 23:39:25 +0000</lastBuildDate>
     
-	<atom:link href="http://tanteng.me/categories/http/2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tanteng.me/categories/http/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>本周阅读清单20180702</title>
-      <link>http://tanteng.me/2018/07/reding-list-13/</link>
+      <link>https://tanteng.me/2018/07/reding-list-13/</link>
       <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/07/reding-list-13/</guid>
+      <guid>https://tanteng.me/2018/07/reding-list-13/</guid>
       <description>1.HTTP/2 服务器推送（server push）教程 https://juejin.im/entry/5a9e61cc518825556140c4f2 2.如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2 https://www.jianshu.com/p/52d86558ca57 3.深入理解 RESTful API 架构 https://mengkang.net/620.html 4.传统 Web 应用中的身份验证技术 https://insights.thoughtworks.cn/traditional-web-app-authentication/ 5.Web App Token 鉴权方案的</description>
     </item>
     
     <item>
       <title>本周阅读清单20180507</title>
-      <link>http://tanteng.me/2018/05/reding-list-7/</link>
+      <link>https://tanteng.me/2018/05/reding-list-7/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/05/reding-list-7/</guid>
+      <guid>https://tanteng.me/2018/05/reding-list-7/</guid>
       <description>1.Golang CSP 并发模型 https://www.jianshu.com/p/36e246c6153d 2.深入理解 Go Channel http://legendtkl.com/2017/07/30/understanding-golang-channel/ 3.谈谈 HTTP/2 的协议协商机制 https://imququ.com/post/protocol-negotiation-in-http2.html 4.【重温】中本聪《比特币：一种点对点的电子现金系统》 https://zhuanlan.zhihu.com/p/28108862 5.详解区块链 P2P 网络 https://keeganlee.me/post/blockchain/20180313 6.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180402</title>
-      <link>http://tanteng.me/2018/04/reding-list-2/</link>
+      <link>https://tanteng.me/2018/04/reding-list-2/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
+      <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
       <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
     </item>
     

@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on 小谈博客</title>
-    <link>http://tanteng.me/categories/mysql/</link>
+    <link>https://tanteng.me/categories/mysql/</link>
     <description>Recent content in MySQL on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Jan 2019 04:14:50 +0000</lastBuildDate>
     
-	<atom:link href="http://tanteng.me/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tanteng.me/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>本周阅读清单20190103</title>
-      <link>http://tanteng.me/2019/01/reding-list-27/</link>
+      <link>https://tanteng.me/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>http://tanteng.me/2019/01/reding-list-27/</guid>
+      <guid>https://tanteng.me/2019/01/reding-list-27/</guid>
       <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统&amp;#8211;Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
       <title>本周阅读清单20181123</title>
-      <link>http://tanteng.me/2018/12/reding-list-25/</link>
+      <link>https://tanteng.me/2018/12/reding-list-25/</link>
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/12/reding-list-25/</guid>
+      <guid>https://tanteng.me/2018/12/reding-list-25/</guid>
       <description>1.MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 2.Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html 3.golang后台服务设计精要 http://litang.me/post/golang-server-design/ 4.Go’s http package by example（总结很好）</description>
     </item>
     
     <item>
       <title>MySQL 字段为 NULL 的查询问题</title>
-      <link>http://tanteng.me/2018/10/mysql-select-null/</link>
+      <link>https://tanteng.me/2018/10/mysql-select-null/</link>
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/10/mysql-select-null/</guid>
+      <guid>https://tanteng.me/2018/10/mysql-select-null/</guid>
       <description>假设 MySQL 中某数据表 code 字段是可为 NULL ... AND code NOT IN () ... ... AND (code IS NULL or code NOT IN()) ... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to</description>
     </item>
     
     <item>
       <title>本周阅读清单20181022</title>
-      <link>http://tanteng.me/2018/10/reding-list-22/</link>
+      <link>https://tanteng.me/2018/10/reding-list-22/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/10/reding-list-22/</guid>
+      <guid>https://tanteng.me/2018/10/reding-list-22/</guid>
       <description>1.Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html 2.What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 3.工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 4.What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 5.理解 UUID http://wsfdl.com/algorit</description>
     </item>
     
     <item>
       <title>本周阅读清单20180709</title>
-      <link>http://tanteng.me/2018/07/reding-list-14/</link>
+      <link>https://tanteng.me/2018/07/reding-list-14/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/07/reding-list-14/</guid>
+      <guid>https://tanteng.me/2018/07/reding-list-14/</guid>
       <description>1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20180619</title>
-      <link>http://tanteng.me/2018/06/reding-list-11/</link>
+      <link>https://tanteng.me/2018/06/reding-list-11/</link>
       <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/06/reding-list-11/</guid>
+      <guid>https://tanteng.me/2018/06/reding-list-11/</guid>
       <description>1.MySQL 索引背后的数据结构及算法原理 https://juejin.im/entry/591012d161ff4b006255b447 2.微信扫码登录原理 https://blog.csdn.net/qq_25827845/article/details/78823861 3.Redis 事务及 Watch 的实现原理 http://redisbook.readthedocs.io/en/latest/feature/transaction.html 4.Redis 事务到底是不是原子性的 https://blog.tanteng.me/2018/06/redis-transaction-atomic/ 5.LRU 缓存淘汰算法数据结构 https://zhuanlan.zhihu.com/p/34989978 6.Singleton Pattern in Go http://marcio.io/2015/07/singleton-pattern-in-go/</description>
     </item>
     
     <item>
       <title>本周阅读清单20180402</title>
-      <link>http://tanteng.me/2018/04/reding-list-2/</link>
+      <link>https://tanteng.me/2018/04/reding-list-2/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>http://tanteng.me/2018/04/reding-list-2/</guid>
+      <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
       <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
     </item>
     
     <item>
       <title>MySQL 数据库设计及性能优化Tips</title>
-      <link>http://tanteng.me/2017/12/mysql-optimize-tips/</link>
+      <link>https://tanteng.me/2017/12/mysql-optimize-tips/</link>
       <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/12/mysql-optimize-tips/</guid>
+      <guid>https://tanteng.me/2017/12/mysql-optimize-tips/</guid>
       <description>规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个</description>
     </item>
     
     <item>
       <title>MySQL 生成给定范围随机数</title>
-      <link>http://tanteng.me/2017/10/mysql-rand-range/</link>
+      <link>https://tanteng.me/2017/10/mysql-rand-range/</link>
       <pubDate>Mon, 09 Oct 2017 10:32:00 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/10/mysql-rand-range/</guid>
+      <guid>https://tanteng.me/2017/10/mysql-rand-range/</guid>
       <description>&lt;p&gt;MySQL 的 rand() 函数是随机生成区间为 [0,1) 的浮点数，那么如何让它生成给定两个整数之间的随机数呢？试了一下这样可行：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;select ROUND(RAND()*(10-1)+1);&lt;/code&gt;&lt;/p&gt;
@@ -102,19 +102,19 @@
     
     <item>
       <title>修改数据库、表、字段为 utf8mb4 编码</title>
-      <link>http://tanteng.me/2017/06/alter-table-utf8mb4/</link>
+      <link>https://tanteng.me/2017/06/alter-table-utf8mb4/</link>
       <pubDate>Fri, 09 Jun 2017 09:52:37 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/06/alter-table-utf8mb4/</guid>
+      <guid>https://tanteng.me/2017/06/alter-table-utf8mb4/</guid>
       <description>创建 utf8mb4 数据库： create database xxx CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 修改数据库、表、字段为 utf8mb4 编码： # For each database: ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; For each table: ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; For each column: ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4</description>
     </item>
     
     <item>
       <title>MySQL 配置文件 my.cnf 详细说明</title>
-      <link>http://tanteng.me/2017/05/mysql-my-cnf/</link>
+      <link>https://tanteng.me/2017/05/mysql-my-cnf/</link>
       <pubDate>Mon, 22 May 2017 05:41:04 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/05/mysql-my-cnf/</guid>
+      <guid>https://tanteng.me/2017/05/mysql-my-cnf/</guid>
       <description>&lt;p&gt;本文记录MySQL配置文件my.cnf的详细说明。&lt;/p&gt;
 
 &lt;h3 id=&#34;linux系统mysql配置文件读取顺序&#34;&gt;Linux系统MySQL配置文件读取顺序&lt;/h3&gt;
@@ -168,10 +168,10 @@
     
     <item>
       <title>MySQL大表加字段思路</title>
-      <link>http://tanteng.me/2017/01/mysql-alter-table-big-data/</link>
+      <link>https://tanteng.me/2017/01/mysql-alter-table-big-data/</link>
       <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/01/mysql-alter-table-big-data/</guid>
+      <guid>https://tanteng.me/2017/01/mysql-alter-table-big-data/</guid>
       <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;ldquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
@@ -181,10 +181,10 @@
     
     <item>
       <title>Mysql性能优化–Explain详解</title>
-      <link>http://tanteng.me/2017/01/mysql-explain/</link>
+      <link>https://tanteng.me/2017/01/mysql-explain/</link>
       <pubDate>Thu, 19 Jan 2017 09:07:43 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/01/mysql-explain/</guid>
+      <guid>https://tanteng.me/2017/01/mysql-explain/</guid>
       <description>&lt;h3 id=&#34;explain&#34;&gt;EXPLAIN&lt;/h3&gt;
 
 &lt;p&gt;mysql explain命令是查询性能优化不可缺少的一部分。&lt;/p&gt;
@@ -265,10 +265,10 @@
     
     <item>
       <title>MySQL主从和双主架构的适用场景</title>
-      <link>http://tanteng.me/2016/09/mysql-master-slave-and-master-master/</link>
+      <link>https://tanteng.me/2016/09/mysql-master-slave-and-master-master/</link>
       <pubDate>Wed, 28 Sep 2016 10:20:18 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/09/mysql-master-slave-and-master-master/</guid>
+      <guid>https://tanteng.me/2016/09/mysql-master-slave-and-master-master/</guid>
       <description>&lt;p&gt;本文介绍 MySQL 主从和双主架构的适用场景。&lt;/p&gt;
 
 &lt;h3 id=&#34;mysql主从&#34;&gt;MySQL主从&lt;/h3&gt;
@@ -280,10 +280,10 @@
     
     <item>
       <title>常用Linux操作数据库命令及MySQL语句</title>
-      <link>http://tanteng.me/2016/06/mysql-command/</link>
+      <link>https://tanteng.me/2016/06/mysql-command/</link>
       <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/06/mysql-command/</guid>
+      <guid>https://tanteng.me/2016/06/mysql-command/</guid>
       <description>&lt;p&gt;以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。&lt;/p&gt;
 
 &lt;h3 id=&#34;数据库表导入&#34;&gt;数据库表导入&lt;/h3&gt;
@@ -295,10 +295,10 @@
     
     <item>
       <title>MySQL查看数据库大小</title>
-      <link>http://tanteng.me/2016/06/mysql-data-length/</link>
+      <link>https://tanteng.me/2016/06/mysql-data-length/</link>
       <pubDate>Fri, 03 Jun 2016 11:24:42 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/06/mysql-data-length/</guid>
+      <guid>https://tanteng.me/2016/06/mysql-data-length/</guid>
       <description>&lt;p&gt;1、进入information_schema 数据库（存放了其他的数据库的信息）&lt;/p&gt;
 
 &lt;p&gt;use information_schema;&lt;/p&gt;
@@ -310,37 +310,37 @@
     
     <item>
       <title>CentOS 7.0 MariaDB异常结束的解决方法</title>
-      <link>http://tanteng.me/2016/03/centos7-mariadb-break/</link>
+      <link>https://tanteng.me/2016/03/centos7-mariadb-break/</link>
       <pubDate>Mon, 28 Mar 2016 04:06:03 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/03/centos7-mariadb-break/</guid>
+      <guid>https://tanteng.me/2016/03/centos7-mariadb-break/</guid>
       <description>CentOS 7.0 x64下MariaDB异常结束的解决方法 http://linux.it.net.cn/e/data/MariaDB/2014/1014/6509.html</description>
     </item>
     
     <item>
       <title>MySQL数据库性能优化之缓存参数设置</title>
-      <link>http://tanteng.me/2016/03/innodb_buffer_pool_size/</link>
+      <link>https://tanteng.me/2016/03/innodb_buffer_pool_size/</link>
       <pubDate>Mon, 28 Mar 2016 04:02:15 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/03/innodb_buffer_pool_size/</guid>
+      <guid>https://tanteng.me/2016/03/innodb_buffer_pool_size/</guid>
       <description>&lt;p&gt;网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL批量删除相同前缀的表</title>
-      <link>http://tanteng.me/2016/03/mysql-drop-tables-prefix/</link>
+      <link>https://tanteng.me/2016/03/mysql-drop-tables-prefix/</link>
       <pubDate>Thu, 24 Mar 2016 05:49:04 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/03/mysql-drop-tables-prefix/</guid>
+      <guid>https://tanteng.me/2016/03/mysql-drop-tables-prefix/</guid>
       <description>&lt;p&gt;MySQL删除表的语法是drop table xxx，但是想要删除一个数据库中相同前缀的表，该怎么写MySQL语句呢？drop table like &amp;#8216;xx_%&amp;#8217;，drop table REGEXP &amp;#8230;，drop语句模糊匹配和正则的形式都不支持。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL备份数据库命令</title>
-      <link>http://tanteng.me/2016/03/mysql-backup/</link>
+      <link>https://tanteng.me/2016/03/mysql-backup/</link>
       <pubDate>Sat, 19 Mar 2016 16:48:45 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/03/mysql-backup/</guid>
+      <guid>https://tanteng.me/2016/03/mysql-backup/</guid>
       <description>&lt;p&gt;MySQL备份数据库命令&lt;/p&gt;
 
 &lt;p&gt;1.导出整个数据库&lt;/p&gt;
@@ -354,10 +354,10 @@
     
     <item>
       <title>如何使用truncate table清空有外键约束的表</title>
-      <link>http://tanteng.me/2016/02/truncate-table-foreign-keys/</link>
+      <link>https://tanteng.me/2016/02/truncate-table-foreign-keys/</link>
       <pubDate>Thu, 18 Feb 2016 03:36:42 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/02/truncate-table-foreign-keys/</guid>
+      <guid>https://tanteng.me/2016/02/truncate-table-foreign-keys/</guid>
       <description>&lt;p&gt;在MySQL中使用&amp;#8221;truncate table 表名&amp;#8221;语句可以清空一张表，并且计数器会重置，但是在存在外键约束的表中无法使用truncate，那怎么办？&lt;/p&gt;
 
 &lt;p&gt;方法是首先禁用外键，使用truncate之后再恢复！&lt;/p&gt;</description>
@@ -365,19 +365,19 @@
     
     <item>
       <title>CentOS 7通过yum安装MySQL</title>
-      <link>http://tanteng.me/2016/02/centos-7-yum-install-mysql/</link>
+      <link>https://tanteng.me/2016/02/centos-7-yum-install-mysql/</link>
       <pubDate>Mon, 08 Feb 2016 05:30:40 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/02/centos-7-yum-install-mysql/</guid>
+      <guid>https://tanteng.me/2016/02/centos-7-yum-install-mysql/</guid>
       <description>在CentOS 7中使用yum list mysql*，没有可以安装的MySQL版本，CentOS 7中默认使用的数据库是MariaDB，关于MariaD</description>
     </item>
     
     <item>
       <title>MySQL 字符串字段转换 crc32 建索引提高查询效率</title>
-      <link>http://tanteng.me/2016/02/crc32-mysql-index/</link>
+      <link>https://tanteng.me/2016/02/crc32-mysql-index/</link>
       <pubDate>Mon, 01 Feb 2016 01:29:07 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/02/crc32-mysql-index/</guid>
+      <guid>https://tanteng.me/2016/02/crc32-mysql-index/</guid>
       <description>&lt;p&gt;给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。&lt;/p&gt;
 
 &lt;p&gt;crc32 是整形，在MySQL中，给整形字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。&lt;/p&gt;</description>
@@ -385,46 +385,46 @@
     
     <item>
       <title>查询数据库重复记录sql</title>
-      <link>http://tanteng.me/2016/01/repeat-group-having/</link>
+      <link>https://tanteng.me/2016/01/repeat-group-having/</link>
       <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/01/repeat-group-having/</guid>
+      <guid>https://tanteng.me/2016/01/repeat-group-having/</guid>
       <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
     </item>
     
     <item>
       <title>MySQL导出表结构表数据mysqldump命令用法</title>
-      <link>http://tanteng.me/2016/01/mysql-mysqldump-usage/</link>
+      <link>https://tanteng.me/2016/01/mysql-mysqldump-usage/</link>
       <pubDate>Tue, 19 Jan 2016 15:50:52 +0000</pubDate>
       
-      <guid>http://tanteng.me/2016/01/mysql-mysqldump-usage/</guid>
+      <guid>https://tanteng.me/2016/01/mysql-mysqldump-usage/</guid>
       <description>命令行下具体用法如下： mysqldump -u用戶名 -p密码 -d 數據库名 表名 脚本名; 1、导出數據库為dbname的表结构（其中用戶名為root,密码為dbpas</description>
     </item>
     
     <item>
       <title>MySQL zerofill是什么意思？</title>
-      <link>http://tanteng.me/2015/06/mysql-zerofill/</link>
+      <link>https://tanteng.me/2015/06/mysql-zerofill/</link>
       <pubDate>Thu, 11 Jun 2015 08:39:41 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/06/mysql-zerofill/</guid>
+      <guid>https://tanteng.me/2015/06/mysql-zerofill/</guid>
       <description>zerofill，字面上理解就是填充0.在MySQL列中使用zerofill，如插入int(4)，你插入1，显示0001，你插入55555，</description>
     </item>
     
     <item>
       <title>将left join拆分成多条sql语句</title>
-      <link>http://tanteng.me/2015/06/left-join-split-sql/</link>
+      <link>https://tanteng.me/2015/06/left-join-split-sql/</link>
       <pubDate>Tue, 09 Jun 2015 16:29:05 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/06/left-join-split-sql/</guid>
+      <guid>https://tanteng.me/2015/06/left-join-split-sql/</guid>
       <description>&lt;p&gt;本文讲解如何把一条带有一个或多个left join或right join的sql语句拆分成多条sql语句。MySQL进行连表查询效率是很低的，特别是数据很大，而且并发量很高的情况，索引都无法解决问题，最好的办法就是把sql语句拆分成多条单表查询的sql。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关于 utf8mb4，它和 utf8 有什么区别</title>
-      <link>http://tanteng.me/2015/05/utf8mb4/</link>
+      <link>https://tanteng.me/2015/05/utf8mb4/</link>
       <pubDate>Wed, 20 May 2015 15:16:47 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/utf8mb4/</guid>
+      <guid>https://tanteng.me/2015/05/utf8mb4/</guid>
       <description>&lt;p&gt;最近经常看到一个没见过的编码格式叫utf8mb4，总是和emoj表情联系在一起，什么是utf8mb4，它和utf8有什么区别呢？&lt;/p&gt;
 
 &lt;p&gt;utf8mb4是一种可支持4个字节UTF编码，一个字符最多能有4字节，所以能支持更多的字符集。&lt;/p&gt;</description>
@@ -432,64 +432,64 @@
     
     <item>
       <title>left join多张表查出重复数据的解决办法</title>
-      <link>http://tanteng.me/2015/05/left-join-duplication/</link>
+      <link>https://tanteng.me/2015/05/left-join-duplication/</link>
       <pubDate>Tue, 19 May 2015 08:53:04 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/05/left-join-duplication/</guid>
+      <guid>https://tanteng.me/2015/05/left-join-duplication/</guid>
       <description>&lt;p&gt;今天线上出现一个问题，查询售后订单出现很多重复的内容，经查，是left join多张表导致的查询出重复数据。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>什么时候使用mysql事务？</title>
-      <link>http://tanteng.me/2015/04/mysql-commit/</link>
+      <link>https://tanteng.me/2015/04/mysql-commit/</link>
       <pubDate>Tue, 07 Apr 2015 15:25:18 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/04/mysql-commit/</guid>
+      <guid>https://tanteng.me/2015/04/mysql-commit/</guid>
       <description>&lt;p&gt;突然想到一个问题，mysql中我们经常用到事务，比如一次向几张表插入内容，如果中间出错了可以回滚，但是实际开发中，像这种一次可能向多个数据表写入数据的情况，并没有采用事务。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>sequel导入sql文件的时候提示错误</title>
-      <link>http://tanteng.me/2015/03/sequel-import/</link>
+      <link>https://tanteng.me/2015/03/sequel-import/</link>
       <pubDate>Sat, 21 Mar 2015 10:50:22 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/03/sequel-import/</guid>
+      <guid>https://tanteng.me/2015/03/sequel-import/</guid>
       <description>&lt;p&gt;sequel 导入 sql 文件的时候提示错误：An error occurred when reading the file, as it could not be read in the encoding you selected utf8.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MAMP如何修改mysql密码</title>
-      <link>http://tanteng.me/2015/03/mamp-mysql-pass/</link>
+      <link>https://tanteng.me/2015/03/mamp-mysql-pass/</link>
       <pubDate>Sat, 14 Mar 2015 16:53:01 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/03/mamp-mysql-pass/</guid>
+      <guid>https://tanteng.me/2015/03/mamp-mysql-pass/</guid>
       <description>&lt;p&gt;MAMP是OS X系统下常用的PHP集成环境，如何修改MAMP登陆mysql的密码呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>char还是varchar</title>
-      <link>http://tanteng.me/2015/01/char-varchar/</link>
+      <link>https://tanteng.me/2015/01/char-varchar/</link>
       <pubDate>Fri, 30 Jan 2015 02:57:54 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/01/char-varchar/</guid>
+      <guid>https://tanteng.me/2015/01/char-varchar/</guid>
       <description>&lt;p&gt;在mysql的数据库设计中，要给字段选用合适的类型，文本型的字段常见的有char，vchar，text等。比如网址一般选vchar，标题也可以vchar，姓名可以是char。那么选char还是vchar根据什么来选择呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在mysql中使用正则表达式</title>
-      <link>http://tanteng.me/2015/01/mysql-regexp/</link>
+      <link>https://tanteng.me/2015/01/mysql-regexp/</link>
       <pubDate>Thu, 29 Jan 2015 03:16:24 +0000</pubDate>
       
-      <guid>http://tanteng.me/2015/01/mysql-regexp/</guid>
+      <guid>https://tanteng.me/2015/01/mysql-regexp/</guid>
       <description>&lt;p&gt;正则表达式广泛用于各种程序编程的地方，在mysql sql语句中使用正则表达式也可以解决很多查询问题，化繁为简，并且巧妙运用可以提高mysql查询效率。本文讲讲mysql中如何使用regexp语法运行含有正则表达式的sql语句。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>mysql关联表更新sql语句</title>
-      <link>http://tanteng.me/2014/12/mysql-update-left-join/</link>
+      <link>https://tanteng.me/2014/12/mysql-update-left-join/</link>
       <pubDate>Fri, 05 Dec 2014 07:35:41 +0000</pubDate>
       
-      <guid>http://tanteng.me/2014/12/mysql-update-left-join/</guid>
+      <guid>https://tanteng.me/2014/12/mysql-update-left-join/</guid>
       <description>&lt;p&gt;比如有两张表，其中一张表某个字段的值要关联另一张表进行统计，就要用到mysql的update方法，并且left join另一张表进行联合查询。&lt;/p&gt;
 
 &lt;p&gt;表1&lt;/p&gt;
@@ -499,10 +499,10 @@
     
     <item>
       <title>mysql排序order by find_in_set</title>
-      <link>http://tanteng.me/2014/11/find-in-set/</link>
+      <link>https://tanteng.me/2014/11/find-in-set/</link>
       <pubDate>Sat, 29 Nov 2014 02:07:59 +0000</pubDate>
       
-      <guid>http://tanteng.me/2014/11/find-in-set/</guid>
+      <guid>https://tanteng.me/2014/11/find-in-set/</guid>
       <description>&lt;p&gt;mysql进行排序的时候如果需要按照原始的顺序排序，就可以使用order by find_in_set()方法，具体用法如下：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34; title=&#34;FIND_IN_SET&#34;&gt;select * from ecs_goods where goods_id in ($idList) order by FIND_IN_SET(goods_id,&amp;lsquo;$idList&amp;rsquo;)&lt;/code&gt;&lt;/p&gt;
@@ -512,10 +512,10 @@
     
     <item>
       <title>Navicat将Sql Server 2000数据库导入（转换）到MySql中</title>
-      <link>http://tanteng.me/2014/04/navicat-sql-server-2000/</link>
+      <link>https://tanteng.me/2014/04/navicat-sql-server-2000/</link>
       <pubDate>Tue, 22 Apr 2014 06:03:20 +0000</pubDate>
       
-      <guid>http://tanteng.me/2014/04/navicat-sql-server-2000/</guid>
+      <guid>https://tanteng.me/2014/04/navicat-sql-server-2000/</guid>
       <description>&lt;p&gt;大家都知道， Sql Server 2000的数据库只能运行在MS系列平台下，而我们有时需要将MS下的数据库移植到Linux或其他平台上，这是可能需要数据库的导入导出功能，但这样也未免太繁琐了，下面介绍一种简便的方法一步实现数据库的移植。&lt;/p&gt;
 
 &lt;p&gt;Navicat 8是针对mysql的一个很好用的图形化管理工具，利用它导入功能把数据从sqlserver2000中直接导入到MySQL中。&lt;/p&gt;</description>
@@ -523,10 +523,10 @@
     
     <item>
       <title>left join,inner join区别</title>
-      <link>http://tanteng.me/2013/11/left-join-inner/</link>
+      <link>https://tanteng.me/2013/11/left-join-inner/</link>
       <pubDate>Fri, 15 Nov 2013 05:53:20 +0000</pubDate>
       
-      <guid>http://tanteng.me/2013/11/left-join-inner/</guid>
+      <guid>https://tanteng.me/2013/11/left-join-inner/</guid>
       <description>&lt;p&gt;假设我们有两张表。Table A 是左边的表。Table B 是右边的表。其各有四条记录，其中有两条记录name是相同的，如下所示：让我们看看不同JOIN的不同&lt;/p&gt;
 
 &lt;div&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 小谈博客</title>
-    <link>http://tanteng.me/categories/git/</link>
+    <link>https://tanteng.me/categories/git/</link>
     <description>Recent content in Git on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Sep 2017 10:42:56 +0000</lastBuildDate>
     
-	<atom:link href="http://tanteng.me/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tanteng.me/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git 变基和合并</title>
-      <link>http://tanteng.me/2017/09/git-merge-rebase/</link>
+      <link>https://tanteng.me/2017/09/git-merge-rebase/</link>
       <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
       
-      <guid>http://tanteng.me/2017/09/git-merge-rebase/</guid>
+      <guid>https://tanteng.me/2017/09/git-merge-rebase/</guid>
       <description>变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操</description>
     </item>
     
