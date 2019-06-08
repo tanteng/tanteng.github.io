@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Golang 如何优雅的退出程序</title>
+      <link>https://tanteng.me/2019/05/graceful-exit-golang/</link>
+      <pubDate>Wed, 08 May 2019 17:10:19 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/05/graceful-exit-golang/</guid>
+      <description>在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。 func main() { ch := make(chan os.Signal, 1) //Handle SIGINT</description>
+    </item>
+    
+    <item>
       <title>本周阅读清单20190128</title>
       <link>https://tanteng.me/2019/02/reding-list-28/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>

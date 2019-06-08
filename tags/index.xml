@@ -6,9 +6,28 @@
     <description>Recent content in Tags on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 08 May 2019 17:10:19 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>channel</title>
+      <link>https://tanteng.me/tags/channel/</link>
+      <pubDate>Wed, 08 May 2019 17:10:19 +0800</pubDate>
+      
+      <guid>https://tanteng.me/tags/channel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://tanteng.me/tags/golang/</link>
+      <pubDate>Wed, 08 May 2019 17:10:19 +0800</pubDate>
+      
+      <guid>https://tanteng.me/tags/golang/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
