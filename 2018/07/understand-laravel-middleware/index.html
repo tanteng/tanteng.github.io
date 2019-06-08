@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 中间件原理 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 中间件原理"/>
+<meta name="twitter:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki"/>
+
+<meta property="og:title" content="Laravel 中间件原理" />
+<meta property="og:description" content="Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tanteng.me/2018/07/understand-laravel-middleware/" />
+<meta property="article:published_time" content="2018-07-29T16:25:08&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-29T16:25:08&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.5908340ec0d0531feb30d45d7ab9a057fcd461f5bda26b1c817b70b1565424bb.css" integrity="sha256-WQg0DsDQUx/rMNRdermgV/zUYfW9omscgXtwsVZUJLs=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 中间件原理</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 29, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cookie 加密，设置 Cookie 等等。</p>
+
+<p>本文就来探究 Laravel 中间件的实现原理，看 Laravel 如何把 PHP 的 array_reduce 函数和闭包用到了极致。</p>
+
+<p>需要先了解 Laravel 中间件的用法，如何定义一个中间件，还有前置中间件，后置中间件的概念。（文档：<a href="https://laravel-china.org/docs/laravel/5.5/middleware/1294" target="_blank" rel="noopener nofollow">Laravel 5.5 中间件</a>，本文是基于 Laravel 5.3 版本演示，但两者这部分是一样的）</p>
+
+<h3 id="开始">开始</h3>
+
+<p>为了弄懂 Laravel 中间件原理，可以构造一个路由，并使用 debug_backtrace 函数来打印方法调用过程。</p>
+
+<pre><code class="language-php">Route::get('test',function(){
+   dump(debug_backtrace());
+});
+</code></pre>
+
+<p>可见许多地方都跟 Pipeline 组件有关，并且重复执行一个闭包方法。</p>
+
+<p>这里 pipes 数组就是需要用到的中间件。</p>
+
+<h3 id="中间件核心类-pipeline">中间件核心类 Pipeline</h3>
+
+<p>在 Laravel 框架 index.php 入口文件里，$kernel-&gt;handle() 方法就调用了 Pipeline 的方法，可以说它是贯穿始终的，这是把请求发到中间件进行处理的方法：</p>
+
+<pre><code class="language-php">/**
+ * Send the given request through the middleware / router.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
+protected function sendRequestThroughRouter($request)
+{
+    $this-&gt;app-&gt;instance('request', $request);
+
+    Facade::clearResolvedInstance('request');
+
+    $this-&gt;bootstrap();
+
+    return (new Pipeline($this-&gt;app))
+                -&gt;send($request)
+                -&gt;through($this-&gt;app-&gt;shouldSkipMiddleware() ? [] : $this-&gt;middleware)
+                -&gt;then($this-&gt;dispatchToRouter());
+}
+</code></pre>
+
+<p>其中 send 方法是设置 passable 属性也就是 $request，through 是设置 pipes 属性，也就是需要用到的中间件，是一个数组，重点是这里的 then 方法，参数也是一个闭包函数。</p>
+
+<pre><code class="language-php">/**
+ * Run the pipeline with a final destination callback.
+ *
+ * @param  \Closure  $destination
+ * @return mixed
+ */
+public function then(Closure $destination)
+{
+    $pipeline = array_reduce(
+        array_reverse($this-&gt;pipes), $this-&gt;carry(), $this-&gt;prepareDestination($destination)
+    );
+
+    return $pipeline($this-&gt;passable);
+}
+</code></pre>
+
+<h4 id="array-reduce-使用">array_reduce 使用</h4>
+
+<p>这里就需要讲解一下 array_reduce 的用法了，可以说是妙用，这是理解 Laravel 中间件的重点，深刻领会了它的用法，就弄懂了 Laravel 中间件的原理。</p>
+
+<p>先看一个官方例子明白它的基本用法：</p>
+
+<pre><code class="language-php">function sum($carry, $item)
+{
+    $carry += $item;
+    return $carry;
+}
+
+$a = array(1, 2, 3, 4, 5);
+
+var_dump(array_reduce($a, &quot;sum&quot;)); // int(15)
+</code></pre>
+
+<p>基础用法参考 PHP 文档：<a href="http://php.net/manual/zh/function.array-reduce.php" target="_blank" rel="noopener nofollow">array_reduce</a></p>
+
+<p>这是一个最简单的例子，array_reduce 会迭代每个元素，回调函数第一个参数是上次执行的结果，然后返回最终的一个值。</p>
+
+<p>那么第二个参数的回调函数返回的是一个闭包呢？</p>
+
+<pre><code class="language-php">$arr = ['AAAA', 'BBBB', 'CCCC'];
+
+$res = array_reduce($arr, function($carry, $item){
+    return function() use ($carry,$item){
+        dump(&quot;item:&quot;.$item);
+        if(is_null($carry)){
+            return &quot;CARRY is null. item:&quot;.$item;
+        }
+        if($carry instanceof Closure){
+            dump($carry());
+            return strtolower($item);
+        }
+        return $item;
+    };
+});
+
+dump($res());
+</code></pre>
+
+<p>这个例子第二个参数回调函数返回的是一个闭包，也就是说 array_reduce 函数最终返回的也是一个闭包，除非执行这个闭包，否则里面的逻辑不会执行，这也是闭包的神奇之处，我们可以把函数“暂存”起来以后执行。</p>
+
+<p>第一次迭代，$carry 是空的，返回一个字符串。</p>
+
+<p>第二次迭代，因为第一次返回了一个闭包，所以这次 $carry 是一个闭包，返回小写字母。</p>
+
+<p>第三次迭代，因为第二次迭代返回的是一个闭包，所以也是返回一个小写字母。</p>
+
+<p>这个闭包的执行结果是：</p>
+
+<p class="lang:default decode:true sf-dump ">
+  &#8220;item:CCCC&#8221;<br /> &#8220;<span class="sf-dump-str" title="9 characters">item:BBBB</span>&#8221;<br /> &#8220;<span class="sf-dump-str" title="9 characters">item:AAAA</span>&#8221;<br /> &#8220;<span class="sf-dump-str" title="24 characters">CARRY is null. item:AAAA</span>&#8221;<br /> &#8220;<span class="sf-dump-str" title="4 characters">bbbb</span>&#8221;<br /> &#8220;<span class="sf-dump-str" title="4 characters">cccc</span>&#8220;
+</p>
+
+<p>一定要弄懂为什么这样输出，它的执行顺序是反的，可以理解为每一次迭代，就是把闭包函数丢到一个栈里面，后进先出。</p>
+
+<h3 id="实现的核心">实现的核心</h3>
+
+<p>接下来要分析 $this-&gt;carry() 这个方法，它是中间件实现的核心。</p>
+
+<pre><code class="language-php">/**
+ * Get a Closure that represents a slice of the application onion.
+ *
+ * @return \Closure
+ */
+protected function carry()
+{
+    return function ($stack, $pipe) {
+        return function ($passable) use ($stack, $pipe) {
+            if (is_callable($pipe)) {
+                // If the pipe is an instance of a Closure, we will just call it directly but
+                // otherwise we'll resolve the pipes out of the container and call it with
+                // the appropriate method and arguments, returning the results back out.
+                return $pipe($passable, $stack);
+            } elseif (! is_object($pipe)) {
+                list($name, $parameters) = $this-&gt;parsePipeString($pipe);
+
+                // If the pipe is a string we will parse the string and resolve the class out
+                // of the dependency injection container. We can then build a callable and
+                // execute the pipe function giving in the parameters that are required.
+                $pipe = $this-&gt;getContainer()-&gt;make($name);
+
+                $parameters = array_merge([$passable, $stack], $parameters);
+            } else {
+                // If the pipe is already an object we'll just make a callable and pass it to
+                // the pipe as-is. There is no need to do any extra parsing and formatting
+                // since the object we're given was already a fully instantiated object.
+                $parameters = [$passable, $stack];
+            }
+
+            return method_exists($pipe, $this-&gt;method)
+                            ? $pipe-&gt;{$this-&gt;method}(...$parameters)
+                            : $pipe(...$parameters);
+        };
+    };
+}
+</code></pre>
+
+<p>这个 carry 方法返回一个闭包（或者说函数也可以），作为 array_reduce 的第二个参数作为回调函数。这个方法看上去很复杂，闭包里面返回闭包，但是搞清楚了之后就没这么难。</p>
+
+<p>这个作为 array_reduce 的回调函数的闭包，接受两个参数，第一个参数也是个闭包，而且第一次迭代的闭包是另外一个方法提供的，第二个参数是中间件，是一个字符串形式。</p>
+
+<p>第一次迭代，$stack 参数是 $this-&gt;dispatchToRouter() 返回的闭包，实际上放到最后执行了，$pipe 参数是 Illuminate\Routing\Middleware\SubstituteBindings，（注意 array_reverse 把 pipes 数组反转了，实际上理解了原理就知道这样做反而是要按中间件定义的顺序执行），那么根据判断逻辑，从容器中取出中间件，最后执行中间件的 handle 方法，并传入 $request 和 $stack 作为参数，<strong>但实际上并没有任何实际的执行，注意这个函数返回的也是一个闭包。</strong></p>
+
+<p>第二次迭代，还是执行这个回调函数，此时 $stack 就变成了第一次也就是上次迭代返回的闭包了，第二个参数 $pipe 就是 App\Http\Middleware\VerifyCsrfToken，其他过程同上，也返回一个闭包。</p>
+
+<p>……</p>
+
+<p>最后一次迭代，$stack 是上一次返回的闭包，$pipe 就是 App\Http\Middleware\EncryptCookies，但到此没有任何实际的执行，因为没有调用。</p>
+
+<p>这些闭包，可以理解为放到一个“栈”里面了，执行的时候从最外层开始往里面执行，后进先出。</p>
+
+<p>最后，then 方法里 return $pipeline($this-&gt;passable) 才是调用 array_reduce 返回的最终的闭包，开始真正执行这些中间件了。</p>
+
+<h3 id="前置和后置中间件">前置和后置中间件</h3>
+
+<p>我们把控制器方法改成：</p>
+
+<pre><code class="language-php">Route::get('test',function(){
+    dump('this is controller');
+   //dump(debug_backtrace());
+});
+</code></pre>
+
+<p>随便找一个中间件在 $response = $next($request) 前后打印点内容，这里 $next 就是前文中的 $stack，执行这句的时候就会把所有中间件都执行完，然后别忘了前面说的第一个闭包是 $this-&gt;dispatchToRouter() 提供的，它会进入到控制器逻辑，然后再是执行每个中间件中 $response = $next($request) 接下来的逻辑。</p>
+
+<p>这也是前置中间件和后置中间件的原理。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2018/07/reding-list-16/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">本周阅读清单20180723</span>
+    </a>
+    
+    
+    <a href="/2018/08/laravel-why-not-use-blpop/" class="navigation-next">
+      <span class="navigation-tittle">Laravel 中为何不使用 blpop 取队列？</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

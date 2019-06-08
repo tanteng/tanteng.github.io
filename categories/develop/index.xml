@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Develop on 小谈博客</title>
+    <link>https://tanteng.me/categories/develop/</link>
+    <description>Recent content in Develop on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Oct 2018 03:29:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tanteng.me/categories/develop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL 字段为 NULL 的查询问题</title>
+      <link>https://tanteng.me/2018/10/mysql-select-null/</link>
+      <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/10/mysql-select-null/</guid>
+      <description>假设 MySQL 中某数据表 code 字段是可为 NULL ... AND code NOT IN () ... ... AND (code IS NULL or code NOT IN()) ... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to</description>
+    </item>
+    
+    <item>
+      <title>HTTP 204 状态码</title>
+      <link>https://tanteng.me/2018/10/http-204/</link>
+      <pubDate>Fri, 19 Oct 2018 06:15:51 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/10/http-204/</guid>
+      <description>HTTP协议中 204 No Content 成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETa</description>
+    </item>
+    
+    <item>
+      <title>Laravel 错误和异常处理用法</title>
+      <link>https://tanteng.me/2018/09/laravel-error-handing/</link>
+      <pubDate>Sat, 15 Sep 2018 05:41:51 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/09/laravel-error-handing/</guid>
+      <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Redis生产环境查看数据库键</title>
+      <link>https://tanteng.me/2018/09/redis-scan/</link>
+      <pubDate>Wed, 05 Sep 2018 14:17:03 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/09/redis-scan/</guid>
+      <description>如果要在redis生产环境服务器查看有哪些数据库键，当数据量特别大的时候，千万不要用 keys * ，这样会卡死，可以使用 scan 命令迭代。</description>
+    </item>
+    
+    <item>
+      <title>Redis pipeline 和事务</title>
+      <link>https://tanteng.me/2018/09/redis-pipeline-transaction/</link>
+      <pubDate>Tue, 04 Sep 2018 16:25:09 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/09/redis-pipeline-transaction/</guid>
+      <description>Redis pipeline 流水线处理命令，只是可以减少通信，而不能保证原子性。用 multi 包裹起来的是事务。</description>
+    </item>
+    
+    <item>
+      <title>Laravel chunk 使用注意的问题</title>
+      <link>https://tanteng.me/2018/08/laravel-chunk-tip/</link>
+      <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/08/laravel-chunk-tip/</guid>
+      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： User::where(&#39;approved&#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&#39;approved&#39; =&amp;amp;gt; 1]); } }); 原因在于第一次查询： select</description>
+    </item>
+    
+    <item>
+      <title>Laravel 中为何不使用 blpop 取队列？</title>
+      <link>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</link>
+      <pubDate>Tue, 31 Jul 2018 17:18:21 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</guid>
+      <description>&lt;p&gt;Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 中间件原理</title>
+      <link>https://tanteng.me/2018/07/understand-laravel-middleware/</link>
+      <pubDate>Sun, 29 Jul 2018 16:25:08 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/07/understand-laravel-middleware/</guid>
+      <description>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki</description>
+    </item>
+    
+    <item>
+      <title>Golang 统计字符串字数</title>
+      <link>https://tanteng.me/2018/05/golang-str-length/</link>
+      <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/05/golang-str-length/</guid>
+      <description>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家</description>
+    </item>
+    
+    <item>
+      <title>PHP知识整理之——PHP基础、WEB安全、网络</title>
+      <link>https://tanteng.me/2018/04/php-2/</link>
+      <pubDate>Tue, 10 Apr 2018 03:11:14 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/php-2/</guid>
+      <description>&lt;p&gt;本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP写时复制（Copy On Write）</title>
+      <link>https://tanteng.me/2018/03/php-cow/</link>
+      <pubDate>Mon, 26 Mar 2018 14:04:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/03/php-cow/</guid>
+      <description>一个例子： &amp;lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景</description>
+    </item>
+    
+    <item>
+      <title>为什么 Laravel 会重复执行同一个队列任务？</title>
+      <link>https://tanteng.me/2017/12/laravel-queue-excute/</link>
+      <pubDate>Sun, 24 Dec 2017 07:49:30 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-queue-excute/</guid>
+      <description>在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一</description>
+    </item>
+    
+    <item>
+      <title>Laravel Redis 多个进程同时取队列问题</title>
+      <link>https://tanteng.me/2017/12/laravel-supervisor-queue/</link>
+      <pubDate>Sat, 23 Dec 2017 11:26:19 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-supervisor-queue/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:default decode:true&#34;&gt;[program:laravel-worker]
+process_name=%(program&lt;em&gt;name)s&lt;/em&gt;%(process_num)02d
+command=php /var/www/xxx.cn/artisan queue:work &amp;ndash;queue=sendfile &amp;ndash;tries=3 &amp;ndash;daemon
+autostart=true
+autorestart=true
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/var/www/xxx.cn/worker.log
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 数据库设计及性能优化Tips</title>
+      <link>https://tanteng.me/2017/12/mysql-optimize-tips/</link>
+      <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/mysql-optimize-tips/</guid>
+      <description>规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个</description>
+    </item>
+    
+    <item>
+      <title>使用 Laravel 消息队列要注意的问题</title>
+      <link>https://tanteng.me/2017/12/laravel-queue-tips/</link>
+      <pubDate>Mon, 11 Dec 2017 10:08:13 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-queue-tips/</guid>
+      <description>使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实</description>
+    </item>
+    
+    <item>
+      <title>Mac 上如何打开 /usr/local 路径的文件夹</title>
+      <link>https://tanteng.me/2017/11/mac-open-user-local/</link>
+      <pubDate>Wed, 29 Nov 2017 14:56:23 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/11/mac-open-user-local/</guid>
+      <description>在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式</description>
+    </item>
+    
+    <item>
+      <title>如何理解 Golang 的参数传递都是值传递？</title>
+      <link>https://tanteng.me/2017/11/golang-parameter-passing/</link>
+      <pubDate>Sun, 19 Nov 2017 12:22:01 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/11/golang-parameter-passing/</guid>
+      <description>&lt;p&gt;在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP-FPM,Nginx,FastCGI 之间的关系</title>
+      <link>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</link>
+      <pubDate>Thu, 09 Nov 2017 08:44:27 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</guid>
+      <description>本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与</description>
+    </item>
+    
+    <item>
+      <title>PHP intval 转换浮点数精度丢失问题</title>
+      <link>https://tanteng.me/2017/10/php-intval-precision/</link>
+      <pubDate>Sun, 15 Oct 2017 08:15:42 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/10/php-intval-precision/</guid>
+      <description>&lt;p&gt;在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$n=&amp;quot;19.99&amp;quot;; print intval($n*100); // prints 1998
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
+
+&lt;p&gt;1.转换成字符串再 intval&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print intval(strval($n*100)); // prints 1999
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;php -r &amp;quot;echo round(19.99*100);&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Docker 搭建 Laravel 本地环境</title>
+      <link>https://tanteng.me/2017/10/docker-laravel-local-environment/</link>
+      <pubDate>Sat, 14 Oct 2017 11:28:48 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/10/docker-laravel-local-environment/</guid>
+      <description>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同</description>
+    </item>
+    
+    <item>
+      <title>服务器返回 502,503,504 原因及解决办法</title>
+      <link>https://tanteng.me/2017/10/503-service-unavailable/</link>
+      <pubDate>Sun, 08 Oct 2017 14:44:08 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/10/503-service-unavailable/</guid>
+      <description>&lt;h3 id=&#34;502-bad-gateway&#34;&gt;502 bad gateway&lt;/h3&gt;
+
+&lt;p&gt;问题原因：服务器作为网关或代理，从上游服务器收到无效响应。&lt;/p&gt;
+
+&lt;p&gt;nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 调试函数 debug_backtrace</title>
+      <link>https://tanteng.me/2017/09/debug-backtrace-php/</link>
+      <pubDate>Mon, 11 Sep 2017 07:37:49 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/09/debug-backtrace-php/</guid>
+      <description>有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;amp;gt;game_id) {</description>
+    </item>
+    
+    <item>
+      <title>Git 变基和合并</title>
+      <link>https://tanteng.me/2017/09/git-merge-rebase/</link>
+      <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/09/git-merge-rebase/</guid>
+      <description>变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操</description>
+    </item>
+    
+    <item>
+      <title>PHP 错误和异常处理</title>
+      <link>https://tanteng.me/2017/09/php-error-handle/</link>
+      <pubDate>Sat, 02 Sep 2017 07:27:24 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/09/php-error-handle/</guid>
+      <description>&lt;p&gt;关于 PHP 的错误和异常处理，总结如下。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-设置-php-错误级别&#34;&gt;1.设置 PHP 错误级别&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;span class=&#34;refname&#34;&gt;error_reporting&lt;/span&gt; — &lt;span class=&#34;dc-title&#34;&gt;设置应该报告何种 PHP 错误。&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang 中”泛型”的支持</title>
+      <link>https://tanteng.me/2017/08/golang-generic/</link>
+      <pubDate>Fri, 11 Aug 2017 10:14:10 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/08/golang-generic/</guid>
+      <description>Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola</description>
+    </item>
+    
+    <item>
+      <title>PHP发送HTTP请求的几种方式</title>
+      <link>https://tanteng.me/2017/07/php-curl-guzzlehttp/</link>
+      <pubDate>Sat, 22 Jul 2017 06:02:45 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/07/php-curl-guzzlehttp/</guid>
+      <description>&lt;p&gt;PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？&lt;/p&gt;
+
+&lt;p&gt;cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Laravel 中设置 Etag 缓存</title>
+      <link>https://tanteng.me/2017/05/laravel-etag-middleware/</link>
+      <pubDate>Fri, 19 May 2017 04:51:35 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/05/laravel-etag-middleware/</guid>
+      <description>&lt;p&gt;本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。&lt;/p&gt;
+
+&lt;h3 id=&#34;什么是-etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
+
+&lt;p&gt;Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。&lt;/p&gt;
+
+&lt;p&gt;浏览器根据状态码判断是否缓存过期。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang append slice to slice</title>
+      <link>https://tanteng.me/2017/05/golang-append-slice-to-slice/</link>
+      <pubDate>Wed, 10 May 2017 07:11:22 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/05/golang-append-slice-to-slice/</guid>
+      <description>&lt;p&gt;把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。&lt;/p&gt;
+
+&lt;p&gt;片段1：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;此时 s0 结果：result: [1 100 122 [3 4 5 6]]&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx 报错和解决方法记录</title>
+      <link>https://tanteng.me/2017/04/nginx-permission-denied/</link>
+      <pubDate>Wed, 19 Apr 2017 07:49:24 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/04/nginx-permission-denied/</guid>
+      <description>&lt;p&gt;记录一下遇到的各种 Nginx 的报错和解决办法。&lt;/p&gt;
+
+&lt;h3 id=&#34;13-permission-denied&#34;&gt;13: Permission denied&lt;/h3&gt;
+
+&lt;p&gt;Nginx错误：&lt;/p&gt;
+
+&lt;p&gt;2017/04/19 14:46:46 [crit] 4172#0: *671 open() &amp;#8220;/data/vhosts/xunlei.com/test/&amp;#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &amp;#8220;GET / HTTP/1.1&amp;#8221;, host: &amp;#8220;www.test.com&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>韩天峰：2017 年 PHP 程序员未来路在何方</title>
+      <link>https://tanteng.me/2017/03/2017-php-way/</link>
+      <pubDate>Fri, 31 Mar 2017 07:58:23 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/03/2017-php-way/</guid>
+      <description>&lt;p&gt;PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>登录重放攻击及安全防御</title>
+      <link>https://tanteng.me/2017/02/login-replay-attacks/</link>
+      <pubDate>Wed, 01 Feb 2017 04:59:01 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/02/login-replay-attacks/</guid>
+      <description>现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提</description>
+    </item>
+    
+    <item>
+      <title>MySQL大表加字段思路</title>
+      <link>https://tanteng.me/2017/01/mysql-alter-table-big-data/</link>
+      <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/01/mysql-alter-table-big-data/</guid>
+      <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;ldquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Supervisor 管理 Laravel 队列进程</title>
+      <link>https://tanteng.me/2017/01/supervisor-laravel-queue/</link>
+      <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/01/supervisor-laravel-queue/</guid>
+      <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>window.location.reload()和window.location.href=””的区别</title>
+      <link>https://tanteng.me/2016/12/window-location-reload-and-href/</link>
+      <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/window-location-reload-and-href/</guid>
+      <description>&lt;p&gt;window.location.reload() 和 window.location.href=&amp;#8221;&amp;#8221; 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-11348 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; alt=&#34;window.location.reload()和window.location.href=&#39;&#39;的区别&#34; width=&#34;368&#34; height=&#34;207&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 5.3 后台管理系统搭建</title>
+      <link>https://tanteng.me/2016/12/laravel-admin-install/</link>
+      <pubDate>Sat, 24 Dec 2016 07:13:14 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/laravel-admin-install/</guid>
+      <description>&lt;p&gt;网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Nginx 反向代理和负载均衡搭建多人测试环境</title>
+      <link>https://tanteng.me/2016/12/nginx-test-environment/</link>
+      <pubDate>Sat, 17 Dec 2016 06:19:44 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/nginx-test-environment/</guid>
+      <description>&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-11120&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg&#34; alt=&#34;&#34; width=&#34;1328&#34; height=&#34;874&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 使用 env 读取环境变量为 null 的问题</title>
+      <link>https://tanteng.me/2016/12/laravel-env-null/</link>
+      <pubDate>Sun, 04 Dec 2016 15:35:18 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/laravel-env-null/</guid>
+      <description>&lt;p&gt;不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。&lt;/p&gt;
+
+&lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP捕捉异常中断</title>
+      <link>https://tanteng.me/2016/09/register-shutdown-function/</link>
+      <pubDate>Wed, 28 Sep 2016 09:31:50 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/09/register-shutdown-function/</guid>
+      <description>&lt;p&gt;当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 分割 routes.php 路由文件的一种方式</title>
+      <link>https://tanteng.me/2016/08/laravel-routes-map/</link>
+      <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/08/laravel-routes-map/</guid>
+      <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
+    </item>
+    
+    <item>
+      <title>常用Linux操作数据库命令及MySQL语句</title>
+      <link>https://tanteng.me/2016/06/mysql-command/</link>
+      <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/mysql-command/</guid>
+      <description>&lt;p&gt;以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。&lt;/p&gt;
+
+&lt;h3 id=&#34;数据库表导入&#34;&gt;数据库表导入&lt;/h3&gt;
+
+&lt;p&gt;恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true &#34;&gt;mysql -uroot -p tanteng.me  &amp;lt; mobile_promote.sql&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>jQuery操作iframe页面DOM</title>
+      <link>https://tanteng.me/2016/06/jquery-iframe/</link>
+      <pubDate>Fri, 03 Jun 2016 11:36:36 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/jquery-iframe/</guid>
+      <description>&lt;p&gt;如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-10135&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; alt=&#34;jquery_iframe&#34; width=&#34;1092&#34; height=&#34;514&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL查看数据库大小</title>
+      <link>https://tanteng.me/2016/06/mysql-data-length/</link>
+      <pubDate>Fri, 03 Jun 2016 11:24:42 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/mysql-data-length/</guid>
+      <description>&lt;p&gt;1、进入information_schema 数据库（存放了其他的数据库的信息）&lt;/p&gt;
+
+&lt;p&gt;use information_schema;&lt;/p&gt;
+
+&lt;p&gt;2、查询所有数据的大小：&lt;/p&gt;
+
+&lt;p&gt;select concat(round(sum(data_length/1024/1024),2),&amp;#8217;MB&amp;#8217;) as data from tables;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 7安装和开启opcache</title>
+      <link>https://tanteng.me/2016/06/php7-opcache/</link>
+      <pubDate>Thu, 02 Jun 2016 16:20:20 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/php7-opcache/</guid>
+      <description>&lt;p&gt;鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>优化 Laravel 网站打开速度</title>
+      <link>https://tanteng.me/2016/06/laravel-optimize/</link>
+      <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/laravel-optimize/</guid>
+      <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
+    </item>
+    
+    <item>
+      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
+      <link>https://tanteng.me/2016/04/vagrantfile-synced-folder/</link>
+      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/04/vagrantfile-synced-folder/</guid>
+      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>rm 、 git rm –cached 和 git rm 的区别</title>
+      <link>https://tanteng.me/2016/02/git-rm-cached-diff/</link>
+      <pubDate>Thu, 18 Feb 2016 09:03:14 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/02/git-rm-cached-diff/</guid>
+      <description>1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件</description>
+    </item>
+    
+    <item>
+      <title>MySQL 字符串字段转换 crc32 建索引提高查询效率</title>
+      <link>https://tanteng.me/2016/02/crc32-mysql-index/</link>
+      <pubDate>Mon, 01 Feb 2016 01:29:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/02/crc32-mysql-index/</guid>
+      <description>&lt;p&gt;给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。&lt;/p&gt;
+
+&lt;p&gt;crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查询数据库重复记录sql</title>
+      <link>https://tanteng.me/2016/01/repeat-group-having/</link>
+      <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/01/repeat-group-having/</guid>
+      <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
+    </item>
+    
+    <item>
+      <title>Composer的自动加载机制</title>
+      <link>https://tanteng.me/2015/12/composer-autoload/</link>
+      <pubDate>Thu, 24 Dec 2015 15:41:16 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/12/composer-autoload/</guid>
+      <description>&lt;p&gt;如项目下的composer.json文件中有autoload的定义：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;ldquo;autoload&amp;rdquo;: {
+        &amp;ldquo;classmap&amp;rdquo;: [
+            &amp;ldquo;database&amp;rdquo;
+        ],
+        &amp;ldquo;psr-4&amp;rdquo;: {
+            &amp;ldquo;GrahamCampbell\BootstrapCMS\&amp;ldquo;: &amp;ldquo;app/&amp;rdquo;
+        }
+    },&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac终端git命令提示错误:missing xcrun</title>
+      <link>https://tanteng.me/2015/11/mac-git-missing-xcrun/</link>
+      <pubDate>Sun, 08 Nov 2015 07:56:52 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/11/mac-git-missing-xcrun/</guid>
+      <description>&lt;p&gt;在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&amp;#8217;t start Git，点击&amp;#8221;fix it&amp;#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：&lt;/p&gt;
+
+&lt;p&gt;xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>初识PHP Static延迟静态绑定</title>
+      <link>https://tanteng.me/2015/05/php-static-bind/</link>
+      <pubDate>Wed, 27 May 2015 03:38:42 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/05/php-static-bind/</guid>
+      <description>&lt;p&gt;PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;class A&lt;br /&gt;
+{&lt;br /&gt;
+    public static function echoClass(){&lt;br /&gt;
+        echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
+    }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static function test(){  
+    self::echoClass();        
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;class B extends A&lt;br /&gt;
+{&lt;br /&gt;
+    public static function echoClass()&lt;br /&gt;
+    {&lt;br /&gt;
+         echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
+    }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;B::test(); //输出A&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 开发者该知道的 5 个 Composer 小技巧</title>
+      <link>https://tanteng.me/2015/05/php-composer/</link>
+      <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/05/php-composer/</guid>
+      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
+    </item>
+    
+    <item>
+      <title>PHP：PDO prepare预处理</title>
+      <link>https://tanteng.me/2012/09/php-pdo-prepare/</link>
+      <pubDate>Sun, 30 Sep 2012 04:03:39 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/php-pdo-prepare/</guid>
+      <description>&lt;p&gt;许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：&lt;/p&gt;
+
+&lt;p&gt;查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>深入理解 PHP 中 session 和 cookies 的联系</title>
+      <link>https://tanteng.me/2012/09/php-session-cookies/</link>
+      <pubDate>Wed, 26 Sep 2012 01:46:43 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/php-session-cookies/</guid>
+      <description>&lt;p&gt;1. session概念&lt;/p&gt;
+
+&lt;p&gt;2. http协议与状态保持&lt;/p&gt;
+
+&lt;p&gt;3. 理解cookie&lt;/p&gt;
+
+&lt;p&gt;4. php中session的生成机制&lt;/p&gt;
+
+&lt;p&gt;5. php中session的过期回收机制&lt;/p&gt;
+
+&lt;p&gt;6. php中session的客户端存储机制&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP对象在内存堆栈中的分配</title>
+      <link>https://tanteng.me/2012/09/stack-php/</link>
+      <pubDate>Sun, 09 Sep 2012 07:54:05 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/stack-php/</guid>
+      <description>&lt;p&gt;对象在PHP里面和整型、浮点型一样，也是一种数据类，都是存储不同类型数据用的， 在运行的时候都要加载到内存中去用，那么对象在内存里面是怎么体现的呢？内存从逻辑上说大体上是分为4段，&lt;strong&gt;栈空间段、堆空间段、代码段、初始化静态段&lt;/strong&gt;，程序里面不同的声明放在不同的内存段里面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据段&lt;/strong&gt;（data segment）通常是指用来存放程序中已初始化且不为0的全局变量如：静态变量和常量&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码段&lt;/strong&gt;（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

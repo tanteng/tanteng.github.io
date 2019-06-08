@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+
+<title>小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="小谈博客"/>
+<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+
+<meta property="og:title" content="小谈博客" />
+<meta property="og:description" content="一个专注 WEB 技术的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tanteng.me/" />
+
+<meta property="og:updated_time" content="2019-02-03T15:30:05&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.5908340ec0d0531feb30d45d7ab9a057fcd461f5bda26b1c817b70b1565424bb.css" integrity="sha256-WQg0DsDQUx/rMNRdermgV/zUYfW9omscgXtwsVZUJLs=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://tanteng.me/index.xml" title="小谈博客" />
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/linux-clear-cache-buffer/" >在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a>
+        </span>
+        <span class="item__date">
+          May 18, 2017
+        </span>
+        <span >
+        
+        在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/golang-append-slice-to-slice/" >Golang append slice to slice</a>
+        </span>
+        <span class="item__date">
+          May 10, 2017
+        </span>
+        <span >
+        
+        <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
+
+<p>片段1：</p>
+
+<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println(&ldquo;result:&ldquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
+
+<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/golang-append-slice-to-slice/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/shell-check-url/" >Shell 脚本请求 url 判断状态码</a>
+        </span>
+        <span class="item__date">
+          May 2, 2017
+        </span>
+        <span >
+        
+        Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl='./check_url.txt' DATE_N=`date &quot;+%Y-%m-%d %H:%M:%S&quot;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/shell-check-url/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/netstat-tcp-state/" >netstat 命令统计 tcp 各状态数量</a>
+        </span>
+        <span class="item__date">
+          Apr 28, 2017
+        </span>
+        <span >
+        
+        统计 tcp 各种状态的个数： netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' 结果： [nobody@test14439 ~]$ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CLOSED：无
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/netstat-tcp-state/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/nginx-permission-denied/" >Nginx 报错和解决方法记录</a>
+        </span>
+        <span class="item__date">
+          Apr 19, 2017
+        </span>
+        <span >
+        
+        <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
+
+<h3 id="13-permission-denied">13: Permission denied</h3>
+
+<p>Nginx错误：</p>
+
+<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() &#8220;/data/vhosts/xunlei.com/test/&#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &#8220;GET / HTTP/1.1&#8221;, host: &#8220;www.test.com&#8221;</p>
+
+<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/nginx-permission-denied/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2017
+        </span>
+        <span >
+        
+        <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/2017-php-way/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/virtualbox-blue-screen/" >VirtualBox启动蓝屏问题</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2017
+        </span>
+        <span >
+        
+        用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/virtualbox-blue-screen/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/02/login-replay-attacks/" >登录重放攻击及安全防御</a>
+        </span>
+        <span class="item__date">
+          Feb 1, 2017
+        </span>
+        <span >
+        
+        现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/login-replay-attacks/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/mysql-alter-table-big-data/" >MySQL大表加字段思路</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2017
+        </span>
+        <span >
+        
+        <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
+
+<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &ldquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
+
+<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/mysql-alter-table-big-data/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/linux-postfix-maildrop/" >Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</a>
+        </span>
+        <span class="item__date">
+          Jan 14, 2017
+        </span>
+        <span >
+        
+        <p>MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/linux-postfix-maildrop/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/6/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/7/">7</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/12/">12</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/8/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/12/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    </body>
+</html>

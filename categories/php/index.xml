@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on 小谈博客</title>
+    <link>https://tanteng.me/categories/php/</link>
+    <description>Recent content in PHP on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Nov 2018 07:52:26 +0000</lastBuildDate>
+    
+	<atom:link href="https://tanteng.me/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本周阅读清单20181105</title>
+      <link>https://tanteng.me/2018/11/reding-list-23/</link>
+      <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/11/reding-list-23/</guid>
+      <description>1.Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ 2.Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access 3.CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f 4.Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e 5.govendor 使用 https://www.orztu.com/post/using-govendor/</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180903</title>
+      <link>https://tanteng.me/2018/09/reding-list-19/</link>
+      <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/09/reding-list-19/</guid>
+      <description>1.聊聊加密那点事——PHP加密最佳实践 https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice 2.etcd：从应用场景到实现原理的全方位解读 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle 3.大家的公司 Code Review 都是怎么做的？ https://www.zhihu.com/question/41089988 4.gRPC 和 restful 转换 https://github.com/grpc-ecosystem/grpc-gateway 5.</description>
+    </item>
+    
+    <item>
+      <title>Laravel 错误和异常处理用法</title>
+      <link>https://tanteng.me/2018/09/laravel-error-handing/</link>
+      <pubDate>Sat, 15 Sep 2018 05:41:51 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/09/laravel-error-handing/</guid>
+      <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel chunk 使用注意的问题</title>
+      <link>https://tanteng.me/2018/08/laravel-chunk-tip/</link>
+      <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/08/laravel-chunk-tip/</guid>
+      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： User::where(&#39;approved&#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&#39;approved&#39; =&amp;amp;gt; 1]); } }); 原因在于第一次查询： select</description>
+    </item>
+    
+    <item>
+      <title>Laravel 中为何不使用 blpop 取队列？</title>
+      <link>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</link>
+      <pubDate>Tue, 31 Jul 2018 17:18:21 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</guid>
+      <description>&lt;p&gt;Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 中间件原理</title>
+      <link>https://tanteng.me/2018/07/understand-laravel-middleware/</link>
+      <pubDate>Sun, 29 Jul 2018 16:25:08 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/07/understand-laravel-middleware/</guid>
+      <description>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180723</title>
+      <link>https://tanteng.me/2018/07/reding-list-16/</link>
+      <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/07/reding-list-16/</guid>
+      <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180716</title>
+      <link>https://tanteng.me/2018/07/reding-list-15/</link>
+      <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/07/reding-list-15/</guid>
+      <description>1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180528</title>
+      <link>https://tanteng.me/2018/06/reding-list-9/</link>
+      <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/06/reding-list-9/</guid>
+      <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
+    </item>
+    
+    <item>
+      <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
+      <link>https://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</link>
+      <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</guid>
+      <description>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180430</title>
+      <link>https://tanteng.me/2018/05/reding-list-6/</link>
+      <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/05/reding-list-6/</guid>
+      <description>1.Learning Elasticsearch with Laravel https://michaelstivala.com/learning-elasticsearch-with-laravel/ 2.MQ(消息队列)常见的应用场景解析 https://juejin.im/post/5add63c951882567183eb956 3.WebSocket 通信过程与实现 https://segmentfault.com/a/1190000014643900 4.技术与贫富分化 http://www.ruanyifeng.com/blog/2010/08/technology_and_income_disparity.html 5.PHP HTTP客户端-Guzzle原理解析 https://segmentfault.com/p/1210000010203531/read 6.PHP扩</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180423</title>
+      <link>https://tanteng.me/2018/04/reding-list/</link>
+      <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/reding-list/</guid>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180416</title>
+      <link>https://tanteng.me/2018/04/reding-list-4/</link>
+      <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/reding-list-4/</guid>
+      <description>1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180410</title>
+      <link>https://tanteng.me/2018/04/reding-list-3/</link>
+      <pubDate>Tue, 10 Apr 2018 12:10:34 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/reding-list-3/</guid>
+      <description>1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.</description>
+    </item>
+    
+    <item>
+      <title>PHP知识整理之——PHP基础、WEB安全、网络</title>
+      <link>https://tanteng.me/2018/04/php-2/</link>
+      <pubDate>Tue, 10 Apr 2018 03:11:14 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/php-2/</guid>
+      <description>&lt;p&gt;本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180402</title>
+      <link>https://tanteng.me/2018/04/reding-list-2/</link>
+      <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
+      <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
+    </item>
+    
+    <item>
+      <title>PHP写时复制（Copy On Write）</title>
+      <link>https://tanteng.me/2018/03/php-cow/</link>
+      <pubDate>Mon, 26 Mar 2018 14:04:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/03/php-cow/</guid>
+      <description>一个例子： &amp;lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20180326</title>
+      <link>https://tanteng.me/2018/03/reding-list-5/</link>
+      <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2018/03/reding-list-5/</guid>
+      <description>1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩</description>
+    </item>
+    
+    <item>
+      <title>为什么 Laravel 会重复执行同一个队列任务？</title>
+      <link>https://tanteng.me/2017/12/laravel-queue-excute/</link>
+      <pubDate>Sun, 24 Dec 2017 07:49:30 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-queue-excute/</guid>
+      <description>在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一</description>
+    </item>
+    
+    <item>
+      <title>Laravel Redis 多个进程同时取队列问题</title>
+      <link>https://tanteng.me/2017/12/laravel-supervisor-queue/</link>
+      <pubDate>Sat, 23 Dec 2017 11:26:19 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-supervisor-queue/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:default decode:true&#34;&gt;[program:laravel-worker]
+process_name=%(program&lt;em&gt;name)s&lt;/em&gt;%(process_num)02d
+command=php /var/www/xxx.cn/artisan queue:work &amp;ndash;queue=sendfile &amp;ndash;tries=3 &amp;ndash;daemon
+autostart=true
+autorestart=true
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/var/www/xxx.cn/worker.log
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Laravel 消息队列要注意的问题</title>
+      <link>https://tanteng.me/2017/12/laravel-queue-tips/</link>
+      <pubDate>Mon, 11 Dec 2017 10:08:13 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/12/laravel-queue-tips/</guid>
+      <description>使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实</description>
+    </item>
+    
+    <item>
+      <title>PHP-FPM,Nginx,FastCGI 之间的关系</title>
+      <link>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</link>
+      <pubDate>Thu, 09 Nov 2017 08:44:27 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</guid>
+      <description>本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与</description>
+    </item>
+    
+    <item>
+      <title>PHP intval 转换浮点数精度丢失问题</title>
+      <link>https://tanteng.me/2017/10/php-intval-precision/</link>
+      <pubDate>Sun, 15 Oct 2017 08:15:42 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/10/php-intval-precision/</guid>
+      <description>&lt;p&gt;在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$n=&amp;quot;19.99&amp;quot;; print intval($n*100); // prints 1998
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
+
+&lt;p&gt;1.转换成字符串再 intval&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print intval(strval($n*100)); // prints 1999
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;php -r &amp;quot;echo round(19.99*100);&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Docker 搭建 Laravel 本地环境</title>
+      <link>https://tanteng.me/2017/10/docker-laravel-local-environment/</link>
+      <pubDate>Sat, 14 Oct 2017 11:28:48 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/10/docker-laravel-local-environment/</guid>
+      <description>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同</description>
+    </item>
+    
+    <item>
+      <title>PHP 调试函数 debug_backtrace</title>
+      <link>https://tanteng.me/2017/09/debug-backtrace-php/</link>
+      <pubDate>Mon, 11 Sep 2017 07:37:49 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/09/debug-backtrace-php/</guid>
+      <description>有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;amp;gt;game_id) {</description>
+    </item>
+    
+    <item>
+      <title>PHP 错误和异常处理</title>
+      <link>https://tanteng.me/2017/09/php-error-handle/</link>
+      <pubDate>Sat, 02 Sep 2017 07:27:24 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/09/php-error-handle/</guid>
+      <description>&lt;p&gt;关于 PHP 的错误和异常处理，总结如下。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-设置-php-错误级别&#34;&gt;1.设置 PHP 错误级别&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;span class=&#34;refname&#34;&gt;error_reporting&lt;/span&gt; — &lt;span class=&#34;dc-title&#34;&gt;设置应该报告何种 PHP 错误。&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP发送HTTP请求的几种方式</title>
+      <link>https://tanteng.me/2017/07/php-curl-guzzlehttp/</link>
+      <pubDate>Sat, 22 Jul 2017 06:02:45 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/07/php-curl-guzzlehttp/</guid>
+      <description>&lt;p&gt;PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？&lt;/p&gt;
+
+&lt;p&gt;cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Laravel 中设置 Etag 缓存</title>
+      <link>https://tanteng.me/2017/05/laravel-etag-middleware/</link>
+      <pubDate>Fri, 19 May 2017 04:51:35 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/05/laravel-etag-middleware/</guid>
+      <description>&lt;p&gt;本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。&lt;/p&gt;
+
+&lt;h3 id=&#34;什么是-etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
+
+&lt;p&gt;Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。&lt;/p&gt;
+
+&lt;p&gt;浏览器根据状态码判断是否缓存过期。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx 报错和解决方法记录</title>
+      <link>https://tanteng.me/2017/04/nginx-permission-denied/</link>
+      <pubDate>Wed, 19 Apr 2017 07:49:24 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/04/nginx-permission-denied/</guid>
+      <description>&lt;p&gt;记录一下遇到的各种 Nginx 的报错和解决办法。&lt;/p&gt;
+
+&lt;h3 id=&#34;13-permission-denied&#34;&gt;13: Permission denied&lt;/h3&gt;
+
+&lt;p&gt;Nginx错误：&lt;/p&gt;
+
+&lt;p&gt;2017/04/19 14:46:46 [crit] 4172#0: *671 open() &amp;#8220;/data/vhosts/xunlei.com/test/&amp;#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &amp;#8220;GET / HTTP/1.1&amp;#8221;, host: &amp;#8220;www.test.com&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>韩天峰：2017 年 PHP 程序员未来路在何方</title>
+      <link>https://tanteng.me/2017/03/2017-php-way/</link>
+      <pubDate>Fri, 31 Mar 2017 07:58:23 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/03/2017-php-way/</guid>
+      <description>&lt;p&gt;PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Supervisor 管理 Laravel 队列进程</title>
+      <link>https://tanteng.me/2017/01/supervisor-laravel-queue/</link>
+      <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2017/01/supervisor-laravel-queue/</guid>
+      <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 5.3 后台管理系统搭建</title>
+      <link>https://tanteng.me/2016/12/laravel-admin-install/</link>
+      <pubDate>Sat, 24 Dec 2016 07:13:14 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/laravel-admin-install/</guid>
+      <description>&lt;p&gt;网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 使用 env 读取环境变量为 null 的问题</title>
+      <link>https://tanteng.me/2016/12/laravel-env-null/</link>
+      <pubDate>Sun, 04 Dec 2016 15:35:18 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/12/laravel-env-null/</guid>
+      <description>&lt;p&gt;不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。&lt;/p&gt;
+
+&lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP捕捉异常中断</title>
+      <link>https://tanteng.me/2016/09/register-shutdown-function/</link>
+      <pubDate>Wed, 28 Sep 2016 09:31:50 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/09/register-shutdown-function/</guid>
+      <description>&lt;p&gt;当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laravel 分割 routes.php 路由文件的一种方式</title>
+      <link>https://tanteng.me/2016/08/laravel-routes-map/</link>
+      <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/08/laravel-routes-map/</guid>
+      <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
+    </item>
+    
+    <item>
+      <title>PHP 7安装和开启opcache</title>
+      <link>https://tanteng.me/2016/06/php7-opcache/</link>
+      <pubDate>Thu, 02 Jun 2016 16:20:20 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/php7-opcache/</guid>
+      <description>&lt;p&gt;鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>优化 Laravel 网站打开速度</title>
+      <link>https://tanteng.me/2016/06/laravel-optimize/</link>
+      <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/06/laravel-optimize/</guid>
+      <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
+    </item>
+    
+    <item>
+      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
+      <link>https://tanteng.me/2016/04/vagrantfile-synced-folder/</link>
+      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2016/04/vagrantfile-synced-folder/</guid>
+      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Composer的自动加载机制</title>
+      <link>https://tanteng.me/2015/12/composer-autoload/</link>
+      <pubDate>Thu, 24 Dec 2015 15:41:16 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/12/composer-autoload/</guid>
+      <description>&lt;p&gt;如项目下的composer.json文件中有autoload的定义：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;ldquo;autoload&amp;rdquo;: {
+        &amp;ldquo;classmap&amp;rdquo;: [
+            &amp;ldquo;database&amp;rdquo;
+        ],
+        &amp;ldquo;psr-4&amp;rdquo;: {
+            &amp;ldquo;GrahamCampbell\BootstrapCMS\&amp;ldquo;: &amp;ldquo;app/&amp;rdquo;
+        }
+    },&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>初识PHP Static延迟静态绑定</title>
+      <link>https://tanteng.me/2015/05/php-static-bind/</link>
+      <pubDate>Wed, 27 May 2015 03:38:42 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/05/php-static-bind/</guid>
+      <description>&lt;p&gt;PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;class A&lt;br /&gt;
+{&lt;br /&gt;
+    public static function echoClass(){&lt;br /&gt;
+        echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
+    }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static function test(){  
+    self::echoClass();        
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;class B extends A&lt;br /&gt;
+{&lt;br /&gt;
+    public static function echoClass()&lt;br /&gt;
+    {&lt;br /&gt;
+         echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
+    }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;B::test(); //输出A&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 开发者该知道的 5 个 Composer 小技巧</title>
+      <link>https://tanteng.me/2015/05/php-composer/</link>
+      <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2015/05/php-composer/</guid>
+      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
+    </item>
+    
+    <item>
+      <title>PHP：PDO prepare预处理</title>
+      <link>https://tanteng.me/2012/09/php-pdo-prepare/</link>
+      <pubDate>Sun, 30 Sep 2012 04:03:39 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/php-pdo-prepare/</guid>
+      <description>&lt;p&gt;许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：&lt;/p&gt;
+
+&lt;p&gt;查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>深入理解 PHP 中 session 和 cookies 的联系</title>
+      <link>https://tanteng.me/2012/09/php-session-cookies/</link>
+      <pubDate>Wed, 26 Sep 2012 01:46:43 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/php-session-cookies/</guid>
+      <description>&lt;p&gt;1. session概念&lt;/p&gt;
+
+&lt;p&gt;2. http协议与状态保持&lt;/p&gt;
+
+&lt;p&gt;3. 理解cookie&lt;/p&gt;
+
+&lt;p&gt;4. php中session的生成机制&lt;/p&gt;
+
+&lt;p&gt;5. php中session的过期回收机制&lt;/p&gt;
+
+&lt;p&gt;6. php中session的客户端存储机制&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP对象在内存堆栈中的分配</title>
+      <link>https://tanteng.me/2012/09/stack-php/</link>
+      <pubDate>Sun, 09 Sep 2012 07:54:05 +0000</pubDate>
+      
+      <guid>https://tanteng.me/2012/09/stack-php/</guid>
+      <description>&lt;p&gt;对象在PHP里面和整型、浮点型一样，也是一种数据类，都是存储不同类型数据用的， 在运行的时候都要加载到内存中去用，那么对象在内存里面是怎么体现的呢？内存从逻辑上说大体上是分为4段，&lt;strong&gt;栈空间段、堆空间段、代码段、初始化静态段&lt;/strong&gt;，程序里面不同的声明放在不同的内存段里面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据段&lt;/strong&gt;（data segment）通常是指用来存放程序中已初始化且不为0的全局变量如：静态变量和常量&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码段&lt;/strong&gt;（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

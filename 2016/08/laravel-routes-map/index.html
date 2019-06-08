@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Laravel 分割 routes.php 路由文件的一种方式 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel 分割 routes.php 路由文件的一种方式"/>
+<meta name="twitter:description" content="Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，"/>
+
+<meta property="og:title" content="Laravel 分割 routes.php 路由文件的一种方式" />
+<meta property="og:description" content="Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tanteng.me/2016/08/laravel-routes-map/" />
+<meta property="article:published_time" content="2016-08-02T09:20:26&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-02T09:20:26&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.5908340ec0d0531feb30d45d7ab9a057fcd461f5bda26b1c817b70b1565424bb.css" integrity="sha256-WQg0DsDQUx/rMNRdermgV/zUYfW9omscgXtwsVZUJLs=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Laravel 分割 routes.php 路由文件的一种方式</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 2, 2016
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，如何去维护？如果不同的人都在同一个文件定义路由，这就造成了冲突，因此我们有必要将 routes.php 文件分割成多个文件，可以按照功能模块来划分，下面介绍一种很优雅的方式。</p>
+
+<p>在 app/Providers/RouteServiceProvider.php 的 map 方法中可以如下定义：</p>
+
+<pre><code class="language-php">public function map(Router $router)
+{
+    $router-&gt;group(['namespace' =&gt; $this-&gt;namespace], function ($router) {
+        //require app_path('Http/routes.php');
+        foreach (glob(app_path('Http//Routes') . '/*.php') as $file) {
+            $this-&gt;app-&gt;make('App\\Http\\Routes\\' . basename($file, '.php'))-&gt;map($router);
+        }
+    });
+}
+</code></pre>
+
+<p>这样它就会遍历 app/Http/Routes/ 文件夹下的文件，遍历每个文件的 map 方法，其中每个文件的结构都类似，举个例子：</p>
+
+<pre><code class="language-php">&lt;?php
+namespace App\Http\Routes;
+
+use Illuminate\Contracts\Routing\Registrar;
+
+class HomeRoutes
+{
+    public function map(Registrar $router)
+    {
+        $router-&gt;group(['domain' =&gt; 'www.tanteng.me', 'middleware' =&gt; 'web'], function ($router) {
+            $router-&gt;auth();
+            $router-&gt;get('/', ['as' =&gt; 'home', 'uses' =&gt; 'IndexController@index']);
+            $router-&gt;get('/blog', ['as' =&gt; 'index.blog', 'uses' =&gt; 'BlogController@index']);
+            $router-&gt;get('/resume', ['as' =&gt; 'index.resume', 'uses' =&gt; 'IndexController@resume']);
+            $router-&gt;get('/post', ['name' =&gt; 'post.show', 'uses' =&gt; 'ArticleController@show']);
+            $router-&gt;get('/contact', ['as' =&gt; 'index.contact', 'uses' =&gt; 'IndexController@contact']);
+            $router-&gt;post('/contact/comment', ['uses' =&gt; 'IndexController@postComment']);
+            $router-&gt;get('/travel', ['as' =&gt; 'index.travel', 'uses' =&gt; 'TravelController@index']);
+            $router-&gt;get('/travel/latest', ['as' =&gt; 'travel.latest', 'uses' =&gt; 'TravelController@latest']);
+            $router-&gt;get('/travel/{destination}/list', ['as' =&gt; 'travel.destination', 'uses' =&gt; 'TravelController@travelList']);
+            $router-&gt;get('/travel/{slug}', ['uses' =&gt; 'TravelController@travelDetail']);
+            $router-&gt;get('/sitemap.xml', ['as' =&gt; 'index.sitemap', 'uses' =&gt; 'IndexController@sitemap']);
+        });
+    }
+}
+</code></pre>
+
+<p>通过把路由规则分割写到不同的文件中，这样一来，就可以根据功能模块分开管理路由文件了。此外，你也可以简单的分割，直接把 routes.php 中的定义拆散成多个文件，通过 require 的方式引入，但是哪个更好，一目了然。</p>
+
+<p>那么这样路由分开多个文件后岂不是增加调用次数，会不会影响性能？答案是不必担心。通过 Laravel 的命令：</p>
+
+<pre><code class="language-php">php artisan route:cache
+</code></pre>
+
+<p>生成路由缓存文件后，路由只会读取缓存文件的路由规则，因此不会影响性能，这样做让开发更高效和规范。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2016/06/mysql-command/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">常用Linux操作数据库命令及MySQL语句</span>
+    </a>
+    
+    
+    <a href="/2016/09/lets-encrypt-multi-domain-https/" class="navigation-next">
+      <span class="navigation-tittle">Let’s Encrypt 开启多域名 HTTPS</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

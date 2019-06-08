@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>使用 Docker 搭建 Laravel 本地环境 • 小谈博客</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Docker 搭建 Laravel 本地环境"/>
+<meta name="twitter:description" content="Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同"/>
+
+<meta property="og:title" content="使用 Docker 搭建 Laravel 本地环境" />
+<meta property="og:description" content="Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tanteng.me/2017/10/docker-laravel-local-environment/" />
+<meta property="article:published_time" content="2017-10-14T11:28:48&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-14T11:28:48&#43;00:00"/>
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.5908340ec0d0531feb30d45d7ab9a057fcd461f5bda26b1c817b70b1565424bb.css" integrity="sha256-WQg0DsDQUx/rMNRdermgV/zUYfW9omscgXtwsVZUJLs=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tanteng.me/">小谈博客</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         一个专注 WEB 技术的博客 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">小谈博客</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 TonyTan
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>使用 Docker 搭建 Laravel 本地环境</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 14, 2017
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/develop">DEVELOP</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/php">PHP</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同时响应速度很慢，现在有了 docker 这种更好的方式，可以轻松方便的搭建整套 PHP 开发环境。</p>
+
+<p>本文就介绍如何使用 docker 搭建 Laravel 本地环境。</p>
+
+<h3 id="安装-docker">安装 docker</h3>
+
+<p>首先安装 docker。</p>
+
+<h3 id="克隆-laradock">克隆 laradock</h3>
+
+<p>laradock 官方文档：<a href="http://laradock.io/" target="_blank" rel="noopener nofollow"><a href="http://laradock.io/">http://laradock.io/</a></a></p>
+
+<p>laradock github：<a href="https://github.com/laradock/laradock" target="_blank" rel="noopener nofollow"><a href="https://github.com/laradock/laradock">https://github.com/laradock/laradock</a></a></p>
+
+<p>laradock 是一个包含全功能用于 docker 的 PHP 运行环境，使用 docker-compose 方式部署。（特别说明：它不仅用于 Laravel 环境搭建，而且支持所有其他 PHP 框架，它就是一整套 PHP 的环境。）</p>
+
+<h3 id="部署-php-环境">部署 PHP 环境</h3>
+
+<p>1.克隆 laradock</p>
+
+<p><code class="lang:default decode:true">git clone <a href="https://github.com/Laradock/laradock.git">https://github.com/Laradock/laradock.git</a></code></p>
+
+<p>2.创建环境变量文件</p>
+
+<p><code class="lang:default decode:true ">cp env-example .env</code></p>
+
+<p>3.直接用 docker-compose 运行需要启用的服务，如：</p>
+
+<p><code class="lang:default decode:true ">docker-compose up -d nginx mysql redis beanstalkd</code></p>
+
+<p>这样就启动了所需的 PHP 运行环境，php-fpm 默认会运行，所以不需要指定。</p>
+
+<h3 id="laravel-配置文件">Laravel 配置文件</h3>
+
+<p>Laravel 配置文件需要注意的问题是，在 .env 文件中，mysql 和 redis 的地址需填写成这样，而不是 ip 地址形式：</p>
+
+<pre><code class="language-ini">DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=tanteng.me
+DB_USERNAME=root
+DB_PASSWORD=root
+
+REDIS_HOST=redis
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+</code></pre>
+
+<p>注意代码中高亮部分。</p>
+
+<h3 id="nginx-配置">Nginx 配置</h3>
+
+<p>在本地通过域名方式访问站点，要将 host 中域名绑定到本地，同时还需要增加 nginx 配置。</p>
+
+<p>如图，在 laradock 项目的 nginx 文件夹下的 sites 目录下添加配置文件即可。</p>
+
+<h3 id="执行-composer">执行 composer</h3>
+
+<p>执行 composer 等操作，需要进入到 workspace 容器中进行，使用命令：</p>
+
+<p><code class="lang:default decode:true ">docker-compose exec workspace bash</code></p>
+
+<p>进入到 workspace 容器，就可以进行 compose 命令等操作了。</p>
+
+<p>具体使用上的问题请参加 laradock 官方文档，上面都有说明。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2017/10/503-service-unavailable/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">服务器返回 502,503,504 原因及解决办法</span>
+    </a>
+    
+    
+    <a href="/2017/10/php-intval-precision/" class="navigation-next">
+      <span class="navigation-tittle">PHP intval 转换浮点数精度丢失问题</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+
+    
+    
+        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
