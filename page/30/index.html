@@ -143,166 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/07/python-mysql/" >Python连接Mysql常用的库（mysqlclient示例）</a>
-        </span>
-        <span class="item__date">
-          Jul 15, 2015
-        </span>
-        <span >
-        
-        <p>Python连接Mysql常用的库有MySQLdb，mysqlclient，MySQL Connector/Python，但是django文档上推荐使用mysqlclient，以下截取django官网关于MySQL API的介绍。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-mysql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python-encoding-style/" >Python编码风格</a>
-        </span>
-        <span class="item__date">
-          Jul 14, 2015
-        </span>
-        <span >
-        
-        <p><span id="131">对于 Python 而言， <span id="index-7"> </span> PEP 8 已成为大多数项目遵循的风格指南；</span><span id="132">它给出了一个高度可读，视觉友好的编码风格。</span><span id="133">每个 Python 开发者应该阅读一下；</span><span id="134">这里是为你提取出来的最重要的要点：</span></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-encoding-style/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python3-sys-argv/" >Python3接收命令行参数sys.argv用法</a>
-        </span>
-        <span class="item__date">
-          Jul 13, 2015
-        </span>
-        <span >
-        
-        <p>Python3中，使用sys.argv可以接收命令行传入的参数，需要import sys模块，sys.argv第一个参数是文件名，无需定义，第二参数开始是命令行输入的参数，以空格隔开。</p>
-
-<p>举例如下，运行sys_argv.py脚本附带两个参数分别是run1和run2，运行结果如下：</p>
-
-<p><code class="lang:python decode:true">&gt;&gt;&gt;python3 sys_argv.py run1 run2
-I&rsquo;m action1
-I&rsquo;m action2</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python3-sys-argv/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python-self/" >为什么Python类的方法需要加self作为第一个参数？</a>
-        </span>
-        <span class="item__date">
-          Jul 12, 2015
-        </span>
-        <span >
-        
-        <p>为什么Python类的方法需要加self作为第一个参数？比如Python类的方法都是这样定义的：</p>
-
-<p><code>class CharField(Field):
-    description = _(&ldquo;String (up to %(max_length)s)&ldquo;)</p>
-
-<pre><code>def __init__(self, *args, **kwargs):
-    super(CharField, self).__init__(*args, **kwargs)
-    self.validators.append(validators.MaxLengthValidator(self.max_length))
-
-def check(self, **kwargs):
-    errors = super(CharField, self).check(**kwargs)
-    errors.extend(self._check_max_length_attribute(**kwargs))
-    return errors&lt;/code&gt;
-</code></pre>
-
-<p>看到一篇文章讲这个问题，转载过来了。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-self/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/local-variable-referenced-before-assignment/" >local variable ‘count’ referenced before assignment</a>
-        </span>
-        <span class="item__date">
-          Jul 11, 2015
-        </span>
-        <span >
-        
-        <p>在写一个Python闭包函数实现计数器功能的时候，出现了报错：local variable &#8216;count&#8217; referenced before assignment.这是怎么回事呢？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/local-variable-referenced-before-assignment/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/07/python-closure/" >Python函数中的函数(闭包示例)</a>
-        </span>
-        <span class="item__date">
-          Jul 11, 2015
-        </span>
-        <span >
-        
-        <p>Python函数中也可以定义函数，也就是闭包。跟js中的闭包概念其实差不多，举个Python中闭包的例子。</p>
-
-<p><code class="lang:python decode:true">def make_adder(addend):
-    def adder(augend):
-        return augend + addend
-    return adder</p>
-
-<p>p = make_adder(23)
-q = make_adder(44)</p>
-
-<p>print(p(100))
-print(q(100))</code></p>
-
-<p>运行结果是：123和144.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/07/python-closure/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/07/python-args-kwargs/" >Python3可变参数*args,**kwargs及区别</a>
         </span>
         <span class="item__date">
@@ -387,6 +227,151 @@ print(q(100))</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/07/python-mongodb-save-file/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/python%E4%B8%AD%E7%9A%84switch-case/" >Python中的switch case</a>
+        </span>
+        <span class="item__date">
+          Jul 9, 2015
+        </span>
+        <span >
+        
+        <p>Python本身并没有其他语言都有的switch,case这种语言结构，那么在Python中，是如何代替switch的呢？</p>
+
+<p>Python使用字典的数据类型来代替switch，发挥switch的功能，代码如下：</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/python%E4%B8%AD%E7%9A%84switch-case/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/php-return/" >PHP return 的其他用法</a>
+        </span>
+        <span class="item__date">
+          Jul 8, 2015
+        </span>
+        <span >
+        
+        <p>PHP 的 return 的含义大家很清楚了，几乎随处可见，但是见过在函数外使用 return 的吗？如下代码：</p>
+
+<p><code>require_once(&lsquo;./bb-load.php&rsquo;);</p>
+
+<p>bb_repermalink(); // The magic happens here.</p>
+
+<p>if ($self) {
+    if (strpos($self, &lsquo;.php&rsquo;) !== false) {
+        require($self);
+    } else {
+        require(BB_PATH . &lsquo;profile-base.php&rsquo;);
+    }
+    return;
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/php-return/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/form-submit/" >防止表单重复提交的方式</a>
+        </span>
+        <span class="item__date">
+          Jul 8, 2015
+        </span>
+        <span >
+        
+        <p>关于防止表单重复提交的做法有很多，本人知道的有如下，简单讲讲几种方式。有redis，session，jquery等几种方法。</p>
+
+<p>1.有redis的环境</p>
+
+<p>把提交的动作action，参数之类的作为redis的key，存进redis，设置一个很短的缓存时间，提交的时候判断如果存在这个key，说明是重复提交数据。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/form-submit/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/authentication-failed/" >PHP连接mongodb认证错误:Failed to connect,Authentication failed</a>
+        </span>
+        <span class="item__date">
+          Jul 8, 2015
+        </span>
+        <span >
+        
+        <p>PHP扩展php_mongo.dll无法通过用户名密码认证的方式连接mongodb数据库，报错如下：<strong>Fatal error</strong>: Uncaught exception &#8216;MongoConnectionException&#8217; with message &#8216;Failed to connect to: 127.0.0.1:27017: Authentication failed on database &#8216;js_send_excel&#8217; with username &#8216;tanteng22&#8242;: auth failed&#8217; in D:\xampp\htdocs\v3\index.php:6 Stack trace: #0 D:\xampp\htdocs\v3\index.php(6): MongoClient-&gt;__construct(&#8216;mongodb://tante&#8230;&#8217;) #1 {main} thrown in <strong>D:\xampp\htdocs\v3\index.php</strong> on line <strong>6</strong></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/authentication-failed/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/pymongo-cllient/" >Python连接MongoDB数据库示例（带用户名密码）</a>
+        </span>
+        <span class="item__date">
+          Jul 7, 2015
+        </span>
+        <span >
+        
+        Python使用pymongo操作MongoDB数据库，首先需要安装pymongo模块，如下示例是通过pymongo连接MongoDB数据库
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/pymongo-cllient/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/07/jquery-inarray/" >jQuery inArray不存在返回-1</a>
+        </span>
+        <span class="item__date">
+          Jul 6, 2015
+        </span>
+        <span >
+        
+        判断上传的文件名扩展名是否符合要求，同时禁用提交按钮，这里用到了jQuery的inArray函数，判断是否在js数组中，不存在返回-1. //
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/07/jquery-inarray/">➦</a>
         
         </div>
         

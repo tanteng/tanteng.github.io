@@ -23,15 +23,6 @@
     </item>
     
     <item>
-      <title>Linux 中 bash 和 sh 的区别</title>
-      <link>http://tanteng.me/2017/12/bash-sh/</link>
-      <pubDate>Sun, 17 Dec 2017 12:20:32 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/12/bash-sh/</guid>
-      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？ sh 和 bash 都是 Linux Shell 命令行语言，</description>
-    </item>
-    
-    <item>
       <title>PHP-FPM,Nginx,FastCGI 之间的关系</title>
       <link>http://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</link>
       <pubDate>Thu, 09 Nov 2017 08:44:27 +0000</pubDate>

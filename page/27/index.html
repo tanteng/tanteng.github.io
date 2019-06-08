@@ -143,186 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/10/call-user-func-vs-new-class/" >call_user_func与实例化的区别</a>
-        </span>
-        <span class="item__date">
-          Oct 30, 2015
-        </span>
-        <span >
-        
-        <p>使用call_user_func可以执行一个类的某个方法，而且可以给方法传参数，它跟实例化一个类再调用方法有什么区别呢？看下面的例子。</p>
-
-<p><code class="lang:php decode:true ">class A
-{
-    public function __Construct($a,$b,$c)
-    {
-        echo &lsquo;Construct&rsquo;.$a.$b.$c;
-    }</p>
-
-<pre><code>public function test($a,$b,$c)
-{
-    echo ' test'.$a.$b.$c;
-}
-</code></pre>
-
-<p>}</p>
-
-<p>$a = new A(1,2,3);
-$a-&gt;test(1,2,3);</p>
-
-<p>call_user_func([&lsquo;A&rsquo;,&lsquo;test&rsquo;],1,2,3);</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/call-user-func-vs-new-class/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-reflectionclass/" >PHP反射类ReflectionClass</a>
-        </span>
-        <span class="item__date">
-          Oct 30, 2015
-        </span>
-        <span >
-        
-        <p class="lang:php decode:true ">
-  首先定义一个类A，用ReflectionClass得到A的反射类对象，通过ReflectionClass对象可以得到类的各种属性，包括命名空间，父类，类名等，使用newInstanceArgs可以传入构造函数的参数创建一个新的类的实例。
-</p>
-
-<p><code>class A
-{
-    public $name;</p>
-
-<pre><code>public function __Construct($name,$des)
-{
-    $this-&amp;gt;name = $name.','.$des;
-}
-public function aa()
-{
-    echo $this-&amp;gt;name;
-}
-</code></pre>
-
-<p>}</p>
-
-<p>$class = new ReflectionClass(&lsquo;A&rsquo;);</p>
-
-<p>$aaa = $class-&gt;newInstanceArgs([&lsquo;blog.tanteng.me&rsquo;,&lsquo;blog&rsquo;]);</p>
-
-<p>$aaa-&gt;aa();</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-reflectionclass/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-oop-typehinting/" >PHP约束参数类型</a>
-        </span>
-        <span class="item__date">
-          Oct 29, 2015
-        </span>
-        <span >
-        
-        <p>PHP5起可以约束参数类型，在Yii2框架中使用很多，可以指定一个类的方法或者函数参数必须是某个类型，类型可以是对象，数组，字符串，整形。如果指定了参数类型，那么传入的值必须是符合类型约束的，否则会报异常错误。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-oop-typehinting/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/php-simple-singleton-pattern-class/" >写一个PHP单例模式的类</a>
-        </span>
-        <span class="item__date">
-          Oct 25, 2015
-        </span>
-        <span >
-        
-        <p>最近为了解决一个问题，需要写一个PHP的单例模式的类，以前也小有研究，其实项目中包括框架自身许多地方也是使用的单例模式，但没自己写过，于是自己随手写了一个实现单机模式的简单类。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/php-simple-singleton-pattern-class/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/redis-jquery-ajax/" >如何防止ajax重复提交</a>
-        </span>
-        <span class="item__date">
-          Oct 25, 2015
-        </span>
-        <span >
-        
-        <p>关于防止重复提交，可以参考如下链接：</p>
-
-<ol>
-<li><a href="https://blog.tanteng.me/2015/08/redis-lock/" target="_blank">使用Redis加锁防止重复提交</a></li>
-<li><a href="https://blog.tanteng.me/2015/07/form-submit/" target="_blank">防止表单重复提交的几种方式</a></li>
-<li><a href="https://blog.tanteng.me/2015/05/js-lock/" target="_blank">jquery的data方法用法</a></li>
-</ol>
-
-<p>本文讲讲如何使用redis和jquery防止ajax重复提交，如果按钮是button，点击按钮之后，js使按钮禁用，程序那边同时也加锁即可。如果按钮是a标签，则需要使用jquery的data方法在页面上加锁，具体方法见上面第3个链接。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/redis-jquery-ajax/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/10/linux-tail-grep/" >Linux命令:tail,grep</a>
-        </span>
-        <span class="item__date">
-          Oct 21, 2015
-        </span>
-        <span >
-        
-        <p>今天来学习两个Linux命令：tail和grep.</p>
-
-<p>tail命令从指定点开始将文件写到标准输出.使用tail命令的-f选项可以方便的查阅正在改变的日志文件，常用来跟踪系统日志文件，tail -f filename会把filename里最尾部的内容显示在屏幕上，并且不断刷新，使你看到最新的文件内容。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/10/linux-tail-grep/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/10/website-client/" >网站的五个“端”</a>
         </span>
         <span class="item__date">
@@ -425,6 +245,174 @@ exit;</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/09/program-language-performance/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/09/mac-firefox-hostadmin/" >Mac下firefox插件hostadmin切换host权限不足</a>
+        </span>
+        <span class="item__date">
+          Sep 4, 2015
+        </span>
+        <span >
+        
+        在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可： sudo chmod og+w /etc/hosts chmod修改权限，og
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/09/mac-firefox-hostadmin/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/09/php-lower-diff/" >PHP变量名区分大小写，函数和方法名不区分大小写</a>
+        </span>
+        <span class="item__date">
+          Sep 4, 2015
+        </span>
+        <span >
+        
+        PHP变量名区分大小写，函数和方法名不区分大小写
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/python-excption/" >Python3异常处理和异常类型</a>
+        </span>
+        <span class="item__date">
+          Aug 19, 2015
+        </span>
+        <span >
+        
+        <h3 id="python的异常处理">Python的异常处理</h3>
+
+<p>如下是使用Python的xlrd模块打款excel文件，这个操作可能会出现异常，使用try捕捉异常，进行处理，防止程序的中断运行，并且记录异常信息到日志。</p>
+
+<p><code class="lang:python decode:true ">def save_file(file, filename):
+    &ldquo;&rdquo;&rdquo;
+    打开excel文件
+    &ldquo;&rdquo;&rdquo;
+    try:
+        book = xlrd.open_workbook(file)
+        sheet = book.sheet_by_index(0)
+    except Exception as e:
+        logging.info(&lsquo;错误：{0} 文件：{1}&rsquo;.format(e, file))
+        shutil.copy2(file, &lsquo;./error&rsquo; + filename)
+        return False
+    row_nums = sheet.nrows
+    col_nums = sheet.ncols</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/python-excption/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/python-for-else/" >Python中for循环的else</a>
+        </span>
+        <span class="item__date">
+          Aug 17, 2015
+        </span>
+        <span >
+        
+        <p class="">
+  Python中循环语句for或者while后else表示循环条件不成立的时候执行，如：
+</p>
+
+<p><code class="lang:python decode:true "># -<em>- coding:utf-8 -</em>-
+for i in range(10):
+    print(i)</p>
+
+<pre><code>if i == 5:  # 此时不会执行else，当i大于等于10的时候，就不满足for条件，就执行else
+    print(&quot;Too big - I'm giving up!&quot;)
+    break
+</code></pre>
+
+<p>else:
+    print(&ldquo;Completed successfully&rdquo;)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/python-for-else/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/jquery-cookie-base/" >jQuery.cookie的基本用法</a>
+        </span>
+        <span class="item__date">
+          Aug 14, 2015
+        </span>
+        <span >
+        
+        <p>jQuery.cookie的基本用法：</p>
+
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+
+<p><code class="lang:js decode:true">&lt;script src=&ldquo;/path/to/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
+
+<p>Create session cookie:</p>
+
+<div class="highlight highlight-javascript">
+  <code class="lang:js decode:true">$.cookie('name', 'value');</code>
+</div>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie-base/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/jquery-cookie/" >使用jquery的cookie实例</a>
+        </span>
+        <span class="item__date">
+          Aug 13, 2015
+        </span>
+        <span >
+        
+        <p>jquery的cookie插件可以方便操作cookie，首先引入jquery.cookie.js文件，可以去官网下载。</p>
+
+<p><code class="lang:js decode:true">&lt;script type=&ldquo;text/javascript&rdquo; src=&rdquo;<strong>STATIC</strong>/common/js/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
+
+<p>以下使用jquery的cookie实现一个简单的功能，一个公共栏，可以点击展开或者收缩，第一次进入页面默认展开，第二次以后进入页面默认收缩，但是点击也可以展开。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie/">➦</a>
         
         </div>
         

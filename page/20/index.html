@@ -143,149 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/04/git-config-safe/" >.git/config文件泄露修复</a>
-        </span>
-        <span class="item__date">
-          Apr 4, 2016
-        </span>
-        <span >
-        
-        <p>阿里云的云盾系统报告一个系统漏洞，提示：系统配置泄露，路径是<a href="https://blog.tanteng.me:80/.git/config，用浏览器打开，一个文本文件就下载下来了，内容如下（经修改）：">https://blog.tanteng.me:80/.git/config，用浏览器打开，一个文本文件就下载下来了，内容如下（经修改）：</a></p>
-
-<p><code class="lang:sh decode:true">[core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = false
-    logallrefupdates = true
-[remote &ldquo;origin&rdquo;]
-    url = xxxxx
-    fetch = xxxxxx
-[branch &ldquo;master&rdquo;]
-    remote = origin
-    merge = refs/heads/master
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/git-config-safe/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/homestead/" >Mac上安装Homestead</a>
-        </span>
-        <span class="item__date">
-          Apr 3, 2016
-        </span>
-        <span >
-        
-        <p>之前在Windows上用VirtualBox+Vagrant装了一个CentOS 7的虚拟机，回家后又把Mac上的PHP集成开发环境MAMP给卸载了，也用VirtualBox+Vagrant装一个虚拟机，这次用的是Laravel官方封装好的box——Homestead.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/homestead/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/03/centos-7-repo/" >常用的CentOS 7 yum源集合</a>
-        </span>
-        <span class="item__date">
-          Mar 31, 2016
-        </span>
-        <span >
-        
-        <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/03/centos-7-repo/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/03/laravel-redirect/" >关于Laravel跳转redirect方法</a>
-        </span>
-        <span class="item__date">
-          Mar 31, 2016
-        </span>
-        <span >
-        
-        这是一个链接，关于Laravel跳转方法redirect()的使用。 http://laraveldaily.com/all-about-redirects-in-laravel-5/
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/03/php-fpm-conf/" >PHP-FPM性能优化参考</a>
-        </span>
-        <span class="item__date">
-          Mar 29, 2016
-        </span>
-        <span >
-        
-        <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
-
-<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/03/php-fpm-conf/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/03/aliyun-centos-7-swap/" >在阿里云CentOS 7创建swap分区</a>
-        </span>
-        <span class="item__date">
-          Mar 29, 2016
-        </span>
-        <span >
-        
-        <p>创建swap分区是为了弥补物理内存的不足，也就是虚拟内存的概念，把硬盘的一部分划分作为虚拟内存，但这个空间不是越大越好，硬盘的速度远低于内存，设置不当反而拖慢系统的速度。</p>
-
-<p>阿里云的主机默认没有swap分区，可以使用free命令查看：</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" target="_blank"><img class="alignnone wp-image-9771 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" alt="aliyun_swap" width="519" height="112" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/03/aliyun-centos-7-swap/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/03/centos7-mariadb-break/" >CentOS 7.0 MariaDB异常结束的解决方法</a>
         </span>
         <span class="item__date">
@@ -361,6 +218,162 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/03/nginx-buffer-params/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/nginx-conf-demo/" >完整的nginx配置文件示例</a>
+        </span>
+        <span class="item__date">
+          Mar 27, 2016
+        </span>
+        <span >
+        
+        <p>这是一个比较完整的nginx配置文件示例，下面的nginx.conf简单的实现nginx在前端做反向代理服务器的例子，处理js、png等静态文件，jsp等动态请求转发到其它服务器tomcat，以及负载均衡的配置。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/nginx-conf-demo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/linux-install-folder/" >Linux软件安装目录惯例</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2016
+        </span>
+        <span >
+        
+        <p>Linux 的软件安装目录是也是有讲究的，理解这一点，在对系统管理是有益的</p>
+
+<p>/usr：系统级的目录，可以理解为C:/Windows/，/usr/lib理解为C:/Windows/System32.</p>
+
+<p>/usr/local：用户级的程序目录，可以理解为C:/Progrem Files/。用户自己编译的软件默认会安装到这个目录下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/linux-install-folder/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/windows-virtualbox-vagrant-centos7/" >使用VirtualBox&#43;Vagrant安装CentOS 7环境</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2016
+        </span>
+        <span >
+        
+        <p>在Windows上使用VirtualBox+Vagrant安装CentOS 7环境，需要安装VirtualBox和Vagrant工具，以及下载一个CentOS 7的box镜像文件。</p>
+
+<p>一、安装好以上工具，下载好box文件后，使用vagrant命令添加镜像到Vagrant：</p>
+
+<p><code class="lang:vim decode:true">vagrant box add 名称 路径</code></p>
+
+<p>这里成功添加镜像到Vagrant，如下：</p>
+
+<p><img class="alignnone wp-image-9724 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/vagrant_box_add.png" alt="vagrant_box_add" width="603" height="109" /></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/windows-virtualbox-vagrant-centos7/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/mysql-drop-tables-prefix/" >MySQL批量删除相同前缀的表</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2016
+        </span>
+        <span >
+        
+        <p>MySQL删除表的语法是drop table xxx，但是想要删除一个数据库中相同前缀的表，该怎么写MySQL语句呢？drop table like &#8216;xx_%&#8217;，drop table REGEXP &#8230;，drop语句模糊匹配和正则的形式都不支持。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/mysql-drop-tables-prefix/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/redis-maxmemory/" >设置Redis最大占用内存</a>
+        </span>
+        <span class="item__date">
+          Mar 23, 2016
+        </span>
+        <span >
+        
+        <p>Redis需要设置最大占用内存吗？如果Redis内存使用超出了设置的最大值会怎样？</p>
+
+<h3 id="设置redis最大占用内存">设置Redis最大占用内存</h3>
+
+<p>Redis设置最大占用内存，打开redis配置文件，找到如下段落，设置maxmemory参数，maxmemory是bytes字节类型，注意转换。修改如下所示：</p>
+
+<p><code class="lang:vim decode:true"># In short&hellip; if you have slaves attached it is suggested that you set a lower</p>
+
+<h1 id="limit-for-maxmemory-so-that-there-is-some-free-ram-on-the-system-for-slave">limit for maxmemory so that there is some free RAM on the system for slave</h1>
+
+<h1 id="output-buffers-but-this-is-not-needed-if-the-policy-is-noeviction">output buffers (but this is not needed if the policy is &lsquo;noeviction&rsquo;).</h1>
+
+<p>#</p>
+
+<h1 id="maxmemory-lt-bytes-gt">maxmemory &lt;bytes&gt;</h1>
+
+<p>maxmemory 268435456</code></p>
+
+<p>本机服务器redis配置文件路径：/etc/redis/6379.conf，由于本机自带内存只有1G，一般推荐Redis设置内存为最大物理内存的四分之三，所以设置0.75G，换成byte是751619276.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/redis-maxmemory/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/redis-6379-safe/" >Redis未授权访问漏洞</a>
+        </span>
+        <span class="item__date">
+          Mar 21, 2016
+        </span>
+        <span >
+        
+        <p>在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/redis-6379-safe/">➦</a>
         
         </div>
         

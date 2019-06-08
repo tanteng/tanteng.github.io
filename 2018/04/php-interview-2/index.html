@@ -271,21 +271,6 @@
 
 <p>如图，函数变量和返回值都可以声明类型。</p>
 
-<div>
-  <dl id="attachment_12087">
-    <dt>
-      <img title="标量和返回值类型声明" src="https://blog.tanteng.me/wp-content/uploads/2018/04/wx_20180410105407.png" alt="标量和返回值类型声明" width="829" height="408" />
-    </dt>
-    
-    <dd>
-      标量和返回值类型声明
-    </dd>
-  </dl>
-</div>
-
-<div>
-</div>
-
 <h4 id="抽象语法树">抽象语法树</h4>
 
 <p>在计算机科学中，抽象语法树（ Abstract Syntax Tree， AST），或简称语法树（ Syntax tree），是源代码语法结构的一种抽象表示。 它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。</p>
@@ -293,8 +278,6 @@
 <p>PHP Opcode 是一种 PHP 脚本编译后的中间语言，就像Java 的 ByteCode 或者 .NET 的MSL.</p>
 
 <p>PHP 7 中新增了抽象语法树，代码的解释执行过程变化如图所示：</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/04/php7-ast1.jpg" target="_blank"><img class="aligncenter size-full wp-image-12244" src="https://blog.tanteng.me/wp-content/uploads/2018/04/php7-ast1.jpg" alt="" width="750" height="168" /></a> <a href="https://blog.tanteng.me/wp-content/uploads/2018/04/php7-ast2.jpg" target="_blank"><img class="aligncenter size-full wp-image-12245" src="https://blog.tanteng.me/wp-content/uploads/2018/04/php7-ast2.jpg" alt="" width="750" height="118" /></a></p>
 
 <p>AST 在 PHP 编译过程作为一个中间件的角色，替换原来直接从解释器吐出 opcode 的方式，让解释器（parser）和编译器（compliler）解耦，可以减少一些Hack代码，同时，让实现更容易理解和可维护。</p>
 
@@ -393,26 +376,12 @@
 
 <p>跨站请求伪造，是一种挟持用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。</p>
 
-<div>
-  <dl id="attachment_12089">
-    <dt>
-      <img title="CSRF攻击过程" src="https://blog.tanteng.me/wp-content/uploads/2018/04/wx_20180410110214.png" alt="CSRF攻击过程" width="631" height="418" />
-    </dt>
-    
-    <dd>
-      CSRF攻击过程
-    </dd>
-  </dl>
-</div>
-
 <h4 id="csrf攻击原理和防范">CSRF攻击原理和防范</h4>
 
 <ul>
 <li>合理使用 GET 和 POST 请求， GET 用于获取资源， POST 用于创建资源。</li>
 <li>服务器端每次请求生成一个 token，放在表单隐藏域，同时存到 session 中，每次提交请求进行 token 的验证，防止第三方伪造。 (这也是 Laravel 框架的方案)</li>
 </ul>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/04/wx_20180421155539.png" target="_blank" rel="noopener"><img class="aligncenter wp-image-12182 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/04/wx_20180421155539.png" alt="" width="710" height="216" /></a></p>
 
 <h4 id="sql注入和防范">SQL注入和防范</h4>
 
@@ -427,8 +396,6 @@
 <li>一种是 PHP 开启了模拟预处理，实际上只是对参数进行了转义，可以防范大部分 sql 注⼊攻击。</li>
 <li>一种是 PHP 关闭了模拟与处理，那么 sql 和参数是分两次提交，由 mysql server对 sql 进行预处理，从而防止 sql 注入。（第二种可以完全杜绝 sql 注入攻击）</li>
 </ul>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2018/04/WX20180415-175321@2x.png" target="_blank"><img class="aligncenter size-full wp-image-12122" src="https://blog.tanteng.me/wp-content/uploads/2018/04/WX20180415-175321@2x.png" alt="" width="1200" height="367" /></a></p>
 
 <p>在一个应用中，打开 mysql 服务器的 sql 日志，也可以看到通过 PDO 方式执行 sql，分为两次提交，第一次是 prepare，第二次 excute，如图。</p>
 
@@ -457,7 +424,7 @@
 
 <h3 id="tcp三次握手和四次挥手">TCP三次握手和四次挥手</h3>
 
-<p><img src="https://blog.tanteng.me/wp-content/uploads/2018/04/wx_20180410110539.png" alt="" width="459" height="517" /></p>
+<p>图片缺失</p>
 
 <h4 id="为什么需要三次握手而不是两次">为什么需要三次握手而不是两次？</h4>
 
@@ -501,46 +468,28 @@
 
 <p>1、客户端发送 GET 请求，请求 ws 协议的地址，同时通过 header 头部告诉服务端要进行协议升级</p>
 
-<p><code class="lang:default decode:true">GET ws://localhost:3000/ws/chat HTTP/1.1
+<pre><code class="language-http">GET ws://localhost:3000/ws/chat HTTP/1.1
 Host: localhost
 Upgrade: websocket
 Connection: Upgrade
-Origin: <a href="http://localhost:3000">http://localhost:3000</a>
+Origin: http://localhost:3000
 Sec-WebSocket-Key: client-random-string
-Sec-WebSocket-Version: 13</code></p>
+Sec-WebSocket-Version: 13
+</code></pre>
 
 <p>2、服务器给客户端响应，即建立了连接</p>
 
-<p><code class="lang:default decode:true">HTTP/1.1 101 Switching Protocols
+<pre><code class="language-http">HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
-Sec-WebSocket-Accept: server-random-string</code></p>
+Sec-WebSocket-Accept: server-random-string
+</code></pre>
 
 <p>WebSocket 连接建立后，跟 http 就没关系了。</p>
 
 <p>链接：</p>
 
 <p><a href="https://blog.tanteng.me/2017/07/php-examination-part-1/" target="_blank" rel="noopener">PHP 笔试面试题精选（一）</a></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
-
-<p><audio style="display: none;" controls="controls"></audio></p>
 
 <p><audio style="display: none;" controls="controls"></audio></p>
 

@@ -143,156 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/05/python-requirements-pip/" >Python中requirements.pip文件的作用</a>
-        </span>
-        <span class="item__date">
-          May 8, 2015
-        </span>
-        <span >
-        
-        <p>在很多Python项目中都包含一个requirements.pip文件，里面写的是一些包的名称和版本之类的信息，这是做什么用的呢？</p>
-
-<p>比如一个requirements.pip文件内容如下：</p>
-
-<p>html5lib==0.999</p>
-
-<p>ipdb==0.8</p>
-
-<p>ipython==2.3.1</p>
-
-<p>mongo==0.2.0</p>
-
-<p>path.py==7.0</p>
-
-<p>python-dateutil==2.3</p>
-
-<p>requests==2.5.0</p>
-
-<p>unicodecsv==0.9.4</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-requirements-pip/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-name/" >Python中__name__的含义</a>
-        </span>
-        <span class="item__date">
-          May 8, 2015
-        </span>
-        <span >
-        
-        <p>学习python中会发现很多python脚本都会有一句话：if __name__ == &#8216;__main__&#8217;。这有点像C，java中的主函数。那么Python中__name__具有什么含义呢？网上很多说法和教程，但是百闻不如一见，要自己动手去发现。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-name/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/sae-django/" >在SAE上部署django</a>
-        </span>
-        <span class="item__date">
-          May 5, 2015
-        </span>
-        <span >
-        
-        <p>新浪SAE免费了，每月5G流量用不完，用来折腾一下Python，SAE支持PHP、Java、Python三大语言，SAE上的Python环境提供了django WEB开发框架，看看如何在SAE上部署django吧。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/sae-django/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-guide-chinese/" >python中文基础教程</a>
-        </span>
-        <span class="item__date">
-          May 5, 2015
-        </span>
-        <span >
-        
-        python中文基础教程： http://www.pythondoc.com/pythontutorial3/index.html
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/redis-php-array/" >Redis如何存取PHP多维数组</a>
-        </span>
-        <span class="item__date">
-          Apr 21, 2015
-        </span>
-        <span >
-        
-        <p>Redis本身不支持存取PHP数组的数据结构，但是如何存取PHP的数组呢？可以把数组序列化，以字符串的形式缓存到Redis中。</p>
-
-<p>其实很多框架或封装好的Redis类中，都做好了自动转化，直接存数据就可以了。如代码：</p>
-
-<p><code>public function testSavePHPArray() {
-    $array = [&lsquo;array1&rsquo;,&lsquo;array2&rsquo;,[&lsquo;array3key&rsquo;=&gt;&lsquo;array3value&rsquo;]];
-    $redis = RedisHandle::getInstance();
-    $redis-&gt;set(&lsquo;save_php_array_test&rsquo;,$array);
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/redis-php-array/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/04/jquery-best-practice/" >jQuery最佳实践</a>
-        </span>
-        <span class="item__date">
-          Apr 16, 2015
-        </span>
-        <span >
-        
-        jQuery最佳实践 本文介绍了jQuery的不同写法的效率，开发中可以借鉴这些经验，提高前端运行性能。 阮一峰博客：http://www.ru
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/04/jquery-best-practice/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/04/terminal-python3/" >在mac终端中如何切换到Python3</a>
         </span>
         <span class="item__date">
@@ -399,6 +249,136 @@ $( &ldquo;p&rdquo; ).text( arr.join( &ldquo;, &rdquo; ) );</p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/04/mysql-commit/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/js-null-undefined/" >js中Null，undefined，””，0，false的区别</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2015
+        </span>
+        <span >
+        
+        <p>1、undefined、null、&#8221;&#8221;、0、false这五个值在if语句中做判断，都会执行false分支</p>
+
+<p>2、undefined和null比较特殊，虽然null的类型是object，但是null不具有任何对象的特性，就是说我们并不能执行null.toString()、null.constructor等对象实例的默认调用。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/js-null-undefined/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/jquery-performance/" >jquery性能优化技巧</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2015
+        </span>
+        <span >
+        
+        <p>jquery是在客户端执行，相对于网站后端开发语言来说，往往不强调js，jquery性能优化的概念，但是在页面非常复杂，各种js，ajax请求多的情况下，优化jquery的性能可以大大提高用户体验，加快页面的响应速度，还是非常有必要的。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/jquery-performance/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/jsonp-ajax/" >jsonp解决ajax跨域代码示例</a>
+        </span>
+        <span class="item__date">
+          Apr 1, 2015
+        </span>
+        <span >
+        
+        <p>有两个子域名，a.xx.com和b.xx.com，现在我在a.xx.com一个页面中发送ajax请求b.xx.com一个控制器中的方法，希望得到返回数据，但是返回状态302，应该是跨域问题没有解决。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/jsonp-ajax/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/js-bibao/" >js闭包之作用域链</a>
+        </span>
+        <span class="item__date">
+          Mar 30, 2015
+        </span>
+        <span >
+        
+        在理解闭包以前.最好能先理解一下作用域链的含义,简单来说,作用域链就是函数在定义的时候创建的,用于寻找使用到的变量的值的一个索引,而他内部的
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/js-bibao/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/ying-hua/" >满地樱花堆积</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2015
+        </span>
+        <span >
+        
+        <p>今天武汉下雨，和亲朋好友一起去武大赏樱花，今天也是武大赏樱花的最佳时间的最后一天。我们是下午5点去的，没有收门票，坐校车来到樱花大道，但是很多樱花都谢了，满地樱花堆积。</p>
+
+<p><img src="http://www.dayecn.com/upload/2015/03/20150329082206964.jpg" alt="武大赏樱" data-bd-imgshare-binded="1" /></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/ying-hua/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/03/sequel-import/" >sequel导入sql文件的时候提示错误</a>
+        </span>
+        <span class="item__date">
+          Mar 21, 2015
+        </span>
+        <span >
+        
+        <p>sequel 导入 sql 文件的时候提示错误：An error occurred when reading the file, as it could not be read in the encoding you selected utf8.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/03/sequel-import/">➦</a>
         
         </div>
         

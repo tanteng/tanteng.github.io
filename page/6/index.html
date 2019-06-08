@@ -143,55 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/12/php-stream/" >PHP 中“流”的概念</a>
-        </span>
-        <span class="item__date">
-          Dec 7, 2017
-        </span>
-        <span >
-        
-        链接：http://www.cunmou.com/phpbook/14.md
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/12/php-ini-config/" >php.ini 几个配置项说明</a>
-        </span>
-        <span class="item__date">
-          Dec 4, 2017
-        </span>
-        <span >
-        
-        <p>php.ini 几个常用的配置项整理。</p>
-
-<h3 id="max-execution-time">max_execution_time</h3>
-
-<p><code class="lang:default decode:true">; Maximum execution time of each script, in seconds
-; <a href="http://php.net/max-execution-time">http://php.net/max-execution-time</a>
-; Note: This directive is hardcoded to 0 for the CLI SAPI
-max_execution_time = 80</code></p>
-
-<p>这设置了脚本被解析器中止之前允许的最大执行时间，单位秒。 这有助于防止写得不好的脚本占尽服务器资源。 默认设置为 30。 从命令行运行 PHP 时，默认设置为 0。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/12/php-ini-config/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/11/mac-open-user-local/" >Mac 上如何打开 /usr/local 路径的文件夹</a>
         </span>
         <span class="item__date">
@@ -215,27 +166,6 @@ max_execution_time = 80</code></p>
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/11/laravel-factory-pattern/" >Laravel 中的简单工厂和抽象工厂</a>
-        </span>
-        <span class="item__date">
-          Nov 22, 2017
-        </span>
-        <span >
-        
-        <p>设计模式之工厂模式分为三种：简单工厂、工厂方法和抽象工厂模式，有时也把简单工厂和工厂方法这两种归为一类。工厂模式属于“创建”型的设计模式，顾名思义用来实例化对象，调用者不需要关心对象的具体创建过程，以达到解耦的目的。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/11/laravel-factory-pattern/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/11/golang-parameter-passing/" >如何理解 Golang 的参数传递都是值传递？</a>
         </span>
         <span class="item__date">
@@ -248,129 +178,6 @@ max_execution_time = 80</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2017/11/golang-parameter-passing/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/11/golang-for-timeout/" >Golang 让 for 循环运行一段时间超时自动退出</a>
-        </span>
-        <span class="item__date">
-          Nov 18, 2017
-        </span>
-        <span >
-        
-        <p>如何控制 for 循环一段时间超时自动退出呢？思路很简单，就是在 for 循环中使用 select 监听 channel，代码如下：</p>
-
-<p><code class="lang:go decode:true">package main</p>
-
-<p>import (
-    &ldquo;fmt&rdquo;
-    &ldquo;time&rdquo;
-)</p>
-
-<p>func main() {
-    timeout := time.After(time.Second * 10)
-    finish := make(chan bool)
-    count := 1
-    go func() {
-        for {
-            select {
-            case &lt;-timeout:
-                fmt.Println(&ldquo;timeout&rdquo;)
-                finish &lt;- true
-                return
-            default:
-                fmt.Printf(&ldquo;haha %d\n&rdquo;, count)
-                count++
-            }
-            time.Sleep(time.Second * 1)
-        }
-    }()</p>
-
-<pre><code>&amp;lt;-finish
-
-fmt.Println(&quot;Finish&quot;)
-</code></pre>
-
-<p>}
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/11/golang-for-timeout/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/11/golang-close-channel/" >Golang 如何优雅关闭 channel</a>
-        </span>
-        <span class="item__date">
-          Nov 17, 2017
-        </span>
-        <span >
-        
-        <p>Golang 内建的 close 方法可以关闭 channel，如果往已经关闭的 channel 发送数据，则会报错：panic: close of closed channel.</p>
-
-<p>看如下代码，在一段时间内，生产者可以不断往 channel 写入数据，消费者进行处理，一段时间后 channel 关闭了，这个时候如果还有数据往 channel 发送，程序就会报错。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/11/golang-close-channel/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/11/golang-smtp-send-mail/" >使用 Golang 发送邮件</a>
-        </span>
-        <span class="item__date">
-          Nov 16, 2017
-        </span>
-        <span >
-        
-        <p>使用 smtp 协议，只需要邮箱服务器主机和端口，和一个发件人帐号，可以使用 Golang 的 smtp 包发送邮件，以下是一个简单示例：</p>
-
-<p><code class="lang:go decode:true">// SendToMail 用于发送邮件
-func SendToMail(to, subject, body, mailType string) error {
-    user := &ldquo;tt@tanteng.me&rdquo;
-    password := 123456
-    host := smtp.tanteng.me:25
-    hp := strings.Split(host, &ldquo;:&ldquo;)
-    auth := smtp.PlainAuth(&ldquo;&rdquo;, user, password, hp[0])
-    var contentType string
-    if mailType == &ldquo;html&rdquo; {
-        contentType = &ldquo;Content-Type: text/&rdquo; + mailType + &ldquo;; charset=UTF-8&rdquo;
-    } else {
-        contentType = &ldquo;Content-Type: text/plain&rdquo; + &ldquo;; charset=UTF-8&rdquo;
-    }</p>
-
-<pre><code>msg := []byte(&quot;To: &quot; + to + &quot;\r\nFrom: xx邮箱中心&amp;lt;&quot; + user + &quot;&amp;gt;\r\nSubject: &quot; + subject + &quot;\r\n&quot; + contentType + &quot;\r\n\r\n&quot; + body)
-sendTo := strings.Split(to, &quot;;&quot;)
-err := smtp.SendMail(host, auth, user, sendTo, msg)
-return err
-</code></pre>
-
-<p>}</code></p>
-
-<p>重点看 msg 字段，也就是邮件标题，发送者，标题，内容的格式。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/11/golang-smtp-send-mail/">➦</a>
         
         </div>
         
@@ -437,6 +244,157 @@ return err
         </span>
         
           ... <a class="read-more-symbol" href="/2017/11/laravel-facade-service-provider/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/redis-ip-limit/" >Redis 实现访问频次限制的几种方式</a>
+        </span>
+        <span class="item__date">
+          Oct 25, 2017
+        </span>
+        <span >
+        
+        链接： https://www.cnblogs.com/gavanwanggw/p/7240675.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/php-intval-precision/" >PHP intval 转换浮点数精度丢失问题</a>
+        </span>
+        <span class="item__date">
+          Oct 15, 2017
+        </span>
+        <span >
+        
+        <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
+
+<pre><code>$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
+</code></pre>
+
+<h3 id="解决办法">解决办法：</h3>
+
+<p>1.转换成字符串再 intval</p>
+
+<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
+</code></pre>
+
+<p>2.使用 round 函数替代 floatval</p>
+
+<pre><code class="language-php">php -r &quot;echo round(19.99*100);&quot;
+</code></pre>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/10/php-intval-precision/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/docker-laravel-local-environment/" >使用 Docker 搭建 Laravel 本地环境</a>
+        </span>
+        <span class="item__date">
+          Oct 14, 2017
+        </span>
+        <span >
+        
+        <p>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同时响应速度很慢，现在有了 docker 这种更好的方式，可以轻松方便的搭建整套 PHP 开发环境。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/10/docker-laravel-local-environment/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/mysql-rand-range/" >MySQL 生成给定范围随机数</a>
+        </span>
+        <span class="item__date">
+          Oct 9, 2017
+        </span>
+        <span >
+        
+        <p>MySQL 的 rand() 函数是随机生成区间为 [0,1) 的浮点数，那么如何让它生成给定两个整数之间的随机数呢？试了一下这样可行：</p>
+
+<p><code class="lang:mysql decode:true">select ROUND(RAND()*(10-1)+1);</code></p>
+
+<p>也就是：</p>
+
+<p><code class="lang:default decode:true">select ROUND(RAND()*(max-min)+min);</code></p>
+
+<p>经测可行。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/10/mysql-rand-range/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/503-service-unavailable/" >服务器返回 502,503,504 原因及解决办法</a>
+        </span>
+        <span class="item__date">
+          Oct 8, 2017
+        </span>
+        <span >
+        
+        <h3 id="502-bad-gateway">502 bad gateway</h3>
+
+<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
+
+<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/10/503-service-unavailable/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/10/computer-concepts-in-life/" >计算机的一些概念在生活中的场景</a>
+        </span>
+        <span class="item__date">
+          Oct 8, 2017
+        </span>
+        <span >
+        
+        <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/10/computer-concepts-in-life/">➦</a>
         
         </div>
         

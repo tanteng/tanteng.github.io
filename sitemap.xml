@@ -286,17 +286,6 @@
   </url>
   
   <url>
-    <loc>http://tanteng.me/categories/go/</loc>
-    <lastmod>2018-05-29T06:34:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tanteng.me/2018/05/vscode-debug-golang/</loc>
-    <lastmod>2018-05-29T06:34:04+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tanteng.me/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
     <lastmod>2018-05-28T11:32:34+00:00</lastmod>
     <priority>0</priority>
@@ -338,6 +327,12 @@
   <url>
     <loc>http://tanteng.me/2018/05/reding-list-6/</loc>
     <lastmod>2018-05-06T04:39:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanteng.me/categories/go/</loc>
+    <lastmod>2018-05-02T02:52:22+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -436,11 +431,6 @@
   </url>
   
   <url>
-    <loc>http://tanteng.me/2017/12/bash-sh/</loc>
-    <lastmod>2017-12-17T12:20:32+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tanteng.me/2017/12/mysql-optimize-tips/</loc>
     <lastmod>2017-12-17T06:48:05+00:00</lastmod>
   </url>
@@ -472,28 +462,8 @@
   </url>
   
   <url>
-    <loc>http://tanteng.me/2017/11/laravel-factory-pattern/</loc>
-    <lastmod>2017-11-22T03:35:54+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://tanteng.me/2017/11/golang-parameter-passing/</loc>
     <lastmod>2017-11-19T12:22:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanteng.me/2017/11/golang-for-timeout/</loc>
-    <lastmod>2017-11-18T14:48:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanteng.me/2017/11/golang-close-channel/</loc>
-    <lastmod>2017-11-17T09:01:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanteng.me/2017/11/golang-smtp-send-mail/</loc>
-    <lastmod>2017-11-16T09:45:37+00:00</lastmod>
   </url>
   
   <url>

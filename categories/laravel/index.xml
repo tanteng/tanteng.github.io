@@ -44,17 +44,7 @@
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/08/laravel-chunk-tip/</guid>
-      <description>&lt;p&gt;使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:default decode:true &#34;&gt;User::where(&amp;lsquo;approved&amp;rsquo;, 0)-&amp;gt;chunk(100, function ($users) {
-  foreach ($users as $user) {
-    $user-&amp;gt;update([&amp;lsquo;approved&amp;rsquo; =&amp;gt; 1]);
-  }
-});&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;原因在于第一次查询：&lt;/p&gt;
-
-&lt;p&gt;select * from users where approved = 0 limit 100 offset 0;&lt;/p&gt;</description>
+      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： User::where(&#39;approved&#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&#39;approved&#39; =&amp;amp;gt; 1]); } }); 原因在于第一次查询： select</description>
     </item>
     
     <item>
@@ -158,15 +148,6 @@ stdout_logfile=/var/www/xxx.cn/worker.log
 &lt;p&gt;一定要设置任务执行失败重试次数，避免无限失败重试，超过重试次数 Laravel 会默认写到失败任务表中，也可以自己写执行失败后续处理逻辑。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;php artisan queue:work redis &amp;ndash;tries=3&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Laravel 中的简单工厂和抽象工厂</title>
-      <link>http://tanteng.me/2017/11/laravel-factory-pattern/</link>
-      <pubDate>Wed, 22 Nov 2017 03:35:54 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/laravel-factory-pattern/</guid>
-      <description>&lt;p&gt;设计模式之工厂模式分为三种：简单工厂、工厂方法和抽象工厂模式，有时也把简单工厂和工厂方法这两种归为一类。工厂模式属于“创建”型的设计模式，顾名思义用来实例化对象，调用者不需要关心对象的具体创建过程，以达到解耦的目的。&lt;/p&gt;</description>
     </item>
     
     <item>

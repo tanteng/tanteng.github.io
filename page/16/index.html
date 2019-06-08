@@ -143,148 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/08/laravel-debugbar-facade/" >Laravel 调试工具 laravel-debugbar 打印日志消息</a>
-        </span>
-        <span class="item__date">
-          Aug 1, 2016
-        </span>
-        <span >
-        
-        <p>使用 Laravel 的调试工具 laravel-debugbar 的 Facade 方式 Debugbar::info(), Debugbar::error()等方法打印日志消息，页面打不开，查看 PHP 错误日志报错：Call to undefined method DebugBar\DebugBar::info().</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/08/laravel-debugbar-facade/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/08/laravel-debugbar-sql/" >Laravel 调试工具 laravel-debugbar</a>
-        </span>
-        <span class="item__date">
-          Aug 1, 2016
-        </span>
-        <span >
-        
-        <p>给 Laravel 项目安装了 debugbar 调试工具，在 debug 模式下打开页面底部会出现一个工具条，点开可以查看各项性能统计，最重要的是打印页面执行的 sql 语句和调试内容。下面利用 debugbar 工具找到一个 sql 查询的优化点。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/08/laravel-debugbar-sql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/php7-performance-inisight-into/" >PHP 7 性能洞察，一张图告诉你</a>
-        </span>
-        <span class="item__date">
-          Jul 29, 2016
-        </span>
-        <span >
-        
-        <p>PHP 7 发布，最大的特点是经过很多优化性能得到大幅提升，几乎翻倍，甚至比 Facebook 开发的 HHVM 虚拟机性能更快，下面这张图对比了 PHP 5.6，HHVM 和 PHP 7 下的性能对比，带你洞察 PHP 7 的性能。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/php7-performance-inisight-into/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/jquery-intput-file-width-height/" >jQuery 获取 intput file 图片的宽高和大小</a>
-        </span>
-        <span class="item__date">
-          Jul 25, 2016
-        </span>
-        <span >
-        
-        <p>如何判断input file表单里上传的图片的宽高和大小呢？这个时候图片还没真正上传，也不是在页面上展示，不能使用$(&#8220;#id&#8221;).width(),$(&#8220;#id&#8221;).height()这种方式。</p>
-
-<p>在Stack Overflow找到一个方法获取input file图片文件的宽高：</p>
-
-<p><code class="lang:js decode:true ">var _URL = window.URL || window.webkitURL;
-$(&ldquo;#file&rdquo;).change(function (e) {
-    var file, img;
-    if ((file = this.files[0])) {
-        img = new Image();
-        img.onload = function () {
-            alert(this.width + &ldquo; &rdquo; + this.height);
-        };
-        img.src = _URL.createObjectURL(file);
-    }
-});</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/jquery-intput-file-width-height/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/php-exec-status/" >判断PHP的exec函数是否执行成功</a>
-        </span>
-        <span class="item__date">
-          Jul 21, 2016
-        </span>
-        <span >
-        
-        <p class="refname">
-  做一个代码发布的系统，需要用到PHP的exec函数来执行Linux下的命令和git，svn命令，如何判断PHP的exec函数是否执行成功呢？
-</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/php-exec-status/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/redis-sorted-set/" >Redis有序集合常用命令</a>
-        </span>
-        <span class="item__date">
-          Jul 19, 2016
-        </span>
-        <span >
-        
-        <p>小结一下Redis有序集合的常用命令有：zadd,zrange,zremrangebyrank,zremrangebyscore,zcard等，这些都是使用频率比较高的，还有一些参数的说明等。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/redis-sorted-set/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/07/misconf-redis-configured-save-rdb-snapshots/" >解决 Redis 只读不可写的问题</a>
         </span>
         <span class="item__date">
@@ -371,6 +229,146 @@ $.each(result, function() {
         </span>
         
           ... <a class="read-more-symbol" href="/2016/07/laravel-5-queue/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/07/ssrf-shell/" >解决一个SSRF漏洞</a>
+        </span>
+        <span class="item__date">
+          Jul 7, 2016
+        </span>
+        <span >
+        
+        <p>乌云平台检测出一个SSRF漏洞，漏洞存在于一个远程图片下载的接口，没有对url进行有效的合法性检测。</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/07/ssrf.png" target="_blank"><img class="alignnone size-full wp-image-10191" src="https://blog.tanteng.me/wp-content/uploads/2016/07/ssrf.png" alt="ssrf" width="900" height="537" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/07/ssrf-shell/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/07/gulp-watch/" >使用 gulp watch</a>
+        </span>
+        <span class="item__date">
+          Jul 5, 2016
+        </span>
+        <span >
+        
+        在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/07/gulp-watch/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/php-curl-post-send-file/" >PHP Curl 上传文件</a>
+        </span>
+        <span class="item__date">
+          Jun 30, 2016
+        </span>
+        <span >
+        
+        记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&lsquo;curl_file_create&rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &lsquo;@&rsquo; . realpath($file); } $post = array(&lsquo;filename&rsquo; =&gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/php-curl-post-send-file/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/binshm-bad-interpreter-no-file-directory/" >执行sh脚本：/bin/sh^M: bad interpreter: No such file or directory</a>
+        </span>
+        <span class="item__date">
+          Jun 21, 2016
+        </span>
+        <span >
+        
+        <p>执行sh脚本错误：/bin/sh^M: bad interpreter: No such file or directory，这是windows下编码不同造成的，在Linux下修复方法如下，记录一下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/binshm-bad-interpreter-no-file-directory/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/gulp-notify-notify-send-must-be-installed/" >Laravel Elixir运行gulp命令:Error in plugin ‘gulp-notify’</a>
+        </span>
+        <span class="item__date">
+          Jun 20, 2016
+        </span>
+        <span >
+        
+        <p>Laravel Elixir运行gulp命令出现错误提示：</p>
+
+<p>[20:24:02] gulp-notify: [Error in notifier] Error in plugin &#8216;gulp-notify&#8217;</p>
+
+<p>Message:notify-send must be installed on the system.</p>
+
+<p>虽然不影响最终的发布，但是还是解决这个问题。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/gulp-notify-notify-send-must-be-installed/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/mysql-command/" >常用Linux操作数据库命令及MySQL语句</a>
+        </span>
+        <span class="item__date">
+          Jun 15, 2016
+        </span>
+        <span >
+        
+        <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
+
+<h3 id="数据库表导入">数据库表导入</h3>
+
+<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
+
+<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/mysql-command/">➦</a>
         
         </div>
         

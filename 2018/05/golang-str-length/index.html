@@ -22,18 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Golang 统计字符串字数"/>
-<meta name="twitter:description" content="比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。
-
-
-
-golang 可以使用正则和 unicode 包的方法判断。"/>
+<meta name="twitter:description" content="比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家"/>
 
 <meta property="og:title" content="Golang 统计字符串字数" />
-<meta property="og:description" content="比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。
-
-
-
-golang 可以使用正则和 unicode 包的方法判断。" />
+<meta property="og:description" content="比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://tanteng.me/2018/05/golang-str-length/" />
 <meta property="article:published_time" content="2018-05-02T02:52:22&#43;00:00"/>
@@ -186,13 +178,12 @@ golang 可以使用正则和 unicode 包的方法判断。" />
   <div class="post">
     <p>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。</p>
 
-<p><img class="aligncenter wp-image-12274 size-full" src="https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180509104614-1.png" alt="" width="591" height="157" /></p>
-
 <p>golang 可以使用正则和 unicode 包的方法判断。</p>
 
 <p>以下函数 GetStrLength 返回输入的字符串的字数，每个汉字和中文标点算 1 个字数，英文和其他字符算半个字数，不足 1 个字算 1 个。</p>
 
-<p><code class="lang:go decode:true">// GetStrLength 返回输入的字符串的字数，汉字和中文标点算 1 个字数，英文和其他字符 2 个算 1 个字数，不足 1 个算 1个
+<p>```golang
+// GetStrLength 返回输入的字符串的字数，汉字和中文标点算 1 个字数，英文和其他字符 2 个算 1 个字数，不足 1 个算 1个
 func GetStrLength(str string) float64 {
     var total float64</p>
 
@@ -209,9 +200,8 @@ for _, r := range str {
 return math.Ceil(total)
 </code></pre>
 
-<p>}</code></p>
+<p>}```</p>
 
-<p><audio style="display: none;" controls="controls"></audio></p>
   </div>
   
 

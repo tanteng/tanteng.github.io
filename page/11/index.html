@@ -143,169 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/04/beego-table-name/" >Beego 设置表名方法</a>
-        </span>
-        <span class="item__date">
-          Apr 2, 2017
-        </span>
-        <span >
-        
-        <p>在 Beego 中如果要设置表名，可以使用如下方法，给这个 model 的 struct 增加一个 TableName 方法：</p>
-
-<p><code class="lang:go decode:true ">type Comments struct {
-    Id          int64
-    ParentId    int64
-    DynamicId   string <code>orm:&quot;size(128)&quot;</code>
-    Content     string <code>orm:&quot;type(longtext)&quot;</code>
-    Userid      int64
-    ReplyUserid int64
-    Status      int64
-    IsDelete    int64
-    CreatedAt   string <code>orm:&quot;size(128)&quot;</code>
-    UpdatedAt   string <code>orm:&quot;size(128)&quot;</code>
-}</p>
-
-<p>func init() {
-    orm.RegisterModel(new(Comments))
-}</p>
-
-<p>// TableName 设置表名
-func (m *Comments) TableName() string {
-    return &ldquo;comments_8&rdquo;
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/04/beego-table-name/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
-        </span>
-        <span class="item__date">
-          Mar 31, 2017
-        </span>
-        <span >
-        
-        <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/2017-php-way/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/laravel-model-join-wrong-id/" >Laravel 关联查询返回错误的 id</a>
-        </span>
-        <span class="item__date">
-          Mar 31, 2017
-        </span>
-        <span >
-        
-        <p>在 Laravel Eloquent 中使用 join 关联查询，如果两张表有名称相同的字段，如 id，那么它的值会默认被后来的同名字段重写，返回不是期望的结果。例如以下关联查询：</p>
-
-<p><code>$priority = Priority::rightJoin(&lsquo;touch&rsquo;, &lsquo;priorities.touch_id&rsquo;, &lsquo;=&rsquo;, &lsquo;touch.id&rsquo;)
-    -&gt;where(&lsquo;priorities.type&rsquo;, 1)
-    -&gt;orderBy(&lsquo;priorities.total_score&rsquo;, &lsquo;desc&rsquo;)
-    -&gt;orderBy(&lsquo;touch.created_at&rsquo;, &lsquo;desc&rsquo;)
-    -&gt;get();</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/laravel-model-join-wrong-id/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/virtualbox-blue-screen/" >VirtualBox启动蓝屏问题</a>
-        </span>
-        <span class="item__date">
-          Mar 24, 2017
-        </span>
-        <span >
-        
-        <p>用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox 软件都无法正常运行。</p>
-
-<p><img class="alignnone size-full wp-image-11331" src="https://blog.tanteng.me/wp-content/uploads/2017/03/bootingvm.png" alt="" width="943" height="505" /></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/virtualbox-blue-screen/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/baidu-union-verify-https-website/" >百度联盟如何验证 HTTPS 站点</a>
-        </span>
-        <span class="item__date">
-          Mar 22, 2017
-        </span>
-        <span >
-        
-        <p>本站是 HTTPS 站点，在百度联盟添加站点页面，输入 blog.tanteng.me 点击“验证”进入验证页面，提示两种方式，1. 把文件放根目录 2. 添加 meta 信息，都试了，无法验证。</p>
-
-<p><code class="lang:default decode:true">[root@iZ94r80gdghZ public]# curl blog.tanteng.me
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
-&lt;body bgcolor=&ldquo;white&rdquo;&gt;
-&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
-&lt;hr&gt;&lt;center&gt;nginx/1.10.1&lt;/center&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/03/baidu-union-verify-https-website/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/03/linux-nginx-ip/" >使用 Linux 命令分析 Nginx 日志统计 ip 访问数</a>
-        </span>
-        <span class="item__date">
-          Mar 16, 2017
-        </span>
-        <span >
-        
-        统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。 Linux 命令如下： cat access.log | awk &#8216;{print $1}&#8217; | sort | uniq -c | sort -k1nr | head -10 效果如图所示：
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/03/php-float-rand/" >PHP 浮点数范围随机</a>
         </span>
         <span class="item__date">
@@ -467,6 +304,219 @@ Connection: Upgrade</code></p>
         本文介绍了创建 Laravel 5 扩展包的步骤。 链接： http://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/
         
         </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/02/git-fetch-permission-denied/" >文件权限问题导致的 git fetch 命令执行失败</a>
+        </span>
+        <span class="item__date">
+          Feb 16, 2017
+        </span>
+        <span >
+        
+        <p>在一个基于 git 的发布系统中拉取代码，发现无法拉取最新的提交记录，通过调试和查看日志文件找到一行错误：<strong>error: cannot open .git/FETCH_HEAD: Permission denied</strong>，原因是文件权限问题导致。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/git-fetch-permission-denied/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/02/git-reset-commit-id/" >git reset 重置到某次提交</a>
+        </span>
+        <span class="item__date">
+          Feb 13, 2017
+        </span>
+        <span >
+        
+        记一次 git 重置操作的过程： 把本地master代码回撤到有问题的提交点之前，git reset -q &#8211;hard commid-id 将本地master强行推送到远端，需先在gitlab上
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/git-reset-commit-id/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/02/login-replay-attacks/" >登录重放攻击及安全防御</a>
+        </span>
+        <span class="item__date">
+          Feb 1, 2017
+        </span>
+        <span >
+        
+        <p>现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下：</p>
+
+<p>1、前端web页面用户输入账号、密码，点击登录。</p>
+
+<p>2、请求提交之前，web端首先通过客户端脚本如javascript对密码原文进行md5加密。</p>
+
+<p>3、提交账号、md5之后的密码</p>
+
+<p>4、请求提交至后端，验证账号与密码是否与数据库中的一致，一致则认为登录成功，反之失败。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/02/login-replay-attacks/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/mysql-alter-table-big-data/" >MySQL大表加字段思路</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2017
+        </span>
+        <span >
+        
+        <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
+
+<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &ldquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
+
+<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/mysql-alter-table-big-data/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/php-pack/" >PHP二进制封包</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2017
+        </span>
+        <span >
+        
+        <p>通过 TCP/IP 协议传输数据经常会用二进制数据包的形式，在 PHP 中可使用 pack() 和 unpack() 函数进行二进制封包和解包，通过 socket 建立 TCP 连接，并将数据包传输出去</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/php-pack/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/01/mysql-explain/" >Mysql性能优化–Explain详解</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2017
+        </span>
+        <span >
+        
+        <h3 id="explain">EXPLAIN</h3>
+
+<p>mysql explain命令是查询性能优化不可缺少的一部分。</p>
+
+<h4 id="toc_1">explain output columns</h4>
+
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>执行编号，标识select所属的行。如果在语句中没有子查询或者关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</td>
+</tr>
+
+<tr>
+<td>select_type</td>
+<td>显示本行是简单或是复杂select。如果查询有任何复杂的子查询，则最外层标记为primary（derived、Union、Union resuit）</td>
+</tr>
+
+<tr>
+<td>table</td>
+<td>访问引用哪个表（引用某个查询，如“derived3”）</td>
+</tr>
+
+<tr>
+<td>partitions</td>
+<td>匹配的分区</td>
+</tr>
+
+<tr>
+<td>type</td>
+<td>数据访问/读取操作类型（all、index、range、ref、eq_ref、const/system、NULL）。join类型</td>
+</tr>
+
+<tr>
+<td>possible_keys</td>
+<td>揭示哪一些索引可能有利于高效的查找</td>
+</tr>
+
+<tr>
+<td>key</td>
+<td>此次查询中确切使用到的索引.</td>
+</tr>
+
+<tr>
+<td>key_len</td>
+<td>显示mysql在索引里使用的字节数</td>
+</tr>
+
+<tr>
+<td>ref</td>
+<td>哪个字段或常数与key一起被使用</td>
+</tr>
+
+<tr>
+<td>rows</td>
+<td>为了找到所需的列而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</td>
+</tr>
+
+<tr>
+<td>filtered</td>
+<td>表示此查询条件所过滤的数据的百分比</td>
+</tr>
+
+<tr>
+<td>Extra</td>
+<td>额外信息，如using index、filesort等</td>
+</tr>
+</tbody>
+</table>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/01/mysql-explain/">➦</a>
         
         </div>
         

@@ -143,170 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/05/python-tablib-excel/" >Python使用tablib生成excel文件简单示例</a>
-        </span>
-        <span class="item__date">
-          May 12, 2015
-        </span>
-        <span >
-        
-        <p><code class="lang:python decode:true">import tablib
-headers = (&lsquo;lie1&rsquo;, &lsquo;lie2&rsquo;, &lsquo;lie3&rsquo;, &lsquo;lie4&rsquo;, &lsquo;lie5&rsquo;)
-mylist = [(&lsquo;23&rsquo;,&lsquo;23&rsquo;,&lsquo;34&rsquo;,&lsquo;23&rsquo;,&lsquo;34&rsquo;),(&lsquo;sadf&rsquo;,&lsquo;23&rsquo;,&lsquo;sdf&rsquo;,&lsquo;23&rsquo;,&lsquo;fsad&rsquo;)]
-mylist = tablib.Dataset(*mylist, headers=headers)
-with open(&lsquo;excel.xlsx&rsquo;, &lsquo;wb&rsquo;) as f:
-    f.write(mylist.xlsx)</code></p>
-
-<p>这是一个基本的最简单的使用tablib生成excel文件的示例，首先要安装tablib模块，在命令行输入:pip intall tablib，即可自动下载安装。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-tablib-excel/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-from-import/" >from urllib import request和import urlib.request的区别</a>
-        </span>
-        <span class="item__date">
-          May 12, 2015
-        </span>
-        <span >
-        
-        <p>Python中from urllib import request和import urlib.request的区别：</p>
-
-<p><code class="lang:python decode:true ">from urllib import request</p>
-
-<h1 id="access-request-directly">access request directly.</h1>
-
-<p>mine = request()</p>
-
-<p>import urllib.request</p>
-
-<h1 id="used-as-urllib-request">used as urllib.request</h1>
-
-<p>mine = urllib.request()</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-from-import/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/bs4-example/" >bs4(beautiful soup 4)简单抓取示例</a>
-        </span>
-        <span class="item__date">
-          May 12, 2015
-        </span>
-        <span >
-        
-        <p>参照bs4官方中文文档<a href="http://beautifulsoup.readthedocs.org/en/latest/" target="_blank" rel="nofollow"><a href="http://beautifulsoup.readthedocs.org/en/latest/">http://beautifulsoup.readthedocs.org/en/latest/</a></a>照着写了个简单的例子，感觉它非常强大！！</p>
-
-<p><code class="lang:python decode:true ">import urllib.request
-from bs4 import BeautifulSoup
-import sys</p>
-
-<p>url = &lsquo;<a href="https://blog.tanteng.me'">https://blog.tanteng.me'</a>
-html = urllib.request.urlopen(url).read()</p>
-
-<p>soup = BeautifulSoup(html)
-h1s = soup.find<em>all(&lsquo;h1&rsquo;,class</em>=&lsquo;entry-title&rsquo;)</p>
-
-<p>&rdquo;&lsquo;打印所有H1标题和链接&rdquo;&rsquo;
-for h1 in h1s:
-    #print(h1)
-    print(h1.get_text())
-    print(h1.a.attrs[&lsquo;href&rsquo;])</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/bs4-example/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/beautiful-soul-4-for-python3/" >beautiful soul 4 for Python3中文文档</a>
-        </span>
-        <span class="item__date">
-          May 11, 2015
-        </span>
-        <span >
-        
-        beautiful soul 4 for Python3中文文档： http://beautifulsoup.readthedocs.org/en/latest/#
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/python-filename/" >Python文件名不能和已有模块名重名</a>
-        </span>
-        <span class="item__date">
-          May 11, 2015
-        </span>
-        <span >
-        
-        今天学习Python正则表达式，用到了re模块，新建了一个“re.py”文件写几行代码，但就是通不过编译，提示错误：&#8217;modul
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/python-filename/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/05/requests-html/" >Python3 requests包抓取并保存网页源码</a>
-        </span>
-        <span class="item__date">
-          May 11, 2015
-        </span>
-        <span >
-        
-        <p>使用Python 3的requests模块抓取网页源码并保存到文件示例：</p>
-
-<p><code class="lang:python mark:3-4 decode:true">import requests
-html = requests.get(&ldquo;<a href="http://www.baidu.com&quot;">http://www.baidu.com&quot;</a>)
-with open(&lsquo;test.txt&rsquo;,&lsquo;w&rsquo;,encoding=&lsquo;utf-8&rsquo;) as f:
-    f.write(html.text)</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/05/requests-html/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/05/python-scope/" >Python作用域代码演示</a>
         </span>
         <span class="item__date">
@@ -408,6 +244,156 @@ print(&ldquo;In global scope:&ldquo;, spam)</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2015/05/python-for-level/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-requirements-pip/" >Python中requirements.pip文件的作用</a>
+        </span>
+        <span class="item__date">
+          May 8, 2015
+        </span>
+        <span >
+        
+        <p>在很多Python项目中都包含一个requirements.pip文件，里面写的是一些包的名称和版本之类的信息，这是做什么用的呢？</p>
+
+<p>比如一个requirements.pip文件内容如下：</p>
+
+<p>html5lib==0.999</p>
+
+<p>ipdb==0.8</p>
+
+<p>ipython==2.3.1</p>
+
+<p>mongo==0.2.0</p>
+
+<p>path.py==7.0</p>
+
+<p>python-dateutil==2.3</p>
+
+<p>requests==2.5.0</p>
+
+<p>unicodecsv==0.9.4</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-requirements-pip/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-name/" >Python中__name__的含义</a>
+        </span>
+        <span class="item__date">
+          May 8, 2015
+        </span>
+        <span >
+        
+        <p>学习python中会发现很多python脚本都会有一句话：if __name__ == &#8216;__main__&#8217;。这有点像C，java中的主函数。那么Python中__name__具有什么含义呢？网上很多说法和教程，但是百闻不如一见，要自己动手去发现。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/python-name/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/sae-django/" >在SAE上部署django</a>
+        </span>
+        <span class="item__date">
+          May 5, 2015
+        </span>
+        <span >
+        
+        <p>新浪SAE免费了，每月5G流量用不完，用来折腾一下Python，SAE支持PHP、Java、Python三大语言，SAE上的Python环境提供了django WEB开发框架，看看如何在SAE上部署django吧。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/sae-django/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/python-guide-chinese/" >python中文基础教程</a>
+        </span>
+        <span class="item__date">
+          May 5, 2015
+        </span>
+        <span >
+        
+        python中文基础教程： http://www.pythondoc.com/pythontutorial3/index.html
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/redis-php-array/" >Redis如何存取PHP多维数组</a>
+        </span>
+        <span class="item__date">
+          Apr 21, 2015
+        </span>
+        <span >
+        
+        <p>Redis本身不支持存取PHP数组的数据结构，但是如何存取PHP的数组呢？可以把数组序列化，以字符串的形式缓存到Redis中。</p>
+
+<p>其实很多框架或封装好的Redis类中，都做好了自动转化，直接存数据就可以了。如代码：</p>
+
+<p><code>public function testSavePHPArray() {
+    $array = [&lsquo;array1&rsquo;,&lsquo;array2&rsquo;,[&lsquo;array3key&rsquo;=&gt;&lsquo;array3value&rsquo;]];
+    $redis = RedisHandle::getInstance();
+    $redis-&gt;set(&lsquo;save_php_array_test&rsquo;,$array);
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/redis-php-array/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/04/jquery-best-practice/" >jQuery最佳实践</a>
+        </span>
+        <span class="item__date">
+          Apr 16, 2015
+        </span>
+        <span >
+        
+        jQuery最佳实践 本文介绍了jQuery的不同写法的效率，开发中可以借鉴这些经验，提高前端运行性能。 阮一峰博客：http://www.ru
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/04/jquery-best-practice/">➦</a>
         
         </div>
         

@@ -143,184 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/04/bower-js/" >初识bower——前端包管理工具</a>
-        </span>
-        <span class="item__date">
-          Apr 30, 2016
-        </span>
-        <span >
-        
-        <p>最开始接触WEB，其实就是从前端开始，那个时候没有掌握后端语言，做静态的HTML页面，开始接触CSS，比较感兴趣，时过境迁，现在的前端技术层出不穷，越来越专业了，JS技术更是异军突起，非常强大，CSS也多了很多特性。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/bower-js/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/composer-ignore-reqs/" >Composer设置忽略版本匹配</a>
-        </span>
-        <span class="item__date">
-          Apr 26, 2016
-        </span>
-        <span >
-        
-        <p>执行composer install遇到错误：Your requirements could not be resolved to an installable set of packages. 这是因为不匹配composer.json要求的版本。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/composer-ignore-reqs/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/jquery-on-dom/" >jQuery事件绑定on()与弹窗</a>
-        </span>
-        <span class="item__date">
-          Apr 25, 2016
-        </span>
-        <span >
-        
-        <p>页面上经常会有弹窗，有的弹窗是动态生成的，有的弹窗是在页面底部隐藏的，对于动态生成的弹窗，如果要监听弹窗的事件，可以使用jQuery的事件绑定on()方法实现。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/jquery-on-dom/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/git-init/" >初始化一个 git 项目</a>
-        </span>
-        <span class="item__date">
-          Apr 18, 2016
-        </span>
-        <span >
-        
-        <h4 id="git-global-setup">Git global setup</h4>
-
-<p><code class="lang:default decode:true light-well">git config &ndash;global user.name &ldquo;谈腾&rdquo;
-git config &ndash;global user.email &ldquo;tanteng@qq.com&rdquo;</code></p>
-
-<h4 id="create-a-new-repository">Create a new repository</h4>
-
-<p><code class="lang:default decode:true">git clone git@gitlab.example.com:xx.git
-cd adminsns.xunlei.cn
-touch README.md
-git add README.md
-git commit -m &ldquo;add README&rdquo;
-git push -u origin master</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/git-init/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/crontab-demo/" >Crontab 定时任务格式和使用实例</a>
-        </span>
-        <span class="item__date">
-          Apr 16, 2016
-        </span>
-        <span >
-        
-        <h3 id="crontab的文件格式">crontab的文件格式</h3>
-
-<p>分 时 日 月 星期 要运行的命令</p>
-
-<ul>
-<li>第1列分钟0～59</li>
-<li>第2列小时0～23（0表示子夜）</li>
-<li>第3列日1～31</li>
-<li>第4列月1～12</li>
-<li>第5列星期0～7（0和7表示星期天）</li>
-<li>第6列要运行的命令</li>
-</ul>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/crontab-demo/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/04/nginx-set-fastcgi-param/" >Nginx 设置 $_SERVER 变量</a>
-        </span>
-        <span class="item__date">
-          Apr 13, 2016
-        </span>
-        <span >
-        
-        <p>在有的PHP中定义ENVIRONMENT常量，可以区分开发环境和生产环境，如：</p>
-
-<p><code>define(&lsquo;ENVIRONMENT&rsquo;, isset($_SERVER[&lsquo;CI_ENV&rsquo;]) ? $_SERVER[&lsquo;CI_ENV&rsquo;] : &lsquo;development&rsquo;);
-switch (ENVIRONMENT)
-{
-    case &lsquo;development&rsquo;:
-        error_reporting(-1);
-        ini_set(&lsquo;display_errors&rsquo;, 1);
-    break;</p>
-
-<pre><code>case 'testing':
-case 'production':
-    ini_set('display_errors', 0);
-    if (version_compare(PHP_VERSION, '5.3', '&amp;gt;='))
-    {
-        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED &amp; ~E_STRICT &amp; ~E_USER_NOTICE &amp; ~E_USER_DEPRECATED);
-    }
-    else
-    {
-        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_USER_NOTICE);
-    }
-break;
-
-default:
-    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-    echo 'The application environment is not set correctly.';
-    exit(1); // EXIT_ERROR
-</code></pre>
-
-<p>}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/04/nginx-set-fastcgi-param/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/04/linux-grep/" >Linux命令：强大的grep命令</a>
         </span>
         <span class="item__date">
@@ -415,6 +237,149 @@ default:
         </span>
         
           ... <a class="read-more-symbol" href="/2016/04/php-fpm-start-servers/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/git-config-safe/" >.git/config文件泄露修复</a>
+        </span>
+        <span class="item__date">
+          Apr 4, 2016
+        </span>
+        <span >
+        
+        <p>阿里云的云盾系统报告一个系统漏洞，提示：系统配置泄露，路径是<a href="https://blog.tanteng.me:80/.git/config，用浏览器打开，一个文本文件就下载下来了，内容如下（经修改）：">https://blog.tanteng.me:80/.git/config，用浏览器打开，一个文本文件就下载下来了，内容如下（经修改）：</a></p>
+
+<p><code class="lang:sh decode:true">[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true
+[remote &ldquo;origin&rdquo;]
+    url = xxxxx
+    fetch = xxxxxx
+[branch &ldquo;master&rdquo;]
+    remote = origin
+    merge = refs/heads/master
+</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/git-config-safe/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/homestead/" >Mac上安装Homestead</a>
+        </span>
+        <span class="item__date">
+          Apr 3, 2016
+        </span>
+        <span >
+        
+        <p>之前在Windows上用VirtualBox+Vagrant装了一个CentOS 7的虚拟机，回家后又把Mac上的PHP集成开发环境MAMP给卸载了，也用VirtualBox+Vagrant装一个虚拟机，这次用的是Laravel官方封装好的box——Homestead.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/homestead/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/centos-7-repo/" >常用的CentOS 7 yum源集合</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2016
+        </span>
+        <span >
+        
+        <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/centos-7-repo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/laravel-redirect/" >关于Laravel跳转redirect方法</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2016
+        </span>
+        <span >
+        
+        这是一个链接，关于Laravel跳转方法redirect()的使用。 http://laraveldaily.com/all-about-redirects-in-laravel-5/
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/php-fpm-conf/" >PHP-FPM性能优化参考</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2016
+        </span>
+        <span >
+        
+        <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
+
+<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/php-fpm-conf/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/03/aliyun-centos-7-swap/" >在阿里云CentOS 7创建swap分区</a>
+        </span>
+        <span class="item__date">
+          Mar 29, 2016
+        </span>
+        <span >
+        
+        <p>创建swap分区是为了弥补物理内存的不足，也就是虚拟内存的概念，把硬盘的一部分划分作为虚拟内存，但这个空间不是越大越好，硬盘的速度远低于内存，设置不当反而拖慢系统的速度。</p>
+
+<p>阿里云的主机默认没有swap分区，可以使用free命令查看：</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" target="_blank"><img class="alignnone wp-image-9771 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/03/aliyun_swap.png" alt="aliyun_swap" width="519" height="112" /></a></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/03/aliyun-centos-7-swap/">➦</a>
         
         </div>
         

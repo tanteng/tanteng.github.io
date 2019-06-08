@@ -143,165 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/06/practice-and-perfect/" >Practice reduces the imperfection的意思</a>
-        </span>
-        <span class="item__date">
-          Jun 7, 2015
-        </span>
-        <span >
-        
-        <p>英语有句名言叫Practice makes perfect,翻译成中文的意思是熟能生巧，练习实践可以不断做到完美，可是还有一句话后半句是Practice reduces the imperfection，前半句是Practice doesn&#8217;t make perfect.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/practice-and-perfect/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/yii2-digpage/" >深入理解Yii2</a>
-        </span>
-        <span class="item__date">
-          Jun 5, 2015
-        </span>
-        <span >
-        
-        推荐一个网站： http://www.digpage.com/index.html
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/array-unshift-shift-pop-push/" >array_unshift,array_shift及array_pop,array_push的定义</a>
-        </span>
-        <span class="item__date">
-          Jun 4, 2015
-        </span>
-        <span >
-        
-        array_unshift,array_shift,array_pop,array_push这几个函数容易混淆，其实概念很简单，定义如下： a
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/array-unshift-shift-pop-push/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/cat-tag-exclude/" >WordPress标签云和列表移除指定ID不显示</a>
-        </span>
-        <span class="item__date">
-          Jun 4, 2015
-        </span>
-        <span >
-        
-        <p>WordPress的标签页和列表挂件，如果想把某些标签或列表不予显示，可以使用如下两个钩子方法实现，具体代码如下：</p>
-
-<p><code>//移除部分标签不在标签云显示
-function remove_tags($args){
-    $new_args = array(
-            &lsquo;exclude&rsquo; =&gt; &lsquo;30,40,128,131,83&rsquo;,
-        );
-    return array_merge($args,$new_args);
-}
-add_filter( &lsquo;widget_tag_cloud_args&rsquo;, &lsquo;remove_tags&rsquo; );</p>
-
-<p>//移除部分标签不在列表widget显示
-function exclude_widget_categories($args){
-    $exclude = &ldquo;4,6,12,88,172&rdquo;; // The IDs of the excluding categories
-    $args[&ldquo;exclude&rdquo;] = $exclude;
-    return $args;
-}
-add_filter(&ldquo;widget_categories_args&rdquo;,&ldquo;exclude_widget_categories&rdquo;);</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/cat-tag-exclude/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/pc-mobile-adapter/" >PC站和移动站适配三种方式</a>
-        </span>
-        <span class="item__date">
-          Jun 4, 2015
-        </span>
-        <span >
-        
-        <h3 id="pc站和移动站适配三种方式">PC站和移动站适配三种方式</h3>
-
-<p>目前较流量的PC站与移动站配置方式有三种，百度站在搜索引擎角度将这三种分别称为跳转适配、代码适配和自适应，以下为这三种配置方式的名词解释及异同对比。</p>
-
-<p>1，<strong>跳转适配</strong>：该方法会利用单独的网址向每种设备提供不同的代码。这种配置会尝试检测用户所使用的设备或<span lang="EN-US">ua</span>，然后使用 <span lang="EN-US">HTTP </span>重定向和 <span lang="EN-US">Vary HTTP </span>标头重定向到相应的页面。</p>
-
-<p>2，<strong>代码适配</strong>：该方法使用相同的网址（不考虑用户所使用的设备），但会根据服务器对用户所用浏览器的了解（<span lang="EN-US">ua</span>），针对不同设备类型生成不同版本的 <span lang="EN-US">HTML</span>。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/pc-mobile-adapter/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/06/php-anonymous-function/" >PHP匿名函数</a>
-        </span>
-        <span class="item__date">
-          Jun 1, 2015
-        </span>
-        <span >
-        
-        <p>PHP5.3以来也出现了很多新的特性：</p>
-
-<p>PHP5.2 以前：autoload, PDO 和 MySQLi, 类型约束</p>
-
-<p>PHP5.2：JSON 支持</p>
-
-<p>PHP5.3：弃用的功能，匿名函数，新增魔术方法，命名空间，后期静态绑定，Heredoc 和 Nowdoc, const, 三元运算符，Phar</p>
-
-<p>PHP5.4：Short Open Tag, 数组简写形式，Traits, 内置 Web 服务器，细节修改</p>
-
-<p>PHP5.5：yield, list() 用于 foreach, 细节修改</p>
-
-<p>PHP5.6: 常量增强，可变函数参数，命名空间增强</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/06/php-anonymous-function/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/05/bash_profile-mac-php/" >修改bash_profile文件切换Mac默认PHP版本为MAMP</a>
         </span>
         <span class="item__date">
@@ -418,6 +259,136 @@ foo.get_secret (); // 得到 &lsquo;a new secret&rsquo;</code></p>
         详解js闭包： http://segmentfault.com/a/1190000000652891
         
         </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/niuniu/" >你知道一副牌中有多少种牛牛的情况吗？？</a>
+        </span>
+        <span class="item__date">
+          May 26, 2015
+        </span>
+        <span >
+        
+        <p>前段时间开始学习一门编程语言Python，想到玩的一种牌类游戏，叫牛牛，以前我不会玩，也是最近学会的，然后就想到写个程序列举出一副牌中所有牛牛的牌型，觉得很有意思，于是就动手写。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/niuniu/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/php-composer/" >PHP 开发者该知道的 5 个 Composer 小技巧</a>
+        </span>
+        <span class="item__date">
+          May 26, 2015
+        </span>
+        <span >
+        
+        Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/php-composer/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/rest-get-post-put-delete/" >REST模式GET，POST，PUT，DELETE</a>
+        </span>
+        <span class="item__date">
+          May 23, 2015
+        </span>
+        <span >
+        
+        <p>HTTP常见的请求方式我们熟知的有GET和POST，这两个很好理解，但是在Rest中跟我们平常的理解又有所不同，本文重点介绍一下Rest模式这几种方式的概念，以及它们的使用场景。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/rest-get-post-put-delete/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/directory-path-separator/" >DIRECTORY_SEPARATOR 和 PATH_SEPARATOR的区别</a>
+        </span>
+        <span class="item__date">
+          May 21, 2015
+        </span>
+        <span >
+        
+        <p>DIRECTORY_SEPARATOR：目录分隔符，linux上就是&#8217;/&#8217;,windows上是&#8217;&amp;#8217;.</p>
+
+<p>PATH_SEPARATOR：路径分隔符，include多个路径使用，在win下，当你要include多个路径的话，你要用&#8221;;&#8221;隔开，但在linux下就使用&#8221;:&#8221;隔开的。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/directory-path-separator/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/utf8mb4/" >关于 utf8mb4，它和 utf8 有什么区别</a>
+        </span>
+        <span class="item__date">
+          May 20, 2015
+        </span>
+        <span >
+        
+        <p>最近经常看到一个没见过的编码格式叫utf8mb4，总是和emoj表情联系在一起，什么是utf8mb4，它和utf8有什么区别呢？</p>
+
+<p>utf8mb4是一种可支持4个字节UTF编码，一个字符最多能有4字节，所以能支持更多的字符集。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/utf8mb4/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/05/left-join-duplication/" >left join多张表查出重复数据的解决办法</a>
+        </span>
+        <span class="item__date">
+          May 19, 2015
+        </span>
+        <span >
+        
+        <p>今天线上出现一个问题，查询售后订单出现很多重复的内容，经查，是left join多张表导致的查询出重复数据。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/05/left-join-duplication/">➦</a>
         
         </div>
         

@@ -143,155 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/05/golang-byte-slice/" >Golang 字节切片初始化</a>
-        </span>
-        <span class="item__date">
-          May 20, 2017
-        </span>
-        <span >
-        
-        golang 中注意下面两种字节切片类型的初始化，一个是括号，一个是花括号，其中括号会对字符串内容进行类型转换。 func main() { test := []byte(&ldquo;a
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/golang-byte-slice/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/laravel-etag-middleware/" >在 Laravel 中设置 Etag 缓存</a>
-        </span>
-        <span class="item__date">
-          May 19, 2017
-        </span>
-        <span >
-        
-        <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
-
-<h3 id="什么是-etag">什么是“ETag”？</h3>
-
-<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
-
-<p>浏览器根据状态码判断是否缓存过期。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/laravel-etag-middleware/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/linux-clear-cache-buffer/" >在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a>
-        </span>
-        <span class="item__date">
-          May 18, 2017
-        </span>
-        <span >
-        
-        在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/golang-append-slice-to-slice/" >Golang append slice to slice</a>
-        </span>
-        <span class="item__date">
-          May 10, 2017
-        </span>
-        <span >
-        
-        <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
-
-<p>片段1：</p>
-
-<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
-s1 := []interface{}{3, 4, 5, 6}
-s0 = append(s0, s1)
-fmt.Println(&ldquo;result:&ldquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
-
-<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/golang-append-slice-to-slice/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/shell-check-url/" >Shell 脚本请求 url 判断状态码</a>
-        </span>
-        <span class="item__date">
-          May 2, 2017
-        </span>
-        <span >
-        
-        Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl=&lsquo;./check_url.txt&rsquo; DATE_N=date &quot;+%Y-%m-%d %H:%M:%S&quot; for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/shell-check-url/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/04/netstat-tcp-state/" >netstat 命令统计 tcp 各状态数量</a>
-        </span>
-        <span class="item__date">
-          Apr 28, 2017
-        </span>
-        <span >
-        
-        <p>统计 tcp 各种状态的个数：</p>
-
-<p><code class="lang:default decode:true">netstat -n | awk &lsquo;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&rsquo;</code></p>
-
-<p>结果：</p>
-
-<p><code class="lang:default decode:true ">[nobody@test14439 ~]$ netstat -n | awk &lsquo;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&rsquo;
-TIME_WAIT 418
-CLOSE_WAIT 109
-ESTABLISHED 65
-SYN_RECV 1</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/04/netstat-tcp-state/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/04/deadline/" >解决拖延症的好方法</a>
         </span>
         <span class="item__date">
@@ -378,6 +229,169 @@ echo mt_rand(-988, 888);</code></p>
         </span>
         
           ... <a class="read-more-symbol" href="/2017/04/churchill-motto/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/beego-table-name/" >Beego 设置表名方法</a>
+        </span>
+        <span class="item__date">
+          Apr 2, 2017
+        </span>
+        <span >
+        
+        <p>在 Beego 中如果要设置表名，可以使用如下方法，给这个 model 的 struct 增加一个 TableName 方法：</p>
+
+<p><code class="lang:go decode:true ">type Comments struct {
+    Id          int64
+    ParentId    int64
+    DynamicId   string <code>orm:&quot;size(128)&quot;</code>
+    Content     string <code>orm:&quot;type(longtext)&quot;</code>
+    Userid      int64
+    ReplyUserid int64
+    Status      int64
+    IsDelete    int64
+    CreatedAt   string <code>orm:&quot;size(128)&quot;</code>
+    UpdatedAt   string <code>orm:&quot;size(128)&quot;</code>
+}</p>
+
+<p>func init() {
+    orm.RegisterModel(new(Comments))
+}</p>
+
+<p>// TableName 设置表名
+func (m *Comments) TableName() string {
+    return &ldquo;comments_8&rdquo;
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/beego-table-name/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/2017-php-way/" >韩天峰：2017 年 PHP 程序员未来路在何方</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2017
+        </span>
+        <span >
+        
+        <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/2017-php-way/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/laravel-model-join-wrong-id/" >Laravel 关联查询返回错误的 id</a>
+        </span>
+        <span class="item__date">
+          Mar 31, 2017
+        </span>
+        <span >
+        
+        <p>在 Laravel Eloquent 中使用 join 关联查询，如果两张表有名称相同的字段，如 id，那么它的值会默认被后来的同名字段重写，返回不是期望的结果。例如以下关联查询：</p>
+
+<p><code>$priority = Priority::rightJoin(&lsquo;touch&rsquo;, &lsquo;priorities.touch_id&rsquo;, &lsquo;=&rsquo;, &lsquo;touch.id&rsquo;)
+    -&gt;where(&lsquo;priorities.type&rsquo;, 1)
+    -&gt;orderBy(&lsquo;priorities.total_score&rsquo;, &lsquo;desc&rsquo;)
+    -&gt;orderBy(&lsquo;touch.created_at&rsquo;, &lsquo;desc&rsquo;)
+    -&gt;get();</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/laravel-model-join-wrong-id/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/virtualbox-blue-screen/" >VirtualBox启动蓝屏问题</a>
+        </span>
+        <span class="item__date">
+          Mar 24, 2017
+        </span>
+        <span >
+        
+        <p>用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox 软件都无法正常运行。</p>
+
+<p><img class="alignnone size-full wp-image-11331" src="https://blog.tanteng.me/wp-content/uploads/2017/03/bootingvm.png" alt="" width="943" height="505" /></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/virtualbox-blue-screen/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/baidu-union-verify-https-website/" >百度联盟如何验证 HTTPS 站点</a>
+        </span>
+        <span class="item__date">
+          Mar 22, 2017
+        </span>
+        <span >
+        
+        <p>本站是 HTTPS 站点，在百度联盟添加站点页面，输入 blog.tanteng.me 点击“验证”进入验证页面，提示两种方式，1. 把文件放根目录 2. 添加 meta 信息，都试了，无法验证。</p>
+
+<p><code class="lang:default decode:true">[root@iZ94r80gdghZ public]# curl blog.tanteng.me
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor=&ldquo;white&rdquo;&gt;
+&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx/1.10.1&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/03/baidu-union-verify-https-website/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/03/linux-nginx-ip/" >使用 Linux 命令分析 Nginx 日志统计 ip 访问数</a>
+        </span>
+        <span class="item__date">
+          Mar 16, 2017
+        </span>
+        <span >
+        
+        统计 access.log 文件访问次数最多的 ip 地址，并取前 10 条记录。 Linux 命令如下： cat access.log | awk &#8216;{print $1}&#8217; | sort | uniq -c | sort -k1nr | head -10 效果如图所示：
+        
+        </span>
         
         </div>
         

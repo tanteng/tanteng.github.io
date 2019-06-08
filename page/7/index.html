@@ -143,157 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/10/redis-ip-limit/" >Redis 实现访问频次限制的几种方式</a>
-        </span>
-        <span class="item__date">
-          Oct 25, 2017
-        </span>
-        <span >
-        
-        链接： https://www.cnblogs.com/gavanwanggw/p/7240675.html
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/php-intval-precision/" >PHP intval 转换浮点数精度丢失问题</a>
-        </span>
-        <span class="item__date">
-          Oct 15, 2017
-        </span>
-        <span >
-        
-        <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
-
-<pre><code>$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
-</code></pre>
-
-<h3 id="解决办法">解决办法：</h3>
-
-<p>1.转换成字符串再 intval</p>
-
-<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
-</code></pre>
-
-<p>2.使用 round 函数替代 floatval</p>
-
-<pre><code class="language-php">php -r &quot;echo round(19.99*100);&quot;
-</code></pre>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/php-intval-precision/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/docker-laravel-local-environment/" >使用 Docker 搭建 Laravel 本地环境</a>
-        </span>
-        <span class="item__date">
-          Oct 14, 2017
-        </span>
-        <span >
-        
-        <p>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同时响应速度很慢，现在有了 docker 这种更好的方式，可以轻松方便的搭建整套 PHP 开发环境。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/docker-laravel-local-environment/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/mysql-rand-range/" >MySQL 生成给定范围随机数</a>
-        </span>
-        <span class="item__date">
-          Oct 9, 2017
-        </span>
-        <span >
-        
-        <p>MySQL 的 rand() 函数是随机生成区间为 [0,1) 的浮点数，那么如何让它生成给定两个整数之间的随机数呢？试了一下这样可行：</p>
-
-<p><code class="lang:mysql decode:true">select ROUND(RAND()*(10-1)+1);</code></p>
-
-<p>也就是：</p>
-
-<p><code class="lang:default decode:true">select ROUND(RAND()*(max-min)+min);</code></p>
-
-<p>经测可行。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/mysql-rand-range/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/503-service-unavailable/" >服务器返回 502,503,504 原因及解决办法</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <h3 id="502-bad-gateway">502 bad gateway</h3>
-
-<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
-
-<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/503-service-unavailable/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/computer-concepts-in-life/" >计算机的一些概念在生活中的场景</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/computer-concepts-in-life/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/10/checking-whether-the-c-compiler-works-no/" >macOS 使用 brew 安装编译错误</a>
         </span>
         <span class="item__date">
@@ -410,6 +259,157 @@ return redirect()-&amp;gt;route('egretgame.index')-&amp;gt;with('success', '编�
         </span>
         
           ... <a class="read-more-symbol" href="/2017/09/laravel-session-scheme/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/09/git-merge-rebase/" >Git 变基和合并</a>
+        </span>
+        <span class="item__date">
+          Sep 5, 2017
+        </span>
+        <span >
+        
+        变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/git-merge-rebase/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
+        </span>
+        <span class="item__date">
+          Sep 2, 2017
+        </span>
+        <span >
+        
+        <p>关于 PHP 的错误和异常处理，总结如下。</p>
+
+<h3 id="1-设置-php-错误级别">1.设置 PHP 错误级别</h3>
+
+<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/09/php-error-handle/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/08/golang-generic/" >Golang 中”泛型”的支持</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2017
+        </span>
+        <span >
+        
+        <p>Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Golang的设计和实现者并没有把这个泛型支持作为紧急需要增加的特性。但是，如果真的没有泛型，就一定不行了么？答案当然是否定的。没有泛型也可以，而且我觉得代码更简单，直接，有趣（个人观点，勿喷）。</p>
+
+<p>我们这里打算以一些例子来讲解Golang中如何处理这个问题。</p>
+
+<p>首先，我们看一个冒泡排序的问题。针对整型数组切片的排序。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/08/golang-generic/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/08/tcp-ip-life-ex/" >TCP / IP身世之谜</a>
+        </span>
+        <span class="item__date">
+          Aug 2, 2017
+        </span>
+        <span >
+        
+        <p>1972年，全世界电脑业和通讯业的专家学者在美国华盛顿举行了第一届国际计算机通信会议，就在不同的计算机网络之间进行通信达成协议，会议决定成立Internet工作组，负责建立一种能保证计算机之间进行通信的标准规范（即“通信协议”），而这个组织第一位主席美国人文顿·瑟夫（Vinton G.Cerf）则被不少人称为“互联网之父”；1973年，美国国防部也开始研究如何实现各种不同网络之间的互联问题。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/08/tcp-ip-life-ex/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/golang-decode-json/" >Golang 解析 json 数据</a>
+        </span>
+        <span class="item__date">
+          Jul 23, 2017
+        </span>
+        <span >
+        
+        <p>使用 Golang 解析 json 数据，这种 json 格式是对象的数组，官方文档有一个示例：</p>
+
+<p><code class="lang:go decode:true">var jsonBlob = []byte(<code>[  
+    {&quot;Name&quot;: &quot;Platypus&quot;, &quot;Order&quot;: &quot;Monotremata&quot;},  
+    {&quot;Name&quot;: &quot;Quoll&quot;,    &quot;Order&quot;: &quot;Dasyuromorphia&quot;}  
+]</code>)<br />
+type Animal struct {<br />
+    Name  string<br />
+    Order string<br />
+}<br />
+var animals []Animal<br />
+err := json.Unmarshal(jsonBlob, &amp;animals)<br />
+if err != nil {<br />
+    fmt.Println(&ldquo;error:&ldquo;, err)<br />
+}<br />
+fmt.Printf(&ldquo;%+v&rdquo;, animals)</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/golang-decode-json/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
+        </span>
+        <span class="item__date">
+          Jul 22, 2017
+        </span>
+        <span >
+        
+        <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
+
+<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/07/php-curl-guzzlehttp/">➦</a>
         
         </div>
         

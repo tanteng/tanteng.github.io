@@ -143,174 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2015/09/mac-firefox-hostadmin/" >Mac下firefox插件hostadmin切换host权限不足</a>
-        </span>
-        <span class="item__date">
-          Sep 4, 2015
-        </span>
-        <span >
-        
-        在Mac下firefox插件hostadmin切换host时提示权限不足，解决办法，在终端输入以下命令即可： sudo chmod og+w /etc/hosts chmod修改权限，og
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/09/mac-firefox-hostadmin/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/09/php-lower-diff/" >PHP变量名区分大小写，函数和方法名不区分大小写</a>
-        </span>
-        <span class="item__date">
-          Sep 4, 2015
-        </span>
-        <span >
-        
-        PHP变量名区分大小写，函数和方法名不区分大小写
-        
-        </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/python-excption/" >Python3异常处理和异常类型</a>
-        </span>
-        <span class="item__date">
-          Aug 19, 2015
-        </span>
-        <span >
-        
-        <h3 id="python的异常处理">Python的异常处理</h3>
-
-<p>如下是使用Python的xlrd模块打款excel文件，这个操作可能会出现异常，使用try捕捉异常，进行处理，防止程序的中断运行，并且记录异常信息到日志。</p>
-
-<p><code class="lang:python decode:true ">def save_file(file, filename):
-    &ldquo;&rdquo;&rdquo;
-    打开excel文件
-    &ldquo;&rdquo;&rdquo;
-    try:
-        book = xlrd.open_workbook(file)
-        sheet = book.sheet_by_index(0)
-    except Exception as e:
-        logging.info(&lsquo;错误：{0} 文件：{1}&rsquo;.format(e, file))
-        shutil.copy2(file, &lsquo;./error&rsquo; + filename)
-        return False
-    row_nums = sheet.nrows
-    col_nums = sheet.ncols</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/python-excption/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/python-for-else/" >Python中for循环的else</a>
-        </span>
-        <span class="item__date">
-          Aug 17, 2015
-        </span>
-        <span >
-        
-        <p class="">
-  Python中循环语句for或者while后else表示循环条件不成立的时候执行，如：
-</p>
-
-<p><code class="lang:python decode:true "># -<em>- coding:utf-8 -</em>-
-for i in range(10):
-    print(i)</p>
-
-<pre><code>if i == 5:  # 此时不会执行else，当i大于等于10的时候，就不满足for条件，就执行else
-    print(&quot;Too big - I'm giving up!&quot;)
-    break
-</code></pre>
-
-<p>else:
-    print(&ldquo;Completed successfully&rdquo;)</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/python-for-else/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/jquery-cookie-base/" >jQuery.cookie的基本用法</a>
-        </span>
-        <span class="item__date">
-          Aug 14, 2015
-        </span>
-        <span >
-        
-        <p>jQuery.cookie的基本用法：</p>
-
-<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
-
-<p><code class="lang:js decode:true">&lt;script src=&ldquo;/path/to/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
-
-<p>Create session cookie:</p>
-
-<div class="highlight highlight-javascript">
-  <code class="lang:js decode:true">$.cookie('name', 'value');</code>
-</div>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie-base/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2015/08/jquery-cookie/" >使用jquery的cookie实例</a>
-        </span>
-        <span class="item__date">
-          Aug 13, 2015
-        </span>
-        <span >
-        
-        <p>jquery的cookie插件可以方便操作cookie，首先引入jquery.cookie.js文件，可以去官网下载。</p>
-
-<p><code class="lang:js decode:true">&lt;script type=&ldquo;text/javascript&rdquo; src=&rdquo;<strong>STATIC</strong>/common/js/jquery.cookie.js&rdquo;&gt;&lt;/script&gt;</code></p>
-
-<p>以下使用jquery的cookie实现一个简单的功能，一个公共栏，可以点击展开或者收缩，第一次进入页面默认展开，第二次以后进入页面默认收缩，但是点击也可以展开。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2015/08/jquery-cookie/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2015/08/php-float/" >PHP浮点数运算精度的问题</a>
         </span>
         <span class="item__date">
@@ -408,6 +240,168 @@ if(!$this-&gt;lock(10,$lock_nopay)){
         </span>
         
           ... <a class="read-more-symbol" href="/2015/08/redis-lock/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php-httpsqs/" >PHP队列服务HTTPSQS的安装和使用</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2015
+        </span>
+        <span >
+        
+        <p>HTTPSQS(HTTP Simple Queue Service)是一个基于HTTP GET/POST请求的简单队列服务。<figure id="attachment_8542" style="width: 500px" class="wp-caption alignnone"></p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png" target="_blank"><img class="wp-image-8542 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png" alt="PHP队列服务HTTPSQS的安装和使用" width="500" height="503" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements.png 500w, https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements-150x150.png 150w, https://blog.tanteng.me/wp-content/uploads/2015/08/httpsqs_elements-298x300.png 298w" sizes="(max-width: 500px) 100vw, 500px" /></a><figcaption class="wp-caption-text">PHP队列原理图</figcaption></figure></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php-httpsqs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/mod-concat-js-css/" >使用mod_concatx扩展合并js,css</a>
+        </span>
+        <span class="item__date">
+          Aug 11, 2015
+        </span>
+        <span >
+        
+        <p>PHP的mod_concatx模块扩展可以方便的把多个js，css文件合并成一个文件，以加速页面的渲染，减少请求时间和服务器压力。mod_concatx模块是在mod_concat基础上修改的。</p>
+
+<p><code class="lang:xhtml decode:true ">&lt;link rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo; media=&ldquo;screen&rdquo; ←
+    href=&ldquo;<a href="http://lemon.holsman.net:8001/cdn/??music2.css,common.css&quot;">http://lemon.holsman.net:8001/cdn/??music2.css,common.css&quot;</a> /&gt;
+&lt;script type=&ldquo;text/javascript&rdquo;  ←
+    src=&ldquo;<a href="http://lemon.holsman.net:8001/cdn/??music2.js,mp.js,dalai_llama.js,ratings_widget.js,widget_config.js,common.js&quot;&gt;&lt;/script&gt;">http://lemon.holsman.net:8001/cdn/??music2.js,mp.js,dalai_llama.js,ratings_widget.js,widget_config.js,common.js&quot;&gt;&lt;/script&gt;</a>
+&lt;script language=&ldquo;javascript&rdquo; type=&ldquo;text/javascript&rdquo; ←
+    src=&ldquo;<a href="http://tangerine.holsman.net:8001/o/??journals_blog_this.js,adsWrapper.js,flashtag.js,feeds_subscribe.js&quot;&gt;&lt;/script&gt;">http://tangerine.holsman.net:8001/o/??journals_blog_this.js,adsWrapper.js,flashtag.js,feeds_subscribe.js&quot;&gt;&lt;/script&gt;</a>
+&lt;script type=&ldquo;text/javascript&rdquo;  ←
+    src=&ldquo;<a href="http://orange.holsman.net:8001/digital/??dm_client_aol.js,cannae.js&quot;&gt;&lt;/script&gt;">http://orange.holsman.net:8001/digital/??dm_client_aol.js,cannae.js&quot;&gt;&lt;/script&gt;</a></code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/mod-concat-js-css/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php-yield/" >PHP5.5的迭代生成器</a>
+        </span>
+        <span class="item__date">
+          Aug 8, 2015
+        </span>
+        <span >
+        
+        <p>PHP5.5引入了迭代生成器的概念，迭代的概念早就在PHP有了，但是迭代生成器是PHP的一个新特性，这跟python3中的迭代生成器类似，看看PHP5.5的迭代生成器如何定义。</p>
+
+<p><code class="lang:php decode:true ">&lt;?php
+    function xrange($start, $end, $step = 1) {
+        for ($i = $start; $i &lt;= $end; $i += $step) {
+            yield $i;
+        }
+    }</p>
+
+<pre><code>foreach (xrange(1, 1000000) as $num) {
+    echo $num, &quot;\n&quot;;
+}&lt;/code&gt;
+</code></pre>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php-yield/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php5-6-curl/" >PHP5.6 curl去除@语法</a>
+        </span>
+        <span class="item__date">
+          Aug 4, 2015
+        </span>
+        <span >
+        
+        <p>在一个传图方法中用到了curl上传文件，在文件名前加上@语法表示上传文件，这在PHP5.3中是正常的，但是在PHP5.6中彻底废除了@语法，导致上传图片无法使用。</p>
+
+<p><code class="lang:php mark:5 decode:true ">//支持远程文件上传
+if(empty($urlinfo[&lsquo;host&rsquo;])){
+    $tmp_name=dirname($file[&lsquo;tmp_name&rsquo;]).&lsquo;/&rsquo;.$file[&lsquo;title&rsquo;].&lsquo;.&rsquo;.$file[&lsquo;extension&rsquo;];//加上文件后缀
+    rename($file[&lsquo;tmp_name&rsquo;],$tmp_name);
+    $fields[&lsquo;file&rsquo;] = &lsquo;@&rsquo;.$tmp_name;//加@符号curl就会把它当成是文件上传处理
+}else{
+    $fields[&lsquo;url&rsquo;]=$file[&lsquo;tmp_name&rsquo;];
+}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php5-6-curl/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/js-optimization/" >JS代码优化及规范</a>
+        </span>
+        <span class="item__date">
+          Aug 4, 2015
+        </span>
+        <span >
+        
+        <p>1.不能用页面的index=0 1 2来寻找对应的值（防止列表结构（增加或者删除列）发生变化，代码就要做相应的修改）</p>
+
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" target="_blank"><img class="alignnone wp-image-8477 size-full" src="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png" alt="js1" width="484" height="332" srcset="https://blog.tanteng.me/wp-content/uploads/2015/08/js1.png 484w, https://blog.tanteng.me/wp-content/uploads/2015/08/js1-300x206.png 300w" sizes="(max-width: 484px) 100vw, 484px" /></a></p>
+
+<p>在标签中对每列的单元格添加唯一的标识。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/js-optimization/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2015/08/php-shell-php_eol/" >PHP在shell里面换行使用PHP_EOL</a>
+        </span>
+        <span class="item__date">
+          Aug 1, 2015
+        </span>
+        <span >
+        
+        <p>PHP在shell里面换行使用PHP_EOL，shell不认识<br><br/>之类的html标记。或者使用PHP_EOL (string)常量，可以取得运行系统中换行符。linux中是\n, win中是\r\n, mac中是\r.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2015/08/php-shell-php_eol/">➦</a>
         
         </div>
         

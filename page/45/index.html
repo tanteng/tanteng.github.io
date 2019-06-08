@@ -143,176 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2012/11/thinkphp-sql/" >thinkphp的sql优化原则</a>
-        </span>
-        <span class="item__date">
-          Nov 17, 2012
-        </span>
-        <span >
-        
-        <blockquote>
-<p>这不仅仅是针对thinkphp的，也可以针对所有mysql数据库的sql优化。摘自thinkphp官方手册的一篇文章。</p>
-</blockquote>
-
-<p>通常网站的性能瓶颈在数据库查询，如果你希望你的网站在一定阶段之内保持稳定，优化你的SQL和数据库是非常必要的一个优化环节。优化数据库是一个很大的话题，这里只是摘要一些比较关键的优化参考建议，并且需要具体分析项目的情况才能给出最合理的优化建议，所以具体的优化建议你应该咨询你公司的架构师或者DBA。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/11/thinkphp-sql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/11/php-zuhe/" >php 对一组单词进行所有可能情况的排列组合</a>
-        </span>
-        <span class="item__date">
-          Nov 4, 2012
-        </span>
-        <span >
-        
-        <p>有一个数组每个元素是长度不确定的单词：</p>
-
-<div id="code_block_0">
-  <code lang="php">$words = array('china','mother','father','hello','welcome');</code>
-  
-  <div title="复制代码">
-    这个数组元素个数不确定，寻求用php打印这些元素的所有排列组合算法 <strong>最好能控制组合长度，比如getCombines($words,$len=0)，这个$len就是控制组合有几个元素组成的，如果为0则打印所有组合</strong>
-  </div>
-</div>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/11/php-zuhe/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/11/substr_str_replace/" >使用substr函数来实现str_replace的功能</a>
-        </span>
-        <span class="item__date">
-          Nov 3, 2012
-        </span>
-        <span >
-        
-        <p>要求不使用substr函数来实现str_replace的功能，如何来做呢？</p>
-
-<p>下面是一个使用substr的版本，思路供参考。</p>
-
-<p><code lang="php">function str_replace($search=&ldquo;, $replace=&rdquo;, $subject=&ldquo;){
-    $search_length = strlen($search);
-    $replace_length = strlen($replace);
-    $subject_length = strlen($subject);
-    if($search_length==0) return $subject;
-    if($subject_length==0) return &ldquo;;
-    if($search_length &gt; $subject_length) return $subject;</p>
-
-<pre><code>for($i=0;$i&amp;lt;$subject_length; $i++){
-    if(substr($subject, $i, $search_length)==$search){
-        $subject = substr($subject, 0, $i).$replace.substr($subject, $i+$search_length);
-        $i += $replace_length;
-    }
-}
-return $subject;
-</code></pre>
-
-<p>}
-</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/11/substr_str_replace/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/11/php-scandir/" >使用php scandir函数遍历文件夹目录和所有文件</a>
-        </span>
-        <span class="item__date">
-          Nov 3, 2012
-        </span>
-        <span >
-        
-        使用php scandir函数遍历文件夹目录和所有文件 &lt;?php $dir = &ldquo;.&rdquo;; //当前目录 list_file($dir); function list_file($dir){ $list = scandir($dir); // 得到该文件下的所有文件和文件夹 foreach($list as $file){//遍
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/11/php-scandir/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/10/optimize-mysql/" >优化mysql数据库的方法</a>
-        </span>
-        <span class="item__date">
-          Oct 15, 2012
-        </span>
-        <span >
-        
-        <p>(1).数据库设计方面,这是DBA和Architect的责任,设计结构良好的数据库,必要的时候,去正规化(英文是这个:denormalize,中文翻译成啥我不知道),允许部分数据冗余,避免JOIN操作,以提高查询效率</p>
-
-<p>(2).系统架构设计方面,表散列,把海量数据散列到几个不同的表里面.快慢表,快表只留最新数据,慢表是历史存档.集群,主服务器Read &amp; write,从服务器read only,或者N台服务器,各机器互为Master</p>
-
-<p>(3).(1)和(2)超越PHP Programmer的要求了,会更好,不会没关系.检查有没有少加索引</p>
-
-<p>(4).写高效的SQL语句,看看有没有写低效的SQL语句,比如生成笛卡尔积的全连接啊,大量的Group By和order by,没有limit等等.必要的时候,把数据库逻辑封装到DBMS端的存储过程里面.缓存查询结果,explain每一个sql语句</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/10/optimize-mysql/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/10/mysql-index/" >mysql数据库建立索引的好处和代价</a>
-        </span>
-        <span class="item__date">
-          Oct 13, 2012
-        </span>
-        <span >
-        
-        <p>说起提高数据库性能，索引是最物美价廉的东西了。不用加内存，不用改程序，不用调sql，只要执行个正确的’create index’，查询速度就可能提高百倍千倍，这可真有诱惑力。可是天下没有免费的午餐，<strong>查询速度的提高是以插入、更新、删除的速度为代价的，这些写操作，增加了大量的I/O。</strong>由于索引的存储结构不同于表的存储，一个表的索引所占空间比数据所占空间还大的情况经常发生。</p>
-
-<p>这意味着我们在写数据库的时候做了很多额外的工作，而这个工作只是为了提高读的效率。因此，我们建立一个索引，必须保证这个索引不会“亏本”。</p>
-
-<p>**</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/10/mysql-index/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2012/10/array_merge/" >php合并数组的两种方法：&#43;和array_merge()的区别</a>
         </span>
         <span class="item__date">
@@ -406,6 +236,163 @@ return $subject;
         </span>
         
           ... <a class="read-more-symbol" href="/2012/10/embrace-change/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/do-not-afraid-change/" >改变没那么可怕</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        <blockquote>
+<blockquote>
+<p><q>你所害怕的东西根本没有你想像的那样糟糕，在你心里形成的恐惧比你的实际处境要更坏。</q></p>
+</blockquote>
+
+<div>
+
+</div>
+
+<blockquote>
+<p><q>只要朝前看，他就会因为有所期待而兴奋起来。</q></p>
+</blockquote>
+
+<p><div>
+   </p>
+</blockquote>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/do-not-afraid-change/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/change/" >要适应变化</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        <p>生活在变化，日子在住前走，我们也应随之改变，而不是在原地踟蹰不前。”</p>
+
+<p>如果你不改变，你就会被淘汰。</p>
+
+<p>朝新的方向前进，你会发现新的奶酪。</p>
+
+<p>当你超越了自己的恐惧时，你就会感到轻松自在。</p>
+
+<p>改变自己的最快方式，就是坦然嘲笑自己的愚笨。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/change/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/jobs-abandoned-chosen-special/" >抛弃、被领养、独特，伴随乔布斯一生</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        <p>They were very serious and looked me straight in the eye. They said, &#8220;We specifically picked you out.&#8221; Both of my parents said that and repeated it slowly for me. And they put an emphasis on every word in that sentence. Abandoned. Chosen. Special. Those concepts became part of who Jobs was and how he regarded himself. His closest friends think that the knowledge that he was given up at birth left some scars. &#8220;I think his desire for complete control of whatever he makes derives directly from his personality and the fact he was abandoned from birth.&#8221;</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/jobs-abandoned-chosen-special/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/jobs-hardworking/" >乔布斯解释为什么工作勤奋</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        There&#8217;s some notion that because I was abandoned, I worked very hard so I could do well and make my parents wish they had me back, or some such nonsense, but that&#8217;s ridiculous. Knowing I was adopted may have made me feel more independent, but I have never felt abandoned. I&#8217;ve always felt special.
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/apple-marketing-philosophy/" >苹果的三大市场哲学：empathy,focus,impute</a>
+        </span>
+        <span class="item__date">
+          Oct 6, 2012
+        </span>
+        <span >
+        
+        Markkula wrote his principles in a one-page paper titled “The Apple Marketing Philosophy” that stressed three points. The first was empathy, an intimate connection with the feelings of the customer: “We will truly understand their needs better than any other company.” The second was focus: “I
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/apple-marketing-philosophy/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2012/10/php-efficiency/" >提高php执行效率的10条编程习惯</a>
+        </span>
+        <span class="item__date">
+          Oct 5, 2012
+        </span>
+        <span >
+        
+        <p><strong>1、使用单引号括起来的字符串</strong></p>
+
+<p>当使用双引号来括字符串时，PHP解释器会对其进行变量替换、转义等操作，如“ ”。如果你只想输出一个基本的字符串，就用单引号吧，这样会节省一些资源。当然，如果你需要进行变量替换的，那就必须用双引号了，但其他情况下还是用单引号吧。</p>
+
+<p><strong>2、字符串的输出</strong></p>
+
+<p>你认为以下哪一条语句的运行速度最快?</p>
+
+<p>print “Hi my name is $a. I am $b”;</p>
+
+<p>echo “Hi my name is $a. I am $b”;</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2012/10/php-efficiency/">➦</a>
         
         </div>
         

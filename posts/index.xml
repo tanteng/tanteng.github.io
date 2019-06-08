@@ -171,17 +171,7 @@
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/08/laravel-chunk-tip/</guid>
-      <description>&lt;p&gt;使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:default decode:true &#34;&gt;User::where(&amp;lsquo;approved&amp;rsquo;, 0)-&amp;gt;chunk(100, function ($users) {
-  foreach ($users as $user) {
-    $user-&amp;gt;update([&amp;lsquo;approved&amp;rsquo; =&amp;gt; 1]);
-  }
-});&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;原因在于第一次查询：&lt;/p&gt;
-
-&lt;p&gt;select * from users where approved = 0 limit 100 offset 0;&lt;/p&gt;</description>
+      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： User::where(&#39;approved&#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&#39;approved&#39; =&amp;amp;gt; 1]); } }); 原因在于第一次查询： select</description>
     </item>
     
     <item>
@@ -308,15 +298,6 @@
     </item>
     
     <item>
-      <title>使用 VS Code 断点调试 golang 项目</title>
-      <link>http://tanteng.me/2018/05/vscode-debug-golang/</link>
-      <pubDate>Tue, 29 May 2018 06:34:04 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/vscode-debug-golang/</guid>
-      <description>在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang</description>
-    </item>
-    
-    <item>
       <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
       <link>http://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</link>
       <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
@@ -358,11 +339,7 @@
       <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/05/golang-str-length/</guid>
-      <description>&lt;p&gt;比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;aligncenter wp-image-12274 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180509104614-1.png&#34; alt=&#34;&#34; width=&#34;591&#34; height=&#34;157&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;golang 可以使用正则和 unicode 包的方法判断。&lt;/p&gt;</description>
+      <description>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家</description>
     </item>
     
     <item>
@@ -416,15 +393,7 @@
       <pubDate>Mon, 26 Mar 2018 14:04:07 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/03/php-cow/</guid>
-      <description>&lt;p&gt;一个例子：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;?php
-$foo = 1;
-$bar = $foo;
-echo $foo + $bar;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景下PHP 的 COW 对内存进行优化。比如：变量的多次赋值、函数参数传递，并在函数体内修改实参等。&lt;/p&gt;</description>
+      <description>一个例子： &amp;lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景</description>
     </item>
     
     <item>
@@ -471,11 +440,7 @@ echo $foo + $bar;
       <pubDate>Sun, 24 Dec 2017 07:49:30 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/12/laravel-queue-excute/</guid>
-      <description>&lt;p&gt;在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;aligncenter wp-image-11887&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/12/laravel.jpg&#34; alt=&#34;&#34; width=&#34;380&#34; height=&#34;260&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;先说原因：因为在 Laravel 中如果一个队列（任务）执行时间大于 60 秒，就会被认为执行失败并重新加入队列中，这样就会导致重复执行同一个任务。&lt;/p&gt;</description>
+      <description>在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一</description>
     </item>
     
     <item>
@@ -511,23 +476,12 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     </item>
     
     <item>
-      <title>Linux 中 bash 和 sh 的区别</title>
-      <link>http://tanteng.me/2017/12/bash-sh/</link>
-      <pubDate>Sun, 17 Dec 2017 12:20:32 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/12/bash-sh/</guid>
-      <description>使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？ sh 和 bash 都是 Linux Shell 命令行语言，</description>
-    </item>
-    
-    <item>
       <title>MySQL 数据库设计及性能优化Tips</title>
       <link>http://tanteng.me/2017/12/mysql-optimize-tips/</link>
       <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/12/mysql-optimize-tips/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;规则1&lt;/strong&gt;：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。&lt;/p&gt;
-
-&lt;p&gt;注意：MyISAM存储引擎 B-tree索引有一个很大的限制：参与一个索引的所有字段的长度之和不能超过1000字节。另外MyISAM数据和索引是分开，而InnoDB的数据存储是按聚簇(cluster)索引有序排列的，主键是默认的聚簇(cluster)索引，因此MyISAM虽然在一般情况下，查询性能比InnoDB高，但InnoDB的以主键为条件的查询性能是非常高的。&lt;/p&gt;</description>
+      <description>规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个</description>
     </item>
     
     <item>
@@ -584,108 +538,12 @@ max_execution_time = 80&lt;/code&gt;&lt;/p&gt;
     </item>
     
     <item>
-      <title>Laravel 中的简单工厂和抽象工厂</title>
-      <link>http://tanteng.me/2017/11/laravel-factory-pattern/</link>
-      <pubDate>Wed, 22 Nov 2017 03:35:54 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/laravel-factory-pattern/</guid>
-      <description>&lt;p&gt;设计模式之工厂模式分为三种：简单工厂、工厂方法和抽象工厂模式，有时也把简单工厂和工厂方法这两种归为一类。工厂模式属于“创建”型的设计模式，顾名思义用来实例化对象，调用者不需要关心对象的具体创建过程，以达到解耦的目的。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>如何理解 Golang 的参数传递都是值传递？</title>
       <link>http://tanteng.me/2017/11/golang-parameter-passing/</link>
       <pubDate>Sun, 19 Nov 2017 12:22:01 +0000</pubDate>
       
       <guid>http://tanteng.me/2017/11/golang-parameter-passing/</guid>
       <description>&lt;p&gt;在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golang 让 for 循环运行一段时间超时自动退出</title>
-      <link>http://tanteng.me/2017/11/golang-for-timeout/</link>
-      <pubDate>Sat, 18 Nov 2017 14:48:24 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-for-timeout/</guid>
-      <description>&lt;p&gt;如何控制 for 循环一段时间超时自动退出呢？思路很简单，就是在 for 循环中使用 select 监听 channel，代码如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;package main&lt;/p&gt;
-
-&lt;p&gt;import (
-    &amp;ldquo;fmt&amp;rdquo;
-    &amp;ldquo;time&amp;rdquo;
-)&lt;/p&gt;
-
-&lt;p&gt;func main() {
-    timeout := time.After(time.Second * 10)
-    finish := make(chan bool)
-    count := 1
-    go func() {
-        for {
-            select {
-            case &amp;lt;-timeout:
-                fmt.Println(&amp;ldquo;timeout&amp;rdquo;)
-                finish &amp;lt;- true
-                return
-            default:
-                fmt.Printf(&amp;ldquo;haha %d\n&amp;rdquo;, count)
-                count++
-            }
-            time.Sleep(time.Second * 1)
-        }
-    }()&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;lt;-finish
-
-fmt.Println(&amp;quot;Finish&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golang 如何优雅关闭 channel</title>
-      <link>http://tanteng.me/2017/11/golang-close-channel/</link>
-      <pubDate>Fri, 17 Nov 2017 09:01:50 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-close-channel/</guid>
-      <description>&lt;p&gt;Golang 内建的 close 方法可以关闭 channel，如果往已经关闭的 channel 发送数据，则会报错：panic: close of closed channel.&lt;/p&gt;
-
-&lt;p&gt;看如下代码，在一段时间内，生产者可以不断往 channel 写入数据，消费者进行处理，一段时间后 channel 关闭了，这个时候如果还有数据往 channel 发送，程序就会报错。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用 Golang 发送邮件</title>
-      <link>http://tanteng.me/2017/11/golang-smtp-send-mail/</link>
-      <pubDate>Thu, 16 Nov 2017 09:45:37 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-smtp-send-mail/</guid>
-      <description>&lt;p&gt;使用 smtp 协议，只需要邮箱服务器主机和端口，和一个发件人帐号，可以使用 Golang 的 smtp 包发送邮件，以下是一个简单示例：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;// SendToMail 用于发送邮件
-func SendToMail(to, subject, body, mailType string) error {
-    user := &amp;ldquo;tt@tanteng.me&amp;rdquo;
-    password := 123456
-    host := smtp.tanteng.me:25
-    hp := strings.Split(host, &amp;ldquo;:&amp;ldquo;)
-    auth := smtp.PlainAuth(&amp;ldquo;&amp;rdquo;, user, password, hp[0])
-    var contentType string
-    if mailType == &amp;ldquo;html&amp;rdquo; {
-        contentType = &amp;ldquo;Content-Type: text/&amp;rdquo; + mailType + &amp;ldquo;; charset=UTF-8&amp;rdquo;
-    } else {
-        contentType = &amp;ldquo;Content-Type: text/plain&amp;rdquo; + &amp;ldquo;; charset=UTF-8&amp;rdquo;
-    }&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;msg := []byte(&amp;quot;To: &amp;quot; + to + &amp;quot;\r\nFrom: xx邮箱中心&amp;amp;lt;&amp;quot; + user + &amp;quot;&amp;amp;gt;\r\nSubject: &amp;quot; + subject + &amp;quot;\r\n&amp;quot; + contentType + &amp;quot;\r\n\r\n&amp;quot; + body)
-sendTo := strings.Split(to, &amp;quot;;&amp;quot;)
-err := smtp.SendMail(host, auth, user, sendTo, msg)
-return err
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;重点看 msg 字段，也就是邮件标题，发送者，标题，内容的格式。&lt;/p&gt;</description>
     </item>
     
     <item>

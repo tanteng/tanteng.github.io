@@ -143,35 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2018/03/php-cow/" >PHP写时复制（Copy On Write）</a>
-        </span>
-        <span class="item__date">
-          Mar 26, 2018
-        </span>
-        <span >
-        
-        <p>一个例子：</p>
-
-<p><code>&lt;?php
-$foo = 1;
-$bar = $foo;
-echo $foo + $bar;
-</code></p>
-
-<p>变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景下PHP 的 COW 对内存进行优化。比如：变量的多次赋值、函数参数传递，并在函数体内修改实参等。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2018/03/php-cow/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2018/03/reding-list-5/" >本周阅读清单20180326</a>
         </span>
         <span class="item__date">
@@ -253,11 +224,7 @@ echo $foo + $bar;
         </span>
         <span >
         
-        <p>在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？</p>
-
-<p><img class="aligncenter wp-image-11887" src="https://blog.tanteng.me/wp-content/uploads/2017/12/laravel.jpg" alt="" width="380" height="260" /></p>
-
-<p>先说原因：因为在 Laravel 中如果一个队列（任务）执行时间大于 60 秒，就会被认为执行失败并重新加入队列中，这样就会导致重复执行同一个任务。</p>
+        在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一
         
         </span>
         
@@ -327,27 +294,6 @@ stdout_logfile=/var/www/xxx.cn/worker.log
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2017/12/bash-sh/" >Linux 中 bash 和 sh 的区别</a>
-        </span>
-        <span class="item__date">
-          Dec 17, 2017
-        </span>
-        <span >
-        
-        使用 docker-compose，有的容器是 docker-compose exec workspace bash 进入，有的容器是 docker-compose exec php-worker sh 进入，bash 和 sh 是什么？有什么区别？ sh 和 bash 都是 Linux Shell 命令行语言，
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/12/bash-sh/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2017/12/mysql-optimize-tips/" >MySQL 数据库设计及性能优化Tips</a>
         </span>
         <span class="item__date">
@@ -355,9 +301,7 @@ stdout_logfile=/var/www/xxx.cn/worker.log
         </span>
         <span >
         
-        <p><strong>规则1</strong>：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。</p>
-
-<p>注意：MyISAM存储引擎 B-tree索引有一个很大的限制：参与一个索引的所有字段的长度之和不能超过1000字节。另外MyISAM数据和索引是分开，而InnoDB的数据存储是按聚簇(cluster)索引有序排列的，主键是默认的聚簇(cluster)索引，因此MyISAM虽然在一般情况下，查询性能比InnoDB高，但InnoDB的以主键为条件的查询性能是非常高的。</p>
+        规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个
         
         </span>
         
@@ -389,6 +333,55 @@ stdout_logfile=/var/www/xxx.cn/worker.log
         </span>
         
           ... <a class="read-more-symbol" href="/2017/12/laravel-queue-tips/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/12/php-stream/" >PHP 中“流”的概念</a>
+        </span>
+        <span class="item__date">
+          Dec 7, 2017
+        </span>
+        <span >
+        
+        链接：http://www.cunmou.com/phpbook/14.md
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/12/php-ini-config/" >php.ini 几个配置项说明</a>
+        </span>
+        <span class="item__date">
+          Dec 4, 2017
+        </span>
+        <span >
+        
+        <p>php.ini 几个常用的配置项整理。</p>
+
+<h3 id="max-execution-time">max_execution_time</h3>
+
+<p><code class="lang:default decode:true">; Maximum execution time of each script, in seconds
+; <a href="http://php.net/max-execution-time">http://php.net/max-execution-time</a>
+; Note: This directive is hardcoded to 0 for the CLI SAPI
+max_execution_time = 80</code></p>
+
+<p>这设置了脚本被解析器中止之前允许的最大执行时间，单位秒。 这有助于防止写得不好的脚本占尽服务器资源。 默认设置为 30。 从命令行运行 PHP 时，默认设置为 0。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/12/php-ini-config/">➦</a>
         
         </div>
         

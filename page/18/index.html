@@ -143,160 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/06/php7-opcache/" >PHP 7安装和开启opcache</a>
-        </span>
-        <span class="item__date">
-          Jun 2, 2016
-        </span>
-        <span >
-        
-        <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
-
-<blockquote>
-<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
-</blockquote>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/php7-opcache/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/06/laravel-optimize/" >优化 Laravel 网站打开速度</a>
-        </span>
-        <span class="item__date">
-          Jun 2, 2016
-        </span>
-        <span >
-        
-        <p>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好优化提升网站的打开速度。</p>
-
-<h3 id="1-关闭debug">1.关闭debug</h3>
-
-<p>打开.env文件，把debug设置为false.</p>
-
-<p><code class="lang:php decode:true ">APP_ENV=local
-APP_DEBUG=false
-APP_KEY=base64:sT/aTFeaE13eyao1Raee6jC9Ff+Yle1SE+wtyk0H6B4=</code></p>
-
-<h3 id="2-缓存路由和配置">2.缓存路由和配置</h3>
-
-<p>php artisan route:cache</p>
-
-<p>php artisan config:cache</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/laravel-optimize/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/05/preg_replace_callback-usage/" >preg_replace_callback用法</a>
-        </span>
-        <span class="item__date">
-          May 28, 2016
-        </span>
-        <span >
-        
-        <p>preg_replace_callback一般用于正则替换，三个参数，第一个参数正则表达式，第二个参数回调函数，第三个参数是要替换的内容。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/05/preg_replace_callback-usage/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/05/crontab-task-note/" >Crontab部署计划任务注意事项</a>
-        </span>
-        <span class="item__date">
-          May 18, 2016
-        </span>
-        <span >
-        
-        <p>使用Crontab部署计划任务，有几个地方需要注意。</p>
-
-<p>1.每3小时执行一次，不是* */3 * * *,这样还是每分钟执行一次，应该是0 */3 * * *.</p>
-
-<p>2.Crontab运行的文件必须要有可执行权限，给文件添加可执行文件的方法：chmod +x filename.</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/05/crontab-task-note/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/05/linux-rsync/" >rsync 远程数据同步工具</a>
-        </span>
-        <span class="item__date">
-          May 11, 2016
-        </span>
-        <span >
-        
-        <p>rsync 是一个远程数据同步工具，可以同步文件到远程服务器，使用 rsync 算法来比较文件的不同，它只会覆盖有修改的文件，和新增文件。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/05/linux-rsync/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/05/tar-exclude/" >Linux压缩命令，tar –exclude和zip -x排除目录</a>
-        </span>
-        <span class="item__date">
-          May 11, 2016
-        </span>
-        <span >
-        
-        <p>记录一下tar压缩命令排除某个目录语法：</p>
-
-<p><code class="lang:vim decode:true">tar -zcvf daili.tar.gz &ndash;exclude=./inc/log &ndash;exclude=./api/tmp ./</code></p>
-
-<p>以上命令是打包当前目录下除了两个exlude注明的目录。</p>
-
-<p>压缩结束有一句提示：tar: .: file changed as we read it，不过压缩包解压出来没发现遗漏。先无视。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/05/tar-exclude/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/05/set_include_path-require/" >set_include_path和require,include</a>
         </span>
         <span class="item__date">
@@ -385,6 +231,184 @@ PHPEXEC=/usr/local/php-fcgi/bin/php</p>
         </span>
         
           ... <a class="read-more-symbol" href="/2016/04/bower-inpm-nstall/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/bower-js/" >初识bower——前端包管理工具</a>
+        </span>
+        <span class="item__date">
+          Apr 30, 2016
+        </span>
+        <span >
+        
+        <p>最开始接触WEB，其实就是从前端开始，那个时候没有掌握后端语言，做静态的HTML页面，开始接触CSS，比较感兴趣，时过境迁，现在的前端技术层出不穷，越来越专业了，JS技术更是异军突起，非常强大，CSS也多了很多特性。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/bower-js/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/composer-ignore-reqs/" >Composer设置忽略版本匹配</a>
+        </span>
+        <span class="item__date">
+          Apr 26, 2016
+        </span>
+        <span >
+        
+        <p>执行composer install遇到错误：Your requirements could not be resolved to an installable set of packages. 这是因为不匹配composer.json要求的版本。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/composer-ignore-reqs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/jquery-on-dom/" >jQuery事件绑定on()与弹窗</a>
+        </span>
+        <span class="item__date">
+          Apr 25, 2016
+        </span>
+        <span >
+        
+        <p>页面上经常会有弹窗，有的弹窗是动态生成的，有的弹窗是在页面底部隐藏的，对于动态生成的弹窗，如果要监听弹窗的事件，可以使用jQuery的事件绑定on()方法实现。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/jquery-on-dom/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/git-init/" >初始化一个 git 项目</a>
+        </span>
+        <span class="item__date">
+          Apr 18, 2016
+        </span>
+        <span >
+        
+        <h4 id="git-global-setup">Git global setup</h4>
+
+<p><code class="lang:default decode:true light-well">git config &ndash;global user.name &ldquo;谈腾&rdquo;
+git config &ndash;global user.email &ldquo;tanteng@qq.com&rdquo;</code></p>
+
+<h4 id="create-a-new-repository">Create a new repository</h4>
+
+<p><code class="lang:default decode:true">git clone git@gitlab.example.com:xx.git
+cd adminsns.xunlei.cn
+touch README.md
+git add README.md
+git commit -m &ldquo;add README&rdquo;
+git push -u origin master</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/git-init/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/crontab-demo/" >Crontab 定时任务格式和使用实例</a>
+        </span>
+        <span class="item__date">
+          Apr 16, 2016
+        </span>
+        <span >
+        
+        <h3 id="crontab的文件格式">crontab的文件格式</h3>
+
+<p>分 时 日 月 星期 要运行的命令</p>
+
+<ul>
+<li>第1列分钟0～59</li>
+<li>第2列小时0～23（0表示子夜）</li>
+<li>第3列日1～31</li>
+<li>第4列月1～12</li>
+<li>第5列星期0～7（0和7表示星期天）</li>
+<li>第6列要运行的命令</li>
+</ul>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/crontab-demo/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/04/nginx-set-fastcgi-param/" >Nginx 设置 $_SERVER 变量</a>
+        </span>
+        <span class="item__date">
+          Apr 13, 2016
+        </span>
+        <span >
+        
+        <p>在有的PHP中定义ENVIRONMENT常量，可以区分开发环境和生产环境，如：</p>
+
+<p><code>define(&lsquo;ENVIRONMENT&rsquo;, isset($_SERVER[&lsquo;CI_ENV&rsquo;]) ? $_SERVER[&lsquo;CI_ENV&rsquo;] : &lsquo;development&rsquo;);
+switch (ENVIRONMENT)
+{
+    case &lsquo;development&rsquo;:
+        error_reporting(-1);
+        ini_set(&lsquo;display_errors&rsquo;, 1);
+    break;</p>
+
+<pre><code>case 'testing':
+case 'production':
+    ini_set('display_errors', 0);
+    if (version_compare(PHP_VERSION, '5.3', '&amp;gt;='))
+    {
+        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED &amp; ~E_STRICT &amp; ~E_USER_NOTICE &amp; ~E_USER_DEPRECATED);
+    }
+    else
+    {
+        error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_USER_NOTICE);
+    }
+break;
+
+default:
+    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+    echo 'The application environment is not set correctly.';
+    exit(1); // EXIT_ERROR
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/04/nginx-set-fastcgi-param/">➦</a>
         
         </div>
         

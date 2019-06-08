@@ -143,146 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/07/ssrf-shell/" >解决一个SSRF漏洞</a>
-        </span>
-        <span class="item__date">
-          Jul 7, 2016
-        </span>
-        <span >
-        
-        <p>乌云平台检测出一个SSRF漏洞，漏洞存在于一个远程图片下载的接口，没有对url进行有效的合法性检测。</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/07/ssrf.png" target="_blank"><img class="alignnone size-full wp-image-10191" src="https://blog.tanteng.me/wp-content/uploads/2016/07/ssrf.png" alt="ssrf" width="900" height="537" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/ssrf-shell/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/07/gulp-watch/" >使用 gulp watch</a>
-        </span>
-        <span class="item__date">
-          Jul 5, 2016
-        </span>
-        <span >
-        
-        在 Laravel 项目中，使用 gulp 前端构建工具压缩 css,js 文件并自动部署，如果在开发中，改动了 css,js 都要手动执行 gulp 命令，就会很繁琐，使用 gulp watch 监控文件变动，并实时发布，
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/07/gulp-watch/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/06/php-curl-post-send-file/" >PHP Curl 上传文件</a>
-        </span>
-        <span class="item__date">
-          Jun 30, 2016
-        </span>
-        <span >
-        
-        记录一个 curl 示例，代码如下： function curl($file, $targetUrl) { if (function_exists(&lsquo;curl_file_create&rsquo;)) { // php 5.5+ $cFile = curl_file_create($file); } else { // $cFile = &lsquo;@&rsquo; . realpath($file); } $post = array(&lsquo;filename&rsquo; =&gt; $cFile); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $targetUrl); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $result = curl_exec($ch); curl_close($ch); return $result; } 检测 curl_file_create 函数是为
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/php-curl-post-send-file/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/06/binshm-bad-interpreter-no-file-directory/" >执行sh脚本：/bin/sh^M: bad interpreter: No such file or directory</a>
-        </span>
-        <span class="item__date">
-          Jun 21, 2016
-        </span>
-        <span >
-        
-        <p>执行sh脚本错误：/bin/sh^M: bad interpreter: No such file or directory，这是windows下编码不同造成的，在Linux下修复方法如下，记录一下。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/binshm-bad-interpreter-no-file-directory/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/06/gulp-notify-notify-send-must-be-installed/" >Laravel Elixir运行gulp命令:Error in plugin ‘gulp-notify’</a>
-        </span>
-        <span class="item__date">
-          Jun 20, 2016
-        </span>
-        <span >
-        
-        <p>Laravel Elixir运行gulp命令出现错误提示：</p>
-
-<p>[20:24:02] gulp-notify: [Error in notifier] Error in plugin &#8216;gulp-notify&#8217;</p>
-
-<p>Message:notify-send must be installed on the system.</p>
-
-<p>虽然不影响最终的发布，但是还是解决这个问题。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/gulp-notify-notify-send-must-be-installed/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/06/mysql-command/" >常用Linux操作数据库命令及MySQL语句</a>
-        </span>
-        <span class="item__date">
-          Jun 15, 2016
-        </span>
-        <span >
-        
-        <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
-
-<h3 id="数据库表导入">数据库表导入</h3>
-
-<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
-
-<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/06/mysql-command/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/06/generating-a-new-ssh-key/" >gitlab 和本机建立 ssh 信任</a>
         </span>
         <span class="item__date">
@@ -372,6 +232,160 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/06/mysql-data-length/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/php7-opcache/" >PHP 7安装和开启opcache</a>
+        </span>
+        <span class="item__date">
+          Jun 2, 2016
+        </span>
+        <span >
+        
+        <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
+
+<blockquote>
+<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
+</blockquote>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/php7-opcache/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/laravel-optimize/" >优化 Laravel 网站打开速度</a>
+        </span>
+        <span class="item__date">
+          Jun 2, 2016
+        </span>
+        <span >
+        
+        <p>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好优化提升网站的打开速度。</p>
+
+<h3 id="1-关闭debug">1.关闭debug</h3>
+
+<p>打开.env文件，把debug设置为false.</p>
+
+<p><code class="lang:php decode:true ">APP_ENV=local
+APP_DEBUG=false
+APP_KEY=base64:sT/aTFeaE13eyao1Raee6jC9Ff+Yle1SE+wtyk0H6B4=</code></p>
+
+<h3 id="2-缓存路由和配置">2.缓存路由和配置</h3>
+
+<p>php artisan route:cache</p>
+
+<p>php artisan config:cache</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/laravel-optimize/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/05/preg_replace_callback-usage/" >preg_replace_callback用法</a>
+        </span>
+        <span class="item__date">
+          May 28, 2016
+        </span>
+        <span >
+        
+        <p>preg_replace_callback一般用于正则替换，三个参数，第一个参数正则表达式，第二个参数回调函数，第三个参数是要替换的内容。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/05/preg_replace_callback-usage/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/05/crontab-task-note/" >Crontab部署计划任务注意事项</a>
+        </span>
+        <span class="item__date">
+          May 18, 2016
+        </span>
+        <span >
+        
+        <p>使用Crontab部署计划任务，有几个地方需要注意。</p>
+
+<p>1.每3小时执行一次，不是* */3 * * *,这样还是每分钟执行一次，应该是0 */3 * * *.</p>
+
+<p>2.Crontab运行的文件必须要有可执行权限，给文件添加可执行文件的方法：chmod +x filename.</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/05/crontab-task-note/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/05/linux-rsync/" >rsync 远程数据同步工具</a>
+        </span>
+        <span class="item__date">
+          May 11, 2016
+        </span>
+        <span >
+        
+        <p>rsync 是一个远程数据同步工具，可以同步文件到远程服务器，使用 rsync 算法来比较文件的不同，它只会覆盖有修改的文件，和新增文件。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/05/linux-rsync/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/05/tar-exclude/" >Linux压缩命令，tar –exclude和zip -x排除目录</a>
+        </span>
+        <span class="item__date">
+          May 11, 2016
+        </span>
+        <span >
+        
+        <p>记录一下tar压缩命令排除某个目录语法：</p>
+
+<p><code class="lang:vim decode:true">tar -zcvf daili.tar.gz &ndash;exclude=./inc/log &ndash;exclude=./api/tmp ./</code></p>
+
+<p>以上命令是打包当前目录下除了两个exlude注明的目录。</p>
+
+<p>压缩结束有一句提示：tar: .: file changed as we read it，不过压缩包解压出来没发现遗漏。先无视。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/05/tar-exclude/">➦</a>
         
         </div>
         

@@ -143,161 +143,6 @@
       
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/2016/03/php-closure-use/" >PHP闭包函数传参及使用外部变量</a>
-        </span>
-        <span class="item__date">
-          Mar 8, 2016
-        </span>
-        <span >
-        
-        <p>在Laravel控制器写两个方法，一个是在内部创建一个闭包函数，一个是执行传过来的闭包函数，测试闭包的写法，use使用外部变量，及闭包函数的传参。如下：</p>
-
-<p><code class="lang:php decode:true ">//测试闭包传参及use使用外部变量
-public function testClosure($t1, $t2)
-{
-    $closure = function ($param1, $param2) use ($t1, $t2) {
-        echo $param1.$param2.$t1.$t2;
-    };
-    $this-&gt;execClosure(&lsquo;test.closure&rsquo;, $closure);
-}</p>
-
-<p>//执行闭包函数
-protected function execClosure($name, Closure $closure)
-{
-    echo &lsquo;Closure func name:&lsquo;.$name;
-    echo &lsquo;&lt;br&gt;&rsquo;;
-    $closure(&lsquo;p1&rsquo;, &lsquo;p2&rsquo;);
-}</code></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/03/php-closure-use/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/03/centos-redis-server/" >阿里云CentOS安装Redis并配置生产环境自动启动</a>
-        </span>
-        <span class="item__date">
-          Mar 6, 2016
-        </span>
-        <span >
-        
-        <p>在阿里云CentOS 7系统安装Redis服务，并配置生产环境自动启动。1.安装redis 2.生成环境启动redis的配置，并介绍CentOS下update-rc.d命令不可用的解决方案。</p>
-
-<p>1.安装redis</p>
-
-<p>$ wget <a href="http://download.redis.io/releases/redis-3.0.7.tar.gz">http://download.redis.io/releases/redis-3.0.7.tar.gz</a></p>
-
-<p>$ tar xzf redis-3.0.7.tar.gz</p>
-
-<p>$ cd redis-3.0.7</p>
-
-<p>$ make</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/03/centos-redis-server/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/laravel-nginx-server-conf/" >Laravel Nginx配置示例</a>
-        </span>
-        <span class="item__date">
-          Feb 20, 2016
-        </span>
-        <span >
-        
-        <p>这是一个Laravel框架运行nginx服务器的配置示例，Laravel框架版本5.2</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/02/laravel-nginx-server-conf/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/aliyun-recommend-code/" >阿里云9折推荐码：e1v42k</a>
-        </span>
-        <span class="item__date">
-          Feb 20, 2016
-        </span>
-        <span >
-        
-        <p>我有一个阿里云9折推荐码：e1v42k，分享给你，第一次购买云服务器或云数据库可享受原价9折优惠，还可多人使用，马上去看看。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/02/aliyun-recommend-code/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/laravel-5-2-auth/" >Laravel 5.2自带用户注册和登录认证</a>
-        </span>
-        <span class="item__date">
-          Feb 19, 2016
-        </span>
-        <span >
-        
-        <p>Laravel 5.2自带用户注册和登录认证，安装好Laravel后，在app根目录执行php artisan make:auth,即可自动安装一个简易的功能完整的用户认证系统。</p>
-
-<p><img class="alignnone wp-image-9509 size-full" src="https://blog.tanteng.me/wp-content/uploads/2016/02/laravel-login.png" alt="laravel-login" width="750" height="460" /></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/02/laravel-5-2-auth/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/laravel-maintenance/" >Laravel维护模式的实现原理</a>
-        </span>
-        <span class="item__date">
-          Feb 18, 2016
-        </span>
-        <span >
-        
-        <p>Laravel开启维护模式的方法是：php artisan down,关闭维护模式的命令是：php artisan up，当开启维护模式后，打开网站任何链接都提示“维护中”，当然这是可自定义的，并且返回503的HTTP码，这其实就是通过中间件来实现的。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/02/laravel-maintenance/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
           <a href="/2016/02/git-rm-cached-diff/" >rm 、 git rm –cached 和 git rm 的区别</a>
         </span>
         <span class="item__date">
@@ -383,6 +228,171 @@ protected function execClosure($name, Closure $closure)
         </span>
         
           ... <a class="read-more-symbol" href="/2016/02/centos-yum-install-php7/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/02/crc32-mysql-index/" >MySQL 字符串字段转换 crc32 建索引提高查询效率</a>
+        </span>
+        <span class="item__date">
+          Feb 1, 2016
+        </span>
+        <span >
+        
+        <p>给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。</p>
+
+<p>crc32 是整形，在MySQL中，给整形字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/02/crc32-mysql-index/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-singleton-bind/" >Laravel Ioc容器singleton和bind方法的区别</a>
+        </span>
+        <span class="item__date">
+          Jan 29, 2016
+        </span>
+        <span >
+        
+        <p>Laravel中使用Ioc容器的singleton方法和bind方法创建实例有什么区别呢？它们两个都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例，看下面的两个例子。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-singleton-bind/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/php-goto/" >PHP GOTO语法</a>
+        </span>
+        <span class="item__date">
+          Jan 28, 2016
+        </span>
+        <span >
+        
+        PHP的GOTO语法可以跳转到指定位置，如代码所示，goto display，在代码后面定义了一个display:,这样当执行goto disp
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/php-goto/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-construct-ioc/" >Laravel构造函数自动依赖注入</a>
+        </span>
+        <span class="item__date">
+          Jan 28, 2016
+        </span>
+        <span >
+        
+        <p>在Laravel的构造函数中可以实现自动依赖注入，而不需要实例化之前先实例化需要的类，如代码所示：</p>
+
+<p><code class="lang:php decode:true ">&lt;?php
+namespace Lio\Http\Controllers\Forum;</p>
+
+<p>use Lio\Forum\Replies\ReplyRepository;
+use Lio\Forum\Threads\ThreadCreator;
+use Lio\Forum\Threads\ThreadCreatorListener;
+use Lio\Forum\Threads\ThreadDeleterListener;
+use Lio\Forum\Threads\ThreadForm;
+use Lio\Forum\Threads\ThreadRepository;
+use Lio\Forum\Threads\ThreadUpdaterListener;
+use Lio\Http\Controllers\Controller;
+use Lio\Tags\TagRepository;</p>
+
+<p>class ForumThreadsController extends Controller implements ThreadCreatorListener, ThreadUpdaterListener, ThreadDeleterListener
+{
+    protected $threads;
+    protected $tags;
+    protected $currentSection;
+    protected $threadCreator;</p>
+
+<pre><code>public function __construct(
+    ThreadRepository $threads,
+    ReplyRepository $replies,
+    TagRepository $tags,
+    ThreadCreator $threadCreator
+) {
+    $this-&amp;gt;threads = $threads;
+    $this-&amp;gt;tags = $tags;
+    $this-&amp;gt;threadCreator = $threadCreator;
+    $this-&amp;gt;replies = $replies;
+}
+</code></pre>
+
+<p>}</code></p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-construct-ioc/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/laravel-facades-register/" >在Laravel中注册Facades的步骤</a>
+        </span>
+        <span class="item__date">
+          Jan 27, 2016
+        </span>
+        <span >
+        
+        <p>在Laravel中将类注册为Fcade可以使用Ioc容器，每次使用这个类的时候只会初始化一次类，类似单例模式，而且可以像使用静态方法调用类的方法，下面是在Laravel中注册Facades的步骤。</p>
+
+<p>1.在项目app目录的Providers/AppServiceProvider.php中的register方法新增方法，代码如下。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/laravel-facades-register/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/01/repeat-group-having/" >查询数据库重复记录sql</a>
+        </span>
+        <span class="item__date">
+          Jan 25, 2016
+        </span>
+        <span >
+        
+        每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/01/repeat-group-having/">➦</a>
         
         </div>
         

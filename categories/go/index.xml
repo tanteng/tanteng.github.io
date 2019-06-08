@@ -6,19 +6,10 @@
     <description>Recent content in Go on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 May 2018 06:34:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 May 2018 02:52:22 +0000</lastBuildDate>
     
 	<atom:link href="http://tanteng.me/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>使用 VS Code 断点调试 golang 项目</title>
-      <link>http://tanteng.me/2018/05/vscode-debug-golang/</link>
-      <pubDate>Tue, 29 May 2018 06:34:04 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2018/05/vscode-debug-golang/</guid>
-      <description>在 golang 开发中进行调试，调试手段除了打印输出、打印日志、单元测试之外，还可以通过 IDE 进行断点调试，这是一个更加直观的方式，这里简单介绍 Visual Studio Code 调试 Golang</description>
-    </item>
     
     <item>
       <title>Golang 统计字符串字数</title>
@@ -26,11 +17,7 @@
       <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
       
       <guid>http://tanteng.me/2018/05/golang-str-length/</guid>
-      <description>&lt;p&gt;比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家可以去微博体验一下计算方式。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&#34;aligncenter wp-image-12274 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2018/05/wx_20180509104614-1.png&#34; alt=&#34;&#34; width=&#34;591&#34; height=&#34;157&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;golang 可以使用正则和 unicode 包的方法判断。&lt;/p&gt;</description>
+      <description>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家</description>
     </item>
     
     <item>
@@ -51,93 +38,6 @@
       
       <guid>http://tanteng.me/2017/11/golang-parameter-passing/</guid>
       <description>&lt;p&gt;在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golang 让 for 循环运行一段时间超时自动退出</title>
-      <link>http://tanteng.me/2017/11/golang-for-timeout/</link>
-      <pubDate>Sat, 18 Nov 2017 14:48:24 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-for-timeout/</guid>
-      <description>&lt;p&gt;如何控制 for 循环一段时间超时自动退出呢？思路很简单，就是在 for 循环中使用 select 监听 channel，代码如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;package main&lt;/p&gt;
-
-&lt;p&gt;import (
-    &amp;ldquo;fmt&amp;rdquo;
-    &amp;ldquo;time&amp;rdquo;
-)&lt;/p&gt;
-
-&lt;p&gt;func main() {
-    timeout := time.After(time.Second * 10)
-    finish := make(chan bool)
-    count := 1
-    go func() {
-        for {
-            select {
-            case &amp;lt;-timeout:
-                fmt.Println(&amp;ldquo;timeout&amp;rdquo;)
-                finish &amp;lt;- true
-                return
-            default:
-                fmt.Printf(&amp;ldquo;haha %d\n&amp;rdquo;, count)
-                count++
-            }
-            time.Sleep(time.Second * 1)
-        }
-    }()&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;lt;-finish
-
-fmt.Println(&amp;quot;Finish&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golang 如何优雅关闭 channel</title>
-      <link>http://tanteng.me/2017/11/golang-close-channel/</link>
-      <pubDate>Fri, 17 Nov 2017 09:01:50 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-close-channel/</guid>
-      <description>&lt;p&gt;Golang 内建的 close 方法可以关闭 channel，如果往已经关闭的 channel 发送数据，则会报错：panic: close of closed channel.&lt;/p&gt;
-
-&lt;p&gt;看如下代码，在一段时间内，生产者可以不断往 channel 写入数据，消费者进行处理，一段时间后 channel 关闭了，这个时候如果还有数据往 channel 发送，程序就会报错。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用 Golang 发送邮件</title>
-      <link>http://tanteng.me/2017/11/golang-smtp-send-mail/</link>
-      <pubDate>Thu, 16 Nov 2017 09:45:37 +0000</pubDate>
-      
-      <guid>http://tanteng.me/2017/11/golang-smtp-send-mail/</guid>
-      <description>&lt;p&gt;使用 smtp 协议，只需要邮箱服务器主机和端口，和一个发件人帐号，可以使用 Golang 的 smtp 包发送邮件，以下是一个简单示例：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;// SendToMail 用于发送邮件
-func SendToMail(to, subject, body, mailType string) error {
-    user := &amp;ldquo;tt@tanteng.me&amp;rdquo;
-    password := 123456
-    host := smtp.tanteng.me:25
-    hp := strings.Split(host, &amp;ldquo;:&amp;ldquo;)
-    auth := smtp.PlainAuth(&amp;ldquo;&amp;rdquo;, user, password, hp[0])
-    var contentType string
-    if mailType == &amp;ldquo;html&amp;rdquo; {
-        contentType = &amp;ldquo;Content-Type: text/&amp;rdquo; + mailType + &amp;ldquo;; charset=UTF-8&amp;rdquo;
-    } else {
-        contentType = &amp;ldquo;Content-Type: text/plain&amp;rdquo; + &amp;ldquo;; charset=UTF-8&amp;rdquo;
-    }&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;msg := []byte(&amp;quot;To: &amp;quot; + to + &amp;quot;\r\nFrom: xx邮箱中心&amp;amp;lt;&amp;quot; + user + &amp;quot;&amp;amp;gt;\r\nSubject: &amp;quot; + subject + &amp;quot;\r\n&amp;quot; + contentType + &amp;quot;\r\n\r\n&amp;quot; + body)
-sendTo := strings.Split(to, &amp;quot;;&amp;quot;)
-err := smtp.SendMail(host, auth, user, sendTo, msg)
-return err
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;重点看 msg 字段，也就是邮件标题，发送者，标题，内容的格式。&lt;/p&gt;</description>
     </item>
     
     <item>
