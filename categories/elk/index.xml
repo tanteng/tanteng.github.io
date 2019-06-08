@@ -26,7 +26,7 @@
       <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
       <guid>https://tanteng.me/2018/04/reding-list/</guid>
-      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求</description>
     </item>
     
   </channel>

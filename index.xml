@@ -346,7 +346,7 @@
       <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
       <guid>https://tanteng.me/2018/04/reding-list/</guid>
-      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求ht</description>
+      <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求</description>
     </item>
     
     <item>
@@ -382,7 +382,7 @@
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
       <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
-      <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
+      <description>1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse</description>
     </item>
     
     <item>

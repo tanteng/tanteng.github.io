@@ -17,7 +17,7 @@
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
       <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
-      <description>Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 使用PHP-Parse生成AST抽象语法树</description>
+      <description>1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse</description>
     </item>
     
   </channel>
