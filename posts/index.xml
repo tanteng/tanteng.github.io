@@ -1155,24 +1155,7 @@ fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
       <pubDate>Tue, 04 Sep 2012 16:07:50 +0000</pubDate>
       
       <guid>https://tanteng.me/2012/09/linus-torvalds/</guid>
-      <description>&lt;div&gt;
-  &lt;p&gt;
-    除了程序员，大概很少人知道Linux操作系统。
-  &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;more&#34;&gt;
-  &lt;p&gt;
-    它的发明者Linus Torvalds，知道的人就更少了。
-  &lt;/p&gt;
-  
-  &lt;p&gt;
-    他本人也很低调，深居简出，很少出席公众场合或接受媒体采访，通常只在专业开发者的邮件列表中发言。提起他的名字，人们的第一反应往往是&amp;#8221;哦，传说中那个22岁就发明Linux的芬兰大学生&amp;#8230;&amp;#8230;&amp;#8221;，其他就一片空白了。
-  &lt;/p&gt;
-  
-  &lt;p&gt;
-    &lt;img src=&#34;http://image.beekka.com/blog/201209/bg2012090301.jpg&#34; alt=&#34;&#34; width=&#34;403&#34; height=&#34;327&#34; /&gt;
-  &lt;/p&gt;</description>
+      <description>除了程序员，大概很少人知道Linux操作系统。 它的发明者Linus Torvalds，知道的人就更少了。 他本人也很低调，深居简出，很少出席公众</description>
     </item>
     
     <item>
