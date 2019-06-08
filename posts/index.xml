@@ -1233,15 +1233,6 @@ fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>Steve jobs的“情书”</title>
-      <link>https://tanteng.me/2012/08/steve-jobs-love-letter/</link>
-      <pubDate>Tue, 14 Aug 2012 05:05:17 +0000</pubDate>
-      
-      <guid>https://tanteng.me/2012/08/steve-jobs-love-letter/</guid>
-      <description>——节选自《Steve Jobs》</description>
-    </item>
-    
-    <item>
       <title>乔布斯的Stay Hungry, Stay Foolish</title>
       <link>https://tanteng.me/2011/09/stay-hungry-stay-foolish/</link>
       <pubDate>Sun, 18 Sep 2011 07:06:36 +0000</pubDate>
