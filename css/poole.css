@@ -240,7 +240,7 @@ tbody tr:nth-child(odd) th {
 /*
  * Messages
  *
- * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * Show alert messages to users. You may add it to single elements like a `<static>`,
  * or to a parent if there are multiple elements to show.
  */
 
