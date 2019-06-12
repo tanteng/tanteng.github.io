@@ -234,20 +234,21 @@
       <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
       
       <guid>https://tanteng.me/2018/08/reding-list-17/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;PHP : 令人困惑的 strtotime
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
+      <description>&lt;p&gt;1.PHP : 令人困惑的 strtotime&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34;&gt;http://www.laruence.com/2018/07/31/3188.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;2. 彻底弄懂 Laravel 中间件原理&lt;/p&gt;
+&lt;p&gt;2.彻底弄懂 Laravel 中间件原理&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34;&gt;https://blog.tanteng.me/2018/07/understand-laravel-middleware&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;3. Redis 事务与 Redis Lua 脚本&lt;/p&gt;
+&lt;p&gt;3.Redis 事务与 Redis Lua 脚本&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34;&gt;http://techlog.cn/article/list/10183180&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34;&gt;http://techlog.cn/article/list/10183180&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;4.如何开发、本地测试、发布 Laravel 扩展包&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34;&gt;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
