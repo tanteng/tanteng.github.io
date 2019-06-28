@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-06-08T12:38:38&#43;08:00"/>
+<meta property="og:updated_time" content="2019-06-20T15:50:10&#43;08:00"/>
 
 
     
@@ -170,6 +170,31 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/php7-opcache/" >PHP 7安装和开启opcache</a>
+        </span>
+        <span class="item__date">
+          Jun 2, 2016
+        </span>
+        <span >
+        
+        <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
+
+<blockquote>
+<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
+</blockquote>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/php7-opcache/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -365,29 +390,6 @@
         1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件
         
         </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/crc32-mysql-index/" >MySQL 字符串字段转换 crc32 建索引提高查询效率</a>
-        </span>
-        <span class="item__date">
-          Feb 1, 2016
-        </span>
-        <span >
-        
-        <p>给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。</p>
-
-<p>crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/02/crc32-mysql-index/">➦</a>
         
         </div>
         

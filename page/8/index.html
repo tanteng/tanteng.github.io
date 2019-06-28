@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-06-08T12:38:38&#43;08:00"/>
+<meta property="og:updated_time" content="2019-06-20T15:50:10&#43;08:00"/>
 
 
     
@@ -170,6 +170,27 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/04/netstat-tcp-state/" >netstat 命令统计 tcp 各状态数量</a>
+        </span>
+        <span class="item__date">
+          Apr 28, 2017
+        </span>
+        <span >
+        
+        统计 tcp 各种状态的个数： netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' 结果： [nobody@test14439 ~]$ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CLOSED：无
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/04/netstat-tcp-state/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -369,29 +390,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/12/laravel-admin-install/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/nginx-test-environment/" >使用 Nginx 反向代理和负载均衡搭建多人测试环境</a>
-        </span>
-        <span class="item__date">
-          Dec 17, 2016
-        </span>
-        <span >
-        
-        <p><img class="alignnone size-full wp-image-11120" src="https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg" alt="" width="1328" height="874" /></p>
-
-<p>假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/nginx-test-environment/">➦</a>
         
         </div>
         

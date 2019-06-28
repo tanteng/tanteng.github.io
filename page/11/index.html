@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-06-08T12:38:38&#43;08:00"/>
+<meta property="og:updated_time" content="2019-06-20T15:50:10&#43;08:00"/>
 
 
     
@@ -170,6 +170,29 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/02/crc32-mysql-index/" >MySQL 字符串字段转换 crc32 建索引提高查询效率</a>
+        </span>
+        <span class="item__date">
+          Feb 1, 2016
+        </span>
+        <span >
+        
+        <p>给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。</p>
+
+<p>crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/02/crc32-mysql-index/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -399,37 +422,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2012/09/10-golden-lessons-from-steve-jobs/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2012/09/php-session-cookies/" >深入理解 PHP 中 session 和 cookies 的联系</a>
-        </span>
-        <span class="item__date">
-          Sep 26, 2012
-        </span>
-        <span >
-        
-        <p>1. session概念</p>
-
-<p>2. http协议与状态保持</p>
-
-<p>3. 理解cookie</p>
-
-<p>4. php中session的生成机制</p>
-
-<p>5. php中session的过期回收机制</p>
-
-<p>6. php中session的客户端存储机制</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2012/09/php-session-cookies/">➦</a>
         
         </div>
         
