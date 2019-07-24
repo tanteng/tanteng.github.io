@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-06-20T15:50:10&#43;08:00"/>
+<meta property="og:updated_time" content="2019-07-12T19:57:10&#43;08:00"/>
 
 
     
@@ -170,6 +170,33 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2016/06/mysql-data-length/" >MySQL查看数据库大小</a>
+        </span>
+        <span class="item__date">
+          Jun 3, 2016
+        </span>
+        <span >
+        
+        <p>1、进入information_schema 数据库（存放了其他的数据库的信息）</p>
+
+<p>use information_schema;</p>
+
+<p>2、查询所有数据的大小：</p>
+
+<p>select concat(round(sum(data_length/1024/1024),2),&#8217;MB&#8217;) as data from tables;</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2016/06/mysql-data-length/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -371,25 +398,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2016/03/redis-6379-safe/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/02/git-rm-cached-diff/" >rm 、 git rm –cached 和 git rm 的区别</a>
-        </span>
-        <span class="item__date">
-          Feb 18, 2016
-        </span>
-        <span >
-        
-        1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件
-        
-        </span>
         
         </div>
         
