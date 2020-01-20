@@ -48,15 +48,6 @@
     </item>
     
     <item>
-      <title>Redis pipeline 和事务</title>
-      <link>https://tanteng.me/2018/09/redis-pipeline-transaction/</link>
-      <pubDate>Tue, 04 Sep 2018 16:25:09 +0000</pubDate>
-      
-      <guid>https://tanteng.me/2018/09/redis-pipeline-transaction/</guid>
-      <description>Redis pipeline 流水线处理命令，只是可以减少通信，而不能保证原子性。用 multi 包裹起来的是事务。</description>
-    </item>
-    
-    <item>
       <title>Laravel chunk 使用注意的问题</title>
       <link>https://tanteng.me/2018/08/laravel-chunk-tip/</link>
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>

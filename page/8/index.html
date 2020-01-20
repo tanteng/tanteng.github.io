@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-07-12T19:57:10&#43;08:00"/>
+<meta property="og:updated_time" content="2019-08-30T15:10:10&#43;08:00"/>
 
 
     
@@ -156,7 +156,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2019 TonyTan
+  &copy; 2020 TonyTan
   
 </div>
 
@@ -170,6 +170,36 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2017/05/golang-append-slice-to-slice/" >Golang append slice to slice</a>
+        </span>
+        <span class="item__date">
+          May 10, 2017
+        </span>
+        <span >
+        
+        <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
+
+<p>片段1：</p>
+
+<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println(&ldquo;result:&ldquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
+
+<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2017/05/golang-append-slice-to-slice/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -367,29 +397,6 @@
         </span>
         
           ... <a class="read-more-symbol" href="/2017/01/supervisor-laravel-queue/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2016/12/window-location-reload-and-href/" >window.location.reload()和window.location.href=””的区别</a>
-        </span>
-        <span class="item__date">
-          Dec 31, 2016
-        </span>
-        <span >
-        
-        <p>window.location.reload() 和 window.location.href=&#8221;&#8221; 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。</p>
-
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" target="_blank"><img class="alignnone wp-image-11348 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" alt="window.location.reload()和window.location.href=''的区别" width="368" height="207" /></a></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2016/12/window-location-reload-and-href/">➦</a>
         
         </div>
         

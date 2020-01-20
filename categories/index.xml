@@ -6,15 +6,42 @@
     <description>Recent content in Categories on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jul 2019 19:57:10 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 15:10:10 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Laravel</title>
+      <link>https://tanteng.me/categories/laravel/</link>
+      <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/categories/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://tanteng.me/categories/nginx/</link>
+      <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://tanteng.me/categories/php/</link>
+      <pubDate>Thu, 08 Aug 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Golang</title>
       <link>https://tanteng.me/categories/golang/</link>
-      <pubDate>Fri, 12 Jul 2019 19:57:10 +0800</pubDate>
+      <pubDate>Wed, 31 Jul 2019 20:57:10 +0800</pubDate>
       
       <guid>https://tanteng.me/categories/golang/</guid>
       <description></description>
@@ -26,15 +53,6 @@
       <pubDate>Thu, 20 Jun 2019 15:50:10 +0800</pubDate>
       
       <guid>https://tanteng.me/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PHP</title>
-      <link>https://tanteng.me/categories/php/</link>
-      <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
-      
-      <guid>https://tanteng.me/categories/php/</guid>
       <description></description>
     </item>
     
@@ -62,15 +80,6 @@
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
       <guid>https://tanteng.me/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://tanteng.me/categories/laravel/</link>
-      <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
-      
-      <guid>https://tanteng.me/categories/laravel/</guid>
       <description></description>
     </item>
     
@@ -116,15 +125,6 @@
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
       <guid>https://tanteng.me/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://tanteng.me/categories/nginx/</link>
-      <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
-      
-      <guid>https://tanteng.me/categories/nginx/</guid>
       <description></description>
     </item>
     

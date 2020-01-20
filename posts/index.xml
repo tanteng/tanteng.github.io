@@ -6,10 +6,37 @@
     <description>Recent content in Posts on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jul 2019 19:57:10 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 15:10:10 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>本周阅读清单20190830</title>
+      <link>https://tanteng.me/2019/08/reding-list-38/</link>
+      <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/08/reding-list-38/</guid>
+      <description>1.HTTP 代理原理及实现 https://imququ.com/post/web-proxy.html 2.为什么使用通信来共享内存？ https://draveness.me/whys-the-design-communication-shared-memory 3.深入理解Go-defer的原理剖析 https://juejin.im/post/5d71d1edf265da03e52356fb 4.Nginx实现JWT验证-基于OpenRest</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190808</title>
+      <link>https://tanteng.me/2019/08/reding-list-37/</link>
+      <pubDate>Thu, 08 Aug 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/08/reding-list-37/</guid>
+      <description>1.PHP 正则 preg_match 匹配长度限制 https://learnku.com/articles/7193/php-regular-preg-match-matching-length-limit 2.深悉正则(pcre)最大回溯/递归限制 http://www.laruence.com/2010/06/08/1579.html 3.Redis的内存优化 https://cachecloud.github.io/2017/02/16/Redis%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96 4.Content-Disposition 的 filename 与 filename* 区别 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition 5.Redis Scan 命令原理 https://segmentfault.com/a/1190000018218584 6.Redis 字典的遍历 dictScan 算法</description>
+    </item>
+    
+    <item>
+      <title>本周阅读清单20190731</title>
+      <link>https://tanteng.me/2019/07/reding-list-36/</link>
+      <pubDate>Wed, 31 Jul 2019 20:57:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/2019/07/reding-list-36/</guid>
+      <description>1.Golang调度器 https://www.jianshu.com/p/1288b8fec84d 2.也谈 goroutine 调度器 https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/ 3.[翻译]The Go scheduler https://hxzhao527.github.io/2018/10/18/%E7%BF%BB%E8%AF%91-The-Go-scheduler/ 4.深入 golang runtime 的调度 https://zboya.github.io/post/go_scheduler/ 5.Goroutine浅析 https://studygolang.com/articles/12003</description>
+    </item>
     
     <item>
       <title>本周阅读清单20190712</title>
@@ -45,15 +72,6 @@
       
       <guid>https://tanteng.me/2019/04/reding-list-32/</guid>
       <description>1.Redis Stream——作为消息队列的典型应用场景 https://yq.aliyun.com/articles/603193 2.深夜学算法之 Skiplist：让链表飞 https://www.jianshu.com/p/fcd18946994e 3.Redis Zset 内部实现 https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/ 4.函数调用中的栈帧 https://labrick.cc/2018/06/24/stack-in-call-func/ 5.Go高性能</description>
-    </item>
-    
-    <item>
-      <title>Golang 如何优雅的退出程序</title>
-      <link>https://tanteng.me/2019/04/graceful-exit-golang/</link>
-      <pubDate>Mon, 08 Apr 2019 17:10:19 +0800</pubDate>
-      
-      <guid>https://tanteng.me/2019/04/graceful-exit-golang/</guid>
-      <description>在 Golang 中如何在程序中断的时候，等待其他协程执行完毕再退出主程序呢？下面例子演示了使用通道接收中断信号来实现优雅退出的效果。 func main() { ch := make(chan os.Signal, 1) //Handle SIGINT</description>
     </item>
     
     <item>
@@ -226,15 +244,6 @@
 &lt;p&gt;3. 用 JSON 构建 API 的标准指南&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Redis pipeline 和事务</title>
-      <link>https://tanteng.me/2018/09/redis-pipeline-transaction/</link>
-      <pubDate>Tue, 04 Sep 2018 16:25:09 +0000</pubDate>
-      
-      <guid>https://tanteng.me/2018/09/redis-pipeline-transaction/</guid>
-      <description>Redis pipeline 流水线处理命令，只是可以减少通信，而不能保证原子性。用 multi 包裹起来的是事务。</description>
     </item>
     
     <item>
