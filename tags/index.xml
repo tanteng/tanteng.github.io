@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Aug 2019 15:10:10 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate>
     
 	<atom:link href="https://tanteng.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JWT</title>
+      <link>https://tanteng.me/tags/jwt/</link>
+      <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/tags/jwt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>索引</title>
+      <link>https://tanteng.me/tags/%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/tags/%E7%B4%A2%E5%BC%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>限流</title>
+      <link>https://tanteng.me/tags/%E9%99%90%E6%B5%81/</link>
+      <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
+      
+      <guid>https://tanteng.me/tags/%E9%99%90%E6%B5%81/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go</title>
@@ -143,15 +170,6 @@
       <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
       
       <guid>https://tanteng.me/tags/%E5%8E%9F%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>索引</title>
-      <link>https://tanteng.me/tags/%E7%B4%A2%E5%BC%95/</link>
-      <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
-      
-      <guid>https://tanteng.me/tags/%E7%B4%A2%E5%BC%95/</guid>
       <description></description>
     </item>
     

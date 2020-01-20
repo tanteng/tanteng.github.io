@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tanteng.me/" />
 
-<meta property="og:updated_time" content="2019-08-30T15:10:10&#43;08:00"/>
+<meta property="og:updated_time" content="2019-11-30T15:10:10&#43;08:00"/>
 
 
     
@@ -170,6 +170,27 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/2018/03/reding-list-5/" >本周阅读清单20180326</a>
+        </span>
+        <span class="item__date">
+          Mar 26, 2018
+        </span>
+        <span >
+        
+        1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/2018/03/reding-list-5/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -371,42 +392,6 @@ stdout_logfile=/var/www/xxx.cn/worker.log
         </span>
         
           ... <a class="read-more-symbol" href="/2017/11/nginx-fastcgi-php-fpm/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/php-intval-precision/" >PHP intval 转换浮点数精度丢失问题</a>
-        </span>
-        <span class="item__date">
-          Oct 15, 2017
-        </span>
-        <span >
-        
-        <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
-
-<pre><code>$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
-</code></pre>
-
-<h3 id="解决办法">解决办法：</h3>
-
-<p>1.转换成字符串再 intval</p>
-
-<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
-</code></pre>
-
-<p>2.使用 round 函数替代 floatval</p>
-
-<pre><code class="language-php">php -r &quot;echo round(19.99*100);&quot;
-</code></pre>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/php-intval-precision/">➦</a>
         
         </div>
         
