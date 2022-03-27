@@ -126,47 +126,347 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2011/09/stay-hungry-stay-foolish/">乔布斯的Stay Hungry, Stay Foolish</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2016/09/lets-encrypt-multi-domain-https/">Let’s Encrypt 开启多域名 HTTPS</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2011-09-18 </span>
+      <span class="post-time"> 2016-09-12 </span>
       <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。</p>
-<p><strong>什么叫 Hungry？</strong></p>
-<p>美国人不会用</p>
-<p>hungry来形容对于知识的追求。对知识，他们用的是「好奇」(curious)这个字。一个求知若渴的人，叫做「intellectuallycurious」或是「eager</p>
-<p>to learn」，但绝对不会是「intellectually hungry」，也极少是「hungry to learn」。</p>
+      上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问
     </div>
     <div class="read-more">
-      <a href="/2011/09/stay-hungry-stay-foolish/" class="read-more-link">阅读更多</a>
+      <a href="/2016/09/lets-encrypt-multi-domain-https/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2009/01/welcome/">小谈博客</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2016/08/laravel-routes-map/">Laravel 分割 routes.php 路由文件的一种方式</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2009-01-01 </span>
+      <span class="post-time"> 2016-08-02 </span>
       <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
-          <a href="/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/"> 小谈点评 </a>
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！
+      Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，
     </div>
     <div class="read-more">
-      <a href="/2009/01/welcome/" class="read-more-link">阅读更多</a>
+      <a href="/2016/08/laravel-routes-map/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-command/">常用Linux操作数据库命令及MySQL语句</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-15 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
+<h3 id="数据库表导入">数据库表导入</h3>
+<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
+<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/mysql-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/jquery-iframe/">jQuery操作iframe页面DOM</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-03 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。</p>
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" target="_blank"><img class="alignnone size-full wp-image-10135" src="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" alt="jquery_iframe" width="1092" height="514" /></a></p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/jquery-iframe/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-data-length/">MySQL查看数据库大小</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-03 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>1、进入information_schema 数据库（存放了其他的数据库的信息）</p>
+<p>use information_schema;</p>
+<p>2、查询所有数据的大小：</p>
+<p>select concat(round(sum(data_length/1024/1024),2),’MB’) as data from tables;</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/mysql-data-length/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/php7-opcache/">PHP 7安装和开启opcache</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
+<blockquote>
+<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
+</blockquote>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/php7-opcache/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/laravel-optimize/">优化 Laravel 网站打开速度</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/laravel-optimize/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/04/vagrantfile-synced-folder/">巧用vagrant建立映射目录解决环境兼容问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：</p>
+<p><code>config.vm.synced_folder &quot;../website&quot;, &quot;/usr/share/nginx/html&quot;</code></p>
+<p>表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/04/vagrantfile-synced-folder/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/04/nginx-ssi/">Nginx开启SSI</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在一个HTML页面中发现一段这样的代码：</p>
+<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
+<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/04/nginx-ssi/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/centos-7-repo/">常用的CentOS 7 yum源集合</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-31 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/centos-7-repo/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/php-fpm-conf/">PHP-FPM性能优化参考</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-29 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
+<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/php-fpm-conf/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/innodb_buffer_pool_size/">MySQL数据库性能优化之缓存参数设置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-28 </span>
+      <div class="post-category">
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/innodb_buffer_pool_size/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/nginx-buffer-params/">Nginx性能调优之buffer参数设置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-27 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>打开Nginx的error.log日志文件，发现很多warn的警告错误，提示：</p>
+<p>①2016/03/25 13:18:35 [warn] 1171#0: *10875 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/0/08/0000000080 while reading upstream, client: 106.38.241.105, server: blog.tanteng.me, request: “GET /page/38/ HTTP/1.1”, upstream: “fastcgi://127.0.0.1:9000”, host: “blog.tanteng.me”.</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/nginx-buffer-params/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/redis-6379-safe/">Redis未授权访问漏洞</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-21 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/redis-6379-safe/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/02/git-rm-cached-diff/">rm 、 git rm –cached 和 git rm 的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-02-18 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件
+    </div>
+    <div class="read-more">
+      <a href="/2016/02/git-rm-cached-diff/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -178,7 +478,10 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    
+    <a class="next" href="/page/8/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
         </div>
         

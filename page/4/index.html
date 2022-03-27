@@ -126,9 +126,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/11/golang-parameter-passing/">如何理解 Golang 的参数传递都是值传递？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2018/05/golang-str-length/">Golang 统计字符串字数</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-11-19 </span>
+      <span class="post-time"> 2018-05-02 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/go/"> Go </a>
@@ -138,22 +138,182 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。</p>
+      比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家
     </div>
     <div class="read-more">
-      <a href="/2017/11/golang-parameter-passing/" class="read-more-link">阅读更多</a>
+      <a href="/2018/05/golang-str-length/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/11/nginx-fastcgi-php-fpm/">PHP-FPM,Nginx,FastCGI 之间的关系</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list/">本周阅读清单20180423</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-11-09 </span>
+      <span class="post-time"> 2018-04-28 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/elk/"> ELK </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求
+    </div>
+    <div class="read-more">
+      <a href="/2018/04/reding-list/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-4/">本周阅读清单20180416</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-22 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/tcp/"> TCP </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原
+    </div>
+    <div class="read-more">
+      <a href="/2018/04/reding-list-4/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-3/">本周阅读清单20180410</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-10 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.
+    </div>
+    <div class="read-more">
+      <a href="/2018/04/reding-list-3/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/04/php-2/">PHP知识整理之——PHP基础、WEB安全、网络</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-10 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2018/04/php-2/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-2/">本周阅读清单20180402</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-02 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/https/"> HTTPS </a>
+          <a href="/categories/http/2/"> HTTP/2 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse
+    </div>
+    <div class="read-more">
+      <a href="/2018/04/reding-list-2/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/03/php-cow/">PHP写时复制（Copy On Write）</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-26 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      一个例子： 1 2 3 4 &lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在
+    </div>
+    <div class="read-more">
+      <a href="/2018/03/php-cow/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/03/reding-list-5/">本周阅读清单20180326</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-26 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/mqtt/"> MQTT </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩
+    </div>
+    <div class="read-more">
+      <a href="/2018/03/reding-list-5/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/03/consistent-hashing/">一致性哈希算法及其在分布式系统中的应用</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-01 </span>
+      <div class="post-category">
           <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
     </div>
@@ -161,19 +321,20 @@
   
   <div class="post-content">
     <div class="post-summary">
-      本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与
+      <h1 id="摘要">摘要</h1>
+<p>本文将会从实际应用场景出发，介绍一致性哈希算法（Consistent Hashing）及其在分布式系统中的应用。首先本文会描述一个在日常开发中经常会遇到的问题场景，借此介绍一致性哈希算法以及这个算法如何解决此问题；接下来会对这个算法进行相对详细的描述，并讨论一些如虚拟节点等与此算法应用相关的话题。</p>
     </div>
     <div class="read-more">
-      <a href="/2017/11/nginx-fastcgi-php-fpm/" class="read-more-link">阅读更多</a>
+      <a href="/2018/03/consistent-hashing/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/10/php-intval-precision/">PHP intval 转换浮点数精度丢失问题</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-queue-excute/">为什么 Laravel 会重复执行同一个队列任务？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-10-15 </span>
+      <span class="post-time"> 2017-12-24 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
@@ -183,47 +344,41 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$n=&#34;19.99&#34;; print intval($n*100); // prints 1998
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="解决办法">解决办法：</h3>
-<p>1.转换成字符串再 intval</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">print</span> <span class="nx">intval</span><span class="p">(</span><span class="nx">strval</span><span class="p">(</span><span class="nv">$n</span><span class="o">*</span><span class="mi">100</span><span class="p">));</span> <span class="c1">// prints 1999
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>2.使用 round 函数替代 floatval</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">php</span> <span class="o">-</span><span class="nx">r</span> <span class="s2">&#34;echo round(19.99*100);&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+      在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一
     </div>
     <div class="read-more">
-      <a href="/2017/10/php-intval-precision/" class="read-more-link">阅读更多</a>
+      <a href="/2017/12/laravel-queue-excute/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/10/docker-laravel-local-environment/">使用 Docker 搭建 Laravel 本地环境</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/12/software-design/">软件设计思想：先整体轮廓，再完善细节部分</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-10-14 </span>
+      <span class="post-time"> 2017-12-23 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/"> 网摘日志 </a>
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>《画家与黑客》一书作者在谈到软件设计思想的时候很有启发，尤其是做需求，如果你一开始就纠结细节而看不到整体，你可能花费很多时间还达不到预期的效果。要先有一个整体的轮廓，再完善各个部分和细节，或做出调整，这样你一开始就掌握全局，这应该是正确的方式。作者拿了印刷，雕刻，绘画，油画等艺术领域的例子来说明软件开发也应该如此。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/12/software-design/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-supervisor-queue/">Laravel Redis 多个进程同时取队列问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-23 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/laravel/"> Laravel </a>
@@ -234,178 +389,53 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同
+      <p><strong>开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？</strong></p>
+<p>使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：</p>
+<p><code class="lang:default decode:true">[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/xxx.cn/artisan queue:work &ndash;queue=sendfile &ndash;tries=3 &ndash;daemon
+autostart=true
+autorestart=true
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/var/www/xxx.cn/worker.log
+</code></p>
+<p>注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。</p>
     </div>
     <div class="read-more">
-      <a href="/2017/10/docker-laravel-local-environment/" class="read-more-link">阅读更多</a>
+      <a href="/2017/12/laravel-supervisor-queue/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/10/503-service-unavailable/">服务器返回 502,503,504 原因及解决办法</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/12/mysql-optimize-tips/">MySQL 数据库设计及性能优化Tips</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-10-08 </span>
+      <span class="post-time"> 2017-12-17 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/nginx/"> Nginx </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <h3 id="502-bad-gateway">502 bad gateway</h3>
-<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
-<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
+      规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个
     </div>
     <div class="read-more">
-      <a href="/2017/10/503-service-unavailable/" class="read-more-link">阅读更多</a>
+      <a href="/2017/12/mysql-optimize-tips/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/10/computer-concepts-in-life/">计算机的一些概念在生活中的场景</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-queue-tips/">使用 Laravel 消息队列要注意的问题</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-10-08 </span>
-      <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
-          <a href="/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/"> 日志随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/10/computer-concepts-in-life/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/09/debug-backtrace-php/">PHP 调试函数 debug_backtrace</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-09-11 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-    </div>
-    <div class="read-more">
-      <a href="/2017/09/debug-backtrace-php/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/09/git-merge-rebase/">Git 变基和合并</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-09-05 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/git/"> Git </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
-    </div>
-    <div class="read-more">
-      <a href="/2017/09/git-merge-rebase/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/09/php-error-handle/">PHP 错误和异常处理</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-09-02 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>关于 PHP 的错误和异常处理，总结如下。</p>
-<h3 id="1设置-php-错误级别">1.设置 PHP 错误级别</h3>
-<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/09/php-error-handle/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/08/golang-generic/">Golang 中”泛型”的支持</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-08-11 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/go/"> Go </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola
-    </div>
-    <div class="read-more">
-      <a href="/2017/08/golang-generic/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/07/php-curl-guzzlehttp/">PHP发送HTTP请求的几种方式</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-07-22 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
-<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/07/php-curl-guzzlehttp/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/05/laravel-etag-middleware/">在 Laravel 中设置 Etag 缓存</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-05-19 </span>
+      <span class="post-time"> 2017-12-11 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/laravel/"> Laravel </a>
@@ -416,43 +446,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
-<h3 id="什么是etag">什么是“ETag”？</h3>
-<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
-<p>浏览器根据状态码判断是否缓存过期。</p>
+      使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实
     </div>
     <div class="read-more">
-      <a href="/2017/05/laravel-etag-middleware/" class="read-more-link">阅读更多</a>
+      <a href="/2017/12/laravel-queue-tips/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/05/linux-clear-cache-buffer/">在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/11/mac-open-user-local/">Mac 上如何打开 /usr/local 路径的文件夹</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-05-18 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html
-    </div>
-    <div class="read-more">
-      <a href="/2017/05/linux-clear-cache-buffer/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/05/golang-append-slice-to-slice/">Golang append slice to slice</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-05-10 </span>
+      <span class="post-time"> 2017-11-29 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/go/"> Go </a>
@@ -462,148 +468,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
-<p>片段1：</p>
-<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
-s1 := []interface{}{3, 4, 5, 6}
-s0 = append(s0, s1)
-fmt.Println(&ldquo;result:&rdquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
-<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+      在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式
     </div>
     <div class="read-more">
-      <a href="/2017/05/golang-append-slice-to-slice/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/05/shell-check-url/">Shell 脚本请求 url 判断状态码</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-05-02 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #!/bin/bash fileurl=&#39;./check_url.txt&#39; DATE_N=`date &#34;+%Y-%m-%d %H:%M:%S&#34;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do #
-    </div>
-    <div class="read-more">
-      <a href="/2017/05/shell-check-url/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/04/netstat-tcp-state/">netstat 命令统计 tcp 各状态数量</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-04-28 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      统计 tcp 各种状态的个数： 1 netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL
-    </div>
-    <div class="read-more">
-      <a href="/2017/04/netstat-tcp-state/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/04/nginx-permission-denied/">Nginx 报错和解决方法记录</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-04-19 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
-<h3 id="13-permission-denied">13: Permission denied</h3>
-<p>Nginx错误：</p>
-<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() “/data/vhosts/xunlei.com/test/” failed (13: Permission denied), client: 192.168.35.54, server: <a href="https://www.test.com">www.test.com</a>, request: “GET / HTTP/1.1”, host: “www.test.com”</p>
-<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/04/nginx-permission-denied/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/03/2017-php-way/">韩天峰：2017 年 PHP 程序员未来路在何方</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-03-31 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/03/2017-php-way/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/03/virtualbox-blue-screen/">VirtualBox启动蓝屏问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-03-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox
-    </div>
-    <div class="read-more">
-      <a href="/2017/03/virtualbox-blue-screen/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/02/login-replay-attacks/">登录重放攻击及安全防御</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-02-01 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提
-    </div>
-    <div class="read-more">
-      <a href="/2017/02/login-replay-attacks/" class="read-more-link">阅读更多</a>
+      <a href="/2017/11/mac-open-user-local/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

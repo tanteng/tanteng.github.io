@@ -126,6 +126,238 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/08/laravel-why-not-use-blpop/">Laravel 中为何不使用 blpop 取队列？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-31 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2018/08/laravel-why-not-use-blpop/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/understand-laravel-middleware/">Laravel 中间件原理</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-29 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/understand-laravel-middleware/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-16/">本周阅读清单20180723</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-26 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/nginx/"> Nginx </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/redis/"> Redis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-16/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-15/">本周阅读清单20180716</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-19 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-15/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-14/">本周阅读清单20180709</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-13 </span>
+      <div class="post-category">
+          <a href="/categories/tcp/"> TCP </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/swoole/"> Swoole </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-14/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-13/">本周阅读清单20180702</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-06 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/cors/"> CORS </a>
+          <a href="/categories/http/2/"> HTTP/2 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.HTTP/2 服务器推送（server push）教程 https://juejin.im/entry/5a9e61cc518825556140c4f2 2.如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2 https://www.jianshu.com/p/52d86558ca57 3.深入理解 RESTful API 架构 https://mengkang.net/620.html 4.传统 Web 应用中的身份验证技术 https://insights.thoughtworks.cn/traditional-web-app-authentication/ 5.Web App Token 鉴权方案的
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-13/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/06/reding-list-12/">本周阅读清单20180625</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-29 </span>
+      <div class="post-category">
+          <a href="/categories/nginx/"> Nginx </a>
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/grpc/"> grpc </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.了解 Nginx 基本概念 http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/ 2.Redis 和 I/O 多路复用 https://draveness.me/redis-io-multiplexing 3.Redis 为什么使
+    </div>
+    <div class="read-more">
+      <a href="/2018/06/reding-list-12/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/06/reding-list-11/">本周阅读清单20180619</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-24 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E5%BE%AE%E4%BF%A1/"> 微信 </a>
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.MySQL 索引背后的数据结构及算法原理 https://juejin.im/entry/591012d161ff4b006255b447 2.微信扫码登录原理 https://blog.csdn.net/qq_25827845/article/details/78823861 3.Redis 事务及 Watch 的实现原理 http://redisbook.readthedocs.io/en/latest/feature/transaction.html 4.Redis 事务到底是不是原子性的 https://blog.tanteng.me/2018/06/redis-transaction-atomic/ 5.LRU 缓存淘汰算法数据结构 https://zhuanlan.zhihu.com/p/34989978 6.Singleton Pattern in Go http://marcio.io/2015/07/singleton-pattern-in-go/
+    </div>
+    <div class="read-more">
+      <a href="/2018/06/reding-list-11/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/06/redis-transaction-atomic/">Redis 的事务到底是不是原子性的</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-24 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/%E4%BA%8B%E7%89%A9/"> 事物 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ACID 中关于原子性的定义： 原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执
+    </div>
+    <div class="read-more">
+      <a href="/2018/06/redis-transaction-atomic/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/06/reding-list-10/">本周阅读清单20180604</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-18 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/http/"> HTTP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.深入介绍 Golang 中的 bufio.Scanner https://zhuanlan.zhihu.com/p/37673679 2.Redis 的通信协议 http://redisdoc.com/topic/protocol.html 3.用 Redis 实现支持优先级的消息队列 https://www.cnblogs.com/laozhbook/p/redis_queue.html 4.Go HTTP 服务器编程基础 http://cizixs.com/2016/08/17/golang-http-server-side 5.你真的了解 gzip 吗？ https://zhuanlan.zhihu.com/p/24764131
+    </div>
+    <div class="read-more">
+      <a href="/2018/06/reding-list-10/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2018/06/reding-list-9/">本周阅读清单20180528</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-06-06 </span>
@@ -233,358 +465,6 @@
     </div>
     <div class="read-more">
       <a href="/2018/05/reding-list-6/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/05/golang-str-length/">Golang 统计字符串字数</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-05-02 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/go/"> Go </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家
-    </div>
-    <div class="read-more">
-      <a href="/2018/05/golang-str-length/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list/">本周阅读清单20180423</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-04-28 </span>
-      <div class="post-category">
-          <a href="/categories/redis/"> Redis </a>
-          <a href="/categories/php/"> PHP </a>
-          <a href="/categories/elk/"> ELK </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求
-    </div>
-    <div class="read-more">
-      <a href="/2018/04/reding-list/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-4/">本周阅读清单20180416</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-04-22 </span>
-      <div class="post-category">
-          <a href="/categories/redis/"> Redis </a>
-          <a href="/categories/tcp/"> TCP </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原
-    </div>
-    <div class="read-more">
-      <a href="/2018/04/reding-list-4/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-3/">本周阅读清单20180410</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-04-10 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.
-    </div>
-    <div class="read-more">
-      <a href="/2018/04/reding-list-3/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/04/php-2/">PHP知识整理之——PHP基础、WEB安全、网络</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-04-10 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2018/04/php-2/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/04/reding-list-2/">本周阅读清单20180402</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-04-02 </span>
-      <div class="post-category">
-          <a href="/categories/redis/"> Redis </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
-          <a href="/categories/php/"> PHP </a>
-          <a href="/categories/https/"> HTTPS </a>
-          <a href="/categories/http/2/"> HTTP/2 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse
-    </div>
-    <div class="read-more">
-      <a href="/2018/04/reding-list-2/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/03/php-cow/">PHP写时复制（Copy On Write）</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-26 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一个例子： 1 2 3 4 &lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在
-    </div>
-    <div class="read-more">
-      <a href="/2018/03/php-cow/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/03/reding-list-5/">本周阅读清单20180326</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-26 </span>
-      <div class="post-category">
-          <a href="/categories/redis/"> Redis </a>
-          <a href="/categories/php/"> PHP </a>
-          <a href="/categories/mqtt/"> MQTT </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩
-    </div>
-    <div class="read-more">
-      <a href="/2018/03/reding-list-5/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/03/consistent-hashing/">一致性哈希算法及其在分布式系统中的应用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-01 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="摘要">摘要</h1>
-<p>本文将会从实际应用场景出发，介绍一致性哈希算法（Consistent Hashing）及其在分布式系统中的应用。首先本文会描述一个在日常开发中经常会遇到的问题场景，借此介绍一致性哈希算法以及这个算法如何解决此问题；接下来会对这个算法进行相对详细的描述，并讨论一些如虚拟节点等与此算法应用相关的话题。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2018/03/consistent-hashing/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-queue-excute/">为什么 Laravel 会重复执行同一个队列任务？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-24 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一
-    </div>
-    <div class="read-more">
-      <a href="/2017/12/laravel-queue-excute/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/12/software-design/">软件设计思想：先整体轮廓，再完善细节部分</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/"> 网摘日志 </a>
-          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>《画家与黑客》一书作者在谈到软件设计思想的时候很有启发，尤其是做需求，如果你一开始就纠结细节而看不到整体，你可能花费很多时间还达不到预期的效果。要先有一个整体的轮廓，再完善各个部分和细节，或做出调整，这样你一开始就掌握全局，这应该是正确的方式。作者拿了印刷，雕刻，绘画，油画等艺术领域的例子来说明软件开发也应该如此。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/12/software-design/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-supervisor-queue/">Laravel Redis 多个进程同时取队列问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-23 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p><strong>开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？</strong></p>
-<p>使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：</p>
-<p><code class="lang:default decode:true">[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/xxx.cn/artisan queue:work &ndash;queue=sendfile &ndash;tries=3 &ndash;daemon
-autostart=true
-autorestart=true
-numprocs=8
-redirect_stderr=true
-stdout_logfile=/var/www/xxx.cn/worker.log
-</code></p>
-<p>注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/12/laravel-supervisor-queue/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/12/mysql-optimize-tips/">MySQL 数据库设计及性能优化Tips</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-17 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个
-    </div>
-    <div class="read-more">
-      <a href="/2017/12/mysql-optimize-tips/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/12/laravel-queue-tips/">使用 Laravel 消息队列要注意的问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-11 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实
-    </div>
-    <div class="read-more">
-      <a href="/2017/12/laravel-queue-tips/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/11/mac-open-user-local/">Mac 上如何打开 /usr/local 路径的文件夹</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-11-29 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/go/"> Go </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式
-    </div>
-    <div class="read-more">
-      <a href="/2017/11/mac-open-user-local/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

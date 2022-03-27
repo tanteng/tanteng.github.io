@@ -126,58 +126,33 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/01/mysql-alter-table-big-data/">MySQL大表加字段思路</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/11/golang-parameter-passing/">如何理解 Golang 的参数传递都是值传递？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-01-19 </span>
+      <span class="post-time"> 2017-11-19 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          <a href="/categories/go/"> Go </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
-<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
-<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
+      <p>在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。</p>
     </div>
     <div class="read-more">
-      <a href="/2017/01/mysql-alter-table-big-data/" class="read-more-link">阅读更多</a>
+      <a href="/2017/11/golang-parameter-passing/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/01/linux-postfix-maildrop/">Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/11/nginx-fastcgi-php-fpm/">PHP-FPM,Nginx,FastCGI 之间的关系</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2017-01-14 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/01/linux-postfix-maildrop/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/01/supervisor-laravel-queue/">使用 Supervisor 管理 Laravel 队列进程</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-01-07 </span>
+      <span class="post-time"> 2017-11-09 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
           <a href="/categories/php/"> PHP </a>
           <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
@@ -186,45 +161,21 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。</p>
+      本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与
     </div>
     <div class="read-more">
-      <a href="/2017/01/supervisor-laravel-queue/" class="read-more-link">阅读更多</a>
+      <a href="/2017/11/nginx-fastcgi-php-fpm/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/12/window-location-reload-and-href/">window.location.reload()和window.location.href=””的区别</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/10/php-intval-precision/">PHP intval 转换浮点数精度丢失问题</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-12-31 </span>
+      <span class="post-time"> 2017-10-15 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。</p>
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" target="_blank"><img class="alignnone wp-image-11348 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" alt="window.location.reload()和window.location.href=''的区别" width="368" height="207" /></a></p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/12/window-location-reload-and-href/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/12/laravel-admin-install/">Laravel 5.3 后台管理系统搭建</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-12-24 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
           <a href="/categories/php/"> PHP </a>
           </div>
     </div>
@@ -232,66 +183,47 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。</p>
+      <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$n=&#34;19.99&#34;; print intval($n*100); // prints 1998
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="解决办法">解决办法：</h3>
+<p>1.转换成字符串再 intval</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">print</span> <span class="nx">intval</span><span class="p">(</span><span class="nx">strval</span><span class="p">(</span><span class="nv">$n</span><span class="o">*</span><span class="mi">100</span><span class="p">));</span> <span class="c1">// prints 1999
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>2.使用 round 函数替代 floatval</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">php</span> <span class="o">-</span><span class="nx">r</span> <span class="s2">&#34;echo round(19.99*100);&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
     <div class="read-more">
-      <a href="/2016/12/laravel-admin-install/" class="read-more-link">阅读更多</a>
+      <a href="/2017/10/php-intval-precision/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/12/nginx-test-environment/">使用 Nginx 反向代理和负载均衡搭建多人测试环境</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/10/docker-laravel-local-environment/">使用 Docker 搭建 Laravel 本地环境</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-12-17 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <img class="alignnone size-full wp-image-11120" src="https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg" alt="" width="1328" height="874" />
-<p>假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/12/nginx-test-environment/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/12/reading-and-maturing-personalities/">阅读与心智的成长</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-12-05 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/"> 网摘日志 </a>
-          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>以下摘自《如何阅读一本书》第二十一章。</p>
-<p>我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。</p>
-<p>**所谓主动的阅读，也就是能提出问题来。**我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/12/reading-and-maturing-personalities/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/12/laravel-env-null/">Laravel 使用 env 读取环境变量为 null 的问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-12-04 </span>
+      <span class="post-time"> 2017-10-14 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/laravel/"> Laravel </a>
@@ -302,20 +234,65 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。</p>
-<p>在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？</p>
+      Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同
     </div>
     <div class="read-more">
-      <a href="/2016/12/laravel-env-null/" class="read-more-link">阅读更多</a>
+      <a href="/2017/10/docker-laravel-local-environment/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/09/register-shutdown-function/">PHP捕捉异常中断</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/10/503-service-unavailable/">服务器返回 502,503,504 原因及解决办法</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-09-28 </span>
+      <span class="post-time"> 2017-10-08 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/nginx/"> Nginx </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h3 id="502-bad-gateway">502 bad gateway</h3>
+<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
+<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/10/503-service-unavailable/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/10/computer-concepts-in-life/">计算机的一些概念在生活中的场景</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-10-08 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/"> 日志随笔 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/10/computer-concepts-in-life/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/09/debug-backtrace-php/">PHP 调试函数 debug_backtrace</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-09-11 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
@@ -325,61 +302,110 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。</p>
+      有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
     </div>
     <div class="read-more">
-      <a href="/2016/09/register-shutdown-function/" class="read-more-link">阅读更多</a>
+      <a href="/2017/09/debug-backtrace-php/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/09/vim-syntax/">vim常用操作</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/09/git-merge-rebase/">Git 变基和合并</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-09-21 </span>
+      <span class="post-time"> 2017-09-05 </span>
       <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/git/"> Git </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。</p>
+      变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
     </div>
     <div class="read-more">
-      <a href="/2016/09/vim-syntax/" class="read-more-link">阅读更多</a>
+      <a href="/2017/09/git-merge-rebase/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/09/lets-encrypt-multi-domain-https/">Let’s Encrypt 开启多域名 HTTPS</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/09/php-error-handle/">PHP 错误和异常处理</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-09-12 </span>
+      <span class="post-time"> 2017-09-02 </span>
       <div class="post-category">
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问
+      <p>关于 PHP 的错误和异常处理，总结如下。</p>
+<h3 id="1设置-php-错误级别">1.设置 PHP 错误级别</h3>
+<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
     </div>
     <div class="read-more">
-      <a href="/2016/09/lets-encrypt-multi-domain-https/" class="read-more-link">阅读更多</a>
+      <a href="/2017/09/php-error-handle/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/08/laravel-routes-map/">Laravel 分割 routes.php 路由文件的一种方式</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/08/golang-generic/">Golang 中”泛型”的支持</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-08-02 </span>
+      <span class="post-time"> 2017-08-11 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/go/"> Go </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola
+    </div>
+    <div class="read-more">
+      <a href="/2017/08/golang-generic/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/07/php-curl-guzzlehttp/">PHP发送HTTP请求的几种方式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-07-22 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
+<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/07/php-curl-guzzlehttp/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/05/laravel-etag-middleware/">在 Laravel 中设置 Etag 缓存</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-05-19 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           <a href="/categories/laravel/"> Laravel </a>
@@ -390,167 +416,22 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，
+      <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
+<h3 id="什么是etag">什么是“ETag”？</h3>
+<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
+<p>浏览器根据状态码判断是否缓存过期。</p>
     </div>
     <div class="read-more">
-      <a href="/2016/08/laravel-routes-map/" class="read-more-link">阅读更多</a>
+      <a href="/2017/05/laravel-etag-middleware/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-command/">常用Linux操作数据库命令及MySQL语句</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/05/linux-clear-cache-buffer/">在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-06-15 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
-<h3 id="数据库表导入">数据库表导入</h3>
-<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
-<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/06/mysql-command/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/06/jquery-iframe/">jQuery操作iframe页面DOM</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-06-03 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。</p>
-<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" target="_blank"><img class="alignnone size-full wp-image-10135" src="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" alt="jquery_iframe" width="1092" height="514" /></a></p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/06/jquery-iframe/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-data-length/">MySQL查看数据库大小</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-06-03 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>1、进入information_schema 数据库（存放了其他的数据库的信息）</p>
-<p>use information_schema;</p>
-<p>2、查询所有数据的大小：</p>
-<p>select concat(round(sum(data_length/1024/1024),2),’MB’) as data from tables;</p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/06/mysql-data-length/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/06/php7-opcache/">PHP 7安装和开启opcache</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-06-02 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
-<blockquote>
-<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
-</blockquote>
-    </div>
-    <div class="read-more">
-      <a href="/2016/06/php7-opcache/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/06/laravel-optimize/">优化 Laravel 网站打开速度</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-06-02 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好
-    </div>
-    <div class="read-more">
-      <a href="/2016/06/laravel-optimize/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/04/vagrantfile-synced-folder/">巧用vagrant建立映射目录解决环境兼容问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-04-08 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：</p>
-<p><code>config.vm.synced_folder &quot;../website&quot;, &quot;/usr/share/nginx/html&quot;</code></p>
-<p>表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/04/vagrantfile-synced-folder/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/04/nginx-ssi/">Nginx开启SSI</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-04-08 </span>
+      <span class="post-time"> 2017-05-18 </span>
       <div class="post-category">
           <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
@@ -559,21 +440,47 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>在一个HTML页面中发现一段这样的代码：</p>
-<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
-<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
+      在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html
     </div>
     <div class="read-more">
-      <a href="/2016/04/nginx-ssi/" class="read-more-link">阅读更多</a>
+      <a href="/2017/05/linux-clear-cache-buffer/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/03/centos-7-repo/">常用的CentOS 7 yum源集合</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/05/golang-append-slice-to-slice/">Golang append slice to slice</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-03-31 </span>
+      <span class="post-time"> 2017-05-10 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/go/"> Go </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。</p>
+<p>片段1：</p>
+<p><code class="lang:go decode:true">s0 := []interface{}{1, 100, 122}
+s1 := []interface{}{3, 4, 5, 6}
+s0 = append(s0, s1)
+fmt.Println(&ldquo;result:&rdquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p>
+<p>此时 s0 结果：result: [1 100 122 [3 4 5 6]]</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/05/golang-append-slice-to-slice/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/05/shell-check-url/">Shell 脚本请求 url 判断状态码</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-05-02 </span>
       <div class="post-category">
           <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
@@ -582,10 +489,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+      Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #!/bin/bash fileurl=&#39;./check_url.txt&#39; DATE_N=`date &#34;+%Y-%m-%d %H:%M:%S&#34;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do #
     </div>
     <div class="read-more">
-      <a href="/2016/03/centos-7-repo/" class="read-more-link">阅读更多</a>
+      <a href="/2017/05/shell-check-url/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
