@@ -57,12 +57,7 @@ ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&
 但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。"><meta itemprop="datePublished" content="2017-01-19T12:58:04+00:00" />
 <meta itemprop="dateModified" content="2017-01-19T12:58:04+00:00" />
 <meta itemprop="wordCount" content="457">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MySQL大表加字段思路"/>
-<meta name="twitter:description" content="给 MySQL 一张表加字段执行如下 sql 就可以了：
-ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&rsquo; AFTER id;
-但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。"/>
-
+<meta itemprop="keywords" content="" />
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
 <![endif]-->

@@ -54,11 +54,7 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
 crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。"><meta itemprop="datePublished" content="2016-02-01T01:29:07+00:00" />
 <meta itemprop="dateModified" content="2016-02-01T01:29:07+00:00" />
 <meta itemprop="wordCount" content="410">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MySQL 字符串字段转换 crc32 建索引提高查询效率"/>
-<meta name="twitter:description" content="给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。
-crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。"/>
-
+<meta itemprop="keywords" content="" />
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
 <![endif]-->

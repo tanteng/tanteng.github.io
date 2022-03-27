@@ -76,21 +76,7 @@ stdout_logfile=/var/www/xxx.cn/worker.log
 注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。"><meta itemprop="datePublished" content="2017-12-23T11:26:19+00:00" />
 <meta itemprop="dateModified" content="2017-12-23T11:26:19+00:00" />
 <meta itemprop="wordCount" content="1063">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Laravel Redis 多个进程同时取队列问题"/>
-<meta name="twitter:description" content="开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？
-使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：
-[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/xxx.cn/artisan queue:work &ndash;queue=sendfile &ndash;tries=3 &ndash;daemon
-autostart=true
-autorestart=true
-numprocs=8
-redirect_stderr=true
-stdout_logfile=/var/www/xxx.cn/worker.log
-
-注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。"/>
-
+<meta itemprop="keywords" content="" />
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
 <![endif]-->

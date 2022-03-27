@@ -100,28 +100,7 @@ echo CLASS;
 B::test(); //输出A"><meta itemprop="datePublished" content="2015-05-27T03:38:42+00:00" />
 <meta itemprop="dateModified" content="2015-05-27T03:38:42+00:00" />
 <meta itemprop="wordCount" content="374">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="初识PHP Static延迟静态绑定"/>
-<meta name="twitter:description" content="PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。
-class A
-{
-public static function echoClass(){
-echo CLASS;
-}
-public static function test(){  
-    self::echoClass();        
-}
-
-}
-class B extends A
-{     
-public static function echoClass()
-{
-echo CLASS;
-}
-}
-B::test(); //输出A"/>
-
+<meta itemprop="keywords" content="" />
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
 <![endif]-->
