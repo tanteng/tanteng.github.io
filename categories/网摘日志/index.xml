@@ -1,44 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>网摘日志 on 小谈博客</title>
-    <link>https://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</link>
-    <description>Recent content in 网摘日志 on 小谈博客</description>
+    <title>网摘日志 on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</link>
+    <description>Recent content in 网摘日志 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 23 Dec 2017 15:56:30 +0000</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Sat, 23 Dec 2017 15:56:30 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>软件设计思想：先整体轮廓，再完善细节部分</title>
-      <link>https://tanteng.me/2017/12/software-design/</link>
+      <link>https://tanteng.github.io/2017/12/software-design/</link>
       <pubDate>Sat, 23 Dec 2017 15:56:30 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/software-design/</guid>
+      <guid>https://tanteng.github.io/2017/12/software-design/</guid>
       <description>&lt;p&gt;《画家与黑客》一书作者在谈到软件设计思想的时候很有启发，尤其是做需求，如果你一开始就纠结细节而看不到整体，你可能花费很多时间还达不到预期的效果。要先有一个整体的轮廓，再完善各个部分和细节，或做出调整，这样你一开始就掌握全局，这应该是正确的方式。作者拿了印刷，雕刻，绘画，油画等艺术领域的例子来说明软件开发也应该如此。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阅读与心智的成长</title>
-      <link>https://tanteng.me/2016/12/reading-and-maturing-personalities/</link>
+      <link>https://tanteng.github.io/2016/12/reading-and-maturing-personalities/</link>
       <pubDate>Mon, 05 Dec 2016 13:31:46 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/reading-and-maturing-personalities/</guid>
+      <guid>https://tanteng.github.io/2016/12/reading-and-maturing-personalities/</guid>
       <description>&lt;p&gt;以下摘自《如何阅读一本书》第二十一章。&lt;/p&gt;
-
 &lt;p&gt;我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;所谓主动的阅读，也就是能提出问题来。&lt;/strong&gt;我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。&lt;/p&gt;</description>
+&lt;p&gt;**所谓主动的阅读，也就是能提出问题来。**我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>昨夜梦见的美景</title>
-      <link>https://tanteng.me/2015/03/beautiful-scenery-in-dream/</link>
+      <link>https://tanteng.github.io/2015/03/beautiful-scenery-in-dream/</link>
       <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/03/beautiful-scenery-in-dream/</guid>
+      <guid>https://tanteng.github.io/2015/03/beautiful-scenery-in-dream/</guid>
       <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有</description>
     </item>
     

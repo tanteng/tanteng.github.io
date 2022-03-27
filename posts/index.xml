@@ -1,540 +1,522 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 小谈博客</title>
-    <link>https://tanteng.me/posts/</link>
-    <description>Recent content in Posts on 小谈博客</description>
+    <title>Posts on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/posts/</link>
+    <description>Recent content in Posts on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20191130</title>
-      <link>https://tanteng.me/2019/11/reding-list-39/</link>
+      <link>https://tanteng.github.io/2019/11/reding-list-39/</link>
       <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/11/reding-list-39/</guid>
+      <guid>https://tanteng.github.io/2019/11/reding-list-39/</guid>
       <description>1.Uber 的 Go 指导规范 https://github.com/uber-go/guide/blob/master/style.md 2.使用JWT保证服务间通信的安全 https://abekthink.github.io/backend/json-web-token/ 3.MySQL查询对大小写不敏感 https://www.jianshu.com/p/408daf82ac71 4.服务流量限制（漏桶、令牌桶） https://chai2010.cn/advanced-go-programming-book/ch5-web/ch5-06-ratelimit.html 5.为什么推荐Inn</description>
     </item>
     
     <item>
       <title>本周阅读清单20190830</title>
-      <link>https://tanteng.me/2019/08/reding-list-38/</link>
+      <link>https://tanteng.github.io/2019/08/reding-list-38/</link>
       <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/08/reding-list-38/</guid>
+      <guid>https://tanteng.github.io/2019/08/reding-list-38/</guid>
       <description>1.HTTP 代理原理及实现 https://imququ.com/post/web-proxy.html 2.为什么使用通信来共享内存？ https://draveness.me/whys-the-design-communication-shared-memory 3.深入理解Go-defer的原理剖析 https://juejin.im/post/5d71d1edf265da03e52356fb 4.Nginx实现JWT验证-基于OpenRest</description>
     </item>
     
     <item>
       <title>本周阅读清单20190808</title>
-      <link>https://tanteng.me/2019/08/reding-list-37/</link>
+      <link>https://tanteng.github.io/2019/08/reding-list-37/</link>
       <pubDate>Thu, 08 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/08/reding-list-37/</guid>
+      <guid>https://tanteng.github.io/2019/08/reding-list-37/</guid>
       <description>1.PHP 正则 preg_match 匹配长度限制 https://learnku.com/articles/7193/php-regular-preg-match-matching-length-limit 2.深悉正则(pcre)最大回溯/递归限制 http://www.laruence.com/2010/06/08/1579.html 3.Redis的内存优化 https://cachecloud.github.io/2017/02/16/Redis%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96 4.Content-Disposition 的 filename 与 filename* 区别 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition 5.Redis Scan 命令原理 https://segmentfault.com/a/1190000018218584 6.Redis 字典的遍历 dictScan 算法</description>
     </item>
     
     <item>
       <title>本周阅读清单20190731</title>
-      <link>https://tanteng.me/2019/07/reding-list-36/</link>
+      <link>https://tanteng.github.io/2019/07/reding-list-36/</link>
       <pubDate>Wed, 31 Jul 2019 20:57:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/07/reding-list-36/</guid>
+      <guid>https://tanteng.github.io/2019/07/reding-list-36/</guid>
       <description>1.Golang调度器 https://www.jianshu.com/p/1288b8fec84d 2.也谈 goroutine 调度器 https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/ 3.[翻译]The Go scheduler https://hxzhao527.github.io/2018/10/18/%E7%BF%BB%E8%AF%91-The-Go-scheduler/ 4.深入 golang runtime 的调度 https://zboya.github.io/post/go_scheduler/ 5.Goroutine浅析 https://studygolang.com/articles/12003</description>
     </item>
     
     <item>
       <title>本周阅读清单20190712</title>
-      <link>https://tanteng.me/2019/07/reding-list-35/</link>
+      <link>https://tanteng.github.io/2019/07/reding-list-35/</link>
       <pubDate>Fri, 12 Jul 2019 19:57:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/07/reding-list-35/</guid>
+      <guid>https://tanteng.github.io/2019/07/reding-list-35/</guid>
       <description>1.Charles 从入门到精通 https://blog.devtang.com/2015/11/14/charles-introduction/ 2.Git如何永久删除文件(包括历史记录) https://www.cnblogs.com/shines77/p/3460274.html 3.Go 编程：图解反射 https://studygolang.com/articles/21936 4.Go并发编程模型：pipeline和cancellatio</description>
     </item>
     
     <item>
       <title>本周阅读清单20190620</title>
-      <link>https://tanteng.me/2019/06/reding-list-34/</link>
+      <link>https://tanteng.github.io/2019/06/reding-list-34/</link>
       <pubDate>Thu, 20 Jun 2019 15:50:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/06/reding-list-34/</guid>
+      <guid>https://tanteng.github.io/2019/06/reding-list-34/</guid>
       <description>1.MySQL商品库存扣减问题总结 https://zhaoyixing.coding.me/2018/01/10/mysql-update-safe-md/ 2.MySQL死锁问题分析 https://www.cnblogs.com/LBSer/p/5183300.html 3.[译] Go: 理解 Sync.Pool 的设计 https://studygolang.com/articles/21122 4.epoll 或者 kqueue 的原理是什么？ https://www.zhihu.com/question/20122137/answer/14049112 5.深入理解 MySQL ―― 锁、事务</description>
     </item>
     
     <item>
       <title>本周阅读清单20190508</title>
-      <link>https://tanteng.me/2019/05/reding-list-33/</link>
+      <link>https://tanteng.github.io/2019/05/reding-list-33/</link>
       <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/05/reding-list-33/</guid>
+      <guid>https://tanteng.github.io/2019/05/reding-list-33/</guid>
       <description>1.深入理解GO时间处理(time.Time) https://studygolang.com/articles/11975 2.上云，你需要了解的AK使用姿势 https://yq.aliyun.com/articles/55947 3.高并发集中访问造成连接MYSQL报Cannot assign requested a</description>
     </item>
     
     <item>
       <title>本周阅读清单20190408</title>
-      <link>https://tanteng.me/2019/04/reding-list-32/</link>
+      <link>https://tanteng.github.io/2019/04/reding-list-32/</link>
       <pubDate>Mon, 08 Apr 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/04/reding-list-32/</guid>
+      <guid>https://tanteng.github.io/2019/04/reding-list-32/</guid>
       <description>1.Redis Stream——作为消息队列的典型应用场景 https://yq.aliyun.com/articles/603193 2.深夜学算法之 Skiplist：让链表飞 https://www.jianshu.com/p/fcd18946994e 3.Redis Zset 内部实现 https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/ 4.函数调用中的栈帧 https://labrick.cc/2018/06/24/stack-in-call-func/ 5.Go高性能</description>
     </item>
     
     <item>
       <title>本周阅读清单20190322</title>
-      <link>https://tanteng.me/2019/03/reding-list-31/</link>
+      <link>https://tanteng.github.io/2019/03/reding-list-31/</link>
       <pubDate>Fri, 22 Mar 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/03/reding-list-31/</guid>
+      <guid>https://tanteng.github.io/2019/03/reding-list-31/</guid>
       <description>1.深入解析 Go 总 Slice 底层实现 https://halfrost.com/go_slice/ 2.深度解密Go语言之关于 interface 的10个问题 https://www.cnblogs.com/qcrao-2018/p/10766091.html 3.Type assertions in Go https://medium.com/golangspec/type-assertions-in-go-e609759c42e1 4.Hive SQL 的编译过程 https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html 5.经济学十大定律-边际收益递减定律 https://xueqiu.com/1084912228/108513216</description>
     </item>
     
     <item>
       <title>本周阅读清单20190305</title>
-      <link>https://tanteng.me/2019/03/reding-list-30/</link>
+      <link>https://tanteng.github.io/2019/03/reding-list-30/</link>
       <pubDate>Tue, 05 Mar 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/03/reding-list-30/</guid>
+      <guid>https://tanteng.github.io/2019/03/reding-list-30/</guid>
       <description>1.探索 Golang 一致性原语 https://wweir.cc/post/%E6%8E%A2%E7%B4%A2-golang-%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E8%AF%AD/ 2.My Standout Features in PHP7 https://medium.com/@jodylecompte/my-standout-features-in-php7-80ccd2763c55 3.为什么遍历 Go map 是无序的？ https://segmentfault.com/a/1190000018782278 4.我的游戏人生 http://miloyip.com/2010/my-life-as-a-game/ 5.String Data Type in Go https://medium.com/rungo/string-data-type-in-go-8af2b639478 6.PHP中处理Protocol Buffers</description>
     </item>
     
     <item>
       <title>本周阅读清单20190225</title>
-      <link>https://tanteng.me/2019/02/reding-list-29/</link>
+      <link>https://tanteng.github.io/2019/02/reding-list-29/</link>
       <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/02/reding-list-29/</guid>
+      <guid>https://tanteng.github.io/2019/02/reding-list-29/</guid>
       <description>1.前缀索引，一种优化索引大小的解决方案 http://www.cnblogs.com/studyzy/p/4310653.html 2.[译]Go 调度器: M, P 和 G https://colobu.com/2017/05/04/go-scheduler/ 3.gRPC 安全认证 https://yuanxuxu.com/2018/11/21/grpc-token/ 4.Go 语言 Channel 实现原理精要 https://draveness.me/golang-channel 5.Go modules 详解 http://objcoding.com/2018/09/13/go-modules/</description>
     </item>
     
     <item>
       <title>本周阅读清单20190128</title>
-      <link>https://tanteng.me/2019/02/reding-list-28/</link>
+      <link>https://tanteng.github.io/2019/02/reding-list-28/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
-      <guid>https://tanteng.me/2019/02/reding-list-28/</guid>
+      <guid>https://tanteng.github.io/2019/02/reding-list-28/</guid>
       <description>1.golang select-case 实现机制 https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-se</description>
     </item>
     
     <item>
       <title>本周阅读清单20190103</title>
-      <link>https://tanteng.me/2019/01/reding-list-27/</link>
+      <link>https://tanteng.github.io/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng.me/2019/01/reding-list-27/</guid>
-      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统&amp;#8211;Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
+      <guid>https://tanteng.github.io/2019/01/reding-list-27/</guid>
+      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统–Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
       <title>本周阅读清单20181210</title>
-      <link>https://tanteng.me/2019/01/reding-list-26/</link>
+      <link>https://tanteng.github.io/2019/01/reding-list-26/</link>
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
-      <guid>https://tanteng.me/2019/01/reding-list-26/</guid>
+      <guid>https://tanteng.github.io/2019/01/reding-list-26/</guid>
       <description>1.go 指针和内存分配详解 https://segmentfault.com/a/1190000017473672 2.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 3.[译]代码审查之最佳实践 https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ 4.WEB内容安全政策（CSP） https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn 5.如何学习分布式系统 https://www.cnblogs.com/xybaby/p/7787034.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20181123</title>
-      <link>https://tanteng.me/2018/12/reding-list-25/</link>
+      <link>https://tanteng.github.io/2018/12/reding-list-25/</link>
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/12/reding-list-25/</guid>
+      <guid>https://tanteng.github.io/2018/12/reding-list-25/</guid>
       <description>1.MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 2.Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html 3.golang后台服务设计精要 http://litang.me/post/golang-server-design/ 4.Go’s http package by example（总结很好）</description>
     </item>
     
     <item>
       <title>本周阅读清单20181112</title>
-      <link>https://tanteng.me/2018/11/reding-list-24/</link>
+      <link>https://tanteng.github.io/2018/11/reding-list-24/</link>
       <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/11/reding-list-24/</guid>
-      <description>1.腾讯云点播视频加密方案 https://cloud.tencent.com/document/product/266/9638 2.HTTP Live Streaming (HLS) &amp;#8211; 概念 https://www.jianshu.com/p/2ce402a485ca 3.RTMP HLS HTTP 直播协议一次看个够 https://www.jianshu.com/p/4c89b2c83e59 4.Golang并发原理及GPM调度策略（一） http://www.cnblogs.com/mokafamily/p/9975980.html 5.Go基础系列：互斥</description>
+      <guid>https://tanteng.github.io/2018/11/reding-list-24/</guid>
+      <description>1.腾讯云点播视频加密方案 https://cloud.tencent.com/document/product/266/9638 2.HTTP Live Streaming (HLS) – 概念 https://www.jianshu.com/p/2ce402a485ca 3.RTMP HLS HTTP 直播协议一次看个够 https://www.jianshu.com/p/4c89b2c83e59 4.Golang并发原理及GPM调度策略（一） http://www.cnblogs.com/mokafamily/p/9975980.html 5.Go基础系列：互斥</description>
     </item>
     
     <item>
       <title>本周阅读清单20181105</title>
-      <link>https://tanteng.me/2018/11/reding-list-23/</link>
+      <link>https://tanteng.github.io/2018/11/reding-list-23/</link>
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/11/reding-list-23/</guid>
+      <guid>https://tanteng.github.io/2018/11/reding-list-23/</guid>
       <description>1.Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ 2.Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access 3.CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f 4.Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e 5.govendor 使用 https://www.orztu.com/post/using-govendor/</description>
     </item>
     
     <item>
       <title>MySQL 字段为 NULL 的查询问题</title>
-      <link>https://tanteng.me/2018/10/mysql-select-null/</link>
+      <link>https://tanteng.github.io/2018/10/mysql-select-null/</link>
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/mysql-select-null/</guid>
-      <description>假设 MySQL 中某数据表 code 字段是可为 NULL ... AND code NOT IN () ... ... AND (code IS NULL or code NOT IN()) ... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to</description>
+      <guid>https://tanteng.github.io/2018/10/mysql-select-null/</guid>
+      <description>假设 MySQL 中某数据表 code 字段是可为 NULL 1 2 ...ANDcodeNOTIN()......AND(codeISNULLorcodeNOTIN())... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL’s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL = NULL is always</description>
     </item>
     
     <item>
       <title>本周阅读清单20181022</title>
-      <link>https://tanteng.me/2018/10/reding-list-22/</link>
+      <link>https://tanteng.github.io/2018/10/reding-list-22/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/reding-list-22/</guid>
+      <guid>https://tanteng.github.io/2018/10/reding-list-22/</guid>
       <description>1.Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html 2.What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 3.工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 4.What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 5.理解 UUID http://wsfdl.com/algorit</description>
     </item>
     
     <item>
       <title>本周阅读清单20181008</title>
-      <link>https://tanteng.me/2018/10/reding-list-21/</link>
+      <link>https://tanteng.github.io/2018/10/reding-list-21/</link>
       <pubDate>Tue, 23 Oct 2018 09:28:52 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/reding-list-21/</guid>
+      <guid>https://tanteng.github.io/2018/10/reding-list-21/</guid>
       <description>1.Laravel 中的 Pivot 表与多对多关系 https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html 2.Laravel 的 tap 函数用法 https://laravel-china.org/articles/3893/laravel-tap-usage 3.Laravel 5.5 模型关联 https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333 4.Laravel Collection “tap” Method https://laravel-news.com/collection-tap 5.goroutine同步方法总结 https://yq.aliyun.com/articles/649314 6.面向对象设计之里氏替换原则(</description>
     </item>
     
     <item>
       <title>HTTP 204 状态码</title>
-      <link>https://tanteng.me/2018/10/http-204/</link>
+      <link>https://tanteng.github.io/2018/10/http-204/</link>
       <pubDate>Fri, 19 Oct 2018 06:15:51 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/http-204/</guid>
+      <guid>https://tanteng.github.io/2018/10/http-204/</guid>
       <description>HTTP协议中 204 No Content 成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETa</description>
     </item>
     
     <item>
       <title>本周阅读清单20180924</title>
-      <link>https://tanteng.me/2018/10/reding-list-20/</link>
+      <link>https://tanteng.github.io/2018/10/reding-list-20/</link>
       <pubDate>Sat, 06 Oct 2018 14:28:23 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/reding-list-20/</guid>
+      <guid>https://tanteng.github.io/2018/10/reding-list-20/</guid>
       <description>1.iOS 中使用 Protocol Buffers https://blog.devzeng.com/blog/ios-protobuf.html 2.Laravel 模型事件实现原理 https://laravel-china.org/articles/5465/event-realization-principle-of-laravel-model 3.Install PEAR and PECL on Mac OS X https://jason.pureconcepts.net/2012/10/install-pear-pecl-mac-os-x/ 4.GNU Linux和Unix Darwin BSD等 https://www.jianshu.com/p/3fbc7f7dd302 5.编译器的工作过程 http://www.ruanyifeng.com/blog/2014/11/compiler.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20180903</title>
-      <link>https://tanteng.me/2018/09/reding-list-19/</link>
+      <link>https://tanteng.github.io/2018/09/reding-list-19/</link>
       <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/09/reding-list-19/</guid>
+      <guid>https://tanteng.github.io/2018/09/reding-list-19/</guid>
       <description>1.聊聊加密那点事——PHP加密最佳实践 https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice 2.etcd：从应用场景到实现原理的全方位解读 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle 3.大家的公司 Code Review 都是怎么做的？ https://www.zhihu.com/question/41089988 4.gRPC 和 restful 转换 https://github.com/grpc-ecosystem/grpc-gateway 5.</description>
     </item>
     
     <item>
       <title>Laravel 错误和异常处理用法</title>
-      <link>https://tanteng.me/2018/09/laravel-error-handing/</link>
+      <link>https://tanteng.github.io/2018/09/laravel-error-handing/</link>
       <pubDate>Sat, 15 Sep 2018 05:41:51 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/09/laravel-error-handing/</guid>
+      <guid>https://tanteng.github.io/2018/09/laravel-error-handing/</guid>
       <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Redis生产环境查看数据库键</title>
-      <link>https://tanteng.me/2018/09/redis-scan/</link>
+      <link>https://tanteng.github.io/2018/09/redis-scan/</link>
       <pubDate>Wed, 05 Sep 2018 14:17:03 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/09/redis-scan/</guid>
+      <guid>https://tanteng.github.io/2018/09/redis-scan/</guid>
       <description>如果要在redis生产环境服务器查看有哪些数据库键，当数据量特别大的时候，千万不要用 keys * ，这样会卡死，可以使用 scan 命令迭代。</description>
     </item>
     
     <item>
       <title>本周阅读清单20180827</title>
-      <link>https://tanteng.me/2018/09/reding-list-18/</link>
+      <link>https://tanteng.github.io/2018/09/reding-list-18/</link>
       <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/09/reding-list-18/</guid>
+      <guid>https://tanteng.github.io/2018/09/reding-list-18/</guid>
       <description>&lt;p&gt;1. Windows Subsystem for Linux 之体验&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;2. 探索 Laravel 里的加解密实现&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34;&gt;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;3. 用 JSON 构建 API 的标准指南&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel chunk 使用注意的问题</title>
-      <link>https://tanteng.me/2018/08/laravel-chunk-tip/</link>
+      <link>https://tanteng.github.io/2018/08/laravel-chunk-tip/</link>
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/08/laravel-chunk-tip/</guid>
-      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： User::where(&#39;approved&#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&#39;approved&#39; =&amp;amp;gt; 1]); } }); 原因在于第一次查询： select</description>
+      <guid>https://tanteng.github.io/2018/08/laravel-chunk-tip/</guid>
+      <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： 1 2 3 4 5 User::where(&amp;#39;approved&amp;#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&amp;#39;approved&amp;#39; =&amp;amp;gt; 1]); } }); 原因在于第一</description>
     </item>
     
     <item>
       <title>本周阅读清单20180730</title>
-      <link>https://tanteng.me/2018/08/reding-list-17/</link>
+      <link>https://tanteng.github.io/2018/08/reding-list-17/</link>
       <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/08/reding-list-17/</guid>
+      <guid>https://tanteng.github.io/2018/08/reding-list-17/</guid>
       <description>&lt;p&gt;1.PHP : 令人困惑的 strtotime&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34;&gt;http://www.laruence.com/2018/07/31/3188.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;2.彻底弄懂 Laravel 中间件原理&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;a href=&#34;https://blog.tanteng.me/2018/07/understand-laravel-middleware&#34;&gt;https://blog.tanteng.me/2018/07/understand-laravel-middleware&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;3.Redis 事务与 Redis Lua 脚本&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://techlog.cn/article/list/10183180&#34;&gt;http://techlog.cn/article/list/10183180&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;4.如何开发、本地测试、发布 Laravel 扩展包&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34;&gt;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 中为何不使用 blpop 取队列？</title>
-      <link>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</link>
+      <link>https://tanteng.github.io/2018/08/laravel-why-not-use-blpop/</link>
       <pubDate>Tue, 31 Jul 2018 17:18:21 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/08/laravel-why-not-use-blpop/</guid>
+      <guid>https://tanteng.github.io/2018/08/laravel-why-not-use-blpop/</guid>
       <description>&lt;p&gt;Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 中间件原理</title>
-      <link>https://tanteng.me/2018/07/understand-laravel-middleware/</link>
+      <link>https://tanteng.github.io/2018/07/understand-laravel-middleware/</link>
       <pubDate>Sun, 29 Jul 2018 16:25:08 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/understand-laravel-middleware/</guid>
+      <guid>https://tanteng.github.io/2018/07/understand-laravel-middleware/</guid>
       <description>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki</description>
     </item>
     
     <item>
       <title>本周阅读清单20180723</title>
-      <link>https://tanteng.me/2018/07/reding-list-16/</link>
+      <link>https://tanteng.github.io/2018/07/reding-list-16/</link>
       <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/reding-list-16/</guid>
+      <guid>https://tanteng.github.io/2018/07/reding-list-16/</guid>
       <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180716</title>
-      <link>https://tanteng.me/2018/07/reding-list-15/</link>
+      <link>https://tanteng.github.io/2018/07/reding-list-15/</link>
       <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/reding-list-15/</guid>
+      <guid>https://tanteng.github.io/2018/07/reding-list-15/</guid>
       <description>1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区</description>
     </item>
     
     <item>
       <title>本周阅读清单20180709</title>
-      <link>https://tanteng.me/2018/07/reding-list-14/</link>
+      <link>https://tanteng.github.io/2018/07/reding-list-14/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/reding-list-14/</guid>
+      <guid>https://tanteng.github.io/2018/07/reding-list-14/</guid>
       <description>1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20180702</title>
-      <link>https://tanteng.me/2018/07/reding-list-13/</link>
+      <link>https://tanteng.github.io/2018/07/reding-list-13/</link>
       <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/reding-list-13/</guid>
+      <guid>https://tanteng.github.io/2018/07/reding-list-13/</guid>
       <description>1.HTTP/2 服务器推送（server push）教程 https://juejin.im/entry/5a9e61cc518825556140c4f2 2.如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2 https://www.jianshu.com/p/52d86558ca57 3.深入理解 RESTful API 架构 https://mengkang.net/620.html 4.传统 Web 应用中的身份验证技术 https://insights.thoughtworks.cn/traditional-web-app-authentication/ 5.Web App Token 鉴权方案的</description>
     </item>
     
     <item>
       <title>本周阅读清单20180625</title>
-      <link>https://tanteng.me/2018/06/reding-list-12/</link>
+      <link>https://tanteng.github.io/2018/06/reding-list-12/</link>
       <pubDate>Fri, 29 Jun 2018 13:29:54 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/reding-list-12/</guid>
+      <guid>https://tanteng.github.io/2018/06/reding-list-12/</guid>
       <description>1.了解 Nginx 基本概念 http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/ 2.Redis 和 I/O 多路复用 https://draveness.me/redis-io-multiplexing 3.Redis 为什么使</description>
     </item>
     
     <item>
       <title>本周阅读清单20180619</title>
-      <link>https://tanteng.me/2018/06/reding-list-11/</link>
+      <link>https://tanteng.github.io/2018/06/reding-list-11/</link>
       <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/reding-list-11/</guid>
+      <guid>https://tanteng.github.io/2018/06/reding-list-11/</guid>
       <description>1.MySQL 索引背后的数据结构及算法原理 https://juejin.im/entry/591012d161ff4b006255b447 2.微信扫码登录原理 https://blog.csdn.net/qq_25827845/article/details/78823861 3.Redis 事务及 Watch 的实现原理 http://redisbook.readthedocs.io/en/latest/feature/transaction.html 4.Redis 事务到底是不是原子性的 https://blog.tanteng.me/2018/06/redis-transaction-atomic/ 5.LRU 缓存淘汰算法数据结构 https://zhuanlan.zhihu.com/p/34989978 6.Singleton Pattern in Go http://marcio.io/2015/07/singleton-pattern-in-go/</description>
     </item>
     
     <item>
       <title>Redis 的事务到底是不是原子性的</title>
-      <link>https://tanteng.me/2018/06/redis-transaction-atomic/</link>
+      <link>https://tanteng.github.io/2018/06/redis-transaction-atomic/</link>
       <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/redis-transaction-atomic/</guid>
+      <guid>https://tanteng.github.io/2018/06/redis-transaction-atomic/</guid>
       <description>ACID 中关于原子性的定义： 原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执</description>
     </item>
     
     <item>
       <title>本周阅读清单20180604</title>
-      <link>https://tanteng.me/2018/06/reding-list-10/</link>
+      <link>https://tanteng.github.io/2018/06/reding-list-10/</link>
       <pubDate>Mon, 18 Jun 2018 14:36:24 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/reding-list-10/</guid>
+      <guid>https://tanteng.github.io/2018/06/reding-list-10/</guid>
       <description>1.深入介绍 Golang 中的 bufio.Scanner https://zhuanlan.zhihu.com/p/37673679 2.Redis 的通信协议 http://redisdoc.com/topic/protocol.html 3.用 Redis 实现支持优先级的消息队列 https://www.cnblogs.com/laozhbook/p/redis_queue.html 4.Go HTTP 服务器编程基础 http://cizixs.com/2016/08/17/golang-http-server-side 5.你真的了解 gzip 吗？ https://zhuanlan.zhihu.com/p/24764131</description>
     </item>
     
     <item>
       <title>本周阅读清单20180528</title>
-      <link>https://tanteng.me/2018/06/reding-list-9/</link>
+      <link>https://tanteng.github.io/2018/06/reding-list-9/</link>
       <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/reding-list-9/</guid>
+      <guid>https://tanteng.github.io/2018/06/reding-list-9/</guid>
       <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
     </item>
     
     <item>
       <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
-      <link>https://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</link>
+      <link>https://tanteng.github.io/2018/05/php-qiniu-sdk-not-support-composer/</link>
       <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/05/php-qiniu-sdk-not-support-composer/</guid>
+      <guid>https://tanteng.github.io/2018/05/php-qiniu-sdk-not-support-composer/</guid>
       <description>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不</description>
     </item>
     
     <item>
       <title>本周阅读清单20180514</title>
-      <link>https://tanteng.me/2018/05/reding-list-8/</link>
+      <link>https://tanteng.github.io/2018/05/reding-list-8/</link>
       <pubDate>Sat, 26 May 2018 15:08:32 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/05/reding-list-8/</guid>
+      <guid>https://tanteng.github.io/2018/05/reding-list-8/</guid>
       <description>1.Go语言中的错误处理 http://ethancai.github.io/2017/12/29/Error-Handling-in-Go/ 2.深入理解 PHP opcode 优化 https://tech.youzan.com/understanding-opcode-optimization-in-php/ 3.基于timestamp和nonce的防止重放攻击方案 https://blog.csdn.net/koastal/article/details/53456696 4.一个防止重放攻击的 Laravel package https://github.com/ruogoo/replay-attack 5.理</description>
     </item>
     
     <item>
       <title>本周阅读清单20180507</title>
-      <link>https://tanteng.me/2018/05/reding-list-7/</link>
+      <link>https://tanteng.github.io/2018/05/reding-list-7/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/05/reding-list-7/</guid>
+      <guid>https://tanteng.github.io/2018/05/reding-list-7/</guid>
       <description>1.Golang CSP 并发模型 https://www.jianshu.com/p/36e246c6153d 2.深入理解 Go Channel http://legendtkl.com/2017/07/30/understanding-golang-channel/ 3.谈谈 HTTP/2 的协议协商机制 https://imququ.com/post/protocol-negotiation-in-http2.html 4.【重温】中本聪《比特币：一种点对点的电子现金系统》 https://zhuanlan.zhihu.com/p/28108862 5.详解区块链 P2P 网络 https://keeganlee.me/post/blockchain/20180313 6.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180430</title>
-      <link>https://tanteng.me/2018/05/reding-list-6/</link>
+      <link>https://tanteng.github.io/2018/05/reding-list-6/</link>
       <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/05/reding-list-6/</guid>
+      <guid>https://tanteng.github.io/2018/05/reding-list-6/</guid>
       <description>1.Learning Elasticsearch with Laravel https://michaelstivala.com/learning-elasticsearch-with-laravel/ 2.MQ(消息队列)常见的应用场景解析 https://juejin.im/post/5add63c951882567183eb956 3.WebSocket 通信过程与实现 https://segmentfault.com/a/1190000014643900 4.技术与贫富分化 http://www.ruanyifeng.com/blog/2010/08/technology_and_income_disparity.html 5.PHP HTTP客户端-Guzzle原理解析 https://segmentfault.com/p/1210000010203531/read 6.PHP扩</description>
     </item>
     
     <item>
       <title>Golang 统计字符串字数</title>
-      <link>https://tanteng.me/2018/05/golang-str-length/</link>
+      <link>https://tanteng.github.io/2018/05/golang-str-length/</link>
       <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/05/golang-str-length/</guid>
+      <guid>https://tanteng.github.io/2018/05/golang-str-length/</guid>
       <description>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家</description>
     </item>
     
     <item>
       <title>本周阅读清单20180423</title>
-      <link>https://tanteng.me/2018/04/reding-list/</link>
+      <link>https://tanteng.github.io/2018/04/reding-list/</link>
       <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/reding-list/</guid>
+      <guid>https://tanteng.github.io/2018/04/reding-list/</guid>
       <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求</description>
     </item>
     
     <item>
       <title>本周阅读清单20180416</title>
-      <link>https://tanteng.me/2018/04/reding-list-4/</link>
+      <link>https://tanteng.github.io/2018/04/reding-list-4/</link>
       <pubDate>Sun, 22 Apr 2018 06:33:16 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/reding-list-4/</guid>
+      <guid>https://tanteng.github.io/2018/04/reding-list-4/</guid>
       <description>1.缓存击穿、失效以及热点key问题 https://www.jianshu.com/p/d5a3668d4dad 2.用 Redis 构建分布式锁 http://ifeve.com/redis-lock/ 3.浅谈TCP/IP网络编程中socket的行为 https://www.cnblogs.com/promise6522/archive/2012/03/03/2377935.html 4.《深入理解计算机系统》（原</description>
     </item>
     
     <item>
       <title>本周阅读清单20180410</title>
-      <link>https://tanteng.me/2018/04/reding-list-3/</link>
+      <link>https://tanteng.github.io/2018/04/reding-list-3/</link>
       <pubDate>Tue, 10 Apr 2018 12:10:34 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/reding-list-3/</guid>
+      <guid>https://tanteng.github.io/2018/04/reding-list-3/</guid>
       <description>1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.</description>
     </item>
     
     <item>
       <title>PHP知识整理之——PHP基础、WEB安全、网络</title>
-      <link>https://tanteng.me/2018/04/php-2/</link>
+      <link>https://tanteng.github.io/2018/04/php-2/</link>
       <pubDate>Tue, 10 Apr 2018 03:11:14 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/php-2/</guid>
+      <guid>https://tanteng.github.io/2018/04/php-2/</guid>
       <description>&lt;p&gt;本篇文章是PHP知识系统整理系列之——PHP基础、WEB安全、网络，包括 PSR 规范，PHP7特性和性能提升，HTTP、HTTPS、TCP、WebSocket协议，WEB安全和计算机网络的内容。以及 PHP session 回收，php-fpm 调优，HTTP/2 等知识点。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>本周阅读清单20180402</title>
-      <link>https://tanteng.me/2018/04/reding-list-2/</link>
+      <link>https://tanteng.github.io/2018/04/reding-list-2/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
+      <guid>https://tanteng.github.io/2018/04/reding-list-2/</guid>
       <description>1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse</description>
     </item>
     
     <item>
       <title>PHP写时复制（Copy On Write）</title>
-      <link>https://tanteng.me/2018/03/php-cow/</link>
+      <link>https://tanteng.github.io/2018/03/php-cow/</link>
       <pubDate>Mon, 26 Mar 2018 14:04:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/03/php-cow/</guid>
-      <description>一个例子： &amp;lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在很多场景</description>
+      <guid>https://tanteng.github.io/2018/03/php-cow/</guid>
+      <description>一个例子： 1 2 3 4 &amp;lt;?php $foo = 1; $bar = $foo; echo $foo + $bar; 变量 $foo 赋值给变量 $bar，这两个变量具有相同的值，没有必要新申请内存空间，他们可以共享同一块内存。在</description>
     </item>
     
     <item>
       <title>本周阅读清单20180326</title>
-      <link>https://tanteng.me/2018/03/reding-list-5/</link>
+      <link>https://tanteng.github.io/2018/03/reding-list-5/</link>
       <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/03/reding-list-5/</guid>
+      <guid>https://tanteng.github.io/2018/03/reding-list-5/</guid>
       <description>1.Redis内存使用优化与存储 http://www.infoq.com/cn/articles/tq-redis-memory-usage-optimization-storage 2.一致性哈希算法及其在分布式系统中的应用 http://blog.codinglabs.org/articles/consistent-hashing.html 3.PHP写时复制（Copy On Write） http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write 4.Redis压缩</description>
     </item>
     
     <item>
       <title>一致性哈希算法及其在分布式系统中的应用</title>
-      <link>https://tanteng.me/2018/03/consistent-hashing/</link>
+      <link>https://tanteng.github.io/2018/03/consistent-hashing/</link>
       <pubDate>Thu, 01 Mar 2018 11:03:26 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/03/consistent-hashing/</guid>
+      <guid>https://tanteng.github.io/2018/03/consistent-hashing/</guid>
       <description>&lt;h1 id=&#34;摘要&#34;&gt;摘要&lt;/h1&gt;
-
 &lt;p&gt;本文将会从实际应用场景出发，介绍一致性哈希算法（Consistent Hashing）及其在分布式系统中的应用。首先本文会描述一个在日常开发中经常会遇到的问题场景，借此介绍一致性哈希算法以及这个算法如何解决此问题；接下来会对这个算法进行相对详细的描述，并讨论一些如虚拟节点等与此算法应用相关的话题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>为什么 Laravel 会重复执行同一个队列任务？</title>
-      <link>https://tanteng.me/2017/12/laravel-queue-excute/</link>
+      <link>https://tanteng.github.io/2017/12/laravel-queue-excute/</link>
       <pubDate>Sun, 24 Dec 2017 07:49:30 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/laravel-queue-excute/</guid>
+      <guid>https://tanteng.github.io/2017/12/laravel-queue-excute/</guid>
       <description>在 Laravel 中使用 Redis 处理队列任务，框架提供的功能非常强大，但是最近遇到一个问题，就是发现一个任务被多次执行，这是为什么呢？ 先说原因：因为在 Laravel 中如果一</description>
     </item>
     
     <item>
       <title>软件设计思想：先整体轮廓，再完善细节部分</title>
-      <link>https://tanteng.me/2017/12/software-design/</link>
+      <link>https://tanteng.github.io/2017/12/software-design/</link>
       <pubDate>Sat, 23 Dec 2017 15:56:30 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/software-design/</guid>
+      <guid>https://tanteng.github.io/2017/12/software-design/</guid>
       <description>&lt;p&gt;《画家与黑客》一书作者在谈到软件设计思想的时候很有启发，尤其是做需求，如果你一开始就纠结细节而看不到整体，你可能花费很多时间还达不到预期的效果。要先有一个整体的轮廓，再完善各个部分和细节，或做出调整，这样你一开始就掌握全局，这应该是正确的方式。作者拿了印刷，雕刻，绘画，油画等艺术领域的例子来说明软件开发也应该如此。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel Redis 多个进程同时取队列问题</title>
-      <link>https://tanteng.me/2017/12/laravel-supervisor-queue/</link>
+      <link>https://tanteng.github.io/2017/12/laravel-supervisor-queue/</link>
       <pubDate>Sat, 23 Dec 2017 11:26:19 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/laravel-supervisor-queue/</guid>
+      <guid>https://tanteng.github.io/2017/12/laravel-supervisor-queue/</guid>
       <description>&lt;p&gt;&lt;strong&gt;开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：&lt;/p&gt;
-
 &lt;p&gt;&lt;code class=&#34;lang:default decode:true&#34;&gt;[program:laravel-worker]
-process_name=%(program&lt;em&gt;name)s&lt;/em&gt;%(process_num)02d
+process_name=%(program_name)s_%(process_num)02d
 command=php /var/www/xxx.cn/artisan queue:work &amp;ndash;queue=sendfile &amp;ndash;tries=3 &amp;ndash;daemon
 autostart=true
 autorestart=true
@@ -542,436 +524,418 @@ numprocs=8
 redirect_stderr=true
 stdout_logfile=/var/www/xxx.cn/worker.log
 &lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL 数据库设计及性能优化Tips</title>
-      <link>https://tanteng.me/2017/12/mysql-optimize-tips/</link>
+      <link>https://tanteng.github.io/2017/12/mysql-optimize-tips/</link>
       <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/mysql-optimize-tips/</guid>
+      <guid>https://tanteng.github.io/2017/12/mysql-optimize-tips/</guid>
       <description>规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个</description>
     </item>
     
     <item>
       <title>使用 Laravel 消息队列要注意的问题</title>
-      <link>https://tanteng.me/2017/12/laravel-queue-tips/</link>
+      <link>https://tanteng.github.io/2017/12/laravel-queue-tips/</link>
       <pubDate>Mon, 11 Dec 2017 10:08:13 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/laravel-queue-tips/</guid>
+      <guid>https://tanteng.github.io/2017/12/laravel-queue-tips/</guid>
       <description>使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实</description>
     </item>
     
     <item>
       <title>Mac 上如何打开 /usr/local 路径的文件夹</title>
-      <link>https://tanteng.me/2017/11/mac-open-user-local/</link>
+      <link>https://tanteng.github.io/2017/11/mac-open-user-local/</link>
       <pubDate>Wed, 29 Nov 2017 14:56:23 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/11/mac-open-user-local/</guid>
+      <guid>https://tanteng.github.io/2017/11/mac-open-user-local/</guid>
       <description>在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式</description>
     </item>
     
     <item>
       <title>如何理解 Golang 的参数传递都是值传递？</title>
-      <link>https://tanteng.me/2017/11/golang-parameter-passing/</link>
+      <link>https://tanteng.github.io/2017/11/golang-parameter-passing/</link>
       <pubDate>Sun, 19 Nov 2017 12:22:01 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/11/golang-parameter-passing/</guid>
+      <guid>https://tanteng.github.io/2017/11/golang-parameter-passing/</guid>
       <description>&lt;p&gt;在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP-FPM,Nginx,FastCGI 之间的关系</title>
-      <link>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</link>
+      <link>https://tanteng.github.io/2017/11/nginx-fastcgi-php-fpm/</link>
       <pubDate>Thu, 09 Nov 2017 08:44:27 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/11/nginx-fastcgi-php-fpm/</guid>
+      <guid>https://tanteng.github.io/2017/11/nginx-fastcgi-php-fpm/</guid>
       <description>本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与</description>
     </item>
     
     <item>
       <title>PHP intval 转换浮点数精度丢失问题</title>
-      <link>https://tanteng.me/2017/10/php-intval-precision/</link>
+      <link>https://tanteng.github.io/2017/10/php-intval-precision/</link>
       <pubDate>Sun, 15 Oct 2017 08:15:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/10/php-intval-precision/</guid>
+      <guid>https://tanteng.github.io/2017/10/php-intval-precision/</guid>
       <description>&lt;p&gt;在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$n=&amp;quot;19.99&amp;quot;; print intval($n*100); // prints 1998
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$n=&amp;#34;19.99&amp;#34;; print intval($n*100); // prints 1998
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h3&gt;
 &lt;p&gt;1.转换成字符串再 intval&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print intval(strval($n*100)); // prints 1999
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;php -r &amp;quot;echo round(19.99*100);&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;intval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;strval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// prints 1999
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;2.使用 round 函数替代 floatval&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo round(19.99*100);&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>使用 Docker 搭建 Laravel 本地环境</title>
-      <link>https://tanteng.me/2017/10/docker-laravel-local-environment/</link>
+      <link>https://tanteng.github.io/2017/10/docker-laravel-local-environment/</link>
       <pubDate>Sat, 14 Oct 2017 11:28:48 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/10/docker-laravel-local-environment/</guid>
+      <guid>https://tanteng.github.io/2017/10/docker-laravel-local-environment/</guid>
       <description>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同</description>
     </item>
     
     <item>
       <title>服务器返回 502,503,504 原因及解决办法</title>
-      <link>https://tanteng.me/2017/10/503-service-unavailable/</link>
+      <link>https://tanteng.github.io/2017/10/503-service-unavailable/</link>
       <pubDate>Sun, 08 Oct 2017 14:44:08 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/10/503-service-unavailable/</guid>
+      <guid>https://tanteng.github.io/2017/10/503-service-unavailable/</guid>
       <description>&lt;h3 id=&#34;502-bad-gateway&#34;&gt;502 bad gateway&lt;/h3&gt;
-
 &lt;p&gt;问题原因：服务器作为网关或代理，从上游服务器收到无效响应。&lt;/p&gt;
-
 &lt;p&gt;nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>计算机的一些概念在生活中的场景</title>
-      <link>https://tanteng.me/2017/10/computer-concepts-in-life/</link>
+      <link>https://tanteng.github.io/2017/10/computer-concepts-in-life/</link>
       <pubDate>Sun, 08 Oct 2017 06:14:13 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/10/computer-concepts-in-life/</guid>
+      <guid>https://tanteng.github.io/2017/10/computer-concepts-in-life/</guid>
       <description>&lt;p&gt;计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP 调试函数 debug_backtrace</title>
-      <link>https://tanteng.me/2017/09/debug-backtrace-php/</link>
+      <link>https://tanteng.github.io/2017/09/debug-backtrace-php/</link>
       <pubDate>Mon, 11 Sep 2017 07:37:49 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/09/debug-backtrace-php/</guid>
-      <description>有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;amp;gt;game_id) {</description>
+      <guid>https://tanteng.github.io/2017/09/debug-backtrace-php/</guid>
+      <description>有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
       <title>Git 变基和合并</title>
-      <link>https://tanteng.me/2017/09/git-merge-rebase/</link>
+      <link>https://tanteng.github.io/2017/09/git-merge-rebase/</link>
       <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/09/git-merge-rebase/</guid>
+      <guid>https://tanteng.github.io/2017/09/git-merge-rebase/</guid>
       <description>变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操</description>
     </item>
     
     <item>
       <title>PHP 错误和异常处理</title>
-      <link>https://tanteng.me/2017/09/php-error-handle/</link>
+      <link>https://tanteng.github.io/2017/09/php-error-handle/</link>
       <pubDate>Sat, 02 Sep 2017 07:27:24 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/09/php-error-handle/</guid>
+      <guid>https://tanteng.github.io/2017/09/php-error-handle/</guid>
       <description>&lt;p&gt;关于 PHP 的错误和异常处理，总结如下。&lt;/p&gt;
-
-&lt;h3 id=&#34;1-设置-php-错误级别&#34;&gt;1.设置 PHP 错误级别&lt;/h3&gt;
-
+&lt;h3 id=&#34;1设置-php-错误级别&#34;&gt;1.设置 PHP 错误级别&lt;/h3&gt;
 &lt;p&gt;使用 &lt;span class=&#34;refname&#34;&gt;error_reporting&lt;/span&gt; — &lt;span class=&#34;dc-title&#34;&gt;设置应该报告何种 PHP 错误。&lt;/span&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang 中”泛型”的支持</title>
-      <link>https://tanteng.me/2017/08/golang-generic/</link>
+      <link>https://tanteng.github.io/2017/08/golang-generic/</link>
       <pubDate>Fri, 11 Aug 2017 10:14:10 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/08/golang-generic/</guid>
+      <guid>https://tanteng.github.io/2017/08/golang-generic/</guid>
       <description>Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola</description>
     </item>
     
     <item>
       <title>PHP发送HTTP请求的几种方式</title>
-      <link>https://tanteng.me/2017/07/php-curl-guzzlehttp/</link>
+      <link>https://tanteng.github.io/2017/07/php-curl-guzzlehttp/</link>
       <pubDate>Sat, 22 Jul 2017 06:02:45 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/07/php-curl-guzzlehttp/</guid>
+      <guid>https://tanteng.github.io/2017/07/php-curl-guzzlehttp/</guid>
       <description>&lt;p&gt;PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？&lt;/p&gt;
-
 &lt;p&gt;cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在 Laravel 中设置 Etag 缓存</title>
-      <link>https://tanteng.me/2017/05/laravel-etag-middleware/</link>
+      <link>https://tanteng.github.io/2017/05/laravel-etag-middleware/</link>
       <pubDate>Fri, 19 May 2017 04:51:35 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/05/laravel-etag-middleware/</guid>
+      <guid>https://tanteng.github.io/2017/05/laravel-etag-middleware/</guid>
       <description>&lt;p&gt;本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。&lt;/p&gt;
-
-&lt;h3 id=&#34;什么是-etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
-
+&lt;h3 id=&#34;什么是etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
 &lt;p&gt;Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。&lt;/p&gt;
-
 &lt;p&gt;浏览器根据状态码判断是否缓存过期。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</title>
-      <link>https://tanteng.me/2017/05/linux-clear-cache-buffer/</link>
+      <link>https://tanteng.github.io/2017/05/linux-clear-cache-buffer/</link>
       <pubDate>Thu, 18 May 2017 08:23:10 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/05/linux-clear-cache-buffer/</guid>
+      <guid>https://tanteng.github.io/2017/05/linux-clear-cache-buffer/</guid>
       <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html</description>
     </item>
     
     <item>
       <title>Golang append slice to slice</title>
-      <link>https://tanteng.me/2017/05/golang-append-slice-to-slice/</link>
+      <link>https://tanteng.github.io/2017/05/golang-append-slice-to-slice/</link>
       <pubDate>Wed, 10 May 2017 07:11:22 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/05/golang-append-slice-to-slice/</guid>
+      <guid>https://tanteng.github.io/2017/05/golang-append-slice-to-slice/</guid>
       <description>&lt;p&gt;把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。&lt;/p&gt;
-
 &lt;p&gt;片段1：&lt;/p&gt;
-
 &lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;s0 := []interface{}{1, 100, 122}
 s1 := []interface{}{3, 4, 5, 6}
 s0 = append(s0, s1)
-fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&lt;/code&gt;&lt;/p&gt;
-
+fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;此时 s0 结果：result: [1 100 122 [3 4 5 6]]&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Shell 脚本请求 url 判断状态码</title>
-      <link>https://tanteng.me/2017/05/shell-check-url/</link>
+      <link>https://tanteng.github.io/2017/05/shell-check-url/</link>
       <pubDate>Tue, 02 May 2017 03:05:16 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/05/shell-check-url/</guid>
-      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： #!/bin/bash fileurl=&#39;./check_url.txt&#39; DATE_N=`date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do # -o 输出内容到/dev/null; -s 静默方</description>
+      <guid>https://tanteng.github.io/2017/05/shell-check-url/</guid>
+      <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #!/bin/bash fileurl=&amp;#39;./check_url.txt&amp;#39; DATE_N=`date &amp;#34;+%Y-%m-%d %H:%M:%S&amp;#34;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do #</description>
     </item>
     
     <item>
       <title>netstat 命令统计 tcp 各状态数量</title>
-      <link>https://tanteng.me/2017/04/netstat-tcp-state/</link>
+      <link>https://tanteng.github.io/2017/04/netstat-tcp-state/</link>
       <pubDate>Fri, 28 Apr 2017 03:37:31 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/04/netstat-tcp-state/</guid>
-      <description>统计 tcp 各种状态的个数： netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; 结果： [nobody@test14439 ~]$ netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CLOSED：无</description>
+      <guid>https://tanteng.github.io/2017/04/netstat-tcp-state/</guid>
+      <description>统计 tcp 各种状态的个数： 1 netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL</description>
     </item>
     
     <item>
       <title>Nginx 报错和解决方法记录</title>
-      <link>https://tanteng.me/2017/04/nginx-permission-denied/</link>
+      <link>https://tanteng.github.io/2017/04/nginx-permission-denied/</link>
       <pubDate>Wed, 19 Apr 2017 07:49:24 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/04/nginx-permission-denied/</guid>
+      <guid>https://tanteng.github.io/2017/04/nginx-permission-denied/</guid>
       <description>&lt;p&gt;记录一下遇到的各种 Nginx 的报错和解决办法。&lt;/p&gt;
-
 &lt;h3 id=&#34;13-permission-denied&#34;&gt;13: Permission denied&lt;/h3&gt;
-
 &lt;p&gt;Nginx错误：&lt;/p&gt;
-
-&lt;p&gt;2017/04/19 14:46:46 [crit] 4172#0: *671 open() &amp;#8220;/data/vhosts/xunlei.com/test/&amp;#8221; failed (13: Permission denied), client: 192.168.35.54, server: www.test.com, request: &amp;#8220;GET / HTTP/1.1&amp;#8221;, host: &amp;#8220;www.test.com&amp;#8221;&lt;/p&gt;
-
+&lt;p&gt;2017/04/19 14:46:46 [crit] 4172#0: *671 open() “/data/vhosts/xunlei.com/test/” failed (13: Permission denied), client: 192.168.35.54, server: &lt;a href=&#34;https://www.test.com&#34;&gt;www.test.com&lt;/a&gt;, request: “GET / HTTP/1.1”, host: “www.test.com”&lt;/p&gt;
 &lt;p&gt;经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>韩天峰：2017 年 PHP 程序员未来路在何方</title>
-      <link>https://tanteng.me/2017/03/2017-php-way/</link>
+      <link>https://tanteng.github.io/2017/03/2017-php-way/</link>
       <pubDate>Fri, 31 Mar 2017 07:58:23 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/03/2017-php-way/</guid>
+      <guid>https://tanteng.github.io/2017/03/2017-php-way/</guid>
       <description>&lt;p&gt;PHP 从诞生到现在已经有20多年历史，从Web时代兴起到移动互联网退潮，互联网领域各种编程语言和技术层出不穷， Node.js 、 GO 、 Python 不断地在挑战 PHP 的地位。这些技术的推动者非常热衷于唱衰 PHP ， PHP 语言的未来在哪里？PHP 程序员当如何应对未来的变革？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>VirtualBox启动蓝屏问题</title>
-      <link>https://tanteng.me/2017/03/virtualbox-blue-screen/</link>
+      <link>https://tanteng.github.io/2017/03/virtualbox-blue-screen/</link>
       <pubDate>Fri, 24 Mar 2017 11:18:09 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/03/virtualbox-blue-screen/</guid>
+      <guid>https://tanteng.github.io/2017/03/virtualbox-blue-screen/</guid>
       <description>用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox</description>
     </item>
     
     <item>
       <title>登录重放攻击及安全防御</title>
-      <link>https://tanteng.me/2017/02/login-replay-attacks/</link>
+      <link>https://tanteng.github.io/2017/02/login-replay-attacks/</link>
       <pubDate>Wed, 01 Feb 2017 04:59:01 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/02/login-replay-attacks/</guid>
+      <guid>https://tanteng.github.io/2017/02/login-replay-attacks/</guid>
       <description>现在的应用系统中，大部分密码存储都是采用md5加密后存储，常用的登录基本流程如下： 1、前端web页面用户输入账号、密码，点击登录。 2、请求提</description>
     </item>
     
     <item>
       <title>MySQL大表加字段思路</title>
-      <link>https://tanteng.me/2017/01/mysql-alter-table-big-data/</link>
+      <link>https://tanteng.github.io/2017/01/mysql-alter-table-big-data/</link>
       <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/01/mysql-alter-table-big-data/</guid>
+      <guid>https://tanteng.github.io/2017/01/mysql-alter-table-big-data/</guid>
       <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;ldquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;rsquo;&amp;rsquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</title>
-      <link>https://tanteng.me/2017/01/linux-postfix-maildrop/</link>
+      <link>https://tanteng.github.io/2017/01/linux-postfix-maildrop/</link>
       <pubDate>Sat, 14 Jan 2017 05:52:21 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/01/linux-postfix-maildrop/</guid>
+      <guid>https://tanteng.github.io/2017/01/linux-postfix-maildrop/</guid>
       <description>&lt;p&gt;MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Supervisor 管理 Laravel 队列进程</title>
-      <link>https://tanteng.me/2017/01/supervisor-laravel-queue/</link>
+      <link>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</link>
       <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/01/supervisor-laravel-queue/</guid>
+      <guid>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>window.location.reload()和window.location.href=””的区别</title>
-      <link>https://tanteng.me/2016/12/window-location-reload-and-href/</link>
+      <link>https://tanteng.github.io/2016/12/window-location-reload-and-href/</link>
       <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/window-location-reload-and-href/</guid>
-      <description>&lt;p&gt;window.location.reload() 和 window.location.href=&amp;#8221;&amp;#8221; 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
-
+      <guid>https://tanteng.github.io/2016/12/window-location-reload-and-href/</guid>
+      <description>&lt;p&gt;window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-11348 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; alt=&#34;window.location.reload()和window.location.href=&#39;&#39;的区别&#34; width=&#34;368&#34; height=&#34;207&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 5.3 后台管理系统搭建</title>
-      <link>https://tanteng.me/2016/12/laravel-admin-install/</link>
+      <link>https://tanteng.github.io/2016/12/laravel-admin-install/</link>
       <pubDate>Sat, 24 Dec 2016 07:13:14 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/laravel-admin-install/</guid>
+      <guid>https://tanteng.github.io/2016/12/laravel-admin-install/</guid>
       <description>&lt;p&gt;网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Nginx 反向代理和负载均衡搭建多人测试环境</title>
-      <link>https://tanteng.me/2016/12/nginx-test-environment/</link>
+      <link>https://tanteng.github.io/2016/12/nginx-test-environment/</link>
       <pubDate>Sat, 17 Dec 2016 06:19:44 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/nginx-test-environment/</guid>
-      <description>&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-11120&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg&#34; alt=&#34;&#34; width=&#34;1328&#34; height=&#34;874&#34; /&gt;&lt;/p&gt;
-
+      <guid>https://tanteng.github.io/2016/12/nginx-test-environment/</guid>
+      <description>&lt;img class=&#34;alignnone size-full wp-image-11120&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg&#34; alt=&#34;&#34; width=&#34;1328&#34; height=&#34;874&#34; /&gt;
 &lt;p&gt;假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阅读与心智的成长</title>
-      <link>https://tanteng.me/2016/12/reading-and-maturing-personalities/</link>
+      <link>https://tanteng.github.io/2016/12/reading-and-maturing-personalities/</link>
       <pubDate>Mon, 05 Dec 2016 13:31:46 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/reading-and-maturing-personalities/</guid>
+      <guid>https://tanteng.github.io/2016/12/reading-and-maturing-personalities/</guid>
       <description>&lt;p&gt;以下摘自《如何阅读一本书》第二十一章。&lt;/p&gt;
-
 &lt;p&gt;我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;所谓主动的阅读，也就是能提出问题来。&lt;/strong&gt;我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。&lt;/p&gt;</description>
+&lt;p&gt;**所谓主动的阅读，也就是能提出问题来。**我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 使用 env 读取环境变量为 null 的问题</title>
-      <link>https://tanteng.me/2016/12/laravel-env-null/</link>
+      <link>https://tanteng.github.io/2016/12/laravel-env-null/</link>
       <pubDate>Sun, 04 Dec 2016 15:35:18 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/laravel-env-null/</guid>
+      <guid>https://tanteng.github.io/2016/12/laravel-env-null/</guid>
       <description>&lt;p&gt;不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。&lt;/p&gt;
-
 &lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP捕捉异常中断</title>
-      <link>https://tanteng.me/2016/09/register-shutdown-function/</link>
+      <link>https://tanteng.github.io/2016/09/register-shutdown-function/</link>
       <pubDate>Wed, 28 Sep 2016 09:31:50 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/09/register-shutdown-function/</guid>
+      <guid>https://tanteng.github.io/2016/09/register-shutdown-function/</guid>
       <description>&lt;p&gt;当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>vim常用操作</title>
-      <link>https://tanteng.me/2016/09/vim-syntax/</link>
+      <link>https://tanteng.github.io/2016/09/vim-syntax/</link>
       <pubDate>Wed, 21 Sep 2016 14:06:02 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/09/vim-syntax/</guid>
+      <guid>https://tanteng.github.io/2016/09/vim-syntax/</guid>
       <description>&lt;p&gt;vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Let’s Encrypt 开启多域名 HTTPS</title>
-      <link>https://tanteng.me/2016/09/lets-encrypt-multi-domain-https/</link>
+      <link>https://tanteng.github.io/2016/09/lets-encrypt-multi-domain-https/</link>
       <pubDate>Mon, 12 Sep 2016 11:26:47 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/09/lets-encrypt-multi-domain-https/</guid>
+      <guid>https://tanteng.github.io/2016/09/lets-encrypt-multi-domain-https/</guid>
       <description>上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问</description>
     </item>
     
     <item>
       <title>Laravel 分割 routes.php 路由文件的一种方式</title>
-      <link>https://tanteng.me/2016/08/laravel-routes-map/</link>
+      <link>https://tanteng.github.io/2016/08/laravel-routes-map/</link>
       <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/08/laravel-routes-map/</guid>
+      <guid>https://tanteng.github.io/2016/08/laravel-routes-map/</guid>
       <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
     </item>
     
     <item>
       <title>常用Linux操作数据库命令及MySQL语句</title>
-      <link>https://tanteng.me/2016/06/mysql-command/</link>
+      <link>https://tanteng.github.io/2016/06/mysql-command/</link>
       <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/mysql-command/</guid>
+      <guid>https://tanteng.github.io/2016/06/mysql-command/</guid>
       <description>&lt;p&gt;以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。&lt;/p&gt;
-
 &lt;h3 id=&#34;数据库表导入&#34;&gt;数据库表导入&lt;/h3&gt;
-
 &lt;p&gt;恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：&lt;/p&gt;
-
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true &#34;&gt;mysql -uroot -p tanteng.me  &amp;lt; mobile_promote.sql&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>jQuery操作iframe页面DOM</title>
-      <link>https://tanteng.me/2016/06/jquery-iframe/</link>
+      <link>https://tanteng.github.io/2016/06/jquery-iframe/</link>
       <pubDate>Fri, 03 Jun 2016 11:36:36 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/jquery-iframe/</guid>
+      <guid>https://tanteng.github.io/2016/06/jquery-iframe/</guid>
       <description>&lt;p&gt;如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-10135&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; alt=&#34;jquery_iframe&#34; width=&#34;1092&#34; height=&#34;514&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL查看数据库大小</title>
-      <link>https://tanteng.me/2016/06/mysql-data-length/</link>
+      <link>https://tanteng.github.io/2016/06/mysql-data-length/</link>
       <pubDate>Fri, 03 Jun 2016 11:24:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/mysql-data-length/</guid>
+      <guid>https://tanteng.github.io/2016/06/mysql-data-length/</guid>
       <description>&lt;p&gt;1、进入information_schema 数据库（存放了其他的数据库的信息）&lt;/p&gt;
-
 &lt;p&gt;use information_schema;&lt;/p&gt;
-
 &lt;p&gt;2、查询所有数据的大小：&lt;/p&gt;
-
-&lt;p&gt;select concat(round(sum(data_length/1024/1024),2),&amp;#8217;MB&amp;#8217;) as data from tables;&lt;/p&gt;</description>
+&lt;p&gt;select concat(round(sum(data_length/1024/1024),2),’MB’) as data from tables;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP 7安装和开启opcache</title>
-      <link>https://tanteng.me/2016/06/php7-opcache/</link>
+      <link>https://tanteng.github.io/2016/06/php7-opcache/</link>
       <pubDate>Thu, 02 Jun 2016 16:20:20 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/php7-opcache/</guid>
+      <guid>https://tanteng.github.io/2016/06/php7-opcache/</guid>
       <description>&lt;p&gt;鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -979,317 +943,286 @@ fmt.Println(&amp;ldquo;result:&amp;ldquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     
     <item>
       <title>优化 Laravel 网站打开速度</title>
-      <link>https://tanteng.me/2016/06/laravel-optimize/</link>
+      <link>https://tanteng.github.io/2016/06/laravel-optimize/</link>
       <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/laravel-optimize/</guid>
+      <guid>https://tanteng.github.io/2016/06/laravel-optimize/</guid>
       <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
     </item>
     
     <item>
       <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>https://tanteng.me/2016/04/vagrantfile-synced-folder/</link>
+      <link>https://tanteng.github.io/2016/04/vagrantfile-synced-folder/</link>
       <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/04/vagrantfile-synced-folder/</guid>
+      <guid>https://tanteng.github.io/2016/04/vagrantfile-synced-folder/</guid>
       <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx开启SSI</title>
-      <link>https://tanteng.me/2016/04/nginx-ssi/</link>
+      <link>https://tanteng.github.io/2016/04/nginx-ssi/</link>
       <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/04/nginx-ssi/</guid>
+      <guid>https://tanteng.github.io/2016/04/nginx-ssi/</guid>
       <description>&lt;p&gt;在一个HTML页面中发现一段这样的代码：&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;&amp;lt;!--#include virtual=&amp;quot;/new/ssi/script.html&amp;quot;--&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>常用的CentOS 7 yum源集合</title>
-      <link>https://tanteng.me/2016/03/centos-7-repo/</link>
+      <link>https://tanteng.github.io/2016/03/centos-7-repo/</link>
       <pubDate>Thu, 31 Mar 2016 09:40:55 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/centos-7-repo/</guid>
+      <guid>https://tanteng.github.io/2016/03/centos-7-repo/</guid>
       <description>&lt;p&gt;记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP-FPM性能优化参考</title>
-      <link>https://tanteng.me/2016/03/php-fpm-conf/</link>
+      <link>https://tanteng.github.io/2016/03/php-fpm-conf/</link>
       <pubDate>Tue, 29 Mar 2016 16:55:16 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/php-fpm-conf/</guid>
+      <guid>https://tanteng.github.io/2016/03/php-fpm-conf/</guid>
       <description>&lt;p&gt;转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。&lt;/p&gt;
-
 &lt;p&gt;php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL数据库性能优化之缓存参数设置</title>
-      <link>https://tanteng.me/2016/03/innodb_buffer_pool_size/</link>
+      <link>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</link>
       <pubDate>Mon, 28 Mar 2016 04:02:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/innodb_buffer_pool_size/</guid>
+      <guid>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</guid>
       <description>&lt;p&gt;网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx性能调优之buffer参数设置</title>
-      <link>https://tanteng.me/2016/03/nginx-buffer-params/</link>
+      <link>https://tanteng.github.io/2016/03/nginx-buffer-params/</link>
       <pubDate>Sun, 27 Mar 2016 10:07:51 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/nginx-buffer-params/</guid>
+      <guid>https://tanteng.github.io/2016/03/nginx-buffer-params/</guid>
       <description>&lt;p&gt;打开Nginx的error.log日志文件，发现很多warn的警告错误，提示：&lt;/p&gt;
-
 &lt;p&gt;①2016/03/25 13:18:35 [warn] 1171#0: *10875 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/0/08/0000000080 while reading upstream, client: 106.38.241.105, server: blog.tanteng.me, request: “GET /page/38/ HTTP/1.1”, upstream: “fastcgi://127.0.0.1:9000”, host: “blog.tanteng.me”.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Redis未授权访问漏洞</title>
-      <link>https://tanteng.me/2016/03/redis-6379-safe/</link>
+      <link>https://tanteng.github.io/2016/03/redis-6379-safe/</link>
       <pubDate>Mon, 21 Mar 2016 06:07:24 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/redis-6379-safe/</guid>
+      <guid>https://tanteng.github.io/2016/03/redis-6379-safe/</guid>
       <description>&lt;p&gt;在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>rm 、 git rm –cached 和 git rm 的区别</title>
-      <link>https://tanteng.me/2016/02/git-rm-cached-diff/</link>
+      <link>https://tanteng.github.io/2016/02/git-rm-cached-diff/</link>
       <pubDate>Thu, 18 Feb 2016 09:03:14 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/02/git-rm-cached-diff/</guid>
+      <guid>https://tanteng.github.io/2016/02/git-rm-cached-diff/</guid>
       <description>1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件</description>
     </item>
     
     <item>
       <title>MySQL 字符串字段转换 crc32 建索引提高查询效率</title>
-      <link>https://tanteng.me/2016/02/crc32-mysql-index/</link>
+      <link>https://tanteng.github.io/2016/02/crc32-mysql-index/</link>
       <pubDate>Mon, 01 Feb 2016 01:29:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/02/crc32-mysql-index/</guid>
+      <guid>https://tanteng.github.io/2016/02/crc32-mysql-index/</guid>
       <description>&lt;p&gt;给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。&lt;/p&gt;
-
 &lt;p&gt;crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>查询数据库重复记录sql</title>
-      <link>https://tanteng.me/2016/01/repeat-group-having/</link>
+      <link>https://tanteng.github.io/2016/01/repeat-group-having/</link>
       <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/01/repeat-group-having/</guid>
+      <guid>https://tanteng.github.io/2016/01/repeat-group-having/</guid>
       <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
     </item>
     
     <item>
       <title>Composer的自动加载机制</title>
-      <link>https://tanteng.me/2015/12/composer-autoload/</link>
+      <link>https://tanteng.github.io/2015/12/composer-autoload/</link>
       <pubDate>Thu, 24 Dec 2015 15:41:16 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/12/composer-autoload/</guid>
+      <guid>https://tanteng.github.io/2015/12/composer-autoload/</guid>
       <description>&lt;p&gt;如项目下的composer.json文件中有autoload的定义：&lt;/p&gt;
-
 &lt;p&gt;&lt;code class=&#34;lang:php decode:true &#34;&gt;&amp;ldquo;autoload&amp;rdquo;: {
-        &amp;ldquo;classmap&amp;rdquo;: [
-            &amp;ldquo;database&amp;rdquo;
-        ],
-        &amp;ldquo;psr-4&amp;rdquo;: {
-            &amp;ldquo;GrahamCampbell\BootstrapCMS\&amp;ldquo;: &amp;ldquo;app/&amp;rdquo;
-        }
-    },&lt;/code&gt;&lt;/p&gt;
-
+&amp;ldquo;classmap&amp;rdquo;: [
+&amp;ldquo;database&amp;rdquo;
+],
+&amp;ldquo;psr-4&amp;rdquo;: {
+&amp;ldquo;GrahamCampbell\BootstrapCMS\&amp;rdquo;: &amp;ldquo;app/&amp;rdquo;
+}
+},&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Mac终端git命令提示错误:missing xcrun</title>
-      <link>https://tanteng.me/2015/11/mac-git-missing-xcrun/</link>
+      <link>https://tanteng.github.io/2015/11/mac-git-missing-xcrun/</link>
       <pubDate>Sun, 08 Nov 2015 07:56:52 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/11/mac-git-missing-xcrun/</guid>
-      <description>&lt;p&gt;在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can&amp;#8217;t start Git，点击&amp;#8221;fix it&amp;#8221;, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：&lt;/p&gt;
-
+      <guid>https://tanteng.github.io/2015/11/mac-git-missing-xcrun/</guid>
+      <description>&lt;p&gt;在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can’t start Git，点击”fix it”, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：&lt;/p&gt;
 &lt;p&gt;xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>初识PHP Static延迟静态绑定</title>
-      <link>https://tanteng.me/2015/05/php-static-bind/</link>
+      <link>https://tanteng.github.io/2015/05/php-static-bind/</link>
       <pubDate>Wed, 27 May 2015 03:38:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/05/php-static-bind/</guid>
+      <guid>https://tanteng.github.io/2015/05/php-static-bind/</guid>
       <description>&lt;p&gt;PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;class A&lt;br /&gt;
-{&lt;br /&gt;
-    public static function echoClass(){&lt;br /&gt;
-        echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
-    }&lt;/p&gt;
-
+&lt;p&gt;&lt;code&gt;class A&lt;br&gt;
+{&lt;br&gt;
+public static function echoClass(){&lt;br&gt;
+echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br&gt;
+}&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;public static function test(){  
     self::echoClass();        
 }
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;class B extends A&lt;br /&gt;
-{&lt;br /&gt;
-    public static function echoClass()&lt;br /&gt;
-    {&lt;br /&gt;
-         echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br /&gt;
-    }&lt;br /&gt;
+&lt;p&gt;class B extends A&lt;br&gt;
+{     &lt;br&gt;
+public static function echoClass()&lt;br&gt;
+{&lt;br&gt;
+echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br&gt;
+}&lt;br&gt;
 }&lt;/p&gt;
-
 &lt;p&gt;B::test(); //输出A&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP 开发者该知道的 5 个 Composer 小技巧</title>
-      <link>https://tanteng.me/2015/05/php-composer/</link>
+      <link>https://tanteng.github.io/2015/05/php-composer/</link>
       <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/05/php-composer/</guid>
+      <guid>https://tanteng.github.io/2015/05/php-composer/</guid>
       <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
     </item>
     
     <item>
       <title>昨夜梦见的美景</title>
-      <link>https://tanteng.me/2015/03/beautiful-scenery-in-dream/</link>
+      <link>https://tanteng.github.io/2015/03/beautiful-scenery-in-dream/</link>
       <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2015/03/beautiful-scenery-in-dream/</guid>
+      <guid>https://tanteng.github.io/2015/03/beautiful-scenery-in-dream/</guid>
       <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有</description>
     </item>
     
     <item>
       <title>乔布斯13条箴言</title>
-      <link>https://tanteng.me/2013/10/jobs-proverbs/</link>
+      <link>https://tanteng.github.io/2013/10/jobs-proverbs/</link>
       <pubDate>Mon, 21 Oct 2013 12:29:52 +0000</pubDate>
       
-      <guid>https://tanteng.me/2013/10/jobs-proverbs/</guid>
+      <guid>https://tanteng.github.io/2013/10/jobs-proverbs/</guid>
       <description>乔布斯是一个无与伦比的演讲者与推销者，在他56岁的生命中，说过的金句比以下Business Insider网站列出的13条要多得多——有些甚至</description>
     </item>
     
     <item>
       <title>PHP：PDO prepare预处理</title>
-      <link>https://tanteng.me/2012/09/php-pdo-prepare/</link>
+      <link>https://tanteng.github.io/2012/09/php-pdo-prepare/</link>
       <pubDate>Sun, 30 Sep 2012 04:03:39 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/09/php-pdo-prepare/</guid>
+      <guid>https://tanteng.github.io/2012/09/php-pdo-prepare/</guid>
       <description>&lt;p&gt;许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：&lt;/p&gt;
-
 &lt;p&gt;查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>10条Steve Jobs的经典语录</title>
-      <link>https://tanteng.me/2012/09/10-golden-lessons-from-steve-jobs/</link>
+      <link>https://tanteng.github.io/2012/09/10-golden-lessons-from-steve-jobs/</link>
       <pubDate>Thu, 27 Sep 2012 02:35:18 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/09/10-golden-lessons-from-steve-jobs/</guid>
+      <guid>https://tanteng.github.io/2012/09/10-golden-lessons-from-steve-jobs/</guid>
       <description>&lt;p&gt;&lt;span style=&#34;color: #888888;&#34;&gt;&lt;strong&gt;史蒂夫·乔布斯经典语录&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;span style=&#34;color: #888888;&#34;&gt;&lt;strong&gt; 10 Golden Lessons From Steve Jobs&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
 &lt;p&gt;他的成就和人格魅力影响了一代人和整个世界，他就是拥有梦幻般传奇经历的苹果电脑公司的创始人斯蒂夫·乔布斯。这个个人电脑领域的梦想家引领并改变了整个计算机硬件和软件产业。&lt;/p&gt;
-
 &lt;p&gt;这个精力充沛魅力无限的家伙同时也是一个很会鼓动人心的激励大师，甚至在他的平常对话中，经典的语句也常常脱口而出。这里摘取了一些他的经典语录，希望这些乔氏语录对你有所帮助：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>深入理解 PHP 中 session 和 cookies 的联系</title>
-      <link>https://tanteng.me/2012/09/php-session-cookies/</link>
+      <link>https://tanteng.github.io/2012/09/php-session-cookies/</link>
       <pubDate>Wed, 26 Sep 2012 01:46:43 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/09/php-session-cookies/</guid>
+      <guid>https://tanteng.github.io/2012/09/php-session-cookies/</guid>
       <description>&lt;p&gt;1. session概念&lt;/p&gt;
-
 &lt;p&gt;2. http协议与状态保持&lt;/p&gt;
-
 &lt;p&gt;3. 理解cookie&lt;/p&gt;
-
 &lt;p&gt;4. php中session的生成机制&lt;/p&gt;
-
 &lt;p&gt;5. php中session的过期回收机制&lt;/p&gt;
-
 &lt;p&gt;6. php中session的客户端存储机制&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP对象在内存堆栈中的分配</title>
-      <link>https://tanteng.me/2012/09/stack-php/</link>
+      <link>https://tanteng.github.io/2012/09/stack-php/</link>
       <pubDate>Sun, 09 Sep 2012 07:54:05 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/09/stack-php/</guid>
+      <guid>https://tanteng.github.io/2012/09/stack-php/</guid>
       <description>&lt;p&gt;对象在PHP里面和整型、浮点型一样，也是一种数据类，都是存储不同类型数据用的， 在运行的时候都要加载到内存中去用，那么对象在内存里面是怎么体现的呢？内存从逻辑上说大体上是分为4段，&lt;strong&gt;栈空间段、堆空间段、代码段、初始化静态段&lt;/strong&gt;，程序里面不同的声明放在不同的内存段里面。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;数据段&lt;/strong&gt;（data segment）通常是指用来存放程序中已初始化且不为0的全局变量如：静态变量和常量&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;代码段&lt;/strong&gt;（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法&lt;/p&gt;
-
 &lt;p&gt;**&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux发明人《Linus Torvalds自传》摘录</title>
-      <link>https://tanteng.me/2012/09/linus-torvalds/</link>
+      <link>https://tanteng.github.io/2012/09/linus-torvalds/</link>
       <pubDate>Tue, 04 Sep 2012 16:07:50 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/09/linus-torvalds/</guid>
+      <guid>https://tanteng.github.io/2012/09/linus-torvalds/</guid>
       <description>除了程序员，大概很少人知道Linux操作系统。 它的发明者Linus Torvalds，知道的人就更少了。 他本人也很低调，深居简出，很少出席公众</description>
     </item>
     
     <item>
       <title>内心平静下来——找到直觉</title>
-      <link>https://tanteng.me/2012/08/intuition/</link>
+      <link>https://tanteng.github.io/2012/08/intuition/</link>
       <pubDate>Tue, 14 Aug 2012 05:19:53 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/08/intuition/</guid>
+      <guid>https://tanteng.github.io/2012/08/intuition/</guid>
       <description>Coming back to America was, for me, much more of a cultural shock than going to India. The people in the Indian countryside don’t use their intellect like we do, they use their intuition instead, and their intuition is far more developed than in the rest of the world. Intuition is a very powerful thing, more powerful than intellect, in my opinion. That</description>
     </item>
     
     <item>
       <title>记住自己即将死去——追随内心</title>
-      <link>https://tanteng.me/2012/08/follow-your-heart/</link>
+      <link>https://tanteng.github.io/2012/08/follow-your-heart/</link>
       <pubDate>Tue, 14 Aug 2012 05:10:00 +0000</pubDate>
       
-      <guid>https://tanteng.me/2012/08/follow-your-heart/</guid>
+      <guid>https://tanteng.github.io/2012/08/follow-your-heart/</guid>
       <description>Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life. Because almost everything—all external expectations, all pride, all fear of embarrassment or failure—these things just fall</description>
     </item>
     
     <item>
       <title>乔布斯的Stay Hungry, Stay Foolish</title>
-      <link>https://tanteng.me/2011/09/stay-hungry-stay-foolish/</link>
+      <link>https://tanteng.github.io/2011/09/stay-hungry-stay-foolish/</link>
       <pubDate>Sun, 18 Sep 2011 07:06:36 +0000</pubDate>
       
-      <guid>https://tanteng.me/2011/09/stay-hungry-stay-foolish/</guid>
+      <guid>https://tanteng.github.io/2011/09/stay-hungry-stay-foolish/</guid>
       <description>&lt;p&gt;2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;什么叫 Hungry？&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;美国人不会用&lt;/p&gt;
-
 &lt;p&gt;hungry来形容对于知识的追求。对知识，他们用的是「好奇」(curious)这个字。一个求知若渴的人，叫做「intellectuallycurious」或是「eager&lt;/p&gt;
-
 &lt;p&gt;to learn」，但绝对不会是「intellectually hungry」，也极少是「hungry to learn」。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>小谈博客</title>
-      <link>https://tanteng.me/2009/01/welcome/</link>
+      <link>https://tanteng.github.io/2009/01/welcome/</link>
       <pubDate>Thu, 01 Jan 2009 10:53:14 +0000</pubDate>
       
-      <guid>https://tanteng.me/2009/01/welcome/</guid>
+      <guid>https://tanteng.github.io/2009/01/welcome/</guid>
       <description>很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！</description>
     </item>
     

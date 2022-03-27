@@ -1,35 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>前端 on 小谈博客</title>
-    <link>https://tanteng.me/categories/%E5%89%8D%E7%AB%AF/</link>
-    <description>Recent content in 前端 on 小谈博客</description>
+    <title>前端 on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 31 Dec 2016 02:55:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Sat, 31 Dec 2016 02:55:00 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>window.location.reload()和window.location.href=””的区别</title>
-      <link>https://tanteng.me/2016/12/window-location-reload-and-href/</link>
+      <link>https://tanteng.github.io/2016/12/window-location-reload-and-href/</link>
       <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/12/window-location-reload-and-href/</guid>
-      <description>&lt;p&gt;window.location.reload() 和 window.location.href=&amp;#8221;&amp;#8221; 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
-
+      <guid>https://tanteng.github.io/2016/12/window-location-reload-and-href/</guid>
+      <description>&lt;p&gt;window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-11348 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; alt=&#34;window.location.reload()和window.location.href=&#39;&#39;的区别&#34; width=&#34;368&#34; height=&#34;207&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>jQuery操作iframe页面DOM</title>
-      <link>https://tanteng.me/2016/06/jquery-iframe/</link>
+      <link>https://tanteng.github.io/2016/06/jquery-iframe/</link>
       <pubDate>Fri, 03 Jun 2016 11:36:36 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/jquery-iframe/</guid>
+      <guid>https://tanteng.github.io/2016/06/jquery-iframe/</guid>
       <description>&lt;p&gt;如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-10135&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; alt=&#34;jquery_iframe&#34; width=&#34;1092&#34; height=&#34;514&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     

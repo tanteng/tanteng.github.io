@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hive on 小谈博客</title>
-    <link>https://tanteng.me/tags/hive/</link>
-    <description>Recent content in Hive on 小谈博客</description>
+    <title>Hive on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/tags/hive/</link>
+    <description>Recent content in Hive on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 22 Mar 2019 19:02:39 +0800</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/tags/hive/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Fri, 22 Mar 2019 19:02:39 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/hive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190322</title>
-      <link>https://tanteng.me/2019/03/reding-list-31/</link>
+      <link>https://tanteng.github.io/2019/03/reding-list-31/</link>
       <pubDate>Fri, 22 Mar 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/03/reding-list-31/</guid>
+      <guid>https://tanteng.github.io/2019/03/reding-list-31/</guid>
       <description>1.深入解析 Go 总 Slice 底层实现 https://halfrost.com/go_slice/ 2.深度解密Go语言之关于 interface 的10个问题 https://www.cnblogs.com/qcrao-2018/p/10766091.html 3.Type assertions in Go https://medium.com/golangspec/type-assertions-in-go-e609759c42e1 4.Hive SQL 的编译过程 https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html 5.经济学十大定律-边际收益递减定律 https://xueqiu.com/1084912228/108513216</description>
     </item>
     

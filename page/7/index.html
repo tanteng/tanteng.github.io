@@ -1,571 +1,307 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    
-  <head>
-    <link href="https://gmpg.org/xfn/11" rel="profile">
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>小谈博客 - 一个关注后端开发的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<title>小谈博客</title>
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="小谈博客"/>
-<meta name="twitter:description" content="一个专注 WEB 技术的博客"/>
+<meta name="author" content="tony老师" /><meta name="description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。" /><meta name="keywords" content="后端, web, golang, php, mysql, 微服务, k8s" />
 
-<meta property="og:title" content="小谈博客" />
-<meta property="og:description" content="一个专注 WEB 技术的博客" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://tanteng.github.io/" />
+  <link href="https://tanteng.github.io/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+  <link href="https://tanteng.github.io/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
+<meta property="og:description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tanteng.me/" />
+<meta property="og:url" content="https://tanteng.github.io/" />
 
-<meta property="og:updated_time" content="2019-11-30T15:10:10&#43;08:00"/>
+<meta itemprop="name" content="小谈博客 - 一个关注后端开发的博客">
+<meta itemprop="description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="小谈博客 - 一个关注后端开发的博客"/>
+<meta name="twitter:description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。"/>
 
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
 
-    
-
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/scss/hyde-hyde.85099df2bbed192d9af2050a95eafd67452ceb28ea559b2a507ee29b1d44435b.css" integrity="sha256-hQmd8rvtGS2a8gUKler9Z0Us6yjqVZsqUH7imx1EQ1s=">
-
-
-<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="alternate" type="application/rss+xml" href="https://tanteng.me/index.xml" title="小谈博客" />
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
 </head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小谈博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/posts/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
 
 
-    <body class=" ">
-    
-<div class="sidebar">
-  <div class="container ">
-    <div class="sidebar-about">
-      <span class="site__title">
-        <a href="https://tanteng.me/">小谈博客</a>
-      </span>
-      
-        
-        
-        
-        <div class="author-image">
-          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
-        </div>
-        
-      
-      
-      <p class="site__description">
-         一个专注 WEB 技术的博客 
-      </p>
-    </div>
-    <div class="collapsible-menu">
-      <input type="checkbox" id="menuToggle">
-      <label for="menuToggle">小谈博客</label>
-      <div class="menu-content">
-        <div>
-	<ul class="sidebar-nav">
-		 
-		 
-			 
-				<li>
-					<a href="/">
-						<span>Home</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/posts/">
-						<span>Blog</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/categories/">
-						<span>Category</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-			 
-		
-		</li>
-	</ul>
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小谈博客</a>
 </div>
 
-        <section class="social">
-	
-	
-	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
-	
-	
-	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
-	
-	
-	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	
-	
-</section>
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/posts/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-16/">本周阅读清单20180723</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-26 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/nginx/"> Nginx </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/redis/"> Redis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-16/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-15/">本周阅读清单20180716</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-19 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-15/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-14/">本周阅读清单20180709</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-13 </span>
+      <div class="post-category">
+          <a href="/categories/tcp/"> TCP </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/swoole/"> Swoole </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-14/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-13/">本周阅读清单20180702</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-06 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/cors/"> CORS </a>
+          <a href="/categories/http/2/"> HTTP/2 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.HTTP/2 服务器推送（server push）教程 https://juejin.im/entry/5a9e61cc518825556140c4f2 2.如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2 https://www.jianshu.com/p/52d86558ca57 3.深入理解 RESTful API 架构 https://mengkang.net/620.html 4.传统 Web 应用中的身份验证技术 https://insights.thoughtworks.cn/traditional-web-app-authentication/ 5.Web App Token 鉴权方案的
+    </div>
+    <div class="read-more">
+      <a href="/2018/07/reding-list-13/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2018/06/reding-list-12/">本周阅读清单20180625</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-29 </span>
+      <div class="post-category">
+          <a href="/categories/nginx/"> Nginx </a>
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/grpc/"> grpc </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.了解 Nginx 基本概念 http://huang-jerryc.com/2016/10/14/了解Nginx的基本概念/ 2.Redis 和 I/O 多路复用 https://draveness.me/redis-io-multiplexing 3.Redis 为什么使
+    </div>
+    <div class="read-more">
+      <a href="/2018/06/reding-list-12/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    </section>
+  
+  <nav class="pagination">
+    <a class="prev" href="/page/6/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    <a class="next" href="/page/8/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+        </div>
+        
 
       </div>
-    </div>
-    
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://tanteng.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
 <div class="copyright">
-  &copy; 2020 TonyTan
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
   
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonytan</span>
+  </span>
 </div>
 
+    </footer>
 
-
-  </div>
-</div>
-
-        <div class="content container">
-            
-  <div class="post-list">
-    
-    
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/php-intval-precision/" >PHP intval 转换浮点数精度丢失问题</a>
-        </span>
-        <span class="item__date">
-          Oct 15, 2017
-        </span>
-        <span >
-        
-        <p>在 PHP 和其他一些语言都会存在这个问题，转换浮点数为整数的时候会出现精度丢失，如下：</p>
-
-<pre><code>$n=&quot;19.99&quot;; print intval($n*100); // prints 1998
-</code></pre>
-
-<h3 id="解决办法">解决办法：</h3>
-
-<p>1.转换成字符串再 intval</p>
-
-<pre><code class="language-php">print intval(strval($n*100)); // prints 1999
-</code></pre>
-
-<p>2.使用 round 函数替代 floatval</p>
-
-<pre><code class="language-php">php -r &quot;echo round(19.99*100);&quot;
-</code></pre>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/php-intval-precision/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/docker-laravel-local-environment/" >使用 Docker 搭建 Laravel 本地环境</a>
-        </span>
-        <span class="item__date">
-          Oct 14, 2017
-        </span>
-        <span >
-        
-        Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/docker-laravel-local-environment/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/503-service-unavailable/" >服务器返回 502,503,504 原因及解决办法</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <h3 id="502-bad-gateway">502 bad gateway</h3>
-
-<p>问题原因：服务器作为网关或代理，从上游服务器收到无效响应。</p>
-
-<p>nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/503-service-unavailable/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/10/computer-concepts-in-life/" >计算机的一些概念在生活中的场景</a>
-        </span>
-        <span class="item__date">
-          Oct 8, 2017
-        </span>
-        <span >
-        
-        <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/10/computer-concepts-in-life/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/debug-backtrace-php/" >PHP 调试函数 debug_backtrace</a>
-        </span>
-        <span class="item__date">
-          Sep 11, 2017
-        </span>
-        <span >
-        
-        有时候我们想知道这个函数或方法的调用堆栈，也就是它是如何一级一级是被调用到的，可以用 PHP 的 debug_backtrace 函数打印，就像这样： public function update(Request $request, $id) { dd(debug_backtrace()); $getGameID = function ($request) { if (!$request-&amp;gt;game_id) {
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/debug-backtrace-php/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/git-merge-rebase/" >Git 变基和合并</a>
-        </span>
-        <span class="item__date">
-          Sep 5, 2017
-        </span>
-        <span >
-        
-        变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/git-merge-rebase/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/09/php-error-handle/" >PHP 错误和异常处理</a>
-        </span>
-        <span class="item__date">
-          Sep 2, 2017
-        </span>
-        <span >
-        
-        <p>关于 PHP 的错误和异常处理，总结如下。</p>
-
-<h3 id="1-设置-php-错误级别">1.设置 PHP 错误级别</h3>
-
-<p>使用 <span class="refname">error_reporting</span> — <span class="dc-title">设置应该报告何种 PHP 错误。</span></p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/09/php-error-handle/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/08/golang-generic/" >Golang 中”泛型”的支持</a>
-        </span>
-        <span class="item__date">
-          Aug 11, 2017
-        </span>
-        <span >
-        
-        Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/08/golang-generic/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/07/php-curl-guzzlehttp/" >PHP发送HTTP请求的几种方式</a>
-        </span>
-        <span class="item__date">
-          Jul 22, 2017
-        </span>
-        <span >
-        
-        <p>PHP 开发中我们常用 cURL 方式封装 HTTP 请求，什么是 cURL？</p>
-
-<p>cURL 是一个用来传输数据的工具，支持多种协议，如在 Linux 下用 curl 命令行可以发送各种 HTTP 请求。PHP 的 cURL 是一个底层的库，它能根据不同协议跟各种服务器通讯，HTTP 协议是其中一种。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/07/php-curl-guzzlehttp/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/2017/05/laravel-etag-middleware/" >在 Laravel 中设置 Etag 缓存</a>
-        </span>
-        <span class="item__date">
-          May 19, 2017
-        </span>
-        <span >
-        
-        <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
-
-<h3 id="什么是-etag">什么是“ETag”？</h3>
-
-<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
-
-<p>浏览器根据状态码判断是否缓存过期。</p>
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/2017/05/laravel-etag-middleware/">➦</a>
-        
-        </div>
-        
-     
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
   </div>
   
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/6/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/7/">7</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/12/">12</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/8/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/12/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 
 
-        </div>
-        
-  
-  <script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
 
-    </body>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
 </html>

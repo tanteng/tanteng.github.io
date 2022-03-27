@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>正则 on 小谈博客</title>
-    <link>https://tanteng.me/tags/%E6%AD%A3%E5%88%99/</link>
-    <description>Recent content in 正则 on 小谈博客</description>
+    <title>正则 on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/tags/%E6%AD%A3%E5%88%99/</link>
+    <description>Recent content in 正则 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 08 Aug 2019 15:10:10 +0800</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Thu, 08 Aug 2019 15:10:10 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190808</title>
-      <link>https://tanteng.me/2019/08/reding-list-37/</link>
+      <link>https://tanteng.github.io/2019/08/reding-list-37/</link>
       <pubDate>Thu, 08 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/08/reding-list-37/</guid>
+      <guid>https://tanteng.github.io/2019/08/reding-list-37/</guid>
       <description>1.PHP 正则 preg_match 匹配长度限制 https://learnku.com/articles/7193/php-regular-preg-match-matching-length-limit 2.深悉正则(pcre)最大回溯/递归限制 http://www.laruence.com/2010/06/08/1579.html 3.Redis的内存优化 https://cachecloud.github.io/2017/02/16/Redis%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96 4.Content-Disposition 的 filename 与 filename* 区别 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition 5.Redis Scan 命令原理 https://segmentfault.com/a/1190000018218584 6.Redis 字典的遍历 dictScan 算法</description>
     </item>
     

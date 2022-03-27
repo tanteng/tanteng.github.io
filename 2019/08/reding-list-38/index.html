@@ -1,303 +1,255 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    
-    
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>本周阅读清单20190830 - 小谈博客 - 一个关注后端开发的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-    <head>
-    <link href="https://gmpg.org/xfn/11" rel="profile">
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
-
-    
-    
-    
-
-<title>本周阅读清单20190830 - 小谈博客</title>
+<meta name="author" content="tonytan" /><meta name="description" content="文章《HTTP 代理原理及实现》《为什么使用通信来共享内存？》《深入理解Go-defer的原理剖析》《Nginx实现JWT验证-基于OpenResty实现》《更加顺手的用好 Laravel 的多态关联》等" /><meta name="keywords" content="后端, web, golang, php, mysql, 微服务, k8s" />
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="本周阅读清单20190830"/>
-<meta name="twitter:description" content="文章《HTTP 代理原理及实现》《为什么使用通信来共享内存？》《深入理解Go-defer的原理剖析》《Nginx实现JWT验证-基于OpenResty实现》《更加顺手的用好 Laravel 的多态关联》等"/>
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://tanteng.github.io/2019/08/reding-list-38/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
 
 <meta property="og:title" content="本周阅读清单20190830" />
 <meta property="og:description" content="文章《HTTP 代理原理及实现》《为什么使用通信来共享内存？》《深入理解Go-defer的原理剖析》《Nginx实现JWT验证-基于OpenResty实现》《更加顺手的用好 Laravel 的多态关联》等" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tanteng.me/2019/08/reding-list-38/" />
-<meta property="article:published_time" content="2019-08-30T15:10:10&#43;08:00"/>
-<meta property="article:modified_time" content="2019-08-30T15:10:10&#43;08:00"/>
+<meta property="og:url" content="https://tanteng.github.io/2019/08/reding-list-38/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-30T15:10:10+08:00" />
+<meta property="article:modified_time" content="2019-08-30T15:10:10+08:00" />
 
+<meta itemprop="name" content="本周阅读清单20190830">
+<meta itemprop="description" content="文章《HTTP 代理原理及实现》《为什么使用通信来共享内存？》《深入理解Go-defer的原理剖析》《Nginx实现JWT验证-基于OpenResty实现》《更加顺手的用好 Laravel 的多态关联》等"><meta itemprop="datePublished" content="2019-08-30T15:10:10+08:00" />
+<meta itemprop="dateModified" content="2019-08-30T15:10:10+08:00" />
+<meta itemprop="wordCount" content="90">
+<meta itemprop="keywords" content="Go,HTTP,Nginx," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="本周阅读清单20190830"/>
+<meta name="twitter:description" content="文章《HTTP 代理原理及实现》《为什么使用通信来共享内存？》《深入理解Go-defer的原理剖析》《Nginx实现JWT验证-基于OpenResty实现》《更加顺手的用好 Laravel 的多态关联》等"/>
 
-    
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
 
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/scss/hyde-hyde.85099df2bbed192d9af2050a95eafd67452ceb28ea559b2a507ee29b1d44435b.css" integrity="sha256-hQmd8rvtGS2a8gUKler9Z0Us6yjqVZsqUH7imx1EQ1s=">
-
-
-<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
 </head>
-
-
-    <body class=" ">
-    
-<div class="sidebar">
-  <div class="container ">
-    <div class="sidebar-about">
-      <span class="site__title">
-        <a href="https://tanteng.me/">小谈博客</a>
-      </span>
-      
-        
-        
-        
-        <div class="author-image">
-          <img src="https://tanteng.me/img/avatar.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
-        </div>
-        
-      
-      
-      <p class="site__description">
-         一个专注 WEB 技术的博客 
-      </p>
-    </div>
-    <div class="collapsible-menu">
-      <input type="checkbox" id="menuToggle">
-      <label for="menuToggle">小谈博客</label>
-      <div class="menu-content">
-        <div>
-	<ul class="sidebar-nav">
-		 
-		 
-			 
-				<li>
-					<a href="/">
-						<span>Home</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/posts/">
-						<span>Blog</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/categories/">
-						<span>Category</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-			 
-		
-		</li>
-	</ul>
-</div>
-
-        <section class="social">
-	
-	
-	<a href="https://facebook.com/tanteng001" rel="me"><i class="fab fa-facebook-f"></i></a>
-	
-	
-	<a href="https://github.com/tanteng" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	<a href="https://instagram.com/tanteng1031" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
-	
-	
-	<a href="https://linkedin.com/in/tanteng" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	
-	
-</section>
-
-      </div>
-    </div>
-    
-<div class="copyright">
-  &copy; 2020 TonyTan
-  
-</div>
-
-
-
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小谈博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/posts/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
 
-        <div class="content container">
-            
-    
-<article>
-  <header>
-    <h1>本周阅读清单20190830</h1>
-    
-    
-<div class="post__meta">
-    
-    
-      <i class="fas fa-calendar-alt"></i> Aug 30, 2019
-    
-    
-    
-      
-      
-          in
-          
-          
-              <a class="badge badge-category" href="/categories/laravel">LARAVEL</a>
-              •
-          
-              <a class="badge badge-category" href="/categories/nginx">NGINX</a>
-              
-          
-      
-    
-    
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="badge badge-tag" href="/tags/go">go</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/http">http</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/nginx">nginx</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 1 min read
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小谈博客</a>
 </div>
 
 
-  </header>
-  
-  
-  <div class="post">
-    <p>1.HTTP 代理原理及实现</p>
 
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/posts/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">本周阅读清单20190830</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/laravel/"> Laravel </a>
+            <a href="/categories/nginx/"> Nginx </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>1.HTTP 代理原理及实现</p>
 <p><a href="https://imququ.com/post/web-proxy.html">https://imququ.com/post/web-proxy.html</a></p>
-
 <p>2.为什么使用通信来共享内存？</p>
-
 <p><a href="https://draveness.me/whys-the-design-communication-shared-memory">https://draveness.me/whys-the-design-communication-shared-memory</a></p>
-
 <p>3.深入理解Go-defer的原理剖析</p>
-
 <p><a href="https://juejin.im/post/5d71d1edf265da03e52356fb">https://juejin.im/post/5d71d1edf265da03e52356fb</a></p>
-
 <p>4.Nginx实现JWT验证-基于OpenResty实现</p>
-
 <p><a href="https://segmentfault.com/a/1190000015677681">https://segmentfault.com/a/1190000015677681</a></p>
-
 <p>5.更加顺手的用好 Laravel 的多态关联</p>
-
 <p><a href="https://segmentfault.com/a/1190000020811031">https://segmentfault.com/a/1190000020811031</a></p>
 
-  </div>
-  
+    </div>
 
-<div class="navigation navigation-single">
-    
-    <a href="/2019/08/reding-list-37/" class="navigation-prev">
-      <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">本周阅读清单20190808</span>
-    </a>
-    
-    
-    <a href="/2019/11/reding-list-39/" class="navigation-next">
-      <span class="navigation-tittle">本周阅读清单20191130</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
-    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tonytan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-08-30
+        
+    </span>
+  </p>
+  
+  
 </div>
-
-
-  
-
-
-
-
-  
-    
-
-
-</article>
-
-
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/go/">Go</a>
+          <a href="/tags/http/">HTTP</a>
+          <a href="/tags/nginx/">Nginx</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2019/11/reding-list-39/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">本周阅读清单20191130</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2019/08/reding-list-37/">
+            <span class="next-text nav-default">本周阅读清单20190808</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
-    
 
-<script src="https://cdn.bootcss.com/font-awesome/5.5.0/js/all.min.js"></script>
+  
 
-    
-    
-        <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
-        
-    
-    <script type="text/javascript">
-        
-        hljs.initHighlightingOnLoad();
-    </script>
-    
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://tanteng.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonytan</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 
 
-    
 
 
 
-    </body>
+
+</body>
 </html>

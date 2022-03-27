@@ -1,184 +1,172 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MySQL on 小谈博客</title>
-    <link>https://tanteng.me/categories/mysql/</link>
-    <description>Recent content in MySQL on 小谈博客</description>
+    <title>MySQL on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/categories/mysql/</link>
+    <description>Recent content in MySQL on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate>
-    
-	<atom:link href="https://tanteng.me/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20191130</title>
-      <link>https://tanteng.me/2019/11/reding-list-39/</link>
+      <link>https://tanteng.github.io/2019/11/reding-list-39/</link>
       <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/11/reding-list-39/</guid>
+      <guid>https://tanteng.github.io/2019/11/reding-list-39/</guid>
       <description>1.Uber 的 Go 指导规范 https://github.com/uber-go/guide/blob/master/style.md 2.使用JWT保证服务间通信的安全 https://abekthink.github.io/backend/json-web-token/ 3.MySQL查询对大小写不敏感 https://www.jianshu.com/p/408daf82ac71 4.服务流量限制（漏桶、令牌桶） https://chai2010.cn/advanced-go-programming-book/ch5-web/ch5-06-ratelimit.html 5.为什么推荐Inn</description>
     </item>
     
     <item>
       <title>本周阅读清单20190620</title>
-      <link>https://tanteng.me/2019/06/reding-list-34/</link>
+      <link>https://tanteng.github.io/2019/06/reding-list-34/</link>
       <pubDate>Thu, 20 Jun 2019 15:50:10 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/06/reding-list-34/</guid>
+      <guid>https://tanteng.github.io/2019/06/reding-list-34/</guid>
       <description>1.MySQL商品库存扣减问题总结 https://zhaoyixing.coding.me/2018/01/10/mysql-update-safe-md/ 2.MySQL死锁问题分析 https://www.cnblogs.com/LBSer/p/5183300.html 3.[译] Go: 理解 Sync.Pool 的设计 https://studygolang.com/articles/21122 4.epoll 或者 kqueue 的原理是什么？ https://www.zhihu.com/question/20122137/answer/14049112 5.深入理解 MySQL ―― 锁、事务</description>
     </item>
     
     <item>
       <title>本周阅读清单20190225</title>
-      <link>https://tanteng.me/2019/02/reding-list-29/</link>
+      <link>https://tanteng.github.io/2019/02/reding-list-29/</link>
       <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.me/2019/02/reding-list-29/</guid>
+      <guid>https://tanteng.github.io/2019/02/reding-list-29/</guid>
       <description>1.前缀索引，一种优化索引大小的解决方案 http://www.cnblogs.com/studyzy/p/4310653.html 2.[译]Go 调度器: M, P 和 G https://colobu.com/2017/05/04/go-scheduler/ 3.gRPC 安全认证 https://yuanxuxu.com/2018/11/21/grpc-token/ 4.Go 语言 Channel 实现原理精要 https://draveness.me/golang-channel 5.Go modules 详解 http://objcoding.com/2018/09/13/go-modules/</description>
     </item>
     
     <item>
       <title>本周阅读清单20190103</title>
-      <link>https://tanteng.me/2019/01/reding-list-27/</link>
+      <link>https://tanteng.github.io/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng.me/2019/01/reding-list-27/</guid>
-      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统&amp;#8211;Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
+      <guid>https://tanteng.github.io/2019/01/reding-list-27/</guid>
+      <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统–Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
       <title>本周阅读清单20181123</title>
-      <link>https://tanteng.me/2018/12/reding-list-25/</link>
+      <link>https://tanteng.github.io/2018/12/reding-list-25/</link>
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/12/reding-list-25/</guid>
+      <guid>https://tanteng.github.io/2018/12/reding-list-25/</guid>
       <description>1.MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 2.Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html 3.golang后台服务设计精要 http://litang.me/post/golang-server-design/ 4.Go’s http package by example（总结很好）</description>
     </item>
     
     <item>
       <title>MySQL 字段为 NULL 的查询问题</title>
-      <link>https://tanteng.me/2018/10/mysql-select-null/</link>
+      <link>https://tanteng.github.io/2018/10/mysql-select-null/</link>
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/mysql-select-null/</guid>
-      <description>假设 MySQL 中某数据表 code 字段是可为 NULL ... AND code NOT IN () ... ... AND (code IS NULL or code NOT IN()) ... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL&amp;#8217;s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to</description>
+      <guid>https://tanteng.github.io/2018/10/mysql-select-null/</guid>
+      <description>假设 MySQL 中某数据表 code 字段是可为 NULL 1 2 ...ANDcodeNOTIN()......AND(codeISNULLorcodeNOTIN())... 是不一样的，第一个查不出 code IS NULL 的数据。 https://stackoverflow.com/questions/3536670/mysql-selecting-rows-where-a-column-is-null SQL NULL’s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL = NULL is always</description>
     </item>
     
     <item>
       <title>本周阅读清单20181022</title>
-      <link>https://tanteng.me/2018/10/reding-list-22/</link>
+      <link>https://tanteng.github.io/2018/10/reding-list-22/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/10/reding-list-22/</guid>
+      <guid>https://tanteng.github.io/2018/10/reding-list-22/</guid>
       <description>1.Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html 2.What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 3.工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 4.What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 5.理解 UUID http://wsfdl.com/algorit</description>
     </item>
     
     <item>
       <title>本周阅读清单20180709</title>
-      <link>https://tanteng.me/2018/07/reding-list-14/</link>
+      <link>https://tanteng.github.io/2018/07/reding-list-14/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/07/reding-list-14/</guid>
+      <guid>https://tanteng.github.io/2018/07/reding-list-14/</guid>
       <description>1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20180619</title>
-      <link>https://tanteng.me/2018/06/reding-list-11/</link>
+      <link>https://tanteng.github.io/2018/06/reding-list-11/</link>
       <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/06/reding-list-11/</guid>
+      <guid>https://tanteng.github.io/2018/06/reding-list-11/</guid>
       <description>1.MySQL 索引背后的数据结构及算法原理 https://juejin.im/entry/591012d161ff4b006255b447 2.微信扫码登录原理 https://blog.csdn.net/qq_25827845/article/details/78823861 3.Redis 事务及 Watch 的实现原理 http://redisbook.readthedocs.io/en/latest/feature/transaction.html 4.Redis 事务到底是不是原子性的 https://blog.tanteng.me/2018/06/redis-transaction-atomic/ 5.LRU 缓存淘汰算法数据结构 https://zhuanlan.zhihu.com/p/34989978 6.Singleton Pattern in Go http://marcio.io/2015/07/singleton-pattern-in-go/</description>
     </item>
     
     <item>
       <title>本周阅读清单20180402</title>
-      <link>https://tanteng.me/2018/04/reding-list-2/</link>
+      <link>https://tanteng.github.io/2018/04/reding-list-2/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>https://tanteng.me/2018/04/reding-list-2/</guid>
+      <guid>https://tanteng.github.io/2018/04/reding-list-2/</guid>
       <description>1.Redis集群技术及Codis实践 http://www.infoq.com/cn/articles/effective-ops-part-03 2.58到家MySQL军规 https://mp.weixin.qq.com/s/YfCORbcCX1hymXBCrZbAZg 3.MySQL事务隔离级别 https://www.jianshu.com/p/4e3edbedb9a8 4.图说设计模式 http://design-patterns.readthedocs.io/zh_CN/latest/index.html 5.使用PHP-Parse</description>
     </item>
     
     <item>
       <title>MySQL 数据库设计及性能优化Tips</title>
-      <link>https://tanteng.me/2017/12/mysql-optimize-tips/</link>
+      <link>https://tanteng.github.io/2017/12/mysql-optimize-tips/</link>
       <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/12/mysql-optimize-tips/</guid>
+      <guid>https://tanteng.github.io/2017/12/mysql-optimize-tips/</guid>
       <description>规则1：一般情况可以选择MyISAM存储引擎，如果需要事务支持必须使用InnoDB存储引擎。 注意：MyISAM存储引擎 B-tree索引有一个</description>
     </item>
     
     <item>
       <title>MySQL大表加字段思路</title>
-      <link>https://tanteng.me/2017/01/mysql-alter-table-big-data/</link>
+      <link>https://tanteng.github.io/2017/01/mysql-alter-table-big-data/</link>
       <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
       
-      <guid>https://tanteng.me/2017/01/mysql-alter-table-big-data/</guid>
+      <guid>https://tanteng.github.io/2017/01/mysql-alter-table-big-data/</guid>
       <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;ldquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;rsquo;&amp;rsquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>常用Linux操作数据库命令及MySQL语句</title>
-      <link>https://tanteng.me/2016/06/mysql-command/</link>
+      <link>https://tanteng.github.io/2016/06/mysql-command/</link>
       <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/mysql-command/</guid>
+      <guid>https://tanteng.github.io/2016/06/mysql-command/</guid>
       <description>&lt;p&gt;以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。&lt;/p&gt;
-
 &lt;h3 id=&#34;数据库表导入&#34;&gt;数据库表导入&lt;/h3&gt;
-
 &lt;p&gt;恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：&lt;/p&gt;
-
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true &#34;&gt;mysql -uroot -p tanteng.me  &amp;lt; mobile_promote.sql&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL查看数据库大小</title>
-      <link>https://tanteng.me/2016/06/mysql-data-length/</link>
+      <link>https://tanteng.github.io/2016/06/mysql-data-length/</link>
       <pubDate>Fri, 03 Jun 2016 11:24:42 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/06/mysql-data-length/</guid>
+      <guid>https://tanteng.github.io/2016/06/mysql-data-length/</guid>
       <description>&lt;p&gt;1、进入information_schema 数据库（存放了其他的数据库的信息）&lt;/p&gt;
-
 &lt;p&gt;use information_schema;&lt;/p&gt;
-
 &lt;p&gt;2、查询所有数据的大小：&lt;/p&gt;
-
-&lt;p&gt;select concat(round(sum(data_length/1024/1024),2),&amp;#8217;MB&amp;#8217;) as data from tables;&lt;/p&gt;</description>
+&lt;p&gt;select concat(round(sum(data_length/1024/1024),2),’MB’) as data from tables;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL数据库性能优化之缓存参数设置</title>
-      <link>https://tanteng.me/2016/03/innodb_buffer_pool_size/</link>
+      <link>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</link>
       <pubDate>Mon, 28 Mar 2016 04:02:15 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/03/innodb_buffer_pool_size/</guid>
+      <guid>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</guid>
       <description>&lt;p&gt;网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL 字符串字段转换 crc32 建索引提高查询效率</title>
-      <link>https://tanteng.me/2016/02/crc32-mysql-index/</link>
+      <link>https://tanteng.github.io/2016/02/crc32-mysql-index/</link>
       <pubDate>Mon, 01 Feb 2016 01:29:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/02/crc32-mysql-index/</guid>
+      <guid>https://tanteng.github.io/2016/02/crc32-mysql-index/</guid>
       <description>&lt;p&gt;给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。&lt;/p&gt;
-
 &lt;p&gt;crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>查询数据库重复记录sql</title>
-      <link>https://tanteng.me/2016/01/repeat-group-having/</link>
+      <link>https://tanteng.github.io/2016/01/repeat-group-having/</link>
       <pubDate>Mon, 25 Jan 2016 09:59:07 +0000</pubDate>
       
-      <guid>https://tanteng.me/2016/01/repeat-group-having/</guid>
+      <guid>https://tanteng.github.io/2016/01/repeat-group-having/</guid>
       <description>每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复</description>
     </item>
     
