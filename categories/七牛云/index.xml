@@ -6,7 +6,7 @@
     <description>Recent content in 七牛云 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>tonytan</copyright>
+    <copyright>tony老师</copyright>
     <lastBuildDate>Mon, 28 May 2018 11:32:34 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E4%B8%83%E7%89%9B%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>

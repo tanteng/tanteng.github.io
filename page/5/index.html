@@ -38,7 +38,7 @@
 
 
 <link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet">
 
 
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
@@ -126,108 +126,466 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/10/reding-list-22/">本周阅读清单20181022</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/01/mysql-alter-table-big-data/">MySQL大表加字段思路</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-10-28 </span>
-      <div class="post-category">
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html 2.What happened to MySQL 6 &amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 3.工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 4.What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 5.理解 UUID http://wsfdl.com/algorit
-    </div>
-    <div class="read-more">
-      <a href="/2018/10/reding-list-22/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/10/reding-list-21/">本周阅读清单20181008</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-10-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.Laravel 中的 Pivot 表与多对多关系 https://9iphp.com/web/laravel/pivot-tables-and-many-to-many-relationships.html 2.Laravel 的 tap 函数用法 https://laravel-china.org/articles/3893/laravel-tap-usage 3.Laravel 5.5 模型关联 https://laravel-china.org/docs/laravel/5.5/eloquent-relationships/1333 4.Laravel Collection “tap” Method https://laravel-news.com/collection-tap 5.goroutine同步方法总结 https://yq.aliyun.com/articles/649314 6.面向对象设计之里氏替换原则(
-    </div>
-    <div class="read-more">
-      <a href="/2018/10/reding-list-21/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/10/http-204/">HTTP 204 状态码</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-10-19 </span>
+      <span class="post-time"> 2017-01-19 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      HTTP协议中 204 No Content 成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETa
+      <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
+<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
+<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
     </div>
     <div class="read-more">
-      <a href="/2018/10/http-204/" class="read-more-link">阅读更多</a>
+      <a href="/2017/01/mysql-alter-table-big-data/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/10/reding-list-20/">本周阅读清单20180924</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/01/linux-postfix-maildrop/">Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-10-06 </span>
+      <span class="post-time"> 2017-01-14 </span>
       <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      1.iOS 中使用 Protocol Buffers https://blog.devzeng.com/blog/ios-protobuf.html 2.Laravel 模型事件实现原理 https://laravel-china.org/articles/5465/event-realization-principle-of-laravel-model 3.Install PEAR and PECL on Mac OS X https://jason.pureconcepts.net/2012/10/install-pear-pecl-mac-os-x/ 4.GNU Linux和Unix Darwin BSD等 https://www.jianshu.com/p/3fbc7f7dd302 5.编译器的工作过程 http://www.ruanyifeng.com/blog/2014/11/compiler.html
+      <p>MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。</p>
     </div>
     <div class="read-more">
-      <a href="/2018/10/reding-list-20/" class="read-more-link">阅读更多</a>
+      <a href="/2017/01/linux-postfix-maildrop/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/09/reding-list-19/">本周阅读清单20180903</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2017/01/supervisor-laravel-queue/">使用 Supervisor 管理 Laravel 队列进程</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-09-22 </span>
+      <span class="post-time"> 2017-01-07 </span>
       <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
           <a href="/categories/php/"> PHP </a>
-          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      1.聊聊加密那点事——PHP加密最佳实践 https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice 2.etcd：从应用场景到实现原理的全方位解读 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle 3.大家的公司 Code Review 都是怎么做的？ https://www.zhihu.com/question/41089988 4.gRPC 和 restful 转换 https://github.com/grpc-ecosystem/grpc-gateway 5.
+      <p>Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。</p>
     </div>
     <div class="read-more">
-      <a href="/2018/09/reding-list-19/" class="read-more-link">阅读更多</a>
+      <a href="/2017/01/supervisor-laravel-queue/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/12/window-location-reload-and-href/">window.location.reload()和window.location.href=””的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-31 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。</p>
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" target="_blank"><img class="alignnone wp-image-11348 size-full" src="https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png" alt="window.location.reload()和window.location.href=''的区别" width="368" height="207" /></a></p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/12/window-location-reload-and-href/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/12/laravel-admin-install/">Laravel 5.3 后台管理系统搭建</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-24 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/12/laravel-admin-install/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/12/nginx-test-environment/">使用 Nginx 反向代理和负载均衡搭建多人测试环境</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-17 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <img class="alignnone size-full wp-image-11120" src="https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg" alt="" width="1328" height="874" />
+<p>假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/12/nginx-test-environment/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/12/reading-and-maturing-personalities/">阅读与心智的成长</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-05 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/"> 网摘日志 </a>
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>以下摘自《如何阅读一本书》第二十一章。</p>
+<p>我们已经完成了在本书一开始时就提出的内容大要。我们已经说明清楚，良好的阅读基础在于主动的阅读。阅读时越主动，就读得越好。</p>
+<p>**所谓主动的阅读，也就是能提出问题来。**我们也指出在阅读任何一本书时该提出什么样的问题，以及不同种类的书必须怎样以不同的方式回答这些问题。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/12/reading-and-maturing-personalities/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/12/laravel-env-null/">Laravel 使用 env 读取环境变量为 null 的问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-04 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。</p>
+<p>在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/12/laravel-env-null/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/09/register-shutdown-function/">PHP捕捉异常中断</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-28 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/09/register-shutdown-function/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/09/vim-syntax/">vim常用操作</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-21 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/09/vim-syntax/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/09/lets-encrypt-multi-domain-https/">Let’s Encrypt 开启多域名 HTTPS</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-12 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问
+    </div>
+    <div class="read-more">
+      <a href="/2016/09/lets-encrypt-multi-domain-https/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/08/laravel-routes-map/">Laravel 分割 routes.php 路由文件的一种方式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-02 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，
+    </div>
+    <div class="read-more">
+      <a href="/2016/08/laravel-routes-map/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-command/">常用Linux操作数据库命令及MySQL语句</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-15 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>以下是在Linux下经常会用到的MySQL的一些命令，导出，导入，建库建表，备份，以及MySQL修改字段，添加字段等语法。</p>
+<h3 id="数据库表导入">数据库表导入</h3>
+<p>恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：</p>
+<p><code class="lang:mysql decode:true ">mysql -uroot -p tanteng.me  &lt; mobile_promote.sql</code></p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/mysql-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/jquery-iframe/">jQuery操作iframe页面DOM</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-03 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。</p>
+<p><a href="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" target="_blank"><img class="alignnone size-full wp-image-10135" src="https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png" alt="jquery_iframe" width="1092" height="514" /></a></p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/jquery-iframe/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/mysql-data-length/">MySQL查看数据库大小</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-03 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>1、进入information_schema 数据库（存放了其他的数据库的信息）</p>
+<p>use information_schema;</p>
+<p>2、查询所有数据的大小：</p>
+<p>select concat(round(sum(data_length/1024/1024),2),’MB’) as data from tables;</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/mysql-data-length/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/php7-opcache/">PHP 7安装和开启opcache</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>鸟哥在博客中说，提高PHP 7性能的几个tips，第一条就是开启opache，引用下原文：</p>
+<blockquote>
+<p>记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情</p>
+</blockquote>
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/php7-opcache/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/06/laravel-optimize/">优化 Laravel 网站打开速度</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好
+    </div>
+    <div class="read-more">
+      <a href="/2016/06/laravel-optimize/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/04/vagrantfile-synced-folder/">巧用vagrant建立映射目录解决环境兼容问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：</p>
+<p><code>config.vm.synced_folder &quot;../website&quot;, &quot;/usr/share/nginx/html&quot;</code></p>
+<p>表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/04/vagrantfile-synced-folder/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/04/nginx-ssi/">Nginx开启SSI</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在一个HTML页面中发现一段这样的代码：</p>
+<p><code>&lt;!--#include virtual=&quot;/new/ssi/script.html&quot;--&gt;</code></p>
+<p>在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/04/nginx-ssi/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/centos-7-repo/">常用的CentOS 7 yum源集合</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-31 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/centos-7-repo/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -273,7 +631,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonytan</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tony老师</span>
   </span>
 </div>
 
@@ -283,10 +641,10 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
 
 
 
@@ -294,7 +652,21 @@
 
 
 
-
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 
 
 

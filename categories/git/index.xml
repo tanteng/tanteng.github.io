@@ -6,7 +6,7 @@
     <description>Recent content in Git on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>tonytan</copyright>
+    <copyright>tony老师</copyright>
     <lastBuildDate>Tue, 05 Sep 2017 10:42:56 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 变基和合并</title>

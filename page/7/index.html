@@ -38,7 +38,7 @@
 
 
 <link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet">
 
 
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
@@ -126,116 +126,47 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/08/laravel-why-not-use-blpop/">Laravel 中为何不使用 blpop 取队列？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2011/09/stay-hungry-stay-foolish/">乔布斯的Stay Hungry, Stay Foolish</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-07-31 </span>
+      <span class="post-time"> 2011-09-18 </span>
       <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。</p>
+      <p>2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。</p>
+<p><strong>什么叫 Hungry？</strong></p>
+<p>美国人不会用</p>
+<p>hungry来形容对于知识的追求。对知识，他们用的是「好奇」(curious)这个字。一个求知若渴的人，叫做「intellectuallycurious」或是「eager</p>
+<p>to learn」，但绝对不会是「intellectually hungry」，也极少是「hungry to learn」。</p>
     </div>
     <div class="read-more">
-      <a href="/2018/08/laravel-why-not-use-blpop/" class="read-more-link">阅读更多</a>
+      <a href="/2011/09/stay-hungry-stay-foolish/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/07/understand-laravel-middleware/">Laravel 中间件原理</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2009/01/welcome/">小谈博客</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-07-29 </span>
+      <span class="post-time"> 2009-01-01 </span>
       <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/"> 小谈点评 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki
+      很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！
     </div>
     <div class="read-more">
-      <a href="/2018/07/understand-laravel-middleware/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-16/">本周阅读清单20180723</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-07-26 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          <a href="/categories/nginx/"> Nginx </a>
-          <a href="/categories/php/"> PHP </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/redis/"> Redis </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.
-    </div>
-    <div class="read-more">
-      <a href="/2018/07/reding-list-16/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-15/">本周阅读清单20180716</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-07-19 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区
-    </div>
-    <div class="read-more">
-      <a href="/2018/07/reding-list-15/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/07/reding-list-14/">本周阅读清单20180709</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-07-13 </span>
-      <div class="post-category">
-          <a href="/categories/tcp/"> TCP </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/swoole/"> Swoole </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1.深入浅出 TCP/IP 协议栈 http://dxyoo7.github.io/2017/07/21/u-should-know-protocol-of-tcp-ip/ 2.中国工业 4.0 之路 http://www.mckinsey.com.cn/中国工业4-0之路 3.MySQL 查询缓存机制 https://blog.csdn.net/eric_sunah/article/details/17510939 4.MySQL 体系结构 http://www.cnblogs.com/chenmh/p/4914754.html
-    </div>
-    <div class="read-more">
-      <a href="/2018/07/reding-list-14/" class="read-more-link">阅读更多</a>
+      <a href="/2009/01/welcome/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -247,10 +178,7 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/8/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         
@@ -281,7 +209,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonytan</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tony老师</span>
   </span>
 </div>
 
@@ -291,10 +219,10 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
 
 
 
@@ -302,7 +230,21 @@
 
 
 
-
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 
 
 

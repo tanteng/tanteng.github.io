@@ -38,7 +38,7 @@
 
 
 <link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet">
 
 
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
@@ -126,12 +126,168 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/09/laravel-error-handing/">Laravel 错误和异常处理用法</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2016/03/php-fpm-conf/">PHP-FPM性能优化参考</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-09-15 </span>
+      <span class="post-time"> 2016-03-29 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。</p>
+<p>php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/php-fpm-conf/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/innodb_buffer_pool_size/">MySQL数据库性能优化之缓存参数设置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-28 </span>
+      <div class="post-category">
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/innodb_buffer_pool_size/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/nginx-buffer-params/">Nginx性能调优之buffer参数设置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-27 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>打开Nginx的error.log日志文件，发现很多warn的警告错误，提示：</p>
+<p>①2016/03/25 13:18:35 [warn] 1171#0: *10875 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/0/08/0000000080 while reading upstream, client: 106.38.241.105, server: blog.tanteng.me, request: “GET /page/38/ HTTP/1.1”, upstream: “fastcgi://127.0.0.1:9000”, host: “blog.tanteng.me”.</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/nginx-buffer-params/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/03/redis-6379-safe/">Redis未授权访问漏洞</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-21 </span>
+      <div class="post-category">
+          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/03/redis-6379-safe/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/02/git-rm-cached-diff/">rm 、 git rm –cached 和 git rm 的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-02-18 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1.rm 删除文件，和git没有任何关系 2.git rm –cached 删除git追踪文件，但是不删除文件 3.git rm 删除git追踪文件，同时删除文件
+    </div>
+    <div class="read-more">
+      <a href="/2016/02/git-rm-cached-diff/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/02/crc32-mysql-index/">MySQL 字符串字段转换 crc32 建索引提高查询效率</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-02-01 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。</p>
+<p>crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2016/02/crc32-mysql-index/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/01/repeat-group-having/">查询数据库重复记录sql</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-01-25 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/mysql/"> MySQL </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
+    </div>
+    <div class="read-more">
+      <a href="/2016/01/repeat-group-having/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/12/composer-autoload/">Composer的自动加载机制</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-12-24 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
           </div>
     </div>
@@ -139,19 +295,28 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。</p>
+      <p>如项目下的composer.json文件中有autoload的定义：</p>
+<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
+&ldquo;classmap&rdquo;: [
+&ldquo;database&rdquo;
+],
+&ldquo;psr-4&rdquo;: {
+&ldquo;GrahamCampbell\BootstrapCMS\&rdquo;: &ldquo;app/&rdquo;
+}
+},</code></p>
+<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
     </div>
     <div class="read-more">
-      <a href="/2018/09/laravel-error-handing/" class="read-more-link">阅读更多</a>
+      <a href="/2015/12/composer-autoload/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/09/redis-scan/">Redis生产环境查看数据库键</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2015/11/mac-git-missing-xcrun/">Mac终端git命令提示错误:missing xcrun</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-09-05 </span>
+      <span class="post-time"> 2015-11-08 </span>
       <div class="post-category">
           <a href="/categories/develop/"> Develop </a>
           </div>
@@ -160,19 +325,223 @@
   
   <div class="post-content">
     <div class="post-summary">
-      如果要在redis生产环境服务器查看有哪些数据库键，当数据量特别大的时候，千万不要用 keys * ，这样会卡死，可以使用 scan 命令迭代。
+      <p>在 Mac 下 PhpStorm 和 sourcetree 配合使用，提示错误：can’t start Git，点击”fix it”, 填写的路径usr/bin/git是没错的，于是在终端下输入命令git，提示如下错误：</p>
+<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
     </div>
     <div class="read-more">
-      <a href="/2018/09/redis-scan/" class="read-more-link">阅读更多</a>
+      <a href="/2015/11/mac-git-missing-xcrun/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/09/reding-list-18/">本周阅读清单20180827</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2015/05/php-static-bind/">初识PHP Static延迟静态绑定</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-09-04 </span>
+      <span class="post-time"> 2015-05-27 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>PHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。</p>
+<p><code>class A<br>
+{<br>
+public static function echoClass(){<br>
+echo <strong>CLASS</strong>;<br>
+}</p>
+<pre><code>public static function test(){  
+    self::echoClass();        
+}
+</code></pre>
+<p>}</p>
+<p>class B extends A<br>
+{     <br>
+public static function echoClass()<br>
+{<br>
+echo <strong>CLASS</strong>;<br>
+}<br>
+}</p>
+<p>B::test(); //输出A</code></p>
+    </div>
+    <div class="read-more">
+      <a href="/2015/05/php-static-bind/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/05/php-composer/">PHP 开发者该知道的 5 个 Composer 小技巧</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-26 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos
+    </div>
+    <div class="read-more">
+      <a href="/2015/05/php-composer/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/03/beautiful-scenery-in-dream/">昨夜梦见的美景</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-03-14 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"> 日常生活 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有
+    </div>
+    <div class="read-more">
+      <a href="/2015/03/beautiful-scenery-in-dream/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2013/10/jobs-proverbs/">乔布斯13条箴言</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-10-21 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      乔布斯是一个无与伦比的演讲者与推销者，在他56岁的生命中，说过的金句比以下Business Insider网站列出的13条要多得多——有些甚至
+    </div>
+    <div class="read-more">
+      <a href="/2013/10/jobs-proverbs/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/09/php-pdo-prepare/">PHP：PDO prepare预处理</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-09-30 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：</p>
+<p>查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2012/09/php-pdo-prepare/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/09/10-golden-lessons-from-steve-jobs/">10条Steve Jobs的经典语录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-09-27 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p><span style="color: #888888;"><strong>史蒂夫·乔布斯经典语录</strong></span></p>
+<p><span style="color: #888888;"><strong> 10 Golden Lessons From Steve Jobs</strong></span></p>
+<p>他的成就和人格魅力影响了一代人和整个世界，他就是拥有梦幻般传奇经历的苹果电脑公司的创始人斯蒂夫·乔布斯。这个个人电脑领域的梦想家引领并改变了整个计算机硬件和软件产业。</p>
+<p>这个精力充沛魅力无限的家伙同时也是一个很会鼓动人心的激励大师，甚至在他的平常对话中，经典的语句也常常脱口而出。这里摘取了一些他的经典语录，希望这些乔氏语录对你有所帮助：</p>
+    </div>
+    <div class="read-more">
+      <a href="/2012/09/10-golden-lessons-from-steve-jobs/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/09/php-session-cookies/">深入理解 PHP 中 session 和 cookies 的联系</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-09-26 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>1. session概念</p>
+<p>2. http协议与状态保持</p>
+<p>3. 理解cookie</p>
+<p>4. php中session的生成机制</p>
+<p>5. php中session的过期回收机制</p>
+<p>6. php中session的客户端存储机制</p>
+    </div>
+    <div class="read-more">
+      <a href="/2012/09/php-session-cookies/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/09/stack-php/">PHP对象在内存堆栈中的分配</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-09-09 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>对象在PHP里面和整型、浮点型一样，也是一种数据类，都是存储不同类型数据用的， 在运行的时候都要加载到内存中去用，那么对象在内存里面是怎么体现的呢？内存从逻辑上说大体上是分为4段，<strong>栈空间段、堆空间段、代码段、初始化静态段</strong>，程序里面不同的声明放在不同的内存段里面。</p>
+<p><strong>数据段</strong>（data segment）通常是指用来存放程序中已初始化且不为0的全局变量如：静态变量和常量</p>
+<p><strong>代码段</strong>（code segment / text segment）通常是指用来存放程序执行代码的一块内存区域，比如函数和方法</p>
+<p>**</p>
+    </div>
+    <div class="read-more">
+      <a href="/2012/09/stack-php/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/09/linus-torvalds/">Linux发明人《Linus Torvalds自传》摘录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-09-04 </span>
       <div class="post-category">
           <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
           </div>
@@ -181,66 +550,52 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>1. Windows Subsystem for Linux 之体验</p>
-<p><a href="https://jinjun.info/first-experience-of-WSL.html" target="_blank" rel="noopener nofollow"><a href="https://jinjun.info/first-experience-of-WSL.html">https://jinjun.info/first-experience-of-WSL.html</a></a></p>
-<p>2. 探索 Laravel 里的加解密实现</p>
-<p><a href="http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html" target="_blank" rel="noopener nofollow"><a href="http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html">http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html</a></a></p>
-<p>3. 用 JSON 构建 API 的标准指南</p>
-<p><a href="http://jsonapi.org.cn/" target="_blank" rel="noopener nofollow"><a href="http://jsonapi.org.cn/">http://jsonapi.org.cn/</a></a></p>
+      除了程序员，大概很少人知道Linux操作系统。 它的发明者Linus Torvalds，知道的人就更少了。 他本人也很低调，深居简出，很少出席公众
     </div>
     <div class="read-more">
-      <a href="/2018/09/reding-list-18/" class="read-more-link">阅读更多</a>
+      <a href="/2012/09/linus-torvalds/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/08/laravel-chunk-tip/">Laravel chunk 使用注意的问题</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/08/intuition/">内心平静下来——找到直觉</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-08-14 </span>
+      <span class="post-time"> 2012-08-14 </span>
       <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/laravel/"> Laravel </a>
-          <a href="/categories/php/"> PHP </a>
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： 1 2 3 4 5 User::where(&#39;approved&#39;, 0)-&amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;gt;update([&#39;approved&#39; =&amp;gt; 1]); } }); 原因在于第一
+      Coming back to America was, for me, much more of a cultural shock than going to India. The people in the Indian countryside don’t use their intellect like we do, they use their intuition instead, and their intuition is far more developed than in the rest of the world. Intuition is a very powerful thing, more powerful than intellect, in my opinion. That
     </div>
     <div class="read-more">
-      <a href="/2018/08/laravel-chunk-tip/" class="read-more-link">阅读更多</a>
+      <a href="/2012/08/intuition/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2018/08/reding-list-17/">本周阅读清单20180730</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/08/follow-your-heart/">记住自己即将死去——追随内心</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-08-06 </span>
+      <span class="post-time"> 2012-08-14 </span>
       <div class="post-category">
-          <a href="/categories/redis/"> Redis </a>
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>1.PHP : 令人困惑的 strtotime</p>
-<p><a href="http://www.laruence.com/2018/07/31/3188.html" target="_blank" rel="noopener nofollow"><a href="http://www.laruence.com/2018/07/31/3188.html">http://www.laruence.com/2018/07/31/3188.html</a></a></p>
-<p>2.彻底弄懂 Laravel 中间件原理</p>
-<p><a href="https://blog.tanteng.me/2018/07/understand-laravel-middleware" target="_blank" rel="noopener"><a href="https://blog.tanteng.me/2018/07/understand-laravel-middleware">https://blog.tanteng.me/2018/07/understand-laravel-middleware</a></a></p>
-<p>3.Redis 事务与 Redis Lua 脚本</p>
-<p><a href="http://techlog.cn/article/list/10183180" target="_blank" rel="noopener nofollow"><a href="http://techlog.cn/article/list/10183180">http://techlog.cn/article/list/10183180</a></a></p>
-<p>4.如何开发、本地测试、发布 Laravel 扩展包</p>
-<p><a href="https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package" target="_blank" rel="noopener nofollow"><a href="https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package">https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package</a></a></p>
+      Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life. Because almost everything—all external expectations, all pride, all fear of embarrassment or failure—these things just fall
     </div>
     <div class="read-more">
-      <a href="/2018/08/reding-list-17/" class="read-more-link">阅读更多</a>
+      <a href="/2012/08/follow-your-heart/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -286,7 +641,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonytan</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>tony老师</span>
   </span>
 </div>
 
@@ -296,10 +651,10 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
 
 
 
@@ -307,7 +662,21 @@
 
 
 
-
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 
 
 
