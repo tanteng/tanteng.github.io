@@ -2,324 +2,333 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng.github.io/categories/</link>
+    <link>https://tanteng222.github.io/categories/</link>
     <description>Recent content in Categories on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Sat, 30 Nov 2019 15:10:10 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 20:22:04 +0800</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日常生活</title>
+      <link>https://tanteng222.github.io/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Fri, 01 Oct 2021 20:22:04 +0800</pubDate>
+      
+      <guid>https://tanteng222.github.io/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>MySQL</title>
-      <link>https://tanteng.github.io/categories/mysql/</link>
+      <link>https://tanteng222.github.io/categories/mysql/</link>
       <pubDate>Sat, 30 Nov 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/mysql/</guid>
+      <guid>https://tanteng222.github.io/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Laravel</title>
-      <link>https://tanteng.github.io/categories/laravel/</link>
+      <link>https://tanteng222.github.io/categories/laravel/</link>
       <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/laravel/</guid>
+      <guid>https://tanteng222.github.io/categories/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>https://tanteng.github.io/categories/nginx/</link>
+      <link>https://tanteng222.github.io/categories/nginx/</link>
       <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/nginx/</guid>
+      <guid>https://tanteng222.github.io/categories/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://tanteng.github.io/categories/php/</link>
+      <link>https://tanteng222.github.io/categories/php/</link>
       <pubDate>Thu, 08 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/php/</guid>
+      <guid>https://tanteng222.github.io/categories/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://tanteng.github.io/categories/golang/</link>
+      <link>https://tanteng222.github.io/categories/golang/</link>
       <pubDate>Wed, 31 Jul 2019 20:57:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/golang/</guid>
+      <guid>https://tanteng222.github.io/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://tanteng.github.io/categories/redis/</link>
+      <link>https://tanteng222.github.io/categories/redis/</link>
       <pubDate>Mon, 08 Apr 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/categories/redis/</guid>
+      <guid>https://tanteng222.github.io/categories/redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hive</title>
-      <link>https://tanteng.github.io/categories/hive/</link>
+      <link>https://tanteng222.github.io/categories/hive/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/hive/</guid>
+      <guid>https://tanteng222.github.io/categories/hive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://tanteng.github.io/categories/linux/</link>
+      <link>https://tanteng222.github.io/categories/linux/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/linux/</guid>
+      <guid>https://tanteng222.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Logstash</title>
-      <link>https://tanteng.github.io/categories/logstash/</link>
+      <link>https://tanteng222.github.io/categories/logstash/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/logstash/</guid>
+      <guid>https://tanteng222.github.io/categories/logstash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>互联网</title>
-      <link>https://tanteng.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/</link>
+      <link>https://tanteng222.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/</link>
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/</guid>
+      <guid>https://tanteng222.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CORS</title>
-      <link>https://tanteng.github.io/categories/cors/</link>
+      <link>https://tanteng222.github.io/categories/cors/</link>
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/cors/</guid>
+      <guid>https://tanteng222.github.io/categories/cors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Develop</title>
-      <link>https://tanteng.github.io/categories/develop/</link>
+      <link>https://tanteng222.github.io/categories/develop/</link>
       <pubDate>Tue, 30 Oct 2018 03:29:00 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/develop/</guid>
+      <guid>https://tanteng222.github.io/categories/develop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>设计模式</title>
-      <link>https://tanteng.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://tanteng222.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://tanteng222.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swoole</title>
-      <link>https://tanteng.github.io/categories/swoole/</link>
+      <link>https://tanteng222.github.io/categories/swoole/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/swoole/</guid>
+      <guid>https://tanteng222.github.io/categories/swoole/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TCP</title>
-      <link>https://tanteng.github.io/categories/tcp/</link>
+      <link>https://tanteng222.github.io/categories/tcp/</link>
       <pubDate>Fri, 13 Jul 2018 06:15:38 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/tcp/</guid>
+      <guid>https://tanteng222.github.io/categories/tcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>https://tanteng.github.io/categories/http/</link>
+      <link>https://tanteng222.github.io/categories/http/</link>
       <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/http/</guid>
+      <guid>https://tanteng222.github.io/categories/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>grpc</title>
-      <link>https://tanteng.github.io/categories/grpc/</link>
+      <link>https://tanteng222.github.io/categories/grpc/</link>
       <pubDate>Fri, 29 Jun 2018 13:29:54 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/grpc/</guid>
+      <guid>https://tanteng222.github.io/categories/grpc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>微信</title>
-      <link>https://tanteng.github.io/categories/%E5%BE%AE%E4%BF%A1/</link>
+      <link>https://tanteng222.github.io/categories/%E5%BE%AE%E4%BF%A1/</link>
       <pubDate>Sun, 24 Jun 2018 03:49:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E5%BE%AE%E4%BF%A1/</guid>
+      <guid>https://tanteng222.github.io/categories/%E5%BE%AE%E4%BF%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>事物</title>
-      <link>https://tanteng.github.io/categories/%E4%BA%8B%E7%89%A9/</link>
+      <link>https://tanteng222.github.io/categories/%E4%BA%8B%E7%89%A9/</link>
       <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E4%BA%8B%E7%89%A9/</guid>
+      <guid>https://tanteng222.github.io/categories/%E4%BA%8B%E7%89%A9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>七牛云</title>
-      <link>https://tanteng.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</link>
+      <link>https://tanteng222.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</link>
       <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</guid>
+      <guid>https://tanteng222.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>区块链</title>
-      <link>https://tanteng.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+      <link>https://tanteng222.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
+      <guid>https://tanteng222.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ELK</title>
-      <link>https://tanteng.github.io/categories/elk/</link>
+      <link>https://tanteng222.github.io/categories/elk/</link>
       <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/elk/</guid>
+      <guid>https://tanteng222.github.io/categories/elk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WebSocket</title>
-      <link>https://tanteng.github.io/categories/websocket/</link>
+      <link>https://tanteng222.github.io/categories/websocket/</link>
       <pubDate>Sun, 06 May 2018 04:39:53 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/websocket/</guid>
+      <guid>https://tanteng222.github.io/categories/websocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://tanteng.github.io/categories/go/</link>
+      <link>https://tanteng222.github.io/categories/go/</link>
       <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/go/</guid>
+      <guid>https://tanteng222.github.io/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTPS</title>
-      <link>https://tanteng.github.io/categories/https/</link>
+      <link>https://tanteng222.github.io/categories/https/</link>
       <pubDate>Mon, 02 Apr 2018 02:26:22 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/https/</guid>
+      <guid>https://tanteng222.github.io/categories/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MQTT</title>
-      <link>https://tanteng.github.io/categories/mqtt/</link>
+      <link>https://tanteng222.github.io/categories/mqtt/</link>
       <pubDate>Mon, 26 Mar 2018 02:14:01 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/mqtt/</guid>
+      <guid>https://tanteng222.github.io/categories/mqtt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>服务器</title>
-      <link>https://tanteng.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://tanteng222.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Thu, 01 Mar 2018 11:03:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://tanteng222.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>网摘日志</title>
-      <link>https://tanteng.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</link>
+      <link>https://tanteng222.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</link>
       <pubDate>Sat, 23 Dec 2017 15:56:30 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://tanteng222.github.io/categories/%E7%BD%91%E6%91%98%E6%97%A5%E5%BF%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>读书笔记</title>
-      <link>https://tanteng.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>https://tanteng222.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 23 Dec 2017 15:56:30 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://tanteng222.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据库</title>
-      <link>https://tanteng.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://tanteng222.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Sun, 17 Dec 2017 06:48:05 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://tanteng222.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description></description>
     </item>
     
     <item>
       <title>日志随笔</title>
-      <link>https://tanteng.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</link>
+      <link>https://tanteng222.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sun, 08 Oct 2017 06:14:13 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://tanteng222.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://tanteng.github.io/categories/git/</link>
+      <link>https://tanteng222.github.io/categories/git/</link>
       <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/git/</guid>
+      <guid>https://tanteng222.github.io/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端</title>
-      <link>https://tanteng.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
+      <link>https://tanteng222.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E5%89%8D%E7%AB%AF/</guid>
+      <guid>https://tanteng222.github.io/categories/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>小谈点评</title>
-      <link>https://tanteng.github.io/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</link>
+      <link>https://tanteng222.github.io/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</link>
       <pubDate>Thu, 01 Jan 2009 10:53:14 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</guid>
+      <guid>https://tanteng222.github.io/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTP/2</title>
-      <link>https://tanteng.github.io/categories/http/2/</link>
+      <link>https://tanteng222.github.io/categories/http/2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/categories/http/2/</guid>
+      <guid>https://tanteng222.github.io/categories/http/2/</guid>
       <description></description>
     </item>
     

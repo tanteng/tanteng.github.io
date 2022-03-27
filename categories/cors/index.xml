@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CORS on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng.github.io/categories/cors/</link>
+    <link>https://tanteng222.github.io/categories/cors/</link>
     <description>Recent content in CORS on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Mon, 12 Nov 2018 07:52:26 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/cors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Nov 2018 07:52:26 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/cors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20181105</title>
-      <link>https://tanteng.github.io/2018/11/reding-list-23/</link>
+      <link>https://tanteng222.github.io/2018/11/reding-list-23/</link>
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/11/reding-list-23/</guid>
+      <guid>https://tanteng222.github.io/2018/11/reding-list-23/</guid>
       <description>1.Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ 2.Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access 3.CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f 4.Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e 5.govendor 使用 https://www.orztu.com/post/using-govendor/</description>
     </item>
     
     <item>
       <title>本周阅读清单20180702</title>
-      <link>https://tanteng.github.io/2018/07/reding-list-13/</link>
+      <link>https://tanteng222.github.io/2018/07/reding-list-13/</link>
       <pubDate>Fri, 06 Jul 2018 23:39:25 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/07/reding-list-13/</guid>
+      <guid>https://tanteng222.github.io/2018/07/reding-list-13/</guid>
       <description>1.HTTP/2 服务器推送（server push）教程 https://juejin.im/entry/5a9e61cc518825556140c4f2 2.如何优雅的谈论 HTTP 1.0,1.1 和 HTTP/2 https://www.jianshu.com/p/52d86558ca57 3.深入理解 RESTful API 架构 https://mengkang.net/620.html 4.传统 Web 应用中的身份验证技术 https://insights.thoughtworks.cn/traditional-web-app-authentication/ 5.Web App Token 鉴权方案的</description>
     </item>
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logstash on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng.github.io/categories/logstash/</link>
+    <link>https://tanteng222.github.io/categories/logstash/</link>
     <description>Recent content in Logstash on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Wed, 23 Jan 2019 04:14:50 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/logstash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jan 2019 04:14:50 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/logstash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190103</title>
-      <link>https://tanteng.github.io/2019/01/reding-list-27/</link>
+      <link>https://tanteng222.github.io/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2019/01/reding-list-27/</guid>
+      <guid>https://tanteng222.github.io/2019/01/reding-list-27/</guid>
       <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统–Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     

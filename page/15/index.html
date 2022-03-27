@@ -26,9 +26,9 @@
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://tanteng.github.io/" />
-  <link href="https://tanteng.github.io/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
-  <link href="https://tanteng.github.io/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+<link rel="canonical" href="https://tanteng222.github.io/" />
+  <link href="https://tanteng222.github.io/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+  <link href="https://tanteng222.github.io/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,7 +44,7 @@
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
 <meta property="og:description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tanteng.github.io/" />
+<meta property="og:url" content="https://tanteng222.github.io/" />
 
 <meta itemprop="name" content="小谈博客 - 一个关注后端开发的博客">
 <meta itemprop="description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。"><meta name="twitter:card" content="summary"/>
@@ -120,6 +120,32 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/05/laravel-etag-middleware/">在 Laravel 中设置 Etag 缓存</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-05-19 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/laravel/"> Laravel </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。</p>
+<h3 id="什么是etag">什么是“ETag”？</h3>
+<p>Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。</p>
+<p>浏览器根据状态码判断是否缓存过期。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/05/laravel-etag-middleware/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2017/05/linux-clear-cache-buffer/">在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</a></h1>
@@ -211,32 +237,6 @@ fmt.Println(&ldquo;result:&rdquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/04/nginx-permission-denied/">Nginx 报错和解决方法记录</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-04-19 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>记录一下遇到的各种 Nginx 的报错和解决办法。</p>
-<h3 id="13-permission-denied">13: Permission denied</h3>
-<p>Nginx错误：</p>
-<p>2017/04/19 14:46:46 [crit] 4172#0: *671 open() “/data/vhosts/xunlei.com/test/” failed (13: Permission denied), client: 192.168.35.54, server: <a href="https://www.test.com">www.test.com</a>, request: “GET / HTTP/1.1”, host: “www.test.com”</p>
-<p>经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/04/nginx-permission-denied/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -260,7 +260,7 @@ fmt.Println(&ldquo;result:&rdquo;, s0) //result: [1 100 122 [3 4 5 6]]</code></p
       <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
       <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="https://tanteng.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://tanteng222.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

@@ -2,119 +2,119 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>服务器 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <link>https://tanteng222.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <description>Recent content in 服务器 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Thu, 01 Mar 2018 11:03:26 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Mar 2018 11:03:26 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一致性哈希算法及其在分布式系统中的应用</title>
-      <link>https://tanteng.github.io/2018/03/consistent-hashing/</link>
+      <link>https://tanteng222.github.io/2018/03/consistent-hashing/</link>
       <pubDate>Thu, 01 Mar 2018 11:03:26 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/03/consistent-hashing/</guid>
+      <guid>https://tanteng222.github.io/2018/03/consistent-hashing/</guid>
       <description>&lt;h1 id=&#34;摘要&#34;&gt;摘要&lt;/h1&gt;
 &lt;p&gt;本文将会从实际应用场景出发，介绍一致性哈希算法（Consistent Hashing）及其在分布式系统中的应用。首先本文会描述一个在日常开发中经常会遇到的问题场景，借此介绍一致性哈希算法以及这个算法如何解决此问题；接下来会对这个算法进行相对详细的描述，并讨论一些如虚拟节点等与此算法应用相关的话题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP-FPM,Nginx,FastCGI 之间的关系</title>
-      <link>https://tanteng.github.io/2017/11/nginx-fastcgi-php-fpm/</link>
+      <link>https://tanteng222.github.io/2017/11/nginx-fastcgi-php-fpm/</link>
       <pubDate>Thu, 09 Nov 2017 08:44:27 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/11/nginx-fastcgi-php-fpm/</guid>
+      <guid>https://tanteng222.github.io/2017/11/nginx-fastcgi-php-fpm/</guid>
       <description>本文介绍 PHP-FPM,Nginx,FastCGI 三者之间的关系，以及 Nginx 反向代理和负载均衡的配置。 PHP-FPM,Nginx,FastCGI 之间的关系 FastCGI 是一个协议，它是应用程序和 WEB 服务器连接的桥梁。Nginx 并不能直接与</description>
     </item>
     
     <item>
       <title>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间</title>
-      <link>https://tanteng.github.io/2017/05/linux-clear-cache-buffer/</link>
+      <link>https://tanteng222.github.io/2017/05/linux-clear-cache-buffer/</link>
       <pubDate>Thu, 18 May 2017 08:23:10 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/05/linux-clear-cache-buffer/</guid>
+      <guid>https://tanteng222.github.io/2017/05/linux-clear-cache-buffer/</guid>
       <description>在 Linux 上如何清除内存的 Cache、Buffer 和交换空间 链接：https://linux.cn/article-5627-1.html</description>
     </item>
     
     <item>
       <title>Shell 脚本请求 url 判断状态码</title>
-      <link>https://tanteng.github.io/2017/05/shell-check-url/</link>
+      <link>https://tanteng222.github.io/2017/05/shell-check-url/</link>
       <pubDate>Tue, 02 May 2017 03:05:16 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/05/shell-check-url/</guid>
+      <guid>https://tanteng222.github.io/2017/05/shell-check-url/</guid>
       <description>Shell 脚本请求 URL判断状态码是否异常并执行相关操作。 示例如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #!/bin/bash fileurl=&amp;#39;./check_url.txt&amp;#39; DATE_N=`date &amp;#34;+%Y-%m-%d %H:%M:%S&amp;#34;` for chkurl in $(cat ${fileurl}) # ${}忽略空格 do #</description>
     </item>
     
     <item>
       <title>netstat 命令统计 tcp 各状态数量</title>
-      <link>https://tanteng.github.io/2017/04/netstat-tcp-state/</link>
+      <link>https://tanteng222.github.io/2017/04/netstat-tcp-state/</link>
       <pubDate>Fri, 28 Apr 2017 03:37:31 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/04/netstat-tcp-state/</guid>
+      <guid>https://tanteng222.github.io/2017/04/netstat-tcp-state/</guid>
       <description>统计 tcp 各种状态的个数： 1 netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL</description>
     </item>
     
     <item>
       <title>VirtualBox启动蓝屏问题</title>
-      <link>https://tanteng.github.io/2017/03/virtualbox-blue-screen/</link>
+      <link>https://tanteng222.github.io/2017/03/virtualbox-blue-screen/</link>
       <pubDate>Fri, 24 Mar 2017 11:18:09 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/03/virtualbox-blue-screen/</guid>
+      <guid>https://tanteng222.github.io/2017/03/virtualbox-blue-screen/</guid>
       <description>用 vagrant + VirtualBox 虚拟机，最近几次没有关闭虚拟机重启电脑，导致虚拟机无法启动，每次到 Booting VM 这个步骤就会蓝屏，重新安装 vagrant，VirtualBox</description>
     </item>
     
     <item>
       <title>Linux 中 /var/spool/postfix/maildrop 占用空间很大的原因</title>
-      <link>https://tanteng.github.io/2017/01/linux-postfix-maildrop/</link>
+      <link>https://tanteng222.github.io/2017/01/linux-postfix-maildrop/</link>
       <pubDate>Sat, 14 Jan 2017 05:52:21 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/01/linux-postfix-maildrop/</guid>
+      <guid>https://tanteng222.github.io/2017/01/linux-postfix-maildrop/</guid>
       <description>&lt;p&gt;MySQL 报错 Exception Message:SQLSTATE[08004][1040]Too many connections，经查这次错误是硬盘空间满了导致的，于是找一些可以删除的文件腾出一些空间。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Supervisor 管理 Laravel 队列进程</title>
-      <link>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</link>
+      <link>https://tanteng222.github.io/2017/01/supervisor-laravel-queue/</link>
       <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2017/01/supervisor-laravel-queue/</guid>
+      <guid>https://tanteng222.github.io/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Nginx 反向代理和负载均衡搭建多人测试环境</title>
-      <link>https://tanteng.github.io/2016/12/nginx-test-environment/</link>
+      <link>https://tanteng222.github.io/2016/12/nginx-test-environment/</link>
       <pubDate>Sat, 17 Dec 2016 06:19:44 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/12/nginx-test-environment/</guid>
+      <guid>https://tanteng222.github.io/2016/12/nginx-test-environment/</guid>
       <description>&lt;img class=&#34;alignnone size-full wp-image-11120&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/12/nginx-test.jpeg&#34; alt=&#34;&#34; width=&#34;1328&#34; height=&#34;874&#34; /&gt;
 &lt;p&gt;假如我们使用 git 进行版本控制，在一个大型网站中，开发人员在不同的分支上开发不同的需求，当一个需求开发完成需要测试，我们会把这个分支告诉测试人员，然后测试人员在测试机的网站目录拉取这个分支进行测试。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>vim常用操作</title>
-      <link>https://tanteng.github.io/2016/09/vim-syntax/</link>
+      <link>https://tanteng222.github.io/2016/09/vim-syntax/</link>
       <pubDate>Wed, 21 Sep 2016 14:06:02 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/09/vim-syntax/</guid>
+      <guid>https://tanteng222.github.io/2016/09/vim-syntax/</guid>
       <description>&lt;p&gt;vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Let’s Encrypt 开启多域名 HTTPS</title>
-      <link>https://tanteng.github.io/2016/09/lets-encrypt-multi-domain-https/</link>
+      <link>https://tanteng222.github.io/2016/09/lets-encrypt-multi-domain-https/</link>
       <pubDate>Mon, 12 Sep 2016 11:26:47 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/09/lets-encrypt-multi-domain-https/</guid>
+      <guid>https://tanteng222.github.io/2016/09/lets-encrypt-multi-domain-https/</guid>
       <description>上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问</description>
     </item>
     
     <item>
       <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>https://tanteng.github.io/2016/04/vagrantfile-synced-folder/</link>
+      <link>https://tanteng222.github.io/2016/04/vagrantfile-synced-folder/</link>
       <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/04/vagrantfile-synced-folder/</guid>
+      <guid>https://tanteng222.github.io/2016/04/vagrantfile-synced-folder/</guid>
       <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
@@ -122,10 +122,10 @@
     
     <item>
       <title>Nginx开启SSI</title>
-      <link>https://tanteng.github.io/2016/04/nginx-ssi/</link>
+      <link>https://tanteng222.github.io/2016/04/nginx-ssi/</link>
       <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/04/nginx-ssi/</guid>
+      <guid>https://tanteng222.github.io/2016/04/nginx-ssi/</guid>
       <description>&lt;p&gt;在一个HTML页面中发现一段这样的代码：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;!--#include virtual=&amp;quot;/new/ssi/script.html&amp;quot;--&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？&lt;/p&gt;</description>
@@ -133,48 +133,48 @@
     
     <item>
       <title>常用的CentOS 7 yum源集合</title>
-      <link>https://tanteng.github.io/2016/03/centos-7-repo/</link>
+      <link>https://tanteng222.github.io/2016/03/centos-7-repo/</link>
       <pubDate>Thu, 31 Mar 2016 09:40:55 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/centos-7-repo/</guid>
+      <guid>https://tanteng222.github.io/2016/03/centos-7-repo/</guid>
       <description>&lt;p&gt;记录几个常用的CentOS 7下的yum源，包括PHP7，MariaDB，Redis，Nginx等，以及阿里云源，方便虚拟机或云主机上安装这些软件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP-FPM性能优化参考</title>
-      <link>https://tanteng.github.io/2016/03/php-fpm-conf/</link>
+      <link>https://tanteng222.github.io/2016/03/php-fpm-conf/</link>
       <pubDate>Tue, 29 Mar 2016 16:55:16 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/php-fpm-conf/</guid>
+      <guid>https://tanteng222.github.io/2016/03/php-fpm-conf/</guid>
       <description>&lt;p&gt;转载一篇关于PHP-FPM配置文件优化的文章，根据机器的配置设置参数，提高性能。&lt;/p&gt;
 &lt;p&gt;php-fpm.conf有两个至关重要的参数：一个是”max_children”，另一个是”request_terminate_timeout”.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL数据库性能优化之缓存参数设置</title>
-      <link>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</link>
+      <link>https://tanteng222.github.io/2016/03/innodb_buffer_pool_size/</link>
       <pubDate>Mon, 28 Mar 2016 04:02:15 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/innodb_buffer_pool_size/</guid>
+      <guid>https://tanteng222.github.io/2016/03/innodb_buffer_pool_size/</guid>
       <description>&lt;p&gt;网站运行在阿里云上，1G内存，PHP7+PHP-FPM+Nginx+MariaDB+Redis都安装在一台服务器上，而网站访问量一天也有500IP，不多，但也造成了一点压力，刚放上去几天数据库经常会挂掉，于是查阅数据库方面的性能优化，需要设置一些参数。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx性能调优之buffer参数设置</title>
-      <link>https://tanteng.github.io/2016/03/nginx-buffer-params/</link>
+      <link>https://tanteng222.github.io/2016/03/nginx-buffer-params/</link>
       <pubDate>Sun, 27 Mar 2016 10:07:51 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/nginx-buffer-params/</guid>
+      <guid>https://tanteng222.github.io/2016/03/nginx-buffer-params/</guid>
       <description>&lt;p&gt;打开Nginx的error.log日志文件，发现很多warn的警告错误，提示：&lt;/p&gt;
 &lt;p&gt;①2016/03/25 13:18:35 [warn] 1171#0: *10875 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/0/08/0000000080 while reading upstream, client: 106.38.241.105, server: blog.tanteng.me, request: “GET /page/38/ HTTP/1.1”, upstream: “fastcgi://127.0.0.1:9000”, host: “blog.tanteng.me”.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Redis未授权访问漏洞</title>
-      <link>https://tanteng.github.io/2016/03/redis-6379-safe/</link>
+      <link>https://tanteng222.github.io/2016/03/redis-6379-safe/</link>
       <pubDate>Mon, 21 Mar 2016 06:07:24 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2016/03/redis-6379-safe/</guid>
+      <guid>https://tanteng222.github.io/2016/03/redis-6379-safe/</guid>
       <description>&lt;p&gt;在阿里云上挂了一个网站，运行CentOS+PHP+Nginx，服务器装了redis，端口是6379，打开阿里云后台云盾报一个安全漏洞，漏洞类型是Redis未授权访问漏洞，漏洞地址是xx.xx.xx.xx:6379，也提供了解决方案。&lt;/p&gt;</description>
     </item>
     

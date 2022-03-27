@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>事务 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng.github.io/tags/%E4%BA%8B%E5%8A%A1/</link>
+    <link>https://tanteng222.github.io/tags/%E4%BA%8B%E5%8A%A1/</link>
     <description>Recent content in 事务 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Thu, 20 Jun 2019 15:50:10 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/%E4%BA%8B%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jun 2019 15:50:10 +0800</lastBuildDate><atom:link href="https://tanteng222.github.io/tags/%E4%BA%8B%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190620</title>
-      <link>https://tanteng.github.io/2019/06/reding-list-34/</link>
+      <link>https://tanteng222.github.io/2019/06/reding-list-34/</link>
       <pubDate>Thu, 20 Jun 2019 15:50:10 +0800</pubDate>
       
-      <guid>https://tanteng.github.io/2019/06/reding-list-34/</guid>
+      <guid>https://tanteng222.github.io/2019/06/reding-list-34/</guid>
       <description>1.MySQL商品库存扣减问题总结 https://zhaoyixing.coding.me/2018/01/10/mysql-update-safe-md/ 2.MySQL死锁问题分析 https://www.cnblogs.com/LBSer/p/5183300.html 3.[译] Go: 理解 Sync.Pool 的设计 https://studygolang.com/articles/21122 4.epoll 或者 kqueue 的原理是什么？ https://www.zhihu.com/question/20122137/answer/14049112 5.深入理解 MySQL ―― 锁、事务</description>
     </item>
     
     <item>
       <title>本周阅读清单20180730</title>
-      <link>https://tanteng.github.io/2018/08/reding-list-17/</link>
+      <link>https://tanteng222.github.io/2018/08/reding-list-17/</link>
       <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
       
-      <guid>https://tanteng.github.io/2018/08/reding-list-17/</guid>
+      <guid>https://tanteng222.github.io/2018/08/reding-list-17/</guid>
       <description>&lt;p&gt;1.PHP : 令人困惑的 strtotime&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34;&gt;http://www.laruence.com/2018/07/31/3188.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.彻底弄懂 Laravel 中间件原理&lt;/p&gt;

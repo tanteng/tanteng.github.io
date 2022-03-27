@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://tanteng.github.io/sitemap.xml
+Sitemap: https://tanteng222.github.io/sitemap.xml
