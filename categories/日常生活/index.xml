@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常生活 on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng222.github.io/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</link>
+    <description>Recent content in 日常生活 on 小谈博客 - 一个关注后端开发的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Fri, 01 Oct 2021 20:22:04 +0800</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Macbook Pro 换电池</title>
+      <link>https://tanteng222.github.io/2021/10/macbook-pro-replace-battery/</link>
+      <pubDate>Fri, 01 Oct 2021 20:22:04 +0800</pubDate>
+      
+      <guid>https://tanteng222.github.io/2021/10/macbook-pro-replace-battery/</guid>
+      <description>给两台 MacBook Pro 换电池，折腾了一番，终于成功换好了。😄 为什么要换电池？ 这两台 MacBook Pro 都过保了。 一台是公司的 MacBook Pro 归个人，电池废了，续航只有半个小时； 一台</description>
+    </item>
+    
+  </channel>
+</rss>
