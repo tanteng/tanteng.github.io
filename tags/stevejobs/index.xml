@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>stevejobs on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng222.github.io/tags/stevejobs/</link>
+    <link>http://localhost:1313/tags/stevejobs/</link>
     <description>Recent content in stevejobs on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Tue, 14 Aug 2012 05:19:53 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/tags/stevejobs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Aug 2012 05:19:53 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/stevejobs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内心平静下来——找到直觉</title>
-      <link>https://tanteng222.github.io/2012/08/intuition/</link>
+      <link>http://localhost:1313/2012/08/intuition/</link>
       <pubDate>Tue, 14 Aug 2012 05:19:53 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2012/08/intuition/</guid>
+      <guid>http://localhost:1313/2012/08/intuition/</guid>
       <description>Coming back to America was, for me, much more of a cultural shock than going to India. The people in the Indian countryside don’t use their intellect like we do, they use their intuition instead, and their intuition is far more developed than in the rest of the world. Intuition is a very powerful thing, more powerful than intellect, in my opinion. That</description>
     </item>
     
     <item>
       <title>乔布斯的Stay Hungry, Stay Foolish</title>
-      <link>https://tanteng222.github.io/2011/09/stay-hungry-stay-foolish/</link>
+      <link>http://localhost:1313/2011/09/stay-hungry-stay-foolish/</link>
       <pubDate>Sun, 18 Sep 2011 07:06:36 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2011/09/stay-hungry-stay-foolish/</guid>
+      <guid>http://localhost:1313/2011/09/stay-hungry-stay-foolish/</guid>
       <description>&lt;p&gt;2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;什么叫 Hungry？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;美国人不会用&lt;/p&gt;

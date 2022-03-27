@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>七牛云 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng222.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</link>
+    <link>http://localhost:1313/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</link>
     <description>Recent content in 七牛云 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Mon, 28 May 2018 11:32:34 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 May 2018 11:32:34 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E4%B8%83%E7%89%9B%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
-      <link>https://tanteng222.github.io/2018/05/php-qiniu-sdk-not-support-composer/</link>
+      <link>http://localhost:1313/2018/05/php-qiniu-sdk-not-support-composer/</link>
       <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/05/php-qiniu-sdk-not-support-composer/</guid>
+      <guid>http://localhost:1313/2018/05/php-qiniu-sdk-not-support-composer/</guid>
       <description>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不</description>
     </item>
     

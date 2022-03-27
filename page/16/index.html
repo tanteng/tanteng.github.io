@@ -26,9 +26,9 @@
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://tanteng222.github.io/" />
-  <link href="https://tanteng222.github.io/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
-  <link href="https://tanteng222.github.io/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+<link rel="canonical" href="http://localhost:1313/" />
+  <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+  <link href="http://localhost:1313/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,7 +44,7 @@
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
 <meta property="og:description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tanteng222.github.io/" />
+<meta property="og:url" content="http://localhost:1313/" />
 
 <meta itemprop="name" content="小谈博客 - 一个关注后端开发的博客">
 <meta itemprop="description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。"><meta name="twitter:card" content="summary"/>
@@ -82,6 +82,8 @@
         <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
 
@@ -110,6 +112,8 @@
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
       </li>
   </ul>
 </nav>
@@ -120,6 +124,27 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/04/netstat-tcp-state/">netstat 命令统计 tcp 各状态数量</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-04-28 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      统计 tcp 各种状态的个数： 1 netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL
+    </div>
+    <div class="read-more">
+      <a href="/2017/04/netstat-tcp-state/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2017/04/nginx-permission-denied/">Nginx 报错和解决方法记录</a></h1>
@@ -210,31 +235,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/01/mysql-alter-table-big-data/">MySQL大表加字段思路</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-01-19 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>给 MySQL 一张表加字段执行如下 sql 就可以了：</p>
-<p><code class="lang:mysql decode:true">ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&rsquo; AFTER id;</code></p>
-<p>但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/01/mysql-alter-table-big-data/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -258,7 +258,7 @@
       <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
       <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="https://tanteng222.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

@@ -2,162 +2,162 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng222.github.io/categories/golang/</link>
+    <link>http://localhost:1313/categories/golang/</link>
     <description>Recent content in Golang on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Wed, 31 Jul 2019 20:57:10 +0800</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Jul 2019 20:57:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190731</title>
-      <link>https://tanteng222.github.io/2019/07/reding-list-36/</link>
+      <link>http://localhost:1313/2019/07/reding-list-36/</link>
       <pubDate>Wed, 31 Jul 2019 20:57:10 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/07/reding-list-36/</guid>
+      <guid>http://localhost:1313/2019/07/reding-list-36/</guid>
       <description>1.Golang调度器 https://www.jianshu.com/p/1288b8fec84d 2.也谈 goroutine 调度器 https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/ 3.[翻译]The Go scheduler https://hxzhao527.github.io/2018/10/18/%E7%BF%BB%E8%AF%91-The-Go-scheduler/ 4.深入 golang runtime 的调度 https://zboya.github.io/post/go_scheduler/ 5.Goroutine浅析 https://studygolang.com/articles/12003</description>
     </item>
     
     <item>
       <title>本周阅读清单20190712</title>
-      <link>https://tanteng222.github.io/2019/07/reding-list-35/</link>
+      <link>http://localhost:1313/2019/07/reding-list-35/</link>
       <pubDate>Fri, 12 Jul 2019 19:57:10 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/07/reding-list-35/</guid>
+      <guid>http://localhost:1313/2019/07/reding-list-35/</guid>
       <description>1.Charles 从入门到精通 https://blog.devtang.com/2015/11/14/charles-introduction/ 2.Git如何永久删除文件(包括历史记录) https://www.cnblogs.com/shines77/p/3460274.html 3.Go 编程：图解反射 https://studygolang.com/articles/21936 4.Go并发编程模型：pipeline和cancellatio</description>
     </item>
     
     <item>
       <title>本周阅读清单20190508</title>
-      <link>https://tanteng222.github.io/2019/05/reding-list-33/</link>
+      <link>http://localhost:1313/2019/05/reding-list-33/</link>
       <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/05/reding-list-33/</guid>
+      <guid>http://localhost:1313/2019/05/reding-list-33/</guid>
       <description>1.深入理解GO时间处理(time.Time) https://studygolang.com/articles/11975 2.上云，你需要了解的AK使用姿势 https://yq.aliyun.com/articles/55947 3.高并发集中访问造成连接MYSQL报Cannot assign requested a</description>
     </item>
     
     <item>
       <title>本周阅读清单20190408</title>
-      <link>https://tanteng222.github.io/2019/04/reding-list-32/</link>
+      <link>http://localhost:1313/2019/04/reding-list-32/</link>
       <pubDate>Mon, 08 Apr 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/04/reding-list-32/</guid>
+      <guid>http://localhost:1313/2019/04/reding-list-32/</guid>
       <description>1.Redis Stream——作为消息队列的典型应用场景 https://yq.aliyun.com/articles/603193 2.深夜学算法之 Skiplist：让链表飞 https://www.jianshu.com/p/fcd18946994e 3.Redis Zset 内部实现 https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/ 4.函数调用中的栈帧 https://labrick.cc/2018/06/24/stack-in-call-func/ 5.Go高性能</description>
     </item>
     
     <item>
       <title>本周阅读清单20190322</title>
-      <link>https://tanteng222.github.io/2019/03/reding-list-31/</link>
+      <link>http://localhost:1313/2019/03/reding-list-31/</link>
       <pubDate>Fri, 22 Mar 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/03/reding-list-31/</guid>
+      <guid>http://localhost:1313/2019/03/reding-list-31/</guid>
       <description>1.深入解析 Go 总 Slice 底层实现 https://halfrost.com/go_slice/ 2.深度解密Go语言之关于 interface 的10个问题 https://www.cnblogs.com/qcrao-2018/p/10766091.html 3.Type assertions in Go https://medium.com/golangspec/type-assertions-in-go-e609759c42e1 4.Hive SQL 的编译过程 https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html 5.经济学十大定律-边际收益递减定律 https://xueqiu.com/1084912228/108513216</description>
     </item>
     
     <item>
       <title>本周阅读清单20190305</title>
-      <link>https://tanteng222.github.io/2019/03/reding-list-30/</link>
+      <link>http://localhost:1313/2019/03/reding-list-30/</link>
       <pubDate>Tue, 05 Mar 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/03/reding-list-30/</guid>
+      <guid>http://localhost:1313/2019/03/reding-list-30/</guid>
       <description>1.探索 Golang 一致性原语 https://wweir.cc/post/%E6%8E%A2%E7%B4%A2-golang-%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E8%AF%AD/ 2.My Standout Features in PHP7 https://medium.com/@jodylecompte/my-standout-features-in-php7-80ccd2763c55 3.为什么遍历 Go map 是无序的？ https://segmentfault.com/a/1190000018782278 4.我的游戏人生 http://miloyip.com/2010/my-life-as-a-game/ 5.String Data Type in Go https://medium.com/rungo/string-data-type-in-go-8af2b639478 6.PHP中处理Protocol Buffers</description>
     </item>
     
     <item>
       <title>本周阅读清单20190225</title>
-      <link>https://tanteng222.github.io/2019/02/reding-list-29/</link>
+      <link>http://localhost:1313/2019/02/reding-list-29/</link>
       <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/02/reding-list-29/</guid>
+      <guid>http://localhost:1313/2019/02/reding-list-29/</guid>
       <description>1.前缀索引，一种优化索引大小的解决方案 http://www.cnblogs.com/studyzy/p/4310653.html 2.[译]Go 调度器: M, P 和 G https://colobu.com/2017/05/04/go-scheduler/ 3.gRPC 安全认证 https://yuanxuxu.com/2018/11/21/grpc-token/ 4.Go 语言 Channel 实现原理精要 https://draveness.me/golang-channel 5.Go modules 详解 http://objcoding.com/2018/09/13/go-modules/</description>
     </item>
     
     <item>
       <title>本周阅读清单20190128</title>
-      <link>https://tanteng222.github.io/2019/02/reding-list-28/</link>
+      <link>http://localhost:1313/2019/02/reding-list-28/</link>
       <pubDate>Sun, 03 Feb 2019 15:30:05 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/02/reding-list-28/</guid>
+      <guid>http://localhost:1313/2019/02/reding-list-28/</guid>
       <description>1.golang select-case 实现机制 https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-se</description>
     </item>
     
     <item>
       <title>本周阅读清单20181210</title>
-      <link>https://tanteng222.github.io/2019/01/reding-list-26/</link>
+      <link>http://localhost:1313/2019/01/reding-list-26/</link>
       <pubDate>Wed, 02 Jan 2019 06:14:06 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/01/reding-list-26/</guid>
+      <guid>http://localhost:1313/2019/01/reding-list-26/</guid>
       <description>1.go 指针和内存分配详解 https://segmentfault.com/a/1190000017473672 2.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 3.[译]代码审查之最佳实践 https://mp.weixin.qq.com/s/p_CNasQxzdni4G2eD0xUrQ 4.WEB内容安全政策（CSP） https://developers.google.com/web/fundamentals/security/csp/?hl=zh-cn 5.如何学习分布式系统 https://www.cnblogs.com/xybaby/p/7787034.html</description>
     </item>
     
     <item>
       <title>本周阅读清单20181123</title>
-      <link>https://tanteng222.github.io/2018/12/reding-list-25/</link>
+      <link>http://localhost:1313/2018/12/reding-list-25/</link>
       <pubDate>Sun, 09 Dec 2018 05:05:42 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/12/reding-list-25/</guid>
+      <guid>http://localhost:1313/2018/12/reding-list-25/</guid>
       <description>1.MySQL的异步复制和半同步复制 https://www.jianshu.com/p/d877cbe9f0f0 2.Go调度器原理浅析 https://www.cnblogs.com/ralap7/p/9190416.html 3.golang后台服务设计精要 http://litang.me/post/golang-server-design/ 4.Go’s http package by example（总结很好）</description>
     </item>
     
     <item>
       <title>本周阅读清单20181112</title>
-      <link>https://tanteng222.github.io/2018/11/reding-list-24/</link>
+      <link>http://localhost:1313/2018/11/reding-list-24/</link>
       <pubDate>Thu, 22 Nov 2018 03:08:23 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/11/reding-list-24/</guid>
+      <guid>http://localhost:1313/2018/11/reding-list-24/</guid>
       <description>1.腾讯云点播视频加密方案 https://cloud.tencent.com/document/product/266/9638 2.HTTP Live Streaming (HLS) – 概念 https://www.jianshu.com/p/2ce402a485ca 3.RTMP HLS HTTP 直播协议一次看个够 https://www.jianshu.com/p/4c89b2c83e59 4.Golang并发原理及GPM调度策略（一） http://www.cnblogs.com/mokafamily/p/9975980.html 5.Go基础系列：互斥</description>
     </item>
     
     <item>
       <title>本周阅读清单20181105</title>
-      <link>https://tanteng222.github.io/2018/11/reding-list-23/</link>
+      <link>http://localhost:1313/2018/11/reding-list-23/</link>
       <pubDate>Mon, 12 Nov 2018 07:52:26 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/11/reding-list-23/</guid>
+      <guid>http://localhost:1313/2018/11/reding-list-23/</guid>
       <description>1.Writing Protobuf Services in PHP https://mattallan.org/posts/protobuf-php-services/ 2.Practical Persistence in Go: Organising Database Access https://www.alexedwards.net/blog/organising-database-access 3.CORS 跨域 Cookie 的设置与获取 https://www.jianshu.com/p/13d53acc124f 4.Go语言字符串高效拼接(一) https://juejin.im/post/5be23a01518825697344f05e 5.govendor 使用 https://www.orztu.com/post/using-govendor/</description>
     </item>
     
     <item>
       <title>本周阅读清单20180903</title>
-      <link>https://tanteng222.github.io/2018/09/reding-list-19/</link>
+      <link>http://localhost:1313/2018/09/reding-list-19/</link>
       <pubDate>Sat, 22 Sep 2018 14:57:31 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/09/reding-list-19/</guid>
+      <guid>http://localhost:1313/2018/09/reding-list-19/</guid>
       <description>1.聊聊加密那点事——PHP加密最佳实践 https://laravel-china.org/articles/4499/talk-about-encryption-that-thing-php-encryption-best-practice 2.etcd：从应用场景到实现原理的全方位解读 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle 3.大家的公司 Code Review 都是怎么做的？ https://www.zhihu.com/question/41089988 4.gRPC 和 restful 转换 https://github.com/grpc-ecosystem/grpc-gateway 5.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180723</title>
-      <link>https://tanteng222.github.io/2018/07/reding-list-16/</link>
+      <link>http://localhost:1313/2018/07/reding-list-16/</link>
       <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/07/reding-list-16/</guid>
+      <guid>http://localhost:1313/2018/07/reding-list-16/</guid>
       <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180716</title>
-      <link>https://tanteng222.github.io/2018/07/reding-list-15/</link>
+      <link>http://localhost:1313/2018/07/reding-list-15/</link>
       <pubDate>Thu, 19 Jul 2018 03:07:22 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/07/reding-list-15/</guid>
+      <guid>http://localhost:1313/2018/07/reding-list-15/</guid>
       <description>1.初探 Go 的编译命令执行过程 https://halfrost.com/go_command/ 2.高效的数据压缩编码方式——Protobuf https://halfrost.com/protobuf_encode/ 3.浅谈消息队列及常见的消息中间件 https://juejin.im/post/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区</description>
     </item>
     
     <item>
       <title>本周阅读清单20180604</title>
-      <link>https://tanteng222.github.io/2018/06/reding-list-10/</link>
+      <link>http://localhost:1313/2018/06/reding-list-10/</link>
       <pubDate>Mon, 18 Jun 2018 14:36:24 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/06/reding-list-10/</guid>
+      <guid>http://localhost:1313/2018/06/reding-list-10/</guid>
       <description>1.深入介绍 Golang 中的 bufio.Scanner https://zhuanlan.zhihu.com/p/37673679 2.Redis 的通信协议 http://redisdoc.com/topic/protocol.html 3.用 Redis 实现支持优先级的消息队列 https://www.cnblogs.com/laozhbook/p/redis_queue.html 4.Go HTTP 服务器编程基础 http://cizixs.com/2016/08/17/golang-http-server-side 5.你真的了解 gzip 吗？ https://zhuanlan.zhihu.com/p/24764131</description>
     </item>
     
     <item>
       <title>本周阅读清单20180507</title>
-      <link>https://tanteng222.github.io/2018/05/reding-list-7/</link>
+      <link>http://localhost:1313/2018/05/reding-list-7/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/05/reding-list-7/</guid>
+      <guid>http://localhost:1313/2018/05/reding-list-7/</guid>
       <description>1.Golang CSP 并发模型 https://www.jianshu.com/p/36e246c6153d 2.深入理解 Go Channel http://legendtkl.com/2017/07/30/understanding-golang-channel/ 3.谈谈 HTTP/2 的协议协商机制 https://imququ.com/post/protocol-negotiation-in-http2.html 4.【重温】中本聪《比特币：一种点对点的电子现金系统》 https://zhuanlan.zhihu.com/p/28108862 5.详解区块链 P2P 网络 https://keeganlee.me/post/blockchain/20180313 6.</description>
     </item>
     

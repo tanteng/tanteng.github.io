@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng222.github.io/categories/laravel/</link>
+    <link>http://localhost:1313/categories/laravel/</link>
     <description>Recent content in Laravel on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Fri, 30 Aug 2019 15:10:10 +0800</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Aug 2019 15:10:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190830</title>
-      <link>https://tanteng222.github.io/2019/08/reding-list-38/</link>
+      <link>http://localhost:1313/2019/08/reding-list-38/</link>
       <pubDate>Fri, 30 Aug 2019 15:10:10 +0800</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/08/reding-list-38/</guid>
+      <guid>http://localhost:1313/2019/08/reding-list-38/</guid>
       <description>1.HTTP 代理原理及实现 https://imququ.com/post/web-proxy.html 2.为什么使用通信来共享内存？ https://draveness.me/whys-the-design-communication-shared-memory 3.深入理解Go-defer的原理剖析 https://juejin.im/post/5d71d1edf265da03e52356fb 4.Nginx实现JWT验证-基于OpenRest</description>
     </item>
     
     <item>
       <title>本周阅读清单20190103</title>
-      <link>https://tanteng222.github.io/2019/01/reding-list-27/</link>
+      <link>http://localhost:1313/2019/01/reding-list-27/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:50 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2019/01/reding-list-27/</guid>
+      <guid>http://localhost:1313/2019/01/reding-list-27/</guid>
       <description>1.TDSQL 特有的 MySQL 内核功能介绍 https://zhuanlan.zhihu.com/p/50774800 2.MySQL 主键设计 http://seanlook.com/2016/05/13/mysql-innodb-primary_key/ 3.Logstash 最佳实践 https://doc.yonyoucloud.com/doc/logstash-best-practice-cn 4.消息队列技术很好的总结 https://www.jianshu.com/p/689ce4205021 5.剖析Laravel队列系统–Worker https://yuanxuxu.com/2017/07/17/pou-xi-laraveldui-lie-xi-tong-worker/</description>
     </item>
     
     <item>
       <title>本周阅读清单20181022</title>
-      <link>https://tanteng222.github.io/2018/10/reding-list-22/</link>
+      <link>http://localhost:1313/2018/10/reding-list-22/</link>
       <pubDate>Sun, 28 Oct 2018 14:40:15 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/10/reding-list-22/</guid>
+      <guid>http://localhost:1313/2018/10/reding-list-22/</guid>
       <description>1.Practical Go: Real world advice for writing maintainable Go programs https://dave.cheney.net/practical-go/presentations/qcon-china.html 2.What happened to MySQL 6 &amp;amp; 7? https://dba.stackexchange.com/questions/207506/what-happened-to-mysql-6-7 3.工厂模式——看这一篇就够了 https://juejin.im/entry/58f5e080b123db2fa2b3c4c6 4.What is a Laravel Interface? https://vegibit.com/what-is-a-laravel-interface/ 5.理解 UUID http://wsfdl.com/algorit</description>
     </item>
     
     <item>
       <title>Laravel 错误和异常处理用法</title>
-      <link>https://tanteng222.github.io/2018/09/laravel-error-handing/</link>
+      <link>http://localhost:1313/2018/09/laravel-error-handing/</link>
       <pubDate>Sat, 15 Sep 2018 05:41:51 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/09/laravel-error-handing/</guid>
+      <guid>http://localhost:1313/2018/09/laravel-error-handing/</guid>
       <description>&lt;p&gt;Laravel 自带错误和异常处理，App\Exceptions\Handler 负责上报异常和如何返回内容，以及未登录的处理。App\Exceptions\Handler 位于 app\Exceptions\Handler.php，下面介绍这个类的属性和用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel chunk 使用注意的问题</title>
-      <link>https://tanteng222.github.io/2018/08/laravel-chunk-tip/</link>
+      <link>http://localhost:1313/2018/08/laravel-chunk-tip/</link>
       <pubDate>Tue, 14 Aug 2018 15:39:12 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/08/laravel-chunk-tip/</guid>
+      <guid>http://localhost:1313/2018/08/laravel-chunk-tip/</guid>
       <description>使用 Laravel 的 chunk 可以用来优化大结果集的查询，提供分块处理数据的方法，但是如下的例子就会有问题： 1 2 3 4 5 User::where(&amp;#39;approved&amp;#39;, 0)-&amp;amp;gt;chunk(100, function ($users) { foreach ($users as $user) { $user-&amp;amp;gt;update([&amp;#39;approved&amp;#39; =&amp;amp;gt; 1]); } }); 原因在于第一</description>
     </item>
     
     <item>
       <title>Laravel 中为何不使用 blpop 取队列？</title>
-      <link>https://tanteng222.github.io/2018/08/laravel-why-not-use-blpop/</link>
+      <link>http://localhost:1313/2018/08/laravel-why-not-use-blpop/</link>
       <pubDate>Tue, 31 Jul 2018 17:18:21 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/08/laravel-why-not-use-blpop/</guid>
+      <guid>http://localhost:1313/2018/08/laravel-why-not-use-blpop/</guid>
       <description>&lt;p&gt;Redis 的 list 数据结构常用来做消息队列，通常使用的命令有 lpop/rpop ，还有带阻塞版的 blpop/brpop 等。blpop 的优点是避免一直轮询占用资源，而且支持多个列表作为参数并按照顺序弹出数据，如 blpop high low 30，可以更方便实现队列的优先级。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 中间件原理</title>
-      <link>https://tanteng222.github.io/2018/07/understand-laravel-middleware/</link>
+      <link>http://localhost:1313/2018/07/understand-laravel-middleware/</link>
       <pubDate>Sun, 29 Jul 2018 16:25:08 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/07/understand-laravel-middleware/</guid>
+      <guid>http://localhost:1313/2018/07/understand-laravel-middleware/</guid>
       <description>Laravel 的中间件机制提供了一种管道的方式，每个 HTTP 请求经过一个又一个中间件进行过滤，Laravel 内置了很多中间件，比如 CSRF 机制，身份认证，Cooki</description>
     </item>
     
     <item>
       <title>本周阅读清单20180723</title>
-      <link>https://tanteng222.github.io/2018/07/reding-list-16/</link>
+      <link>http://localhost:1313/2018/07/reding-list-16/</link>
       <pubDate>Thu, 26 Jul 2018 05:04:16 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/07/reding-list-16/</guid>
+      <guid>http://localhost:1313/2018/07/reding-list-16/</guid>
       <description>1.GoLang: When to use string pointers https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html 2.PHP 7.3 中的 JSON 错误处理 https://laravel-china.org/topics/14668/json-error-handling-in-php-73 3.如何设计、开发和部署微服务（Nginx 官方文章翻译） https://www.cnblogs.com/ajianbeyourself/p/5976664.html 4.理解 Laravel 中的 pipeline ① https://www.insp.top/article/realization-of-pipeline-component-for-laravel ② https://www.jianshu.com/p/3c2791a525d0 5.Redis 哈希对象编码方式 http://redisbook.com/preview/object/hash.html 6.</description>
     </item>
     
     <item>
       <title>本周阅读清单20180528</title>
-      <link>https://tanteng222.github.io/2018/06/reding-list-9/</link>
+      <link>http://localhost:1313/2018/06/reding-list-9/</link>
       <pubDate>Wed, 06 Jun 2018 16:19:50 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/06/reding-list-9/</guid>
+      <guid>http://localhost:1313/2018/06/reding-list-9/</guid>
       <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
     </item>
     
     <item>
       <title>本周阅读清单20180423</title>
-      <link>https://tanteng222.github.io/2018/04/reding-list/</link>
+      <link>http://localhost:1313/2018/04/reding-list/</link>
       <pubDate>Sat, 28 Apr 2018 16:34:44 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2018/04/reding-list/</guid>
+      <guid>http://localhost:1313/2018/04/reding-list/</guid>
       <description>1.Redis 事务与关系型数据库事务比较 https://www.jianshu.com/p/5f31d77d006b 2.深入理解 PHP 7 之 zval https://github.com/laruence/php7-internal/blob/master/zval.md 3.虚拟内存的那点事儿 https://sylvanassun.github.io/2017/10/29/2017-10-29-virtual_memory/ 4.全文搜索引擎 Elasticsearch 入门教程 http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 5.Laravel 的生命周期 https://www.jianshu.com/p/08b810b720d9 6.PHP 中使用 fsockopen 实现异步请求</description>
     </item>
     
     <item>
       <title>Laravel Redis 多个进程同时取队列问题</title>
-      <link>https://tanteng222.github.io/2017/12/laravel-supervisor-queue/</link>
+      <link>http://localhost:1313/2017/12/laravel-supervisor-queue/</link>
       <pubDate>Sat, 23 Dec 2017 11:26:19 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/12/laravel-supervisor-queue/</guid>
+      <guid>http://localhost:1313/2017/12/laravel-supervisor-queue/</guid>
       <description>&lt;p&gt;&lt;strong&gt;开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：&lt;/p&gt;
 &lt;p&gt;&lt;code class=&#34;lang:default decode:true&#34;&gt;[program:laravel-worker]
@@ -120,28 +120,28 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>使用 Laravel 消息队列要注意的问题</title>
-      <link>https://tanteng222.github.io/2017/12/laravel-queue-tips/</link>
+      <link>http://localhost:1313/2017/12/laravel-queue-tips/</link>
       <pubDate>Mon, 11 Dec 2017 10:08:13 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/12/laravel-queue-tips/</guid>
+      <guid>http://localhost:1313/2017/12/laravel-queue-tips/</guid>
       <description>使用 Laravel 的消息队列处理异步任务，Redis 作为队列数据库，Supervisor 监控脚本异常中断并自动重启，这是 Laravel 处理队列任务的标准流程，但是实</description>
     </item>
     
     <item>
       <title>使用 Docker 搭建 Laravel 本地环境</title>
-      <link>https://tanteng222.github.io/2017/10/docker-laravel-local-environment/</link>
+      <link>http://localhost:1313/2017/10/docker-laravel-local-environment/</link>
       <pubDate>Sat, 14 Oct 2017 11:28:48 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/10/docker-laravel-local-environment/</guid>
+      <guid>http://localhost:1313/2017/10/docker-laravel-local-environment/</guid>
       <description>Laravel 官方提供 Homestead 和 Valet 作为本地开发环境，Homestead 是一个官方预封装的 Vagrant Box，也就是一个虚拟机，但是跟 docker 比，它占用体积太大，启动速度慢，同</description>
     </item>
     
     <item>
       <title>在 Laravel 中设置 Etag 缓存</title>
-      <link>https://tanteng222.github.io/2017/05/laravel-etag-middleware/</link>
+      <link>http://localhost:1313/2017/05/laravel-etag-middleware/</link>
       <pubDate>Fri, 19 May 2017 04:51:35 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/05/laravel-etag-middleware/</guid>
+      <guid>http://localhost:1313/2017/05/laravel-etag-middleware/</guid>
       <description>&lt;p&gt;本文介绍浏览器缓存 Etag 的概念，和客户端服务器如何生成和比较 Etag 的过程，以及使用 Laravel 中间件的示例。&lt;/p&gt;
 &lt;h3 id=&#34;什么是etag&#34;&gt;什么是“ETag”？&lt;/h3&gt;
 &lt;p&gt;Etag 是一种标识，一般附带在响应头部中，值是页面内容的哈希值，用来判断资源（页面，json，xml）有没有修改，如果没有修改，就返回 304 状态码，有修改则生成新的 Etag 值。&lt;/p&gt;
@@ -150,47 +150,47 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     
     <item>
       <title>使用 Supervisor 管理 Laravel 队列进程</title>
-      <link>https://tanteng222.github.io/2017/01/supervisor-laravel-queue/</link>
+      <link>http://localhost:1313/2017/01/supervisor-laravel-queue/</link>
       <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/01/supervisor-laravel-queue/</guid>
+      <guid>http://localhost:1313/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 5.3 后台管理系统搭建</title>
-      <link>https://tanteng222.github.io/2016/12/laravel-admin-install/</link>
+      <link>http://localhost:1313/2016/12/laravel-admin-install/</link>
       <pubDate>Sat, 24 Dec 2016 07:13:14 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2016/12/laravel-admin-install/</guid>
+      <guid>http://localhost:1313/2016/12/laravel-admin-install/</guid>
       <description>&lt;p&gt;网上的很多基于 Laravel 的后台管理系统，要么缺少基本的功能，要么太臃肿，总是找不到自己喜欢的，于是自己做了一个。它的特点是尽可能简单又不缺少基本的后台功能，如用户认证，基于角色的权限系统（Entrust），菜单管理，媒体管理等，并且使用 AdminLte 后台界面，外观简洁功能强大。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 使用 env 读取环境变量为 null 的问题</title>
-      <link>https://tanteng222.github.io/2016/12/laravel-env-null/</link>
+      <link>http://localhost:1313/2016/12/laravel-env-null/</link>
       <pubDate>Sun, 04 Dec 2016 15:35:18 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2016/12/laravel-env-null/</guid>
+      <guid>http://localhost:1313/2016/12/laravel-env-null/</guid>
       <description>&lt;p&gt;不知道大家有没有遇到过，在 Laravel 中（除 app/config 目录下的配置文件中）使用 env 函数读取环境变量，有时有用，有时返回 null，究竟怎么回事？让我们一探究竟。&lt;/p&gt;
 &lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 分割 routes.php 路由文件的一种方式</title>
-      <link>https://tanteng222.github.io/2016/08/laravel-routes-map/</link>
+      <link>http://localhost:1313/2016/08/laravel-routes-map/</link>
       <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2016/08/laravel-routes-map/</guid>
+      <guid>http://localhost:1313/2016/08/laravel-routes-map/</guid>
       <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
     </item>
     
     <item>
       <title>优化 Laravel 网站打开速度</title>
-      <link>https://tanteng222.github.io/2016/06/laravel-optimize/</link>
+      <link>http://localhost:1313/2016/06/laravel-optimize/</link>
       <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2016/06/laravel-optimize/</guid>
+      <guid>http://localhost:1313/2016/06/laravel-optimize/</guid>
       <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
     </item>
     

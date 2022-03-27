@@ -2,28 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>日志随笔 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>https://tanteng222.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</link>
+    <link>http://localhost:1313/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/</link>
     <description>Recent content in 日志随笔 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tonytan</copyright>
-    <lastBuildDate>Sun, 08 Oct 2017 06:14:13 +0000</lastBuildDate><atom:link href="https://tanteng222.github.io/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Oct 2017 06:14:13 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>计算机的一些概念在生活中的场景</title>
-      <link>https://tanteng222.github.io/2017/10/computer-concepts-in-life/</link>
+      <link>http://localhost:1313/2017/10/computer-concepts-in-life/</link>
       <pubDate>Sun, 08 Oct 2017 06:14:13 +0000</pubDate>
       
-      <guid>https://tanteng222.github.io/2017/10/computer-concepts-in-life/</guid>
+      <guid>http://localhost:1313/2017/10/computer-concepts-in-life/</guid>
       <description>&lt;p&gt;计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>昨夜梦见的美景</title>
-      <link>https://tanteng222.github.io/2015/03/beautiful-scenery-in-dream/</link>
-      <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
-      
-      <guid>https://tanteng222.github.io/2015/03/beautiful-scenery-in-dream/</guid>
-      <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有</description>
     </item>
     
   </channel>

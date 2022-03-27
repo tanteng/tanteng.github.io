@@ -28,7 +28,7 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://tanteng222.github.io/2016/02/crc32-mysql-index/" />
+<link rel="canonical" href="http://localhost:1313/2016/02/crc32-mysql-index/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -45,7 +45,7 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
 <meta property="og:description" content="给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。
 crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tanteng222.github.io/2016/02/crc32-mysql-index/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://localhost:1313/2016/02/crc32-mysql-index/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2016-02-01T01:29:07+00:00" />
 <meta property="article:modified_time" content="2016-02-01T01:29:07+00:00" />
 
@@ -90,6 +90,8 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
         <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
 
@@ -118,6 +120,8 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
       </li>
   </ul>
 </nav>
@@ -269,7 +273,7 @@ crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc
       <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
       <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="https://tanteng222.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

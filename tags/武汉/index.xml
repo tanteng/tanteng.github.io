@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>武汉 on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>http://localhost:1313/tags/%E6%AD%A6%E6%B1%89/</link>
+    <description>Recent content in 武汉 on 小谈博客 - 一个关注后端开发的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>tonytan</copyright>
+    <lastBuildDate>Sat, 14 Mar 2015 04:07:15 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%AD%A6%E6%B1%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>昨夜梦见的美景</title>
+      <link>http://localhost:1313/2015/03/beautiful-scenery-in-dream/</link>
+      <pubDate>Sat, 14 Mar 2015 04:07:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/beautiful-scenery-in-dream/</guid>
+      <description>昨晚做了一个梦，梦见了非常壮观的美景，记得我来到武汉天河机场，当时是夜晚，机场外边望去是一望无际的海，突然万只飞行动物在海面上飞行，天边还有</description>
+    </item>
+    
+  </channel>
+</rss>

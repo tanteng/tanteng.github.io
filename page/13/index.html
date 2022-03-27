@@ -26,9 +26,9 @@
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://tanteng222.github.io/" />
-  <link href="https://tanteng222.github.io/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
-  <link href="https://tanteng222.github.io/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+<link rel="canonical" href="http://localhost:1313/" />
+  <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
+  <link href="http://localhost:1313/index.xml" rel="feed" type="application/rss+xml" title="小谈博客 - 一个关注后端开发的博客" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,7 +44,7 @@
 <meta property="og:title" content="小谈博客 - 一个关注后端开发的博客" />
 <meta property="og:description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tanteng222.github.io/" />
+<meta property="og:url" content="http://localhost:1313/" />
 
 <meta itemprop="name" content="小谈博客 - 一个关注后端开发的博客">
 <meta itemprop="description" content="一个关注后端开发的博客，主要语言 golang 以及微服务架构。"><meta name="twitter:card" content="summary"/>
@@ -82,6 +82,8 @@
         <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
 
@@ -110,6 +112,8 @@
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
       </li>
   </ul>
 </nav>
@@ -120,6 +124,28 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2017/11/golang-parameter-passing/">如何理解 Golang 的参数传递都是值传递？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-11-19 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/go/"> Go </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2017/11/golang-parameter-passing/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2017/11/nginx-fastcgi-php-fpm/">PHP-FPM,Nginx,FastCGI 之间的关系</a></h1>
@@ -240,28 +266,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2017/10/computer-concepts-in-life/">计算机的一些概念在生活中的场景</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-10-08 </span>
-      <div class="post-category">
-          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
-          <a href="/categories/%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/"> 日志随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2017/10/computer-concepts-in-life/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -285,7 +289,7 @@
       <a href="mailto:tanteng@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://weibo.com/tanteng" class="iconfont icon-weibo" title="weibo"></a>
       <a href="https://www.instagram.com/tanteng1031/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="https://tanteng222.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
