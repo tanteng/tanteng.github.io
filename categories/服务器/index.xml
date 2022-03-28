@@ -46,15 +46,6 @@
     </item>
     
     <item>
-      <title>netstat 命令统计 tcp 各状态数量</title>
-      <link>http://localhost:1313/2017/04/netstat-tcp-state/</link>
-      <pubDate>Fri, 28 Apr 2017 03:37:31 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2017/04/netstat-tcp-state/</guid>
-      <description>统计 tcp 各种状态的个数： 1 netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL</description>
-    </item>
-    
-    <item>
       <title>VirtualBox启动蓝屏问题</title>
       <link>http://localhost:1313/2017/03/virtualbox-blue-screen/</link>
       <pubDate>Fri, 24 Mar 2017 11:18:09 +0000</pubDate>
@@ -98,28 +89,6 @@
       
       <guid>http://localhost:1313/2016/09/lets-encrypt-multi-domain-https/</guid>
       <description>上周去腾讯参加了 IMWEB 前端大会，听了关于 HTTPS 的讲座，回来把自己的主页和博客升级了一下，开启了 HTTPS.本文主要记录一下开启 HTTPS 的过程，以及碰到的问</description>
-    </item>
-    
-    <item>
-      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>http://localhost:1313/2016/04/vagrantfile-synced-folder/</link>
-      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/vagrantfile-synced-folder/</guid>
-      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Nginx开启SSI</title>
-      <link>http://localhost:1313/2016/04/nginx-ssi/</link>
-      <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/nginx-ssi/</guid>
-      <description>&lt;p&gt;在一个HTML页面中发现一段这样的代码：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;!--#include virtual=&amp;quot;/new/ssi/script.html&amp;quot;--&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？&lt;/p&gt;</description>
     </item>
     
     <item>

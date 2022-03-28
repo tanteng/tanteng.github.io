@@ -422,17 +422,6 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     </item>
     
     <item>
-      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>http://localhost:1313/2016/04/vagrantfile-synced-folder/</link>
-      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/vagrantfile-synced-folder/</guid>
-      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Composer的自动加载机制</title>
       <link>http://localhost:1313/2015/12/composer-autoload/</link>
       <pubDate>Thu, 24 Dec 2015 15:41:16 +0000</pubDate>

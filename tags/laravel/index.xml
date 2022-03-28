@@ -38,5 +38,23 @@
 &lt;p&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&#34;&gt;https://laravel-china.org/articles/7426/how-to-develop-test-and-publish-a-laravel-extension-package&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Laravel 分割 routes.php 路由文件的一种方式</title>
+      <link>http://localhost:1313/2016/08/laravel-routes-map/</link>
+      <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2016/08/laravel-routes-map/</guid>
+      <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
+    </item>
+    
+    <item>
+      <title>优化 Laravel 网站打开速度</title>
+      <link>http://localhost:1313/2016/06/laravel-optimize/</link>
+      <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2016/06/laravel-optimize/</guid>
+      <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
+    </item>
+    
   </channel>
 </rss>

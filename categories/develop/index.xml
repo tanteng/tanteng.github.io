@@ -239,15 +239,6 @@ stdout_logfile=/var/www/xxx.cn/worker.log
     </item>
     
     <item>
-      <title>Git 变基和合并</title>
-      <link>http://localhost:1313/2017/09/git-merge-rebase/</link>
-      <pubDate>Tue, 05 Sep 2017 10:42:56 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2017/09/git-merge-rebase/</guid>
-      <description>变基 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 在本节中我们将学习什么是“变基”，怎样使用“变基”，并将展示该操</description>
-    </item>
-    
-    <item>
       <title>PHP 错误和异常处理</title>
       <link>http://localhost:1313/2017/09/php-error-handle/</link>
       <pubDate>Sat, 02 Sep 2017 07:27:24 +0000</pubDate>
@@ -336,33 +327,12 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>MySQL大表加字段思路</title>
-      <link>http://localhost:1313/2017/01/mysql-alter-table-big-data/</link>
-      <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2017/01/mysql-alter-table-big-data/</guid>
-      <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
-&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;rsquo;&amp;rsquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>使用 Supervisor 管理 Laravel 队列进程</title>
       <link>http://localhost:1313/2017/01/supervisor-laravel-queue/</link>
       <pubDate>Sat, 07 Jan 2017 12:48:53 +0000</pubDate>
       
       <guid>http://localhost:1313/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>window.location.reload()和window.location.href=””的区别</title>
-      <link>http://localhost:1313/2016/12/window-location-reload-and-href/</link>
-      <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/12/window-location-reload-and-href/</guid>
-      <description>&lt;p&gt;window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-11348 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; alt=&#34;window.location.reload()和window.location.href=&#39;&#39;的区别&#34; width=&#34;368&#34; height=&#34;207&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -404,15 +374,6 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>Laravel 分割 routes.php 路由文件的一种方式</title>
-      <link>http://localhost:1313/2016/08/laravel-routes-map/</link>
-      <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/08/laravel-routes-map/</guid>
-      <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
-    </item>
-    
-    <item>
       <title>常用Linux操作数据库命令及MySQL语句</title>
       <link>http://localhost:1313/2016/06/mysql-command/</link>
       <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>
@@ -422,16 +383,6 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
 &lt;h3 id=&#34;数据库表导入&#34;&gt;数据库表导入&lt;/h3&gt;
 &lt;p&gt;恢复sql到数据库，不会覆盖数据库，仅执行恢复的sql语句，常用于数据库表的导入：&lt;/p&gt;
 &lt;p&gt;&lt;code class=&#34;lang:mysql decode:true &#34;&gt;mysql -uroot -p tanteng.me  &amp;lt; mobile_promote.sql&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>jQuery操作iframe页面DOM</title>
-      <link>http://localhost:1313/2016/06/jquery-iframe/</link>
-      <pubDate>Fri, 03 Jun 2016 11:36:36 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/06/jquery-iframe/</guid>
-      <description>&lt;p&gt;如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-10135&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; alt=&#34;jquery_iframe&#34; width=&#34;1092&#34; height=&#34;514&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -456,26 +407,6 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
 &lt;blockquote&gt;
 &lt;p&gt;记得启用Zend Opcache, 因为PHP7即使不启用Opcache速度也比PHP-5.6启用了Opcache快, 所以之前测试时期就发生了有人一直没有启用Opcache的事情&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>优化 Laravel 网站打开速度</title>
-      <link>http://localhost:1313/2016/06/laravel-optimize/</link>
-      <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/06/laravel-optimize/</guid>
-      <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
-    </item>
-    
-    <item>
-      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>http://localhost:1313/2016/04/vagrantfile-synced-folder/</link>
-      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/vagrantfile-synced-folder/</guid>
-      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -559,25 +490,6 @@ echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br&gt;
 }&lt;br&gt;
 }&lt;/p&gt;
 &lt;p&gt;B::test(); //输出A&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PHP 开发者该知道的 5 个 Composer 小技巧</title>
-      <link>http://localhost:1313/2015/05/php-composer/</link>
-      <pubDate>Tue, 26 May 2015 03:49:35 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2015/05/php-composer/</guid>
-      <description>Composer是新一代的PHP依赖管理工具。其介绍和基本用法可以看这篇《Composer PHP依赖管理的新时代》。本文介绍使用Compos</description>
-    </item>
-    
-    <item>
-      <title>PHP：PDO prepare预处理</title>
-      <link>http://localhost:1313/2012/09/php-pdo-prepare/</link>
-      <pubDate>Sun, 30 Sep 2012 04:03:39 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/php-pdo-prepare/</guid>
-      <description>&lt;p&gt;许多成熟的数据库都支持预处理语句（Prepared Statements)的概念。它们是什么东西？你可以把它们想成是一种编译过的要执行的SQL语句模板，可以使用不同的变量参数定制它。预处理语句具有两个主要的优点：&lt;/p&gt;
-&lt;p&gt;查询只需要被解析（或准备）一次，但可以使用相同或不同的参数执行多次。当查询准备好（Prepared）之后，数据库就会分析，编译并优化它要执行查询的计划。对于复杂查询来说，如果你要重复执行许多次有不同参数的但结构相同的查询，这个过程会占用大量的时间，使得你的应用变慢。通过使用一个预处理语句你就可以避免重复分析、编译、优化的环节。简单来说，预处理语句使用更少的资源，执行速度也就更快。&lt;/p&gt;</description>
     </item>
     
     <item>

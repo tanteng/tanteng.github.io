@@ -46,5 +46,16 @@
 &lt;p&gt;nginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Nginx 开启 SSI</title>
+      <link>http://localhost:1313/2016/04/nginx-ssi/</link>
+      <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/nginx-ssi/</guid>
+      <description>&lt;p&gt;在一个HTML页面中发现一段这样的代码：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;!--#include virtual=&amp;quot;/new/ssi/script.html&amp;quot;--&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

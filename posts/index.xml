@@ -799,7 +799,7 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>MySQL大表加字段思路</title>
+      <title>MySQL 大表加字段思路</title>
       <link>http://localhost:1313/2017/01/mysql-alter-table-big-data/</link>
       <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
       
@@ -825,16 +825,6 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
       
       <guid>http://localhost:1313/2017/01/supervisor-laravel-queue/</guid>
       <description>&lt;p&gt;Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>window.location.reload()和window.location.href=””的区别</title>
-      <link>http://localhost:1313/2016/12/window-location-reload-and-href/</link>
-      <pubDate>Sat, 31 Dec 2016 02:55:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/12/window-location-reload-and-href/</guid>
-      <description>&lt;p&gt;window.location.reload() 和 window.location.href=”” 都可以达到“刷新”当前页面的效果，但是 reload() 会保留 POST 数据，而 href 相当于重新打开这个页面。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone wp-image-11348 size-full&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2017/03/window-location-reload.png&#34; alt=&#34;window.location.reload()和window.location.href=&#39;&#39;的区别&#34; width=&#34;368&#34; height=&#34;207&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -926,16 +916,6 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>jQuery操作iframe页面DOM</title>
-      <link>http://localhost:1313/2016/06/jquery-iframe/</link>
-      <pubDate>Fri, 03 Jun 2016 11:36:36 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/06/jquery-iframe/</guid>
-      <description>&lt;p&gt;如图，左侧是一个表单，右侧是一个iframe嵌入的页面，要实现的效果是，左边表单选择不同的模板，右侧要展现不同的模板页面，当输入的标题，文案发送改变，右侧也要实时动态变化，提供预览的效果。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-10135&#34; src=&#34;https://blog.tanteng.me/wp-content/uploads/2016/06/jquery_iframe.png&#34; alt=&#34;jquery_iframe&#34; width=&#34;1092&#34; height=&#34;514&#34; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>MySQL查看数据库大小</title>
       <link>http://localhost:1313/2016/06/mysql-data-length/</link>
       <pubDate>Fri, 03 Jun 2016 11:24:42 +0000</pubDate>
@@ -969,18 +949,7 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>巧用vagrant建立映射目录解决环境兼容问题</title>
-      <link>http://localhost:1313/2016/04/vagrantfile-synced-folder/</link>
-      <pubDate>Fri, 08 Apr 2016 14:12:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/vagrantfile-synced-folder/</guid>
-      <description>&lt;p&gt;使用Vagrant装虚拟机的童鞋应该知道在Vagrantfile文件中可以定义本机和虚拟机目录映射，如：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;config.vm.synced_folder &amp;quot;../website&amp;quot;, &amp;quot;/usr/share/nginx/html&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;表示把本机的当前文件目录下website目录映射到虚拟机的指定目录，这样在虚拟机中该目录的内容即是website目录下的，也就是实现了目录共享。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Nginx开启SSI</title>
+      <title>Nginx 开启 SSI</title>
       <link>http://localhost:1313/2016/04/nginx-ssi/</link>
       <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
       
@@ -1158,7 +1127,7 @@ echo &lt;strong&gt;CLASS&lt;/strong&gt;;&lt;br&gt;
     </item>
     
     <item>
-      <title>10条Steve Jobs的经典语录</title>
+      <title>10 条 Steve Jobs 的经典语录</title>
       <link>http://localhost:1313/2012/09/10-golden-lessons-from-steve-jobs/</link>
       <pubDate>Thu, 27 Sep 2012 02:35:18 +0000</pubDate>
       

@@ -123,83 +123,6 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/crc32-mysql-index/">MySQL 字符串字段转换 crc32 建索引提高查询效率</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-02-01 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>给字符串类型的字段建立索引效率不高，但是必须要经常查这个字段怎么建索引？比如这个字段名称是 sys_trans_id 字符串类型，那么可以建一个字段 sys_trans_id_src32 来存储 crc32 的值，并给这个字段建立索引。</p>
-<p>crc32 是整型，在MySQL中，给整型字段建立索引效率比较高，crc32虽然不能确保唯一性，但是无碍，相同的机率也是极小，关键是可以大大减少查询的范围，给sys_trans_id_src32 这个字段建立索引，查询的时候带上 crc32 字段就可以利用到索引。</p>
-    </div>
-    <div class="read-more">
-      <a href="/2016/02/crc32-mysql-index/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/01/repeat-group-having/">查询数据库重复记录sql</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-01-25 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/mysql/"> MySQL </a>
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      每条记录都有个hash字段，hash是把这条记录几个不同的字段组成唯一的值进行hash算法存的一个值，有了这个hash，可以判断记录是否重复
-    </div>
-    <div class="read-more">
-      <a href="/2016/01/repeat-group-having/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/12/composer-autoload/">Composer的自动加载机制</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-12-24 </span>
-      <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
-          <a href="/categories/php/"> PHP </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>如项目下的composer.json文件中有autoload的定义：</p>
-<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
-&ldquo;classmap&rdquo;: [
-&ldquo;database&rdquo;
-],
-&ldquo;psr-4&rdquo;: {
-&ldquo;GrahamCampbell\BootstrapCMS\&rdquo;: &ldquo;app/&rdquo;
-}
-},</code></p>
-<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
-    </div>
-    <div class="read-more">
-      <a href="/2015/12/composer-autoload/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2015/11/mac-git-missing-xcrun/">Mac终端git命令提示错误:missing xcrun</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2015-11-08 </span>
@@ -266,7 +189,6 @@ echo <strong>CLASS</strong>;<br>
     <div class="post-meta">
       <span class="post-time"> 2015-05-26 </span>
       <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
           </div>
     </div>
@@ -330,7 +252,6 @@ echo <strong>CLASS</strong>;<br>
     <div class="post-meta">
       <span class="post-time"> 2012-09-30 </span>
       <div class="post-category">
-          <a href="/categories/develop/"> Develop </a>
           <a href="/categories/php/"> PHP </a>
           </div>
     </div>
@@ -349,11 +270,11 @@ echo <strong>CLASS</strong>;<br>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/09/10-golden-lessons-from-steve-jobs/">10条Steve Jobs的经典语录</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/09/10-golden-lessons-from-steve-jobs/">10 条 Steve Jobs 的经典语录</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2012-09-27 </span>
       <div class="post-category">
-          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 读书笔记 </a>
+          <a href="/categories/reding/"> Reding </a>
           </div>
     </div>
   </header>
@@ -486,6 +407,53 @@ echo <strong>CLASS</strong>;<br>
   </div>
 </article>
 
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2011/09/stay-hungry-stay-foolish/">乔布斯的Stay Hungry, Stay Foolish</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2011-09-18 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>2005 年，Steve Jobs 在 Stanford 毕业典礼上演讲，最后送给了在场的年轻人一句「Stay Hungry,Stay Foolish.」这个演讲后来被广为流传，各种中译版也纷纷出现，有些人把这句话翻译为「求知若饥，虚心若愚」，《Cheers 杂志》则把这句话翻译为「饥渴求知，虚怀若愚」。无论如何，我认为这些都是错误的解读。</p>
+<p><strong>什么叫 Hungry？</strong></p>
+<p>美国人不会用</p>
+<p>hungry来形容对于知识的追求。对知识，他们用的是「好奇」(curious)这个字。一个求知若渴的人，叫做「intellectuallycurious」或是「eager</p>
+<p>to learn」，但绝对不会是「intellectually hungry」，也极少是「hungry to learn」。</p>
+    </div>
+    <div class="read-more">
+      <a href="/2011/09/stay-hungry-stay-foolish/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2009/01/welcome/">小谈博客</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2009-01-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/"> 互联网 </a>
+          <a href="/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/"> 小谈点评 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      很高兴我在网上安家了，以后我将致力于网站的建设，希望大家喜欢并多多支持！谢谢！
+    </div>
+    <div class="read-more">
+      <a href="/2009/01/welcome/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     </section>
   
   <nav class="pagination">
@@ -493,10 +461,7 @@ echo <strong>CLASS</strong>;<br>
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/9/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         

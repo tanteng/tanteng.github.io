@@ -50,6 +50,15 @@
     </item>
     
     <item>
+      <title>netstat 命令统计 tcp 各状态数量</title>
+      <link>http://localhost:1313/2017/04/netstat-tcp-state/</link>
+      <pubDate>Fri, 28 Apr 2017 03:37:31 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2017/04/netstat-tcp-state/</guid>
+      <description>统计 tcp 各种状态的个数： 1 netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; 结果： 1 2 3 4 5 [nobody@test14439 ~]$ netstat -n | awk &amp;#39;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&amp;#39; TIME_WAIT 418 CLOSE_WAIT 109 ESTABLISHED 65 SYN_RECV 1 TCP状态说明 状态：描述 CL</description>
+    </item>
+    
+    <item>
       <title>vim 常用操作</title>
       <link>http://localhost:1313/2016/09/vim-syntax/</link>
       <pubDate>Wed, 21 Sep 2016 14:06:02 +0000</pubDate>

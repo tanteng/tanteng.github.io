@@ -17,5 +17,16 @@
       <description>1.HTTP 代理原理及实现 https://imququ.com/post/web-proxy.html 2.为什么使用通信来共享内存？ https://draveness.me/whys-the-design-communication-shared-memory 3.深入理解Go-defer的原理剖析 https://juejin.im/post/5d71d1edf265da03e52356fb 4.Nginx实现JWT验证-基于OpenRest</description>
     </item>
     
+    <item>
+      <title>Nginx 开启 SSI</title>
+      <link>http://localhost:1313/2016/04/nginx-ssi/</link>
+      <pubDate>Fri, 08 Apr 2016 12:47:34 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/nginx-ssi/</guid>
+      <description>&lt;p&gt;在一个HTML页面中发现一段这样的代码：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;!--#include virtual=&amp;quot;/new/ssi/script.html&amp;quot;--&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在本地环境打开网页总觉得缺少什么，和测试服务器网页对比，发现确实少了很多内容，原来include virtual是包含另一个页面的意思。但是奇怪，一般包含页面不是在模板页面或者动态页面include其他页面吗？&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

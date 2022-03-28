@@ -989,20 +989,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2016/12/window-location-reload-and-href/</loc>
-    <lastmod>2016-12-31T02:55:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2016-12-31T02:55:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2016/12/laravel-admin-install/</loc>
     <lastmod>2016-12-24T07:13:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1066,13 +1052,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2016/06/jquery-iframe/</loc>
-    <lastmod>2016-06-03T11:36:36+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2016/06/mysql-data-length/</loc>
     <lastmod>2016-06-03T11:24:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1089,13 +1068,6 @@
   <url>
     <loc>http://localhost:1313/2016/06/laravel-optimize/</loc>
     <lastmod>2016-06-02T11:59:07+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2016/04/vagrantfile-synced-folder/</loc>
-    <lastmod>2016-04-08T14:12:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1221,6 +1193,13 @@
   
   <url>
     <loc>http://localhost:1313/2012/09/10-golden-lessons-from-steve-jobs/</loc>
+    <lastmod>2012-09-27T02:35:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/reding/</loc>
     <lastmod>2012-09-27T02:35:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

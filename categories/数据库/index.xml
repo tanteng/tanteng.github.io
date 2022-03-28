@@ -18,17 +18,6 @@
     </item>
     
     <item>
-      <title>MySQL大表加字段思路</title>
-      <link>http://localhost:1313/2017/01/mysql-alter-table-big-data/</link>
-      <pubDate>Thu, 19 Jan 2017 12:58:04 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2017/01/mysql-alter-table-big-data/</guid>
-      <description>&lt;p&gt;给 MySQL 一张表加字段执行如下 sql 就可以了：&lt;/p&gt;
-&lt;p&gt;&lt;code class=&#34;lang:mysql decode:true&#34;&gt;ALTER TABLE tbl_tpl ADD title(255) DEFAULT &amp;rsquo;&amp;rsquo; COMMENT &amp;lsquo;标题&amp;rsquo; AFTER id;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>常用Linux操作数据库命令及MySQL语句</title>
       <link>http://localhost:1313/2016/06/mysql-command/</link>
       <pubDate>Wed, 15 Jun 2016 11:29:06 +0000</pubDate>

@@ -176,23 +176,5 @@ stdout_logfile=/var/www/xxx.cn/worker.log
 &lt;p&gt;在 Laravel 项目中，如果执行了 php artisan config:cache 命令把配置文件缓存起来后，在 Tinker 中（Tinker 是 Laravel 自带的一个交互式命令行界面），使用 env 函数读取环境变量的值为 null，只有执行 php artisan config:clear 清除配置缓存后就可以读取了，这是为什么呢？&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Laravel 分割 routes.php 路由文件的一种方式</title>
-      <link>http://localhost:1313/2016/08/laravel-routes-map/</link>
-      <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/08/laravel-routes-map/</guid>
-      <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
-    </item>
-    
-    <item>
-      <title>优化 Laravel 网站打开速度</title>
-      <link>http://localhost:1313/2016/06/laravel-optimize/</link>
-      <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2016/06/laravel-optimize/</guid>
-      <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
-    </item>
-    
   </channel>
 </rss>
