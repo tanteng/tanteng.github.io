@@ -18,6 +18,20 @@
     </item>
     
     <item>
+      <title>本周阅读清单20180827</title>
+      <link>http://localhost:1313/2018/09/reding-list-18/</link>
+      <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2018/09/reding-list-18/</guid>
+      <description>&lt;p&gt;1.Windows Subsystem for Linux 之体验&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.探索 Laravel 里的加解密实现&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34;&gt;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.用 JSON 构建 API 的标准指南&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>本周阅读清单20180507</title>
       <link>http://localhost:1313/2018/05/reding-list-7/</link>
       <pubDate>Sun, 13 May 2018 10:43:32 +0000</pubDate>
@@ -33,6 +47,15 @@
       
       <guid>http://localhost:1313/2018/04/reding-list-3/</guid>
       <description>1.聊聊 Linux 五种 I/O 进程模型 https://www.jianshu.com/p/486b0965c296 2.什么是 Event Loop？ http://www.ruanyifeng.com/blog/2013/10/event_loop.html 3.消息中间件NSQ深入与实践 https://juejin.im/entry/59ddae8151882578bb480d0e 4.当我们在谈论HTTP队头阻塞时，我们在谈论什么？ https://liudanking.com/arch/what-is-head-of-line-blocking-http2-quic/ 5.</description>
+    </item>
+    
+    <item>
+      <title>vim 常用操作</title>
+      <link>http://localhost:1313/2016/09/vim-syntax/</link>
+      <pubDate>Wed, 21 Sep 2016 14:06:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2016/09/vim-syntax/</guid>
+      <description>&lt;p&gt;vim 在 Linux 下使用很多，但是习惯了在 Windows 下的文本操作，在 vim 中进行文本操作会觉得很不方便，但是 vim 是一个很强大的工具，只是还不熟练去使用它，下面是一些常用的 vim 文本操作方法。&lt;/p&gt;</description>
     </item>
     
   </channel>

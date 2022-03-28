@@ -266,11 +266,11 @@
       <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
       
       <guid>http://localhost:1313/2018/09/reding-list-18/</guid>
-      <description>&lt;p&gt;1. Windows Subsystem for Linux 之体验&lt;/p&gt;
+      <description>&lt;p&gt;1.Windows Subsystem for Linux 之体验&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2. 探索 Laravel 里的加解密实现&lt;/p&gt;
+&lt;p&gt;2.探索 Laravel 里的加解密实现&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34;&gt;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;3. 用 JSON 构建 API 的标准指南&lt;/p&gt;
+&lt;p&gt;3.用 JSON 构建 API 的标准指南&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -896,7 +896,7 @@ fmt.Println(&amp;ldquo;result:&amp;rdquo;, s0) //result: [1 100 122 [3 4 5 6]]&l
     </item>
     
     <item>
-      <title>vim常用操作</title>
+      <title>vim 常用操作</title>
       <link>http://localhost:1313/2016/09/vim-syntax/</link>
       <pubDate>Wed, 21 Sep 2016 14:06:02 +0000</pubDate>
       

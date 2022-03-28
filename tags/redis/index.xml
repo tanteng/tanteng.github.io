@@ -26,5 +26,19 @@
       <description>1.Charles 从入门到精通 https://blog.devtang.com/2015/11/14/charles-introduction/ 2.Git如何永久删除文件(包括历史记录) https://www.cnblogs.com/shines77/p/3460274.html 3.Go 编程：图解反射 https://studygolang.com/articles/21936 4.Go并发编程模型：pipeline和cancellatio</description>
     </item>
     
+    <item>
+      <title>本周阅读清单20180827</title>
+      <link>http://localhost:1313/2018/09/reding-list-18/</link>
+      <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2018/09/reding-list-18/</guid>
+      <description>&lt;p&gt;1.Windows Subsystem for Linux 之体验&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.探索 Laravel 里的加解密实现&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&#34;&gt;http://ukagaka.github.io/php/2017/09/17/encryptAnddecrypt.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.用 JSON 构建 API 的标准指南&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://jsonapi.org.cn/&#34;&gt;http://jsonapi.org.cn/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
