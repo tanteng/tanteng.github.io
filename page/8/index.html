@@ -123,6 +123,37 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/12/composer-autoload/">Composer的自动加载机制</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-12-24 </span>
+      <div class="post-category">
+          <a href="/categories/develop/"> Develop </a>
+          <a href="/categories/php/"> PHP </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>如项目下的composer.json文件中有autoload的定义：</p>
+<p><code class="lang:php decode:true ">&ldquo;autoload&rdquo;: {
+&ldquo;classmap&rdquo;: [
+&ldquo;database&rdquo;
+],
+&ldquo;psr-4&rdquo;: {
+&ldquo;GrahamCampbell\BootstrapCMS\&rdquo;: &ldquo;app/&rdquo;
+}
+},</code></p>
+<p>这样定义如何实现自动加载呢？这里classmap和psr-4的区别又是什么？</p>
+    </div>
+    <div class="read-more">
+      <a href="/2015/12/composer-autoload/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2015/11/mac-git-missing-xcrun/">Mac终端git命令提示错误:missing xcrun</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2015-11-08 </span>

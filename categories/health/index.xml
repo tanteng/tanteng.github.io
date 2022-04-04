@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Health on 小谈博客 - 一个关注后端开发的博客</title>
+    <link>https://tanteng.github.io/categories/health/</link>
+    <description>Recent content in Health on 小谈博客 - 一个关注后端开发的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>tony老师</copyright>
+    <lastBuildDate>Mon, 04 Apr 2022 10:48:45 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/categories/health/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>注意血脂健康</title>
+      <link>https://tanteng.github.io/2022/04/blood-fat/</link>
+      <pubDate>Mon, 04 Apr 2022 10:48:45 +0800</pubDate>
+      
+      <guid>https://tanteng.github.io/2022/04/blood-fat/</guid>
+      <description>饮食的&amp;quot;高脂蛋白水平&amp;quot;无疑与我们饮食的&amp;quot;高密度&amp;quot;有很大的关系。因此，建议低密度脂蛋白高的人群要学会避免进食，不要吃垃圾食品，不要吃高温、高糖、高盐的食物，要注意多喝水。</description>
+    </item>
+    
+  </channel>
+</rss>
