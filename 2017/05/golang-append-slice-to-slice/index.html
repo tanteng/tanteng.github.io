@@ -219,7 +219,7 @@ fmt.Println(&ldquo;result:&rdquo;, s0) //result: [1 100 122 3 4 5 6]</code></p>
         link: decodeURI(location.href),
         desc: '\u003cp\u003e把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。\u003c\/p\u003e\n\u003cp\u003e片段1：\u003c\/p\u003e\n\u003cp\u003e\u003ccode class=\u0022lang:go decode:true\u0022\u003es0 := []interface{}{1, 100, 122}\ns1 := []interface{}{3, 4, 5, 6}\ns0 = append(s0, s1)\nfmt.Println(\u0026ldquo;result:\u0026rdquo;, s0) \/\/result: [1 100 122 [3 4 5 6]]\u003c\/code\u003e\u003c\/p\u003e\n\u003cp\u003e此时 s0 结果：result: [1 100 122 [3 4 5 6]]\u003c\/p\u003e',
         owner: 'tanteng',
-        repo: '',
+        repo: 'tanteng.github.io',
         oauth: {
           client_id: '9c71452122f7275c19a3',
           client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'

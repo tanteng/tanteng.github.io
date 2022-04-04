@@ -420,7 +420,7 @@ LUA;
         link: decodeURI(location.href),
         desc: '\u003cp\u003e\u003cstrong\u003e开启多个进程处理队列会重复读取 Redis 中队列吗？是否因此导致重复执行任务？\u003c\/strong\u003e\u003c\/p\u003e\n\u003cp\u003e使用 Supervisor 监听 Laravel 队列任务，其中 Supervisor 的配置如下：\u003c\/p\u003e\n\u003cp\u003e\u003ccode class=\u0022lang:default decode:true\u0022\u003e[program:laravel-worker]\nprocess_name=%(program_name)s_%(process_num)02d\ncommand=php \/var\/www\/xxx.cn\/artisan queue:work \u0026ndash;queue=sendfile \u0026ndash;tries=3 \u0026ndash;daemon\nautostart=true\nautorestart=true\nnumprocs=8\nredirect_stderr=true\nstdout_logfile=\/var\/www\/xxx.cn\/worker.log\n\u003c\/code\u003e\u003c\/p\u003e\n\u003cp\u003e注意 numprocs = 8，代表开启 8 个进程来执行 command 中的命令。\u003c\/p\u003e',
         owner: 'tanteng',
-        repo: '',
+        repo: 'tanteng.github.io',
         oauth: {
           client_id: '9c71452122f7275c19a3',
           client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
