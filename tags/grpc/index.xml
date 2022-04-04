@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>grpc on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/tags/grpc/</link>
+    <link>https://tanteng.github.io/tags/grpc/</link>
     <description>Recent content in grpc on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Mon, 25 Feb 2019 19:02:39 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Feb 2019 19:02:39 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190225</title>
-      <link>http://localhost:1313/2019/02/reding-list-29/</link>
+      <link>https://tanteng.github.io/2019/02/reding-list-29/</link>
       <pubDate>Mon, 25 Feb 2019 19:02:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/2019/02/reding-list-29/</guid>
+      <guid>https://tanteng.github.io/2019/02/reding-list-29/</guid>
       <description>1.前缀索引，一种优化索引大小的解决方案 http://www.cnblogs.com/studyzy/p/4310653.html 2.[译]Go 调度器: M, P 和 G https://colobu.com/2017/05/04/go-scheduler/ 3.gRPC 安全认证 https://yuanxuxu.com/2018/11/21/grpc-token/ 4.Go 语言 Channel 实现原理精要 https://draveness.me/golang-channel 5.Go modules 详解 http://objcoding.com/2018/09/13/go-modules/</description>
     </item>
     

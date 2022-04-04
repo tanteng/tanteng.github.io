@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>事物 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/categories/%E4%BA%8B%E7%89%A9/</link>
+    <link>https://tanteng.github.io/categories/%E4%BA%8B%E7%89%A9/</link>
     <description>Recent content in 事物 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Sun, 24 Jun 2018 02:43:46 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E4%BA%8B%E7%89%A9/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jun 2018 02:43:46 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/%E4%BA%8B%E7%89%A9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis 的事务到底是不是原子性的</title>
-      <link>http://localhost:1313/2018/06/redis-transaction-atomic/</link>
+      <link>https://tanteng.github.io/2018/06/redis-transaction-atomic/</link>
       <pubDate>Sun, 24 Jun 2018 02:43:46 +0000</pubDate>
       
-      <guid>http://localhost:1313/2018/06/redis-transaction-atomic/</guid>
+      <guid>https://tanteng.github.io/2018/06/redis-transaction-atomic/</guid>
       <description>ACID 中关于原子性的定义： 原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执</description>
     </item>
     

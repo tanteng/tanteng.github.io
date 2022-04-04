@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MacBook Pro on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/tags/macbook-pro/</link>
+    <link>https://tanteng.github.io/tags/macbook-pro/</link>
     <description>Recent content in MacBook Pro on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Fri, 01 Oct 2021 20:22:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/macbook-pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 20:22:04 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/macbook-pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macbook Pro 更换电池</title>
-      <link>http://localhost:1313/2021/10/macbook-pro-replace-battery/</link>
+      <link>https://tanteng.github.io/2021/10/macbook-pro-replace-battery/</link>
       <pubDate>Fri, 01 Oct 2021 20:22:04 +0800</pubDate>
       
-      <guid>http://localhost:1313/2021/10/macbook-pro-replace-battery/</guid>
+      <guid>https://tanteng.github.io/2021/10/macbook-pro-replace-battery/</guid>
       <description>这两台 MacBook Pro 都过保了。 一台是公司的 MacBook Pro 归个人，电池废了，续航只有半个小时； 一台是自用好多年的 MacBook Pro，突然发现底部怎么放不平了，原来是电池老化鼓包了。</description>
     </item>
     

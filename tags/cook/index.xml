@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cook on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/tags/cook/</link>
+    <link>https://tanteng.github.io/tags/cook/</link>
     <description>Recent content in cook on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Sun, 27 Mar 2022 21:16:05 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/cook/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 21:16:05 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/cook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记一次煎牛排</title>
-      <link>http://localhost:1313/2021/11/fry-steak/</link>
+      <link>https://tanteng.github.io/2021/11/fry-steak/</link>
       <pubDate>Sun, 27 Mar 2022 21:16:05 +0800</pubDate>
       
-      <guid>http://localhost:1313/2021/11/fry-steak/</guid>
+      <guid>https://tanteng.github.io/2021/11/fry-steak/</guid>
       <description>记录在家一次煎牛排的 vlog，先用铸铁锅煎至差不多 7 成熟，然后再放空气炸锅“加热”一下，口感很不错。</description>
     </item>
     

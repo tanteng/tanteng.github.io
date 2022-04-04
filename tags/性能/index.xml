@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>性能 on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/tags/%E6%80%A7%E8%83%BD/</link>
+    <link>https://tanteng.github.io/tags/%E6%80%A7%E8%83%BD/</link>
     <description>Recent content in 性能 on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Wed, 08 May 2019 19:02:39 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%80%A7%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2019 19:02:39 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/%E6%80%A7%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20190508</title>
-      <link>http://localhost:1313/2019/05/reding-list-33/</link>
+      <link>https://tanteng.github.io/2019/05/reding-list-33/</link>
       <pubDate>Wed, 08 May 2019 19:02:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/2019/05/reding-list-33/</guid>
+      <guid>https://tanteng.github.io/2019/05/reding-list-33/</guid>
       <description>1.深入理解GO时间处理(time.Time) https://studygolang.com/articles/11975 2.上云，你需要了解的AK使用姿势 https://yq.aliyun.com/articles/55947 3.高并发集中访问造成连接MYSQL报Cannot assign requested a</description>
     </item>
     
     <item>
       <title>本周阅读清单20190408</title>
-      <link>http://localhost:1313/2019/04/reding-list-32/</link>
+      <link>https://tanteng.github.io/2019/04/reding-list-32/</link>
       <pubDate>Mon, 08 Apr 2019 19:02:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/2019/04/reding-list-32/</guid>
+      <guid>https://tanteng.github.io/2019/04/reding-list-32/</guid>
       <description>1.Redis Stream——作为消息队列的典型应用场景 https://yq.aliyun.com/articles/603193 2.深夜学算法之 Skiplist：让链表飞 https://www.jianshu.com/p/fcd18946994e 3.Redis Zset 内部实现 https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/ 4.函数调用中的栈帧 https://labrick.cc/2018/06/24/stack-in-call-func/ 5.Go高性能</description>
     </item>
     

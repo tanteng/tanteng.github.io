@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/tags/laravel/</link>
+    <link>https://tanteng.github.io/tags/laravel/</link>
     <description>Recent content in Laravel on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Tue, 04 Sep 2018 16:37:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Sep 2018 16:37:30 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>本周阅读清单20180827</title>
-      <link>http://localhost:1313/2018/09/reding-list-18/</link>
+      <link>https://tanteng.github.io/2018/09/reding-list-18/</link>
       <pubDate>Tue, 04 Sep 2018 16:37:30 +0000</pubDate>
       
-      <guid>http://localhost:1313/2018/09/reding-list-18/</guid>
+      <guid>https://tanteng.github.io/2018/09/reding-list-18/</guid>
       <description>&lt;p&gt;1.Windows Subsystem for Linux 之体验&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;https://jinjun.info/first-experience-of-WSL.html&#34;&gt;https://jinjun.info/first-experience-of-WSL.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.探索 Laravel 里的加解密实现&lt;/p&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>本周阅读清单20180730</title>
-      <link>http://localhost:1313/2018/08/reding-list-17/</link>
+      <link>https://tanteng.github.io/2018/08/reding-list-17/</link>
       <pubDate>Mon, 06 Aug 2018 11:04:09 +0000</pubDate>
       
-      <guid>http://localhost:1313/2018/08/reding-list-17/</guid>
+      <guid>https://tanteng.github.io/2018/08/reding-list-17/</guid>
       <description>&lt;p&gt;1.PHP : 令人困惑的 strtotime&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34; target=&#34;_blank&#34; rel=&#34;noopener nofollow&#34;&gt;&lt;a href=&#34;http://www.laruence.com/2018/07/31/3188.html&#34;&gt;http://www.laruence.com/2018/07/31/3188.html&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.彻底弄懂 Laravel 中间件原理&lt;/p&gt;
@@ -40,19 +40,19 @@
     
     <item>
       <title>Laravel 分割 routes.php 路由文件的一种方式</title>
-      <link>http://localhost:1313/2016/08/laravel-routes-map/</link>
+      <link>https://tanteng.github.io/2016/08/laravel-routes-map/</link>
       <pubDate>Tue, 02 Aug 2016 09:20:26 +0000</pubDate>
       
-      <guid>http://localhost:1313/2016/08/laravel-routes-map/</guid>
+      <guid>https://tanteng.github.io/2016/08/laravel-routes-map/</guid>
       <description>Laravel 的路由功能很强大，路由规则默认都定义在 routes.php 文件中，但是随着项目越来越大，我们需要的定义的规则越来越多，如果几百上千个路由都定义在一个文件中，</description>
     </item>
     
     <item>
       <title>优化 Laravel 网站打开速度</title>
-      <link>http://localhost:1313/2016/06/laravel-optimize/</link>
+      <link>https://tanteng.github.io/2016/06/laravel-optimize/</link>
       <pubDate>Thu, 02 Jun 2016 11:59:07 +0000</pubDate>
       
-      <guid>http://localhost:1313/2016/06/laravel-optimize/</guid>
+      <guid>https://tanteng.github.io/2016/06/laravel-optimize/</guid>
       <description>Laravel是一个功能强大的框架，组件很多，代码也很庞大，它的易用方便是牺牲了性能的，即便如此它仍然是一个优秀的框架，但在正式环境下要做好</description>
     </item>
     

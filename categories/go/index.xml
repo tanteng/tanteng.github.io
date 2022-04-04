@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on 小谈博客 - 一个关注后端开发的博客</title>
-    <link>http://localhost:1313/categories/go/</link>
+    <link>https://tanteng.github.io/categories/go/</link>
     <description>Recent content in Go on 小谈博客 - 一个关注后端开发的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Wed, 02 May 2018 02:52:22 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 May 2018 02:52:22 +0000</lastBuildDate><atom:link href="https://tanteng.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang 统计字符串字数</title>
-      <link>http://localhost:1313/2018/05/golang-str-length/</link>
+      <link>https://tanteng.github.io/2018/05/golang-str-length/</link>
       <pubDate>Wed, 02 May 2018 02:52:22 +0000</pubDate>
       
-      <guid>http://localhost:1313/2018/05/golang-str-length/</guid>
+      <guid>https://tanteng.github.io/2018/05/golang-str-length/</guid>
       <description>比如新浪微博发微博的输入框有一个已输入字数的统计，它的规则推测是：汉字和中文标点算 1 个字数，英文和其他符号算 0.5 个字数。不足 1 个字算 1 个。大家</description>
     </item>
     
     <item>
       <title>Mac 上如何打开 /usr/local 路径的文件夹</title>
-      <link>http://localhost:1313/2017/11/mac-open-user-local/</link>
+      <link>https://tanteng.github.io/2017/11/mac-open-user-local/</link>
       <pubDate>Wed, 29 Nov 2017 14:56:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/2017/11/mac-open-user-local/</guid>
+      <guid>https://tanteng.github.io/2017/11/mac-open-user-local/</guid>
       <description>在 Mac 的 Sublime 或者 Visual Studio Code 中选择打开文件夹，无论如何也无法选择 /usr/local 路径，在 Finder 中还可以使用“前往文件夹”输入路径，不过有解决办法，在终端使用命令行的方式</description>
     </item>
     
     <item>
       <title>如何理解 Golang 的参数传递都是值传递？</title>
-      <link>http://localhost:1313/2017/11/golang-parameter-passing/</link>
+      <link>https://tanteng.github.io/2017/11/golang-parameter-passing/</link>
       <pubDate>Sun, 19 Nov 2017 12:22:01 +0000</pubDate>
       
-      <guid>http://localhost:1313/2017/11/golang-parameter-passing/</guid>
+      <guid>https://tanteng.github.io/2017/11/golang-parameter-passing/</guid>
       <description>&lt;p&gt;在 Golang 中函数之间传递变量时总是以值的方式传递的，无论是 int,string,bool,array 这样的内置类型（或者说原始的类型），还是 slice,channel,map 这样的引用类型，在函数间传递变量时，都是以值的方式传递，也就是说传递的都是值的副本。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang 中”泛型”的支持</title>
-      <link>http://localhost:1313/2017/08/golang-generic/</link>
+      <link>https://tanteng.github.io/2017/08/golang-generic/</link>
       <pubDate>Fri, 11 Aug 2017 10:14:10 +0000</pubDate>
       
-      <guid>http://localhost:1313/2017/08/golang-generic/</guid>
+      <guid>https://tanteng.github.io/2017/08/golang-generic/</guid>
       <description>Golang不支持一般的类似java中的标记式泛型。很多人因此而十分不满，认为没有泛型增加了很多工作量。而目前由于泛型支持的复杂性，Gola</description>
     </item>
     
     <item>
       <title>Golang append slice to slice</title>
-      <link>http://localhost:1313/2017/05/golang-append-slice-to-slice/</link>
+      <link>https://tanteng.github.io/2017/05/golang-append-slice-to-slice/</link>
       <pubDate>Wed, 10 May 2017 07:11:22 +0000</pubDate>
       
-      <guid>http://localhost:1313/2017/05/golang-append-slice-to-slice/</guid>
+      <guid>https://tanteng.github.io/2017/05/golang-append-slice-to-slice/</guid>
       <description>&lt;p&gt;把一个 slice 追加到另一个 slice，以下两种方式都是把 s1 追加到 s0 中，但两种结果不同，注意区别。&lt;/p&gt;
 &lt;p&gt;片段1：&lt;/p&gt;
 &lt;p&gt;&lt;code class=&#34;lang:go decode:true&#34;&gt;s0 := []interface{}{1, 100, 122}
