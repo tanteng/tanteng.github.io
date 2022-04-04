@@ -212,7 +212,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2017-10-08 06:14:13 \u002b0000 \u002b0000',
+        title: '计算机的一些概念在生活中的场景',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e计算机中有很多概念和思想看上去很抽象，在生活中都可以找到对应的场景，反过来也是，只不过生活中的场景比较形象，当你把计算机中的概念和生活场景联系起来，其实发现解决问题的思路都很相似。\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

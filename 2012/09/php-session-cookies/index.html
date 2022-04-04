@@ -302,7 +302,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2012-09-26 01:46:43 \u002b0000 \u002b0000',
+        title: '深入理解 PHP 中 session 和 cookies 的联系',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e1. session概念\u003c\/p\u003e\n\u003cp\u003e2. http协议与状态保持\u003c\/p\u003e\n\u003cp\u003e3. 理解cookie\u003c\/p\u003e\n\u003cp\u003e4. php中session的生成机制\u003c\/p\u003e\n\u003cp\u003e5. php中session的过期回收机制\u003c\/p\u003e\n\u003cp\u003e6. php中session的客户端存储机制\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

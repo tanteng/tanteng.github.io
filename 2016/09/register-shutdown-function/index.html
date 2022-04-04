@@ -264,7 +264,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2016-09-28 09:31:50 \u002b0000 \u002b0000',
+        title: 'PHP捕捉异常中断',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e当 PHP 程序出现异常情况，如出现致命错误，超时，或者不可知的逻辑错误导致程序中断，这个时候可以用 register_shutdown_function 进行异常处理。\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

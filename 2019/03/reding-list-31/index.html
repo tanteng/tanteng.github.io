@@ -191,7 +191,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-03-22 19:02:39 \u002b0800 CST',
+        title: '本周阅读清单20190322',
+        link: decodeURI(location.href),
+        desc: '1.深入解析 Go 总 Slice 底层实现 https:\/\/halfrost.com\/go_slice\/ 2.深度解密Go语言之关于 interface 的10个问题 https:\/\/www.cnblogs.com\/qcrao-2018\/p\/10766091.html 3.Type assertions in Go https:\/\/medium.com\/golangspec\/type-assertions-in-go-e609759c42e1 4.Hive SQL 的编译过程 https:\/\/tech.meituan.com\/2014\/02\/12\/hive-sql-to-mapreduce.html 5.经济学十大定律-边际收益递减定律 https:\/\/xueqiu.com\/1084912228\/108513216',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

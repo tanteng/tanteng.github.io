@@ -194,7 +194,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-08-30 15:10:10 \u002b0800 CST',
+        title: '本周阅读清单20190830',
+        link: decodeURI(location.href),
+        desc: '1.HTTP 代理原理及实现 https:\/\/imququ.com\/post\/web-proxy.html 2.为什么使用通信来共享内存？ https:\/\/draveness.me\/whys-the-design-communication-shared-memory 3.深入理解Go-defer的原理剖析 https:\/\/juejin.im\/post\/5d71d1edf265da03e52356fb 4.Nginx实现JWT验证-基于OpenRest',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

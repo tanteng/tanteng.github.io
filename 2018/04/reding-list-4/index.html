@@ -192,7 +192,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-04-22 06:33:16 \u002b0000 \u002b0000',
+        title: '本周阅读清单20180416',
+        link: decodeURI(location.href),
+        desc: '1.缓存击穿、失效以及热点key问题 https:\/\/www.jianshu.com\/p\/d5a3668d4dad 2.用 Redis 构建分布式锁 http:\/\/ifeve.com\/redis-lock\/ 3.浅谈TCP\/IP网络编程中socket的行为 https:\/\/www.cnblogs.com\/promise6522\/archive\/2012\/03\/03\/2377935.html 4.《深入理解计算机系统》（原',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

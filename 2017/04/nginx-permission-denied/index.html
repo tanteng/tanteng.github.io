@@ -226,7 +226,25 @@ Nginx错误：
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2017-04-19 07:49:24 \u002b0000 \u002b0000',
+        title: 'Nginx 报错和解决方法记录',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e记录一下遇到的各种 Nginx 的报错和解决办法。\u003c\/p\u003e\n\u003ch3 id=\u002213-permission-denied\u0022\u003e13: Permission denied\u003c\/h3\u003e\n\u003cp\u003eNginx错误：\u003c\/p\u003e\n\u003cp\u003e2017\/04\/19 14:46:46 [crit] 4172#0: *671 open() “\/data\/vhosts\/xunlei.com\/test\/” failed (13: Permission denied), client: 192.168.35.54, server: \u003ca href=\u0022https:\/\/www.test.com\u0022\u003ewww.test.com\u003c\/a\u003e, request: “GET \/ HTTP\/1.1”, host: “www.test.com”\u003c\/p\u003e\n\u003cp\u003e经查权限问题导致，网站目录是 root 用户组，而 nginx 是运行的 nobody 用户进程，修改网站目录为 nobody 用户组。\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

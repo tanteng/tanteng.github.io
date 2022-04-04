@@ -194,7 +194,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-02-25 19:02:39 \u002b0800 CST',
+        title: '本周阅读清单20190225',
+        link: decodeURI(location.href),
+        desc: '1.前缀索引，一种优化索引大小的解决方案 http:\/\/www.cnblogs.com\/studyzy\/p\/4310653.html 2.[译]Go 调度器: M, P 和 G https:\/\/colobu.com\/2017\/05\/04\/go-scheduler\/ 3.gRPC 安全认证 https:\/\/yuanxuxu.com\/2018\/11\/21\/grpc-token\/ 4.Go 语言 Channel 实现原理精要 https:\/\/draveness.me\/golang-channel 5.Go modules 详解 http:\/\/objcoding.com\/2018\/09\/13\/go-modules\/',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

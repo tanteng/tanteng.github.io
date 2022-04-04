@@ -196,7 +196,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-08-08 15:10:10 \u002b0800 CST',
+        title: '本周阅读清单20190808',
+        link: decodeURI(location.href),
+        desc: '1.PHP 正则 preg_match 匹配长度限制 https:\/\/learnku.com\/articles\/7193\/php-regular-preg-match-matching-length-limit 2.深悉正则(pcre)最大回溯\/递归限制 http:\/\/www.laruence.com\/2010\/06\/08\/1579.html 3.Redis的内存优化 https:\/\/cachecloud.github.io\/2017\/02\/16\/Redis%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96 4.Content-Disposition 的 filename 与 filename* 区别 https:\/\/developer.mozilla.org\/zh-CN\/docs\/Web\/HTTP\/Headers\/Content-Disposition 5.Redis Scan 命令原理 https:\/\/segmentfault.com\/a\/1190000018218584 6.Redis 字典的遍历 dictScan 算法',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

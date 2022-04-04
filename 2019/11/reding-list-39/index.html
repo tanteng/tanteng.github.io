@@ -196,7 +196,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-11-30 15:10:10 \u002b0800 CST',
+        title: '本周阅读清单20191130',
+        link: decodeURI(location.href),
+        desc: '1.Uber 的 Go 指导规范 https:\/\/github.com\/uber-go\/guide\/blob\/master\/style.md 2.使用JWT保证服务间通信的安全 https:\/\/abekthink.github.io\/backend\/json-web-token\/ 3.MySQL查询对大小写不敏感 https:\/\/www.jianshu.com\/p\/408daf82ac71 4.服务流量限制（漏桶、令牌桶） https:\/\/chai2010.cn\/advanced-go-programming-book\/ch5-web\/ch5-06-ratelimit.html 5.为什么推荐Inn',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

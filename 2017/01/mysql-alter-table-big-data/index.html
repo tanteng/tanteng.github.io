@@ -201,7 +201,25 @@ ALTER TABLE tbl_tpl ADD title(255) DEFAULT &rsquo;&rsquo; COMMENT &lsquo;标题&
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2017-01-19 12:58:04 \u002b0000 \u002b0000',
+        title: 'MySQL 大表加字段思路',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e给 MySQL 一张表加字段执行如下 sql 就可以了：\u003c\/p\u003e\n\u003cp\u003e\u003ccode class=\u0022lang:mysql decode:true\u0022\u003eALTER TABLE tbl_tpl ADD title(255) DEFAULT \u0026rsquo;\u0026rsquo; COMMENT \u0026lsquo;标题\u0026rsquo; AFTER id;\u003c\/code\u003e\u003c\/p\u003e\n\u003cp\u003e但是线上的一张表如果数据量很大呢，执行加字段操作就会锁表，这个过程可能需要很长时间甚至导致服务崩溃，那么这样操作就很有风险了。\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

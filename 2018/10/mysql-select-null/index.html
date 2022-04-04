@@ -204,7 +204,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-10-30 03:29:00 \u002b0000 \u002b0000',
+        title: 'MySQL 字段为 NULL 的查询问题',
+        link: decodeURI(location.href),
+        desc: '假设 MySQL 中某数据表 code 字段是可为 NULL 1 2 ...ANDcodeNOTIN()......AND(codeISNULLorcodeNOTIN())... 是不一样的，第一个查不出 code IS NULL 的数据。 https:\/\/stackoverflow.com\/questions\/3536670\/mysql-selecting-rows-where-a-column-is-null SQL NULL’s special, and you have to do WHERE field IS NULL, as NULL cannot be equal to anything, including itself (ie: NULL = NULL is always',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

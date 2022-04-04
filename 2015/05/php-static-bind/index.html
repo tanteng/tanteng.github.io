@@ -270,7 +270,25 @@ echo <strong>CLASS</strong>;<br>
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2015-05-27 03:38:42 \u002b0000 \u002b0000',
+        title: '初识PHP Static延迟静态绑定',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003ePHP5.3以后引入了延迟静态绑定static，它是为了解决什么问题呢？php的继承模型中有一个存在已久的问题，那就是在父类中引用扩展类的最终状态比较困难。来看一个例子。\u003c\/p\u003e\n\u003cp\u003e\u003ccode\u003eclass A\u003cbr\u003e\n{\u003cbr\u003e\npublic static function echoClass(){\u003cbr\u003e\necho \u003cstrong\u003eCLASS\u003c\/strong\u003e;\u003cbr\u003e\n}\u003c\/p\u003e\n\u003cpre\u003e\u003ccode\u003epublic static function test(){  \r\n    self::echoClass();        \r\n}\r\n\u003c\/code\u003e\u003c\/pre\u003e\n\u003cp\u003e}\u003c\/p\u003e\n\u003cp\u003eclass B extends A\u003cbr\u003e\n{     \u003cbr\u003e\npublic static function echoClass()\u003cbr\u003e\n{\u003cbr\u003e\necho \u003cstrong\u003eCLASS\u003c\/strong\u003e;\u003cbr\u003e\n}\u003cbr\u003e\n}\u003c\/p\u003e\n\u003cp\u003eB::test(); \/\/输出A\u003c\/code\u003e\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

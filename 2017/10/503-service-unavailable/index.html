@@ -215,7 +215,25 @@ nginx 在这里充当的是反向代理服务器的角色，是把http协议请�
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2017-10-08 14:44:08 \u002b0000 \u002b0000',
+        title: '服务器返回 502,503,504 原因及解决办法',
+        link: decodeURI(location.href),
+        desc: '\u003ch3 id=\u0022502-bad-gateway\u0022\u003e502 bad gateway\u003c\/h3\u003e\n\u003cp\u003e问题原因：服务器作为网关或代理，从上游服务器收到无效响应。\u003c\/p\u003e\n\u003cp\u003enginx 在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过 fastcgi_pass指令传递给 php-fpm进程，当 php-fpm 进程响应的内容是 nginx 无法理解的响应，就会返回 502 bad gateway\u003c\/p\u003e',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

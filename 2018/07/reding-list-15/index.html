@@ -196,7 +196,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-07-19 03:07:22 \u002b0000 \u002b0000',
+        title: '本周阅读清单20180716',
+        link: decodeURI(location.href),
+        desc: '1.初探 Go 的编译命令执行过程 https:\/\/halfrost.com\/go_command\/ 2.高效的数据压缩编码方式——Protobuf https:\/\/halfrost.com\/protobuf_encode\/ 3.浅谈消息队列及常见的消息中间件 https:\/\/juejin.im\/post\/5b41fe36e51d45191252e79e 4.深入理解 PHP 的输出缓冲区',
+        owner: 'tanteng',
+        repo: '',
+        oauth: {
+          client_id: '9c71452122f7275c19a3',
+          client_secret: 'cb3e25a74d8a8656ec0a5520012be5bfd175a006'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 
