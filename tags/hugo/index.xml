@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on 小谈博客</title>
+    <link>https://tanteng.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on 小谈博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>tony老师</copyright>
+    <lastBuildDate>Tue, 05 Apr 2022 13:46:00 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 安装评论插件 gitment 提示 Bad credentials</title>
+      <link>https://tanteng.github.io/2022/04/hugo-gitment-bad-credentials/</link>
+      <pubDate>Tue, 05 Apr 2022 13:46:00 +0800</pubDate>
+      
+      <guid>https://tanteng.github.io/2022/04/hugo-gitment-bad-credentials/</guid>
+      <description>Hugo 主题启用评论插件 gitment 后，一直报错 Bad credentials，查看了插件的安装和设置步骤都是无误的，网上也很多文章说到这个报错，但没看到有效的解决方案。前面的两个 OAuth 请求是正常的，应用向 github 发送授权请求，及生成授权码跳转回页面，而获取 access_token 这一步开始报 403 错误。</description>
+    </item>
+    
+  </channel>
+</rss>

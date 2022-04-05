@@ -3,27 +3,62 @@
   
   <url>
     <loc>https://tanteng.github.io/categories/</loc>
-    <lastmod>2022-04-04T10:48:45+08:00</lastmod>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://tanteng.github.io/categories/health/</loc>
-    <lastmod>2022-04-04T10:48:45+08:00</lastmod>
+    <loc>https://tanteng.github.io/tags/cors/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tanteng.github.io/tags/hugo/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tanteng.github.io/2022/04/hugo-gitment-bad-credentials/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://tanteng.github.io/posts/</loc>
-    <lastmod>2022-04-04T10:48:45+08:00</lastmod>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tanteng.github.io/tags/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tanteng.github.io/categories/website/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://tanteng.github.io/</loc>
+    <lastmod>2022-04-05T13:46:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tanteng.github.io/categories/health/</loc>
     <lastmod>2022-04-04T10:48:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,13 +80,6 @@
   
   <url>
     <loc>https://tanteng.github.io/categories/life/</loc>
-    <lastmod>2022-03-27T21:16:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://tanteng.github.io/tags/</loc>
     <lastmod>2022-03-27T21:16:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -620,20 +648,6 @@
   <url>
     <loc>https://tanteng.github.io/2018/06/reding-list-9/</loc>
     <lastmod>2018-06-06T16:19:50+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://tanteng.github.io/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
-    <lastmod>2018-05-28T11:32:34+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://tanteng.github.io/2018/05/php-qiniu-sdk-not-support-composer/</loc>
-    <lastmod>2018-05-28T11:32:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1277,13 +1291,6 @@
   
   <url>
     <loc>https://tanteng.github.io/2009/01/welcome/</loc>
-    <lastmod>2009-01-01T10:53:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://tanteng.github.io/categories/%E5%B0%8F%E8%B0%88%E7%82%B9%E8%AF%84/</loc>
     <lastmod>2009-01-01T10:53:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

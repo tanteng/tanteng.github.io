@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>小谈博客 - 一个关注后端开发的博客</title>
+    <title>小谈博客</title>
     <link>https://tanteng.github.io/</link>
-    <description>Recent content on 小谈博客 - 一个关注后端开发的博客</description>
+    <description>Recent content on 小谈博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>tony老师</copyright>
-    <lastBuildDate>Mon, 04 Apr 2022 10:48:45 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Apr 2022 13:46:00 +0800</lastBuildDate><atom:link href="https://tanteng.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>注意血脂健康</title>
+      <title>Hugo 安装评论插件 gitment 提示 Bad credentials</title>
+      <link>https://tanteng.github.io/2022/04/hugo-gitment-bad-credentials/</link>
+      <pubDate>Tue, 05 Apr 2022 13:46:00 +0800</pubDate>
+      
+      <guid>https://tanteng.github.io/2022/04/hugo-gitment-bad-credentials/</guid>
+      <description>Hugo 主题启用评论插件 gitment 后，一直报错 Bad credentials，查看了插件的安装和设置步骤都是无误的，网上也很多文章说到这个报错，但没看到有效的解决方案。前面的两个 OAuth 请求是正常的，应用向 github 发送授权请求，及生成授权码跳转回页面，而获取 access_token 这一步开始报 403 错误。</description>
+    </item>
+    
+    <item>
+      <title>关于血脂健康的知识</title>
       <link>https://tanteng.github.io/2022/04/blood-fat/</link>
       <pubDate>Mon, 04 Apr 2022 10:48:45 +0800</pubDate>
       
@@ -405,15 +414,6 @@
       
       <guid>https://tanteng.github.io/2018/06/reding-list-9/</guid>
       <description>1.在 Laravel 中使用 Vue 组件化开发 https://pigjian.com/article/laravel-vue 2.理解 PHP 内核中 SAPI 的作用 https://foio.github.io/php-sapi/ 3.使用 Redis 实现单机锁 https://huoding.com/2015/09/14/463 4.使用 Redis 实现分布式锁 http://blog.jobbole.com/95211/</description>
-    </item>
-    
-    <item>
-      <title>在旧有 PHP 系统上集成七牛云 PHP-SDK</title>
-      <link>https://tanteng.github.io/2018/05/php-qiniu-sdk-not-support-composer/</link>
-      <pubDate>Mon, 28 May 2018 11:32:34 +0000</pubDate>
-      
-      <guid>https://tanteng.github.io/2018/05/php-qiniu-sdk-not-support-composer/</guid>
-      <description>最近在一个古老的 PHP 系统上使用七牛云的上传图片功能，需要集成七牛云提供的 PHP-SDK，这个系统暂时不支持 composer，还好七牛云这个 SDK 不</description>
     </item>
     
     <item>
