@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Hugo 安装评论插件 gitment 提示 Bad credentials">
 <meta itemprop="description" content="Hugo 主题启用评论插件 gitment 后，一直报错 Bad credentials，查看了插件的安装和设置步骤都是无误的，网上也很多文章说到这个报错，但没看到有效的解决方案"><meta itemprop="datePublished" content="2022-04-05T13:46:00+08:00" />
 <meta itemprop="dateModified" content="2022-04-05T13:46:00+08:00" />
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="380">
 <meta itemprop="keywords" content="Hugo,Cors," />
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -155,11 +155,11 @@
 <p>评论插件是基于 github 的 API 提供服务，需通过 OAuth 2.0 授权码模式进行授权，前面的步骤：</p>
 <ul>
 <li>跳转到 github 登录授权页面</li>
-<li>认证服务器生成授权码跳转回页面都是正常的而获取 access_token 这一步开始报 403 错误。</li>
+<li>认证服务器生成授权码跳转回页面都是正常的</li>
 </ul>
-<p>奇怪的是这里 post 请求的是一个 herokuapp.com 的地址，于是在浏览器直接打开这个 url，页面如图：</p>
+<p>而获取 access_token 这一步开始报 403 错误。奇怪的是这里 post 请求的是一个 herokuapp.com 的地址，于是在浏览器直接打开这个 url，如图：</p>
 <p><img src="https://notes-1303209934.cos.ap-guangzhou.myqcloud.com/2022/04/bf6a27313e251ce25389d170c129ef25.png" alt="gitment_cors"></p>
-<p>发现这个请求被限制了，还有个按钮：Request temporary access to the demo server，于是点击解锁。再重新进行 Login 操作，一切都正常了。页面上有了这个初始化评论按钮，点击进行初始化，它将调用 github 的 API，在 issues 里创建评论。</p>
+<p>这个请求被限制了，有个按钮：Request temporary access to the demo server，于是点击解锁。再重新进行 Login 操作，一切都正常了。页面上有了这个初始化评论按钮，点击进行初始化，它将调用 github 的 API，在 issues 里创建评论。</p>
 <img src="https://notes-1303209934.cos.ap-guangzhou.myqcloud.com/2022/04/6a431bdae66079c2f7ff1190af406203.png" alt="gitment_initalize_comments" />
 <p>测试了一下，也可以正常发表评论了。</p>
 
